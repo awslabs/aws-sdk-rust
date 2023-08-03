@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStateMachineAliasInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the state machine alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    #[doc(hidden)]
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
 }
 impl UpdateStateMachineAliasInput {

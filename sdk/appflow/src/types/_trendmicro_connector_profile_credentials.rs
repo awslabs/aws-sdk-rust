@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrendmicroConnectorProfileCredentials {
     /// <p> The Secret Access Key portion of the credentials. </p>
-    #[doc(hidden)]
     pub api_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl TrendmicroConnectorProfileCredentials {

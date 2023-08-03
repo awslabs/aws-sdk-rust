@@ -5,7 +5,6 @@
 pub struct GetResourceRequestStatusInput {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    #[doc(hidden)]
     pub request_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceRequestStatusInput {

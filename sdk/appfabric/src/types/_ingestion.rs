@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
-    #[doc(hidden)]
     pub app_bundle_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the ingestion was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the ingestion was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the ingestion.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IngestionState>,
     /// <p>The type of the ingestion.</p>
-    #[doc(hidden)]
     pub ingestion_type: ::std::option::Option<crate::types::IngestionType>,
 }
 impl Ingestion {

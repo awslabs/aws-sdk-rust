@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackagingConfigurationsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of MediaPackage VOD PackagingConfiguration resources.
-    #[doc(hidden)]
     pub packaging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,
     _request_id: Option<String>,
 }

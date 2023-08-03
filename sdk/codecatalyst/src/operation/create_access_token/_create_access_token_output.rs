@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
-    #[doc(hidden)]
     pub secret: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the personal access token.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    #[doc(hidden)]
     pub expires_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated unique ID of the access token.</p>
-    #[doc(hidden)]
     pub access_token_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MagneticStoreRejectedDataLocation {
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
 impl MagneticStoreRejectedDataLocation {

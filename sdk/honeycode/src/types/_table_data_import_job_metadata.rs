@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableDataImportJobMetadata {
     /// <p>Details about the submitter of the import request.</p>
-    #[doc(hidden)]
     pub submitter: ::std::option::Option<crate::types::ImportJobSubmitter>,
     /// <p>The timestamp when the job was submitted for import.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The options that was specified at the time of submitting the import request.</p>
-    #[doc(hidden)]
     pub import_options: ::std::option::Option<crate::types::ImportOptions>,
     /// <p>The source of the data that was submitted for import.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::ImportDataSource>,
 }
 impl TableDataImportJobMetadata {

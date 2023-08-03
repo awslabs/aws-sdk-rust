@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolFunctionPackageOutput {
     /// <p>Function package ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Function package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Function package onboarding state.</p>
-    #[doc(hidden)]
     pub onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
     /// <p>Function package operational state.</p>
-    #[doc(hidden)]
     pub operational_state: ::std::option::Option<crate::types::OperationalState>,
     /// <p>Function package usage state.</p>
-    #[doc(hidden)]
     pub usage_state: ::std::option::Option<crate::types::UsageState>,
     /// <p>Function package descriptor ID.</p>
-    #[doc(hidden)]
     pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network function provider.</p>
-    #[doc(hidden)]
     pub vnf_provider: ::std::option::Option<::std::string::String>,
     /// <p>Network function product name.</p>
-    #[doc(hidden)]
     pub vnf_product_name: ::std::option::Option<::std::string::String>,
     /// <p>Function package descriptor version.</p>
-    #[doc(hidden)]
     pub vnfd_version: ::std::option::Option<::std::string::String>,
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

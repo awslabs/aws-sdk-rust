@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SlotFilterName>,
     /// <p>The value to use to filter the response.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::SlotFilterOperator>,
 }
 impl SlotFilter {

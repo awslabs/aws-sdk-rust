@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossRegionCopyDeprecateRule {
     /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    #[doc(hidden)]
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyDeprecateRule {

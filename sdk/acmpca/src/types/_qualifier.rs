@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    #[doc(hidden)]
     pub cps_uri: ::std::option::Option<::std::string::String>,
 }
 impl Qualifier {

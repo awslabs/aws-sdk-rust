@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
-    #[doc(hidden)]
     pub dedicated_ip_auto_warmup_enabled: bool,
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
@@ -13,27 +12,20 @@ pub struct GetAccountOutput {
     /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub enforcement_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    #[doc(hidden)]
     pub production_access_enabled: bool,
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub send_quota: ::std::option::Option<crate::types::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub sending_enabled: bool,
     /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub suppression_attributes: ::std::option::Option<crate::types::SuppressionAttributes>,
     /// <p>An object that defines your account details.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::AccountDetails>,
     /// <p>The VDM attributes that apply to your Amazon SES account.</p>
-    #[doc(hidden)]
     pub vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
     _request_id: Option<String>,
 }

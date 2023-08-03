@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TokenValidityUnitsType {
     /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<crate::types::TimeUnitsType>,
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
-    #[doc(hidden)]
     pub id_token: ::std::option::Option<crate::types::TimeUnitsType>,
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<crate::types::TimeUnitsType>,
 }
 impl TokenValidityUnitsType {

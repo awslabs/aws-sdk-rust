@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSyncJobInput {
     /// <p>The workspace ID.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
-    #[doc(hidden)]
     pub sync_role: ::std::option::Option<::std::string::String>,
     /// <p>The SyncJob tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSyncJobInput {

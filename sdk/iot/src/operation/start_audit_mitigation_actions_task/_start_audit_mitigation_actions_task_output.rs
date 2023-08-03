@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAuditMitigationActionsTaskOutput {
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTag {
     /// <p>The key-name for the LF-tag.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LfTag {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAttributeGroupOutput {
     /// <p>The updated information of the attribute group.</p>
-    #[doc(hidden)]
     pub attribute_group: ::std::option::Option<crate::types::AttributeGroup>,
     _request_id: Option<String>,
 }

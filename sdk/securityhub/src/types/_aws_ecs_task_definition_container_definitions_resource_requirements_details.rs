@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
     /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The value for the specified resource type.</p>
     /// <p>For <code>GPU</code>, the value is the number of physical GPUs the Amazon ECS container agent reserves for the container.</p>
     /// <p>For <code>InferenceAccelerator</code>, the value should match the <code>DeviceName</code> attribute of an entry in <code>InferenceAccelerators</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {

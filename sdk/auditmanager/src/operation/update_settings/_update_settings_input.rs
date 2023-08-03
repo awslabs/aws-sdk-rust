@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    #[doc(hidden)]
     pub default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> A list of the default audit owners. </p>
-    #[doc(hidden)]
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The KMS key details. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
-    #[doc(hidden)]
     pub evidence_finder_enabled: ::std::option::Option<bool>,
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    #[doc(hidden)]
     pub deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    #[doc(hidden)]
     pub default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInput {

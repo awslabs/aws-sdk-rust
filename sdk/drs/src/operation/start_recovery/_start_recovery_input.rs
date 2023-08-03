@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartRecoveryInput {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    #[doc(hidden)]
     pub source_servers: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>,
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
-    #[doc(hidden)]
     pub is_drill: ::std::option::Option<bool>,
     /// <p>The tags to be associated with the Recovery Job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartRecoveryInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predicate {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
-    #[doc(hidden)]
     pub logical: ::std::option::Option<crate::types::Logical>,
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl Predicate {

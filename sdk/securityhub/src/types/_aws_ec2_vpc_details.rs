@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcDetails {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    #[doc(hidden)]
     pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
-    #[doc(hidden)]
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcDetails {

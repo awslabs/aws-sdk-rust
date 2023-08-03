@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Where channel data is stored.</p>
-    #[doc(hidden)]
     pub channel_storage: ::std::option::Option<crate::types::ChannelStorageSummary>,
     /// <p>The status of the channel.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelStatus>,
     /// <p>When the channel was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the channel was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    #[doc(hidden)]
     pub last_message_arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {

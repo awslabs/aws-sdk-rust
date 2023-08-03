@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetMetadataOutput {
     /// <p>The time that the fleet was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the fleet was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    #[doc(hidden)]
     pub optimize_for_end_user_location: ::std::option::Option<bool>,
     /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
-    #[doc(hidden)]
     pub company_code: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

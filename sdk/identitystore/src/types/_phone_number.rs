@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
-    #[doc(hidden)]
     pub primary: bool,
 }
 impl PhoneNumber {

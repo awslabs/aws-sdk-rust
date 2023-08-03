@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3 {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3 {

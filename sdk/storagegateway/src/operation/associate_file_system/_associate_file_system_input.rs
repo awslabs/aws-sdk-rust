@@ -4,33 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateFileSystemInput {
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the user credential.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    #[doc(hidden)]
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    #[doc(hidden)]
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
 }
 impl AssociateFileSystemInput {

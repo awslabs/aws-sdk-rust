@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelFindingsReportOutput {
     /// <p>The ID of the canceled report.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

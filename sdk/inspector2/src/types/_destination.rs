@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
-    #[doc(hidden)]
     pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Destination {

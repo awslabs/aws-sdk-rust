@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSnapshotInput {
     /// <p>The name of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of the snapshot.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
 }
 impl UpdateSnapshotInput {

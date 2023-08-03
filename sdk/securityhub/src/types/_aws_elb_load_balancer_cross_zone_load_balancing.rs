@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerCrossZoneLoadBalancing {
     /// <p>Indicates whether cross-zone load balancing is enabled for the load balancer.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsElbLoadBalancerCrossZoneLoadBalancing {

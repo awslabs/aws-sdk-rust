@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// <p>The identifier (user name) of the user who created the dataset.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the dataset was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    #[doc(hidden)]
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
     /// <p>The date and time that the dataset was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    #[doc(hidden)]
     pub path_options: ::std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags associated with this dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

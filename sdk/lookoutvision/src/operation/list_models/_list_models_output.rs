@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelsOutput {
     /// <p>A list of model versions in the specified project. </p>
-    #[doc(hidden)]
     pub models: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

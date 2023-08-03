@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunch {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
-    #[doc(hidden)]
     pub initiated: ::std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
     /// <p>Status of Source Server's last launch.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LaunchStatus>,
 }
 impl LifeCycleLastLaunch {

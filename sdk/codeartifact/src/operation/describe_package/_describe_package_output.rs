@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<crate::types::PackageDescription>,
     _request_id: Option<String>,
 }

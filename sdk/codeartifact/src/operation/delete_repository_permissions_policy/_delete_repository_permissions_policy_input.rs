@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-    #[doc(hidden)]
     pub policy_revision: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRepositoryPermissionsPolicyInput {

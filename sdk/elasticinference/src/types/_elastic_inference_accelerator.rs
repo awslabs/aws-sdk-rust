@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticInferenceAccelerator {
     /// <p> The health of the Elastic Inference Accelerator. </p>
-    #[doc(hidden)]
     pub accelerator_health: ::std::option::Option<crate::types::ElasticInferenceAcceleratorHealth>,
     /// <p> The type of the Elastic Inference Accelerator. </p>
-    #[doc(hidden)]
     pub accelerator_type: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Elastic Inference Accelerator. </p>
-    #[doc(hidden)]
     pub accelerator_id: ::std::option::Option<::std::string::String>,
     /// <p> The availability zone where the Elastic Inference Accelerator is present. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>
-    #[doc(hidden)]
     pub attached_resource: ::std::option::Option<::std::string::String>,
 }
 impl ElasticInferenceAccelerator {

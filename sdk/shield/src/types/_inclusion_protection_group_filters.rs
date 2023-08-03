@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InclusionProtectionGroupFilters {
     /// <p>The ID of the protection group that you want to retrieve. </p>
-    #[doc(hidden)]
     pub protection_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
-    #[doc(hidden)]
     pub patterns: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>>,
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
     /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
-    #[doc(hidden)]
     pub aggregations: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>>,
 }
 impl InclusionProtectionGroupFilters {

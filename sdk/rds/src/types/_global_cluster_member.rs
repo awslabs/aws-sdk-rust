@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
-    #[doc(hidden)]
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated.</p>
-    #[doc(hidden)]
     pub is_writer: bool,
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
-    #[doc(hidden)]
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
 }
 impl GlobalClusterMember {

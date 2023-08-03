@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitlementUsage {
     /// <p>Entitlement usage name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Resource usage consumed.</p>
-    #[doc(hidden)]
     pub consumed_value: ::std::option::Option<::std::string::String>,
     /// <p>Maximum entitlement usage count.</p>
-    #[doc(hidden)]
     pub max_count: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement usage unit.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::EntitlementDataUnit>,
 }
 impl EntitlementUsage {

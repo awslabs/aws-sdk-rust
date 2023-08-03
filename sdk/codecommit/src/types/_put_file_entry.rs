@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The content of the file, if a source file is not specified.</p>
-    #[doc(hidden)]
     pub file_content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    #[doc(hidden)]
     pub source_file: ::std::option::Option<crate::types::SourceFileSpecifier>,
 }
 impl PutFileEntry {

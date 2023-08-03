@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbProxyTargetGroup {
     /// <p>The identifier for the RDS proxy associated with this target group.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
-    #[doc(hidden)]
     pub is_default: bool,
     /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    #[doc(hidden)]
     pub connection_pool_config: ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
     /// <p>The date and time when the target group was first created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the target group was last updated.</p>
-    #[doc(hidden)]
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DbProxyTargetGroup {

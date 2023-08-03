@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpPathMatch {
     /// <p>The exact path to match on.</p>
-    #[doc(hidden)]
     pub exact: ::std::option::Option<::std::string::String>,
     /// <p>The regex used to match the path.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
 }
 impl HttpPathMatch {

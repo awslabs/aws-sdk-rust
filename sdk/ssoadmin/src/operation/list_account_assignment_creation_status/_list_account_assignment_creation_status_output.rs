@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
-    #[doc(hidden)]
     pub account_assignments_creation_status: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

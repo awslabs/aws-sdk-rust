@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The label of the version to delete.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
-    #[doc(hidden)]
     pub delete_source_bundle: ::std::option::Option<bool>,
 }
 impl DeleteApplicationVersionInput {

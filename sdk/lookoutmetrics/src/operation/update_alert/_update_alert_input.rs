@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAlertInput {
     /// <p>The ARN of the alert to update.</p>
-    #[doc(hidden)]
     pub alert_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the alert.</p>
-    #[doc(hidden)]
     pub alert_description: ::std::option::Option<::std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>Action that will be triggered when there is an alert.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-    #[doc(hidden)]
     pub alert_filters: ::std::option::Option<crate::types::AlertFilters>,
 }
 impl UpdateAlertInput {

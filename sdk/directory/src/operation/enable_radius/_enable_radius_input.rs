@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableRadiusInput {
     /// <p>The identifier of the directory for which to enable MFA.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    #[doc(hidden)]
     pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
 }
 impl EnableRadiusInput {

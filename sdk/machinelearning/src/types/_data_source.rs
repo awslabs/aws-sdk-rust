@@ -6,31 +6,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location and name of the data in Amazon Simple Storage Service (Amazon S3) that is used by a <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
-    #[doc(hidden)]
     pub data_rearrangement: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of observations contained in the data files that the <code>DataSource</code> references.</p>
-    #[doc(hidden)]
     pub data_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub number_of_files: ::std::option::Option<i64>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
     /// <ul>
@@ -40,31 +31,22 @@ pub struct DataSource {
     /// <li> <p>COMPLETED - The creation process completed successfully.</p> </li>
     /// <li> <p>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>A description of the most recent details about creating the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
-    #[doc(hidden)]
     pub redshift_metadata: ::std::option::Option<crate::types::RedshiftMetadata>,
     /// <p>The datasource details that are specific to Amazon RDS.</p>
-    #[doc(hidden)]
     pub rds_metadata: ::std::option::Option<crate::types::RdsMetadata>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
-    #[doc(hidden)]
     pub compute_statistics: bool,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataSource {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterContainerImageOutput {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-    #[doc(hidden)]
     pub container_image: ::std::option::Option<crate::types::ContainerImage>,
     _request_id: Option<String>,
 }

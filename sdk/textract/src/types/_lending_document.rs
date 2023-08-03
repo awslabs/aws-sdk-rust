@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingDocument {
     /// <p>An array of LendingField objects.</p>
-    #[doc(hidden)]
     pub lending_fields: ::std::option::Option<::std::vec::Vec<crate::types::LendingField>>,
     /// <p>A list of signatures detected in a lending document.</p>
-    #[doc(hidden)]
     pub signature_detections: ::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>>,
 }
 impl LendingDocument {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlSecurityConfig {
     /// <p>The key used to encrypt stored data.</p>
-    #[doc(hidden)]
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use traffic encryption between the container layers.</p>
-    #[doc(hidden)]
     pub enable_inter_container_traffic_encryption: bool,
     /// <p>The VPC configuration.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl AutoMlSecurityConfig {

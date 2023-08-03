@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistogramFieldWells {
     /// <p>The field well configuration of a histogram.</p>
-    #[doc(hidden)]
     pub histogram_aggregated_field_wells: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
 }
 impl HistogramFieldWells {

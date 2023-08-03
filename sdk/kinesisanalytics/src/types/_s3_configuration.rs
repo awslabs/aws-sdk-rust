@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object that contains the data.</p>
-    #[doc(hidden)]
     pub file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {

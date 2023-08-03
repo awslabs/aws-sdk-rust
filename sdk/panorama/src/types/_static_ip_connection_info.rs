@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The connection's DNS mask.</p>
-    #[doc(hidden)]
     pub mask: ::std::option::Option<::std::string::String>,
     /// <p>The connection's DNS address.</p>
-    #[doc(hidden)]
     pub dns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The connection's default gateway.</p>
-    #[doc(hidden)]
     pub default_gateway: ::std::option::Option<::std::string::String>,
 }
 impl StaticIpConnectionInfo {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSpecificCredentialMetadata {
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The generated user name for the service-specific credential.</p>
-    #[doc(hidden)]
     pub service_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the service-specific credential.</p>
-    #[doc(hidden)]
     pub service_specific_credential_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service associated with the service-specific credential.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSpecificCredentialMetadata {

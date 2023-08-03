@@ -14,14 +14,11 @@
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    #[doc(hidden)]
     pub timer_id: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    #[doc(hidden)]
     pub start_to_fire_timeout: ::std::option::Option<::std::string::String>,
 }
 impl StartTimerDecisionAttributes {

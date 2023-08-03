@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerConnectionDraining {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    #[doc(hidden)]
     pub timeout: i32,
 }
 impl AwsElbLoadBalancerConnectionDraining {

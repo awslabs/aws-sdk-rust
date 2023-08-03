@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The hypervisor ID of the gateway.</p>
-    #[doc(hidden)]
     pub hypervisor_id: ::std::option::Option<::std::string::String>,
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-    #[doc(hidden)]
     pub last_seen_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Gateway {

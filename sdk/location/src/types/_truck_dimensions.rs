@@ -10,7 +10,6 @@ pub struct TruckDimensions {
     /// </ul> <note>
     /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
     /// </note>
-    #[doc(hidden)]
     pub length: ::std::option::Option<f64>,
     /// <p>The height of the truck.</p>
     /// <ul>
@@ -18,7 +17,6 @@ pub struct TruckDimensions {
     /// </ul> <note>
     /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
     /// </note>
-    #[doc(hidden)]
     pub height: ::std::option::Option<f64>,
     /// <p>The width of the truck.</p>
     /// <ul>
@@ -26,11 +24,9 @@ pub struct TruckDimensions {
     /// </ul> <note>
     /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
     /// </note>
-    #[doc(hidden)]
     pub width: ::std::option::Option<f64>,
     /// <p> Specifies the unit of measurement for the truck dimensions.</p>
     /// <p>Default Value: <code>Meters</code> </p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::DimensionUnit>,
 }
 impl TruckDimensions {

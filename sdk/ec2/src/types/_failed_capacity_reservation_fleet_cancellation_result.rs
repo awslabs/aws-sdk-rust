@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCapacityReservationFleetCancellationResult {
     /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
-    #[doc(hidden)]
     pub cancel_capacity_reservation_fleet_error: ::std::option::Option<crate::types::CancelCapacityReservationFleetError>,
 }
 impl FailedCapacityReservationFleetCancellationResult {

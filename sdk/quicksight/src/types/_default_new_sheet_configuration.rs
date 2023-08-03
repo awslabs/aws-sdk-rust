@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultNewSheetConfiguration {
     /// <p>The options that determine the default settings for interactive layout configuration.</p>
-    #[doc(hidden)]
     pub interactive_layout_configuration: ::std::option::Option<crate::types::DefaultInteractiveLayoutConfiguration>,
     /// <p>The options that determine the default settings for a paginated layout configuration.</p>
-    #[doc(hidden)]
     pub paginated_layout_configuration: ::std::option::Option<crate::types::DefaultPaginatedLayoutConfiguration>,
     /// <p>The option that determines the sheet content type.</p>
-    #[doc(hidden)]
     pub sheet_content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
 impl DefaultNewSheetConfiguration {

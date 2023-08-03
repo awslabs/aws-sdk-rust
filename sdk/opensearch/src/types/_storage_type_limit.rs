@@ -13,10 +13,8 @@ pub struct StorageTypeLimit {
     /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p>The limit values.</p>
-    #[doc(hidden)]
     pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageTypeLimit {

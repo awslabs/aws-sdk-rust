@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTokenBalancesOutput {
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    #[doc(hidden)]
     pub token_balances: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

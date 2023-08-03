@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationResult {
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
-    #[doc(hidden)]
     pub std_out_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
-    #[doc(hidden)]
     pub std_error_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
-    #[doc(hidden)]
     pub result_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the calculation result.</p>
-    #[doc(hidden)]
     pub result_type: ::std::option::Option<::std::string::String>,
 }
 impl CalculationResult {

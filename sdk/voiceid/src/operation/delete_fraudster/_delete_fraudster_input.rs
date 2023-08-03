@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the fraudster you want to delete.</p>
-    #[doc(hidden)]
     pub fraudster_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFraudsterInput {

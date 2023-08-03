@@ -5,15 +5,12 @@
 pub struct GetConsolidatedReportOutput {
     /// <p>The metrics that make up the consolidated report.</p>
     /// <p>Only returned when <code>JSON</code> format is requested.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    #[doc(hidden)]
     pub base64_string: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

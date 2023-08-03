@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetBotChannelAssociationOutput {
     /// <p>The name of the association between the bot and the channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the association between the bot and the channel.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The date that the association between the bot and the channel was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the messaging platform.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the bot channel. </p>
     /// <ul>
@@ -30,10 +23,8 @@ pub struct GetBotChannelAssociationOutput {
     /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
     /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

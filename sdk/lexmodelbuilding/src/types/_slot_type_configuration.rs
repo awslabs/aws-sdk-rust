@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
-    #[doc(hidden)]
     pub regex_configuration: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }
 impl SlotTypeConfiguration {

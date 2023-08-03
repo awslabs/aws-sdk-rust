@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOriginEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    #[doc(hidden)]
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of container attached to this origin endpoint.</p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     /// <p>The date and time the origin endpoint was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the origin endpoint was modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for your origin endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window.</p>
-    #[doc(hidden)]
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    #[doc(hidden)]
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Artifact {
     /// <p>The artifact's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p>The location of an artifact.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ArtifactLocation>,
 }
 impl Artifact {

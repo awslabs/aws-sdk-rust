@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIndexOutput {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
     /// </note>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>The date and timestamp when the index was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

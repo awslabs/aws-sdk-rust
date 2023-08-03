@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase {
     /// <p>Specifies how many concurrent users to start with.</p>
-    #[doc(hidden)]
     pub initial_number_of_users: ::std::option::Option<i32>,
     /// <p>Specified how many new users to spawn in a minute.</p>
-    #[doc(hidden)]
     pub spawn_rate: ::std::option::Option<i32>,
     /// <p>Specifies how long traffic phase should be.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl Phase {

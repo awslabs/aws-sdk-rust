@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminInitiateAuthInput {
     /// <p>The ID of the Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
     /// <ul>
@@ -24,7 +22,6 @@ pub struct AdminInitiateAuthInput {
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
     /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
@@ -33,7 +30,6 @@ pub struct AdminInitiateAuthInput {
     /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auth_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
@@ -60,13 +56,10 @@ pub struct AdminInitiateAuthInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    #[doc(hidden)]
     pub context_data: ::std::option::Option<crate::types::ContextDataType>,
 }
 impl AdminInitiateAuthInput {

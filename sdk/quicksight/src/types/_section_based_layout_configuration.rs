@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutConfiguration {
     /// <p>A list of header section configurations.</p>
-    #[doc(hidden)]
     pub header_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
     /// <p>A list of body section configurations.</p>
-    #[doc(hidden)]
     pub body_sections: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
     /// <p>A list of footer section configurations.</p>
-    #[doc(hidden)]
     pub footer_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
     /// <p>The options for the canvas of a section-based layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl SectionBasedLayoutConfiguration {

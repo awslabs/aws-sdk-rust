@@ -8,41 +8,32 @@ pub struct WebCrawlerConfiguration {
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
     /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
-    #[doc(hidden)]
     pub urls: ::std::option::Option<crate::types::Urls>,
     /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
-    #[doc(hidden)]
     pub crawl_depth: ::std::option::Option<i32>,
     /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
     /// <p>As a website’s web pages are crawled, any URLs the web pages link to are also crawled. URLs on a web page are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
-    #[doc(hidden)]
     pub max_links_per_page: ::std::option::Option<i32>,
     /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
     /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
-    #[doc(hidden)]
     pub max_content_size_per_page_in_mega_bytes: ::std::option::Option<f32>,
     /// <p>The maximum number of URLs crawled per website host per minute.</p>
     /// <p>A minimum of one URL is required.</p>
     /// <p>The default maximum number of URLs crawled per website host per minute is 300.</p>
-    #[doc(hidden)]
     pub max_urls_per_minute_crawl_rate: ::std::option::Option<i32>,
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    #[doc(hidden)]
     pub url_inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    #[doc(hidden)]
     pub url_exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
-    #[doc(hidden)]
     pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
-    #[doc(hidden)]
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl WebCrawlerConfiguration {

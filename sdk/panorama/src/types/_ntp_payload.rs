@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NtpPayload {
     /// <p>NTP servers to use, in order of preference.</p>
-    #[doc(hidden)]
     pub ntp_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NtpPayload {

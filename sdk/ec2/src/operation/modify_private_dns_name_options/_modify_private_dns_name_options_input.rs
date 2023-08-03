@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyPrivateDnsNameOptionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    #[doc(hidden)]
     pub private_dns_hostname_type: ::std::option::Option<crate::types::HostnameType>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_a_record: ::std::option::Option<bool>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
 }
 impl ModifyPrivateDnsNameOptionsInput {

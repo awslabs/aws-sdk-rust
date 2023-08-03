@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotScheduleInput {
     /// <p>The volume which snapshot schedule to delete.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotScheduleInput {

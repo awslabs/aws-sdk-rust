@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    #[doc(hidden)]
     pub notify_workers_failure_statuses: ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
     _request_id: Option<String>,
 }

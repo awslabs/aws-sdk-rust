@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCertificateInput {
     /// <p>The certificate data, in PEM format.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
-    #[doc(hidden)]
     pub ca_certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     #[deprecated]
-    #[doc(hidden)]
     pub set_as_active: ::std::option::Option<bool>,
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
 }
 impl RegisterCertificateInput {

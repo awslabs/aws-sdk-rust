@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostAndUsageOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    #[doc(hidden)]
     pub group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
     /// <p>The time period that's covered by the results in the response.</p>
-    #[doc(hidden)]
     pub results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    #[doc(hidden)]
     pub dimension_value_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     _request_id: Option<String>,
 }

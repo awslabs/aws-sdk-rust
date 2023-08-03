@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStackPolicyInput {
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl GetStackPolicyInput {

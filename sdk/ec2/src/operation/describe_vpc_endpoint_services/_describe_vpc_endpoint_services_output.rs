@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesOutput {
     /// <p>The supported services.</p>
-    #[doc(hidden)]
     pub service_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the service.</p>
-    #[doc(hidden)]
     pub service_details: ::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

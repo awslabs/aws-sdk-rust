@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverridePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
-    #[doc(hidden)]
     pub override_status: ::std::option::Option<crate::types::OverrideStatus>,
 }
 impl OverridePullRequestApprovalRulesInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RouteStatusCode>,
 }
 impl RouteStatus {

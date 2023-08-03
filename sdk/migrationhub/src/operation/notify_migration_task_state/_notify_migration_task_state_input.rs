@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
-    #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the task's progress and status.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<crate::types::Task>,
     /// <p>The timestamp when the task was gathered.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
-    #[doc(hidden)]
     pub next_update_seconds: i32,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl NotifyMigrationTaskStateInput {

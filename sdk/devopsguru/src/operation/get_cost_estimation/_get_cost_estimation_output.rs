@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostEstimationOutput {
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostEstimationStatus>,
     /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub costs: ::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>>,
     /// <p>The start and end time of the cost estimation.</p>
-    #[doc(hidden)]
     pub time_range: ::std::option::Option<crate::types::CostEstimationTimeRange>,
     /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
-    #[doc(hidden)]
     pub total_cost: f64,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

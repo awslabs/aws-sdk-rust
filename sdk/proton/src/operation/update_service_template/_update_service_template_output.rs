@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceTemplateOutput {
     /// <p>The service template detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,
 }

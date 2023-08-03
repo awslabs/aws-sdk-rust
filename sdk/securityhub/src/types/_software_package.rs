@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwarePackage {
     /// <p>The name of the software package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software package.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the software package.</p>
-    #[doc(hidden)]
     pub epoch: ::std::option::Option<::std::string::String>,
     /// <p>The release of the software package.</p>
-    #[doc(hidden)]
     pub release: ::std::option::Option<::std::string::String>,
     /// <p>The architecture used for the software package.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The source of the package.</p>
-    #[doc(hidden)]
     pub package_manager: ::std::option::Option<::std::string::String>,
     /// <p>The file system path to the package manager inventory file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software package in which the vulnerability has been resolved. </p>
-    #[doc(hidden)]
     pub fixed_in_version: ::std::option::Option<::std::string::String>,
     /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<::std::string::String>,
     /// <p>The source layer hash of the vulnerable package. </p>
-    #[doc(hidden)]
     pub source_layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
-    #[doc(hidden)]
     pub source_layer_arn: ::std::option::Option<::std::string::String>,
 }
 impl SoftwarePackage {

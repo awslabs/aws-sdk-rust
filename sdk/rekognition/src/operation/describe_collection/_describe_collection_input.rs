@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCollectionInput {

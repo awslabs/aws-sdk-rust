@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    #[doc(hidden)]
     pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct UpdateXssMatchSetInput {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>>,
 }
 impl UpdateXssMatchSetInput {

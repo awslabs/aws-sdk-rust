@@ -8,7 +8,6 @@ pub struct RecrawlPolicy {
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
-    #[doc(hidden)]
     pub recrawl_behavior: ::std::option::Option<crate::types::RecrawlBehavior>,
 }
 impl RecrawlPolicy {

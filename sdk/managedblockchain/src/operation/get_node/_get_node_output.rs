@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNodeOutput {
     /// <p>Properties of the node configuration.</p>
-    #[doc(hidden)]
     pub node: ::std::option::Option<crate::types::Node>,
     _request_id: Option<String>,
 }

@@ -12,10 +12,8 @@ pub struct DnsRecordCreationState {
     /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
     /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DnsRecordCreationState {

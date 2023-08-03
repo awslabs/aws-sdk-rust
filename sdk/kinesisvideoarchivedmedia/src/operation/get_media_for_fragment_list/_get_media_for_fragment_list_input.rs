@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMediaForFragmentListInput {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    #[doc(hidden)]
     pub fragments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetMediaForFragmentListInput {

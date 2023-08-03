@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbProxyOutput {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
-    #[doc(hidden)]
     pub db_proxy: ::std::option::Option<crate::types::DbProxy>,
     _request_id: Option<String>,
 }

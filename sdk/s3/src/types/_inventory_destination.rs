@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryDestination {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
-    #[doc(hidden)]
     pub s3_bucket_destination: ::std::option::Option<crate::types::InventoryS3BucketDestination>,
 }
 impl InventoryDestination {

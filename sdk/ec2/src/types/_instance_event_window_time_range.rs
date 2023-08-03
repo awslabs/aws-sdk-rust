@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowTimeRange {
     /// <p>The day on which the time range begins.</p>
-    #[doc(hidden)]
     pub start_week_day: ::std::option::Option<crate::types::WeekDay>,
     /// <p>The hour when the time range begins.</p>
-    #[doc(hidden)]
     pub start_hour: ::std::option::Option<i32>,
     /// <p>The day on which the time range ends.</p>
-    #[doc(hidden)]
     pub end_week_day: ::std::option::Option<crate::types::WeekDay>,
     /// <p>The hour when the time range ends.</p>
-    #[doc(hidden)]
     pub end_hour: ::std::option::Option<i32>,
 }
 impl InstanceEventWindowTimeRange {

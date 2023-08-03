@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreStorageSummary {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
-    #[doc(hidden)]
     pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary>,
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
-    #[doc(hidden)]
     pub customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedDatastoreS3StorageSummary>,
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
-    #[doc(hidden)]
     pub iot_site_wise_multi_layer_storage: ::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary>,
 }
 impl DatastoreStorageSummary {

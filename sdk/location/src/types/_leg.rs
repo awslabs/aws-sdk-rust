@@ -17,27 +17,21 @@ pub struct Leg {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    #[doc(hidden)]
     pub start_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    #[doc(hidden)]
     pub end_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<f64>,
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::LegGeometry>,
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
 impl Leg {

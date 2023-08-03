@@ -25,10 +25,8 @@ pub struct Limit {
     /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
     /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<::std::string::String>,
 }
 impl Limit {

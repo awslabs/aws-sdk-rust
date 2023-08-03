@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWirelessDeviceOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new wireless device.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

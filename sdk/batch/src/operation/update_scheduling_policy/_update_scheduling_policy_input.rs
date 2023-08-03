@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The fair share policy.</p>
-    #[doc(hidden)]
     pub fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
 }
 impl UpdateSchedulingPolicyInput {

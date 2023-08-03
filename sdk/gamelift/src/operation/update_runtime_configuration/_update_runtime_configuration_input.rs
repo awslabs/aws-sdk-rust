@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    #[doc(hidden)]
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
 }
 impl UpdateRuntimeConfigurationInput {

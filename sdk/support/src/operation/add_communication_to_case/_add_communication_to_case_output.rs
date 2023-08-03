@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseOutput {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
-    #[doc(hidden)]
     pub result: bool,
     _request_id: Option<String>,
 }

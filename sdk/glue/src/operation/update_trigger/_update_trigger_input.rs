@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTriggerInput {
     /// <p>The name of the trigger to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new values with which to update the trigger.</p>
-    #[doc(hidden)]
     pub trigger_update: ::std::option::Option<crate::types::TriggerUpdate>,
 }
 impl UpdateTriggerInput {

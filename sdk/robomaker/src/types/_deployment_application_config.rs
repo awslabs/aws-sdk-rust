@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<::std::string::String>,
     /// <p>The launch configuration.</p>
-    #[doc(hidden)]
     pub launch_config: ::std::option::Option<crate::types::DeploymentLaunchConfig>,
 }
 impl DeploymentApplicationConfig {

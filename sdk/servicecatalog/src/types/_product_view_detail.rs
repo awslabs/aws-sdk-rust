@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductViewDetail {
     /// <p>Summary information about the product view.</p>
-    #[doc(hidden)]
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>The status of the product.</p>
     /// <ul>
@@ -13,16 +12,12 @@ pub struct ProductViewDetail {
     /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The ARN of the product.</p>
-    #[doc(hidden)]
     pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
-    #[doc(hidden)]
     pub source_connection: ::std::option::Option<crate::types::SourceConnectionDetail>,
 }
 impl ProductViewDetail {

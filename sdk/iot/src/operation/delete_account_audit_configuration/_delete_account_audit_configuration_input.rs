@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountAuditConfigurationInput {
     /// <p>If true, all scheduled audits are deleted.</p>
-    #[doc(hidden)]
     pub delete_scheduled_audits: ::std::option::Option<bool>,
 }
 impl DeleteAccountAuditConfigurationInput {

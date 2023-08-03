@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTimelineEventInput {

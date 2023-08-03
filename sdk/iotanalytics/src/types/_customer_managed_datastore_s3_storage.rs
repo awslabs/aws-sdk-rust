@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3Storage {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
-    #[doc(hidden)]
     pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomerManagedDatastoreS3Storage {

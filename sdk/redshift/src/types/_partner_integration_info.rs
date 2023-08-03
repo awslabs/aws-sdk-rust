@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner.</p>
-    #[doc(hidden)]
     pub partner_name: ::std::option::Option<::std::string::String>,
     /// <p>The partner integration status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
     /// <p>The status message provided by the partner.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date (UTC) that the partner integration was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartnerIntegrationInfo {

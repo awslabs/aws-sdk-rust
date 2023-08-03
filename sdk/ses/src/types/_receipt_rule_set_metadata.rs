@@ -12,10 +12,8 @@ pub struct ReceiptRuleSetMetadata {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the receipt rule set was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReceiptRuleSetMetadata {

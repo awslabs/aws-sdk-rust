@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    #[doc(hidden)]
     pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActivatePipelineInput {

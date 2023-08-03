@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableTopicRuleInput {
     /// <p>The name of the topic rule to enable.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
 impl EnableTopicRuleInput {

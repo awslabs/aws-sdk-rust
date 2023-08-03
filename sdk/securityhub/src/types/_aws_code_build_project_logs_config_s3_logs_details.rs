@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigS3LogsDetails {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
-    #[doc(hidden)]
     pub encryption_disabled: bool,
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the S3 build logs.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigS3LogsDetails {

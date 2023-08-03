@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionInput {
     /// <p>The domain of the workflow execution to terminate.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflowId of the workflow execution to terminate.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The runId of the workflow execution to terminate.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p> A descriptive reason for terminating the workflow execution.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p> Details for terminating the workflow execution.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
@@ -27,7 +22,6 @@ pub struct TerminateWorkflowExecutionInput {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
 }
 impl TerminateWorkflowExecutionInput {

@@ -6,13 +6,10 @@ pub struct GetChunkOutput {
     /// Chunk data
     pub data: ::aws_smithy_http::byte_stream::ByteStream,
     /// Data length
-    #[doc(hidden)]
     pub length: i64,
     /// Data checksum
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }

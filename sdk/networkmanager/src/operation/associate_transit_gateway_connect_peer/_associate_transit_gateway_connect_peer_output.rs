@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
-    #[doc(hidden)]
     pub transit_gateway_connect_peer_association: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
     _request_id: Option<String>,
 }

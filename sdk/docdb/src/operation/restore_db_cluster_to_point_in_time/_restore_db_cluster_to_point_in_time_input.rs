@@ -11,7 +11,6 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
@@ -20,14 +19,12 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// </ul>
     /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-    #[doc(hidden)]
     pub restore_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The date and time to restore the cluster to.</p>
     /// <p>Valid values: A time in Universal Coordinated Time (UTC) format.</p>
@@ -39,28 +36,22 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
-    #[doc(hidden)]
     pub restore_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and <code>false</code> otherwise. </p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.</p>
-    #[doc(hidden)]
     pub use_latest_restorable_time: bool,
     /// <p>The port number on which the new cluster accepts connections.</p>
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>
     /// <p>Default: The default port for the engine.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be assigned to the restored cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -71,13 +62,10 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>If the cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is rejected.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl RestoreDbClusterToPointInTimeInput {

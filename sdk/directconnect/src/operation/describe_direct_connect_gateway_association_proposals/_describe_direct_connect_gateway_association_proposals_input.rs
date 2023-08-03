@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the proposal.</p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the associated gateway.</p>
-    #[doc(hidden)]
     pub associated_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDirectConnectGatewayAssociationProposalsInput {

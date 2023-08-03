@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsOutput {
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
-    #[doc(hidden)]
     pub successful_fleet_requests: ::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
-    #[doc(hidden)]
     pub unsuccessful_fleet_requests: ::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
     _request_id: Option<String>,
 }

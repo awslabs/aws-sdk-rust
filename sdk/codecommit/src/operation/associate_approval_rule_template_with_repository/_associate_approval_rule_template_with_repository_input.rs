@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name for the approval rule template. </p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that you want to associate with the template.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInput {

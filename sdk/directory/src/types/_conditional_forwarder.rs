@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    #[doc(hidden)]
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    #[doc(hidden)]
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-    #[doc(hidden)]
     pub replication_scope: ::std::option::Option<crate::types::ReplicationScope>,
 }
 impl ConditionalForwarder {

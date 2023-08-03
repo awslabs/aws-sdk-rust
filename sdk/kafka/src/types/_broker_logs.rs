@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerLogs {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogs>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub firehose: ::std::option::Option<crate::types::Firehose>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3>,
 }
 impl BrokerLogs {

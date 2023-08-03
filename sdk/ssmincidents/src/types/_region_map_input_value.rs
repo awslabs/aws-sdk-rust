@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
-    #[doc(hidden)]
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionMapInputValue {

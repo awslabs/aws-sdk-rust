@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeviceAuthorizationOutput {
     /// <p>The short-lived code that is used by the device when polling for a session token.</p>
-    #[doc(hidden)]
     pub device_code: ::std::option::Option<::std::string::String>,
     /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
-    #[doc(hidden)]
     pub user_code: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
-    #[doc(hidden)]
     pub verification_uri: ::std::option::Option<::std::string::String>,
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
-    #[doc(hidden)]
     pub verification_uri_complete: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
-    #[doc(hidden)]
     pub expires_in: i32,
     /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
-    #[doc(hidden)]
     pub interval: i32,
     _request_id: Option<String>,
 }

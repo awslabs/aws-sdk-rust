@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
-    #[doc(hidden)]
     pub agg_func: ::std::option::Option<crate::types::AggFunction>,
 }
 impl AggregateOperation {

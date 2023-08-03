@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateTrialComponentInput {
     /// <p>The name of the component to disassociate from the trial.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial to disassociate from.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateTrialComponentInput {

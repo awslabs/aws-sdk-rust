@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreInput {
     /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    #[doc(hidden)]
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectCustomKeyStoreInput {

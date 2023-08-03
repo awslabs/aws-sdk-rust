@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLimitExceededException {
     /// <p>The name of the limit that was reached.</p>
-    #[doc(hidden)]
     pub limit_name: ::std::option::Option<crate::types::LimitName>,
     /// <p>The value of the exceeded limit.</p>
-    #[doc(hidden)]
     pub limit_value: f64,
     /// <p>The request has exceeded the quotas imposed by the service.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

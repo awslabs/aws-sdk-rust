@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningJobsOutput {
     /// <p>A list of your signing jobs.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
     /// <p>String for specifying the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

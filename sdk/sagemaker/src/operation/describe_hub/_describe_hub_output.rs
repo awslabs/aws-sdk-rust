@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHubOutput {
     /// <p>The name of the hub.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
-    #[doc(hidden)]
     pub hub_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub.</p>
-    #[doc(hidden)]
     pub hub_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the hub.</p>
-    #[doc(hidden)]
     pub hub_description: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub.</p>
-    #[doc(hidden)]
     pub hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    #[doc(hidden)]
     pub s3_storage_config: ::std::option::Option<crate::types::HubS3StorageConfig>,
     /// <p>The status of the hub.</p>
-    #[doc(hidden)]
     pub hub_status: ::std::option::Option<crate::types::HubStatus>,
     /// <p>The failure reason if importing hub content failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the hub was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the hub was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

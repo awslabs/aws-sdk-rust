@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigOutput {
     /// <p>The detailed data for the service sync config.</p>
-    #[doc(hidden)]
     pub service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policy {
     /// Allow or disallow jobs that specify HTTP inputs.
-    #[doc(hidden)]
     pub http_inputs: ::std::option::Option<crate::types::InputPolicy>,
     /// Allow or disallow jobs that specify HTTPS inputs.
-    #[doc(hidden)]
     pub https_inputs: ::std::option::Option<crate::types::InputPolicy>,
     /// Allow or disallow jobs that specify Amazon S3 inputs.
-    #[doc(hidden)]
     pub s3_inputs: ::std::option::Option<crate::types::InputPolicy>,
 }
 impl Policy {

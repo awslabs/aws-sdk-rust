@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssociatedEnclaveCertificateIamRolesOutput {
     /// <p>Information about the associated IAM roles.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>>,
     _request_id: Option<String>,
 }

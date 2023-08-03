@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
 }
 impl DisableActionConfiguration {

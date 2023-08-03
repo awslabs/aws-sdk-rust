@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MutationActionSetStateParameter {
     /// <p>The name of the component that is being modified.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component property to apply the state configuration to.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
     /// <p>The state configuration to assign to the property.</p>
-    #[doc(hidden)]
     pub set: ::std::option::Option<crate::types::ComponentProperty>,
 }
 impl MutationActionSetStateParameter {

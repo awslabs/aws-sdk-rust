@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionStatistics {
     /// <p>The average time the request took to be executed.</p>
-    #[doc(hidden)]
     pub average_execution_time_millis: i64,
     /// <p>The amount of data that was scanned in bytes.</p>
-    #[doc(hidden)]
     pub data_scanned_bytes: i64,
     /// <p>The number of work units executed.</p>
-    #[doc(hidden)]
     pub work_units_executed_count: i64,
 }
 impl ExecutionStatistics {

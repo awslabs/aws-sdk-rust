@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePermissionOutput {
     /// <p>A boolean that indicates whether the delete operations succeeded.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
-    #[doc(hidden)]
     pub permission_status: ::std::option::Option<crate::types::PermissionStatus>,
     _request_id: Option<String>,
 }

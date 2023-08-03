@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRange {
     /// <p>The status of the IP range, for example, "authorized".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
-    #[doc(hidden)]
     pub cidrip: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the IP range.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpRange {

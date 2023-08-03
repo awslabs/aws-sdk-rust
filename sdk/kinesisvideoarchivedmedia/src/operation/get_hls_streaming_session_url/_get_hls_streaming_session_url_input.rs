@@ -5,11 +5,9 @@
 pub struct GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
@@ -22,15 +20,12 @@ pub struct GetHlsStreamingSessionUrlInput {
     /// </ul>
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
-    #[doc(hidden)]
     pub playback_mode: ::std::option::Option<crate::types::HlsPlaybackMode>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
-    #[doc(hidden)]
     pub hls_fragment_selector: ::std::option::Option<crate::types::HlsFragmentSelector>,
     /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
     /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
-    #[doc(hidden)]
     pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
     /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
@@ -41,23 +36,19 @@ pub struct GetHlsStreamingSessionUrlInput {
     /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
     /// </ul>
     /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
-    #[doc(hidden)]
     pub discontinuity_mode: ::std::option::Option<crate::types::HlsDiscontinuityMode>,
     /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
     /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
-    #[doc(hidden)]
     pub display_fragment_timestamp: ::std::option::Option<crate::types::HlsDisplayFragmentTimestamp>,
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
     /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
     /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
     /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
     /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
-    #[doc(hidden)]
     pub max_media_playlist_fragment_results: ::std::option::Option<i64>,
 }
 impl GetHlsStreamingSessionUrlInput {

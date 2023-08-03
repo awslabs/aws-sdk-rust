@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidNodeException {
     /// <p>The specified node type isn't valid.</p>
-    #[doc(hidden)]
     pub invalid_nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>The reason the node validation failed.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

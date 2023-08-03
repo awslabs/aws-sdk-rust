@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>The source of the event.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl EventBridgeParameters {

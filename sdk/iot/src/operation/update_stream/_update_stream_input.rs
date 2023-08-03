@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStreamInput {
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stream.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The files associated with the stream.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>,
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamInput {

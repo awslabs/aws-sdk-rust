@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
-    #[doc(hidden)]
     pub dimension_contribution_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionContribution>>,
 }
 impl ContributionMatrix {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePermissionOutput {
     /// <p>The policy that removes permissions on the target database.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

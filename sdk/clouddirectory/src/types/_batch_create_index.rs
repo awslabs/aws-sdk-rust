@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    #[doc(hidden)]
     pub ordered_indexed_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
-    #[doc(hidden)]
     pub is_unique: bool,
     /// <p>A reference to the parent object that contains the index object.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link between the parent object and the index object.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    #[doc(hidden)]
     pub batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateIndex {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchDestination {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestination {

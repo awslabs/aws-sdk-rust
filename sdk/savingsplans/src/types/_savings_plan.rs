@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlan {
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The start time.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
     /// <p>The end time.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
     /// <p>The state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SavingsPlanState>,
     /// <p>The AWS Region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance family.</p>
-    #[doc(hidden)]
     pub ec2_instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub savings_plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
     /// <p>The payment option.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
     /// <p>The product types.</p>
-    #[doc(hidden)]
     pub product_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
     /// <p>The currency.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The hourly commitment, in USD.</p>
-    #[doc(hidden)]
     pub commitment: ::std::option::Option<::std::string::String>,
     /// <p>The up-front payment amount.</p>
-    #[doc(hidden)]
     pub upfront_payment_amount: ::std::option::Option<::std::string::String>,
     /// <p>The recurring payment amount.</p>
-    #[doc(hidden)]
     pub recurring_payment_amount: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the term, in seconds.</p>
-    #[doc(hidden)]
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SavingsPlan {

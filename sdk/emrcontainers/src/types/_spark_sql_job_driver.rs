@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SparkSqlJobDriver {
     /// <p>The SQL file to be executed.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>The Spark parameters to be included in the Spark SQL command.</p>
-    #[doc(hidden)]
     pub spark_sql_parameters: ::std::option::Option<::std::string::String>,
 }
 impl SparkSqlJobDriver {

@@ -9,7 +9,6 @@ pub struct CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::CommandFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -52,7 +51,6 @@ pub struct CommandFilter {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CommandFilter {

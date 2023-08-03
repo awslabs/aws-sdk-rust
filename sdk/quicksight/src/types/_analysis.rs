@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Analysis {
     /// <p>The ID of the analysis.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the analysis.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status associated with the analysis.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Errors associated with the analysis.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
     /// <p>The ARNs of the datasets of the analysis.</p>
-    #[doc(hidden)]
     pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the theme of the analysis.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the analysis was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the analysis was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    #[doc(hidden)]
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl Analysis {

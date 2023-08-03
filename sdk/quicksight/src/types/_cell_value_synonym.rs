@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CellValueSynonym {
     /// <p>The cell value.</p>
-    #[doc(hidden)]
     pub cell_value: ::std::option::Option<::std::string::String>,
     /// <p>Other names or aliases for the cell value.</p>
-    #[doc(hidden)]
     pub synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellValueSynonym {

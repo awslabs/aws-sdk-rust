@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PermissionGroupByUser {
     /// <p>The unique identifier for the permission group.</p>
-    #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the permission group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct PermissionGroupByUser {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroupByUser {

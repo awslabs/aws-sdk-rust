@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     /// <p>The token to include in another request to return the next page of snapshots. This value is <code>null</code> when there are no more snapshots to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

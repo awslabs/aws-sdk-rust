@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUsageLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<crate::types::UsageLimitUsageType>,
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<i64>,
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
-    #[doc(hidden)]
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
 }
 impl CreateUsageLimitInput {

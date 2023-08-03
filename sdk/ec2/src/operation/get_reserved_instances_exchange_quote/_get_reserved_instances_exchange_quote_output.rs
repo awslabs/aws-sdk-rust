@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservedInstancesExchangeQuoteOutput {
     /// <p>The currency of the transaction.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
-    #[doc(hidden)]
     pub is_valid_exchange: ::std::option::Option<bool>,
     /// <p>The new end date of the reservation term.</p>
-    #[doc(hidden)]
     pub output_reserved_instances_will_expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total true upfront charge for the exchange.</p>
-    #[doc(hidden)]
     pub payment_due: ::std::option::Option<::std::string::String>,
     /// <p>The cost associated with the Reserved Instance.</p>
-    #[doc(hidden)]
     pub reserved_instance_value_rollup: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The configuration of your Convertible Reserved Instances.</p>
-    #[doc(hidden)]
     pub reserved_instance_value_set: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceReservationValue>>,
     /// <p>The cost associated with the Reserved Instance.</p>
-    #[doc(hidden)]
     pub target_configuration_value_rollup: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The values of the target Convertible Reserved Instances.</p>
-    #[doc(hidden)]
     pub target_configuration_value_set: ::std::option::Option<::std::vec::Vec<crate::types::TargetReservationValue>>,
     /// <p>Describes the reason why the exchange cannot be completed.</p>
-    #[doc(hidden)]
     pub validation_failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

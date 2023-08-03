@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentParameter {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter. The type can be either String or StringList.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DocumentParameterType>,
     /// <p>A description of what the parameter does, how to use it, the default value, and whether or not the parameter is optional.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl DocumentParameter {

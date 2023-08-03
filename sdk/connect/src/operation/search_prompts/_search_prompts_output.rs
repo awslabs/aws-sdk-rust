@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPromptsOutput {
     /// <p>Information about the prompts.</p>
-    #[doc(hidden)]
     pub prompts: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of quick connects which matched your search query.</p>
-    #[doc(hidden)]
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

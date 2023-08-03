@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     _request_id: Option<String>,
 }

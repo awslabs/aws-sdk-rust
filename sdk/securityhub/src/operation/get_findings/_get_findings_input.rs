@@ -6,17 +6,13 @@ pub struct GetFindingsInput {
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of findings to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetFindingsInput {

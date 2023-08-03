@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
-    #[doc(hidden)]
     pub webhooks: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapAggregatedFieldWells {
     /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
-    #[doc(hidden)]
     pub geospatial: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FilledMapAggregatedFieldWells {

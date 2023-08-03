@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceFleetInput {
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Description of the fleet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
-    #[doc(hidden)]
     pub enable_iot_role_alias: ::std::option::Option<bool>,
 }
 impl UpdateDeviceFleetInput {

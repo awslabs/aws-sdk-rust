@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateCustomLineItemInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The name of the custom line item. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> A time range for which the custom line item is effective. </p>
-    #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
 }
 impl CreateCustomLineItemInput {

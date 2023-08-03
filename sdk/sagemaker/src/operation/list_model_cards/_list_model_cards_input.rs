@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelCardsInput {
     /// <p>Only list model cards that were created after the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list model cards that were created before the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of model cards to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Only list model cards with names that contain the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Only list model cards with the specified approval status.</p>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ModelCardSortBy>,
     /// <p>Sort model cards by ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::ModelCardSortOrder>,
 }
 impl ListModelCardsInput {

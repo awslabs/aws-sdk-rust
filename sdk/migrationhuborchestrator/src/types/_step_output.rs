@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepOutput {
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the step output.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>Determine if an output is required from a step.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
 }
 impl StepOutput {

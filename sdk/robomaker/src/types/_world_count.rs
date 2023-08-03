@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldCount {
     /// <p>The number of unique floorplans.</p>
-    #[doc(hidden)]
     pub floorplan_count: ::std::option::Option<i32>,
     /// <p>The number of unique interiors per floorplan.</p>
-    #[doc(hidden)]
     pub interior_count_per_floorplan: ::std::option::Option<i32>,
 }
 impl WorldCount {

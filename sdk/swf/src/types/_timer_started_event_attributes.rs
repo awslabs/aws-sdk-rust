@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimerStartedEventAttributes {
     /// <p>The unique ID of the timer that was started.</p>
-    #[doc(hidden)]
     pub timer_id: ::std::option::Option<::std::string::String>,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    #[doc(hidden)]
     pub start_to_fire_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl TimerStartedEventAttributes {

@@ -6,7 +6,6 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    #[doc(hidden)]
     pub check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {

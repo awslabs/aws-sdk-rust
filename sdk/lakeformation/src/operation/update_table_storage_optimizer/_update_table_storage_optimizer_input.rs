@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerInput {
     /// <p>The Catalog ID of the table.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the database where the table is present.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the table for which to enable the storage optimizer.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the table for which to enable the storage optimizer.</p>
-    #[doc(hidden)]
     pub storage_optimizer_config: ::std::option::Option<
         ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,

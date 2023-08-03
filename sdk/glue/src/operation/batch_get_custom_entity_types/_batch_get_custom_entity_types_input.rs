@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCustomEntityTypesInput {
     /// <p>A list of names of the custom patterns that you want to retrieve.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetCustomEntityTypesInput {

@@ -7,7 +7,6 @@ pub struct DeleteOptionGroupInput {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInput {

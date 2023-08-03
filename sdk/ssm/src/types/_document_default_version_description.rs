@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentDefaultVersionDescription {
     /// <p>The name of the document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default version of the document.</p>
-    #[doc(hidden)]
     pub default_version: ::std::option::Option<::std::string::String>,
     /// <p>The default version of the artifact associated with the document.</p>
-    #[doc(hidden)]
     pub default_version_name: ::std::option::Option<::std::string::String>,
 }
 impl DocumentDefaultVersionDescription {

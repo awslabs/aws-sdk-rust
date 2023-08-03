@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p>The unique system-generated ID of the job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Other data about a job.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::JobData>,
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
-    #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Job {

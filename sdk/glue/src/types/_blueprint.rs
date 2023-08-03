@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Blueprint {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the blueprint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the blueprint was registered.</p>
-    #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the blueprint was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
-    #[doc(hidden)]
     pub parameter_spec: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
-    #[doc(hidden)]
     pub blueprint_location: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
-    #[doc(hidden)]
     pub blueprint_service_location: ::std::option::Option<::std::string::String>,
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
@@ -32,13 +25,10 @@ pub struct Blueprint {
     /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
     /// <li> <p>Failed — The blueprint registration failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BlueprintStatus>,
     /// <p>An error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
-    #[doc(hidden)]
     pub last_active_definition: ::std::option::Option<crate::types::LastActiveDefinition>,
 }
 impl Blueprint {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReplaysInput {
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The state of the replay.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplayState>,
     /// <p>The ARN of the archive from which the events are replayed.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of replays to retrieve.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListReplaysInput {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterface {
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub local_gateway_virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
-    #[doc(hidden)]
     pub vlan: ::std::option::Option<i32>,
     /// <p>The local address.</p>
-    #[doc(hidden)]
     pub local_address: ::std::option::Option<::std::string::String>,
     /// <p>The peer address.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
-    #[doc(hidden)]
     pub local_bgp_asn: ::std::option::Option<i32>,
     /// <p>The peer BGP ASN.</p>
-    #[doc(hidden)]
     pub peer_bgp_asn: ::std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual interface.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterface {

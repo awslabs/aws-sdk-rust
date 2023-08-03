@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
-    #[doc(hidden)]
     pub read_marker_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceUserMembershipSummary {

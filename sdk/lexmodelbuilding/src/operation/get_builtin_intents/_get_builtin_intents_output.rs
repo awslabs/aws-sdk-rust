@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentsOutput {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    #[doc(hidden)]
     pub intents: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>,
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

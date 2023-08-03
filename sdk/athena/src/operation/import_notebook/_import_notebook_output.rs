@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportNotebookOutput {
     /// <p>The ID assigned to the imported notebook.</p>
-    #[doc(hidden)]
     pub notebook_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

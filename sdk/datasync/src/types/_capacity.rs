@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The amount of space that's being used in a storage system resource.</p>
-    #[doc(hidden)]
     pub used: ::std::option::Option<i64>,
     /// <p>The total amount of space available in a storage system resource.</p>
-    #[doc(hidden)]
     pub provisioned: ::std::option::Option<i64>,
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
-    #[doc(hidden)]
     pub logical_used: ::std::option::Option<i64>,
 }
 impl Capacity {

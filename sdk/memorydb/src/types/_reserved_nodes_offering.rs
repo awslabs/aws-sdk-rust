@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNodesOffering {
     /// <p>The offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the reservation in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this reserved node.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The offering type of this reserved node.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved node.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedNodesOffering {

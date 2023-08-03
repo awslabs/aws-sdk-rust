@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePortalOutput {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    #[doc(hidden)]
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     _request_id: Option<String>,
 }

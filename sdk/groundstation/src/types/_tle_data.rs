@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TleData {
     /// <p>First line of two-line element set (TLE) data.</p>
-    #[doc(hidden)]
     pub tle_line1: ::std::option::Option<::std::string::String>,
     /// <p>Second line of two-line element set (TLE) data.</p>
-    #[doc(hidden)]
     pub tle_line2: ::std::option::Option<::std::string::String>,
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
-    #[doc(hidden)]
     pub valid_time_range: ::std::option::Option<crate::types::TimeRange>,
 }
 impl TleData {

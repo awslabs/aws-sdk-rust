@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The name of the Glue Studio node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the recipe node, identified by id.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A reference to the DataBrew recipe used by the node.</p>
-    #[doc(hidden)]
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
 }
 impl Recipe {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-    #[doc(hidden)]
     pub bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    #[doc(hidden)]
     pub bucket_definitions: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -25,23 +21,18 @@ pub struct JobSummary {
     /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - The job runs only once.</p></li>
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    #[doc(hidden)]
     pub last_run_error_status: ::std::option::Option<crate::types::LastRunErrorStatus>,
     /// <p>The custom name of the job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    #[doc(hidden)]
     pub user_paused_details: ::std::option::Option<crate::types::UserPausedDetails>,
 }
 impl JobSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesInput {
     /// <p>A list of one or more identities.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityMailFromDomainAttributesInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-    #[doc(hidden)]
     pub alias_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContactType>,
 }
 impl ListContactsInput {

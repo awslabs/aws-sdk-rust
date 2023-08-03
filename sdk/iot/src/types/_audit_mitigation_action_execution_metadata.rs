@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditMitigationActionExecutionMetadata {
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the task being executed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
     /// <p>The date and time when the task was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, a message that describes the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AuditMitigationActionExecutionMetadata {

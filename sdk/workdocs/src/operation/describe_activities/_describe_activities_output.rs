@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActivitiesOutput {
     /// <p>The list of activities for the specified user and time period.</p>
-    #[doc(hidden)]
     pub user_activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

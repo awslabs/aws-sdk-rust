@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocumentText {
     /// <p>Text in the document.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Highlights in the document text.</p>
-    #[doc(hidden)]
     pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl DocumentText {

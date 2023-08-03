@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The name of the task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl TaskListEntry {

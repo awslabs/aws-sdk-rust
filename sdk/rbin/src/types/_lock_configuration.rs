@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LockConfiguration {
     /// <p>Information about the retention rule unlock delay.</p>
-    #[doc(hidden)]
     pub unlock_delay: ::std::option::Option<crate::types::UnlockDelay>,
 }
 impl LockConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParticipantTokenOutput {
     /// <p>The participant token that was created.</p>
-    #[doc(hidden)]
     pub participant_token: ::std::option::Option<crate::types::ParticipantToken>,
     _request_id: Option<String>,
 }

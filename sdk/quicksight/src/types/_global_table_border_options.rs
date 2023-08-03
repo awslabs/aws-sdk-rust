@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalTableBorderOptions {
     /// <p>Determines the options for uniform border.</p>
-    #[doc(hidden)]
     pub uniform_border: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>Determines the options for side specific border.</p>
-    #[doc(hidden)]
     pub side_specific_border: ::std::option::Option<crate::types::TableSideBorderOptions>,
 }
 impl GlobalTableBorderOptions {

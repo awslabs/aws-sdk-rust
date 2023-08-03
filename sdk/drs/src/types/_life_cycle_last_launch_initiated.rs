@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Job type that was used to last launch the Source Server.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LastLaunchType>,
 }
 impl LifeCycleLastLaunchInitiated {

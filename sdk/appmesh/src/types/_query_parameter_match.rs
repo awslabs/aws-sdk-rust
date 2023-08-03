@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
-    #[doc(hidden)]
     pub exact: ::std::option::Option<::std::string::String>,
 }
 impl QueryParameterMatch {

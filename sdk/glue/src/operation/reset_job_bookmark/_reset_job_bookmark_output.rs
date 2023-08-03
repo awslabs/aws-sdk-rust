@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetJobBookmarkOutput {
     /// <p>The reset bookmark entry.</p>
-    #[doc(hidden)]
     pub job_bookmark_entry: ::std::option::Option<crate::types::JobBookmarkEntry>,
     _request_id: Option<String>,
 }

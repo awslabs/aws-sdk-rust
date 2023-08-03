@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstancesOfferingOutput {
     /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

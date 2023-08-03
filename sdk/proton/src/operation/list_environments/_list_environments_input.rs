@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of environments to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of the versions of the environment template.</p>
-    #[doc(hidden)]
     pub environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateFilter>>,
 }
 impl ListEnvironmentsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
-    #[doc(hidden)]
     pub oidc: ::std::option::Option<crate::types::Oidc>,
 }
 impl Identity {

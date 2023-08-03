@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePositionOutput {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    #[doc(hidden)]
     pub geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

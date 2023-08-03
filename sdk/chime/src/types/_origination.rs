@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
 }
 impl Origination {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketDestination {
     /// <p></p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The schema version of the export file.</p>
-    #[doc(hidden)]
     pub output_schema_version: ::std::option::Option<crate::types::OutputSchemaVersion>,
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::StorageLensDataExportEncryption>,
 }
 impl S3BucketDestination {

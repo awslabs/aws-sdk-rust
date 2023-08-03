@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBridgeInput {
     /// Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.
-    #[doc(hidden)]
     pub egress_gateway_bridge: ::std::option::Option<crate::types::AddEgressGatewayBridgeRequest>,
     /// Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.
-    #[doc(hidden)]
     pub ingress_gateway_bridge: ::std::option::Option<crate::types::AddIngressGatewayBridgeRequest>,
     /// The name of the bridge. This name can not be modified after the bridge is created.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The outputs that you want to add to this bridge.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
     /// The bridge placement Amazon Resource Number (ARN).
-    #[doc(hidden)]
     pub placement_arn: ::std::option::Option<::std::string::String>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     /// The sources that you want to add to this bridge.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
 }
 impl CreateBridgeInput {

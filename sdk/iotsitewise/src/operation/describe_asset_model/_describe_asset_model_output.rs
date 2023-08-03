@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    #[doc(hidden)]
     pub asset_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The asset model's description.</p>
-    #[doc(hidden)]
     pub asset_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The list of asset properties for the asset model.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-    #[doc(hidden)]
     pub asset_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
-    #[doc(hidden)]
     pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
     /// <p>The list of composite asset models for the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub asset_model_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub asset_model_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
-    #[doc(hidden)]
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }

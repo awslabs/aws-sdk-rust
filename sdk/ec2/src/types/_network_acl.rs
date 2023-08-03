@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAcl {
     /// <p>Any associations between the network ACL and one or more subnets</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>>,
     /// <p>The entries (rules) in the network ACL.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The ID of the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the network ACL.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC for the network ACL.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAcl {

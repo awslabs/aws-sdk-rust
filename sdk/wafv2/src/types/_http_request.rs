@@ -9,22 +9,16 @@ pub struct HttpRequest {
     /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
     /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub client_ip: ::std::option::Option<::std::string::String>,
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP method specified in the sampled web request. </p>
-    #[doc(hidden)]
     pub method: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
-    #[doc(hidden)]
     pub http_version: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
 }
 impl HttpRequest {

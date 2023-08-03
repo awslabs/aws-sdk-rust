@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>,
 }
 impl StartFuotaTaskInput {

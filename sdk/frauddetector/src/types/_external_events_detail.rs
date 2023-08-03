@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    #[doc(hidden)]
     pub data_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExternalEventsDetail {

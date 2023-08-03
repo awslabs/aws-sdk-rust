@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMlLabelingSetGenerationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    #[doc(hidden)]
     pub output_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl StartMlLabelingSetGenerationTaskRunInput {

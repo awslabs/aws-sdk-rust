@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
@@ -17,7 +16,6 @@ pub struct BatchGetDeploymentTargetsInput {
     /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
     /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInput {

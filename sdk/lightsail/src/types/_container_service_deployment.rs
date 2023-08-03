@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The state of the deployment.</p>
     /// <p>A deployment can be in one of the following states:</p>
@@ -16,16 +15,12 @@ pub struct ContainerServiceDeployment {
     /// <li> <p> <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on the container service.</p> </li>
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     /// <p>An object that describes the endpoint of the deployment.</p>
-    #[doc(hidden)]
     pub public_endpoint: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
     /// <p>The timestamp when the deployment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContainerServiceDeployment {

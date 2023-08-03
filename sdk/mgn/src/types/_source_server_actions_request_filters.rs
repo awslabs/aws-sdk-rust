@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceServerActionsRequestFilters {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    #[doc(hidden)]
     pub action_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SourceServerActionsRequestFilters {

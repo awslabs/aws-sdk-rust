@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImportInput {
     /// <p>The unique identifier of the import to describe.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImportInput {

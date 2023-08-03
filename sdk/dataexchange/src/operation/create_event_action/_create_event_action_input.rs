@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventActionInput {
     /// <p>What occurs after a certain event.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>What occurs to start an action.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::Event>,
 }
 impl CreateEventActionInput {

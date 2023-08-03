@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportOutput {
     /// <p>The unique identifier of the described export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format used in the files that describe the resource. </p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the export was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that the export was updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

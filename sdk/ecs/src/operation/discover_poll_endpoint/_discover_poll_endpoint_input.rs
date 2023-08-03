@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub container_instance: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
 }
 impl DiscoverPollEndpointInput {

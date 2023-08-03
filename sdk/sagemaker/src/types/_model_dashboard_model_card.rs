@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardModelCard {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    #[doc(hidden)]
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a model card.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The model card version.</p>
-    #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The model card status.</p>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     /// <p>A timestamp that indicates when the model card was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A timestamp that indicates when the model card was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The tags associated with a model card.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
-    #[doc(hidden)]
     pub risk_rating: ::std::option::Option<::std::string::String>,
 }
 impl ModelDashboardModelCard {

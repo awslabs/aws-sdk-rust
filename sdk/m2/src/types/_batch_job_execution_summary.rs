@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchJobExecutionSummary {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a particular batch job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a particular batch job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of a particular batch job execution.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::BatchJobType>,
     /// <p>The status of a particular batch job execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
     /// <p>The timestamp when a particular batch job execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when this batch job execution ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
-    #[doc(hidden)]
     pub return_code: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this batch job.</p>
-    #[doc(hidden)]
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
 }
 impl BatchJobExecutionSummary {

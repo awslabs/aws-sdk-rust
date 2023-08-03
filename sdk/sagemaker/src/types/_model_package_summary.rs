@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageSummary {
     /// <p>The name of the model package.</p>
-    #[doc(hidden)]
     pub model_package_name: ::std::option::Option<::std::string::String>,
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If the model package is a versioned model, the version of the model.</p>
-    #[doc(hidden)]
     pub model_package_version: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the model package.</p>
-    #[doc(hidden)]
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the model package was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The overall status of the model package.</p>
-    #[doc(hidden)]
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
@@ -31,7 +24,6 @@ pub struct ModelPackageSummary {
     /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
     /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
 }
 impl ModelPackageSummary {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    #[doc(hidden)]
     pub execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    #[doc(hidden)]
     pub execution_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplianceExecutionSummary {

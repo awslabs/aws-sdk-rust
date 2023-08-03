@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevEndpointsInput {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    #[doc(hidden)]
     pub dev_endpoint_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDevEndpointsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyListEntry {
     /// <p>Unique identifier of the key.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the key.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KeyListEntry {

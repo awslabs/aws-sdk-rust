@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointInput {
     /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the global endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
-    #[doc(hidden)]
     pub routing_config: ::std::option::Option<crate::types::RoutingConfig>,
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    #[doc(hidden)]
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
     /// <p>The ARN of the role used for replication.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateEndpointInput {

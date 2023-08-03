@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointInput {
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
-    #[doc(hidden)]
     pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of Verified Access endpoint to create.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
     /// <p>The type of attachment.</p>
-    #[doc(hidden)]
     pub attachment_type: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
-    #[doc(hidden)]
     pub domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name for users to reach your application.</p>
-    #[doc(hidden)]
     pub application_domain: ::std::option::Option<::std::string::String>,
     /// <p>A custom identifier that is prepended to the DNS name that is generated for the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_domain_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
-    #[doc(hidden)]
     pub load_balancer_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
-    #[doc(hidden)]
     pub network_interface_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
     /// <p>A description for the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Verified Access policy document.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateVerifiedAccessEndpointInput {

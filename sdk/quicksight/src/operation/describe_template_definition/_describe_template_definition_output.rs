@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTemplateDefinitionOutput {
     /// <p>The descriptive name of the template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template described.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>Errors associated with the template version.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
     /// <p>Status associated with the template.</p>
     /// <ul>
@@ -22,20 +19,15 @@ pub struct DescribeTemplateDefinitionOutput {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The ARN of the theme of the template.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

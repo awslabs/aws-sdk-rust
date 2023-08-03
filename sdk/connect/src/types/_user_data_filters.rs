@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDataFilters {
     /// <p>A list of up to 100 queues or ARNs.</p>
-    #[doc(hidden)]
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
-    #[doc(hidden)]
     pub contact_filter: ::std::option::Option<crate::types::ContactFilter>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    #[doc(hidden)]
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
-    #[doc(hidden)]
     pub agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    #[doc(hidden)]
     pub user_hierarchy_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserDataFilters {

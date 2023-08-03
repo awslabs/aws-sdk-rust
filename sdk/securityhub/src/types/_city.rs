@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct City {
     /// <p>The name of the city.</p>
-    #[doc(hidden)]
     pub city_name: ::std::option::Option<::std::string::String>,
 }
 impl City {

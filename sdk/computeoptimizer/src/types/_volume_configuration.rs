@@ -6,25 +6,18 @@
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub volume_size: i32,
     /// <p>The baseline IOPS of the volume.</p>
-    #[doc(hidden)]
     pub volume_baseline_iops: i32,
     /// <p>The burst IOPS of the volume.</p>
-    #[doc(hidden)]
     pub volume_burst_iops: i32,
     /// <p>The baseline throughput of the volume.</p>
-    #[doc(hidden)]
     pub volume_baseline_throughput: i32,
     /// <p>The burst throughput of the volume.</p>
-    #[doc(hidden)]
     pub volume_burst_throughput: i32,
     /// <p> Contains the image used to boot the instance during launch. </p>
-    #[doc(hidden)]
     pub root_volume: ::std::option::Option<bool>,
 }
 impl VolumeConfiguration {

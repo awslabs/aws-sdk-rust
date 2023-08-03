@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
-    #[doc(hidden)]
     pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

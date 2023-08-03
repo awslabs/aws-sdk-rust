@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity whose property values the operation returns.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties whose values the operation returns.</p>
-    #[doc(hidden)]
     pub selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the workspace whose values the operation returns.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The property group name.</p>
-    #[doc(hidden)]
     pub property_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tabular conditions.</p>
-    #[doc(hidden)]
     pub tabular_conditions: ::std::option::Option<crate::types::TabularConditions>,
 }
 impl GetPropertyValueInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
-    #[doc(hidden)]
     pub identity_provider_saml_metadata: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIdentityProviderConfigurationInput {

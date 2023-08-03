@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactFilter {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
 impl ContactFilter {

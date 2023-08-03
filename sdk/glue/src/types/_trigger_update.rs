@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerUpdate {
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of this trigger.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
-    #[doc(hidden)]
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    #[doc(hidden)]
     pub event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl TriggerUpdate {

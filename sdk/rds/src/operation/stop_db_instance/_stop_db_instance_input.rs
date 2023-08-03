@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StopDbInstanceInput {

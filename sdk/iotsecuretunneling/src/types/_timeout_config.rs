@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeoutConfig {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
-    #[doc(hidden)]
     pub max_lifetime_timeout_minutes: ::std::option::Option<i32>,
 }
 impl TimeoutConfig {

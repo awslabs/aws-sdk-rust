@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAggregationSource {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source regions being aggregated.</p>
-    #[doc(hidden)]
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
-    #[doc(hidden)]
     pub all_aws_regions: bool,
 }
 impl OrganizationAggregationSource {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationJobRequest {
     /// <p>The output location.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
     /// <p>The logging configuration.</p>
-    #[doc(hidden)]
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
-    #[doc(hidden)]
     pub max_job_duration_in_seconds: i64,
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
@@ -31,30 +27,22 @@ pub struct SimulationJobRequest {
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub failure_behavior: ::std::option::Option<crate::types::FailureBehavior>,
     /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
-    #[doc(hidden)]
     pub use_default_applications: ::std::option::Option<bool>,
     /// <p>The robot applications to use in the simulation job.</p>
-    #[doc(hidden)]
     pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation applications to use in the simulation job.</p>
-    #[doc(hidden)]
     pub simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>,
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Compute information for the simulation job</p>
-    #[doc(hidden)]
     pub compute: ::std::option::Option<crate::types::Compute>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SimulationJobRequest {

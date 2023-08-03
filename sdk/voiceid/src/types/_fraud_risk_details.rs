@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FraudRiskDetails {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
-    #[doc(hidden)]
     pub known_fraudster_risk: ::std::option::Option<crate::types::KnownFraudsterRisk>,
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-    #[doc(hidden)]
     pub voice_spoofing_risk: ::std::option::Option<crate::types::VoiceSpoofingRisk>,
 }
 impl FraudRiskDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestConnectionOutput {
     /// <p>Returns the identifier of the connector object that you are testing.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides the details for some error messages and troubleshooting steps for each.</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct TestConnectionOutput {
     /// <li> <p> <b>Private key not found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
     /// <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

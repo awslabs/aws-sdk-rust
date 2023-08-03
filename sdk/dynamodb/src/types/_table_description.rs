@@ -10,10 +10,8 @@ pub struct TableDescription {
     /// <li> <p> <code>AttributeName</code> - The name of the attribute.</p> </li>
     /// <li> <p> <code>AttributeType</code> - The data type for the attribute.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
     /// <ul>
@@ -28,7 +26,6 @@ pub struct TableDescription {
     /// </note> </li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -40,28 +37,20 @@ pub struct TableDescription {
     /// <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete. </p> </li>
     /// <li> <p> <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[doc(hidden)]
     pub table_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the details for the read/write capacity mode.</p>
-    #[doc(hidden)]
     pub billing_mode_summary: ::std::option::Option<crate::types::BillingModeSummary>,
     /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
@@ -81,7 +70,6 @@ pub struct TableDescription {
     /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    #[doc(hidden)]
     pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexDescription>>,
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
@@ -110,10 +98,8 @@ pub struct TableDescription {
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexDescription>>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    #[doc(hidden)]
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -122,31 +108,22 @@ pub struct TableDescription {
     /// <li> <p>Table name</p> </li>
     /// <li> <p> <code>StreamLabel</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub latest_stream_label: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
-    #[doc(hidden)]
     pub latest_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>Represents replicas of the table.</p>
-    #[doc(hidden)]
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
     /// <p>Contains details for the restore.</p>
-    #[doc(hidden)]
     pub restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     /// <p>The description of the server-side encryption status on the specified table.</p>
-    #[doc(hidden)]
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
     /// <p>Contains information about the table archive.</p>
-    #[doc(hidden)]
     pub archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
     /// <p>Contains details of the table class.</p>
-    #[doc(hidden)]
     pub table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl TableDescription {

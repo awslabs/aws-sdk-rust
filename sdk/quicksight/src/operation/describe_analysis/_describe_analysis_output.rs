@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnalysisOutput {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
-    #[doc(hidden)]
     pub analysis: ::std::option::Option<crate::types::Analysis>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

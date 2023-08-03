@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualClusterOutput {
     /// <p>This output displays information about the specified virtual cluster.</p>
-    #[doc(hidden)]
     pub virtual_cluster: ::std::option::Option<crate::types::VirtualCluster>,
     _request_id: Option<String>,
 }

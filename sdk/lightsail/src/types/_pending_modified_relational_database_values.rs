@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedRelationalDatabaseValues {
     /// <p>The password for the master user of the database.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
-    #[doc(hidden)]
     pub backup_retention_enabled: ::std::option::Option<bool>,
 }
 impl PendingModifiedRelationalDatabaseValues {

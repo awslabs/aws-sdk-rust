@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressDetails {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    #[doc(hidden)]
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
     /// <p>The city that the IP address originated from.</p>
-    #[doc(hidden)]
     pub ip_city: ::std::option::Option<crate::types::IpCity>,
     /// <p>The country that the IP address originated from.</p>
-    #[doc(hidden)]
     pub ip_country: ::std::option::Option<crate::types::IpCountry>,
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
-    #[doc(hidden)]
     pub ip_geo_location: ::std::option::Option<crate::types::IpGeoLocation>,
     /// <p>The registered owner of the IP address.</p>
-    #[doc(hidden)]
     pub ip_owner: ::std::option::Option<crate::types::IpOwner>,
 }
 impl IpAddressDetails {

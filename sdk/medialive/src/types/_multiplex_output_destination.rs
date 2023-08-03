@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexOutputDestination {
     /// Multiplex MediaConnect output destination settings.
-    #[doc(hidden)]
     pub media_connect_settings: ::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
 }
 impl MultiplexOutputDestination {

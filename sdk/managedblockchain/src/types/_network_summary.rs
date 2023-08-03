@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSummary {
     /// <p>The unique identifier of the network.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the network.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain framework that the network uses.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the network.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl NetworkSummary {

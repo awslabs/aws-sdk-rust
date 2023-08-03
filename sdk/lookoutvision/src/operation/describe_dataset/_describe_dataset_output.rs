@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// <p>The description of the requested dataset. </p>
-    #[doc(hidden)]
     pub dataset_description: ::std::option::Option<crate::types::DatasetDescription>,
     _request_id: Option<String>,
 }

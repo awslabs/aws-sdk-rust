@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederatedAuthenticationRequest {
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-    #[doc(hidden)]
     pub saml_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
-    #[doc(hidden)]
     pub self_service_saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl FederatedAuthenticationRequest {

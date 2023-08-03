@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
-    #[doc(hidden)]
     pub executor_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
-    #[doc(hidden)]
     pub executor_type: ::std::option::Option<crate::types::ExecutorType>,
     /// <p>The date and time that the executor started.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<i64>,
     /// <p>The date and time that the executor was terminated.</p>
-    #[doc(hidden)]
     pub termination_date_time: ::std::option::Option<i64>,
     /// <p>The processing state of the executor. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
@@ -23,10 +19,8 @@ pub struct ExecutorsSummary {
     /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    #[doc(hidden)]
     pub executor_state: ::std::option::Option<crate::types::ExecutorState>,
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
-    #[doc(hidden)]
     pub executor_size: ::std::option::Option<i64>,
 }
 impl ExecutorsSummary {

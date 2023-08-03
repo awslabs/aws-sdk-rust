@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesForTagOptionOutput {
     /// <p>Information about the resources.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

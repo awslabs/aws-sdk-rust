@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceIntegrationOutput {
     /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
-    #[doc(hidden)]
     pub service_integration: ::std::option::Option<crate::types::ServiceIntegrationConfig>,
     _request_id: Option<String>,
 }

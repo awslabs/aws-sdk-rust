@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetNamedQueryOutput {
     /// <p>Information about the named query IDs submitted.</p>
-    #[doc(hidden)]
     pub named_queries: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>,
     /// <p>Information about provided query IDs.</p>
-    #[doc(hidden)]
     pub unprocessed_named_query_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
     _request_id: Option<String>,
 }

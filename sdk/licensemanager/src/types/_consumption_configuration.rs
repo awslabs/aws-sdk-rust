@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsumptionConfiguration {
     /// <p>Renewal frequency.</p>
-    #[doc(hidden)]
     pub renew_type: ::std::option::Option<crate::types::RenewType>,
     /// <p>Details about a provisional configuration.</p>
-    #[doc(hidden)]
     pub provisional_configuration: ::std::option::Option<crate::types::ProvisionalConfiguration>,
     /// <p>Details about a borrow configuration.</p>
-    #[doc(hidden)]
     pub borrow_configuration: ::std::option::Option<crate::types::BorrowConfiguration>,
 }
 impl ConsumptionConfiguration {

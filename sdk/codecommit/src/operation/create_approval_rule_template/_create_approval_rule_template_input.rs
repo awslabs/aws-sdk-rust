@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p> <note>
     /// <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>
@@ -18,10 +17,8 @@ pub struct CreateApprovalRuleTemplateInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub approval_rule_template_content: ::std::option::Option<::std::string::String>,
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    #[doc(hidden)]
     pub approval_rule_template_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateApprovalRuleTemplateInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepSummary {
     /// <p>The identifier of the cluster step.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::HadoopStepConfig>,
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-    #[doc(hidden)]
     pub action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StepStatus>,
 }
 impl StepSummary {

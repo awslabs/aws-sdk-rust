@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatementInput {
     /// <p>The Session ID of the statement.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The Id of the statement.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The origin of the request.</p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl GetStatementInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutput {
     /// An Amazon Connect campaign.
-    #[doc(hidden)]
     pub campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The latitude of the position.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude of the position.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<f64>,
     /// <p>The elevation of the equipment at this position.</p>
-    #[doc(hidden)]
     pub elevation: ::std::option::Option<f64>,
     /// <p>The units used to measure the elevation of the position.</p>
-    #[doc(hidden)]
     pub elevation_unit: ::std::option::Option<crate::types::ElevationUnit>,
     /// <p>The reference point from which elevation is reported.</p>
-    #[doc(hidden)]
     pub elevation_reference: ::std::option::Option<crate::types::ElevationReference>,
 }
 impl Position {

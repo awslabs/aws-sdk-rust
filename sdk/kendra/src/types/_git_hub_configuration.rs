@@ -5,75 +5,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitHubConfiguration {
     /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
-    #[doc(hidden)]
     pub saa_s_configuration: ::std::option::Option<crate::types::SaaSConfiguration>,
     /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
-    #[doc(hidden)]
     pub on_premise_configuration: ::std::option::Option<crate::types::OnPremiseConfiguration>,
     /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
-    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
-    #[doc(hidden)]
     pub git_hub_document_crawl_properties: ::std::option::Option<crate::types::GitHubDocumentCrawlProperties>,
     /// <p>A list of names of the specific repositories you want to index.</p>
-    #[doc(hidden)]
     pub repository_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_folder_name_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_file_type_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_file_name_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_folder_name_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_file_type_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_file_name_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_repository_configuration_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_commit_configuration_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_issue_document_configuration_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_issue_comment_configuration_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_issue_attachment_configuration_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_pull_request_comment_configuration_field_mappings:
         ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_pull_request_document_configuration_field_mappings:
         ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    #[doc(hidden)]
     pub git_hub_pull_request_document_attachment_configuration_field_mappings:
         ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }

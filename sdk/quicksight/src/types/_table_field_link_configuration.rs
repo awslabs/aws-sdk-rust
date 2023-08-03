@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldLinkConfiguration {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
     /// <p>The URL content (text, icon) for the table link configuration.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
 }
 impl TableFieldLinkConfiguration {

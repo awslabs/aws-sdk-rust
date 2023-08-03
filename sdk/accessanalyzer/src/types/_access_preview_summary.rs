@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    #[doc(hidden)]
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the access preview was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
@@ -19,10 +16,8 @@ pub struct AccessPreviewSummary {
     /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccessPreviewStatus>,
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
 }
 impl AccessPreviewSummary {

@@ -5,10 +5,8 @@
 pub struct DescribeEventCategoriesInput {
     /// <p>The type of source that is generating the events.</p>
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInput {

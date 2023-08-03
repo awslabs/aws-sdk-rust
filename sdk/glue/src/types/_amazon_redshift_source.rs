@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonRedshiftSource {
     /// <p>The name of the Amazon Redshift source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
 }
 impl AmazonRedshiftSource {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    #[doc(hidden)]
     pub window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

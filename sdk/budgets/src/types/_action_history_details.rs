@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The budget action resource. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
 }
 impl ActionHistoryDetails {

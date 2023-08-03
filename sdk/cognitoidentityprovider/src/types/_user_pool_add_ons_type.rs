@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
-    #[doc(hidden)]
     pub advanced_security_mode: ::std::option::Option<crate::types::AdvancedSecurityModeType>,
 }
 impl UserPoolAddOnsType {

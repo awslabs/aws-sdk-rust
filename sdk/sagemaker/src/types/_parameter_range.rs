@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterRange {
     /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
-    #[doc(hidden)]
     pub integer_parameter_range_specification: ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
-    #[doc(hidden)]
     pub continuous_parameter_range_specification: ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
-    #[doc(hidden)]
     pub categorical_parameter_range_specification: ::std::option::Option<crate::types::CategoricalParameterRangeSpecification>,
 }
 impl ParameterRange {

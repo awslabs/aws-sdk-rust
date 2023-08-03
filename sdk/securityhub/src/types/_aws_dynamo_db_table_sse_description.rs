@@ -6,16 +6,12 @@
 pub struct AwsDynamoDbTableSseDescription {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub inaccessible_encryption_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the server-side encryption.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of server-side encryption.</p>
-    #[doc(hidden)]
     pub sse_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-    #[doc(hidden)]
     pub kms_master_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableSseDescription {

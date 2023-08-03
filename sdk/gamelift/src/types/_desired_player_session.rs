@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DesiredPlayerSession {
     /// <p>A unique identifier for a player to associate with the player session.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-    #[doc(hidden)]
     pub player_data: ::std::option::Option<::std::string::String>,
 }
 impl DesiredPlayerSession {

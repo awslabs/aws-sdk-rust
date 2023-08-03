@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsNameOptionsResponse {
     /// <p>The type of hostname to assign to an instance.</p>
-    #[doc(hidden)]
     pub hostname_type: ::std::option::Option<crate::types::HostnameType>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_a_record: ::std::option::Option<bool>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
 }
 impl PrivateDnsNameOptionsResponse {

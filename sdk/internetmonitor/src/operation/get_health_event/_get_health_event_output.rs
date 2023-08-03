@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthEventOutput {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
-    #[doc(hidden)]
     pub event_arn: ::std::option::Option<::std::string::String>,
     /// <p>The internally generated identifier of a health event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when a health event started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event was last updated or recalculated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The locations affected by a health event.</p>
-    #[doc(hidden)]
     pub impacted_locations: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
     /// <p>The status of a health event.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::HealthEventStatus>,
     /// <p>The impact on total traffic that a health event has.</p>
-    #[doc(hidden)]
     pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     /// <p>The type of impairment of a specific health event.</p>
-    #[doc(hidden)]
     pub impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
     /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
-    #[doc(hidden)]
     pub health_score_threshold: f64,
     _request_id: Option<String>,
 }

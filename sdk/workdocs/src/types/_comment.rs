@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Comment {
     /// <p>The ID of the comment.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent comment.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the root comment in the thread.</p>
-    #[doc(hidden)]
     pub thread_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the comment.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The details of the user who made the comment.</p>
-    #[doc(hidden)]
     pub contributor: ::std::option::Option<crate::types::User>,
     /// <p>The time that the comment was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CommentStatusType>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::CommentVisibilityType>,
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
-    #[doc(hidden)]
     pub recipient_id: ::std::option::Option<::std::string::String>,
 }
 impl Comment {

@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecognizeTextOutput {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    #[doc(hidden)]
     pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
     /// <p>The attributes sent in the request.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of the session in use.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot member that recognized the text.</p>
-    #[doc(hidden)]
     pub recognized_bot_member: ::std::option::Option<crate::types::RecognizedBotMember>,
     _request_id: Option<String>,
 }

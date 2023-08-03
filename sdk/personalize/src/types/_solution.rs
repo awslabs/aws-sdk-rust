@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Solution {
     /// <p>The name of the solution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the solution.</p>
-    #[doc(hidden)]
     pub solution_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub perform_hpo: bool,
     /// <important>
     /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
     /// </important>
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
-    #[doc(hidden)]
     pub perform_auto_ml: bool,
     /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the configuration properties for the solution.</p>
-    #[doc(hidden)]
     pub solution_config: ::std::option::Option<crate::types::SolutionConfig>,
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
-    #[doc(hidden)]
     pub auto_ml_result: ::std::option::Option<crate::types::AutoMlResult>,
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -40,16 +31,12 @@ pub struct Solution {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time (in Unix time) of the solution.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-    #[doc(hidden)]
     pub latest_solution_version: ::std::option::Option<crate::types::SolutionVersionSummary>,
 }
 impl Solution {

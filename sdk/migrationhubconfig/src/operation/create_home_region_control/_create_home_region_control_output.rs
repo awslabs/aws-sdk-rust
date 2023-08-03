@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHomeRegionControlOutput {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
-    #[doc(hidden)]
     pub home_region_control: ::std::option::Option<crate::types::HomeRegionControl>,
     _request_id: Option<String>,
 }

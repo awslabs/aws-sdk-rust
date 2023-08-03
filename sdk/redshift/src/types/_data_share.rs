@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataShare {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
-    #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
-    #[doc(hidden)]
     pub producer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    #[doc(hidden)]
     pub data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
-    #[doc(hidden)]
     pub managed_by: ::std::option::Option<::std::string::String>,
 }
 impl DataShare {

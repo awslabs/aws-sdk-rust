@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteAnalysisPath {
     /// <p>The status of the analysis at completion.</p>
-    #[doc(hidden)]
     pub completion_status: ::std::option::Option<crate::types::RouteAnalysisCompletion>,
     /// <p>The route analysis path.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
 }
 impl RouteAnalysisPath {

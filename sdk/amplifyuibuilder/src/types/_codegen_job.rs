@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenJob {
     /// <p>The unique ID for the code generation job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amplify app associated with the code generation job.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
-    #[doc(hidden)]
     pub render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
     /// <p>Describes the data schema for a code generation job.</p>
-    #[doc(hidden)]
     pub generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
-    #[doc(hidden)]
     pub auto_generate_forms: ::std::option::Option<bool>,
     /// <p>Describes the feature flags that you can specify for a code generation job.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<crate::types::CodegenFeatureFlags>,
     /// <p>The status of the code generation job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CodegenJobStatus>,
     /// <p>The customized status message for the code generation job.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The <code>CodegenJobAsset</code> to use for the code generation job.</p>
-    #[doc(hidden)]
     pub asset: ::std::option::Option<crate::types::CodegenJobAsset>,
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time that the code generation job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the code generation job was modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CodegenJob {

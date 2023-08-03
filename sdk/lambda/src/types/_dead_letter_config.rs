@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeadLetterConfig {

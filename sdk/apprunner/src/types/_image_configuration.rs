@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImageConfiguration {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    #[doc(hidden)]
     pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
-    #[doc(hidden)]
     pub start_command: ::std::option::Option<::std::string::String>,
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct ImageConfiguration {
     /// <li> <p> Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported. </p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImageConfiguration {

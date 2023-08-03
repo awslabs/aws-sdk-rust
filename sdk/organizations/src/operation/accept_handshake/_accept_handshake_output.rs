@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptHandshakeOutput {
     /// <p>A structure that contains details about the accepted handshake.</p>
-    #[doc(hidden)]
     pub handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EncryptionSetting {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    #[doc(hidden)]
     pub bot_locale_export_password: ::std::option::Option<::std::string::String>,
     /// <p>The password used to encrypt the associated transcript file.</p>
-    #[doc(hidden)]
     pub associated_transcripts_password: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionSetting {

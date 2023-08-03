@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventPredictionOutput {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-    #[doc(hidden)]
     pub model_scores: ::std::option::Option<::std::vec::Vec<crate::types::ModelScores>>,
     /// <p>The results from the rules.</p>
-    #[doc(hidden)]
     pub rule_results: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
     /// <p>The model scores for Amazon SageMaker models.</p>
-    #[doc(hidden)]
     pub external_model_outputs: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
     _request_id: Option<String>,
 }

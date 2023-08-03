@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpeakerSearchResult {
     /// <p>The confidence score in the speaker search analysis.</p>
-    #[doc(hidden)]
     pub confidence_score: f32,
     /// <p>The voice profile ID.</p>
-    #[doc(hidden)]
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl SpeakerSearchResult {

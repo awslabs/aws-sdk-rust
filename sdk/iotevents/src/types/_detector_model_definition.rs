@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorModelDefinition {
     /// <p>Information about the states of the detector.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    #[doc(hidden)]
     pub initial_state_name: ::std::option::Option<::std::string::String>,
 }
 impl DetectorModelDefinition {

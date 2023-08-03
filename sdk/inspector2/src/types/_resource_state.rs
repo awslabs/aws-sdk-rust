@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
-    #[doc(hidden)]
     pub ec2: ::std::option::Option<crate::types::State>,
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
-    #[doc(hidden)]
     pub ecr: ::std::option::Option<crate::types::State>,
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::State>,
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
-    #[doc(hidden)]
     pub lambda_code: ::std::option::Option<crate::types::State>,
 }
 impl ResourceState {

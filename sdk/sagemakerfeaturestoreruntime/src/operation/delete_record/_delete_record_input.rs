@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecordInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    #[doc(hidden)]
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub target_stores: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
-    #[doc(hidden)]
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageHeaderConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-    #[doc(hidden)]
     pub alignment: ::std::option::Option<crate::types::Alignment>,
     /// <p>Message Header.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<::std::string::String>,
     /// <p>The text color.</p>
-    #[doc(hidden)]
     pub text_color: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageHeaderConfig {

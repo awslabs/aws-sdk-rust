@@ -6,10 +6,8 @@
 pub struct GetAccessKeyLastUsedOutput {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the last time the access key was used.</p>
-    #[doc(hidden)]
     pub access_key_last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
     _request_id: Option<String>,
 }

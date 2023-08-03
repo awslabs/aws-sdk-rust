@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
     #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The service principal that created the attribute group.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl AttributeGroupDetails {

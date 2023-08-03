@@ -4,62 +4,45 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceAttributeInput {
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>The name of the attribute to modify.</p> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code> </p>
     /// </important>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>>,
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
-    #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    #[doc(hidden)]
     pub ena_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
-    #[doc(hidden)]
     pub kernel: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
-    #[doc(hidden)]
     pub ramdisk: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the instance.</p>
     /// <p>There is no way to disable enhanced networking with the Intel 82599 Virtual Function interface at this time.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    #[doc(hidden)]
     pub sriov_net_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<crate::types::BlobAttributeValue>,
     /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifyInstanceAttributeInput {

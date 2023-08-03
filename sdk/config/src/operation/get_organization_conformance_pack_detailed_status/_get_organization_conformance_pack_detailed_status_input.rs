@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationConformancePackDetailedStatusInput {

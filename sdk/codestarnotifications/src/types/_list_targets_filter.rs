@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ListTargetsFilterName>,
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ListTargetsFilter {

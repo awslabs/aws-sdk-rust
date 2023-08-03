@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl UpdateDirectConnectGatewayAssociationInput {

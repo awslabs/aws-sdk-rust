@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageConnector {
     /// <p>The type of storage connector.</p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     /// <p>The ARN of the storage connector.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names of the domains for the account.</p>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageConnector {

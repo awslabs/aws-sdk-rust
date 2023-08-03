@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobV2Input {
     /// <p>Requests information about an AutoML job V2 using its unique name.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAutoMlJobV2Input {

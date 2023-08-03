@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetRepositoryPolicyOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name that's associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON repository policy text that's applied to the repository.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

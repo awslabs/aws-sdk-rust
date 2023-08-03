@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceCredentialsInfo {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
-    #[doc(hidden)]
     pub server_type: ::std::option::Option<crate::types::ServerType>,
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
 impl SourceCredentialsInfo {

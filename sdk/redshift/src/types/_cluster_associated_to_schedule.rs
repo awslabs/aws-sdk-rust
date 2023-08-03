@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterAssociatedToSchedule {
     /// <p></p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub schedule_association_state: ::std::option::Option<crate::types::ScheduleState>,
 }
 impl ClusterAssociatedToSchedule {

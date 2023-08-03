@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionSummary {
     /// <p>The ID of the task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the execution.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the execution.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExecutionState>,
 }
 impl ExecutionSummary {

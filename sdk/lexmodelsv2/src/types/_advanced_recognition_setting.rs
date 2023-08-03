@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
-    #[doc(hidden)]
     pub audio_recognition_strategy: ::std::option::Option<crate::types::AudioRecognitionStrategy>,
 }
 impl AdvancedRecognitionSetting {

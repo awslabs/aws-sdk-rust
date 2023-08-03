@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SuggestStatus>,
     /// <p>Container for the matching search suggestion information.</p>
-    #[doc(hidden)]
     pub suggest: ::std::option::Option<crate::types::SuggestModel>,
     _request_id: Option<String>,
 }

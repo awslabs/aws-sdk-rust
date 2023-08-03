@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The timestamp of the event.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EventType>,
     /// <p>The event data.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl Event {

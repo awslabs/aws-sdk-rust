@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of content to upload.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl StartContentUploadInput {

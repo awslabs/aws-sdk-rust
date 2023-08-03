@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingInput {
     /// <p>The name for the processing job input.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>True</code>, input operations such as data download are managed natively by the processing job application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.</p>
-    #[doc(hidden)]
     pub app_managed: bool,
     /// <p>Configuration for downloading input data from Amazon S3 into the processing container.</p>
-    #[doc(hidden)]
     pub s3_input: ::std::option::Option<crate::types::ProcessingS3Input>,
     /// <p>Configuration for a Dataset Definition input. </p>
-    #[doc(hidden)]
     pub dataset_definition: ::std::option::Option<crate::types::DatasetDefinition>,
 }
 impl ProcessingInput {

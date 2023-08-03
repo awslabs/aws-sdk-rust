@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeConfiguration {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    #[doc(hidden)]
     pub included_data: ::std::option::Option<crate::types::EventIncludedData>,
 }
 impl EventBridgeConfiguration {

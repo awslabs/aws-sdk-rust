@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputClippingSettings {
     /// The source of the timecodes in the source being clipped.
-    #[doc(hidden)]
     pub input_timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     /// Settings to identify the start of the clip.
-    #[doc(hidden)]
     pub start_timecode: ::std::option::Option<crate::types::StartTimecode>,
     /// Settings to identify the end of the clip.
-    #[doc(hidden)]
     pub stop_timecode: ::std::option::Option<crate::types::StopTimecode>,
 }
 impl InputClippingSettings {

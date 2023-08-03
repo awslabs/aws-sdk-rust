@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FastLaunchConfiguration {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfiguration>,
     /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
-    #[doc(hidden)]
     pub max_parallel_launches: ::std::option::Option<i32>,
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecification>,
     /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl FastLaunchConfiguration {

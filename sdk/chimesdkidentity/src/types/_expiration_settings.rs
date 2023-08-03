@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpirationSettings {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
-    #[doc(hidden)]
     pub expiration_days: ::std::option::Option<i32>,
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    #[doc(hidden)]
     pub expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
 }
 impl ExpirationSettings {

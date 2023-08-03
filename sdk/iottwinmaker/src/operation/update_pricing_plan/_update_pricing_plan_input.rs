@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanInput {
     /// <p>The pricing mode.</p>
-    #[doc(hidden)]
     pub pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     /// <p>The bundle names.</p>
-    #[doc(hidden)]
     pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdatePricingPlanInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the shadow.</p>
-    #[doc(hidden)]
     pub shadow_name: ::std::option::Option<::std::string::String>,
     /// <p>The state information, in JSON format.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateThingShadowInput {

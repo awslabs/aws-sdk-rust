@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterInput {
     /// <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -13,7 +12,6 @@ pub struct CreateDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -23,28 +21,21 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster parameter group to associate with this cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this cluster. </p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A subnet group to associate with this cluster.</p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this cluster.</p>
     /// <p>Valid values: <code>docdb</code> </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use. The <code>--engine-version</code> will default to the latest major engine version. For production workloads, we recommend explicitly declaring this parameter with the intended major engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the instances in the cluster accept connections.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
@@ -53,11 +44,9 @@ pub struct CreateDbClusterInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word for the chosen database engine. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
@@ -68,20 +57,16 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window. </p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether the cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The KMS key identifier for an encrypted cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -90,19 +75,14 @@ pub struct CreateDbClusterInput {
     /// <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported. </p>
-    #[doc(hidden)]
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>. </p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The cluster identifier of the new global cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {

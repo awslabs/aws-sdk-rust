@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceImportTask {
     /// <p>The ID of the wireless device import task.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the wireless device import task.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
     /// <p>The time at which the import task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status information of the wireless device import task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImportTaskStatus>,
     /// <p>The reason that provides additional information about the import task status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>
-    #[doc(hidden)]
     pub initialized_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>
-    #[doc(hidden)]
     pub pending_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>
-    #[doc(hidden)]
     pub onboarded_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>
-    #[doc(hidden)]
     pub failed_imported_device_count: ::std::option::Option<i64>,
 }
 impl WirelessDeviceImportTask {

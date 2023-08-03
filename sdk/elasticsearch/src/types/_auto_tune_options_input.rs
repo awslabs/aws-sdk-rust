@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsInput {
     /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    #[doc(hidden)]
     pub maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
 }
 impl AutoTuneOptionsInput {

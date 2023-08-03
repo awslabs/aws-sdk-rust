@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMessageInput {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
 }
 impl BatchPutMessageInput {

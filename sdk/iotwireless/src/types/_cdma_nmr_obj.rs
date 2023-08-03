@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaNmrObj {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    #[doc(hidden)]
     pub pn_offset: ::std::option::Option<i32>,
     /// <p>CDMA channel information.</p>
-    #[doc(hidden)]
     pub cdma_channel: ::std::option::Option<i32>,
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub pilot_power: ::std::option::Option<i32>,
     /// <p>CDMA base station ID (BSID).</p>
-    #[doc(hidden)]
     pub base_station_id: ::std::option::Option<i32>,
 }
 impl CdmaNmrObj {

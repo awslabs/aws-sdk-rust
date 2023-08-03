@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginItem {
     /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the origin or origin group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin.</p>
-    #[doc(hidden)]
     pub origin_path: ::std::option::Option<::std::string::String>,
     /// <p>An origin that is an S3 bucket that is not configured with static website hosting.</p>
-    #[doc(hidden)]
     pub s3_origin_config: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginS3OriginConfig>,
     /// <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead. </p>
-    #[doc(hidden)]
     pub custom_origin_config: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>,
 }
 impl AwsCloudFrontDistributionOriginItem {

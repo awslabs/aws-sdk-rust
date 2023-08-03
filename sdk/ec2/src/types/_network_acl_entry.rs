@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAclEntry {
     /// <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
-    #[doc(hidden)]
     pub egress: ::std::option::Option<bool>,
     /// <p>ICMP protocol: The ICMP type and code.</p>
-    #[doc(hidden)]
     pub icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The protocol number. A value of "-1" means all protocols.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
-    #[doc(hidden)]
     pub rule_number: ::std::option::Option<i32>,
 }
 impl NetworkAclEntry {

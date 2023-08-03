@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableProcessorFeature {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default value for the processor feature of the DB instance class.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
 }
 impl AvailableProcessorFeature {

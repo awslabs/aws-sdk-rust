@@ -94,10 +94,8 @@ pub struct DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::DeviceFilterAttribute>,
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::RuleOperator>,
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"> <b>Operator Values</b> </p>
@@ -112,7 +110,6 @@ pub struct DeviceFilter {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeviceFilter {

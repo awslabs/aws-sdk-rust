@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyGroupOutput {
     /// <p>The key group that was just created.</p>
-    #[doc(hidden)]
     pub key_group: ::std::option::Option<crate::types::KeyGroup>,
     /// <p>The URL of the key group.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for this version of the key group.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

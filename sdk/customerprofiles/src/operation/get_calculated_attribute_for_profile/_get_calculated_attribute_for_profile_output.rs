@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculatedAttributeForProfileOutput {
     /// <p>The unique name of the calculated attribute.</p>
-    #[doc(hidden)]
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the calculated attribute.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    #[doc(hidden)]
     pub is_data_partial: ::std::option::Option<::std::string::String>,
     /// <p>The value of the calculated attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

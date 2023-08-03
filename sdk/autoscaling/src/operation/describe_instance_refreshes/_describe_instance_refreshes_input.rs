@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more instance refresh IDs.</p>
-    #[doc(hidden)]
     pub instance_refresh_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeInstanceRefreshesInput {

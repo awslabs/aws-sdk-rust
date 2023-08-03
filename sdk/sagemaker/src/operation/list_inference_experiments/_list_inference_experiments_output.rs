@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceExperimentsOutput {
     /// <p>List of inference experiments.</p>
-    #[doc(hidden)]
     pub inference_experiments: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
     /// <p>The token to use when calling the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

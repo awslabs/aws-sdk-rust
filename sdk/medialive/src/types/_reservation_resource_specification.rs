@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationResourceSpecification {
     /// Channel class, e.g. 'STANDARD'
-    #[doc(hidden)]
     pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// Codec, e.g. 'AVC'
-    #[doc(hidden)]
     pub codec: ::std::option::Option<crate::types::ReservationCodec>,
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
-    #[doc(hidden)]
     pub maximum_bitrate: ::std::option::Option<crate::types::ReservationMaximumBitrate>,
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
-    #[doc(hidden)]
     pub maximum_framerate: ::std::option::Option<crate::types::ReservationMaximumFramerate>,
     /// Resolution, e.g. 'HD'
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<crate::types::ReservationResolution>,
     /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ReservationResourceType>,
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
-    #[doc(hidden)]
     pub special_feature: ::std::option::Option<crate::types::ReservationSpecialFeature>,
     /// Video quality, e.g. 'STANDARD' (Outputs only)
-    #[doc(hidden)]
     pub video_quality: ::std::option::Option<crate::types::ReservationVideoQuality>,
 }
 impl ReservationResourceSpecification {

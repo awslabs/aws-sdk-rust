@@ -11,7 +11,6 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_used_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -28,7 +26,6 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl AccessKeyLastUsed {

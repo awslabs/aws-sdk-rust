@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    #[doc(hidden)]
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>The names of one or more Amazon Web Services Regions where you want to create stack instances using the specified Amazon Web Services accounts.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
@@ -27,16 +23,13 @@ pub struct CreateStackInstancesInput {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
-    #[doc(hidden)]
     pub parameter_overrides: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    #[doc(hidden)]
     pub operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -44,7 +37,6 @@ pub struct CreateStackInstancesInput {
     /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
     /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl CreateStackInstancesInput {

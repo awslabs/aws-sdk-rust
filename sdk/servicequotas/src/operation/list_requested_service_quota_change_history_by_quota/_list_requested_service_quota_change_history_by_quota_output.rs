@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quota increase requests.</p>
-    #[doc(hidden)]
     pub requested_quotas: ::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>>,
     _request_id: Option<String>,
 }

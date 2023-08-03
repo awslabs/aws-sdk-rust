@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values to use for the jobs filter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator to use for the jobs filter.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::SearchJobsFilterOperator>,
 }
 impl SearchJobsFilter {

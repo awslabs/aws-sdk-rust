@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartFieldWells {
     /// <p>The field well configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub waterfall_chart_aggregated_field_wells: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
 }
 impl WaterfallChartFieldWells {

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>,
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-    #[doc(hidden)]
     pub participant_token: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
-    #[doc(hidden)]
     pub connect_participant: ::std::option::Option<bool>,
 }
 impl CreateParticipantConnectionInput {

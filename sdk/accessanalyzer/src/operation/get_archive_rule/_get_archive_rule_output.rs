@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
-    #[doc(hidden)]
     pub archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,
 }

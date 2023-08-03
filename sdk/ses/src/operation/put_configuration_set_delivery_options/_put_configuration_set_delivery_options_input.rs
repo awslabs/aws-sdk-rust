@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    #[doc(hidden)]
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
 }
 impl PutConfigurationSetDeliveryOptionsInput {

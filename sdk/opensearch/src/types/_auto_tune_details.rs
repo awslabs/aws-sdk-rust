@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneDetails {
     /// <p>Container for details about a scheduled Auto-Tune action.</p>
-    #[doc(hidden)]
     pub scheduled_auto_tune_details: ::std::option::Option<crate::types::ScheduledAutoTuneDetails>,
 }
 impl AutoTuneDetails {

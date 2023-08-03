@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJournalS3ExportsOutput {
     /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    #[doc(hidden)]
     pub journal_s3_exports: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

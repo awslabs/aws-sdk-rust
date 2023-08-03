@@ -5,10 +5,8 @@
 pub struct ModifyClusterDbRevisionInput {
     /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
     /// <p>Example: <code>examplecluster</code> </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
-    #[doc(hidden)]
     pub revision_target: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterDbRevisionInput {

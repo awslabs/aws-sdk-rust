@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
     /// <p>The status of the deployment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentLifecycle>,
     /// <p>The reason for the reported status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeployedVersionSummary {

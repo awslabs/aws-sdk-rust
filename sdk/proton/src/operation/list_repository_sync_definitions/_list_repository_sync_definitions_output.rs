@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsOutput {
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of repository sync definitions.</p>
-    #[doc(hidden)]
     pub sync_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
     _request_id: Option<String>,
 }

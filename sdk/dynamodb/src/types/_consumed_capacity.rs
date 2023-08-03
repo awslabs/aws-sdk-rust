@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsumedCapacity {
     /// <p>The name of the table that was affected by the operation.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of capacity units consumed by the operation.</p>
-    #[doc(hidden)]
     pub capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of read capacity units consumed by the operation.</p>
-    #[doc(hidden)]
     pub read_capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of write capacity units consumed by the operation.</p>
-    #[doc(hidden)]
     pub write_capacity_units: ::std::option::Option<f64>,
     /// <p>The amount of throughput consumed on the table affected by the operation.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::Capacity>,
     /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
-    #[doc(hidden)]
     pub local_secondary_indexes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Capacity>>,
     /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Capacity>>,
 }
 impl ConsumedCapacity {

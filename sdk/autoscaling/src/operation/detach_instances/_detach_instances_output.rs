@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachInstancesOutput {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
 }

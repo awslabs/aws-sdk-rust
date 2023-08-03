@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsOutput {
     /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
-    #[doc(hidden)]
     pub inference_recommendations_jobs: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJob>>,
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

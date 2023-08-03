@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSchemaSummary {
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of schema version summaries.</p>
-    #[doc(hidden)]
     pub schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
 }
 impl SearchSchemaSummary {

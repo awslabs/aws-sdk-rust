@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
-    #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
-    #[doc(hidden)]
     pub invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendNotificationActionDefinition {
     /// <p>Notification delivery method.</p>
-    #[doc(hidden)]
     pub delivery_method: ::std::option::Option<crate::types::NotificationDeliveryType>,
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Content type format.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::NotificationContentType>,
     /// <p>Notification recipient.</p>
-    #[doc(hidden)]
     pub recipient: ::std::option::Option<crate::types::NotificationRecipientType>,
 }
 impl SendNotificationActionDefinition {

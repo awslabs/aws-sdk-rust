@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRoleAliasInput {
     /// <p>The role alias to describe.</p>
-    #[doc(hidden)]
     pub role_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRoleAliasInput {

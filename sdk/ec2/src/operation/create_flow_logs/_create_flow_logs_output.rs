@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowLogsOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the flow logs.</p>
-    #[doc(hidden)]
     pub flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the flow logs that could not be created successfully.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }

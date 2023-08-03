@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataCellsFilterInput {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    #[doc(hidden)]
     pub table_data: ::std::option::Option<crate::types::DataCellsFilter>,
 }
 impl UpdateDataCellsFilterInput {

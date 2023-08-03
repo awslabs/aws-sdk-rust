@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions that you want to grant on this resource.</p>
-    #[doc(hidden)]
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The permissions that you want to revoke from this resource.</p>
-    #[doc(hidden)]
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    #[doc(hidden)]
     pub grant_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    #[doc(hidden)]
     pub revoke_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDashboardPermissionsInput {

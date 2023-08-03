@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
     /// <p> The day of the week on which the maintenance window falls. </p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<::std::string::String>,
     /// <p> The time, in 24-hour format, on which the maintenance window falls. </p>
-    #[doc(hidden)]
     pub time_of_day: ::std::option::Option<::std::string::String>,
     /// <p> The time zone in either the Country/City format or the UTC offset format. UTC is the default format. </p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
 impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {

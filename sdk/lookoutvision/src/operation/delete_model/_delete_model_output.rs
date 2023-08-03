@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

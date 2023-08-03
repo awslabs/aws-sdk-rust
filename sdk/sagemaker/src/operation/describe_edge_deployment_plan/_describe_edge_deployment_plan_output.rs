@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEdgeDeploymentPlanOutput {
     /// <p>The ARN of edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of models associated with the edge deployment plan.</p>
-    #[doc(hidden)]
     pub model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     /// <p>The device fleet used for this edge deployment plan.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of edge devices with the successful deployment.</p>
-    #[doc(hidden)]
     pub edge_deployment_success: i32,
     /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
-    #[doc(hidden)]
     pub edge_deployment_pending: i32,
     /// <p>The number of edge devices that failed the deployment.</p>
-    #[doc(hidden)]
     pub edge_deployment_failed: i32,
     /// <p>List of stages in the edge deployment plan.</p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
     /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The time when the edge deployment plan was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the edge deployment plan was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSource {
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-    #[doc(hidden)]
     pub recommendation_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the recommendation source.</p>
-    #[doc(hidden)]
     pub recommendation_source_type: ::std::option::Option<crate::types::RecommendationSourceType>,
 }
 impl RecommendationSource {

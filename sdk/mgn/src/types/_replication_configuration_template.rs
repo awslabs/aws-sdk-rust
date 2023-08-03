@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReplicationConfigurationTemplate {
     /// <p>Replication Configuration template ID.</p>
-    #[doc(hidden)]
     pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    #[doc(hidden)]
     pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-    #[doc(hidden)]
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
-    #[doc(hidden)]
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
-    #[doc(hidden)]
     pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    #[doc(hidden)]
     pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
-    #[doc(hidden)]
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    #[doc(hidden)]
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration template bandwidth throttling.</p>
-    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
-    #[doc(hidden)]
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
-    #[doc(hidden)]
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    #[doc(hidden)]
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Replication Configuration template use Fips Endpoint.</p>
-    #[doc(hidden)]
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Replication Configuration template Tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReplicationConfigurationTemplate {

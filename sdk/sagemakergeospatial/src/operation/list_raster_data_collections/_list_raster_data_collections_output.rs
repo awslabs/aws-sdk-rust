@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
-    #[doc(hidden)]
     pub raster_data_collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

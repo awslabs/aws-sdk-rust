@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheCluster {
     /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
     /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
-    #[doc(hidden)]
     pub configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
-    #[doc(hidden)]
     pub client_download_landing_page: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -43,29 +40,21 @@ pub struct CacheCluster {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the cache engine that is used in this cluster.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
-    #[doc(hidden)]
     pub cache_cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache nodes in the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
-    #[doc(hidden)]
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
-    #[doc(hidden)]
     pub preferred_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The outpost ARN in which the cache cluster is created.</p>
-    #[doc(hidden)]
     pub preferred_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    #[doc(hidden)]
     pub cache_cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -79,79 +68,57 @@ pub struct CacheCluster {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    #[doc(hidden)]
     pub cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
     /// <p>Status of the cache parameter group.</p>
-    #[doc(hidden)]
     pub cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroupStatus>,
     /// <p>The name of the cache subnet group associated with the cluster.</p>
-    #[doc(hidden)]
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache nodes that are members of the cluster.</p>
-    #[doc(hidden)]
     pub cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
     /// <p> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     /// </important>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    #[doc(hidden)]
     pub auth_token_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
-    #[doc(hidden)]
     pub replication_group_log_delivery_enabled: bool,
     /// <p>Returns the destination, format and type of the logs.</p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    #[doc(hidden)]
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
 }
 impl CacheCluster {

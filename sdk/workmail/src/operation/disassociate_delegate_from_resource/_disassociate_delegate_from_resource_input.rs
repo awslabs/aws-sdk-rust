@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDelegateFromResourceInput {

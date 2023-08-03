@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoMlJobV2Output {
     /// <p>The unique ARN assigned to the AutoMLJob when it is created.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

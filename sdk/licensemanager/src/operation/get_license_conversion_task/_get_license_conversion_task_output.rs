@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseConversionTaskOutput {
     /// <p>ID of the license type conversion task.</p>
-    #[doc(hidden)]
     pub license_conversion_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the license type converted from.</p>
-    #[doc(hidden)]
     pub source_license_context: ::std::option::Option<crate::types::LicenseConversionContext>,
     /// <p>Information about the license type converted to.</p>
-    #[doc(hidden)]
     pub destination_license_context: ::std::option::Option<crate::types::LicenseConversionContext>,
     /// <p>The status message for the conversion task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Status of the license type conversion task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LicenseConversionTaskStatus>,
     /// <p>Time at which the license type conversion task was started .</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amount of time to complete the license type conversion.</p>
-    #[doc(hidden)]
     pub license_conversion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time at which the license type conversion task was completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

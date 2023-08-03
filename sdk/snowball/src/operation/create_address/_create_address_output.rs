@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAddressOutput {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

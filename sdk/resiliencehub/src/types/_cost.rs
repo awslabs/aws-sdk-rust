@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cost {
     /// <p>The cost amount.</p>
-    #[doc(hidden)]
     pub amount: f64,
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<::std::string::String>,
     /// <p>The cost frequency.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::CostFrequency>,
 }
 impl Cost {

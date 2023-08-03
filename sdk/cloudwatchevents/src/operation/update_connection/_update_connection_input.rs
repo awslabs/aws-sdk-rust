@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The name of the connection to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the connection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of authorization to use for the connection.</p>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>The authorization parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub auth_parameters: ::std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
 }
 impl UpdateConnectionInput {

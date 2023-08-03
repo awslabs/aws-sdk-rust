@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTablesOutput {
     /// <p>A list of tables.</p>
-    #[doc(hidden)]
     pub tables: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskActionDefinition {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
-    #[doc(hidden)]
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
-    #[doc(hidden)]
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
 }
 impl TaskActionDefinition {

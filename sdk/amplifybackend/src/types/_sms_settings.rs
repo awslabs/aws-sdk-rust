@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsSettings {
     /// <p>The contents of the SMS message.</p>
-    #[doc(hidden)]
     pub sms_message: ::std::option::Option<::std::string::String>,
 }
 impl SmsSettings {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityAllocation {
     /// <p>The status of the capacity allocation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CapacityAllocationStatus>,
     /// <p>The status message of the capacity allocation.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the capacity allocation was requested.</p>
-    #[doc(hidden)]
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the capacity allocation request was completed.</p>
-    #[doc(hidden)]
     pub request_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacityAllocation {

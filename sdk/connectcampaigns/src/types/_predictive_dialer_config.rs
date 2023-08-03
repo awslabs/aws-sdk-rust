@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
-    #[doc(hidden)]
     pub bandwidth_allocation: ::std::option::Option<f64>,
 }
 impl PredictiveDialerConfig {

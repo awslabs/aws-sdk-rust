@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceDetection {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The face properties for the detected face.</p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceDetection {

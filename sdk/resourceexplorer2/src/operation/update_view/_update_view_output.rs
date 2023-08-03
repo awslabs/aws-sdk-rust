@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateViewOutput {
     /// <p>Details about the view that you changed with this operation.</p>
-    #[doc(hidden)]
     pub view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,
 }

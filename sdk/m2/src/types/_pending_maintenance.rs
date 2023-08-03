@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenance {
     /// <p>The maintenance schedule for the runtime engine version.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenance {

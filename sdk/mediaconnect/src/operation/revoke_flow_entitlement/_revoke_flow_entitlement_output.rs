@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeFlowEntitlementOutput {
     /// The ARN of the entitlement that was revoked.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the flow that the entitlement was revoked from.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

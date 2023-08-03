@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskInput {

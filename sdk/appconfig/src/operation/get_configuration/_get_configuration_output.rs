@@ -6,13 +6,10 @@ pub struct GetConfigurationOutput {
     /// <p>The content of the configuration or the configuration data.</p> <important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The configuration version.</p>
-    #[doc(hidden)]
     pub configuration_version: ::std::option::Option<::std::string::String>,
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

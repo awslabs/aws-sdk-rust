@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHsmConfigurationInput {
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A text description of the HSM configuration to be created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    #[doc(hidden)]
     pub hsm_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    #[doc(hidden)]
     pub hsm_partition_name: ::std::option::Option<::std::string::String>,
     /// <p>The password required to access the HSM partition.</p>
-    #[doc(hidden)]
     pub hsm_partition_password: ::std::option::Option<::std::string::String>,
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
-    #[doc(hidden)]
     pub hsm_server_public_certificate: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHsmConfigurationInput {

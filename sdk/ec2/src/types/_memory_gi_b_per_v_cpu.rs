@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryGiBPerVCpu {
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no minimum limit.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no maximum limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
 }
 impl MemoryGiBPerVCpu {

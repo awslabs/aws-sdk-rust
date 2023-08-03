@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticGpuAssociation {
     /// <p>The ID of the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub elastic_gpu_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association between the instance and the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_association_state: ::std::option::Option<::std::string::String>,
     /// <p>The time the Elastic Graphics accelerator was associated with the instance.</p>
-    #[doc(hidden)]
     pub elastic_gpu_association_time: ::std::option::Option<::std::string::String>,
 }
 impl ElasticGpuAssociation {

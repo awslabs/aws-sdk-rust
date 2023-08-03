@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
-    #[doc(hidden)]
     pub key_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ListDistributionsByKeyGroupInput {

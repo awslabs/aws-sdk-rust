@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceDeletion {
     /// <p> A unique identifier assigned to the face.</p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p> A provided ID for the UserID. Unique within the collection. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the deletion was unsuccessful. </p>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletionReason>>,
 }
 impl UnsuccessfulFaceDeletion {

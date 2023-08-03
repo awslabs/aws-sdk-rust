@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDhcpOptionsInput {
     /// <p>A DHCP configuration option.</p>
-    #[doc(hidden)]
     pub dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
     /// <p>The tags to assign to the DHCP option.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateDhcpOptionsInput {

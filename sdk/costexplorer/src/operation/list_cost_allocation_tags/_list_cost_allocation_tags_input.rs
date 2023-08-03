@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsInput {
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCostAllocationTagsInput {

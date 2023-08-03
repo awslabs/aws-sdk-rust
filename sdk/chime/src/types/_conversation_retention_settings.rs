@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationRetentionSettings {
     /// <p>The number of days for which to retain conversation messages.</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
 }
 impl ConversationRetentionSettings {

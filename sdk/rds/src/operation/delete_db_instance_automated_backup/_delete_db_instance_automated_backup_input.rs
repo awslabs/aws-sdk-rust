@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceAutomatedBackupInput {
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbInstanceAutomatedBackupInput {

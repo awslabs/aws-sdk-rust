@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingHistoryUpdate {
     /// <p> The ASFF field that changed during the finding change event. </p>
-    #[doc(hidden)]
     pub updated_field: ::std::option::Option<::std::string::String>,
     /// <p> The value of the ASFF field before the finding change event. </p>
-    #[doc(hidden)]
     pub old_value: ::std::option::Option<::std::string::String>,
     /// <p> The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits. </p>
-    #[doc(hidden)]
     pub new_value: ::std::option::Option<::std::string::String>,
 }
 impl FindingHistoryUpdate {

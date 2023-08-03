@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceBundleInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages to the channel.</p>
-    #[doc(hidden)]
     pub batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }

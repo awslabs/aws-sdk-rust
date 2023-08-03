@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
-    #[doc(hidden)]
     pub eula_acceptances: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
     _request_id: Option<String>,
 }

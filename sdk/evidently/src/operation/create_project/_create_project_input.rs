@@ -4,25 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name for the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
-    #[doc(hidden)]
     pub data_delivery: ::std::option::Option<crate::types::ProjectDataDeliveryConfig>,
     /// <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>
     /// <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>
     /// <p>To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
-    #[doc(hidden)]
     pub app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
     /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a project.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInput {

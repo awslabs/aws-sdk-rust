@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationModeConfiguration {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl EvaluationModeConfiguration {

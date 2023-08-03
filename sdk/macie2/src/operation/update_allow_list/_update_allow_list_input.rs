@@ -5,16 +5,12 @@
 pub struct UpdateAllowListInput {
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<crate::types::AllowListCriteria>,
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAllowListInput {

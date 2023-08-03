@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
-    #[doc(hidden)]
     pub column_type: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when column statistics were generated.</p>
-    #[doc(hidden)]
     pub analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
-    #[doc(hidden)]
     pub statistics_data: ::std::option::Option<crate::types::ColumnStatisticsData>,
 }
 impl ColumnStatistics {

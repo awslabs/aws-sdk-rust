@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionInput {
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateFaceLivenessSessionInput {

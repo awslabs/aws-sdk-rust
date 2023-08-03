@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationAction {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::NotificationTargetActions>,
     /// <p>Contains the configuration information of SMS notifications.</p>
-    #[doc(hidden)]
     pub sms_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,
     /// <p>Contains the configuration information of email notifications.</p>
-    #[doc(hidden)]
     pub email_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>>,
 }
 impl NotificationAction {

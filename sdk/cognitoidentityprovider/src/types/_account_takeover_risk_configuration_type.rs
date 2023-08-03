@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountTakeoverRiskConfigurationType {
     /// <p>The notify configuration used to construct email notifications.</p>
-    #[doc(hidden)]
     pub notify_configuration: ::std::option::Option<crate::types::NotifyConfigurationType>,
     /// <p>Account takeover risk configuration actions.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<crate::types::AccountTakeoverActionsType>,
 }
 impl AccountTakeoverRiskConfigurationType {

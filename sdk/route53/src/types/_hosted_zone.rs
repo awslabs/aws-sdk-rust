@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::HostedZoneConfig>,
     /// <p>The number of resource record sets in the hosted zone.</p>
-    #[doc(hidden)]
     pub resource_record_set_count: ::std::option::Option<i64>,
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
-    #[doc(hidden)]
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
 }
 impl HostedZone {

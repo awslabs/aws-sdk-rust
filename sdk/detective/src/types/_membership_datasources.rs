@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MembershipDatasources {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details on when a data source package was added to a behavior graph.</p>
-    #[doc(hidden)]
     pub datasource_package_ingest_history: ::std::option::Option<
         ::std::collections::HashMap<
             crate::types::DatasourcePackage,

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the maximum number of ML models to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of the ML model. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>The beginning of the name of the ML models being listed. </p>
-    #[doc(hidden)]
     pub model_name_begins_with: ::std::option::Option<::std::string::String>,
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    #[doc(hidden)]
     pub dataset_name_begins_with: ::std::option::Option<::std::string::String>,
 }
 impl ListModelsInput {

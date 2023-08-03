@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
-    #[doc(hidden)]
     pub instance_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>>,
     _request_id: Option<String>,
 }

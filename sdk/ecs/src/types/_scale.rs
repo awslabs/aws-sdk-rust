@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scale {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
-    #[doc(hidden)]
     pub value: f64,
     /// <p>The unit of measure for the scale value.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::ScaleUnit>,
 }
 impl Scale {

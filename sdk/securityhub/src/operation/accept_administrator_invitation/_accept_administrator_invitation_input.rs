@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationInput {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    #[doc(hidden)]
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptAdministratorInvitationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActivitySucceededEventDetails {
     /// <p>The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl ActivitySucceededEventDetails {

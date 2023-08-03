@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
-    #[doc(hidden)]
     pub max_requests: i32,
 }
 impl VirtualNodeGrpcConnectionPool {

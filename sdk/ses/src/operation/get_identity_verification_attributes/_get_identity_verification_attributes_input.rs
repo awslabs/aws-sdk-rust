@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesInput {
     /// <p>A list of identities.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityVerificationAttributesInput {

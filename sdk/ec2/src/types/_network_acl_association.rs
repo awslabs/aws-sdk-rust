@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAclAssociation {
     /// <p>The ID of the association between a network ACL and a subnet.</p>
-    #[doc(hidden)]
     pub network_acl_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAclAssociation {

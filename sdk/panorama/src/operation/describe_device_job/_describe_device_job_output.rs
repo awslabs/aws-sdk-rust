@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceJobOutput {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's ARN.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The device's name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The device's type.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>For an OTA job, the target version of the device software.</p>
-    #[doc(hidden)]
     pub image_version: ::std::option::Option<::std::string::String>,
     /// <p>The job's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateProgress>,
     /// <p>When the job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's type.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     _request_id: Option<String>,
 }

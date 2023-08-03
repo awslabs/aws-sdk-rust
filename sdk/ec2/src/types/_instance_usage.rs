@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceUsage {
     /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub used_instance_count: ::std::option::Option<i32>,
 }
 impl InstanceUsage {

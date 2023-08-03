@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p> The list of returned imports. </p>
-    #[doc(hidden)]
     pub imports: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>,
     /// <p> A token you can use to get the next page of import results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

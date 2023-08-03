@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
-    #[doc(hidden)]
     pub enable: ::std::option::Option<bool>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
-    #[doc(hidden)]
     pub up_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
-    #[doc(hidden)]
     pub down_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
 }
 impl LoadBasedAutoScalingConfiguration {

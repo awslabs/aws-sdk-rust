@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
     /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
@@ -15,22 +14,16 @@ pub struct UpdateLocationSmbInput {
     /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
     /// </ul>
     /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
 }
 impl UpdateLocationSmbInput {

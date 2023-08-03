@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataViewSummary {
     /// <p>The unique identifier for the Dataview.</p>
-    #[doc(hidden)]
     pub data_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the Dataview.</p>
-    #[doc(hidden)]
     pub data_view_arn: ::std::option::Option<::std::string::String>,
     /// <p>Th unique identifier for the Dataview Dataset.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub as_of_timestamp: ::std::option::Option<i64>,
     /// <p>Ordered set of column names used to partition data.</p>
-    #[doc(hidden)]
     pub partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Columns to be used for sorting the data.</p>
-    #[doc(hidden)]
     pub sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
@@ -33,22 +27,16 @@ pub struct DataViewSummary {
     /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
     /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataViewStatus>,
     /// <p>The structure with error messages.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::DataViewErrorInfo>,
     /// <p>Information about the Dataview destination.</p>
-    #[doc(hidden)]
     pub destination_type_properties: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
-    #[doc(hidden)]
     pub auto_update: bool,
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl DataViewSummary {

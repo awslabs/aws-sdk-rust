@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustInput {
     /// <p>Identifier of the trust relationship.</p>
-    #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>Updates selective authentication for the trust.</p>
-    #[doc(hidden)]
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl UpdateTrustInput {

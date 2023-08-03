@@ -10,13 +10,10 @@ pub struct GetDiscoveredResourceCountsOutput {
     /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
     /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
-    #[doc(hidden)]
     pub total_discovered_resources: i64,
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
-    #[doc(hidden)]
     pub resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

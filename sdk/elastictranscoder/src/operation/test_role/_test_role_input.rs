@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRoleInput {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
-    #[doc(hidden)]
     pub input_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    #[doc(hidden)]
     pub output_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-    #[doc(hidden)]
     pub topics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TestRoleInput {

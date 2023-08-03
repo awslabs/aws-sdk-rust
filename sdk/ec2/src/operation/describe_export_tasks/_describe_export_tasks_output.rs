@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportTasksOutput {
     /// <p>Information about the export tasks.</p>
-    #[doc(hidden)]
     pub export_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     _request_id: Option<String>,
 }

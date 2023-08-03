@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnConnectionDeviceType {
     /// <p>Customer gateway device identifier.</p>
-    #[doc(hidden)]
     pub vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device vendor.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device platform.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device software version.</p>
-    #[doc(hidden)]
     pub software: ::std::option::Option<::std::string::String>,
 }
 impl VpnConnectionDeviceType {

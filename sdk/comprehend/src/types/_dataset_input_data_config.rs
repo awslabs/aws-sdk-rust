@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetInputDataConfig {
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
-    #[doc(hidden)]
     pub augmented_manifests: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
     /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DatasetDataFormat>,
     /// <p>The input properties for training a document classifier model. </p>
     /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
-    #[doc(hidden)]
     pub document_classifier_input_data_config: ::std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
     /// <p>The input properties for training an entity recognizer model.</p>
-    #[doc(hidden)]
     pub entity_recognizer_input_data_config: ::std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
 }
 impl DatasetInputDataConfig {

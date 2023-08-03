@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    #[doc(hidden)]
     pub security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     _request_id: Option<String>,
 }

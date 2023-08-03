@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCodegenJobData {
     /// <p>The code generation configuration for the codegen job.</p>
-    #[doc(hidden)]
     pub render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
     /// <p>The data schema to use for a code generation job.</p>
-    #[doc(hidden)]
     pub generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
-    #[doc(hidden)]
     pub auto_generate_forms: ::std::option::Option<bool>,
     /// <p>The feature flags for a code generation job.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<crate::types::CodegenFeatureFlags>,
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartCodegenJobData {

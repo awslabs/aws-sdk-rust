@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanUpdateGatewayTaskCreate {
     /// <p>The signature used to verify the update firmware.</p>
-    #[doc(hidden)]
     pub update_signature: ::std::option::Option<::std::string::String>,
     /// <p>The CRC of the signature private key to check.</p>
-    #[doc(hidden)]
     pub sig_key_crc: ::std::option::Option<i64>,
     /// <p>The version of the gateways that should receive the update.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
     /// <p>The firmware version to update the gateway to.</p>
-    #[doc(hidden)]
     pub update_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
 }
 impl LoRaWanUpdateGatewayTaskCreate {

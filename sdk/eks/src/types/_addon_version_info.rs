@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonVersionInfo {
     /// <p>The version of the add-on.</p>
-    #[doc(hidden)]
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>The architectures that the version supports.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object representing the compatibilities of a version.</p>
-    #[doc(hidden)]
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>Whether the add-on requires configuration.</p>
-    #[doc(hidden)]
     pub requires_configuration: bool,
 }
 impl AddonVersionInfo {

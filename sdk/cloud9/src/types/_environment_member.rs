@@ -10,19 +10,14 @@ pub struct EnvironmentMember {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<crate::types::Permissions>,
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment for the environment member.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    #[doc(hidden)]
     pub last_access: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {

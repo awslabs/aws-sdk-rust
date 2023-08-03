@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationSoftwareSuite {
     /// <p>The name of the simulation software suite.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SimulationSoftwareSuiteType>,
     /// <p>The version of the simulation software suite.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl SimulationSoftwareSuite {

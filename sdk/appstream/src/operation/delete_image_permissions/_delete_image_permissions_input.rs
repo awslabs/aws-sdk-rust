@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImagePermissionsInput {
     /// <p>The name of the private image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImagePermissionsInput {

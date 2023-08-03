@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the location of where the select results are stored.</p>
-    #[doc(hidden)]
     pub job_output_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

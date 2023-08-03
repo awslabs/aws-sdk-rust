@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageSummary {
     /// <p> The format of the package. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -14,13 +13,10 @@ pub struct PackageSummary {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-    #[doc(hidden)]
     pub origin_configuration: ::std::option::Option<crate::types::PackageOriginConfiguration>,
 }
 impl PackageSummary {

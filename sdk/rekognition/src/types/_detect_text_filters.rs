@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectTextFilters {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
-    #[doc(hidden)]
     pub word_filter: ::std::option::Option<crate::types::DetectionFilter>,
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    #[doc(hidden)]
     pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
 }
 impl DetectTextFilters {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetParameterValueConfiguration {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    #[doc(hidden)]
     pub destination_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::DestinationParameterValueConfiguration>,
 }
 impl SetParameterValueConfiguration {

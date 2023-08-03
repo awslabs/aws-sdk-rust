@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_arn: ::std::option::Option<::std::string::String>,
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
-    #[doc(hidden)]
     pub dashboard_body: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

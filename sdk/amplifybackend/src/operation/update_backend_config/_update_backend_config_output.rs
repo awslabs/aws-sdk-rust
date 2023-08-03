@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendConfigOutput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The app ID for the backend manager.</p>
-    #[doc(hidden)]
     pub backend_manager_app_id: ::std::option::Option<::std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
-    #[doc(hidden)]
     pub login_auth_config: ::std::option::Option<crate::types::LoginAuthConfigReqObj>,
     _request_id: Option<String>,
 }

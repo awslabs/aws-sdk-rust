@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalModelSummary {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
-    #[doc(hidden)]
     pub model_source: ::std::option::Option<crate::types::ModelSource>,
 }
 impl ExternalModelSummary {

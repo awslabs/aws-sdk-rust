@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopTransformJobInput {
     /// <p>The name of the batch transform job to stop.</p>
-    #[doc(hidden)]
     pub transform_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopTransformJobInput {

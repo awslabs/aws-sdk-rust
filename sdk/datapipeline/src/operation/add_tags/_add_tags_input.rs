@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add, as key/value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryOptionType {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The recovery method for a user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::RecoveryOptionNameType>,
 }
 impl RecoveryOptionType {

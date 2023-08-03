@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
-    #[doc(hidden)]
     pub export_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {

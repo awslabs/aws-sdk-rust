@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedCloudWatchMetricsSourceDetail {
     /// <p>The name of the CloudWatch metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedCloudWatchMetricsSourceDetail {

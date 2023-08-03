@@ -4,79 +4,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackageOutput {
     /// <p>The name of the model package being described.</p>
-    #[doc(hidden)]
     pub model_package_name: ::std::option::Option<::std::string::String>,
     /// <p>If the model is a versioned model, the name of the model group that the versioned model belongs to.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model package.</p>
-    #[doc(hidden)]
     pub model_package_version: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief summary of the model package.</p>
-    #[doc(hidden)]
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp specifying when the model package was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about inference jobs that can be run with models based on this model package.</p>
-    #[doc(hidden)]
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Details about the algorithm that was used to create the model package.</p>
-    #[doc(hidden)]
     pub source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
     /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
-    #[doc(hidden)]
     pub validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     /// <p>The current status of the model package.</p>
-    #[doc(hidden)]
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>Details about the current status of the model package.</p>
-    #[doc(hidden)]
     pub model_package_status_details: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub certify_for_marketplace: bool,
     /// <p>The approval status of the model package.</p>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>Metrics for the model.</p>
-    #[doc(hidden)]
     pub model_metrics: ::std::option::Option<crate::types::ModelMetrics>,
     /// <p>The last time that the model package was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A description provided for the model approval.</p>
-    #[doc(hidden)]
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
-    #[doc(hidden)]
     pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    #[doc(hidden)]
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    #[doc(hidden)]
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     _request_id: Option<String>,
 }

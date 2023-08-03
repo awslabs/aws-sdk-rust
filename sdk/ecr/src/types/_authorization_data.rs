@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for private registry authentication using <code>docker login</code>.</p>
-    #[doc(hidden)]
     pub authorization_token: ::std::option::Option<::std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example, <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
-    #[doc(hidden)]
     pub proxy_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizationData {

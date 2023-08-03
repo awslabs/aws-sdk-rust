@@ -11,7 +11,6 @@ pub struct WindowsAuditLogCreateConfiguration {
     /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub file_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
@@ -20,7 +19,6 @@ pub struct WindowsAuditLogCreateConfiguration {
     /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub file_share_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the audit logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN, with the following requirements:</p>
@@ -31,7 +29,6 @@ pub struct WindowsAuditLogCreateConfiguration {
     /// <li> <p>If <code>AuditLogDestination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
     /// <li> <p>If <code>FileAccessAuditLogLevel</code> and <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>, you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub audit_log_destination: ::std::option::Option<::std::string::String>,
 }
 impl WindowsAuditLogCreateConfiguration {

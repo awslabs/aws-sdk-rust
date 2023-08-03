@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProjection {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    #[doc(hidden)]
     pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct AwsDynamoDbTableProjection {
     /// <li> <p> <code>INCLUDE</code> </p> </li>
     /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub projection_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableProjection {

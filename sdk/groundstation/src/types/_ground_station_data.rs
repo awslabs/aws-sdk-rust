@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroundStationData {
     /// <p>UUID of a ground station.</p>
-    #[doc(hidden)]
     pub ground_station_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a ground station.</p>
-    #[doc(hidden)]
     pub ground_station_name: ::std::option::Option<::std::string::String>,
     /// <p>Ground station Region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl GroundStationData {

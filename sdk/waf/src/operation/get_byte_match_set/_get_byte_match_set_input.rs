@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    #[doc(hidden)]
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetByteMatchSetInput {

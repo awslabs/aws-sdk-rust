@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApplicationsInput {
     /// <p>Wave ID.</p>
-    #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Application IDs list.</p>
-    #[doc(hidden)]
     pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApplicationsInput {

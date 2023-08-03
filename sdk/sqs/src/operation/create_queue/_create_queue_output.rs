@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

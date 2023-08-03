@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveKnowledgeBaseTemplateUriInput {

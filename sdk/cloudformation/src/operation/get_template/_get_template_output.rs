@@ -6,10 +6,8 @@
 pub struct GetTemplateOutput {
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    #[doc(hidden)]
     pub stages_available: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
     _request_id: Option<String>,
 }

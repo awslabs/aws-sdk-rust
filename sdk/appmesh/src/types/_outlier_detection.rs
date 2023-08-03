@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
-    #[doc(hidden)]
     pub max_server_errors: ::std::option::Option<i64>,
     /// <p>The time interval between ejection sweep analysis.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<crate::types::Duration>,
     /// <p>The base amount of time for which a host is ejected.</p>
-    #[doc(hidden)]
     pub base_ejection_duration: ::std::option::Option<crate::types::Duration>,
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
-    #[doc(hidden)]
     pub max_ejection_percent: ::std::option::Option<i32>,
 }
 impl OutlierDetection {

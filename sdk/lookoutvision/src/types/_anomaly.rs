@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Anomaly {
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
-    #[doc(hidden)]
     pub pixel_anomaly: ::std::option::Option<crate::types::PixelAnomaly>,
 }
 impl Anomaly {

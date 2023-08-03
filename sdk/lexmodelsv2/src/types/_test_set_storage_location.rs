@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetStorageLocation {
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl TestSetStorageLocation {

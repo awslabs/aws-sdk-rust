@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusAction {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the operation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event associated with this operation.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type associated with this operation.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusAction {

@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackEvaluationFilters {
     /// <p>Filters the results by Config rule names.</p>
-    #[doc(hidden)]
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by resource IDs.</p> <note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConformancePackEvaluationFilters {

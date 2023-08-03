@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsFilter {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    #[doc(hidden)]
     pub filtered_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     /// <p>Used for filtering by a specific topic preference.</p>
-    #[doc(hidden)]
     pub topic_filter: ::std::option::Option<crate::types::TopicFilter>,
 }
 impl ListContactsFilter {

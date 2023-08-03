@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the upgrade target database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub auto_upgrade: bool,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    #[doc(hidden)]
     pub is_major_version_upgrade: bool,
 }
 impl UpgradeTarget {

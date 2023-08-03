@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

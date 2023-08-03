@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -14,13 +13,10 @@ pub struct PackageDescription {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The package origin configuration for the package.</p>
-    #[doc(hidden)]
     pub origin_configuration: ::std::option::Option<crate::types::PackageOriginConfiguration>,
 }
 impl PackageDescription {

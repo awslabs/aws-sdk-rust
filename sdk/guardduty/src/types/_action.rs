@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The GuardDuty finding activity type.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
-    #[doc(hidden)]
     pub aws_api_call_action: ::std::option::Option<crate::types::AwsApiCallAction>,
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
-    #[doc(hidden)]
     pub dns_request_action: ::std::option::Option<crate::types::DnsRequestAction>,
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
-    #[doc(hidden)]
     pub network_connection_action: ::std::option::Option<crate::types::NetworkConnectionAction>,
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
-    #[doc(hidden)]
     pub port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
-    #[doc(hidden)]
     pub kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    #[doc(hidden)]
     pub rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl Action {

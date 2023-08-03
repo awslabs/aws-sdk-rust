@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The user that started the engagement.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<::std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_subject: ::std::option::Option<::std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_content: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the incident that the engagement is part of.</p>
-    #[doc(hidden)]
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl StartEngagementInput {

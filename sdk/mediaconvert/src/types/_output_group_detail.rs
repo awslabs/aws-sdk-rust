@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroupDetail {
     /// Details about the output
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
 }
 impl OutputGroupDetail {

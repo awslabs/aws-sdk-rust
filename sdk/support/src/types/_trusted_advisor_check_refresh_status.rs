@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
@@ -15,10 +14,8 @@ pub struct TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
-    #[doc(hidden)]
     pub millis_until_next_refreshable: i64,
 }
 impl TrustedAdvisorCheckRefreshStatus {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcIngressConnectionInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceLimits {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-    #[doc(hidden)]
     pub max_number_of_training_jobs: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    #[doc(hidden)]
     pub max_parallel_training_jobs: i32,
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
-    #[doc(hidden)]
     pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceLimits {

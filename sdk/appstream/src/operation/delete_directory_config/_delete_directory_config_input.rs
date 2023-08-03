@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
-    #[doc(hidden)]
     pub directory_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDirectoryConfigInput {

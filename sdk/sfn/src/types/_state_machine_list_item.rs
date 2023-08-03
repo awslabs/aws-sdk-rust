@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -17,13 +16,10 @@ pub struct StateMachineListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
     /// <p>The date the state machine is created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StateMachineListItem {

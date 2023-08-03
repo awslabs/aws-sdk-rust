@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerImage {
     /// <p>The URI locating the container image.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
 }
 impl ContainerImage {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
-    #[doc(hidden)]
     pub finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that transcoding for the job began.
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that you submitted the job.
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Timing {

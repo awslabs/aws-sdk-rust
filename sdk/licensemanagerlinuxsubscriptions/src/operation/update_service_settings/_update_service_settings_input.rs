@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    #[doc(hidden)]
     pub linux_subscriptions_discovery: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    #[doc(hidden)]
     pub linux_subscriptions_discovery_settings: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
-    #[doc(hidden)]
     pub allow_update: ::std::option::Option<bool>,
 }
 impl UpdateServiceSettingsInput {

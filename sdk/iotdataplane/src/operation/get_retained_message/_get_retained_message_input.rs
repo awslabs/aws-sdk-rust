@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
 }
 impl GetRetainedMessageInput {

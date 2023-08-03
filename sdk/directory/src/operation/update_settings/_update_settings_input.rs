@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettingsInput {
     /// <p>The identifier of the directory for which to update settings.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of <code>Setting</code> objects.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
 }
 impl UpdateSettingsInput {

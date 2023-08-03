@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl InforNexusSourceProperties {

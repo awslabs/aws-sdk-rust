@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFpgaImageOutput {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    #[doc(hidden)]
     pub fpga_image_global_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotJobResultFileGroup {
     /// <p> A list of <code>SnapshotFile</code> objects.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
     /// <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
-    #[doc(hidden)]
     pub s3_results: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
 }
 impl SnapshotJobResultFileGroup {

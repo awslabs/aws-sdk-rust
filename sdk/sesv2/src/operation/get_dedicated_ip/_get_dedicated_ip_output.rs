@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
-    #[doc(hidden)]
     pub dedicated_ip: ::std::option::Option<crate::types::DedicatedIp>,
     _request_id: Option<String>,
 }

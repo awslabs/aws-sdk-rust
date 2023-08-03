@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedAvailabilityZoneException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    #[doc(hidden)]
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    #[doc(hidden)]
     pub valid_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

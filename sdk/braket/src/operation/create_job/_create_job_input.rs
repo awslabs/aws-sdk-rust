@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
-    #[doc(hidden)]
     pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::JobOutputDataConfig>,
     /// <p>Information about the output locations for job checkpoint data.</p>
-    #[doc(hidden)]
     pub checkpoint_config: ::std::option::Option<crate::types::JobCheckpointConfig>,
     /// <p>The name of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
-    #[doc(hidden)]
     pub instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    #[doc(hidden)]
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub device_config: ::std::option::Option<crate::types::DeviceConfig>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateJobInput {

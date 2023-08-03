@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappedDataSetParameter {
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-    #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset parameter.</p>
-    #[doc(hidden)]
     pub data_set_parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl MappedDataSetParameter {

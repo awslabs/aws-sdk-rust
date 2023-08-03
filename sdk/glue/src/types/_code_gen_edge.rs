@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenEdge {
     /// <p>The ID of the node at which the edge starts.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the node at which the edge ends.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The target of the edge.</p>
-    #[doc(hidden)]
     pub target_parameter: ::std::option::Option<::std::string::String>,
 }
 impl CodeGenEdge {

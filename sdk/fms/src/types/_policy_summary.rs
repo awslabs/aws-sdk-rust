@@ -5,34 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicySummary {
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specified policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy.</p>
-    #[doc(hidden)]
     pub security_service_type: ::std::option::Option<crate::types::SecurityServiceType>,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
-    #[doc(hidden)]
     pub remediation_enabled: bool,
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
-    #[doc(hidden)]
     pub delete_unused_fm_managed_resources: bool,
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
 }
 impl PolicySummary {

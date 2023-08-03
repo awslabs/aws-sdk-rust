@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
-    #[doc(hidden)]
     pub integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their ranges.</p>
-    #[doc(hidden)]
     pub continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their ranges.</p>
-    #[doc(hidden)]
     pub categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalHyperParameterRange>>,
 }
 impl HyperParameterRanges {

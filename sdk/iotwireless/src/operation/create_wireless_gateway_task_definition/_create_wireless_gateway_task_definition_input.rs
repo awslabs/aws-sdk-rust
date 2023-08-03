@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
-    #[doc(hidden)]
     pub auto_create_tasks: ::std::option::Option<bool>,
     /// <p>The name of the new resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the gateways to update.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWirelessGatewayTaskDefinitionInput {

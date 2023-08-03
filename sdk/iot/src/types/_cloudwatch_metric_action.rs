@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchMetricAction {
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch metric namespace name.</p>
-    #[doc(hidden)]
     pub metric_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch metric name.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch metric value.</p>
-    #[doc(hidden)]
     pub metric_value: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
-    #[doc(hidden)]
     pub metric_unit: ::std::option::Option<::std::string::String>,
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    #[doc(hidden)]
     pub metric_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl CloudwatchMetricAction {

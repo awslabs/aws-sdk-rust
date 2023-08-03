@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Font {
     /// <p>Determines the font family settings.</p>
-    #[doc(hidden)]
     pub font_family: ::std::option::Option<::std::string::String>,
 }
 impl Font {

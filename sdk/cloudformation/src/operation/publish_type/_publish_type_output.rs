@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishTypeOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
-    #[doc(hidden)]
     pub public_type_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

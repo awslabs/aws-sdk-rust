@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    #[doc(hidden)]
     pub expected_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A list of EBS snapshots.</p>
-    #[doc(hidden)]
     pub ebs_snapshots: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecoverySnapshot {

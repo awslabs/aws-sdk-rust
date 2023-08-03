@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub recommender_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecommenderConfigurationInput {

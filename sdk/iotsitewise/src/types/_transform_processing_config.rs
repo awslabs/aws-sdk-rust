@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
-    #[doc(hidden)]
     pub compute_location: ::std::option::Option<crate::types::ComputeLocation>,
     /// <p>The forwarding configuration for a given property.</p>
-    #[doc(hidden)]
     pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfig {

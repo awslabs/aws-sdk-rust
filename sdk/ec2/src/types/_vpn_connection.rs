@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VpnConnection {
     /// <p>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the <code>CreateVpnConnection</code> response; however, it's present in the <code>DescribeVpnConnections</code> response only if the VPN connection is in the <code>pending</code> or <code>available</code> state.</p>
-    #[doc(hidden)]
     pub customer_gateway_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The category of the VPN connection. A value of <code>VPN</code> indicates an Amazon Web Services VPN connection. A value of <code>VPN-Classic</code> indicates an Amazon Web Services Classic VPN connection.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPN connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpnState>,
     /// <p>The type of VPN connection.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The ID of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the core network attachment.</p>
-    #[doc(hidden)]
     pub core_network_attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the gateway association.</p>
-    #[doc(hidden)]
     pub gateway_association_state: ::std::option::Option<crate::types::GatewayAssociationState>,
     /// <p>The VPN connection options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpnConnectionOptions>,
     /// <p>The static routes associated with the VPN connection.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>>,
     /// <p>Any tags assigned to the VPN connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the VPN tunnel.</p>
-    #[doc(hidden)]
     pub vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>>,
 }
 impl VpnConnection {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedFilesSummary {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
-    #[doc(hidden)]
     pub total_number_of_files: ::std::option::Option<i32>,
     /// <p>Indicates the number of files that were successfully ingested.</p>
-    #[doc(hidden)]
     pub ingested_number_of_files: ::std::option::Option<i32>,
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-    #[doc(hidden)]
     pub discarded_files: ::std::option::Option<::std::vec::Vec<crate::types::S3Object>>,
 }
 impl IngestedFilesSummary {

@@ -6,55 +6,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LaunchProfile {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the launch profile.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the launch profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifiers for a collection of EC2 subnets.</p>
-    #[doc(hidden)]
     pub ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    #[doc(hidden)]
     pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A friendly name for the launch profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LaunchProfileState>,
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::LaunchProfileStatusCode>,
     /// <p>The status message for the launch profile.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A configuration for a streaming session.</p>
-    #[doc(hidden)]
     pub stream_configuration: ::std::option::Option<crate::types::StreamConfiguration>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    #[doc(hidden)]
     pub studio_component_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    #[doc(hidden)]
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The list of the latest validation results.</p>
-    #[doc(hidden)]
     pub validation_results: ::std::option::Option<::std::vec::Vec<crate::types::ValidationResult>>,
 }
 impl LaunchProfile {

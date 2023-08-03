@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the result was clicked.</p>
-    #[doc(hidden)]
     pub click_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClickFeedback {

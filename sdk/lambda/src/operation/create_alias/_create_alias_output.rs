@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAliasOutput {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    #[doc(hidden)]
     pub alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alias.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The function version that the alias invokes.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    #[doc(hidden)]
     pub routing_config: ::std::option::Option<crate::types::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

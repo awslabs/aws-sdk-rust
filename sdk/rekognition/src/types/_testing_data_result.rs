@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::TestingData>,
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::TestingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::ValidationData>,
 }
 impl TestingDataResult {

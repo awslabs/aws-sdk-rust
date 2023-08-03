@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that this dashboard version was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Version number.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Source entity ARN.</p>
-    #[doc(hidden)]
     pub source_entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>Description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl DashboardVersionSummary {

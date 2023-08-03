@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    #[doc(hidden)]
     pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
 }
 impl AssociateS3ResourcesInput {

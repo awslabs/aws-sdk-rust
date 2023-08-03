@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SceneError {
     /// <p>The SceneError code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::SceneErrorCode>,
     /// <p>The SceneError message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl SceneError {

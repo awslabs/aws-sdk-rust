@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobTemplateOutput {
     /// <p>This output displays information about the specified job template.</p>
-    #[doc(hidden)]
     pub job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
 }

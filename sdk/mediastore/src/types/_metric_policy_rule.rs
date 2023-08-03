@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    #[doc(hidden)]
     pub object_group: ::std::option::Option<::std::string::String>,
     /// <p>A name that allows you to refer to the object group.</p>
-    #[doc(hidden)]
     pub object_group_name: ::std::option::Option<::std::string::String>,
 }
 impl MetricPolicyRule {

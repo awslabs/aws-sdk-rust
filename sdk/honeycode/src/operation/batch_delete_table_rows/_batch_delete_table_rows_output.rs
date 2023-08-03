@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteTableRowsOutput {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    #[doc(hidden)]
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }

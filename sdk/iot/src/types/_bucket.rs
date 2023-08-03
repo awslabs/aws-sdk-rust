@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The value counted for the particular bucket.</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
-    #[doc(hidden)]
     pub count: i32,
 }
 impl Bucket {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionLocalIpDetails {
     /// <p>The IP address.</p>
-    #[doc(hidden)]
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
 }
 impl ActionLocalIpDetails {

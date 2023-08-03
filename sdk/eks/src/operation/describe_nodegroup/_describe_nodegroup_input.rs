@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodegroupInput {
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node group to describe.</p>
-    #[doc(hidden)]
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodegroupInput {

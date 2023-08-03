@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederationParameters {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
-    #[doc(hidden)]
     pub saml_metadata_document: ::std::option::Option<::std::string::String>,
     /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
-    #[doc(hidden)]
     pub saml_metadata_url: ::std::option::Option<::std::string::String>,
     /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
-    #[doc(hidden)]
     pub application_call_back_url: ::std::option::Option<::std::string::String>,
     /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
-    #[doc(hidden)]
     pub federation_urn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the identity provider (IdP).</p>
-    #[doc(hidden)]
     pub federation_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
-    #[doc(hidden)]
     pub attribute_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FederationParameters {

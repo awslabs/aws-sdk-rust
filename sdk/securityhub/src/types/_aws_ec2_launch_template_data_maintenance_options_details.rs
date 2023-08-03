@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    #[doc(hidden)]
     pub auto_recovery: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {

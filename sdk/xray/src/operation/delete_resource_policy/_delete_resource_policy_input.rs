@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the resource policy to delete.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
-    #[doc(hidden)]
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {

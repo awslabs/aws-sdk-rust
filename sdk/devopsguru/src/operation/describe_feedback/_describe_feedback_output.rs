@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeedbackOutput {
     /// <p> Information about insight feedback received from a customer. </p>
-    #[doc(hidden)]
     pub insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
     _request_id: Option<String>,
 }

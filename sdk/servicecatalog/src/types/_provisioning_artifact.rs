@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifact {
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    #[doc(hidden)]
     pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
 }
 impl ProvisioningArtifact {

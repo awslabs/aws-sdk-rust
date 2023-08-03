@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleNamesByTargetOutput {
     /// <p>The names of the rules that can invoke the given target.</p>
-    #[doc(hidden)]
     pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

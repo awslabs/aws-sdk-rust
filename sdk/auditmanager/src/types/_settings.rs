@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Settings {
     /// <p> Specifies whether Organizations is enabled. </p>
-    #[doc(hidden)]
     pub is_aws_org_enabled: ::std::option::Option<bool>,
     /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
-    #[doc(hidden)]
     pub default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The designated default audit owners. </p>
-    #[doc(hidden)]
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The KMS key details. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The current evidence finder status and event data store details.</p>
-    #[doc(hidden)]
     pub evidence_finder_enablement: ::std::option::Option<crate::types::EvidenceFinderEnablement>,
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    #[doc(hidden)]
     pub deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
-    #[doc(hidden)]
     pub default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl Settings {

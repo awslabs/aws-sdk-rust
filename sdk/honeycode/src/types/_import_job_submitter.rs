@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobSubmitter {

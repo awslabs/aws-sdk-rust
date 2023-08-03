@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPrefixListReference {
     /// <p>The ID of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list owner.</p>
-    #[doc(hidden)]
     pub prefix_list_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the prefix list reference.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayPrefixListReferenceState>,
     /// <p>Indicates whether traffic that matches this route is dropped.</p>
-    #[doc(hidden)]
     pub blackhole: ::std::option::Option<bool>,
     /// <p>Information about the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment: ::std::option::Option<crate::types::TransitGatewayPrefixListAttachment>,
 }
 impl TransitGatewayPrefixListReference {

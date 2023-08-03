@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesInput {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    #[doc(hidden)]
     pub iam_user_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeUserProfilesInput {

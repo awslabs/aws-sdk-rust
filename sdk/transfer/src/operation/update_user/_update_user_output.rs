@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

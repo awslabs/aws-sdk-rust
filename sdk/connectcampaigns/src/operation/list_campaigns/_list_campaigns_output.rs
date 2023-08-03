@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsOutput {
     /// The token for the next set of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of Amazon Connect campaigns.
-    #[doc(hidden)]
     pub campaign_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderableReplicationInstance {
     /// <p>The version of the replication engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    #[doc(hidden)]
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The type of storage used by the replication instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub min_allocated_storage: i32,
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub max_allocated_storage: i32,
     /// <p>The default amount of storage (in gigabytes) that is allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub default_allocated_storage: i32,
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub included_allocated_storage: i32,
     /// <p>List of Availability Zones for this replication instance.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    #[doc(hidden)]
     pub release_status: ::std::option::Option<crate::types::ReleaseStatusValues>,
 }
 impl OrderableReplicationInstance {

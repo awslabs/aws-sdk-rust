@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomInput {
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDeviceFromRoomInput {

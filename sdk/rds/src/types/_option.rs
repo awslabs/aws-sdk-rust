@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Option {
     /// <p>The name of the option.</p>
-    #[doc(hidden)]
     pub option_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option.</p>
-    #[doc(hidden)]
     pub option_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicate if this option is persistent.</p>
-    #[doc(hidden)]
     pub persistent: bool,
     /// <p>Indicate if this option is permanent.</p>
-    #[doc(hidden)]
     pub permanent: bool,
     /// <p>If required, the port configured for this option to use.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The version of the option.</p>
-    #[doc(hidden)]
     pub option_version: ::std::option::Option<::std::string::String>,
     /// <p>The option settings for this option.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
-    #[doc(hidden)]
     pub db_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
-    #[doc(hidden)]
     pub vpc_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
 }
 impl Option {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputsOutput {
     /// Placeholder documentation for __listOfInput
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

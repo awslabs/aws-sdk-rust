@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetBuildBatchesOutput {
     /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
-    #[doc(hidden)]
     pub build_batches: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>>,
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
-    #[doc(hidden)]
     pub build_batches_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

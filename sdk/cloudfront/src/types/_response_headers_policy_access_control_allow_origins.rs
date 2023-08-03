@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowOrigins {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlOutput {
     /// <p>The presigned download URL for the specified SDK release.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

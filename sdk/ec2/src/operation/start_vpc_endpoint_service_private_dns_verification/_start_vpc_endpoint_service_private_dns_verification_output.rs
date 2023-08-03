@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartVpcEndpointServicePrivateDnsVerificationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

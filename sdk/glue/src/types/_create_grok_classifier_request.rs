@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGrokClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new classifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The grok pattern used by this classifier.</p>
-    #[doc(hidden)]
     pub grok_pattern: ::std::option::Option<::std::string::String>,
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    #[doc(hidden)]
     pub custom_patterns: ::std::option::Option<::std::string::String>,
 }
 impl CreateGrokClassifierRequest {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>Whether the state of the pull request is approved.</p>
-    #[doc(hidden)]
     pub approved: bool,
     /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
-    #[doc(hidden)]
     pub overridden: bool,
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    #[doc(hidden)]
     pub approval_rules_satisfied: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    #[doc(hidden)]
     pub approval_rules_not_satisfied: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Evaluation {

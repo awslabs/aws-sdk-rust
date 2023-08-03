@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistogramBinOptions {
     /// <p>The options that determine the selected bin type.</p>
-    #[doc(hidden)]
     pub selected_bin_type: ::std::option::Option<crate::types::HistogramBinType>,
     /// <p>The options that determine the bin count of a histogram.</p>
-    #[doc(hidden)]
     pub bin_count: ::std::option::Option<crate::types::BinCountOptions>,
     /// <p>The options that determine the bin width of a histogram.</p>
-    #[doc(hidden)]
     pub bin_width: ::std::option::Option<crate::types::BinWidthOptions>,
     /// <p>The options that determine the bin start value.</p>
-    #[doc(hidden)]
     pub start_value: ::std::option::Option<f64>,
 }
 impl HistogramBinOptions {

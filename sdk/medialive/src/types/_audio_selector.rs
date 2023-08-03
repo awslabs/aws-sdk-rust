@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSelector {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The audio selector settings.
-    #[doc(hidden)]
     pub selector_settings: ::std::option::Option<crate::types::AudioSelectorSettings>,
 }
 impl AudioSelector {

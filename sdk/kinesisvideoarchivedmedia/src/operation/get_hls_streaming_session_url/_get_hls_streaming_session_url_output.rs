@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
-    #[doc(hidden)]
     pub hls_streaming_session_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

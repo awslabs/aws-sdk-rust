@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectParticipantInput {
     /// <p>ARN of the stage to which the participant is attached.</p>
-    #[doc(hidden)]
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>Description of why this participant is being disconnected.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectParticipantInput {

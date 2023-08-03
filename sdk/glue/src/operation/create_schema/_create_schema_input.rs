@@ -7,13 +7,10 @@ pub struct CreateSchemaInput {
     /// <customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>The compatibility mode of the schema. The possible values are:</p>
     /// <ul>
@@ -26,16 +23,12 @@ pub struct CreateSchemaInput {
     /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
     /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub compatibility: ::std::option::Option<crate::types::Compatibility>,
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl CreateSchemaInput {

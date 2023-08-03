@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicDateRangeFilter {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
-    #[doc(hidden)]
     pub inclusive: bool,
     /// <p>The constant used in a date range filter.</p>
-    #[doc(hidden)]
     pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
 }
 impl TopicDateRangeFilter {

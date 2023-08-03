@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The API's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A version identifier for the API.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    #[doc(hidden)]
     pub binary_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-    #[doc(hidden)]
     pub minimum_compression_size: ::std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    #[doc(hidden)]
     pub api_key_source: ::std::option::Option<crate::types::ApiKeySourceType>,
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     _request_id: Option<String>,
 }

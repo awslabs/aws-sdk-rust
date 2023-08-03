@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSchemasInput {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
 impl SearchSchemasInput {

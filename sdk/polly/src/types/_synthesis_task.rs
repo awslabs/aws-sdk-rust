@@ -5,52 +5,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SynthesisTask {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::Engine>,
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the individual speech synthesis task.</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
-    #[doc(hidden)]
     pub task_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Pathway for the output speech file.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp for the time the synthesis task was started.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of billable characters synthesized.</p>
-    #[doc(hidden)]
     pub request_characters: i32,
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    #[doc(hidden)]
     pub lexicon_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
-    #[doc(hidden)]
     pub speech_mark_types: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
-    #[doc(hidden)]
     pub text_type: ::std::option::Option<crate::types::TextType>,
     /// <p>Voice ID to use for the synthesis. </p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
     /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl SynthesisTask {

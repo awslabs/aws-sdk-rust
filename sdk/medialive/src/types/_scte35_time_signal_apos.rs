@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35TimeSignalApos {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-    #[doc(hidden)]
     pub ad_avail_offset: ::std::option::Option<i32>,
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
-    #[doc(hidden)]
     pub no_regional_blackout_flag: ::std::option::Option<crate::types::Scte35AposNoRegionalBlackoutBehavior>,
     /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
-    #[doc(hidden)]
     pub web_delivery_allowed_flag: ::std::option::Option<crate::types::Scte35AposWebDeliveryAllowedBehavior>,
 }
 impl Scte35TimeSignalApos {

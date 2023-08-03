@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportOutput {
     /// <p>Represents the properties of the export.</p>
-    #[doc(hidden)]
     pub export_description: ::std::option::Option<crate::types::ExportDescription>,
     _request_id: Option<String>,
 }

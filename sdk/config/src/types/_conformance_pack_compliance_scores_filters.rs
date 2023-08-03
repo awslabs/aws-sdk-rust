@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
-    #[doc(hidden)]
     pub conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConformancePackComplianceScoresFilters {

@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
     /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInput {

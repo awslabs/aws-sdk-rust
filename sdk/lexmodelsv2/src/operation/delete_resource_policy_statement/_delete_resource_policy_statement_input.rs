@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the statement (SID) to delete from the policy.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
-    #[doc(hidden)]
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyStatementInput {

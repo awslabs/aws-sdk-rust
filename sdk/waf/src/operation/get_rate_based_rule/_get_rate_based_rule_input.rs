@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRateBasedRuleInput {

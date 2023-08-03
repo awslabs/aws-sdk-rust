@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    #[doc(hidden)]
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecommendationTemplateInput {

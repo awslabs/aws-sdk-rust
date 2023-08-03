@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAggregateIdFormatOutput {
     /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
-    #[doc(hidden)]
     pub use_long_ids_aggregated: ::std::option::Option<bool>,
     /// <p>Information about each resource's ID format.</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     _request_id: Option<String>,
 }

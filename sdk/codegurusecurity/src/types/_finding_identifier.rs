@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingIdentifier {
     /// <p>The name of the scan that generated the finding. </p>
-    #[doc(hidden)]
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a finding.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
 }
 impl FindingIdentifier {

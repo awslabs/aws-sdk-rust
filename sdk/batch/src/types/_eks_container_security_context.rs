@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerSecurityContext {
     /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub run_as_user: ::std::option::Option<i64>,
     /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub run_as_group: ::std::option::Option<i64>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub privileged: ::std::option::Option<bool>,
     /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub read_only_root_filesystem: ::std::option::Option<bool>,
     /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub run_as_non_root: ::std::option::Option<bool>,
 }
 impl EksContainerSecurityContext {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceSummary {
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-    #[doc(hidden)]
     pub compliant_resource_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
     /// <p>The number of Config rules or Amazon Web Services resources that are noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-    #[doc(hidden)]
     pub non_compliant_resource_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
     /// <p>The time that Config created the compliance summary.</p>
-    #[doc(hidden)]
     pub compliance_summary_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ComplianceSummary {

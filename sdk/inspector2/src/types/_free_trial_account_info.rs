@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
-    #[doc(hidden)]
     pub free_trial_info: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,
 }
 impl FreeTrialAccountInfo {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    #[doc(hidden)]
     pub container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>,
 }
 impl DescribeContainerInstancesInput {

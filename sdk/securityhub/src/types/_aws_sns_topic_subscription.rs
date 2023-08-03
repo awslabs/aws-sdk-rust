@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSnsTopicSubscription {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsSnsTopicSubscription {

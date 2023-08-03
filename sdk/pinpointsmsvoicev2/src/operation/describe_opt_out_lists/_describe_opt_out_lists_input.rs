@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    #[doc(hidden)]
     pub opt_out_list_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeOptOutListsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionsOutput {
     /// <p>The array of transactions returned by the request.</p>
-    #[doc(hidden)]
     pub transactions: ::std::option::Option<::std::vec::Vec<crate::types::TransactionOutputItem>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

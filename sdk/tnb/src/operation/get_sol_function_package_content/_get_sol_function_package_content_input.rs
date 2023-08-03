@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageContentInput {
     /// <p>ID of the function package.</p>
-    #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the package that you want to download from the function packages.</p>
-    #[doc(hidden)]
     pub accept: ::std::option::Option<crate::types::PackageContentType>,
 }
 impl GetSolFunctionPackageContentInput {

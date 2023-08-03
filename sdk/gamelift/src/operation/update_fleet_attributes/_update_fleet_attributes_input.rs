@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesInput {
     /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of a fleet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    #[doc(hidden)]
     pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    #[doc(hidden)]
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    #[doc(hidden)]
     pub anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
 }
 impl UpdateFleetAttributesInput {

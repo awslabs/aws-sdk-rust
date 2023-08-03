@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminSetUserMfaPreferenceInput {
     /// <p>The SMS text message MFA settings.</p>
-    #[doc(hidden)]
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     /// <p>The time-based one-time password software token MFA settings.</p>
-    #[doc(hidden)]
     pub software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     /// <p>The user pool username or alias.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl AdminSetUserMfaPreferenceInput {

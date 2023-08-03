@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRepositoryOutput {
     /// <p>Information about the repository association.</p>
-    #[doc(hidden)]
     pub repository_association: ::std::option::Option<crate::types::RepositoryAssociation>,
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

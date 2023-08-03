@@ -8,24 +8,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlChannel {
     /// <p>The data source for an AutoML channel.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
-    #[doc(hidden)]
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    #[doc(hidden)]
     pub target_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
-    #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    #[doc(hidden)]
     pub sample_weight_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlChannel {

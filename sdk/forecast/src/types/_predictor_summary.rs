@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorSummary {
     /// <p>The ARN of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether AutoPredictor was used to create the predictor.</p>
-    #[doc(hidden)]
     pub is_auto_predictor: ::std::option::Option<bool>,
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
-    #[doc(hidden)]
     pub reference_predictor_summary: ::std::option::Option<crate::types::ReferencePredictorSummary>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
@@ -28,13 +23,10 @@ pub struct PredictorSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the model training task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -44,7 +36,6 @@ pub struct PredictorSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PredictorSummary {

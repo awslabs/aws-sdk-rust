@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
-    #[doc(hidden)]
     pub day: ::std::option::Option<crate::types::HoursOfOperationDays>,
     /// <p>The start time that your contact center opens.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>,
     /// <p>The end time that your contact center closes.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>,
 }
 impl HoursOfOperationConfig {

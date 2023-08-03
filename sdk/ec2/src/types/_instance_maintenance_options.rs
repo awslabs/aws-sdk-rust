@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMaintenanceOptions {
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    #[doc(hidden)]
     pub auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }
 impl InstanceMaintenanceOptions {

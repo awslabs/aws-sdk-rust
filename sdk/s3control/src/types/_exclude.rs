@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Exclude {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Exclude {

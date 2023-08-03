@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }

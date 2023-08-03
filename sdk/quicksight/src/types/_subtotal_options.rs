@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubtotalOptions {
     /// <p>The visibility configuration for the subtotal cells.</p>
-    #[doc(hidden)]
     pub totals_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The custom label string for the subtotal cells.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>The field level (all, custom, last) for the subtotal cells.</p>
-    #[doc(hidden)]
     pub field_level: ::std::option::Option<crate::types::PivotTableSubtotalLevel>,
     /// <p>The optional configuration of subtotal cells.</p>
-    #[doc(hidden)]
     pub field_level_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
     /// <p>The cell styling options for the subtotal cells.</p>
-    #[doc(hidden)]
     pub total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The cell styling options for the subtotals of value cells.</p>
-    #[doc(hidden)]
     pub value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The cell styling options for the subtotals of header cells.</p>
-    #[doc(hidden)]
     pub metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
 }
 impl SubtotalOptions {

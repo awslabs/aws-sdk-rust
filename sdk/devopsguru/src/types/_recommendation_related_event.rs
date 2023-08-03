@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedEvent {
     /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>,
 }
 impl RecommendationRelatedEvent {

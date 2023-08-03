@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
-    #[doc(hidden)]
     pub export_snapshot_records: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

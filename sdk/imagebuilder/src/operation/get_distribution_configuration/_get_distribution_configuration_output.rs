@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The distribution configuration object.</p>
-    #[doc(hidden)]
     pub distribution_configuration: ::std::option::Option<crate::types::DistributionConfiguration>,
     _request_id: Option<String>,
 }

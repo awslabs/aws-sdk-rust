@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    #[doc(hidden)]
     pub import_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteImportDataInput {

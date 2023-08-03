@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionArtifactMeta {
     /// <p>Lists of function package overrides.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
 }
 impl FunctionArtifactMeta {

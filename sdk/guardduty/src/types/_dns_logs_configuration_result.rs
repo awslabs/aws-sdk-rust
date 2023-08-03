@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsLogsConfigurationResult {
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl DnsLogsConfigurationResult {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task definition that creates the task.</p>
-    #[doc(hidden)]
     pub definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version counter for the task.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created.</p>
-    #[doc(hidden)]
     pub task_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains the tag specified when a task is started.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the ECS Task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The list of data volume definitions for the task.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>The containers that's associated with the task.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>The name of the task group that's associated with the task.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskDetails {

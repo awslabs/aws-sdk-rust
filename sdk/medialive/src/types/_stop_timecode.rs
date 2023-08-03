@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopTimecode {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
-    #[doc(hidden)]
     pub last_frame_clipping_behavior: ::std::option::Option<crate::types::LastFrameClippingBehavior>,
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    #[doc(hidden)]
     pub timecode: ::std::option::Option<::std::string::String>,
 }
 impl StopTimecode {

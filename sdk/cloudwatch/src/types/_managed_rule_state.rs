@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleState {
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the rule is enabled or disabled. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl ManagedRuleState {

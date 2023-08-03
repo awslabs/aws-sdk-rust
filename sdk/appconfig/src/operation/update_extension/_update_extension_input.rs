@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExtensionInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the extension.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions defined in the extension.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
     /// <p>One or more parameters for the actions called by the extension.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
     /// <p>The extension version number.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i32>,
 }
 impl UpdateExtensionInput {

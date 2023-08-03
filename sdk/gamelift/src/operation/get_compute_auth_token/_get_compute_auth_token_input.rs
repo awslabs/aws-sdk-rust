@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenInput {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute resource you are requesting the authentication token for.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl GetComputeAuthTokenInput {

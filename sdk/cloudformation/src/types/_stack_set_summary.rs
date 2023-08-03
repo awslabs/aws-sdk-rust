@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetSummary {
     /// <p>The name of the stack set.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack set.</p>
-    #[doc(hidden)]
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stack set.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StackSetStatus>,
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
-    #[doc(hidden)]
     pub auto_deployment: ::std::option::Option<crate::types::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
     /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
     /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub permission_model: ::std::option::Option<crate::types::PermissionModels>,
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
@@ -33,13 +27,10 @@ pub struct StackSetSummary {
     /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    #[doc(hidden)]
     pub last_drift_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
-    #[doc(hidden)]
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
 }
 impl StackSetSummary {

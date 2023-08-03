@@ -9,17 +9,13 @@ pub struct PolicyVersion {
     /// <p>The policy document.</p>
     /// <p>The policy document is returned in the response to the <code>GetPolicyVersion</code> and <code>GetAccountAuthorizationDetails</code> operations. It is not returned in the response to the <code>CreatePolicyVersion</code> or <code>ListPolicyVersions</code> operations. </p>
     /// <p>The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the policy version.</p>
     /// <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is set as the policy's default version.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy version was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {

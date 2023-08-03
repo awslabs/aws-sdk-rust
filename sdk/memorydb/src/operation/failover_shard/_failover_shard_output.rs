@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverShardOutput {
     /// <p>The cluster being failed over</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }

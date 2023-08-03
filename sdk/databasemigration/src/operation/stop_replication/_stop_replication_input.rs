@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationInput {
     /// <p>The Amazon Resource Name of the replication to stop.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationInput {

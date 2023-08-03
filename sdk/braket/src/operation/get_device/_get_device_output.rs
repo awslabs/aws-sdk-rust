@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceOutput {
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner company for the device.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the device.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>The status of the device.</p>
-    #[doc(hidden)]
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>Details about the capabilities of the device.</p>
-    #[doc(hidden)]
     pub device_capabilities: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

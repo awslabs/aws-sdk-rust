@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JdbcConnectorSource {
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection options for the connector.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<crate::types::JdbcConnectorOptions>,
     /// <p>The name of the table in the data source.</p>
-    #[doc(hidden)]
     pub connection_table: ::std::option::Option<::std::string::String>,
     /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data schema for the custom JDBC source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl JdbcConnectorSource {

@@ -4,31 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchTablesInput {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>>,
     /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
-    #[doc(hidden)]
     pub search_text: ::std::option::Option<::std::string::String>,
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     /// <p>The maximum number of tables to return in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
 }
 impl SearchTablesInput {

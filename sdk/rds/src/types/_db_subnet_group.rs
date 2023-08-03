@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbSubnetGroup {
     /// <p>The name of the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the description of the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VpcId of the DB subnet group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the DB subnet group.</p>
-    #[doc(hidden)]
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of <code>Subnet</code> elements.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
@@ -31,7 +25,6 @@ pub struct DbSubnetGroup {
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbSubnetGroup {

@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Dev Environment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
     /// <p>The reason for the status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
     /// <p>The user-specified alias for the Dev Environment. </p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
-    #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
-    #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-    #[doc(hidden)]
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorage>,
     _request_id: Option<String>,
 }

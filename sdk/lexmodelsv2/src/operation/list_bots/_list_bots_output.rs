@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBotsOutput {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    #[doc(hidden)]
     pub bot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

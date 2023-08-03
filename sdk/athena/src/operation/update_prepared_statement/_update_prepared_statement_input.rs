@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup for the prepared statement.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The query string for the prepared statement.</p>
-    #[doc(hidden)]
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The description of the prepared statement.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePreparedStatementInput {

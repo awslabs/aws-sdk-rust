@@ -11,34 +11,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDbAction {
     /// <p>The name of the DynamoDB table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The hash key name.</p>
-    #[doc(hidden)]
     pub hash_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The hash key value.</p>
-    #[doc(hidden)]
     pub hash_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
-    #[doc(hidden)]
     pub hash_key_type: ::std::option::Option<crate::types::DynamoKeyType>,
     /// <p>The range key name.</p>
-    #[doc(hidden)]
     pub range_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The range key value.</p>
-    #[doc(hidden)]
     pub range_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
-    #[doc(hidden)]
     pub range_key_type: ::std::option::Option<crate::types::DynamoKeyType>,
     /// <p>The action payload. This name can be customized.</p>
-    #[doc(hidden)]
     pub payload_field: ::std::option::Option<::std::string::String>,
 }
 impl DynamoDbAction {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct P95Metrics {
     /// <p>The IOPS peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<crate::types::Iops>,
     /// <p>The throughput peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<crate::types::Throughput>,
     /// <p>The latency peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
-    #[doc(hidden)]
     pub latency: ::std::option::Option<crate::types::Latency>,
 }
 impl P95Metrics {

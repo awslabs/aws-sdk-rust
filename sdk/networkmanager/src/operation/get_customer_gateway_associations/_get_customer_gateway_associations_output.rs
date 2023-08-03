@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomerGatewayAssociationsOutput {
     /// <p>The customer gateway associations.</p>
-    #[doc(hidden)]
     pub customer_gateway_associations: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

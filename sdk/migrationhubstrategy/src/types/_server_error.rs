@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerError {
     /// <p>The error category of server analysis.</p>
-    #[doc(hidden)]
     pub server_error_category: ::std::option::Option<crate::types::ServerErrorCategory>,
 }
 impl ServerError {

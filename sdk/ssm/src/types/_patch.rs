@@ -7,73 +7,50 @@ pub struct Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date the patch was released.</p>
-    #[doc(hidden)]
     pub release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The title of the patch.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the patch.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL where more information can be obtained about the patch.</p>
-    #[doc(hidden)]
     pub content_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vendor providing the patch.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    #[doc(hidden)]
     pub product_family: ::std::option::Option<::std::string::String>,
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    #[doc(hidden)]
     pub msrc_severity: ::std::option::Option<::std::string::String>,
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
-    #[doc(hidden)]
     pub kb_number: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
-    #[doc(hidden)]
     pub msrc_number: ::std::option::Option<::std::string::String>,
     /// <p>The language of the patch if it's language-specific.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub advisory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub bugzilla_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub cve_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub epoch: i32,
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub release: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
 }
 impl Patch {

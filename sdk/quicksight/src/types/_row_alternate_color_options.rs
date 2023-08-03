@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>Determines the list of row alternate colors.</p>
-    #[doc(hidden)]
     pub row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RowAlternateColorOptions {

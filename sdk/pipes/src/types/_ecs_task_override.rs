@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsTaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    #[doc(hidden)]
     pub container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
     /// <p>The cpu override for the task.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
@@ -17,19 +15,14 @@ pub struct EcsTaskOverride {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EcsEphemeralStorage>,
     /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    #[doc(hidden)]
     pub inference_accelerator_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
     /// <p>The memory override for the task.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskOverride {

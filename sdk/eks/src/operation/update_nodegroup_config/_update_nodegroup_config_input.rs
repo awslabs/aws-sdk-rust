@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNodegroupConfigInput {
     /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed node group to update.</p>
-    #[doc(hidden)]
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<crate::types::UpdateLabelsPayload>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    #[doc(hidden)]
     pub taints: ::std::option::Option<crate::types::UpdateTaintsPayload>,
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
-    #[doc(hidden)]
     pub scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     /// <p>The node group update configuration.</p>
-    #[doc(hidden)]
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupConfigInput {

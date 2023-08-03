@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
-    #[doc(hidden)]
     pub cross_cluster_search_connections: ::std::option::Option<::std::vec::Vec<crate::types::OutboundCrossClusterSearchConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

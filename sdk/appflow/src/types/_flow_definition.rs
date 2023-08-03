@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowDefinition {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p> A user-entered description of the flow. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
-    #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub source_connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label of the source connector in the flow.</p>
-    #[doc(hidden)]
     pub source_connector_label: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub destination_connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label of the destination connector in the flow.</p>
-    #[doc(hidden)]
     pub destination_connector_label: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
-    #[doc(hidden)]
     pub trigger_type: ::std::option::Option<crate::types::TriggerType>,
     /// <p> Specifies when the flow was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the account user name that most recently updated the flow. </p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Describes the details of the most recent flow run. </p>
-    #[doc(hidden)]
     pub last_run_execution_details: ::std::option::Option<crate::types::ExecutionDetails>,
 }
 impl FlowDefinition {

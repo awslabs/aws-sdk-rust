@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub access_tier: ::std::option::Option<crate::types::IntelligentTieringAccessTier>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroupDetail {
     /// <p>Unique identifier for the instance group.</p>
-    #[doc(hidden)]
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Friendly name for the instance group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
-    #[doc(hidden)]
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>Instance group role in the cluster</p>
-    #[doc(hidden)]
     pub instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    #[doc(hidden)]
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>Amazon EC2 instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Target number of instances to run in the instance group.</p>
-    #[doc(hidden)]
     pub instance_request_count: ::std::option::Option<i32>,
     /// <p>Actual count of running instances.</p>
-    #[doc(hidden)]
     pub instance_running_count: ::std::option::Option<i32>,
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceGroupState>,
     /// <p>Details regarding the state of the instance group.</p>
-    #[doc(hidden)]
     pub last_state_change_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date/time the instance group was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was started.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was available to the cluster.</p>
-    #[doc(hidden)]
     pub ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was terminated.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupDetail {

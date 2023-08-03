@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBulkImportJobsOutput {
     /// <p>One or more job summaries to list.</p>
-    #[doc(hidden)]
     pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

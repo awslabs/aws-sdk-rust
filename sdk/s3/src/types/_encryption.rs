@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
-    #[doc(hidden)]
     pub kms_context: ::std::option::Option<::std::string::String>,
 }
 impl Encryption {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionConfiguration {
     /// <p>The configuration data for the action.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActionConfiguration {

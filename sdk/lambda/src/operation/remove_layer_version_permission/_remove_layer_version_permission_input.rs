@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The identifier that was specified when the statement was added.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveLayerVersionPermissionInput {

@@ -22,13 +22,10 @@ pub struct DescribeOpsItemsInput {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    #[doc(hidden)]
     pub ops_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOpsItemsInput {

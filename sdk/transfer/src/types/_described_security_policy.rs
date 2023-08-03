@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedSecurityPolicy {
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
-    #[doc(hidden)]
     pub fips: ::std::option::Option<bool>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub security_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub ssh_ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub ssh_kexs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub ssh_macs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub tls_ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedSecurityPolicy {

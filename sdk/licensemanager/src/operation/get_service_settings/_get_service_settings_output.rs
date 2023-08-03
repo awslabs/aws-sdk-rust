@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSettingsOutput {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    #[doc(hidden)]
     pub organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     /// <p>Indicates whether cross-account discovery is enabled.</p>
-    #[doc(hidden)]
     pub enable_cross_accounts_discovery: ::std::option::Option<bool>,
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    #[doc(hidden)]
     pub license_manager_resource_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

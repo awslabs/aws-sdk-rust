@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDevicePositionOutput {
     /// <p>The device whose position you retrieved.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub received_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
-    #[doc(hidden)]
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
-    #[doc(hidden)]
     pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotOutput {
     /// <p>An object describing the specified database snapshot.</p>
-    #[doc(hidden)]
     pub relational_database_snapshot: ::std::option::Option<crate::types::RelationalDatabaseSnapshot>,
     _request_id: Option<String>,
 }

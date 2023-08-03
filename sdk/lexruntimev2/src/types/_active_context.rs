@@ -6,14 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
-    #[doc(hidden)]
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-    #[doc(hidden)]
     pub context_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContext {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
-    #[doc(hidden)]
     pub mfa_delete: ::std::option::Option<crate::types::MfaDelete>,
     /// <p>The versioning state of the bucket.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BucketVersioningStatus>,
 }
 impl VersioningConfiguration {

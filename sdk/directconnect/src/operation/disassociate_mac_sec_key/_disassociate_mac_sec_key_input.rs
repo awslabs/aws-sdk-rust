@@ -5,11 +5,9 @@
 pub struct DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMacSecKeyInput {

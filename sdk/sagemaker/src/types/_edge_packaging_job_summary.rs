@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgePackagingJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_status: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     /// <p>The name of the SageMaker Neo compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgePackagingJobSummary {

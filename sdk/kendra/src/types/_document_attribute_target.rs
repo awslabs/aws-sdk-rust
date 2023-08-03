@@ -9,14 +9,11 @@
 pub struct DocumentAttributeTarget {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
-    #[doc(hidden)]
     pub target_document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
-    #[doc(hidden)]
     pub target_document_attribute_value_deletion: bool,
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
-    #[doc(hidden)]
     pub target_document_attribute_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttributeTarget {

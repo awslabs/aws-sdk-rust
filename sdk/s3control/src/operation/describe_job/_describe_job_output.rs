@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobOutput {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::JobDescriptor>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token used to make this request idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
-    #[doc(hidden)]
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
-    #[doc(hidden)]
     pub in_app_messages_response: ::std::option::Option<crate::types::InAppMessagesResponse>,
     _request_id: Option<String>,
 }

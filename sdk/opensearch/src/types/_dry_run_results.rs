@@ -11,10 +11,8 @@ pub struct DryRunResults {
     /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
     /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<::std::string::String>,
     /// <p>A message corresponding to the deployment type.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DryRunResults {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// The name that you want to give the configuration set.
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateConfigurationSetInput {

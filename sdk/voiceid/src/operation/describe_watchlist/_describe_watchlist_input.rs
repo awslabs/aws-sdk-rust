@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist that you are describing.</p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWatchlistInput {

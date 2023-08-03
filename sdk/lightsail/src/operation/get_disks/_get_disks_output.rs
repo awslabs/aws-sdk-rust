@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDisksOutput {
     /// <p>An array of objects containing information about all block storage disks.</p>
-    #[doc(hidden)]
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

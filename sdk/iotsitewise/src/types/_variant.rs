@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Variant {
     /// <p>Asset property data of type string (sequence of characters).</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>Asset property data of type integer (whole number).</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
     /// <p>Asset property data of type double (floating point number).</p>
-    #[doc(hidden)]
     pub double_value: ::std::option::Option<f64>,
     /// <p>Asset property data of type Boolean (true or false).</p>
-    #[doc(hidden)]
     pub boolean_value: ::std::option::Option<bool>,
 }
 impl Variant {

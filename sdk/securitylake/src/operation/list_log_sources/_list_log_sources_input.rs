@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLogSourcesInput {
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of regions for which log sources are displayed.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of sources for which log sources are displayed.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLogSourcesInput {

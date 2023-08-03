@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkServiceAssociationOutput {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The operation's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The account that created the association.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The custom domain name of the service.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the service.</p>
-    #[doc(hidden)]
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     _request_id: Option<String>,
 }

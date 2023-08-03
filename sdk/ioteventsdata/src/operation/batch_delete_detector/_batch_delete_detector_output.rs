@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    #[doc(hidden)]
     pub batch_delete_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
     _request_id: Option<String>,
 }

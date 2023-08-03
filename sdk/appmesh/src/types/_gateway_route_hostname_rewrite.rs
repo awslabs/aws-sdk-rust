@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
-    #[doc(hidden)]
     pub default_target_hostname: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
 }
 impl GatewayRouteHostnameRewrite {

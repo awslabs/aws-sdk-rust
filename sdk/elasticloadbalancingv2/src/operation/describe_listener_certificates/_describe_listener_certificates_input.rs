@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesInput {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl DescribeListenerCertificatesInput {

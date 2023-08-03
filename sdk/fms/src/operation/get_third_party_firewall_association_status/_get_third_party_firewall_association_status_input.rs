@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThirdPartyFirewallAssociationStatusInput {
     /// <p>The name of the third-party firewall vendor.</p>
-    #[doc(hidden)]
     pub third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }
 impl GetThirdPartyFirewallAssociationStatusInput {

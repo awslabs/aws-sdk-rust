@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbProxyEndpointOutput {
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
 }

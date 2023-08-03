@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetActionOutput {
     /// <p>Information about the action.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     _request_id: Option<String>,
 }

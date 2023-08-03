@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLayerOutput {
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,11 +5,9 @@
 pub struct ListGamesInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGamesInput {

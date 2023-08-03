@@ -17,10 +17,8 @@ pub struct AccountGateResult {
     /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccountGateStatus>,
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AccountGateResult {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitialResponseSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub initial_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>The next step in the conversation.</p>
-    #[doc(hidden)]
     pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    #[doc(hidden)]
     pub conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
-    #[doc(hidden)]
     pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
 }
 impl InitialResponseSetting {

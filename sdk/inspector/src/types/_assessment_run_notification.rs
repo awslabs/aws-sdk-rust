@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunNotification {
     /// <p>The date of the notification.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event for which a notification is sent.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::InspectorEvent>,
     /// <p>The message included in the notification.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<bool>,
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status code of the SNS notification.</p>
-    #[doc(hidden)]
     pub sns_publish_status_code: ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
 }
 impl AssessmentRunNotification {

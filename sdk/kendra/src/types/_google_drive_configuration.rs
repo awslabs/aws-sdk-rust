@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GoogleDriveConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of regular expression patterns to include certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maps Google Drive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Google Drive data source field names must exist in your Google Drive custom metadata.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
-    #[doc(hidden)]
     pub exclude_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of email addresses of the users. Documents owned by these users are excluded from the index. Documents shared with excluded users are indexed unless they are excluded in another way.</p>
-    #[doc(hidden)]
     pub exclude_user_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of identifiers or shared drives to exclude from the index. All files and folders stored on the shared drive are excluded.</p>
-    #[doc(hidden)]
     pub exclude_shared_drives: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GoogleDriveConfiguration {

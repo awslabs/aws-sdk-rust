@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRulesetEvaluationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The status for this run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>The date and time when the run started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data source (an Glue table) associated with the run.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl DataQualityRulesetEvaluationRunDescription {

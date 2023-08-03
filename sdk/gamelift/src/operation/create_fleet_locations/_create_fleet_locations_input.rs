@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetLocationsInput {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
 }
 impl CreateFleetLocationsInput {

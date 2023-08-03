@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidSensorData {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
-    #[doc(hidden)]
     pub affected_sensor_count: ::std::option::Option<i32>,
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
-    #[doc(hidden)]
     pub total_number_of_invalid_values: ::std::option::Option<i32>,
 }
 impl InvalidSensorData {

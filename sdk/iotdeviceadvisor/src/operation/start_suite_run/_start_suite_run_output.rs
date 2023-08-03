@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSuiteRunOutput {
     /// <p>Suite Run ID of the started suite run.</p>
-    #[doc(hidden)]
     pub suite_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
-    #[doc(hidden)]
     pub suite_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The response of an Device Advisor test endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

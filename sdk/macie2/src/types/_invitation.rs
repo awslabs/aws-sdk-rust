@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the invitation.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
 }
 impl Invitation {

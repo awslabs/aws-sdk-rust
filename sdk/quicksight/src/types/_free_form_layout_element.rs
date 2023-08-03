@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutElement {
     /// <p>A unique identifier for an element within a free-form layout.</p>
-    #[doc(hidden)]
     pub element_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of element.</p>
-    #[doc(hidden)]
     pub element_type: ::std::option::Option<crate::types::LayoutElementType>,
     /// <p>The x-axis coordinate of the element.</p>
-    #[doc(hidden)]
     pub x_axis_location: ::std::option::Option<::std::string::String>,
     /// <p>The y-axis coordinate of the element.</p>
-    #[doc(hidden)]
     pub y_axis_location: ::std::option::Option<::std::string::String>,
     /// <p>The width of an element within a free-form layout.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<::std::string::String>,
     /// <p>The height of an element within a free-form layout.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of an element within a free-form layout.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
-    #[doc(hidden)]
     pub rendering_rules: ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
     /// <p>The border style configuration of a free-form layout element.</p>
-    #[doc(hidden)]
     pub border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
-    #[doc(hidden)]
     pub selected_border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
     /// <p>The background style configuration of a free-form layout element.</p>
-    #[doc(hidden)]
     pub background_style: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
     /// <p>The loading animation configuration of a free-form layout element.</p>
-    #[doc(hidden)]
     pub loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
 }
 impl FreeFormLayoutElement {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowStateChange {
     /// <p>The ID of the event window.</p>
-    #[doc(hidden)]
     pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the event window.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceEventWindowState>,
 }
 impl InstanceEventWindowStateChange {

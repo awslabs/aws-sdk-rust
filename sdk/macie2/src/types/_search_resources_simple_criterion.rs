@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesSimpleCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
     /// <p>The property to use in the condition.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey>,
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct SearchResourcesSimpleCriterion {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchResourcesSimpleCriterion {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
-    #[doc(hidden)]
     pub capability_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-    #[doc(hidden)]
     pub capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,
     _request_id: Option<String>,
 }

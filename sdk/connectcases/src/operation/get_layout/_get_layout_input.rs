@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the layout.</p>
-    #[doc(hidden)]
     pub layout_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLayoutInput {

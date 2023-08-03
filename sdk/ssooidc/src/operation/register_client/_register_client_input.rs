@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterClientInput {
     /// <p>The friendly name of the client.</p>
-    #[doc(hidden)]
     pub client_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
-    #[doc(hidden)]
     pub client_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegisterClientInput {

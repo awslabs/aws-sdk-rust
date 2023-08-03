@@ -5,13 +5,10 @@
 pub struct SearchSystemInstancesInput {
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl SearchSystemInstancesInput {

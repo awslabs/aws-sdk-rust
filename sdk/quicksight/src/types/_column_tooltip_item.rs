@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnTooltipItem {
     /// <p>The target column of the tooltip item.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The label of the tooltip item.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the tooltip item.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The aggregation function of the column tooltip item.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::AggregationFunction>,
 }
 impl ColumnTooltipItem {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableNumberSummary {
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
-    #[doc(hidden)]
     pub phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
-    #[doc(hidden)]
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl AvailableNumberSummary {

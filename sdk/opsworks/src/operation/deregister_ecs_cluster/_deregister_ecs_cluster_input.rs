@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterEcsClusterInput {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterEcsClusterInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>Monitoring configurations for the persistent application UI. </p>
-    #[doc(hidden)]
     pub persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     /// <p>Monitoring configurations for CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
-    #[doc(hidden)]
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     /// <p>Enable or disable container log rotation.</p>
-    #[doc(hidden)]
     pub container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfiguration {

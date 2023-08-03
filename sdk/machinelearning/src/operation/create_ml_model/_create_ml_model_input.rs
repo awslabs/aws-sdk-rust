@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub ml_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct CreateMlModelInput {
     /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
     /// </ul>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -27,16 +24,12 @@ pub struct CreateMlModelInput {
     /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <code>DataSource</code> that points to the training data.</p>
-    #[doc(hidden)]
     pub training_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    #[doc(hidden)]
     pub recipe_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateMlModelInput {

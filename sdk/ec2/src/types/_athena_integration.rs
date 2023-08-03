@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaIntegration {
     /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
-    #[doc(hidden)]
     pub integration_result_s3_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The schedule for adding new partitions to the table.</p>
-    #[doc(hidden)]
     pub partition_load_frequency: ::std::option::Option<crate::types::PartitionLoadFrequency>,
     /// <p>The start date for the partition.</p>
-    #[doc(hidden)]
     pub partition_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date for the partition.</p>
-    #[doc(hidden)]
     pub partition_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AthenaIntegration {

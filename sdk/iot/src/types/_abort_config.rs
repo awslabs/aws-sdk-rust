@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    #[doc(hidden)]
     pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
 }
 impl AbortConfig {

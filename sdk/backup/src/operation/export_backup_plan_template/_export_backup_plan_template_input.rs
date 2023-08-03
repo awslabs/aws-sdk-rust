@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportBackupPlanTemplateInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportBackupPlanTemplateInput {

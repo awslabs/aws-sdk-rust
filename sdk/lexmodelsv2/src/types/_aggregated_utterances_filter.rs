@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
     /// <p>The value to use for filtering the list of bots.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>,
 }
 impl AggregatedUtterancesFilter {

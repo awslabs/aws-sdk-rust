@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The port mapping information for the listener.</p>
-    #[doc(hidden)]
     pub port_mapping: ::std::option::Option<crate::types::PortMapping>,
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
-    #[doc(hidden)]
     pub tls: ::std::option::Option<crate::types::ListenerTls>,
     /// <p>The health check information for the listener.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheckPolicy>,
     /// <p>An object that represents timeouts for different protocols.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<crate::types::ListenerTimeout>,
     /// <p>The outlier detection information for the listener.</p>
-    #[doc(hidden)]
     pub outlier_detection: ::std::option::Option<crate::types::OutlierDetection>,
     /// <p>The connection pool information for the listener.</p>
-    #[doc(hidden)]
     pub connection_pool: ::std::option::Option<crate::types::VirtualNodeConnectionPool>,
 }
 impl Listener {

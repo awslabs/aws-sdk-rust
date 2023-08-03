@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleActionOverride {
     /// <p>The name of the rule to override.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
-    #[doc(hidden)]
     pub action_to_use: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleActionOverride {

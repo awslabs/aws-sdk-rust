@@ -4,64 +4,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationLifecycle>,
     /// <p>The latest version of the application.</p>
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<crate::types::ApplicationVersionSummary>,
     /// <p>The version of the application that is deployed.</p>
-    #[doc(hidden)]
     pub deployed_version: ::std::option::Option<crate::types::DeployedVersionSummary>,
     /// <p>The type of the target platform for the application.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    #[doc(hidden)]
     pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>,
     /// <p>The timestamp when this application was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    #[doc(hidden)]
     pub target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    #[doc(hidden)]
     pub listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub listener_ports: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub load_balancer_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the reported status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

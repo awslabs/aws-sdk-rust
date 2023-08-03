@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    #[doc(hidden)]
     pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::Name>,
     /// <p>The display name of the user.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>An alternative descriptive name for the user.</p>
-    #[doc(hidden)]
     pub nick_name: ::std::option::Option<::std::string::String>,
     /// <p>A URL link for the user's profile.</p>
-    #[doc(hidden)]
     pub profile_url: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
-    #[doc(hidden)]
     pub emails: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
     /// <p>The physical address of the user.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    #[doc(hidden)]
     pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     /// <p>A string indicating the type of user.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the title of the user.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The preferred language of the user.</p>
-    #[doc(hidden)]
     pub preferred_language: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the geographical region or location of the user.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The time zone for a user.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

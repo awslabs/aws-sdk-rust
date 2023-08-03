@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<crate::types::BusinessReportInterval>,
 }
 impl BusinessReportContentRange {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestingData {
     /// <p>The assets used for testing.</p>
-    #[doc(hidden)]
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
-    #[doc(hidden)]
     pub auto_create: bool,
 }
 impl TestingData {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfaInfo {
     /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-    #[doc(hidden)]
     pub maximum_efa_interfaces: ::std::option::Option<i32>,
 }
 impl EfaInfo {

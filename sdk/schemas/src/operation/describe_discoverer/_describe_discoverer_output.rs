@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDiscovererOutput {
     /// <p>The description of the discoverer.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the discoverer.</p>
-    #[doc(hidden)]
     pub discoverer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the discoverer.</p>
-    #[doc(hidden)]
     pub discoverer_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the discoverer.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DiscovererState>,
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
-    #[doc(hidden)]
     pub cross_account: ::std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

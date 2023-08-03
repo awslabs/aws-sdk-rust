@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInfo {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub ebs_optimized_support: ::std::option::Option<crate::types::EbsOptimizedSupport>,
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
-    #[doc(hidden)]
     pub encryption_support: ::std::option::Option<crate::types::EbsEncryptionSupport>,
     /// <p>Describes the optimized EBS performance for the instance type.</p>
-    #[doc(hidden)]
     pub ebs_optimized_info: ::std::option::Option<crate::types::EbsOptimizedInfo>,
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-    #[doc(hidden)]
     pub nvme_support: ::std::option::Option<crate::types::EbsNvmeSupport>,
 }
 impl EbsInfo {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDescription {
     /// <p>The ARN of the project.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project for which to obtain information from.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    #[doc(hidden)]
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object describing the project's placement specifications.</p>
-    #[doc(hidden)]
     pub placement_template: ::std::option::Option<crate::types::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProjectDescription {

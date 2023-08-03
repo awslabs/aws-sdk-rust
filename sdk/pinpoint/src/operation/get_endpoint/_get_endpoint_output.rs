@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_response: ::std::option::Option<crate::types::EndpointResponse>,
     _request_id: Option<String>,
 }

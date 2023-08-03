@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
-    #[doc(hidden)]
     pub begin: ::std::option::Option<::std::string::String>,
     /// <p>End of the time range.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
 }
 impl DatetimeRange {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
-    #[doc(hidden)]
     pub precision: ::std::option::Option<f64>,
     /// <p>A measure of how complete the recognizer results are for the test data. High recall means that the recognizer returned most of the relevant results.</p>
-    #[doc(hidden)]
     pub recall: ::std::option::Option<f64>,
     /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
-    #[doc(hidden)]
     pub f1_score: ::std::option::Option<f64>,
 }
 impl EntityRecognizerEvaluationMetrics {

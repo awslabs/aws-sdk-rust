@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::MssEncryption>,
     /// A list of MSS manifest configurations.
-    #[doc(hidden)]
     pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
     /// The duration (in seconds) of each segment.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl MssPackage {

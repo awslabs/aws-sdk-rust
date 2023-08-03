@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowRunsInput {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
-    #[doc(hidden)]
     pub include_graph: ::std::option::Option<bool>,
     /// <p>The maximum size of the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of workflow runs to be included in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetWorkflowRunsInput {

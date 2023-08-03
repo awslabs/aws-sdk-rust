@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::PipelineMetadata>,
     _request_id: Option<String>,
 }

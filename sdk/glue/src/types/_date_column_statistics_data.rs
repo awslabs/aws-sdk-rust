@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
-    #[doc(hidden)]
     pub minimum_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The highest value in the column.</p>
-    #[doc(hidden)]
     pub maximum_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of null values in the column.</p>
-    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
-    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl DateColumnStatisticsData {

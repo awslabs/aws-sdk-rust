@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImpersonationRoleOutput {
     /// <p>The new impersonation role ID.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

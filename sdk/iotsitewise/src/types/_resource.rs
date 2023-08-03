@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>A portal resource.</p>
-    #[doc(hidden)]
     pub portal: ::std::option::Option<crate::types::PortalResource>,
     /// <p>A project resource.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<crate::types::ProjectResource>,
 }
 impl Resource {

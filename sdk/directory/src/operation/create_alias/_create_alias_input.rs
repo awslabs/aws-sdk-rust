@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The identifier of the directory for which to create the alias.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The requested alias.</p>
     /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
 }
 impl CreateAliasInput {

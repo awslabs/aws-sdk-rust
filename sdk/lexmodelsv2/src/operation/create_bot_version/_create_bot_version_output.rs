@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotVersionOutput {
     /// <p>The bot identifier specified in the request.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version specified in the request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version number assigned to the version.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The source versions used for each locale in the new version.</p>
-    #[doc(hidden)]
     pub bot_version_locale_specification:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp of the date and time that the version was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

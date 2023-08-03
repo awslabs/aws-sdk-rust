@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to delete.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature to delete.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureInput {

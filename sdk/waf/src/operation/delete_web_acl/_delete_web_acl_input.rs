@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebAclInput {

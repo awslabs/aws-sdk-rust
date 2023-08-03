@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStudioLifecycleConfigOutput {
     /// <p>The ARN of the Lifecycle Configuration to describe.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Studio Lifecycle Configuration that is described.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The content of your Studio Lifecycle Configuration script.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_content: ::std::option::Option<::std::string::String>,
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputS3Object {
     /// <p>The bucket that contains the training output.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The location of the training output in the bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl OutputS3Object {

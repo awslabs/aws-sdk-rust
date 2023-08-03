@@ -79,7 +79,6 @@ pub struct AliasTarget {
     /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
     /// <dl>
@@ -169,7 +168,6 @@ pub struct AliasTarget {
     /// </note>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
@@ -217,7 +215,6 @@ pub struct AliasTarget {
     /// </dd>
     /// </dl>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub evaluate_target_health: bool,
 }
 impl AliasTarget {

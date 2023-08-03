@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubnetCidrReservationsOutput {
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    #[doc(hidden)]
     pub subnet_ipv4_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    #[doc(hidden)]
     pub subnet_ipv6_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

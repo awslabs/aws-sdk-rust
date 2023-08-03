@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLogSourceInput {
     /// <p>The source name of custom log source that you want to delete.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomLogSourceInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestExecutionResultItemsOutput {
     /// <p>The list of results from the test execution.</p>
-    #[doc(hidden)]
     pub test_execution_results: ::std::option::Option<crate::types::TestExecutionResultItems>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListTestExecutionResultItems</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListTestExecutionResultItems</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetRandomPasswordOutput {
     /// <p>A string with the password.</p>
-    #[doc(hidden)]
     pub random_password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

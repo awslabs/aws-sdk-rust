@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub service_code_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeServicesInput {

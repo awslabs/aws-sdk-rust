@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableSortBy {
     /// <p>The field sort (field id, direction) for the pivot table sort by options.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::FieldSort>,
     /// <p>The column sort (field id, direction) for the pivot table sort by options.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnSort>,
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
-    #[doc(hidden)]
     pub data_path: ::std::option::Option<crate::types::DataPathSort>,
 }
 impl PivotTableSortBy {

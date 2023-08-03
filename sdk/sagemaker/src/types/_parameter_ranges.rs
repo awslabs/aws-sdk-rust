@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterRanges {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
     pub integer_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
     pub continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
     pub categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    #[doc(hidden)]
     pub auto_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>>,
 }
 impl ParameterRanges {

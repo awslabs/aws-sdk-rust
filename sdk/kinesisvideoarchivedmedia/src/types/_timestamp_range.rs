@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    #[doc(hidden)]
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRange {

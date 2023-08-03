@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-    #[doc(hidden)]
     pub acceptance_threshold: ::std::option::Option<i32>,
 }
 impl AuthenticationConfiguration {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
-    #[doc(hidden)]
     pub list_server_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> List of ApplicationComponentStrategySummary. </p>
-    #[doc(hidden)]
     pub list_application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> List of AntipatternSeveritySummary. </p>
-    #[doc(hidden)]
     pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> List of ApplicationComponentSummary. </p>
-    #[doc(hidden)]
     pub list_application_component_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>>,
     /// <p> List of ServerSummary. </p>
-    #[doc(hidden)]
     pub list_server_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>,
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
-    #[doc(hidden)]
     pub antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p> The status of the anti-pattern report. </p>
-    #[doc(hidden)]
     pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p> The status message of the anti-pattern report. </p>
-    #[doc(hidden)]
     pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     /// <p> The time the assessment was performed. </p>
-    #[doc(hidden)]
     pub last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of status summaries of the analyzed application components.</p>
-    #[doc(hidden)]
     pub list_application_component_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
     /// <p>List of status summaries of the analyzed servers.</p>
-    #[doc(hidden)]
     pub list_server_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
 }
 impl AssessmentSummary {

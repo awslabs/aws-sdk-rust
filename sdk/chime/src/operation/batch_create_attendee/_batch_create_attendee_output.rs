@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeOutput {
     /// <p>The attendee information, including attendees IDs and join tokens.</p>
-    #[doc(hidden)]
     pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 pub struct DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
-    #[doc(hidden)]
     pub health_service_access_status_for_organization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

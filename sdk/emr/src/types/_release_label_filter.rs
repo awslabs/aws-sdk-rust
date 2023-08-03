@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseLabelFilter {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
 }
 impl ReleaseLabelFilter {

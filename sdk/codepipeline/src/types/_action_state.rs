@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionState {
     /// <p>The name of the action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the version (or revision) of an action.</p>
-    #[doc(hidden)]
     pub current_revision: ::std::option::Option<crate::types::ActionRevision>,
     /// <p>Represents information about the run of an action.</p>
-    #[doc(hidden)]
     pub latest_execution: ::std::option::Option<crate::types::ActionExecution>,
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
-    #[doc(hidden)]
     pub entity_url: ::std::option::Option<::std::string::String>,
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
-    #[doc(hidden)]
     pub revision_url: ::std::option::Option<::std::string::String>,
 }
 impl ActionState {

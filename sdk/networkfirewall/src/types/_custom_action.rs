@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The custom action associated with the action name.</p>
-    #[doc(hidden)]
     pub action_definition: ::std::option::Option<crate::types::ActionDefinition>,
 }
 impl CustomAction {

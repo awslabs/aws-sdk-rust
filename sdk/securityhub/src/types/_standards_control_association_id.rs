@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationId {
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a standard. </p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationId {

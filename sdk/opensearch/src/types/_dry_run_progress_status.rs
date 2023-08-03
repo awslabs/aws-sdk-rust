@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DryRunProgressStatus {
     /// <p>The unique identifier of the dry run.</p>
-    #[doc(hidden)]
     pub dry_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the dry run.</p>
-    #[doc(hidden)]
     pub dry_run_status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the dry run was initiated.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the dry run was last updated.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::std::string::String>,
     /// <p>Any validation failures that occurred as a result of the dry run.</p>
-    #[doc(hidden)]
     pub validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
 }
 impl DryRunProgressStatus {

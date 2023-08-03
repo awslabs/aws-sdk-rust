@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStoredQueryInput {
     /// <p>The name of the query that you want to delete.</p>
-    #[doc(hidden)]
     pub query_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStoredQueryInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub s3_input_file_type: ::std::option::Option<crate::types::S3InputFileType>,
 }
 impl S3InputFormatConfig {

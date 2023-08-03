@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateDocumentVersionUploadOutput {
     /// <p>The document metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The upload metadata.</p>
-    #[doc(hidden)]
     pub upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
     _request_id: Option<String>,
 }

@@ -8,11 +8,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
-    #[doc(hidden)]
     pub bandwidth_type: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBandwidthRateLimitInput {

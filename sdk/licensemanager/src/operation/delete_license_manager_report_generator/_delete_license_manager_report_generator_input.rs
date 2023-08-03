@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    #[doc(hidden)]
     pub license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLicenseManagerReportGeneratorInput {

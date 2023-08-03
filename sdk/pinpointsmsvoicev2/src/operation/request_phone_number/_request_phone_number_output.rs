@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
-    #[doc(hidden)]
     pub phone_number_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the new phone number.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The new phone number that was requested.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NumberStatus>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-    #[doc(hidden)]
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of number that was released.</p>
-    #[doc(hidden)]
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
-    #[doc(hidden)]
     pub monthly_leasing_price: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The ARN used to identify the two way channel.</p>
-    #[doc(hidden)]
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The unique identifier of the pool associated with the phone number </p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

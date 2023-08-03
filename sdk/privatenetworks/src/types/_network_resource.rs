@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    #[doc(hidden)]
     pub network_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the network resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkResourceType>,
     /// <p>The status of the network resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkResourceStatus>,
     /// <p>The status reason of the network resource.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The vendor of the network resource.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The model of the network resource.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the network resource.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The health of the network resource.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    #[doc(hidden)]
     pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
-    #[doc(hidden)]
     pub order_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of the network resource.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     /// <p>The position of the network resource.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::Position>,
     /// <p>The creation time of the network resource.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about a request to return the network resource.</p>
-    #[doc(hidden)]
     pub return_information: ::std::option::Option<crate::types::ReturnInformation>,
     /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
-    #[doc(hidden)]
     pub commitment_information: ::std::option::Option<crate::types::CommitmentInformation>,
 }
 impl NetworkResource {

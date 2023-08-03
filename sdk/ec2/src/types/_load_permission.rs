@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadPermission {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::PermissionGroup>,
 }
 impl LoadPermission {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessV2ScalingConfiguration {
     /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<f64>,
     /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<f64>,
 }
 impl ServerlessV2ScalingConfiguration {

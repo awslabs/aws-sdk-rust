@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StudioComponentInitializationScript {
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    #[doc(hidden)]
     pub launch_profile_protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::LaunchProfilePlatform>,
     /// <p>The method to use when running the initialization script.</p>
-    #[doc(hidden)]
     pub run_context: ::std::option::Option<crate::types::StudioComponentInitializationScriptRunContext>,
     /// <p>The initialization script.</p>
-    #[doc(hidden)]
     pub script: ::std::option::Option<::std::string::String>,
 }
 impl StudioComponentInitializationScript {

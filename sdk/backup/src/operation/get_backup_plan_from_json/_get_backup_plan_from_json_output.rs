@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonOutput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    #[doc(hidden)]
     pub backup_plan: ::std::option::Option<crate::types::BackupPlan>,
     _request_id: Option<String>,
 }

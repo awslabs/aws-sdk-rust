@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    #[doc(hidden)]
     pub monitoring_subscription: ::std::option::Option<crate::types::MonitoringSubscription>,
     _request_id: Option<String>,
 }

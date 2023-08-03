@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoomsInput {
     /// <p>Filters the list to match the specified room name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of rooms to return. Default: 50.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    #[doc(hidden)]
     pub message_review_handler_uri: ::std::option::Option<::std::string::String>,
     /// <p>Logging-configuration identifier.</p>
-    #[doc(hidden)]
     pub logging_configuration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListRoomsInput {

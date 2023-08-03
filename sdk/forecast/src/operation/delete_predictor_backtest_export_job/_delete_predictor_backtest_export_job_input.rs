@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
-    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePredictorBacktestExportJobInput {

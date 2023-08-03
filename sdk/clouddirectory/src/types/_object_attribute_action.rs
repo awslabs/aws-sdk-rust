@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
-    #[doc(hidden)]
     pub object_attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
-    #[doc(hidden)]
     pub object_attribute_update_value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl ObjectAttributeAction {

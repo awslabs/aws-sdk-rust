@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNodegroupOutput {
     /// <p>The full description of your deleted node group.</p>
-    #[doc(hidden)]
     pub nodegroup: ::std::option::Option<crate::types::Nodegroup>,
     _request_id: Option<String>,
 }

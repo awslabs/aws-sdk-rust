@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The ID of the pipeline that you want to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
-    #[doc(hidden)]
     pub input_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    #[doc(hidden)]
     pub aws_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -30,7 +25,6 @@ pub struct UpdatePipelineInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<crate::types::Notifications>,
     /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
@@ -56,7 +50,6 @@ pub struct UpdatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_config: ::std::option::Option<crate::types::PipelineOutputConfig>,
     /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
@@ -82,7 +75,6 @@ pub struct UpdatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub thumbnail_config: ::std::option::Option<crate::types::PipelineOutputConfig>,
 }
 impl UpdatePipelineInput {

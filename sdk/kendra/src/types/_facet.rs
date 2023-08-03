@@ -7,15 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Facet {
     /// <p>The unique key for the document attribute.</p>
-    #[doc(hidden)]
     pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    #[doc(hidden)]
     pub facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl Facet {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServerInput {
     /// <p>A unique system-assigned identifier for a server instance.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServerInput {

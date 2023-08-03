@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
-    #[doc(hidden)]
     pub element: ::std::option::Option<::std::string::String>,
     /// <p>The property to retrieve a value from.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
 }
 impl FormBindingElement {

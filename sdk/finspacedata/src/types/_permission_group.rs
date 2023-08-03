@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PermissionGroup {
     /// <p> The unique identifier for the permission group.</p>
-    #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the permission group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description for the permission group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -25,13 +22,10 @@ pub struct PermissionGroup {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
-    #[doc(hidden)]
     pub create_time: i64,
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -39,7 +33,6 @@ pub struct PermissionGroup {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroup {

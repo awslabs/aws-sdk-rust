@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is the default rule.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The rule match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>Information about the action for the specified listener rule.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
     _request_id: Option<String>,
 }

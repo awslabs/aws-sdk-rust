@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterRole {
     /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct DbClusterRole {
     /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
     /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterRole {

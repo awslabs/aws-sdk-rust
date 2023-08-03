@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFhirExportJobInput {
     /// <p>The user generated name for an export job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional user provided token used for ensuring idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartFhirExportJobInput {

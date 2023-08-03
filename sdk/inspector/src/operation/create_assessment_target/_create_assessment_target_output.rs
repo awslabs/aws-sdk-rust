@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    #[doc(hidden)]
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

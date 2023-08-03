@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpEndpointRequestConfiguration {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
-    #[doc(hidden)]
     pub content_encoding: ::std::option::Option<crate::types::ContentEncoding>,
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
-    #[doc(hidden)]
     pub common_attributes: ::std::option::Option<::std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
 }
 impl HttpEndpointRequestConfiguration {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateContactInput {
     /// <p>The name of the contact to display on the console.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the contact that is used to call the contact on the device.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
-    #[doc(hidden)]
     pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
-    #[doc(hidden)]
     pub sip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContactInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
-    #[doc(hidden)]
     pub instance_summary: ::std::option::Option<crate::types::InstanceSummary>,
     _request_id: Option<String>,
 }

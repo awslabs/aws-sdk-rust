@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutput {
     /// <p>Information about each requested VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
     /// <p>Any errors associated with the request.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_errors: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointError>>,
     _request_id: Option<String>,
 }

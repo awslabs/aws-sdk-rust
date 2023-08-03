@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SemanticType {
     /// <p>The semantic type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic type sub type name.</p>
-    #[doc(hidden)]
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic type parameters.</p>
-    #[doc(hidden)]
     pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The semantic type truthy cell value.</p>
-    #[doc(hidden)]
     pub truthy_cell_value: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the true cell value.</p>
-    #[doc(hidden)]
     pub truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The semantic type falsey cell value.</p>
-    #[doc(hidden)]
     pub falsey_cell_value: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the false cell value.</p>
-    #[doc(hidden)]
     pub falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SemanticType {

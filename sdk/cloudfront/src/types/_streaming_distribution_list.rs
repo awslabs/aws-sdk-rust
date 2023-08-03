@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingDistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
-    #[doc(hidden)]
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>,
 }
 impl StreamingDistributionList {

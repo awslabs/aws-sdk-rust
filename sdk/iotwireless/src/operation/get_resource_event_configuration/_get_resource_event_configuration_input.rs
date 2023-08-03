@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    #[doc(hidden)]
     pub identifier_type: ::std::option::Option<crate::types::IdentifierType>,
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    #[doc(hidden)]
     pub partner_type: ::std::option::Option<crate::types::EventNotificationPartnerType>,
 }
 impl GetResourceEventConfigurationInput {

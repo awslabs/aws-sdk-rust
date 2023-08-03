@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Participant {
     /// <p>The participant's phone number.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The participant's proxy phone number.</p>
-    #[doc(hidden)]
     pub proxy_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl Participant {

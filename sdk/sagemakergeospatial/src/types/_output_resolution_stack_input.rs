@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputResolutionStackInput {
     /// <p>A string value representing Predefined Output Resolution for a stacking operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and <code>AVERAGE</code>.</p>
-    #[doc(hidden)]
     pub predefined: ::std::option::Option<crate::types::PredefinedResolution>,
     /// <p>The structure representing User Output Resolution for a Stacking operation defined as a value and unit.</p>
-    #[doc(hidden)]
     pub user_defined: ::std::option::Option<crate::types::UserDefined>,
 }
 impl OutputResolutionStackInput {

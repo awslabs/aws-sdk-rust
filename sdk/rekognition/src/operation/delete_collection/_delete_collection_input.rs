@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCollectionInput {

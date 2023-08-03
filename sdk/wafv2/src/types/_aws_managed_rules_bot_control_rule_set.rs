@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsManagedRulesBotControlRuleSet {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub inspection_level: ::std::option::Option<crate::types::InspectionLevel>,
 }
 impl AwsManagedRulesBotControlRuleSet {

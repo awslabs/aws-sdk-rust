@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterDbProxyTargetsInput {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    #[doc(hidden)]
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more DB instance identifiers.</p>
-    #[doc(hidden)]
     pub db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more DB cluster identifiers.</p>
-    #[doc(hidden)]
     pub db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeregisterDbProxyTargetsInput {

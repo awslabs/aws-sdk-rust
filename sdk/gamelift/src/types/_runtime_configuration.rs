@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeConfiguration {
     /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
-    #[doc(hidden)]
     pub server_processes: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
     /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
-    #[doc(hidden)]
     pub max_concurrent_game_session_activations: ::std::option::Option<i32>,
     /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
-    #[doc(hidden)]
     pub game_session_activation_timeout_seconds: ::std::option::Option<i32>,
 }
 impl RuntimeConfiguration {

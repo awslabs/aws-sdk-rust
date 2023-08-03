@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingOutput {
     /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    #[doc(hidden)]
     pub time_based_auto_scaling_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }

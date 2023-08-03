@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-    #[doc(hidden)]
     pub human_loop_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    #[doc(hidden)]
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>Sets attributes of the input data.</p>
-    #[doc(hidden)]
     pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {

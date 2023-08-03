@@ -5,85 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>Unique identifier for the domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<bool>,
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
-    #[doc(hidden)]
     pub deleted: ::std::option::Option<bool>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
-    #[doc(hidden)]
     pub processing: ::std::option::Option<bool>,
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
-    #[doc(hidden)]
     pub upgrade_processing: ::std::option::Option<bool>,
     /// <p>Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Container for the cluster configuration of the domain.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     /// <p>Container for EBS-based storage settings for the domain.</p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>The VPC configuration for the domain.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Encryption at rest settings for the domain.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Key-value pairs that specify advanced configuration options.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Log publishing options for the domain.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>The current status of the domain's service software.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Settings for fine-grained access control.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p>Auto-Tune settings for the domain.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     /// <p>Information about a configuration change happening on the domain.</p>
-    #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
-    #[doc(hidden)]
     pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
-    #[doc(hidden)]
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl DomainStatus {

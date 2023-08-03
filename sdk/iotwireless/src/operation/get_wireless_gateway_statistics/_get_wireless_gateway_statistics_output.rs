@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsOutput {
     /// <p>The ID of the wireless gateway.</p>
-    #[doc(hidden)]
     pub wireless_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>The connection status of the wireless gateway.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }

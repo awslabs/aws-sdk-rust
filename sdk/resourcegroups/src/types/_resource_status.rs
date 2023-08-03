@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStatus {
     /// <p>The current status.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ResourceStatusValue>,
 }
 impl ResourceStatus {

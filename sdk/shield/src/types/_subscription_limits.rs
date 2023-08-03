@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscriptionLimits {
     /// <p>Limits settings on protections for your subscription. </p>
-    #[doc(hidden)]
     pub protection_limits: ::std::option::Option<crate::types::ProtectionLimits>,
     /// <p>Limits settings on protection groups for your subscription. </p>
-    #[doc(hidden)]
     pub protection_group_limits: ::std::option::Option<crate::types::ProtectionGroupLimits>,
 }
 impl SubscriptionLimits {

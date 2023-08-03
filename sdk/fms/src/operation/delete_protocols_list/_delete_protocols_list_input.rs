@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProtocolsListInput {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProtocolsListInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
-    #[doc(hidden)]
     pub placement_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGameSessionPlacementInput {

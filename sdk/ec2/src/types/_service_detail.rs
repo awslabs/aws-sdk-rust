@@ -5,50 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceDetail {
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of service.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     /// <p>The Availability Zones in which the service is available.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The DNS names for the service.</p>
-    #[doc(hidden)]
     pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The private DNS name for the service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub private_dns_names: ::std::option::Option<::std::vec::Vec<crate::types::PrivateDnsDetails>>,
     /// <p>Indicates whether the service supports endpoint policies.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_policy_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether VPC endpoint connection requests to the service must be accepted by the service owner.</p>
-    #[doc(hidden)]
     pub acceptance_required: ::std::option::Option<bool>,
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
-    #[doc(hidden)]
     pub manages_vpc_endpoints: ::std::option::Option<bool>,
     /// <p>The payer responsibility.</p>
-    #[doc(hidden)]
     pub payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     /// <p>The tags assigned to the service.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
-    #[doc(hidden)]
     pub private_dns_name_verification_state: ::std::option::Option<crate::types::DnsNameState>,
     /// <p>The supported IP address types.</p>
-    #[doc(hidden)]
     pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
 }
 impl ServiceDetail {

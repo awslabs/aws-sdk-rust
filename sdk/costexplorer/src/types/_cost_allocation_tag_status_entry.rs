@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The status of a cost allocation tag. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
 }
 impl CostAllocationTagStatusEntry {

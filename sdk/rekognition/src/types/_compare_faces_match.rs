@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompareFacesMatch {
     /// <p>Level of confidence that the faces match.</p>
-    #[doc(hidden)]
     pub similarity: ::std::option::Option<f32>,
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::ComparedFace>,
 }
 impl CompareFacesMatch {

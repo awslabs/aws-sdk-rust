@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOrganizationOutput {
     /// <p>A structure that contains details about the newly created organization.</p>
-    #[doc(hidden)]
     pub organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
 }

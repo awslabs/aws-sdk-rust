@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
-    #[doc(hidden)]
     pub task_set: ::std::option::Option<::std::string::String>,
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<crate::types::Scale>,
 }
 impl UpdateTaskSetInput {

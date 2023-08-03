@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePreparedStatementInput {
     /// <p>The name of the prepared statement to delete.</p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl DeletePreparedStatementInput {

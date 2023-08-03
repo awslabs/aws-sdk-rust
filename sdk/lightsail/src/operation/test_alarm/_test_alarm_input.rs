@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestAlarmInput {
     /// <p>The name of the alarm to test.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
@@ -13,7 +12,6 @@ pub struct TestAlarmInput {
     /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
     /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AlarmState>,
 }
 impl TestAlarmInput {

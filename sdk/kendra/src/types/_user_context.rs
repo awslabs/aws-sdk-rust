@@ -12,16 +12,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserContext {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    #[doc(hidden)]
     pub data_source_groups: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
 }
 impl UserContext {

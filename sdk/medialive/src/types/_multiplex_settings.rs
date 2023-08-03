@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
-    #[doc(hidden)]
     pub maximum_video_buffer_delay_milliseconds: ::std::option::Option<i32>,
     /// Transport stream bit rate.
-    #[doc(hidden)]
     pub transport_stream_bitrate: ::std::option::Option<i32>,
     /// Transport stream ID.
-    #[doc(hidden)]
     pub transport_stream_id: ::std::option::Option<i32>,
     /// Transport stream reserved bit rate.
-    #[doc(hidden)]
     pub transport_stream_reserved_bitrate: ::std::option::Option<i32>,
 }
 impl MultiplexSettings {

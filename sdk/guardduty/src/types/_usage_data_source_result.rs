@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageDataSourceResult {
     /// <p>The data source type that generated usage.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Represents the total of usage for the specified data source.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::Total>,
 }
 impl UsageDataSourceResult {

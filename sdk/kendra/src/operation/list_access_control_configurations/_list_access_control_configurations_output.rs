@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessControlConfigurationsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The details of your access control configurations.</p>
-    #[doc(hidden)]
     pub access_control_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
     _request_id: Option<String>,
 }

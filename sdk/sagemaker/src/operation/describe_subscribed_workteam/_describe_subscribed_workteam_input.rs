@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscribedWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSubscribedWorkteamInput {

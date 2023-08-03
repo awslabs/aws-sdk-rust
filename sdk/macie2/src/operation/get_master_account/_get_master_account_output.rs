@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutput {
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-    #[doc(hidden)]
     pub master: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
 }

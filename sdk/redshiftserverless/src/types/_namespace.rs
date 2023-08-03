@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a namespace.</p>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the first database created in the namespace.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    #[doc(hidden)]
     pub log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     /// <p>The status of the namespace.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NamespaceStatus>,
     /// <p>The date of when the namespace was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Namespace {

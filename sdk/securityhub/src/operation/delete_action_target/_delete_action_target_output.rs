@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActionTargetOutput {
     /// <p>The ARN of the custom action target that was deleted.</p>
-    #[doc(hidden)]
     pub action_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

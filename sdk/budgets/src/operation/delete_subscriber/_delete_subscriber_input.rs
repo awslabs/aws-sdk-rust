@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose subscriber you want to delete.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification whose subscriber you want to delete.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The subscriber that you want to delete.</p>
-    #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::Subscriber>,
 }
 impl DeleteSubscriberInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamingSessionBackupsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the streaming session backups.</p>
-    #[doc(hidden)]
     pub streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
     _request_id: Option<String>,
 }

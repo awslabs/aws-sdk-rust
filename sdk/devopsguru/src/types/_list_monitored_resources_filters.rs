@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
-    #[doc(hidden)]
     pub resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    #[doc(hidden)]
     pub resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
 }
 impl ListMonitoredResourcesFilters {

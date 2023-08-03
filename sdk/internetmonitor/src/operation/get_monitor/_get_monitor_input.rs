@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorInput {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInput {

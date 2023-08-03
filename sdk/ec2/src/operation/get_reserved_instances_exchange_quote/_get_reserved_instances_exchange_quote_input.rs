@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservedInstancesExchangeQuoteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Convertible Reserved Instances to exchange.</p>
-    #[doc(hidden)]
     pub reserved_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
-    #[doc(hidden)]
     pub target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
 }
 impl GetReservedInstancesExchangeQuoteInput {

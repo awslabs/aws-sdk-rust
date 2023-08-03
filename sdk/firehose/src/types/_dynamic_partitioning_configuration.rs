@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::RetryOptions>,
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl DynamicPartitioningConfiguration {

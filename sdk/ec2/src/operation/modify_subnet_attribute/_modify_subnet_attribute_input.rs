@@ -5,39 +5,28 @@
 pub struct ModifySubnetAttributeInput {
     /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub assign_ipv6_address_on_creation: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>
-    #[doc(hidden)]
     pub map_public_ip_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a customer-owned IPv4 address.</p>
     /// <p>When this value is <code>true</code>, you must specify the customer-owned IP pool using <code>CustomerOwnedIpv4Pool</code>.</p>
-    #[doc(hidden)]
     pub map_customer_owned_ip_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     /// <p>You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
-    #[doc(hidden)]
     pub enable_dns64: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>The type of hostname to assign to instances in the subnet at launch. For IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6 only subnets, an instance DNS name must be based on the instance ID (resource-name).</p>
-    #[doc(hidden)]
     pub private_dns_hostname_type_on_launch: ::std::option::Option<crate::types::HostnameType>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_a_record_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_aaaa_record_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
-    #[doc(hidden)]
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
     /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
-    #[doc(hidden)]
     pub disable_lni_at_device_index: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifySubnetAttributeInput {

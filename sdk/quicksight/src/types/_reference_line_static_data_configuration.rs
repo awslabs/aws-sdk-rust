@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReferenceLineStaticDataConfiguration {
     /// <p>The double input of the static data.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl ReferenceLineStaticDataConfiguration {

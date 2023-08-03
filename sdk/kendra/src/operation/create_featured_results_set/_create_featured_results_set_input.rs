@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeaturedResultsSetInput {
     /// <p>The identifier of the index that you want to use for featuring results.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the set of featured results.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFeaturedResultsSetInput {

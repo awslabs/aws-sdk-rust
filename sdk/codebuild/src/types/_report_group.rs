@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportGroup {
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>ReportGroup</code>. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
     /// <dl>
@@ -25,20 +23,15 @@ pub struct ReportGroup {
     /// <p>The report group contains test reports.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReportType>,
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
-    #[doc(hidden)]
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status of the report group. This property is read-only.</p>
     /// <p>This can be one of the following values:</p>
@@ -56,7 +49,6 @@ pub struct ReportGroup {
     /// <p>The report group is in the process of being deleted.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReportGroupStatusType>,
 }
 impl ReportGroup {

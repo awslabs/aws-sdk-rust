@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
-    #[doc(hidden)]
     pub min_provisioned_tps: ::std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
-    #[doc(hidden)]
     pub campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCampaignInput {

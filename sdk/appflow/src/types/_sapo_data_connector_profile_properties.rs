@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
-    #[doc(hidden)]
     pub application_host_url: ::std::option::Option<::std::string::String>,
     /// <p> The application path to catalog service. </p>
-    #[doc(hidden)]
     pub application_service_path: ::std::option::Option<::std::string::String>,
     /// <p> The port number of the SAPOData instance. </p>
-    #[doc(hidden)]
     pub port_number: ::std::option::Option<i32>,
     /// <p> The client number for the client creating the connection. </p>
-    #[doc(hidden)]
     pub client_number: ::std::option::Option<::std::string::String>,
     /// <p> The logon language of SAPOData instance. </p>
-    #[doc(hidden)]
     pub logon_language: ::std::option::Option<::std::string::String>,
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
-    #[doc(hidden)]
     pub private_link_service_name: ::std::option::Option<::std::string::String>,
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
-    #[doc(hidden)]
     pub o_auth_properties: ::std::option::Option<crate::types::OAuthProperties>,
     /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
     /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
-    #[doc(hidden)]
     pub disable_sso: bool,
 }
 impl SapoDataConnectorProfileProperties {

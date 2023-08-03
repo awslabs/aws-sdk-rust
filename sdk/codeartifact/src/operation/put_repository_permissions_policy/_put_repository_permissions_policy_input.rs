@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository to set the resource policy on. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    #[doc(hidden)]
     pub policy_revision: ::std::option::Option<::std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutRepositoryPermissionsPolicyInput {

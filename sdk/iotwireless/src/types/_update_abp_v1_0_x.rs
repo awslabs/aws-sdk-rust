@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAbpV10X {
     /// <p>The FCnt init value.</p>
-    #[doc(hidden)]
     pub f_cnt_start: ::std::option::Option<i32>,
 }
 impl UpdateAbpV10X {

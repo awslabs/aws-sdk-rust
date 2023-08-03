@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSessionsOutput {
     /// <p>A list of sessions meeting the request parameters.</p>
-    #[doc(hidden)]
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

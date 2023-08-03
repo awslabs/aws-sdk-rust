@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormSectionLayoutConfiguration {
     /// <p>The elements that are included in the free-form layout.</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
 }
 impl FreeFormSectionLayoutConfiguration {

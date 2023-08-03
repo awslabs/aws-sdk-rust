@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Interconnect {
     /// <p>The ID of the interconnect.</p>
-    #[doc(hidden)]
     pub interconnect_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the interconnect.</p>
-    #[doc(hidden)]
     pub interconnect_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -20,43 +18,30 @@ pub struct Interconnect {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The location of the connection.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth of the connection.</p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    #[doc(hidden)]
     pub loa_issue_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    #[doc(hidden)]
     pub aws_device: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether jumbo frames are supported.</p>
-    #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    #[doc(hidden)]
     pub aws_device_v2: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    #[doc(hidden)]
     pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    #[doc(hidden)]
     pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the interconnect.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
 impl Interconnect {

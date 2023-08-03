@@ -5,10 +5,8 @@
 pub struct UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourcesInput {

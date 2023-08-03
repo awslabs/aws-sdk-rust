@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>The number of times to prompt the user for information.</p>
-    #[doc(hidden)]
     pub max_attempts: ::std::option::Option<i32>,
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
-    #[doc(hidden)]
     pub response_card: ::std::option::Option<::std::string::String>,
 }
 impl Prompt {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    #[doc(hidden)]
     pub event_value_threshold: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
-    #[doc(hidden)]
     pub hpo_config: ::std::option::Option<crate::types::HpoConfig>,
     /// <p>Lists the hyperparameter names and ranges.</p>
-    #[doc(hidden)]
     pub algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Lists the feature transformation parameters.</p>
-    #[doc(hidden)]
     pub feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
-    #[doc(hidden)]
     pub auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-    #[doc(hidden)]
     pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
-    #[doc(hidden)]
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
 }
 impl SolutionConfig {

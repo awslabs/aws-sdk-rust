@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotSortingEntity {
     /// <p>The category for sorting the snapshots.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::SnapshotAttributeToSortBy>,
     /// <p>The order for listing the attributes.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortByOrder>,
 }
 impl SnapshotSortingEntity {

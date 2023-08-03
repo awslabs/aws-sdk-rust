@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplatePlacement {
     /// <p>The Availability Zone of the instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The affinity setting for the instance on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub affinity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group for the instance.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Dedicated Host for the instance.</p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. </p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub spread_domain: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the host resource group in which to launch the instances. </p>
-    #[doc(hidden)]
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of the partition the instance should launch in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
-    #[doc(hidden)]
     pub partition_number: ::std::option::Option<i32>,
     /// <p>The Group ID of the placement group. You must specify the Placement Group <b>Group ID</b> to launch an instance in a shared placement group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplatePlacement {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryRunStatus {
     /// <p>The current state of the run.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CanaryRunState>,
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
-    #[doc(hidden)]
     pub state_reason_code: ::std::option::Option<crate::types::CanaryRunStateReasonCode>,
 }
 impl CanaryRunStatus {

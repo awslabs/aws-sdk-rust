@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MlModel {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
-    #[doc(hidden)]
     pub training_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
     /// <ul>
@@ -31,13 +25,10 @@ pub struct MlModel {
     /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub size_in_bytes: ::std::option::Option<i64>,
     /// <p>The current endpoint of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -48,16 +39,13 @@ pub struct MlModel {
     /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm, which controls overfitting the data by penalizing large coefficients. This parameter tends to drive coefficients to zero, resulting in sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm, which controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
     /// <ul>
     /// <li> <p> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub algorithm: ::std::option::Option<crate::types::Algorithm>,
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
     /// <ul>
@@ -65,25 +53,18 @@ pub struct MlModel {
     /// <li> <p> <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".</p> </li>
     /// <li> <p> <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub score_threshold: ::std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub score_threshold_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MlModel {

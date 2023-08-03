@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexStatmuxVideoSettings {
     /// Maximum statmux bitrate.
-    #[doc(hidden)]
     pub maximum_bitrate: ::std::option::Option<i32>,
     /// Minimum statmux bitrate.
-    #[doc(hidden)]
     pub minimum_bitrate: ::std::option::Option<i32>,
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl MultiplexStatmuxVideoSettings {

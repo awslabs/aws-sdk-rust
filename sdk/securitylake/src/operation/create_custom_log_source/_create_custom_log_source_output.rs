@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceOutput {
     /// <p>The created third-party custom source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
 }

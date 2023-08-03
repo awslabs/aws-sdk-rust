@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneStatus {
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the Auto-Tune options latest version.</p>
-    #[doc(hidden)]
     pub update_version: i32,
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
-    #[doc(hidden)]
     pub pending_deletion: ::std::option::Option<bool>,
 }
 impl AutoTuneStatus {

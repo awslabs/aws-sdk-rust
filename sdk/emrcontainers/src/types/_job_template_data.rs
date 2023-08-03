@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTemplateData {
     /// <p>The execution role ARN of the job run.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The release version of Amazon EMR.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p> The configuration settings that are used to override defaults configuration.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
-    #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration of parameters existing in the job template.</p>
-    #[doc(hidden)]
     pub parameter_configuration:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>>,
     /// <p>The tags assigned to jobs started using the job template.</p>
-    #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobTemplateData {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
-    #[doc(hidden)]
     pub offering: ::std::option::Option<crate::types::Offering>,
     _request_id: Option<String>,
 }

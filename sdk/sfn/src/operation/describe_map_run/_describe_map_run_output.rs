@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapRunOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Map Run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MapRunStatus>,
     /// <p>The date when the Map Run was started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the Map Run was stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
-    #[doc(hidden)]
     pub max_concurrency: i32,
     /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
-    #[doc(hidden)]
     pub tolerated_failure_percentage: f32,
     /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
-    #[doc(hidden)]
     pub tolerated_failure_count: i64,
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-    #[doc(hidden)]
     pub item_counts: ::std::option::Option<crate::types::MapRunItemCounts>,
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    #[doc(hidden)]
     pub execution_counts: ::std::option::Option<crate::types::MapRunExecutionCounts>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::RequestDetails>,
     /// <p>The type of job to be created.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl CreateJobInput {

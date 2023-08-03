@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind fields to data at runtime.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
-    #[doc(hidden)]
     pub concat: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
 }
 impl FormInputValueProperty {

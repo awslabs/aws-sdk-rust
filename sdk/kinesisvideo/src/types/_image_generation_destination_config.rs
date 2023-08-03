@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
 }
 impl ImageGenerationDestinationConfig {

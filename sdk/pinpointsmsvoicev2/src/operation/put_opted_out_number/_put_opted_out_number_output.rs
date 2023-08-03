@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutOptedOutNumberOutput {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    #[doc(hidden)]
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number that was added to the OptOutList.</p>
-    #[doc(hidden)]
     pub opted_out_number: ::std::option::Option<::std::string::String>,
     /// <p>The time that the phone number was added to the OptOutList, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
-    #[doc(hidden)]
     pub end_user_opted_out: bool,
     _request_id: Option<String>,
 }

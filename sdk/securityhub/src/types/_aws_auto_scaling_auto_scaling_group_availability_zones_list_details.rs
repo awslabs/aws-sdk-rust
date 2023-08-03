@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// <p>The name of the Availability Zone.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {

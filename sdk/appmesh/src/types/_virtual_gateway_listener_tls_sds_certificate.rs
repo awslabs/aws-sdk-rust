@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    #[doc(hidden)]
     pub secret_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {

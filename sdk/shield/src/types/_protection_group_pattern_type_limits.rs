@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-    #[doc(hidden)]
     pub arbitrary_pattern_limits: ::std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
 }
 impl ProtectionGroupPatternTypeLimits {

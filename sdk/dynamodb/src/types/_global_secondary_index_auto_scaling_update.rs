@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub provisioned_write_capacity_auto_scaling_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl GlobalSecondaryIndexAutoScalingUpdate {

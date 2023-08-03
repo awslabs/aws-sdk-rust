@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAggregation {
     /// <p>The type of finding.</p>
-    #[doc(hidden)]
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     /// <p>The sort order (ascending or descending).</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::AccountSortBy>,
 }
 impl AccountAggregation {

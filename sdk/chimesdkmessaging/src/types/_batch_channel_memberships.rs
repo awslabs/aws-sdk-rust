@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
-    #[doc(hidden)]
     pub invited_by: ::std::option::Option<crate::types::Identity>,
     /// <p>The membership types set for the channel members.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The users successfully added to the request.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
     /// <p>The ARN of the channel to which you're adding members.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SubChannel.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchChannelMemberships {

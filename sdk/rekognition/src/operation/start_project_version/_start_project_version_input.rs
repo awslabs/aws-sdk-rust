@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    #[doc(hidden)]
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
     /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
-    #[doc(hidden)]
     pub min_inference_units: ::std::option::Option<i32>,
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
-    #[doc(hidden)]
     pub max_inference_units: ::std::option::Option<i32>,
 }
 impl StartProjectVersionInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsInput {
     /// <p>The ID of the task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure used to filter the tasks by their current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExecutionState>,
     /// <p>The maximum number of tasks to list per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExecutionsInput {

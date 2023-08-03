@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-    #[doc(hidden)]
     pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     /// <p>The name of the table to create.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
@@ -26,7 +24,6 @@ pub struct CreateTableInput {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
@@ -44,7 +41,6 @@ pub struct CreateTableInput {
     /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
@@ -62,19 +58,16 @@ pub struct CreateTableInput {
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
@@ -87,19 +80,14 @@ pub struct CreateTableInput {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
-    #[doc(hidden)]
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    #[doc(hidden)]
     pub table_class: ::std::option::Option<crate::types::TableClass>,
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl CreateTableInput {

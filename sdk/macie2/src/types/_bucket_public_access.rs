@@ -10,10 +10,8 @@ pub struct BucketPublicAccess {
     /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub effective_permission: ::std::option::Option<crate::types::EffectivePermission>,
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
-    #[doc(hidden)]
     pub permission_configuration: ::std::option::Option<crate::types::BucketPermissionConfiguration>,
 }
 impl BucketPublicAccess {

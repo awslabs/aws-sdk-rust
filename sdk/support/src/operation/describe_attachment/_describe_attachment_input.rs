@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAttachmentInput {

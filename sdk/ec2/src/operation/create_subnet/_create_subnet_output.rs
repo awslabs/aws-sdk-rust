@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubnetOutput {
     /// <p>Information about the subnet.</p>
-    #[doc(hidden)]
     pub subnet: ::std::option::Option<crate::types::Subnet>,
     _request_id: Option<String>,
 }

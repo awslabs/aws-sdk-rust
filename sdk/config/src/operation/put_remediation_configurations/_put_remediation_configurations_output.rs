@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRemediationConfigurationsOutput {
     /// <p>Returns a list of failed remediation batch objects.</p>
-    #[doc(hidden)]
     pub failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedRemediationBatch>>,
     _request_id: Option<String>,
 }

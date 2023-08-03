@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>,
 }
 impl Schema {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsOutput {
     /// <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_settings: ::std::option::Option<crate::types::AccountSettings>,
     _request_id: Option<String>,
 }

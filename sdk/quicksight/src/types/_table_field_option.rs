@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldOption {
     /// <p>The field ID for a table field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The width for a table field.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<::std::string::String>,
     /// <p>The custom label for a table field.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of a table field.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The URL configuration for a table field.</p>
-    #[doc(hidden)]
     pub url_styling: ::std::option::Option<crate::types::TableFieldUrlConfiguration>,
 }
 impl TableFieldOption {

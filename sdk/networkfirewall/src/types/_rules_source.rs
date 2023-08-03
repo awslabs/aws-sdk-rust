@@ -6,16 +6,12 @@
 pub struct RulesSource {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
-    #[doc(hidden)]
     pub rules_string: ::std::option::Option<::std::string::String>,
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
-    #[doc(hidden)]
     pub rules_source_list: ::std::option::Option<crate::types::RulesSourceList>,
     /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
-    #[doc(hidden)]
     pub stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRule>>,
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
-    #[doc(hidden)]
     pub stateless_rules_and_custom_actions: ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
 }
 impl RulesSource {

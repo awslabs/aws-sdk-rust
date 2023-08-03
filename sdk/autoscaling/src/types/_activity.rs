@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Activity {
     /// <p>The ID of the activity.</p>
-    #[doc(hidden)]
     pub activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly, more verbose description of the activity.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The reason the activity began.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the activity.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the activity.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the activity.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
     /// <p>A friendly, more verbose description of the activity status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
-    #[doc(hidden)]
     pub progress: i32,
     /// <p>The details about the activity.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_state: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl Activity {

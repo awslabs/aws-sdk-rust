@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFileUploadUrlOutput {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
-    #[doc(hidden)]
     pub file_upload_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

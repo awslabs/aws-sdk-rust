@@ -10,14 +10,11 @@ pub struct IdentityInfo {
     /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
     /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
-    #[doc(hidden)]
     pub identity_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
-    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl IdentityInfo {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExplainabilitiesInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items returned in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -16,7 +14,6 @@ pub struct ListExplainabilitiesInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListExplainabilitiesInput {

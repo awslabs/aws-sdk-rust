@@ -6,10 +6,8 @@ pub struct GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
 }
 impl GetEntitiesInput {

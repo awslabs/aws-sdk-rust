@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedActionHistoryItem {
     /// <p>A unique identifier for the managed action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the managed action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>A description of the managed action.</p>
-    #[doc(hidden)]
     pub action_description: ::std::option::Option<::std::string::String>,
     /// <p>If the action failed, the type of failure.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<crate::types::FailureType>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionHistoryStatus>,
     /// <p>If the action failed, a description of the failure.</p>
-    #[doc(hidden)]
     pub failure_description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the action started executing.</p>
-    #[doc(hidden)]
     pub executed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the action finished executing.</p>
-    #[doc(hidden)]
     pub finished_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ManagedActionHistoryItem {

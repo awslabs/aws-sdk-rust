@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MixedMeasureMapping {
     /// <p>Refers to the value of measure_name in a result row. This field is required if MeasureNameColumn is provided.</p>
-    #[doc(hidden)]
     pub measure_name: ::std::option::Option<::std::string::String>,
     /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
-    #[doc(hidden)]
     pub source_column: ::std::option::Option<::std::string::String>,
     /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
-    #[doc(hidden)]
     pub target_measure_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of the value that is to be read from sourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.</p>
-    #[doc(hidden)]
     pub measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,
     /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
-    #[doc(hidden)]
     pub multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MixedMeasureMapping {

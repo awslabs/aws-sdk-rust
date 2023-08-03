@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunFilterCriteria {
     /// <p>The type of task run.</p>
-    #[doc(hidden)]
     pub task_run_type: ::std::option::Option<crate::types::TaskType>,
     /// <p>The current status of the task run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>Filter on task runs started before this date.</p>
-    #[doc(hidden)]
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on task runs started after this date.</p>
-    #[doc(hidden)]
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TaskRunFilterCriteria {

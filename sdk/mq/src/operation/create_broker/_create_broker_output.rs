@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBrokerOutput {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

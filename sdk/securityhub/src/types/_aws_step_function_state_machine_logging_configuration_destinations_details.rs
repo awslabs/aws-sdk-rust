@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails {
     /// <p> An object describing a CloudWatch Logs log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"> Amazon Web Services::Logs::LogGroup</a> in the <i>CloudFormation User Guide</i>. </p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group:
         ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails>,
 }

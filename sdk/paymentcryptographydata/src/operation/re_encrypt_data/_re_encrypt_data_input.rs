@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReEncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    #[doc(hidden)]
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub outgoing_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.</p>
-    #[doc(hidden)]
     pub cipher_text: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and values for incoming ciphertext.</p>
-    #[doc(hidden)]
     pub incoming_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub outgoing_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
 }
 impl ReEncryptDataInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContextTimeToLive {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
-    #[doc(hidden)]
     pub time_to_live_in_seconds: ::std::option::Option<i32>,
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
-    #[doc(hidden)]
     pub turns_to_live: ::std::option::Option<i32>,
 }
 impl ActiveContextTimeToLive {

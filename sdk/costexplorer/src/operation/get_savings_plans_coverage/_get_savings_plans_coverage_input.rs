@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
@@ -22,16 +19,12 @@ pub struct GetSavingsPlansCoverageInput {
     /// </ul>
     /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -45,7 +38,6 @@ pub struct GetSavingsPlansCoverageInput {
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
 }
 impl GetSavingsPlansCoverageInput {

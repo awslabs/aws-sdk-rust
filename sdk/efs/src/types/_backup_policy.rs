@@ -11,7 +11,6 @@ pub struct BackupPolicy {
     /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl BackupPolicy {

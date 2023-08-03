@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelExportTaskInput {
     /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
-    #[doc(hidden)]
     pub export_task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelExportTaskInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachObjectOutput {
     /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
-    #[doc(hidden)]
     pub attached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

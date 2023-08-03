@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionSettings {
     /// <p>The chat room retention settings.</p>
-    #[doc(hidden)]
     pub room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
     /// <p>The chat conversation retention settings.</p>
-    #[doc(hidden)]
     pub conversation_retention_settings: ::std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettings {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAddressTransferOutput {
     /// <p>An Elastic IP address transfer.</p>
-    #[doc(hidden)]
     pub address_transfer: ::std::option::Option<crate::types::AddressTransfer>,
     _request_id: Option<String>,
 }

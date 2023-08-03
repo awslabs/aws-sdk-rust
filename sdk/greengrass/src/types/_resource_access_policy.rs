@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceAccessPolicy {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::Permission>,
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceAccessPolicy {

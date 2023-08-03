@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoringExecutionsInput {
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::MonitoringExecutionSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    #[doc(hidden)]
     pub scheduled_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter for jobs scheduled after a specified time.</p>
-    #[doc(hidden)]
     pub scheduled_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created before a specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created after a specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    #[doc(hidden)]
     pub monitoring_type_equals: ::std::option::Option<crate::types::MonitoringType>,
 }
 impl ListMonitoringExecutionsInput {

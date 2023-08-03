@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl SendActivationCodeInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
-    #[doc(hidden)]
     pub event_subscriptions_list: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
     _request_id: Option<String>,
 }

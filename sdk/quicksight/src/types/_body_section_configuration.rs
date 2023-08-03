@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BodySectionConfiguration {
     /// <p>The unique identifier of a body section.</p>
-    #[doc(hidden)]
     pub section_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of content in a body section.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::BodySectionContent>,
     /// <p>The style options of a body section.</p>
-    #[doc(hidden)]
     pub style: ::std::option::Option<crate::types::SectionStyle>,
     /// <p>The configuration of a page break for a section.</p>
-    #[doc(hidden)]
     pub page_break_configuration: ::std::option::Option<crate::types::SectionPageBreakConfiguration>,
 }
 impl BodySectionConfiguration {

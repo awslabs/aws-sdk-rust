@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PauseServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
 }
 impl PauseServiceInput {

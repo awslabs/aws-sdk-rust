@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>String that contains the key ARN.</p>
-    #[doc(hidden)]
     pub alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    #[doc(hidden)]
     pub target_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AliasListEntry {

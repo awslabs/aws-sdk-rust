@@ -11,42 +11,30 @@ pub struct DescribeAssetBundleImportJobOutput {
     /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
     /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::AssetBundleImportJobStatus>,
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job is still running. The complete set of error records is available after the job has completed and failed.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobError>>,
     /// <p>An array of error records that describes any failures that occurred while an import job was attempting a rollback.</p>
     /// <p>Error records accumulate while the job is still running. The complete set of error records is available after the job has completed and failed.</p>
-    #[doc(hidden)]
     pub rollback_errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobError>>,
     /// <p>The Amazon Resource Name (ARN) for the import job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the import job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source of the asset bundle zip file that contains the data that is imported by the job.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_source: ::std::option::Option<crate::types::AssetBundleImportSourceDescription>,
     /// <p>Optional overrides to be applied to the resource configuration before import.</p>
-    #[doc(hidden)]
     pub override_parameters: ::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters>,
     /// <p>The failure action for the import job.</p>
-    #[doc(hidden)]
     pub failure_action: ::std::option::Option<crate::types::AssetBundleImportFailureAction>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the response.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

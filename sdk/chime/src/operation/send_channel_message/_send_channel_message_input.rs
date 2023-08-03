@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    #[doc(hidden)]
     pub persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     /// <p>The optional metadata for each message.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
 impl SendChannelMessageInput {

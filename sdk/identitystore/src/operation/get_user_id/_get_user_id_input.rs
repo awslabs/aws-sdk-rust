@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
-    #[doc(hidden)]
     pub alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,
 }
 impl GetUserIdInput {

@@ -5,39 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionInput {
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>A description of this application version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    #[doc(hidden)]
     pub source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
-    #[doc(hidden)]
     pub source_bundle: ::std::option::Option<crate::types::S3Location>,
     /// <p>Settings for an AWS CodeBuild build.</p>
-    #[doc(hidden)]
     pub build_configuration: ::std::option::Option<crate::types::BuildConfiguration>,
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
-    #[doc(hidden)]
     pub auto_create_application: ::std::option::Option<bool>,
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
     /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
-    #[doc(hidden)]
     pub process: ::std::option::Option<bool>,
     /// <p>Specifies the tags applied to the application version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationVersionInput {

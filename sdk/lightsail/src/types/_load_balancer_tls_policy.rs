@@ -6,20 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsPolicy {
     /// <p>The name of the TLS security policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The description of the TLS security policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The protocols used in a given TLS security policy.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    #[doc(hidden)]
     pub ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LoadBalancerTlsPolicy {

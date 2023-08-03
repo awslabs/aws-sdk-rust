@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvInput>,
 }
 impl InputSerialization {

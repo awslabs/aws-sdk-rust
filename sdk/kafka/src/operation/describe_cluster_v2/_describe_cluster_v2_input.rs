@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterV2Input {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterV2Input {

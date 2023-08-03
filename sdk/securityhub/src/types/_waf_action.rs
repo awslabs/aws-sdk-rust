@@ -11,7 +11,6 @@ pub struct WafAction {
     /// <li> <p> <code>BLOCK</code> - WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl WafAction {

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTestSetGenerationOutput {
     /// <p>The unique identifier of the test set generation to describe.</p>
-    #[doc(hidden)]
     pub test_set_generation_id: ::std::option::Option<::std::string::String>,
     /// <p> The creation date and time for the test set generation.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status for the test set generation.</p>
-    #[doc(hidden)]
     pub test_set_generation_status: ::std::option::Option<crate::types::TestSetGenerationStatus>,
     /// <p>The test set name used for the test set generation.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description used for the test set generation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p> The data source for the test set generation.</p>
-    #[doc(hidden)]
     pub generation_data_source: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that was used for the test set that is being generated.</p>
-    #[doc(hidden)]
     pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

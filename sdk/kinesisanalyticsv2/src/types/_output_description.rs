@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDescription {
     /// <p>A unique identifier for the output configuration.</p>
-    #[doc(hidden)]
     pub output_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the in-application stream that is configured as output.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
-    #[doc(hidden)]
     pub kinesis_streams_output_description: ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_output_description: ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
-    #[doc(hidden)]
     pub lambda_output_description: ::std::option::Option<crate::types::LambdaOutputDescription>,
     /// <p>The data format used for writing data to the destination.</p>
-    #[doc(hidden)]
     pub destination_schema: ::std::option::Option<crate::types::DestinationSchema>,
 }
 impl OutputDescription {

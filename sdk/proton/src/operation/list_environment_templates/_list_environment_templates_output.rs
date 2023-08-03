@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesOutput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment templates with detail data.</p>
-    #[doc(hidden)]
     pub templates: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
     _request_id: Option<String>,
 }

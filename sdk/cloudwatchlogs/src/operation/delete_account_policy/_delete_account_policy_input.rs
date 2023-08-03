@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountPolicyInput {
     /// <p>The name of the policy to delete.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
 }
 impl DeleteAccountPolicyInput {

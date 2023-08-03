@@ -5,16 +5,12 @@
 pub struct AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    #[doc(hidden)]
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-    #[doc(hidden)]
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-    #[doc(hidden)]
     pub queries_config: ::std::option::Option<crate::types::QueriesConfig>,
 }
 impl AnalyzeDocumentInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
-    #[doc(hidden)]
     pub approximate_number_of_objects_to_process: ::std::option::Option<f64>,
     /// <p>The number of times that the job has run.</p>
-    #[doc(hidden)]
     pub number_of_runs: ::std::option::Option<f64>,
 }
 impl Statistics {

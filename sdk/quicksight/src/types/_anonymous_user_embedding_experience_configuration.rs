@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
-    #[doc(hidden)]
     pub dashboard: ::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
-    #[doc(hidden)]
     pub dashboard_visual: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
-    #[doc(hidden)]
     pub q_search_bar: ::std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {

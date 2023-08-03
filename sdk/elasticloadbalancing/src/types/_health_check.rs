@@ -9,20 +9,15 @@ pub struct HealthCheck {
     /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
     /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
-    #[doc(hidden)]
     pub timeout: i32,
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold: i32,
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    #[doc(hidden)]
     pub healthy_threshold: i32,
 }
 impl HealthCheck {

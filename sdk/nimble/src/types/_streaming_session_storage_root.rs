@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamingSessionStorageRoot {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
-    #[doc(hidden)]
     pub linux: ::std::option::Option<::std::string::String>,
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
-    #[doc(hidden)]
     pub windows: ::std::option::Option<::std::string::String>,
 }
 impl StreamingSessionStorageRoot {

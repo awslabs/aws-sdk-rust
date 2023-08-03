@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
-    #[doc(hidden)]
     pub resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
 }

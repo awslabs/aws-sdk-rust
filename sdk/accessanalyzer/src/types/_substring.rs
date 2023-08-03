@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Substring {
     /// <p>The start index of the substring, starting from 0.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<i32>,
     /// <p>The length of the substring.</p>
-    #[doc(hidden)]
     pub length: ::std::option::Option<i32>,
 }
 impl Substring {

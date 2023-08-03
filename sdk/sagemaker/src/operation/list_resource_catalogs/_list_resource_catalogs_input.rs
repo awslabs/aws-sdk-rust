@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceCatalogsInput {
     /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The order in which the resource catalogs are listed. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::ResourceCatalogSortOrder>,
     /// <p> The value on which the resource catalog list is sorted. </p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ResourceCatalogSortBy>,
     /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceCatalogsInput {

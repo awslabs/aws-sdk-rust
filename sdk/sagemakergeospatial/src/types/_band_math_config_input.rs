@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BandMathConfigInput {
     /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
-    #[doc(hidden)]
     pub predefined_indices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>CustomIndices that are computed.</p>
-    #[doc(hidden)]
     pub custom_indices: ::std::option::Option<crate::types::CustomIndicesInput>,
 }
 impl BandMathConfigInput {

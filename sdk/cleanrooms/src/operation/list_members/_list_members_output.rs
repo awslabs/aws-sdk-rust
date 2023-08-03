@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of members returned by the ListMembers operation.</p>
-    #[doc(hidden)]
     pub member_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
     _request_id: Option<String>,
 }

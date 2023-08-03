@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessCustomActionsDetails {
     /// <p>The definition of the custom action.</p>
-    #[doc(hidden)]
     pub action_definition: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     /// <p>The name of the custom action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessCustomActionsDetails {

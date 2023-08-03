@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFileLocation {
     /// <p>Specifies the details for the Amazon S3 file that's being copied or decrypted.</p>
-    #[doc(hidden)]
     pub s3_file_location: ::std::option::Option<crate::types::S3InputFileLocation>,
     /// <p>Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.</p>
-    #[doc(hidden)]
     pub efs_file_location: ::std::option::Option<crate::types::EfsFileLocation>,
 }
 impl InputFileLocation {

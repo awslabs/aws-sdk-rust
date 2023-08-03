@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    #[doc(hidden)]
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
-    #[doc(hidden)]
     pub force: bool,
 }
 impl RevokeEndpointAccessInput {

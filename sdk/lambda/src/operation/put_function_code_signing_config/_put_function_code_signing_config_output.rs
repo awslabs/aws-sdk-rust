@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    #[doc(hidden)]
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14,7 +13,6 @@ pub struct PutFunctionCodeSigningConfigOutput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

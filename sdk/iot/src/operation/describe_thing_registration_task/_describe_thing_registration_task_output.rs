@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThingRegistrationTaskOutput {
     /// <p>The task ID.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The task creation date.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the task was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The task's template.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
-    #[doc(hidden)]
     pub input_file_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The input file key.</p>
-    #[doc(hidden)]
     pub input_file_key: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN that grants access to the input file bucket.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bulk thing provisioning task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of things successfully provisioned.</p>
-    #[doc(hidden)]
     pub success_count: i32,
     /// <p>The number of things that failed to be provisioned.</p>
-    #[doc(hidden)]
     pub failure_count: i32,
     /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
-    #[doc(hidden)]
     pub percentage_progress: i32,
     _request_id: Option<String>,
 }

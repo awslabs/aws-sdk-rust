@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTarget {
     /// <p>The ARN for the target action.</p>
-    #[doc(hidden)]
     pub action_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the target action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ActionTarget {

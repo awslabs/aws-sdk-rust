@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstancesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
@@ -13,19 +12,14 @@ pub struct DescribeScheduledInstancesInput {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Scheduled Instance IDs.</p>
-    #[doc(hidden)]
     pub scheduled_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period for the first schedule to start.</p>
-    #[doc(hidden)]
     pub slot_start_time_range: ::std::option::Option<crate::types::SlotStartTimeRangeRequest>,
 }
 impl DescribeScheduledInstancesInput {

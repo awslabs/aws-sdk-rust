@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateLinkedPolicyDefinitionDetail {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
 }
 impl TemplateLinkedPolicyDefinitionDetail {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorageVirtualMachineOutput {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine: ::std::option::Option<crate::types::StorageVirtualMachine>,
     _request_id: Option<String>,
 }

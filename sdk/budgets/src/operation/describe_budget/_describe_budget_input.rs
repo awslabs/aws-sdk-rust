@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget that you want a description of.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetInput {

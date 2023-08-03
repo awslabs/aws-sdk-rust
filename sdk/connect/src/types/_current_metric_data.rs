@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentMetricData {
     /// <p>Information about the metric.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::CurrentMetric>,
     /// <p>The value of the metric.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl CurrentMetricData {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectQualificationRequestInput {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
-    #[doc(hidden)]
     pub qualification_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectQualificationRequestInput {

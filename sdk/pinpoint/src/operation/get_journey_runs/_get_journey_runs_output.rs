@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJourneyRunsOutput {
     /// <p>Provides information from all runs of a journey.</p>
-    #[doc(hidden)]
     pub journey_runs_response: ::std::option::Option<crate::types::JourneyRunsResponse>,
     _request_id: Option<String>,
 }

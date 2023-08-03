@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameworkControl {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
-    #[doc(hidden)]
     pub control_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    #[doc(hidden)]
     pub control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
-    #[doc(hidden)]
     pub control_scope: ::std::option::Option<crate::types::ControlScope>,
 }
 impl FrameworkControl {

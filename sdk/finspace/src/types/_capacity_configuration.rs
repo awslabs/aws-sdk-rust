@@ -15,10 +15,8 @@ pub struct CapacityConfiguration {
     /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
     /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances running in a cluster.</p>
-    #[doc(hidden)]
     pub node_count: ::std::option::Option<i32>,
 }
 impl CapacityConfiguration {

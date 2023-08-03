@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemasOutput {
     /// <p>A list of schemas.</p>
-    #[doc(hidden)]
     pub schemas: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>>,
     /// <p>A token used to get the next set of schemas (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

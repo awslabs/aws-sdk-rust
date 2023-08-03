@@ -8,7 +8,6 @@ pub struct GetIpSetOutput {
     /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
     /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ip_set: ::std::option::Option<crate::types::IpSet>,
     _request_id: Option<String>,
 }

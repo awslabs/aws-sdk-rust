@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Organization {
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
-    #[doc(hidden)]
     pub asn: ::std::option::Option<::std::string::String>,
     /// <p>The organization that registered this ASN.</p>
-    #[doc(hidden)]
     pub asn_org: ::std::option::Option<::std::string::String>,
     /// <p>The ISP information for the internet provider.</p>
-    #[doc(hidden)]
     pub isp: ::std::option::Option<::std::string::String>,
     /// <p>The name of the internet provider.</p>
-    #[doc(hidden)]
     pub org: ::std::option::Option<::std::string::String>,
 }
 impl Organization {

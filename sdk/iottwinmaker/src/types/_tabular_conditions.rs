@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TabularConditions {
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
 }
 impl TabularConditions {

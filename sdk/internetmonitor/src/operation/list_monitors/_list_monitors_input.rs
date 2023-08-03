@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitorsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of monitor objects that you want to return with this call.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
-    #[doc(hidden)]
     pub monitor_status: ::std::option::Option<::std::string::String>,
 }
 impl ListMonitorsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainEntryInput {
     /// <p>The name of the domain entry to delete.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
-    #[doc(hidden)]
     pub domain_entry: ::std::option::Option<crate::types::DomainEntry>,
 }
 impl DeleteDomainEntryInput {

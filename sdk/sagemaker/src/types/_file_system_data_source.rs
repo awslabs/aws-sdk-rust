@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemDataSource {
     /// <p>The file system id.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
-    #[doc(hidden)]
     pub file_system_access_mode: ::std::option::Option<crate::types::FileSystemAccessMode>,
     /// <p>The file system type. </p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>The full path to the directory to associate with the channel.</p>
-    #[doc(hidden)]
     pub directory_path: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemDataSource {

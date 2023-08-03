@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionOutput {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
     _request_id: Option<String>,
 }

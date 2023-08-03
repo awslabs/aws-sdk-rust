@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i32>,
 }
 impl GetHostedConfigurationVersionInput {

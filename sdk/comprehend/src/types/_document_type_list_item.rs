@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentTypeListItem {
     /// <p>Page number.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>Document type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DocumentType>,
 }
 impl DocumentTypeListItem {

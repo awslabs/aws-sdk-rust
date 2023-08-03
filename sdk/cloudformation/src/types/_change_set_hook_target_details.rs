@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetHookTargetDetails {
     /// <p>The name of the type.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::HookTargetType>,
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-    #[doc(hidden)]
     pub resource_target_details: ::std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
 }
 impl ChangeSetHookTargetDetails {

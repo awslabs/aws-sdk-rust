@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterClientOutput {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
-    #[doc(hidden)]
     pub client_id_issued_at: i64,
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
-    #[doc(hidden)]
     pub client_secret_expires_at: i64,
     /// <p>The endpoint where the client can request authorization.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint where the client can get an access token.</p>
-    #[doc(hidden)]
     pub token_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

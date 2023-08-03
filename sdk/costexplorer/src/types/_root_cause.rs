@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The member account value that's associated with the cost anomaly. </p>
-    #[doc(hidden)]
     pub linked_account: ::std::option::Option<::std::string::String>,
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    #[doc(hidden)]
     pub linked_account_name: ::std::option::Option<::std::string::String>,
 }
 impl RootCause {

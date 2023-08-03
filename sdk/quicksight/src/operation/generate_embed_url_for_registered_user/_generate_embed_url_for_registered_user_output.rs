@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForRegisteredUserOutput {
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
-    #[doc(hidden)]
     pub embed_url: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationResultFilter {
     /// <p>The type of filter to apply.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OperationResultFilterName>,
     /// <p>The value to filter by.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::string::String>,
 }
 impl OperationResultFilter {

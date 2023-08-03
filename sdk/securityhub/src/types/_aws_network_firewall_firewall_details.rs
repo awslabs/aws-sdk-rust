@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallDetails {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
-    #[doc(hidden)]
     pub delete_protection: bool,
     /// <p>A description of the firewall.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
-    #[doc(hidden)]
     pub firewall_policy_change_protection: bool,
     /// <p>Whether the firewall is protected from a change to the subnet associations. If set to <code>true</code>, you cannot map different subnets to the firewall.</p>
-    #[doc(hidden)]
     pub subnet_change_protection: bool,
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     /// <p>The identifier of the VPC where the firewall is used.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallDetails {

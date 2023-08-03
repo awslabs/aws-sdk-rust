@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppAssessmentOutput {
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-    #[doc(hidden)]
     pub assessment: ::std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,
 }

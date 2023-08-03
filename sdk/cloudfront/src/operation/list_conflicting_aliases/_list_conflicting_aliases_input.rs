@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConflictingAliasesInput {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListConflictingAliasesInput {

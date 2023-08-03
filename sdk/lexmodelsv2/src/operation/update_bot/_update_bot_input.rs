@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotInput {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    #[doc(hidden)]
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
-    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>The type of the bot to be updated.</p>
-    #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in the network associated with the update action.</p>
-    #[doc(hidden)]
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
 }
 impl UpdateBotInput {

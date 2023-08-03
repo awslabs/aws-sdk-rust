@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MovingAddressStatus {
     /// <p>The status of the Elastic IP address that's being moved or restored.</p>
-    #[doc(hidden)]
     pub move_status: ::std::option::Option<crate::types::MoveStatus>,
     /// <p>The Elastic IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl MovingAddressStatus {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    #[doc(hidden)]
     pub analysis_scheme_name: ::std::option::Option<::std::string::String>,
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-    #[doc(hidden)]
     pub analysis_scheme_language: ::std::option::Option<crate::types::AnalysisSchemeLanguage>,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
-    #[doc(hidden)]
     pub analysis_options: ::std::option::Option<crate::types::AnalysisOptions>,
 }
 impl AnalysisScheme {

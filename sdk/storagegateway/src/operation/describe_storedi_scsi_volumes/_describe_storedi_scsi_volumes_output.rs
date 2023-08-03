@@ -22,7 +22,6 @@ pub struct DescribeStorediScsiVolumesOutput {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The reason the CVSS score has been adjustment.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl CvssScoreAdjustment {

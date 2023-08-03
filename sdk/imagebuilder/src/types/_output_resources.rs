@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
-    #[doc(hidden)]
     pub amis: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>,
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
 }
 impl OutputResources {

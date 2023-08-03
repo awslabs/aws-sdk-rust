@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntityRecognizerInputDataConfig {
     /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
-    #[doc(hidden)]
     pub annotations: ::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
-    #[doc(hidden)]
     pub documents: ::std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
-    #[doc(hidden)]
     pub entity_list: ::std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
 }
 impl DatasetEntityRecognizerInputDataConfig {

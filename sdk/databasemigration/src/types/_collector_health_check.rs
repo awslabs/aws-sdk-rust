@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectorHealthCheck {
     /// <p>The status of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub collector_status: ::std::option::Option<crate::types::CollectorStatus>,
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub local_collector_s3_access: ::std::option::Option<bool>,
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub web_collector_s3_access: ::std::option::Option<bool>,
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
-    #[doc(hidden)]
     pub web_collector_granted_role_based_access: ::std::option::Option<bool>,
 }
 impl CollectorHealthCheck {

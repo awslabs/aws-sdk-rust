@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageReplicationStatusOutput {
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The replication status details for the images in the specified repository.</p>
-    #[doc(hidden)]
     pub replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>>,
     _request_id: Option<String>,
 }

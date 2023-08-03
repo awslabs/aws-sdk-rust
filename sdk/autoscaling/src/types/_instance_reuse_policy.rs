@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
-    #[doc(hidden)]
     pub reuse_on_scale_in: ::std::option::Option<bool>,
 }
 impl InstanceReusePolicy {

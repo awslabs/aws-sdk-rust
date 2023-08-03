@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
-    #[doc(hidden)]
     pub connected_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-    #[doc(hidden)]
     pub last_active_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

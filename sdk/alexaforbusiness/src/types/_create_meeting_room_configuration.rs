@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
-    #[doc(hidden)]
     pub room_utilization_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
-    #[doc(hidden)]
     pub end_of_meeting_reminder: ::std::option::Option<crate::types::CreateEndOfMeetingReminder>,
     /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
-    #[doc(hidden)]
     pub instant_booking: ::std::option::Option<crate::types::CreateInstantBooking>,
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
-    #[doc(hidden)]
     pub require_check_in: ::std::option::Option<crate::types::CreateRequireCheckIn>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub proactive_join: ::std::option::Option<crate::types::CreateProactiveJoin>,
 }
 impl CreateMeetingRoomConfiguration {

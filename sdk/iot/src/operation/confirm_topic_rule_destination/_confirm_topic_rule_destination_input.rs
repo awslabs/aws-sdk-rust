@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmTopicRuleDestinationInput {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
-    #[doc(hidden)]
     pub confirmation_token: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmTopicRuleDestinationInput {

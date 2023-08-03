@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressInput {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    #[doc(hidden)]
     pub target_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    #[doc(hidden)]
     pub access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether access should be revoked for all clients.</p>
-    #[doc(hidden)]
     pub revoke_all_groups: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl RevokeClientVpnIngressInput {

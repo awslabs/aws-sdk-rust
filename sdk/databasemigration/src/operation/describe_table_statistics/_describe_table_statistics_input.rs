@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 500.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
     /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeTableStatisticsInput {

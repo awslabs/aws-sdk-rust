@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverPollEndpointOutput {
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    #[doc(hidden)]
     pub telemetry_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub service_connect_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

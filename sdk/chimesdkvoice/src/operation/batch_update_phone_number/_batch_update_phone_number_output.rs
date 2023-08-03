@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberOutput {
     /// <p>A list of failed phone numbers and their error messages.</p>
-    #[doc(hidden)]
     pub phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifest {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::JobManifestSpec>,
     /// <p>Contains the information required to locate the specified job's manifest.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::JobManifestLocation>,
 }
 impl JobManifest {

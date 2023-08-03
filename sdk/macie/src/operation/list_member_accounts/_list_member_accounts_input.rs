@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMemberAccountsInput {
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMemberAccountsInput {

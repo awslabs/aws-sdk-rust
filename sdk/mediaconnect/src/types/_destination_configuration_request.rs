@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    #[doc(hidden)]
     pub destination_ip: ::std::option::Option<::std::string::String>,
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
-    #[doc(hidden)]
     pub destination_port: ::std::option::Option<i32>,
     /// The VPC interface that you want to use for the media stream associated with the output.
-    #[doc(hidden)]
     pub interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl DestinationConfigurationRequest {

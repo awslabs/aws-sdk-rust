@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectorShortInfoResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub collector_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectorShortInfoResponse {

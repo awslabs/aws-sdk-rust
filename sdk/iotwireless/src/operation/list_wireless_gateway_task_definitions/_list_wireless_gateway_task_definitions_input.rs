@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>The maximum number of results to return in this operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
-    #[doc(hidden)]
     pub task_definition_type: ::std::option::Option<crate::types::WirelessGatewayTaskDefinitionType>,
 }
 impl ListWirelessGatewayTaskDefinitionsInput {

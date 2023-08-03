@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
-    #[doc(hidden)]
     pub bot_import_specification: ::std::option::Option<crate::types::BotImportSpecification>,
     /// <p>Parameters for importing a bot locale.</p>
-    #[doc(hidden)]
     pub bot_locale_import_specification: ::std::option::Option<crate::types::BotLocaleImportSpecification>,
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_import_specification: ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
     /// <p>Specifications for the test set that is imported.</p>
-    #[doc(hidden)]
     pub test_set_import_resource_specification: ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
 }
 impl ImportResourceSpecification {

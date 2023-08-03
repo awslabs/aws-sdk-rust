@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    #[doc(hidden)]
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

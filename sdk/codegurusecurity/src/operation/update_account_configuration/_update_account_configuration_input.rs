@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationInput {
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl UpdateAccountConfigurationInput {

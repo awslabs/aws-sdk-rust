@@ -6,7 +6,6 @@
 pub struct ChangeResourceRecordSetsOutput {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }

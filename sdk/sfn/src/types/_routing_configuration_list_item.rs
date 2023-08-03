@@ -6,10 +6,8 @@
 pub struct RoutingConfigurationListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
-    #[doc(hidden)]
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
-    #[doc(hidden)]
     pub weight: i32,
 }
 impl RoutingConfigurationListItem {

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskFilter {
     /// <p>The name, status, or import task ID for a specific import task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ImportTaskFilterName>,
     /// <p>An array of strings that you can provide to match against a specific name, status, or import task ID to filter the results for your import task queries.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImportTaskFilter {

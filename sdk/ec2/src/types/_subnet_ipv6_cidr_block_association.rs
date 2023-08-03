@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetIpv6CidrBlockAssociation {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The state of the CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_state: ::std::option::Option<crate::types::SubnetCidrBlockState>,
 }
 impl SubnetIpv6CidrBlockAssociation {

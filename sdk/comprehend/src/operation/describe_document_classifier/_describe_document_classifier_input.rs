@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
-    #[doc(hidden)]
     pub document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDocumentClassifierInput {

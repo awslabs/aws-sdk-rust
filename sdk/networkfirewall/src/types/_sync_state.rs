@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncState {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
 }
 impl SyncState {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectMessageConfiguration {
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    #[doc(hidden)]
     pub adm_message: ::std::option::Option<crate::types::AdmMessage>,
     /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    #[doc(hidden)]
     pub apns_message: ::std::option::Option<crate::types::ApnsMessage>,
     /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    #[doc(hidden)]
     pub baidu_message: ::std::option::Option<crate::types::BaiduMessage>,
     /// <p>The default message for all channels.</p>
-    #[doc(hidden)]
     pub default_message: ::std::option::Option<crate::types::DefaultMessage>,
     /// <p>The default push notification message for all push notification channels.</p>
-    #[doc(hidden)]
     pub default_push_notification_message: ::std::option::Option<crate::types::DefaultPushNotificationMessage>,
     /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
-    #[doc(hidden)]
     pub email_message: ::std::option::Option<crate::types::EmailMessage>,
     /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    #[doc(hidden)]
     pub gcm_message: ::std::option::Option<crate::types::GcmMessage>,
     /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
-    #[doc(hidden)]
     pub sms_message: ::std::option::Option<crate::types::SmsMessage>,
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
-    #[doc(hidden)]
     pub voice_message: ::std::option::Option<crate::types::VoiceMessage>,
 }
 impl DirectMessageConfiguration {

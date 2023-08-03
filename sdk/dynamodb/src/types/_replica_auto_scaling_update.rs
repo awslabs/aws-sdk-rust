@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the auto scaling settings of global secondary indexes that will be modified.</p>
-    #[doc(hidden)]
     pub replica_global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate>>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_auto_scaling_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaAutoScalingUpdate {

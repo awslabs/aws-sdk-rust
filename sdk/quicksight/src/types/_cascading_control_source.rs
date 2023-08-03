@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CascadingControlSource {
     /// <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-    #[doc(hidden)]
     pub source_sheet_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The column identifier that determines which column to look up for the source sheet control.</p>
-    #[doc(hidden)]
     pub column_to_match: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl CascadingControlSource {

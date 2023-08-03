@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PinpointDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
 impl PinpointDestination {

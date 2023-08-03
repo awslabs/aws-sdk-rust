@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceCode {
     /// <p> The type of repository to use for the source code. </p>
-    #[doc(hidden)]
     pub version_control: ::std::option::Option<crate::types::VersionControl>,
     /// <p> The branch of the source code. </p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p> The repository name for the source code. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceCode {

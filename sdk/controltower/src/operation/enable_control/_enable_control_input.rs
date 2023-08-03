@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    #[doc(hidden)]
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit.</p>
-    #[doc(hidden)]
     pub target_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EnableControlInput {

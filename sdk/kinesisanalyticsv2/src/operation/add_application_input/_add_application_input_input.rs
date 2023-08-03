@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationInputInput {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The <code>Input</code> to add.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
 }
 impl AddApplicationInputInput {

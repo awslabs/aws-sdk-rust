@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangeConstant {
     /// <p>The minimum value for a range constant.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value for a range constant.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<::std::string::String>,
 }
 impl RangeConstant {

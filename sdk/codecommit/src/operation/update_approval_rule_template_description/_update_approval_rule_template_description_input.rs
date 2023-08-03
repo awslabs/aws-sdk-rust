@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateDescriptionInput {
     /// <p>The name of the template for which you want to update the description.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the approval rule template.</p>
-    #[doc(hidden)]
     pub approval_rule_template_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApprovalRuleTemplateDescriptionInput {

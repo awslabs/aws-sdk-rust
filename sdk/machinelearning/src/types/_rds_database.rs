@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsDatabase {
     /// <p>The ID of an RDS DB instance.</p>
-    #[doc(hidden)]
     pub instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database hosted on an RDS DB instance.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl RdsDatabase {

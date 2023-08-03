@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
-    #[doc(hidden)]
     pub access_key: ::std::option::Option<crate::types::AccessKey>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute that is added to the message.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl DeviceShadowEnrichActivity {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version of Elasticsearch on which a domain is.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>List of supported elastic search versions. </p>
-    #[doc(hidden)]
     pub target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleVersionsMap {

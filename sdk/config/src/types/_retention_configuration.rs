@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    #[doc(hidden)]
     pub retention_period_in_days: i32,
 }
 impl RetentionConfiguration {

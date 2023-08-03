@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDocumentsInput {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    #[doc(hidden)]
     pub document_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>,
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
     /// </note>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDocumentsInput {

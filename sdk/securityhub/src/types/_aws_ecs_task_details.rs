@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the task. </p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task definition that creates the task. </p>
-    #[doc(hidden)]
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version counter for the task. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state. </p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::std::string::String>,
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service. </p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The name of the task group that's associated with the task. </p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>Details about the data volume that is used in a task definition. </p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>,
     /// <p>The containers that are associated with the task. </p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
 }
 impl AwsEcsTaskDetails {

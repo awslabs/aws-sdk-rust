@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ArtifactLocation {
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
-    #[doc(hidden)]
     pub object_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ArtifactLocation {

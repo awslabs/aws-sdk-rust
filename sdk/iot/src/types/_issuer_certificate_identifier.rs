@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IssuerCertificateIdentifier {
     /// <p>The subject of the issuer certificate.</p>
-    #[doc(hidden)]
     pub issuer_certificate_subject: ::std::option::Option<::std::string::String>,
     /// <p>The issuer ID.</p>
-    #[doc(hidden)]
     pub issuer_id: ::std::option::Option<::std::string::String>,
     /// <p>The issuer certificate serial number.</p>
-    #[doc(hidden)]
     pub issuer_certificate_serial_number: ::std::option::Option<::std::string::String>,
 }
 impl IssuerCertificateIdentifier {

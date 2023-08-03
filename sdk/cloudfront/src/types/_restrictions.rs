@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
-    #[doc(hidden)]
     pub geo_restriction: ::std::option::Option<crate::types::GeoRestriction>,
 }
 impl Restrictions {

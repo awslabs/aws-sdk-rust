@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateAppInstanceBotInput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the bot update.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
 impl UpdateAppInstanceBotInput {

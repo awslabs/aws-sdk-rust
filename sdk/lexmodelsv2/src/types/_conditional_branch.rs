@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalBranch {
     /// <p>The name of the branch. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The next step in the conversation.</p>
-    #[doc(hidden)]
     pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl ConditionalBranch {

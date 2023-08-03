@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The field on which to filter.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::FilterField>,
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The desired field value on which to filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Filter {

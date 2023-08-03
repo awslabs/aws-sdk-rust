@@ -14,10 +14,8 @@ pub struct InstanceInformationStringFilter {
     /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
     /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The filter values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceInformationStringFilter {

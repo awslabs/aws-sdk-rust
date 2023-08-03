@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
-    #[doc(hidden)]
     pub output_id: ::std::option::Option<::std::string::String>,
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
-    #[doc(hidden)]
     pub name_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes a Kinesis data stream as the destination for the output.</p>
-    #[doc(hidden)]
     pub kinesis_streams_output_update: ::std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
     /// <p>Describes a Kinesis Data Firehose delivery stream as the destination for the output.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_output_update: ::std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
     /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
-    #[doc(hidden)]
     pub lambda_output_update: ::std::option::Option<crate::types::LambdaOutputUpdate>,
     /// <p>Describes the data format when records are written to the destination. </p>
-    #[doc(hidden)]
     pub destination_schema_update: ::std::option::Option<crate::types::DestinationSchema>,
 }
 impl OutputUpdate {

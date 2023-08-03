@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsTarget {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>. </p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p> The date and time when the target Amazon ECS application was updated by a deployment. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
-    #[doc(hidden)]
     pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
-    #[doc(hidden)]
     pub task_sets_info: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>>,
 }
 impl EcsTarget {

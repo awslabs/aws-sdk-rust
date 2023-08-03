@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableAutoScalingDescription {
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct TableAutoScalingDescription {
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>Represents replicas of the global table.</p>
-    #[doc(hidden)]
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
 }
 impl TableAutoScalingDescription {

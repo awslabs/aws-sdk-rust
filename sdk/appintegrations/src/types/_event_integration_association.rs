@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventIntegrationAssociation {
     /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
-    #[doc(hidden)]
     pub event_integration_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the event integration association.</p>
-    #[doc(hidden)]
     pub event_integration_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event integration.</p>
-    #[doc(hidden)]
     pub event_integration_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the client that is associated with the event integration.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EventBridge rule.</p>
-    #[doc(hidden)]
     pub event_bridge_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata associated with the client.</p>
-    #[doc(hidden)]
     pub client_association_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventIntegrationAssociation {

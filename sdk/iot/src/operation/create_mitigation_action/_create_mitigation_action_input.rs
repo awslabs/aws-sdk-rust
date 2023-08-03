@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMitigationActionInput {
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the type of action and the parameters for that action.</p>
-    #[doc(hidden)]
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMitigationActionInput {

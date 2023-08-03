@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl VeevaConnectorProfileProperties {

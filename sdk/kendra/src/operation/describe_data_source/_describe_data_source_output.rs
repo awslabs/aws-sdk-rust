@@ -4,50 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index used with the data source connector.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the data source connector.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>The Unix timestamp when the data source connector was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for the data source connector.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>The schedule for Amazon Kendra to update the index.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    #[doc(hidden)]
     pub custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactProperties {
     /// <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
@@ -23,10 +20,8 @@ pub struct ProvisioningArtifactProperties {
     /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
-    #[doc(hidden)]
     pub disable_template_validation: bool,
 }
 impl ProvisioningArtifactProperties {

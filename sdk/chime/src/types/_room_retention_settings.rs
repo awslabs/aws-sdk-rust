@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomRetentionSettings {
     /// <p>The number of days for which to retain chat-room messages.</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
 }
 impl RoomRetentionSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromSnapshotInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedPrincipal {
     /// <p>The type of principal.</p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service permission.</p>
-    #[doc(hidden)]
     pub service_permission_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
 }
 impl AllowedPrincipal {

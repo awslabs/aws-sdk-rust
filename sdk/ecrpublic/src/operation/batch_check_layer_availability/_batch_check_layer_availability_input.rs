@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityInput {
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that's associated with the image layers to check.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The digests of the image layers to check.</p>
-    #[doc(hidden)]
     pub layer_digests: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchCheckLayerAvailabilityInput {

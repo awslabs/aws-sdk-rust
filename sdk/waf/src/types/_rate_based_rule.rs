@@ -15,22 +15,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedRule {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    #[doc(hidden)]
     pub match_predicates: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
-    #[doc(hidden)]
     pub rate_key: ::std::option::Option<crate::types::RateKey>,
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    #[doc(hidden)]
     pub rate_limit: i64,
 }
 impl RateBasedRule {

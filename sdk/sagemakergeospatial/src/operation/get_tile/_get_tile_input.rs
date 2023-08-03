@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTileInput {
     /// <p>The x coordinate of the tile input.</p>
-    #[doc(hidden)]
     pub x: ::std::option::Option<i32>,
     /// <p>The y coordinate of the tile input.</p>
-    #[doc(hidden)]
     pub y: ::std::option::Option<i32>,
     /// <p>The z coordinate of the tile input.</p>
-    #[doc(hidden)]
     pub z: ::std::option::Option<i32>,
     /// <p>The particular assets or bands to tile.</p>
-    #[doc(hidden)]
     pub image_assets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TargetOptions>,
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether or not to return a valid data mask.</p>
-    #[doc(hidden)]
     pub image_mask: ::std::option::Option<bool>,
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<::std::string::String>,
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<::std::string::String>,
     /// <p>Property filters for the imagery to tile.</p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<::std::string::String>,
     /// <p>The output data type of the tile operation.</p>
-    #[doc(hidden)]
     pub output_data_type: ::std::option::Option<crate::types::OutputType>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTileInput {

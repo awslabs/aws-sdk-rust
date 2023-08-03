@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdminAccountOutput {
     /// <p>The account that is set as the Firewall Manager default administrator.</p>
-    #[doc(hidden)]
     pub admin_account: ::std::option::Option<::std::string::String>,
     /// <p>The status of the account that you set as the Firewall Manager default administrator.</p>
-    #[doc(hidden)]
     pub role_status: ::std::option::Option<crate::types::AccountRoleStatus>,
     _request_id: Option<String>,
 }

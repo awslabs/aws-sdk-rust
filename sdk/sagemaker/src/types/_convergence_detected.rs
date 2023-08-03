@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConvergenceDetected {
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
-    #[doc(hidden)]
     pub complete_on_convergence: ::std::option::Option<crate::types::CompleteOnConvergence>,
 }
 impl ConvergenceDetected {

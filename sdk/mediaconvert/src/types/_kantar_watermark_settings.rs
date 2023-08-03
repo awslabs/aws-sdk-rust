@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KantarWatermarkSettings {
     /// Provide an audio channel name from your Kantar audio license.
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// Specify a unique identifier for Kantar to use for this piece of content.
-    #[doc(hidden)]
     pub content_reference: ::std::option::Option<::std::string::String>,
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
-    #[doc(hidden)]
     pub credentials_secret_name: ::std::option::Option<::std::string::String>,
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
-    #[doc(hidden)]
     pub file_offset: ::std::option::Option<f64>,
     /// Provide your Kantar license ID number. You should get this number from Kantar.
-    #[doc(hidden)]
     pub kantar_license_id: ::std::option::Option<i32>,
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
-    #[doc(hidden)]
     pub kantar_server_url: ::std::option::Option<::std::string::String>,
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    #[doc(hidden)]
     pub log_destination: ::std::option::Option<::std::string::String>,
     /// You can optionally use this field to specify the first timestamp that Kantar embeds during watermarking. Kantar suggests that you be very cautious when using this Kantar feature, and that you use it only on channels that are managed specifically for use with this feature by your Audience Measurement Operator. For more information about this feature, contact Kantar technical support.
-    #[doc(hidden)]
     pub metadata3: ::std::option::Option<::std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    #[doc(hidden)]
     pub metadata4: ::std::option::Option<::std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    #[doc(hidden)]
     pub metadata5: ::std::option::Option<::std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    #[doc(hidden)]
     pub metadata6: ::std::option::Option<::std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    #[doc(hidden)]
     pub metadata7: ::std::option::Option<::std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    #[doc(hidden)]
     pub metadata8: ::std::option::Option<::std::string::String>,
 }
 impl KantarWatermarkSettings {

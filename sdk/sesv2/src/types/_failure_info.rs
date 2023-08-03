@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureInfo {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    #[doc(hidden)]
     pub failed_records_s3_url: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the import job failed.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailureInfo {

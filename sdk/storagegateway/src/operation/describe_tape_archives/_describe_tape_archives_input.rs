@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    #[doc(hidden)]
     pub tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeTapeArchivesInput {

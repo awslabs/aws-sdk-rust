@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    #[doc(hidden)]
     pub default_log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>The list of wireless device log options.</p>
-    #[doc(hidden)]
     pub wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
     /// <p>The list of wireless gateway log options.</p>
-    #[doc(hidden)]
     pub wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
 }
 impl UpdateLogLevelsByResourceTypesInput {

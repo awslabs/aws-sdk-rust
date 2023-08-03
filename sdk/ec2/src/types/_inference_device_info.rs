@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceDeviceInfo {
     /// <p>The number of Inference accelerators for the instance type.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The name of the Inference accelerator.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the Inference accelerator.</p>
-    #[doc(hidden)]
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>Describes the memory available to the inference accelerator.</p>
-    #[doc(hidden)]
     pub memory_info: ::std::option::Option<crate::types::InferenceDeviceMemoryInfo>,
 }
 impl InferenceDeviceInfo {

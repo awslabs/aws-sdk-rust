@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionOutput {
     /// <p>Returns information about the deleted policy version. </p>
-    #[doc(hidden)]
     pub core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobRunInput {
     /// <p>Name of the job definition being run.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>True if a list of predecessor runs should be returned.</p>
-    #[doc(hidden)]
     pub predecessors_included: ::std::option::Option<bool>,
 }
 impl GetJobRunInput {

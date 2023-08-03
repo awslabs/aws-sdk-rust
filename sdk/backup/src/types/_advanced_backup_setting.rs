@@ -6,7 +6,6 @@
 pub struct AdvancedBackupSetting {
     /// <p>Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy Service (VSS). For a CloudFormation example, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample CloudFormation template to enable Windows VSS</a> in the <i>Backup User Guide</i>.</p>
     /// <p>Valid values: <code>EC2</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
     /// <p>Valid values: </p>
@@ -14,7 +13,6 @@ pub struct AdvancedBackupSetting {
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
-    #[doc(hidden)]
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdvancedBackupSetting {

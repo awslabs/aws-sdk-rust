@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSuspendUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the user IDs to suspend.</p>
-    #[doc(hidden)]
     pub user_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchSuspendUserInput {

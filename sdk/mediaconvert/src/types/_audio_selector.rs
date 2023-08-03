@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSelector {
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
-    #[doc(hidden)]
     pub audio_duration_correction: ::std::option::Option<crate::types::AudioDurationCorrection>,
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
-    #[doc(hidden)]
     pub custom_language_code: ::std::option::Option<::std::string::String>,
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
-    #[doc(hidden)]
     pub default_selection: ::std::option::Option<crate::types::AudioDefaultSelection>,
     /// Specifies audio data from an external file source.
-    #[doc(hidden)]
     pub external_audio_file_input: ::std::option::Option<::std::string::String>,
     /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
-    #[doc(hidden)]
     pub hls_rendition_group_settings: ::std::option::Option<crate::types::HlsRenditionGroupSettings>,
     /// Selects a specific language code from within an audio source.
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
-    #[doc(hidden)]
     pub offset: ::std::option::Option<i32>,
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    #[doc(hidden)]
     pub pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
-    #[doc(hidden)]
     pub program_selection: ::std::option::Option<i32>,
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
-    #[doc(hidden)]
     pub remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     /// Specifies the type of the audio selector.
-    #[doc(hidden)]
     pub selector_type: ::std::option::Option<crate::types::AudioSelectorType>,
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    #[doc(hidden)]
     pub tracks: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl AudioSelector {

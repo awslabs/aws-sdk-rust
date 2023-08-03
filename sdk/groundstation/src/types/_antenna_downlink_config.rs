@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
-    #[doc(hidden)]
     pub spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
 }
 impl AntennaDownlinkConfig {

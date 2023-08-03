@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Messages {
     /// A list of errors that might have been generated from processes on this flow.
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Messages {

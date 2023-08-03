@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineSeriesAxisDisplayOptions {
     /// <p>The options that determine the presentation of the line series axis.</p>
-    #[doc(hidden)]
     pub axis_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
-    #[doc(hidden)]
     pub missing_data_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MissingDataConfiguration>>,
 }
 impl LineSeriesAxisDisplayOptions {

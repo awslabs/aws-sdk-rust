@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributorInsightsSummary {
     /// <p>Name of the table associated with the summary.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the index associated with the summary, if any.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
-    #[doc(hidden)]
     pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
 }
 impl ContributorInsightsSummary {

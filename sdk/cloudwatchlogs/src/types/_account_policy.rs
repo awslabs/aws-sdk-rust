@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountPolicy {
     /// <p>The name of the account policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document for this account policy.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that this policy was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<i64>,
     /// <p>The type of policy for this account policy.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The scope of the account policy.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl AccountPolicy {

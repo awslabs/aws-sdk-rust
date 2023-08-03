@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitoringAlertInput {
     /// <p>The name of a monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring alert.</p>
-    #[doc(hidden)]
     pub monitoring_alert_name: ::std::option::Option<::std::string::String>,
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
-    #[doc(hidden)]
     pub datapoints_to_alert: ::std::option::Option<i32>,
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
-    #[doc(hidden)]
     pub evaluation_period: ::std::option::Option<i32>,
 }
 impl UpdateMonitoringAlertInput {

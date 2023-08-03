@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
 }
 impl ExportVectorEnrichmentJobInput {

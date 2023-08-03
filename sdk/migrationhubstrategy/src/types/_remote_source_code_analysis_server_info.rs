@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteSourceCodeAnalysisServerInfo {
     /// <p>The time when the remote source code server was configured.</p>
-    #[doc(hidden)]
     pub remote_source_code_analysis_server_configuration_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl RemoteSourceCodeAnalysisServerInfo {

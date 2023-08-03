@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the specified Amazon Chime account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
-    #[doc(hidden)]
     pub default_license: ::std::option::Option<crate::types::License>,
 }
 impl UpdateAccountInput {

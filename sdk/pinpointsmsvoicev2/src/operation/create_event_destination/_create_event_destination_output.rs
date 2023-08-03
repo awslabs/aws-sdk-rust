@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventDestinationOutput {
     /// <p>The ARN of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The details of the destination where events are logged.</p>
-    #[doc(hidden)]
     pub event_destination: ::std::option::Option<crate::types::EventDestination>,
     _request_id: Option<String>,
 }

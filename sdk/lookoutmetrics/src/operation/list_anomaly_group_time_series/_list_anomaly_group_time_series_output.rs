@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupTimeSeriesOutput {
     /// <p>The ID of the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the measure field.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>Timestamps for the anomalous metrics.</p>
-    #[doc(hidden)]
     pub timestamp_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of anomalous metrics.</p>
-    #[doc(hidden)]
     pub time_series_list: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>>,
     _request_id: Option<String>,
 }

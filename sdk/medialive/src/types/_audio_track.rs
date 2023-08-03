@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioTrack {
     /// 1-based integer value that maps to a specific audio track
-    #[doc(hidden)]
     pub track: ::std::option::Option<i32>,
 }
 impl AudioTrack {

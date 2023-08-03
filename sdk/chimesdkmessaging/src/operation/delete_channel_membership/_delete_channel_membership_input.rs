@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChannelMembershipInput {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
-    #[doc(hidden)]
     pub member_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only for use by moderators.</p>
     /// </note>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChannelMembershipInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
-    #[doc(hidden)]
     pub stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }

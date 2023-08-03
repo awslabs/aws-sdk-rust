@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
@@ -12,10 +11,8 @@ pub struct CreateProvisioningArtifactOutput {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the current request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

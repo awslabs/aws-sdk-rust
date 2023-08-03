@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpEndpointDestinationConfiguration {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::HttpEndpointConfiguration>,
     /// <p>The buffering options that can be used before data is delivered to the specified destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must also provide a value for the other. </p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
-    #[doc(hidden)]
     pub request_configuration: ::std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
     /// <p>Describes a data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::HttpEndpointRetryOptions>,
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::HttpEndpointS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl HttpEndpointDestinationConfiguration {

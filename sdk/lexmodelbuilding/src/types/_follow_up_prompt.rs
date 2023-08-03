@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FollowUpPrompt {
     /// <p>Prompts for information from the user. </p>
-    #[doc(hidden)]
     pub prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    #[doc(hidden)]
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
 }
 impl FollowUpPrompt {

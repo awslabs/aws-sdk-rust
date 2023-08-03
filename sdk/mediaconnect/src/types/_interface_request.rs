@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterfaceRequest {
     /// The name of the VPC interface.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl InterfaceRequest {

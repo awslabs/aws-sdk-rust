@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerValidationConfiguration {
     /// <p>Represents a server.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The ID of the validation.</p>
-    #[doc(hidden)]
     pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The validation strategy.</p>
-    #[doc(hidden)]
     pub server_validation_strategy: ::std::option::Option<crate::types::ServerValidationStrategy>,
     /// <p>The validation parameters.</p>
-    #[doc(hidden)]
     pub user_data_validation_parameters: ::std::option::Option<crate::types::UserDataValidationParameters>,
 }
 impl ServerValidationConfiguration {

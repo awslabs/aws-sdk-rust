@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that you specified when you created the health check.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    #[doc(hidden)]
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
     /// <p>A complex type that contains detailed information about one health check.</p>
-    #[doc(hidden)]
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
-    #[doc(hidden)]
     pub health_check_version: ::std::option::Option<i64>,
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    #[doc(hidden)]
     pub cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheck {

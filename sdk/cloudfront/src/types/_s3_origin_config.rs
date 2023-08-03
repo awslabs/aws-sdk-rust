@@ -11,7 +11,6 @@ pub struct S3OriginConfig {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub origin_access_identity: ::std::option::Option<::std::string::String>,
 }
 impl S3OriginConfig {

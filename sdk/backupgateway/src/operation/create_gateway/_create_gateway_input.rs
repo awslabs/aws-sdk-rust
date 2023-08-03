@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>The activation key of the created gateway.</p>
-    #[doc(hidden)]
     pub activation_key: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the created gateway.</p>
-    #[doc(hidden)]
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of created gateway.</p>
-    #[doc(hidden)]
     pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGatewayInput {

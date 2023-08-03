@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnomalyDetectorInput {
     /// <p>The name of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the configuration of the anomaly detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAnomalyDetectorInput {

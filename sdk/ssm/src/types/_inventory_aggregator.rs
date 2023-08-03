@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryAggregator {
     /// <p>The inventory type and attribute name for aggregation.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    #[doc(hidden)]
     pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>>,
 }
 impl InventoryAggregator {

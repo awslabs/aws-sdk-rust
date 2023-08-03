@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSdkOutput {
     /// <p>The content-type header value in the HTTP response.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content-disposition header value in the HTTP response.</p>
-    #[doc(hidden)]
     pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

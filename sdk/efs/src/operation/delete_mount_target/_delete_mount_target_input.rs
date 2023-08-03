@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMountTargetInput {
     /// <p>The ID of the mount target to delete (String).</p>
-    #[doc(hidden)]
     pub mount_target_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMountTargetInput {

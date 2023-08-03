@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReusableDelegationSetOutput {
     /// <p>A complex type that contains name server information.</p>
-    #[doc(hidden)]
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>The unique URL representing the new reusable delegation set.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

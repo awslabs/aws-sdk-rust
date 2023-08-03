@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    #[doc(hidden)]
     pub reservation_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

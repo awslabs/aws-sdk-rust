@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookInstanceUrlInput {
     /// <p>The name of the notebook instance.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
-    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: ::std::option::Option<i32>,
 }
 impl CreatePresignedNotebookInstanceUrlInput {

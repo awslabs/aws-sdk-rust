@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketBundlesOutput {
     /// <p>An object that describes bucket bundles.</p>
-    #[doc(hidden)]
     pub bundles: ::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationSettings {
     /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
-    #[doc(hidden)]
     pub access_control: ::std::option::Option<crate::types::S3DestinationAccessControl>,
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::S3EncryptionSettings>,
 }
 impl S3DestinationSettings {

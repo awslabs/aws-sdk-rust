@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    #[doc(hidden)]
     pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for the launch profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A configuration for a streaming session.</p>
-    #[doc(hidden)]
     pub stream_configuration: ::std::option::Option<crate::types::StreamConfigurationCreate>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    #[doc(hidden)]
     pub studio_component_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchProfileInput {

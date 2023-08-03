@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VmServer {
     /// <p>The VM server location.</p>
-    #[doc(hidden)]
     pub vm_server_address: ::std::option::Option<crate::types::VmServerAddress>,
     /// <p>The name of the VM.</p>
-    #[doc(hidden)]
     pub vm_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VM manager.</p>
-    #[doc(hidden)]
     pub vm_manager_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of VM management product.</p>
-    #[doc(hidden)]
     pub vm_manager_type: ::std::option::Option<crate::types::VmManagerType>,
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
-    #[doc(hidden)]
     pub vm_path: ::std::option::Option<::std::string::String>,
 }
 impl VmServer {

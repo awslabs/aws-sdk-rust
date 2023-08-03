@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteQueryInput {
     /// <p>The ID of the workspace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The query statement.</p>
-    #[doc(hidden)]
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteQueryInput {

@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetDescription {
     /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Unix timestamp for the date and time that the dataset was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the dataset. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p> The status message for the dataset. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    #[doc(hidden)]
     pub status_message_code: ::std::option::Option<crate::types::DatasetStatusMessageCode>,
     /// <p> The status message code for the dataset. </p>
-    #[doc(hidden)]
     pub dataset_stats: ::std::option::Option<crate::types::DatasetStats>,
 }
 impl DatasetDescription {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The budget object that you want to create.</p>
-    #[doc(hidden)]
     pub budget: ::std::option::Option<crate::types::Budget>,
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    #[doc(hidden)]
     pub notifications_with_subscribers: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
 }
 impl CreateBudgetInput {

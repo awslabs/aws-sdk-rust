@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsAuthorizedWithTokenInput {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    #[doc(hidden)]
     pub identity_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an access token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionIdentifier>,
     /// <p>Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<crate::types::ContextDefinition>,
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<crate::types::EntitiesDefinition>,
 }
 impl IsAuthorizedWithTokenInput {

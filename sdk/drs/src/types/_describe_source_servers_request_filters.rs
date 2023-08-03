@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
-    #[doc(hidden)]
     pub hardware_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    #[doc(hidden)]
     pub staging_account_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {

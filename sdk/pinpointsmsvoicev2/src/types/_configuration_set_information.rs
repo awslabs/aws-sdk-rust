@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationSetInformation {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
-    #[doc(hidden)]
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the ConfigurationSet.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
-    #[doc(hidden)]
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub default_message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The default sender ID used by the ConfigurationSet.</p>
-    #[doc(hidden)]
     pub default_sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationSetInformation {

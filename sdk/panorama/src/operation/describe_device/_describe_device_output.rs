@@ -4,64 +4,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutput {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>The device's connection status.</p>
-    #[doc(hidden)]
     pub device_connection_status: ::std::option::Option<crate::types::DeviceConnectionStatus>,
     /// <p>When the device was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device's provisioning status.</p>
-    #[doc(hidden)]
     pub provisioning_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>The latest software version available for the device.</p>
-    #[doc(hidden)]
     pub latest_software: ::std::option::Option<::std::string::String>,
     /// <p>The device's current software version.</p>
-    #[doc(hidden)]
     pub current_software: ::std::option::Option<::std::string::String>,
     /// <p>The device's serial number.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The device's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The device's networking configuration.</p>
-    #[doc(hidden)]
     pub networking_configuration: ::std::option::Option<crate::types::NetworkPayload>,
     /// <p>The device's networking status.</p>
-    #[doc(hidden)]
     pub current_networking_status: ::std::option::Option<crate::types::NetworkStatus>,
     /// <p>The device's lease expiration time.</p>
-    #[doc(hidden)]
     pub lease_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Beta software releases available for the device.</p>
-    #[doc(hidden)]
     pub alternate_softwares: ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
     /// <p>The most recent beta software release.</p>
-    #[doc(hidden)]
     pub latest_alternate_software: ::std::option::Option<::std::string::String>,
     /// <p>The device's maker.</p>
-    #[doc(hidden)]
     pub brand: ::std::option::Option<crate::types::DeviceBrand>,
     /// <p>A device's latest job. Includes the target image version, and the job status.</p>
-    #[doc(hidden)]
     pub latest_device_job: ::std::option::Option<crate::types::LatestDeviceJob>,
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
-    #[doc(hidden)]
     pub device_aggregated_status: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
     _request_id: Option<String>,
 }

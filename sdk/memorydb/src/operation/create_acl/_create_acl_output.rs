@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAclOutput {
     /// <p>The newly-created Access Control List.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }

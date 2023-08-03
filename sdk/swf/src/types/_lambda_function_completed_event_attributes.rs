@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionCompletedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The results of the Lambda task.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
 }
 impl LambdaFunctionCompletedEventAttributes {

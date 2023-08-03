@@ -10,7 +10,6 @@ pub struct AssociationConfig {
     /// <p>Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default size is 16 KB (16,384 kilobytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub request_body: ::std::option::Option<
         ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
     >,

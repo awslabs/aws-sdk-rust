@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuthorizersOutput {
     /// <p>The authorizers.</p>
-    #[doc(hidden)]
     pub authorizers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>>,
     /// <p>A marker used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

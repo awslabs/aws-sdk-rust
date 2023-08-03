@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncrementalRefresh {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
-    #[doc(hidden)]
     pub lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
 impl IncrementalRefresh {

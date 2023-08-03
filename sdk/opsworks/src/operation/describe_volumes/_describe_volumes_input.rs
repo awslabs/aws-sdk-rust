@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumesInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
-    #[doc(hidden)]
     pub raid_array_id: ::std::option::Option<::std::string::String>,
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
-    #[doc(hidden)]
     pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVolumesInput {

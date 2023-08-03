@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentity {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
     /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentity {

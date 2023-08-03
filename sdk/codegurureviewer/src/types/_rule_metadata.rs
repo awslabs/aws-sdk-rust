@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleMetadata {
     /// <p>The ID of the rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the rule.</p>
-    #[doc(hidden)]
     pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>A long description of the rule.</p>
-    #[doc(hidden)]
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the rule.</p>
-    #[doc(hidden)]
     pub rule_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleMetadata {

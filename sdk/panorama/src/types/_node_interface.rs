@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInterface {
     /// <p>The node interface's inputs.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>,
     /// <p>The node interface's outputs.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>,
 }
 impl NodeInterface {

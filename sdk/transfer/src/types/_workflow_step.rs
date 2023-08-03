@@ -12,7 +12,6 @@ pub struct WorkflowStep {
     /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowStepType>,
     /// <p>Details for a step that performs a file copy.</p>
     /// <p> Consists of the following values: </p>
@@ -21,18 +20,14 @@ pub struct WorkflowStep {
     /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
     /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub copy_step_details: ::std::option::Option<crate::types::CopyStepDetails>,
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
-    #[doc(hidden)]
     pub custom_step_details: ::std::option::Option<crate::types::CustomStepDetails>,
     /// <p>Details for a step that deletes the file.</p>
-    #[doc(hidden)]
     pub delete_step_details: ::std::option::Option<crate::types::DeleteStepDetails>,
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
-    #[doc(hidden)]
     pub tag_step_details: ::std::option::Option<crate::types::TagStepDetails>,
     /// <p>Details for a step that decrypts an encrypted file.</p>
     /// <p>Consists of the following values:</p>
@@ -43,7 +38,6 @@ pub struct WorkflowStep {
     /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub decrypt_step_details: ::std::option::Option<crate::types::DecryptStepDetails>,
 }
 impl WorkflowStep {

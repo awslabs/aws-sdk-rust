@@ -4,76 +4,52 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunOutput {
     /// <p>The run's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's workflow ID.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's workflow type.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's service role ARN.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's group ID.</p>
-    #[doc(hidden)]
     pub run_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The run's definition.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The run's digest.</p>
-    #[doc(hidden)]
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The run's parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The run's storage capacity in gigabytes.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The run's output URI.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>The run's log level.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::RunLogLevel>,
     /// <p>The run's resource digests.</p>
-    #[doc(hidden)]
     pub resource_digests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Who started the run.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>When the run was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the run started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The run's stop time.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The run's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The run's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator used to run the workflow. </p>
-    #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }

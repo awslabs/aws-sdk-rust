@@ -5,7 +5,6 @@
 pub struct CreateResourceGroupInput {
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    #[doc(hidden)]
     pub resource_group_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
 }
 impl CreateResourceGroupInput {

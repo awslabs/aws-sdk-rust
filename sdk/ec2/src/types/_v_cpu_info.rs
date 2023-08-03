@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VCpuInfo {
     /// <p>The default number of vCPUs for the instance type.</p>
-    #[doc(hidden)]
     pub default_v_cpus: ::std::option::Option<i32>,
     /// <p>The default number of cores for the instance type.</p>
-    #[doc(hidden)]
     pub default_cores: ::std::option::Option<i32>,
     /// <p>The default number of threads per core for the instance type.</p>
-    #[doc(hidden)]
     pub default_threads_per_core: ::std::option::Option<i32>,
     /// <p>The valid number of cores that can be configured for the instance type.</p>
-    #[doc(hidden)]
     pub valid_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
-    #[doc(hidden)]
     pub valid_threads_per_core: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VCpuInfo {

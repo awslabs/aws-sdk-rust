@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportHiddenFieldsOption {
     /// <p>The status of the export hidden fields options of a dashbaord.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl ExportHiddenFieldsOption {

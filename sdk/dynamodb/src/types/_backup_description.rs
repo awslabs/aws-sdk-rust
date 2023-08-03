@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupDescription {
     /// <p>Contains the details of the backup created for the table. </p>
-    #[doc(hidden)]
     pub backup_details: ::std::option::Option<crate::types::BackupDetails>,
     /// <p>Contains the details of the table when the backup was created. </p>
-    #[doc(hidden)]
     pub source_table_details: ::std::option::Option<crate::types::SourceTableDetails>,
     /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
-    #[doc(hidden)]
     pub source_table_feature_details: ::std::option::Option<crate::types::SourceTableFeatureDetails>,
 }
 impl BackupDescription {

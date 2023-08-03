@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppliedExtension {
     /// <p>The system-generated ID of the extension.</p>
-    #[doc(hidden)]
     pub extension_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID for the association.</p>
-    #[doc(hidden)]
     pub extension_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The extension version number.</p>
-    #[doc(hidden)]
     pub version_number: i32,
     /// <p>One or more parameters for the actions called by the extension.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AppliedExtension {

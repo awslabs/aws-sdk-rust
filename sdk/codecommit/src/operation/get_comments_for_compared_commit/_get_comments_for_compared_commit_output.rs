@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentsForComparedCommitOutput {
     /// <p>A list of comment objects on the compared commit.</p>
-    #[doc(hidden)]
     pub comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

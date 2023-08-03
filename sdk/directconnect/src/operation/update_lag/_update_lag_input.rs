@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLagInput {
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LAG.</p>
-    #[doc(hidden)]
     pub lag_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
-    #[doc(hidden)]
     pub minimum_links: ::std::option::Option<i32>,
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLagInput {

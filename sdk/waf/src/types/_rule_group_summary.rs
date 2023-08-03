@@ -10,10 +10,8 @@
 pub struct RuleGroupSummary {
     /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSummary {

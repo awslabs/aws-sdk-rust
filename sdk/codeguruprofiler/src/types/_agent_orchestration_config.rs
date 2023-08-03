@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    #[doc(hidden)]
     pub profiling_enabled: ::std::option::Option<bool>,
 }
 impl AgentOrchestrationConfig {

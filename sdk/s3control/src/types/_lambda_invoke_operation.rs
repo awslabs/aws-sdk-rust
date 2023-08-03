@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaInvokeOperation {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaInvokeOperation {

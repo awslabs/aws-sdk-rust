@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHubContentInput {
     /// <p>The name of the hub that you want to delete content in.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of content that you want to delete from a hub.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The name of the content that you want to delete from a hub.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the content that you want to delete from a hub.</p>
-    #[doc(hidden)]
     pub hub_content_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHubContentInput {

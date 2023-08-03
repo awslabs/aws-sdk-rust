@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {

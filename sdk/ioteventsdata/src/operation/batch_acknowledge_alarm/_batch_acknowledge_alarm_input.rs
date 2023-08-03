@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
     pub acknowledge_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
 }
 impl BatchAcknowledgeAlarmInput {

@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFileCacheLustreConfiguration {
     /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
-    #[doc(hidden)]
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::FileCacheLustreDeploymentType>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
-    #[doc(hidden)]
     pub metadata_configuration: ::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
 }
 impl CreateFileCacheLustreConfiguration {

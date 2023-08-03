@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
-    #[doc(hidden)]
     pub grammar_slot_type_setting: ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
 }
 impl ExternalSourceSetting {

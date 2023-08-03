@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMatchingWorkflowsOutput {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    #[doc(hidden)]
     pub workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

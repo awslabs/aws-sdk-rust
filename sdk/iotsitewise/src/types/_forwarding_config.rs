@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ForwardingConfigState>,
 }
 impl ForwardingConfig {

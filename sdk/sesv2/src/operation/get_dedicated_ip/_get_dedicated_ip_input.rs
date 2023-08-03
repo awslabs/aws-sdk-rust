@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
 }
 impl GetDedicatedIpInput {

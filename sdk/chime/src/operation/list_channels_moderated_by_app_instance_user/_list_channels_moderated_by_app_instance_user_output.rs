@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

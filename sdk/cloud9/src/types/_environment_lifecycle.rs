@@ -12,13 +12,10 @@ pub struct EnvironmentLifecycle {
     /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub failure_resource: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentLifecycle {

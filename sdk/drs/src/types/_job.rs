@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The ID of the Job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a Job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the Job.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::JobType>,
     /// <p>A string representing who initiated the Job.</p>
-    #[doc(hidden)]
     pub initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
     /// <p>The date and time of when the Job was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of when the Job ended.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A list of servers that the Job is acting upon.</p>
-    #[doc(hidden)]
     pub participating_servers: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
     /// <p>A list of tags associated with the Job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of resources that the Job is acting upon.</p>
-    #[doc(hidden)]
     pub participating_resources: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
 }
 impl Job {

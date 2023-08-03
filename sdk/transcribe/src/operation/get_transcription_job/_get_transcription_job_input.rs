@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTranscriptionJobInput {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    #[doc(hidden)]
     pub transcription_job_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTranscriptionJobInput {

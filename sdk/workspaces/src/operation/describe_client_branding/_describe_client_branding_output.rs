@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientBrandingOutput {
     /// <p>The branding information for Windows devices.</p>
-    #[doc(hidden)]
     pub device_type_windows: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     /// <p>The branding information for macOS devices.</p>
-    #[doc(hidden)]
     pub device_type_osx: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     /// <p>The branding information for Android devices.</p>
-    #[doc(hidden)]
     pub device_type_android: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     /// <p>The branding information for iOS devices.</p>
-    #[doc(hidden)]
     pub device_type_ios: ::std::option::Option<crate::types::IosClientBrandingAttributes>,
     /// <p>The branding information for Linux devices.</p>
-    #[doc(hidden)]
     pub device_type_linux: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     /// <p>The branding information for Web access.</p>
-    #[doc(hidden)]
     pub device_type_web: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     _request_id: Option<String>,
 }

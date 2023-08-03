@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapInput {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::FsxProtocol>,
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
@@ -13,19 +12,15 @@ pub struct CreateLocationFsxOntapInput {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
     /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationFsxOntapInput {

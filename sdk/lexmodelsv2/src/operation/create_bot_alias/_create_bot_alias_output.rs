@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotAliasOutput {
     /// <p>The unique identifier of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the bot alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with this alias.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for a specific locale.</p>
-    #[doc(hidden)]
     pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>The conversation log settings specified for the alias.</p>
-    #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
-    #[doc(hidden)]
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     /// <p>The unique identifier of the bot that this alias applies to.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot alias.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

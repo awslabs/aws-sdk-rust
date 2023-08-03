@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ToxicityDetectionSettings {
     /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    #[doc(hidden)]
     pub toxicity_categories: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
 }
 impl ToxicityDetectionSettings {

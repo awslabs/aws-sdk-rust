@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceConnectEndpointsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
@@ -28,10 +25,8 @@ pub struct DescribeInstanceConnectEndpointsInput {
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    #[doc(hidden)]
     pub instance_connect_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeInstanceConnectEndpointsInput {

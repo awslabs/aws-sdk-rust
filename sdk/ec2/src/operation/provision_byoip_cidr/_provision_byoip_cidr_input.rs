@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrInput {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    #[doc(hidden)]
     pub cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
     /// <p>Default: true</p>
-    #[doc(hidden)]
     pub publicly_advertisable: ::std::option::Option<bool>,
     /// <p>A description for the address range and the address pool.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to apply to the address pool.</p>
-    #[doc(hidden)]
     pub pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub multi_region: ::std::option::Option<bool>,
 }
 impl ProvisionByoipCidrInput {

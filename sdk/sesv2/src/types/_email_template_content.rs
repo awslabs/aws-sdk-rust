@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailTemplateContent {
     /// <p>The subject line of the email.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The HTML body of the email.</p>
-    #[doc(hidden)]
     pub html: ::std::option::Option<::std::string::String>,
 }
 impl EmailTemplateContent {

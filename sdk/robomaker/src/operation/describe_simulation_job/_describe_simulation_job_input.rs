@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSimulationJobInput {

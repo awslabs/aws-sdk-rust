@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
-    #[doc(hidden)]
     pub load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
     _request_id: Option<String>,
 }

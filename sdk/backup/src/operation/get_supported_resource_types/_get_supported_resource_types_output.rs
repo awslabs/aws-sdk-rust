@@ -16,7 +16,6 @@ pub struct GetSupportedResourceTypesOutput {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

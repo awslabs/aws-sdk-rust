@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notification {
     /// <p> The unique identifier for the notification. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the related assessment. </p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the name of the control set that the notification is about. </p>
-    #[doc(hidden)]
     pub control_set_name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the notification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The time when the notification was sent. </p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The sender of the notification. </p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl Notification {

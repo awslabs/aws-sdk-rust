@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PiiDetection {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node ID inputs to the transform.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates the type of PIIDetection transform. </p>
-    #[doc(hidden)]
     pub pii_type: ::std::option::Option<crate::types::PiiType>,
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
     /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
-    #[doc(hidden)]
     pub entity_types_to_detect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
-    #[doc(hidden)]
     pub output_column_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
-    #[doc(hidden)]
     pub sample_fraction: ::std::option::Option<f64>,
     /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
-    #[doc(hidden)]
     pub threshold_fraction: ::std::option::Option<f64>,
     /// <p>Indicates the value that will replace the detected entity. </p>
-    #[doc(hidden)]
     pub mask_value: ::std::option::Option<::std::string::String>,
 }
 impl PiiDetection {

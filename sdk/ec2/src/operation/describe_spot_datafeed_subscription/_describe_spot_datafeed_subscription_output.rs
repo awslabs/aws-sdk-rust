@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
-    #[doc(hidden)]
     pub spot_datafeed_subscription: ::std::option::Option<crate::types::SpotDatafeedSubscription>,
     _request_id: Option<String>,
 }

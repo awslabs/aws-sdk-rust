@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildBlock {
     /// <p>Unique identifier for the child block.</p>
-    #[doc(hidden)]
     pub child_block_id: ::std::option::Option<::std::string::String>,
     /// <p>Offset of the start of the child block within its parent block.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>Offset of the end of the child block within its parent block.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
 }
 impl ChildBlock {

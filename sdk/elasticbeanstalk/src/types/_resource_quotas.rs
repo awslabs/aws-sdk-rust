@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceQuotas {
     /// <p>The quota for applications in the AWS account.</p>
-    #[doc(hidden)]
     pub application_quota: ::std::option::Option<crate::types::ResourceQuota>,
     /// <p>The quota for application versions in the AWS account.</p>
-    #[doc(hidden)]
     pub application_version_quota: ::std::option::Option<crate::types::ResourceQuota>,
     /// <p>The quota for environments in the AWS account.</p>
-    #[doc(hidden)]
     pub environment_quota: ::std::option::Option<crate::types::ResourceQuota>,
     /// <p>The quota for configuration templates in the AWS account.</p>
-    #[doc(hidden)]
     pub configuration_template_quota: ::std::option::Option<crate::types::ResourceQuota>,
     /// <p>The quota for custom platforms in the AWS account.</p>
-    #[doc(hidden)]
     pub custom_platform_quota: ::std::option::Option<crate::types::ResourceQuota>,
 }
 impl ResourceQuotas {

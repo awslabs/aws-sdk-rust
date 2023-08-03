@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnector {
     /// <p>The Voice Connector's ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region in which the Voice Connector is created. Default: us-east-1.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
     /// <p>The Voice Connector's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The outbound host name for the Voice Connector.</p>
-    #[doc(hidden)]
     pub outbound_host_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables encryption for the Voice Connector.</p>
-    #[doc(hidden)]
     pub require_encryption: ::std::option::Option<bool>,
     /// <p>The Voice Connector's creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Voice Connector's updated timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Voice Connector.</p>
-    #[doc(hidden)]
     pub voice_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnector {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv6CidrAssociation {
     /// <p>The IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub associated_resource: ::std::option::Option<::std::string::String>,
 }
 impl Ipv6CidrAssociation {

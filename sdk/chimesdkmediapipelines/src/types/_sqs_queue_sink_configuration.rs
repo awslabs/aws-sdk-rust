@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SqsQueueSinkConfiguration {
     /// <p>The ARN of the SQS sink.</p>
-    #[doc(hidden)]
     pub insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueSinkConfiguration {

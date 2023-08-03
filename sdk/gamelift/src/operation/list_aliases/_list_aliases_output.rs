@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesOutput {
     /// <p>A collection of alias resources that match the request parameters.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

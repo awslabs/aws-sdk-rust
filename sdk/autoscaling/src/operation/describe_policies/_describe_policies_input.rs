@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePoliciesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    #[doc(hidden)]
     pub policy_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribePoliciesInput {

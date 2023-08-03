@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingResources {
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::ProcessingClusterConfig>,
 }
 impl ProcessingResources {

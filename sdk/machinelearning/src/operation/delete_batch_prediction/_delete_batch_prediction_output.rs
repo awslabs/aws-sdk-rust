@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

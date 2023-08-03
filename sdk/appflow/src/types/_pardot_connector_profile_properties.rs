@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PardotConnectorProfileProperties {
     /// <p>The location of the Salesforce Pardot resource.</p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
-    #[doc(hidden)]
     pub is_sandbox_environment: bool,
     /// <p>The business unit id of Salesforce Pardot instance.</p>
-    #[doc(hidden)]
     pub business_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl PardotConnectorProfileProperties {

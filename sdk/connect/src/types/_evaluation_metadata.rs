@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    #[doc(hidden)]
     pub evaluator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the agent who performed the contact.</p>
-    #[doc(hidden)]
     pub contact_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<crate::types::EvaluationScore>,
 }
 impl EvaluationMetadata {

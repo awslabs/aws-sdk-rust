@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleSelectQuestionRuleCategoryAutomation {
     /// <p> The category name, as defined in Rules.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::SingleSelectQuestionRuleCategoryAutomationCondition>,
     /// <p>The identifier of the answer option.</p>
-    #[doc(hidden)]
     pub option_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl SingleSelectQuestionRuleCategoryAutomation {

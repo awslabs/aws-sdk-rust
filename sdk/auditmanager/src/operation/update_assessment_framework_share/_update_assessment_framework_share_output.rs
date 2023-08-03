@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareOutput {
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
-    #[doc(hidden)]
     pub assessment_framework_share_request: ::std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
     _request_id: Option<String>,
 }

@@ -5,21 +5,16 @@
 pub struct CreateKeyPairInput {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code> </p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>The tags to apply to the new key pair.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code> </p>
-    #[doc(hidden)]
     pub key_format: ::std::option::Option<crate::types::KeyFormat>,
 }
 impl CreateKeyPairInput {

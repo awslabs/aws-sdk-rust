@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventTypesOutput {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-    #[doc(hidden)]
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

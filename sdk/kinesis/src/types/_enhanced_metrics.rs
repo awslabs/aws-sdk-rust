@@ -17,7 +17,6 @@ pub struct EnhancedMetrics {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
 }
 impl EnhancedMetrics {

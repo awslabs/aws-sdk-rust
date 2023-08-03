@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    #[doc(hidden)]
     pub min_units: i32,
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    #[doc(hidden)]
     pub max_units: i32,
     /// <p>The current status of the pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>The reason for the current status of the pipeline.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::PipelineStatusReason>,
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
-    #[doc(hidden)]
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the pipeline was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the pipeline was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    #[doc(hidden)]
     pub ingest_endpoint_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key-value pairs that represent log publishing settings.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
-    #[doc(hidden)]
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
 impl Pipeline {

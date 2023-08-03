@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDataSourcesDetails {
     /// <p> An object that contains information on the status of CloudTrail as a data source for the detector. </p>
-    #[doc(hidden)]
     pub cloud_trail: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails>,
     /// <p> An object that contains information on the status of DNS logs as a data source for the detector. </p>
-    #[doc(hidden)]
     pub dns_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails>,
     /// <p> An object that contains information on the status of VPC Flow Logs as a data source for the detector. </p>
-    #[doc(hidden)]
     pub flow_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails>,
     /// <p> An object that contains information on the status of Kubernetes data sources for the detector. </p>
-    #[doc(hidden)]
     pub kubernetes: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails>,
     /// <p> An object that contains information on the status of Malware Protection as a data source for the detector. </p>
-    #[doc(hidden)]
     pub malware_protection: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails>,
     /// <p> An object that contains information on the status of S3 Data event logs as a data source for the detector. </p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails>,
 }
 impl AwsGuardDutyDetectorDataSourcesDetails {

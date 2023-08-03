@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDedicatedIpPoolScalingAttributesInput {
     /// <p>The name of the dedicated IP pool.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
 }
 impl PutDedicatedIpPoolScalingAttributesInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transition {
     /// <p>The duration of the live program in seconds.</p>
-    #[doc(hidden)]
     pub duration_millis: i64,
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
-    #[doc(hidden)]
     pub relative_position: ::std::option::Option<crate::types::RelativePosition>,
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
-    #[doc(hidden)]
     pub relative_program: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    #[doc(hidden)]
     pub scheduled_start_time_millis: i64,
     /// <p>Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or <code>RELATIVE</code>.</p>
     /// <p> <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.</p>
@@ -22,7 +18,6 @@ pub struct Transition {
     /// <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p>
     /// <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p>
     /// <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Transition {

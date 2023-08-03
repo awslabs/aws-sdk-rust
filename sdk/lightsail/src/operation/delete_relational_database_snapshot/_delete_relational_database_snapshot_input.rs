@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot that you are deleting.</p>
-    #[doc(hidden)]
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRelationalDatabaseSnapshotInput {

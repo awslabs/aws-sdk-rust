@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemInput {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
-    #[doc(hidden)]
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
-    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DisassociateFileSystemInput {

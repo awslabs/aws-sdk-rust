@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceEventSummary {
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
-    #[doc(hidden)]
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being used for the inference events. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the starting time of an inference event. </p>
-    #[doc(hidden)]
     pub event_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the ending time of an inference event. </p>
-    #[doc(hidden)]
     pub event_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
-    #[doc(hidden)]
     pub diagnostics: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the size of an inference event in seconds. </p>
-    #[doc(hidden)]
     pub event_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl InferenceEventSummary {

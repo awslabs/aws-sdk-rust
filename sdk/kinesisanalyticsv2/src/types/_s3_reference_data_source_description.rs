@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon S3 object key name.</p>
-    #[doc(hidden)]
     pub file_key: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    #[doc(hidden)]
     pub reference_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSourceDescription {

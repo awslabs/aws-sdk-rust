@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateOutput {
     /// <p>The ARN that identifies the provisioning template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The default version of the provisioning template.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

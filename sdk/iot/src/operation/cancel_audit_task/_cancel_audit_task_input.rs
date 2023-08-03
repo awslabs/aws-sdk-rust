@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelAuditTaskInput {
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelAuditTaskInput {

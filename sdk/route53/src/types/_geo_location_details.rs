@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoLocationDetails {
     /// <p>The two-letter code for the continent.</p>
-    #[doc(hidden)]
     pub continent_code: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the continent.</p>
-    #[doc(hidden)]
     pub continent_name: ::std::option::Option<::std::string::String>,
     /// <p>The two-letter code for the country.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the country.</p>
-    #[doc(hidden)]
     pub country_name: ::std::option::Option<::std::string::String>,
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    #[doc(hidden)]
     pub subdivision_code: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-    #[doc(hidden)]
     pub subdivision_name: ::std::option::Option<::std::string::String>,
 }
 impl GeoLocationDetails {

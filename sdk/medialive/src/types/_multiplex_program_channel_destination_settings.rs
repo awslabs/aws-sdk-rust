@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramChannelDestinationSettings {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
-    #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The program name of the Multiplex program that the encoder is providing output to.
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramChannelDestinationSettings {

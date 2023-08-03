@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEmailInput {
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    #[doc(hidden)]
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the recipients of the email message.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    #[doc(hidden)]
     pub reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    #[doc(hidden)]
     pub feedback_forwarding_email_address: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    #[doc(hidden)]
     pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendEmailInput {

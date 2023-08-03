@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembersInput {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
-    #[doc(hidden)]
     pub disable_email_notification: ::std::option::Option<bool>,
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
 }
 impl CreateMembersInput {

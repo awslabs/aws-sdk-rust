@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotOptionsStatus {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Specifies the status of a daily automated snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl SnapshotOptionsStatus {

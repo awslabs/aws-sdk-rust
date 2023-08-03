@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduleInput {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    #[doc(hidden)]
     pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateScheduleInput {

@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaDeviceMount {
     /// <p>The mount path for the device in the file system.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub add_group_owner: ::std::option::Option<bool>,
 }
 impl LambdaDeviceMount {

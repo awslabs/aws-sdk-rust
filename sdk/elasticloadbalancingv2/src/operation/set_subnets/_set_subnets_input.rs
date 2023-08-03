@@ -4,24 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetSubnetsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
-    #[doc(hidden)]
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SetSubnetsInput {

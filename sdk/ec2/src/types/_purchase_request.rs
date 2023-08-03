@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseRequest {
     /// <p>The number of instances.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The purchase token.</p>
-    #[doc(hidden)]
     pub purchase_token: ::std::option::Option<::std::string::String>,
 }
 impl PurchaseRequest {

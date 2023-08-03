@@ -10,52 +10,36 @@ pub struct AdmMessage {
     /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The body of the notification message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
-    #[doc(hidden)]
     pub consolidation_key: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
-    #[doc(hidden)]
     pub expires_after: ::std::option::Option<::std::string::String>,
     /// <p>The icon image name of the asset saved in your app.</p>
-    #[doc(hidden)]
     pub icon_reference: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    #[doc(hidden)]
     pub image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display in the push notification.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, MD5 checksum of the value specified by the Data property. ADM uses the MD5 value to verify the integrity of the data.</p>
-    #[doc(hidden)]
     pub md5: ::std::option::Option<::std::string::String>,
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
-    #[doc(hidden)]
     pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
-    #[doc(hidden)]
     pub silent_push: ::std::option::Option<bool>,
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    #[doc(hidden)]
     pub small_image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    #[doc(hidden)]
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The title to display above the notification message on the recipient's device.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl AdmMessage {

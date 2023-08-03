@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
@@ -57,16 +56,12 @@ pub struct ListFindingsInput {
     /// <li> <p>type</p> </li>
     /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>Represents the criteria used for sorting findings.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFindingsInput {

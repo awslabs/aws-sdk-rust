@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    #[doc(hidden)]
     pub contents: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> Unique project identifier. </p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {

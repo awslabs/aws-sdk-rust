@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTriggerOutput {
     /// <p>The requested trigger definition.</p>
-    #[doc(hidden)]
     pub trigger: ::std::option::Option<crate::types::Trigger>,
     _request_id: Option<String>,
 }

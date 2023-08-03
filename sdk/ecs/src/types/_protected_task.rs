@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedTask {
     /// <p>The task ARN.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
-    #[doc(hidden)]
     pub protection_enabled: bool,
     /// <p>The epoch time when protection for the task will expire.</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProtectedTask {

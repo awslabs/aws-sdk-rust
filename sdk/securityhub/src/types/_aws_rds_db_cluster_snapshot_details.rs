@@ -5,63 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine that you want to use for this DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The status of this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the master user for the DB cluster.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine to use.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The license model information for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The type of DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>Whether the DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
 }
 impl AwsRdsDbClusterSnapshotDetails {

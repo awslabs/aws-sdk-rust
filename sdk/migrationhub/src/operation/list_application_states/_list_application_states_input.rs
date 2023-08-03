@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    #[doc(hidden)]
     pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListApplicationStatesInput {

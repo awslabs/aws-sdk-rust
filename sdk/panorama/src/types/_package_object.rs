@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageObject {
     /// <p>The object's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The object's package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The object's patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
 }
 impl PackageObject {

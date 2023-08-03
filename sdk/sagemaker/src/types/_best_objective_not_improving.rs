@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BestObjectiveNotImproving {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
-    #[doc(hidden)]
     pub max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }
 impl BestObjectiveNotImproving {

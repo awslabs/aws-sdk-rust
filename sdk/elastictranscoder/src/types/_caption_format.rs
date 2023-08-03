@@ -21,7 +21,6 @@ pub struct CaptionFormat {
     /// <li> <p> <b>Non-FMP4 outputs</b>: All sidecar types</p> </li>
     /// </ul> <p> <code>fmp4</code> captions have an extension of <code>.ismt</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for caption filenames, in the form <i>description</i>-<code>{language}</code>, where:</p>
     /// <ul>
@@ -30,10 +29,8 @@ pub struct CaptionFormat {
     /// </ul>
     /// <p>If you don't include <code>{language}</code> in the file name pattern, Elastic Transcoder automatically appends "<code>{language}</code>" to the value that you specify for the description. In addition, Elastic Transcoder automatically appends the count to the end of the segment files.</p>
     /// <p>For example, suppose you're transcoding into srt format. When you enter "Sydney-{language}-sunrise", and the language of the captions is English (en), the name of the first caption file is be Sydney-en-sunrise00000.srt.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl CaptionFormat {

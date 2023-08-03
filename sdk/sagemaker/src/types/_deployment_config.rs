@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentConfig {
     /// <p>Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the specified traffic routing configuration. Only one update policy should be used in the deployment configuration. If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic shifting by default.</p>
-    #[doc(hidden)]
     pub blue_green_update_policy: ::std::option::Option<crate::types::BlueGreenUpdatePolicy>,
     /// <p>Automatic rollback configuration for handling endpoint deployment failures and recovery.</p>
-    #[doc(hidden)]
     pub auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfig>,
     /// <p>Specifies a rolling deployment strategy for updating a SageMaker endpoint.</p>
-    #[doc(hidden)]
     pub rolling_update_policy: ::std::option::Option<crate::types::RollingUpdatePolicy>,
 }
 impl DeploymentConfig {

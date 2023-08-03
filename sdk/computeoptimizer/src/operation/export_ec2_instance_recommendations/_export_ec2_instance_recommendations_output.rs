@@ -5,10 +5,8 @@
 pub struct ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotVersionInput {
     /// <p>The identifier of the bot to create the version for.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the version. Use the description to help identify the version in lists.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
-    #[doc(hidden)]
     pub bot_version_locale_specification:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
 }

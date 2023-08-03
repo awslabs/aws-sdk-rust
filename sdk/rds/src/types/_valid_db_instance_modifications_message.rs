@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
     /// <p>Valid processor features for your DB instance.</p>
-    #[doc(hidden)]
     pub valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
 }
 impl ValidDbInstanceModificationsMessage {

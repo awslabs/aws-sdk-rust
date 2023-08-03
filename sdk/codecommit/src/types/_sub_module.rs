@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
-    #[doc(hidden)]
     pub absolute_path: ::std::option::Option<::std::string::String>,
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
 }
 impl SubModule {

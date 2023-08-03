@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentTurnResult {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    #[doc(hidden)]
     pub expected_agent_prompt: ::std::option::Option<::std::string::String>,
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
-    #[doc(hidden)]
     pub actual_agent_prompt: ::std::option::Option<::std::string::String>,
     /// <p>Details about an error in an execution of a test set.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ExecutionErrorDetails>,
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
-    #[doc(hidden)]
     pub actual_elicited_slot: ::std::option::Option<::std::string::String>,
     /// <p>The actual intent for the agent turn in a test set execution.</p>
-    #[doc(hidden)]
     pub actual_intent: ::std::option::Option<::std::string::String>,
 }
 impl AgentTurnResult {

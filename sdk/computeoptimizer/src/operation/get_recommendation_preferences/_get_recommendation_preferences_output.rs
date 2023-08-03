@@ -5,10 +5,8 @@
 pub struct GetRecommendationPreferencesOutput {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe recommendation preferences.</p>
-    #[doc(hidden)]
     pub recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
     _request_id: Option<String>,
 }

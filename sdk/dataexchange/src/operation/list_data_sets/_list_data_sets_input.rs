@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetsInput {
     /// <p>The maximum number of results returned by a single call.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<::std::string::String>,
 }
 impl ListDataSetsInput {

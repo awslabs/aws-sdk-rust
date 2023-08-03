@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Namespace {
     /// <p>The ID of a namespace.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
     /// <dl>
@@ -34,22 +31,16 @@ pub struct Namespace {
     /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code> API.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NamespaceType>,
     /// <p>The description that you specify for the namespace when you create it.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are associated with the namespace.</p>
-    #[doc(hidden)]
     pub service_count: ::std::option::Option<i32>,
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::NamespaceProperties>,
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl Namespace {

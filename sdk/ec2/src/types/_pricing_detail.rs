@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PricingDetail {
     /// <p>The number of reservations available for the price.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The price per instance.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f64>,
 }
 impl PricingDetail {

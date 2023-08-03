@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInput {

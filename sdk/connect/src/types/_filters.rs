@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
-    #[doc(hidden)]
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    #[doc(hidden)]
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {

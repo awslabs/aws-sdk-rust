@@ -5,41 +5,30 @@
 pub struct AuthorizeSecurityGroupIngressInput {
     /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
-    #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The sets of IP permissions.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
     /// <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
-    #[doc(hidden)]
     pub source_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
-    #[doc(hidden)]
     pub source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>[VPC Only] The tags applied to the security group rule.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AuthorizeSecurityGroupIngressInput {

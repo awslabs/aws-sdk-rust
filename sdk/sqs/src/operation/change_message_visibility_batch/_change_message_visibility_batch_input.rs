@@ -6,10 +6,8 @@
 pub struct ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>>,
 }
 impl ChangeMessageVisibilityBatchInput {

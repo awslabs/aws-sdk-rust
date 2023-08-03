@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProtectionStatusOutput {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::SecurityServiceType>,
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
@@ -18,11 +16,9 @@ pub struct GetProtectionStatusOutput {
     /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
     /// </ul>
     /// <p>The details are in JSON format. </p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

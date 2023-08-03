@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientSideTimestamps {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
 }
 impl ClientSideTimestamps {

@@ -6,50 +6,36 @@
 pub struct SlackConfiguration {
     /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
     /// <p>You can find your team ID in the URL of the main page of your Slack workspace. When you log in to Slack via a browser, you are directed to the URL of the main page. For example, <i>https://app.slack.com/client/<b>T0123456789</b>/...</i>.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
-    #[doc(hidden)]
     pub slack_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>>,
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
-    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
-    #[doc(hidden)]
     pub crawl_bot_message: bool,
     /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
-    #[doc(hidden)]
     pub exclude_archived: bool,
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
-    #[doc(hidden)]
     pub since_crawl_date: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours for change log to look back from when you last synchronized your data. You can look back up to 7 days or 168 hours.</p>
     /// <p>Change log updates your index only if new content was added since you last synced your data. Updated or deleted content from before you last synced does not get updated in your index. To capture updated or deleted content before you last synced, set the <code>LookBackPeriod</code> to the number of hours you want change log to look back.</p>
-    #[doc(hidden)]
     pub look_back_period: ::std::option::Option<i32>,
     /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
-    #[doc(hidden)]
     pub private_channel_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
-    #[doc(hidden)]
     pub public_channel_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SlackConfiguration {

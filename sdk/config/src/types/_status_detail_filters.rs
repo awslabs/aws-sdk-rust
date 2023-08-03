@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusDetailFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>Config sets the state of the rule to:</p>
@@ -20,7 +19,6 @@ pub struct StatusDetailFilters {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
 }
 impl StatusDetailFilters {

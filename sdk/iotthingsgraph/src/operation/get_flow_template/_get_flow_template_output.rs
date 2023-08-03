@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFlowTemplateOutput {
     /// <p>The object that describes the specified workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::FlowTemplateDescription>,
     _request_id: Option<String>,
 }

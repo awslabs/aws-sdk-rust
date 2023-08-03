@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of inference executions to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    #[doc(hidden)]
     pub data_start_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-    #[doc(hidden)]
     pub data_end_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the inference execution. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceExecutionStatus>,
 }
 impl ListInferenceExecutionsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Settings for backtest mode.</p>
-    #[doc(hidden)]
     pub back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl CloudWatchConfig {

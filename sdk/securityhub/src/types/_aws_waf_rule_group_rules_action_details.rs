@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRuleGroupRulesActionDetails {
     /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleGroupRulesActionDetails {

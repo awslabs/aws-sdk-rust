@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutInboundDmarcSettingsInput {
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>Enforces or suspends a policy after it's applied.</p>
-    #[doc(hidden)]
     pub enforced: ::std::option::Option<bool>,
 }
 impl PutInboundDmarcSettingsInput {

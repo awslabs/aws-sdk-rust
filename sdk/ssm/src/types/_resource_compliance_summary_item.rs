@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceComplianceSummaryItem {
     /// <p>The compliance type.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The compliance status for the resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The highest severity item found for the resource. The resource is compliant for this item.</p>
-    #[doc(hidden)]
     pub overall_severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     /// <p>Information about the execution.</p>
-    #[doc(hidden)]
     pub execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>A list of items that are compliant for the resource.</p>
-    #[doc(hidden)]
     pub compliant_summary: ::std::option::Option<crate::types::CompliantSummary>,
     /// <p>A list of items that aren't compliant for the resource.</p>
-    #[doc(hidden)]
     pub non_compliant_summary: ::std::option::Option<crate::types::NonCompliantSummary>,
 }
 impl ResourceComplianceSummaryItem {

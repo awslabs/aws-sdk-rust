@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    #[doc(hidden)]
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QuantumTaskStatus>,
     /// <p>The reason that a task failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device the task was run on.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the device on which the task ran.</p>
-    #[doc(hidden)]
     pub device_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The number of shots used in the task.</p>
-    #[doc(hidden)]
     pub shots: ::std::option::Option<i64>,
     /// <p>The S3 bucket where task results are stored.</p>
-    #[doc(hidden)]
     pub output_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The folder in the S3 bucket where task results are stored.</p>
-    #[doc(hidden)]
     pub output_s3_directory: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the task was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the task ended.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags that belong to this task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

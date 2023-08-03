@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    #[doc(hidden)]
     pub before_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    #[doc(hidden)]
     pub after_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
-    #[doc(hidden)]
     pub comments: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
 }
 impl CommentsForComparedCommit {

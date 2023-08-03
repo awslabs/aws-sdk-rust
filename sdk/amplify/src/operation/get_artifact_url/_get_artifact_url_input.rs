@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
-    #[doc(hidden)]
     pub artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetArtifactUrlInput {

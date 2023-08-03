@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanInput {
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    #[doc(hidden)]
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanInput {

@@ -10,14 +10,11 @@ pub struct GetTemplateInput {
     /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
-    #[doc(hidden)]
     pub template_stage: ::std::option::Option<crate::types::TemplateStage>,
 }
 impl GetTemplateInput {

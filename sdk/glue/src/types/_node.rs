@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Node {
     /// <p>The type of Glue component represented by the node.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NodeType>,
     /// <p>The name of the Glue component represented by the node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique Id assigned to the node within the workflow.</p>
-    #[doc(hidden)]
     pub unique_id: ::std::option::Option<::std::string::String>,
     /// <p>Details of the Trigger when the node represents a Trigger.</p>
-    #[doc(hidden)]
     pub trigger_details: ::std::option::Option<crate::types::TriggerNodeDetails>,
     /// <p>Details of the Job when the node represents a Job.</p>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::JobNodeDetails>,
     /// <p>Details of the crawler when the node represents a crawler.</p>
-    #[doc(hidden)]
     pub crawler_details: ::std::option::Option<crate::types::CrawlerNodeDetails>,
 }
 impl Node {

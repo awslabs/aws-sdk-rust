@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of update property value errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
 }
 impl BatchPutAssetPropertyErrorEntry {

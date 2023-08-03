@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthSocialProviderConfig {

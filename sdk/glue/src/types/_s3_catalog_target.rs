@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CatalogTarget {
     /// <p>The name of the data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to write to.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    #[doc(hidden)]
     pub schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
 impl S3CatalogTarget {

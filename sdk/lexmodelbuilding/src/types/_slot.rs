@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Slot {
     /// <p>The name of the slot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the slot is required or optional. </p>
-    #[doc(hidden)]
     pub slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
-    #[doc(hidden)]
     pub slot_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-    #[doc(hidden)]
     pub value_elicitation_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
-    #[doc(hidden)]
     pub response_card: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>. </p>
-    #[doc(hidden)]
     pub obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     /// <p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-    #[doc(hidden)]
     pub default_value_spec: ::std::option::Option<crate::types::SlotDefaultValueSpec>,
 }
 impl Slot {

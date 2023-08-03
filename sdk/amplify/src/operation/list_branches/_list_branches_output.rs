@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
-    #[doc(hidden)]
     pub branches: ::std::option::Option<::std::vec::Vec<crate::types::Branch>>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

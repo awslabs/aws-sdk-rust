@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ObjectTypeEnum>,
     /// <p>The type of the object in the destination branch.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::ObjectTypeEnum>,
     /// <p>The type of the object in the base commit of the merge.</p>
-    #[doc(hidden)]
     pub base: ::std::option::Option<crate::types::ObjectTypeEnum>,
 }
 impl ObjectTypes {

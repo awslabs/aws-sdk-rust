@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTableOutput {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-    #[doc(hidden)]
     pub import_table_description: ::std::option::Option<crate::types::ImportTableDescription>,
     _request_id: Option<String>,
 }

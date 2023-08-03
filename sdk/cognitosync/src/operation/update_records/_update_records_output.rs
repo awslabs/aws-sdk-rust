@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRecordsOutput {
     /// A list of records that have been updated.
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     _request_id: Option<String>,
 }

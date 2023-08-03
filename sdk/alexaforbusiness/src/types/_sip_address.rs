@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SipAddress {
     /// <p>The URI for the SIP address.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of the SIP address.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SipType>,
 }
 impl SipAddress {

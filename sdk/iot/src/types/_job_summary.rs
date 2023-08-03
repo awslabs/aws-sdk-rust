@@ -5,33 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The job ARN.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the thing group.</p>
-    #[doc(hidden)]
     pub thing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>The job summary status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
-    #[doc(hidden)]
     pub is_concurrent: ::std::option::Option<bool>,
 }
 impl JobSummary {

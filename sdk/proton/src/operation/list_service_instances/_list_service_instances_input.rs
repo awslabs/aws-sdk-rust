@@ -4,25 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of service instances to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
     /// <p>Default: <code>serviceName</code> </p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListServiceInstancesSortBy>,
     /// <p>Result list sort order.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListServiceInstancesInput {

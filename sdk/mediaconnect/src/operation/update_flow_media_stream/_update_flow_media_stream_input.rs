@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamInput {
     /// The attributes that you want to assign to the media stream.
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-    #[doc(hidden)]
     pub clock_rate: ::std::option::Option<i32>,
     /// Description
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the media stream that you want to update.
-    #[doc(hidden)]
     pub media_stream_name: ::std::option::Option<::std::string::String>,
     /// The type of media stream.
-    #[doc(hidden)]
     pub media_stream_type: ::std::option::Option<crate::types::MediaStreamType>,
     /// The resolution of the video.
-    #[doc(hidden)]
     pub video_format: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowMediaStreamInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequiredField {
     /// <p>Unique identifier of a field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
 }
 impl RequiredField {

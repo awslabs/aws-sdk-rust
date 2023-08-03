@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
-    #[doc(hidden)]
     pub vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     _request_id: Option<String>,
 }

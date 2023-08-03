@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportLensOutput {
     /// <p>The ARN for the lens that was created or updated.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the imported lens.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImportLensStatus>,
     _request_id: Option<String>,
 }

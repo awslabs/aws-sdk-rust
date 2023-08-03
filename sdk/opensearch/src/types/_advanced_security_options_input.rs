@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsInput {
     /// <p>True to enable fine-grained access control.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>True to enable the internal user database.</p>
-    #[doc(hidden)]
     pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Container for information about the master user.</p>
-    #[doc(hidden)]
     pub master_user_options: ::std::option::Option<crate::types::MasterUserOptions>,
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
-    #[doc(hidden)]
     pub saml_options: ::std::option::Option<crate::types::SamlOptionsInput>,
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
-    #[doc(hidden)]
     pub anonymous_auth_enabled: ::std::option::Option<bool>,
 }
 impl AdvancedSecurityOptionsInput {

@@ -7,10 +7,8 @@ pub struct PutLogEventsOutput {
     /// <p>This field has been deprecated.</p>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.</p>
     /// </important>
-    #[doc(hidden)]
     pub next_sequence_token: ::std::option::Option<::std::string::String>,
     /// <p>The rejected events.</p>
-    #[doc(hidden)]
     pub rejected_log_events_info: ::std::option::Option<crate::types::RejectedLogEventsInfo>,
     _request_id: Option<String>,
 }

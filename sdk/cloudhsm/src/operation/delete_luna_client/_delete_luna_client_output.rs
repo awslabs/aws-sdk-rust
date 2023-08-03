@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudFieldWells {
     /// <p>The aggregated field wells of a word cloud.</p>
-    #[doc(hidden)]
     pub word_cloud_aggregated_field_wells: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
 }
 impl WordCloudFieldWells {

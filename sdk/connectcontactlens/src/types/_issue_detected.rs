@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
-    #[doc(hidden)]
     pub character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
 impl IssueDetected {

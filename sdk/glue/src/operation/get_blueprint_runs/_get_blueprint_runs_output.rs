@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlueprintRunsOutput {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    #[doc(hidden)]
     pub blueprint_runs: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>>,
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

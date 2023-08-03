@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotValueOverride {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    #[doc(hidden)]
     pub shape: ::std::option::Option<crate::types::SlotShape>,
     /// <p>The current value of the slot.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::SlotValue>,
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>>,
 }
 impl SlotValueOverride {

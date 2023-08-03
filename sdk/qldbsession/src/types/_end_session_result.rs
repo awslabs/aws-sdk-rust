@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndSessionResult {
     /// <p>Contains server-side performance information for the command.</p>
-    #[doc(hidden)]
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
 impl EndSessionResult {

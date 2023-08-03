@@ -6,47 +6,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpactedLocation {
     /// <p>The name of the network at an impacted location.</p>
-    #[doc(hidden)]
     pub as_name: ::std::option::Option<::std::string::String>,
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
-    #[doc(hidden)]
     pub as_number: ::std::option::Option<i64>,
     /// <p>The name of the country where the health event is located.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The subdivision location where the health event is located. The subdivision usually maps to states in most countries (including the United States). For United Kingdom, it maps to a country (England, Scotland, Wales) or province (Northern Ireland).</p>
-    #[doc(hidden)]
     pub subdivision: ::std::option::Option<::std::string::String>,
     /// <p>The metro area where the health event is located.</p>
     /// <p>Metro indicates a metropolitan region in the United States, such as the region around New York City. In non-US countries, this is a second-level subdivision. For example, in the United Kingdom, it could be a county, a London borough, a unitary authority, council area, and so on.</p>
-    #[doc(hidden)]
     pub metro: ::std::option::Option<::std::string::String>,
     /// <p>The name of the city where the health event is located.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The latitude where the health event is located.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude where the health event is located.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<f64>,
     /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
-    #[doc(hidden)]
     pub subdivision_code: ::std::option::Option<::std::string::String>,
     /// <p>The service location where the health event is located.</p>
-    #[doc(hidden)]
     pub service_location: ::std::option::Option<::std::string::String>,
     /// <p>The status of the health event at an impacted location.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::HealthEventStatus>,
     /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
-    #[doc(hidden)]
     pub caused_by: ::std::option::Option<crate::types::NetworkImpairment>,
     /// <p>The calculated health at a specific location.</p>
-    #[doc(hidden)]
     pub internet_health: ::std::option::Option<crate::types::InternetHealth>,
 }
 impl ImpactedLocation {

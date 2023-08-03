@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointsInput {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::DescribeEndpointsMode>,
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointsInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceProperties {
     /// <p>Source server last update date and time.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Source server recommended instance type.</p>
-    #[doc(hidden)]
     pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Source server identification hints.</p>
-    #[doc(hidden)]
     pub identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
     /// <p>Source server network interfaces.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>Source Server disks.</p>
-    #[doc(hidden)]
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>Source Server CPUs.</p>
-    #[doc(hidden)]
     pub cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     /// <p>Source server RAM in bytes.</p>
-    #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Source server OS.</p>
-    #[doc(hidden)]
     pub os: ::std::option::Option<crate::types::Os>,
 }
 impl SourceProperties {

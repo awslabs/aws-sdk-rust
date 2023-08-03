@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCountsSummary {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i32>,
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<i32>,
     /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
-    #[doc(hidden)]
     pub up_to_date: ::std::option::Option<i32>,
     /// <p>The number of resources of this type in the Amazon Web Services account that need a major template version update.</p>
-    #[doc(hidden)]
     pub behind_major: ::std::option::Option<i32>,
     /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
-    #[doc(hidden)]
     pub behind_minor: ::std::option::Option<i32>,
 }
 impl ResourceCountsSummary {

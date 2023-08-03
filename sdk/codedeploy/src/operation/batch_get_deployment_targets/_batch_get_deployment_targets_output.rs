@@ -10,7 +10,6 @@ pub struct BatchGetDeploymentTargetsOutput {
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deployment_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExtensionAssociationInput {
     /// <p>The ID of the extension association to delete.</p>
-    #[doc(hidden)]
     pub extension_association_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExtensionAssociationInput {

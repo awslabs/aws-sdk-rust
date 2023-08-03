@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSelectionConfig {
     /// <p>Type of device subsets to deploy to the current stage.</p>
-    #[doc(hidden)]
     pub device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
-    #[doc(hidden)]
     pub percentage: i32,
     /// <p>List of devices chosen to deploy.</p>
-    #[doc(hidden)]
     pub device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A filter to select devices with names containing this name.</p>
-    #[doc(hidden)]
     pub device_name_contains: ::std::option::Option<::std::string::String>,
 }
 impl DeviceSelectionConfig {

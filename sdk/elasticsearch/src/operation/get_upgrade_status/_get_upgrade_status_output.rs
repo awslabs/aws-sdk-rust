@@ -11,7 +11,6 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Upgrade</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     /// <p> One of 4 statuses that a step can go through returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p>
     /// <ul>
@@ -21,10 +20,8 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A string that describes the update briefly</p>
-    #[doc(hidden)]
     pub upgrade_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

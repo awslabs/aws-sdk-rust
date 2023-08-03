@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// The key-value pair for the resource tag.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchEventsExecutionDataDetails {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
-    #[doc(hidden)]
     pub included: bool,
 }
 impl CloudWatchEventsExecutionDataDetails {

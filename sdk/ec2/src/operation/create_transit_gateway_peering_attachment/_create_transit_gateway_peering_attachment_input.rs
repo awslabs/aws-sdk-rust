@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringAttachmentInput {
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the peer transit gateway with which to create the peering attachment.</p>
-    #[doc(hidden)]
     pub peer_transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the peer transit gateway.</p>
-    #[doc(hidden)]
     pub peer_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the peer transit gateway is located.</p>
-    #[doc(hidden)]
     pub peer_region: ::std::option::Option<::std::string::String>,
     /// <p>Requests a transit gateway peering attachment.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>,
     /// <p>The tags to apply to the transit gateway peering attachment.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayPeeringAttachmentInput {

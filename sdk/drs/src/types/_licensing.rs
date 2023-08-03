@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Licensing {
     /// <p>Whether to enable "Bring your own license" or not.</p>
-    #[doc(hidden)]
     pub os_byol: ::std::option::Option<bool>,
 }
 impl Licensing {

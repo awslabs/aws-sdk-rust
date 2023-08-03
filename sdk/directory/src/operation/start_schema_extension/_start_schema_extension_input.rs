@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSchemaExtensionInput {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
-    #[doc(hidden)]
     pub create_snapshot_before_schema_extension: ::std::option::Option<bool>,
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
-    #[doc(hidden)]
     pub ldif_content: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema extension.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl StartSchemaExtensionInput {

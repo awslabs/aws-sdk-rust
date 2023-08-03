@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQueueInput {
     /// The new description for the queue, if you are changing it.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the queue that you are modifying.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    #[doc(hidden)]
     pub reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueueStatus>,
 }
 impl UpdateQueueInput {

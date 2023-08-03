@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferData {
     /// <p>The transfer message.</p>
-    #[doc(hidden)]
     pub transfer_message: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the transfer was rejected.</p>
-    #[doc(hidden)]
     pub reject_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date the transfer took place.</p>
-    #[doc(hidden)]
     pub transfer_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the transfer was accepted.</p>
-    #[doc(hidden)]
     pub accept_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the transfer was rejected.</p>
-    #[doc(hidden)]
     pub reject_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TransferData {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductViewSummary {
     /// <p>The product view identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Short description of the product.</p>
-    #[doc(hidden)]
     pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProductType>,
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
-    #[doc(hidden)]
     pub distributor: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
-    #[doc(hidden)]
     pub has_default_path: bool,
     /// <p>The email contact information to obtain support for this Product.</p>
-    #[doc(hidden)]
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The description of the support for this Product.</p>
-    #[doc(hidden)]
     pub support_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL information to obtain support for this Product.</p>
-    #[doc(hidden)]
     pub support_url: ::std::option::Option<::std::string::String>,
 }
 impl ProductViewSummary {

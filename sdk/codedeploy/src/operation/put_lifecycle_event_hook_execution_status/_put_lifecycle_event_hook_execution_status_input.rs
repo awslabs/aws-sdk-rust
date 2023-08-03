@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusInput {
     /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
-    #[doc(hidden)]
     pub lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl PutLifecycleEventHookExecutionStatusInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHsmClientCertificateOutput {
     /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate: ::std::option::Option<crate::types::HsmClientCertificate>,
     _request_id: Option<String>,
 }

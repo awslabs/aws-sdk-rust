@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl MssEncryption {

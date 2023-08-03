@@ -6,7 +6,6 @@ pub struct DescribeOrganizationOutput {
     /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
-    #[doc(hidden)]
     pub organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
 }

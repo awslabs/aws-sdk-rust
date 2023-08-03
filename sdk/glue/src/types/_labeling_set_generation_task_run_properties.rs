@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingSetGenerationTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
-    #[doc(hidden)]
     pub output_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl LabelingSetGenerationTaskRunProperties {

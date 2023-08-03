@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAttributeValue {
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl AccountAttributeValue {

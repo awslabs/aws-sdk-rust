@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub return_value: bool,
     _request_id: Option<String>,
 }

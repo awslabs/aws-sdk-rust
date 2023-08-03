@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
-    #[doc(hidden)]
     pub desired_instances: ::std::option::Option<i32>,
 }
 impl ComputeCapacity {

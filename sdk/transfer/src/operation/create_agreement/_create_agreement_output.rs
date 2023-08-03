@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAgreementOutput {
     /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
-    #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

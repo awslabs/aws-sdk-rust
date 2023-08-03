@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
-    #[doc(hidden)]
     pub gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::GatewayRouteRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

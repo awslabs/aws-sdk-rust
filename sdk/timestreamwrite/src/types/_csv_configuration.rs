@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvConfiguration {
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
-    #[doc(hidden)]
     pub column_separator: ::std::option::Option<::std::string::String>,
     /// <p>Escape character can be one of </p>
-    #[doc(hidden)]
     pub escape_char: ::std::option::Option<::std::string::String>,
     /// <p>Can be single quote (') or double quote (").</p>
-    #[doc(hidden)]
     pub quote_char: ::std::option::Option<::std::string::String>,
     /// <p>Can be blank space (' ').</p>
-    #[doc(hidden)]
     pub null_value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies to trim leading and trailing white space.</p>
-    #[doc(hidden)]
     pub trim_white_space: ::std::option::Option<bool>,
 }
 impl CsvConfiguration {

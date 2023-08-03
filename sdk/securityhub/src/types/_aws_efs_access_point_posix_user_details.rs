@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointPosixUserDetails {
     /// <p>The POSIX group ID used for all file system operations using this access point. </p>
-    #[doc(hidden)]
     pub gid: ::std::option::Option<::std::string::String>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    #[doc(hidden)]
     pub secondary_gids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
-    #[doc(hidden)]
     pub uid: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointPosixUserDetails {

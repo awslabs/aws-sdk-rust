@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SitePlan {
     /// <p>The resource definitions of the plan.</p>
-    #[doc(hidden)]
     pub resource_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceDefinition>>,
     /// <p>The options of the plan.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
 }
 impl SitePlan {

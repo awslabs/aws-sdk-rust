@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID associated with the repository.</p>
-    #[doc(hidden)]
     pub repository_id: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryNameIdPair {

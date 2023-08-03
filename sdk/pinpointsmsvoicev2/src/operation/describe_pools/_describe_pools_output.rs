@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePoolsOutput {
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
-    #[doc(hidden)]
     pub pools: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

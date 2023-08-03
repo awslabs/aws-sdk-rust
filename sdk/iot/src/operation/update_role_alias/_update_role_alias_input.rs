@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoleAliasInput {
     /// <p>The role alias to update.</p>
-    #[doc(hidden)]
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds the credential will be valid.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
-    #[doc(hidden)]
     pub credential_duration_seconds: ::std::option::Option<i32>,
 }
 impl UpdateRoleAliasInput {

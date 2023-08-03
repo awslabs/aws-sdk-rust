@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCacheClusterInput {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    #[doc(hidden)]
     pub final_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheClusterInput {

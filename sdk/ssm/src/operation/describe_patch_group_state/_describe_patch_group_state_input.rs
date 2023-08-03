@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePatchGroupStateInput {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
 impl DescribePatchGroupStateInput {

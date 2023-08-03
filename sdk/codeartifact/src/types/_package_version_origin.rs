@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionOrigin {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
-    #[doc(hidden)]
     pub domain_entry_point: ::std::option::Option<crate::types::DomainEntryPoint>,
     /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
-    #[doc(hidden)]
     pub origin_type: ::std::option::Option<crate::types::PackageVersionOriginType>,
 }
 impl PackageVersionOrigin {

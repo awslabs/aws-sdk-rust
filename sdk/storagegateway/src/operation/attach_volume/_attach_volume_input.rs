@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
-    #[doc(hidden)]
     pub target_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
-    #[doc(hidden)]
     pub disk_id: ::std::option::Option<::std::string::String>,
 }
 impl AttachVolumeInput {

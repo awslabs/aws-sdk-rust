@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMigrationsInput {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    #[doc(hidden)]
     pub sort_by_attribute: ::std::option::Option<crate::types::MigrationSortAttribute>,
     /// <p>The order so sort the list.</p>
-    #[doc(hidden)]
     pub sort_by_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    #[doc(hidden)]
     pub v1_bot_name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    #[doc(hidden)]
     pub migration_status_equals: ::std::option::Option<crate::types::MigrationStatus>,
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetMigrationsInput {

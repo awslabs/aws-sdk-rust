@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetStateChangeReason {
     /// <p>A code corresponding to the reason the state change occurred.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>,
     /// <p>An explanatory message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFleetStateChangeReason {

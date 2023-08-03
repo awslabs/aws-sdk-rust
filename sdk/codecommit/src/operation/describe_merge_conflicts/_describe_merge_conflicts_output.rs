@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMergeConflictsOutput {
     /// <p>Contains metadata about the conflicts found in the merge.</p>
-    #[doc(hidden)]
     pub conflict_metadata: ::std::option::Option<crate::types::ConflictMetadata>,
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
-    #[doc(hidden)]
     pub merge_hunks: ::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the merge base.</p>
-    #[doc(hidden)]
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

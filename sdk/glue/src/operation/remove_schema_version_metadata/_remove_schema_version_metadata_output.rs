@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest version of the schema.</p>
-    #[doc(hidden)]
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The version ID for the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata key.</p>
-    #[doc(hidden)]
     pub metadata_key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the metadata key.</p>
-    #[doc(hidden)]
     pub metadata_value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

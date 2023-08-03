@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorGroupInput {

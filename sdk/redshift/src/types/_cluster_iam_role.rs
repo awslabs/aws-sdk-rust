@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterIamRole {
     /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
@@ -14,7 +13,6 @@ pub struct ClusterIamRole {
     /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
     /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub apply_status: ::std::option::Option<::std::string::String>,
 }
 impl ClusterIamRole {

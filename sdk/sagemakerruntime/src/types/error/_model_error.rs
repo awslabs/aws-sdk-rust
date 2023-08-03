@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelError {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p> Original status code. </p>
-    #[doc(hidden)]
     pub original_status_code: ::std::option::Option<i32>,
     /// <p> Original message. </p>
-    #[doc(hidden)]
     pub original_message: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
-    #[doc(hidden)]
     pub log_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPagesByContactOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of engagements to a contact's contact channel.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
     _request_id: Option<String>,
 }

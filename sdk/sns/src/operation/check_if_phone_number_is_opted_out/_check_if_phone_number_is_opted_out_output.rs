@@ -9,7 +9,6 @@ pub struct CheckIfPhoneNumberIsOptedOutOutput {
     /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
     /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub is_opted_out: bool,
     _request_id: Option<String>,
 }

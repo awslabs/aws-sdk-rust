@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateServiceRoleToAccountInput {

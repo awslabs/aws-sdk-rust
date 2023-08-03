@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SopRecommendation {
     /// <p>The service type.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::SopServiceType>,
     /// <p>The name of the Application Component.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the SOP recommendation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Identifier for the SOP recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SOP recommendation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation items.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>The reference identifier for the SOP recommendation.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The prerequisite for the SOP recommendation.</p>
-    #[doc(hidden)]
     pub prerequisite: ::std::option::Option<::std::string::String>,
 }
 impl SopRecommendation {

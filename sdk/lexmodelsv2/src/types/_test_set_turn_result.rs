@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetTurnResult {
     /// <p>Contains information about the agent messages in the turn.</p>
-    #[doc(hidden)]
     pub agent: ::std::option::Option<crate::types::AgentTurnResult>,
     /// <p>Contains information about the user messages in the turn.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::UserTurnResult>,
 }
 impl TestSetTurnResult {

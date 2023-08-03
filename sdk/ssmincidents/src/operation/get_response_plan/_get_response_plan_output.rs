@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The long format name of the response plan. Can contain spaces.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Details used to create the incident when using this response plan.</p>
-    #[doc(hidden)]
     pub incident_template: ::std::option::Option<crate::types::IncidentTemplate>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    #[doc(hidden)]
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    #[doc(hidden)]
     pub engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    #[doc(hidden)]
     pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
     _request_id: Option<String>,
 }

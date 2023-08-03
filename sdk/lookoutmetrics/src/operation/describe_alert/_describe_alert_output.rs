@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlertOutput {
     /// <p>Contains information about an alert.</p>
-    #[doc(hidden)]
     pub alert: ::std::option::Option<crate::types::Alert>,
     _request_id: Option<String>,
 }

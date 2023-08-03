@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    #[doc(hidden)]
     pub object_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathFormat {

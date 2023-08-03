@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set the event destination was deleted from.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The event destination object that was deleted.</p>
-    #[doc(hidden)]
     pub event_destination: ::std::option::Option<crate::types::EventDestination>,
     _request_id: Option<String>,
 }

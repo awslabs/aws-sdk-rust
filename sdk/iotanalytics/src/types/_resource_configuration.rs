@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: i32,
 }
 impl ResourceConfiguration {

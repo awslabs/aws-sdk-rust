@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkflowOutput {
     /// <p>The structure that contains the details of the workflow.</p>
-    #[doc(hidden)]
     pub workflow: ::std::option::Option<crate::types::DescribedWorkflow>,
     _request_id: Option<String>,
 }

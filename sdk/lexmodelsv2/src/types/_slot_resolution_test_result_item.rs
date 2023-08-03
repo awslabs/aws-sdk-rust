@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotResolutionTestResultItem {
     /// <p>The name of the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    #[doc(hidden)]
     pub result_counts: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
 }
 impl SlotResolutionTestResultItem {

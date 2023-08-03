@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoOptionsStatus {
     /// <p>Specifies the Cognito options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Specifies the status of the Cognito options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl CognitoOptionsStatus {

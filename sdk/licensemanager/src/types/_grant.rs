@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant name.</p>
-    #[doc(hidden)]
     pub grant_name: ::std::option::Option<::std::string::String>,
     /// <p>Parent ARN.</p>
-    #[doc(hidden)]
     pub parent_arn: ::std::option::Option<::std::string::String>,
     /// <p>License ARN.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>The grantee principal ARN.</p>
-    #[doc(hidden)]
     pub grantee_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Home Region of the grant.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Grant status.</p>
-    #[doc(hidden)]
     pub grant_status: ::std::option::Option<crate::types::GrantStatus>,
     /// <p>Grant status reason.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Grant version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Granted operations.</p>
-    #[doc(hidden)]
     pub granted_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     /// <p>The options specified for the grant.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Options>,
 }
 impl Grant {

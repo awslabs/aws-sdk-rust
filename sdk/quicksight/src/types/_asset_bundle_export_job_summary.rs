@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobSummary {
     /// <p>The current status of the export job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     /// <p>The ARN of the export job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the export job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the export job.</p>
-    #[doc(hidden)]
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
-    #[doc(hidden)]
     pub include_all_dependencies: bool,
     /// <p>The format for the export job.</p>
-    #[doc(hidden)]
     pub export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
 }
 impl AssetBundleExportJobSummary {

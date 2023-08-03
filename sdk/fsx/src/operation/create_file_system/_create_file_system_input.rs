@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
     /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
@@ -24,7 +22,6 @@ pub struct CreateFileSystemInput {
     /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
     /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
@@ -32,17 +29,13 @@ pub struct CreateFileSystemInput {
     /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
     /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -52,10 +45,8 @@ pub struct CreateFileSystemInput {
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
-    #[doc(hidden)]
     pub windows_configuration: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
     /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
@@ -66,10 +57,8 @@ pub struct CreateFileSystemInput {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>,
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
     /// <ul>
@@ -79,10 +68,8 @@ pub struct CreateFileSystemInput {
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
 }
 impl CreateFileSystemInput {

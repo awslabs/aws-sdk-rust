@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the specific Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replication.</p>
-    #[doc(hidden)]
     pub destination_status: ::std::option::Option<crate::types::DestinationStatus>,
     _request_id: Option<String>,
 }

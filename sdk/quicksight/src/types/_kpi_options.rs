@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiOptions {
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
-    #[doc(hidden)]
     pub progress_bar: ::std::option::Option<crate::types::ProgressBarOptions>,
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
-    #[doc(hidden)]
     pub trend_arrows: ::std::option::Option<crate::types::TrendArrowOptions>,
     /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
-    #[doc(hidden)]
     pub secondary_value: ::std::option::Option<crate::types::SecondaryValueOptions>,
     /// <p>The comparison configuration of a KPI visual.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::ComparisonConfiguration>,
     /// <p>The options that determine the primary value display type.</p>
-    #[doc(hidden)]
     pub primary_value_display_type: ::std::option::Option<crate::types::PrimaryValueDisplayType>,
     /// <p>The options that determine the primary value font configuration.</p>
-    #[doc(hidden)]
     pub primary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The options that determine the secondary value font configuration.</p>
-    #[doc(hidden)]
     pub secondary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
 impl KpiOptions {

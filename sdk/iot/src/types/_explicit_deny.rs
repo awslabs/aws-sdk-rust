@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplicitDeny {
     /// <p>The policies that denied the authorization.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
 impl ExplicitDeny {

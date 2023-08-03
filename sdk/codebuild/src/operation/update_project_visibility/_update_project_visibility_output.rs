@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains the project identifier used with the public build APIs. </p>
-    #[doc(hidden)]
     pub public_project_alias: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -24,7 +22,6 @@ pub struct UpdateProjectVisibilityOutput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub project_visibility: ::std::option::Option<crate::types::ProjectVisibilityType>,
     _request_id: Option<String>,
 }

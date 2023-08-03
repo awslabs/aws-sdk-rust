@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkCardInfo {
     /// <p>The index of the network card.</p>
-    #[doc(hidden)]
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>The network performance of the network card.</p>
-    #[doc(hidden)]
     pub network_performance: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of network interfaces for the network card.</p>
-    #[doc(hidden)]
     pub maximum_network_interfaces: ::std::option::Option<i32>,
     /// <p>The baseline network performance of the network card, in Gbps.</p>
-    #[doc(hidden)]
     pub baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
-    #[doc(hidden)]
     pub peak_bandwidth_in_gbps: ::std::option::Option<f64>,
 }
 impl NetworkCardInfo {

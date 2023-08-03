@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClassificationScopeOutput {
     /// <p>The unique identifier for the classification scope.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3ClassificationScope>,
     _request_id: Option<String>,
 }

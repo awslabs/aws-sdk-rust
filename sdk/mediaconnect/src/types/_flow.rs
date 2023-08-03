@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Flow {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The IP address from which video will be sent to output destinations.
-    #[doc(hidden)]
     pub egress_ip: ::std::option::Option<::std::string::String>,
     /// The entitlements in this flow.
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    #[doc(hidden)]
     pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
     /// The name of the flow.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The outputs in this flow.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// The settings for the source of the flow.
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
     /// The current status of the flow.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// The VPC Interfaces for this flow.
-    #[doc(hidden)]
     pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
     /// The maintenance setting of a flow
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::Maintenance>,
 }
 impl Flow {

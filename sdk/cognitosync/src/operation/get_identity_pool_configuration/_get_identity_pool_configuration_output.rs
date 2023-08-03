@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
-    #[doc(hidden)]
     pub push_sync: ::std::option::Option<crate::types::PushSync>,
     /// Options to apply to this identity pool for Amazon Cognito streams.
-    #[doc(hidden)]
     pub cognito_streams: ::std::option::Option<crate::types::CognitoStreams>,
     _request_id: Option<String>,
 }

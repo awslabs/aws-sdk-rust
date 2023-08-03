@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateImpersonationRoleInput {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the impersonation role to update.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated impersonation role name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated impersonation role type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p>The updated impersonation role description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated list of rules.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
 }
 impl UpdateImpersonationRoleInput {

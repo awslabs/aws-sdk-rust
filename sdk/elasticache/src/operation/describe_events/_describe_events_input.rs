@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of minutes worth of events to retrieve.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {

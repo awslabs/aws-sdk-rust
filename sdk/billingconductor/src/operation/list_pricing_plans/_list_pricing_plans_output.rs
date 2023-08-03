@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansOutput {
     /// <p> The billing period for which the described pricing plans are applicable. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    #[doc(hidden)]
     pub pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
     /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

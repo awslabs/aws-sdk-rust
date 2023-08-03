@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
-    #[doc(hidden)]
     pub workload_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    #[doc(hidden)]
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The improvement status for a workload.</p>
-    #[doc(hidden)]
     pub improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
     /// <p>Profile associated with a workload.</p>
-    #[doc(hidden)]
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl WorkloadSummary {

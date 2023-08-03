@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImpersonationRoleOutput {
     /// <p>The impersonation role ID.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p>The impersonation role description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of rules for the given impersonation role.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
     /// <p>The date when the impersonation role was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the impersonation role was last modified.</p>
-    #[doc(hidden)]
     pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

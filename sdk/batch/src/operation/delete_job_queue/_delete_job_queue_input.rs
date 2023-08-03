@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteJobQueueInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
-    #[doc(hidden)]
     pub job_queue: ::std::option::Option<::std::string::String>,
 }
 impl DeleteJobQueueInput {

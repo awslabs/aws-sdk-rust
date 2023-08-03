@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    #[doc(hidden)]
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>ID of the user (connection) to disconnect from the room.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Reason for disconnecting the user.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectUserInput {

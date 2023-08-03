@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRegionalBucketsInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the Outposts resource.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRegionalBucketsInput {

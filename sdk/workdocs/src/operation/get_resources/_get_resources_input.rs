@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourcesInput {
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The collection type.</p>
-    #[doc(hidden)]
     pub collection_type: ::std::option::Option<crate::types::ResourceCollectionType>,
     /// <p>The maximum number of resources to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcesInput {

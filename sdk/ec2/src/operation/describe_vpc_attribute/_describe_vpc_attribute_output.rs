@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcAttributeOutput {
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-    #[doc(hidden)]
     pub enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
-    #[doc(hidden)]
     pub enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    #[doc(hidden)]
     pub enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }

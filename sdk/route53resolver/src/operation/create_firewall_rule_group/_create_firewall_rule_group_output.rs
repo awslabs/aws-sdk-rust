@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    #[doc(hidden)]
     pub firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The conditions.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The actions.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The tags to assign to the rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRuleInput {

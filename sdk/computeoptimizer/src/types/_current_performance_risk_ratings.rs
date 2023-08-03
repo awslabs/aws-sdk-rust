@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentPerformanceRiskRatings {
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
-    #[doc(hidden)]
     pub high: i64,
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
-    #[doc(hidden)]
     pub medium: i64,
     /// <p>A count of the applicable resource types with a low performance risk rating.</p>
-    #[doc(hidden)]
     pub low: i64,
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
-    #[doc(hidden)]
     pub very_low: i64,
 }
 impl CurrentPerformanceRiskRatings {

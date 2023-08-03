@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectClientAddInInput {
     /// <p>The identifier of the client add-in to delete.</p>
-    #[doc(hidden)]
     pub add_in_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectClientAddInInput {

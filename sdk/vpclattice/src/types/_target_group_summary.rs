@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupSummary {
     /// <p>The ID of the target group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the target group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The target group type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The port of the target group.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol of the target group.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID of the VPC of the target group.</p>
-    #[doc(hidden)]
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    #[doc(hidden)]
     pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetGroupSummary {

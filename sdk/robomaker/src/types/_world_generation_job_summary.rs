@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldGenerationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the world generator job:</p>
     /// <dl>
@@ -58,16 +55,12 @@ pub struct WorldGenerationJobSummary {
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorldGenerationJobStatus>,
     /// <p>Information about the world count.</p>
-    #[doc(hidden)]
     pub world_count: ::std::option::Option<crate::types::WorldCount>,
     /// <p>The number of worlds that were generated.</p>
-    #[doc(hidden)]
     pub succeeded_world_count: i32,
     /// <p>The number of worlds that failed.</p>
-    #[doc(hidden)]
     pub failed_world_count: i32,
 }
 impl WorldGenerationJobSummary {

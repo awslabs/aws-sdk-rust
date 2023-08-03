@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFunctionInput {
     /// <p>The name of the function that you are updating.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information about the function.</p>
-    #[doc(hidden)]
     pub function_config: ::std::option::Option<crate::types::FunctionConfig>,
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub function_code: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateFunctionInput {

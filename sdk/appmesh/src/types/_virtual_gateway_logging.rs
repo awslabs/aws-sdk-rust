@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
-    #[doc(hidden)]
     pub access_log: ::std::option::Option<crate::types::VirtualGatewayAccessLog>,
 }
 impl VirtualGatewayLogging {

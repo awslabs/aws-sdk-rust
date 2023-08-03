@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduledAuditInput {
     /// <p>The name of the scheduled audit you want to delete.</p>
-    #[doc(hidden)]
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledAuditInput {

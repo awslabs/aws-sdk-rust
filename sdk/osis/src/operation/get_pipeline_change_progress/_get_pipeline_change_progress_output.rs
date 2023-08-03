@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineChangeProgressOutput {
     /// <p>The current status of the change happening on the pipeline.</p>
-    #[doc(hidden)]
     pub change_progress_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
     _request_id: Option<String>,
 }

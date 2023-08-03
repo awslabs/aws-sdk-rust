@@ -9,7 +9,6 @@ pub struct LastRunErrorStatus {
     /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
     /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
 }
 impl LastRunErrorStatus {

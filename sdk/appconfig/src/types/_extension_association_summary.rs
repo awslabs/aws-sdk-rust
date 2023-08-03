@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtensionAssociationSummary {
     /// <p>The extension association ID. This ID is used to call other <code>ExtensionAssociation</code> API actions such as <code>GetExtensionAssociation</code> or <code>DeleteExtensionAssociation</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    #[doc(hidden)]
     pub extension_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExtensionAssociationSummary {

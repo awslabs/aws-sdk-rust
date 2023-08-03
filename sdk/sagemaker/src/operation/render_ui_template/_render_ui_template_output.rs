@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenderUiTemplateOutput {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
-    #[doc(hidden)]
     pub rendered_content: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::RenderingError>>,
     _request_id: Option<String>,
 }

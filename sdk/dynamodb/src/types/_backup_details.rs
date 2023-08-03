@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupDetails {
     /// <p>ARN associated with the backup.</p>
-    #[doc(hidden)]
     pub backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the requested backup.</p>
-    #[doc(hidden)]
     pub backup_name: ::std::option::Option<::std::string::String>,
     /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[doc(hidden)]
     pub backup_size_bytes: ::std::option::Option<i64>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
-    #[doc(hidden)]
     pub backup_status: ::std::option::Option<crate::types::BackupStatus>,
     /// <p>BackupType:</p>
     /// <ul>
@@ -22,13 +18,10 @@ pub struct BackupDetails {
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_type: ::std::option::Option<crate::types::BackupType>,
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    #[doc(hidden)]
     pub backup_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    #[doc(hidden)]
     pub backup_expiry_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackupDetails {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you want to update.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
-    #[doc(hidden)]
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_in_mibps: ::std::option::Option<f64>,
 }
 impl UpdateFileSystemInput {

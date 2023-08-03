@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChannelPolicyInput {
     /// <p>The name of the channel associated with this channel policy.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChannelPolicyInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyPathReference {
     /// <p>Information about level one.</p>
-    #[doc(hidden)]
     pub level_one: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     /// <p>Information about level two.</p>
-    #[doc(hidden)]
     pub level_two: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     /// <p>Information about level three.</p>
-    #[doc(hidden)]
     pub level_three: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     /// <p>Information about level four.</p>
-    #[doc(hidden)]
     pub level_four: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     /// <p>Information about level five.</p>
-    #[doc(hidden)]
     pub level_five: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
 }
 impl HierarchyPathReference {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataSourceInput {

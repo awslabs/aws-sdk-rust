@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringFilter {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter value, there's no match.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply to a string value when filtering Security Hub findings.</p>
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
@@ -32,7 +31,6 @@ pub struct StringFilter {
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li>
     /// </ul>
     /// <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::StringFilterComparison>,
 }
 impl StringFilter {

@@ -4,37 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateVpcCidrBlockInput {
     /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR block.</p>
-    #[doc(hidden)]
     pub amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
     /// <p>An IPv4 CIDR block to associate with the VPC.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     /// <p> You can have one IPv6 CIDR block association per network border group.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_pool: ::std::option::Option<::std::string::String>,
     /// <p>An IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.</p>
     /// <p>To let Amazon choose the IPv6 CIDR block for you, omit this parameter.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub ipv4_ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub ipv4_netmask_length: ::std::option::Option<i32>,
     /// <p>Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub ipv6_netmask_length: ::std::option::Option<i32>,
 }
 impl AssociateVpcCidrBlockInput {

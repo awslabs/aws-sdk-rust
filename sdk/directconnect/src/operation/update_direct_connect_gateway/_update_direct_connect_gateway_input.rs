@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub new_direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDirectConnectGatewayInput {

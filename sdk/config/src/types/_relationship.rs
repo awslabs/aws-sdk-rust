@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The resource type of the related resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the related resource, if available.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of relationship with the related resource.</p>
-    #[doc(hidden)]
     pub relationship_name: ::std::option::Option<::std::string::String>,
 }
 impl Relationship {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReleaseLabelsOutput {
     /// <p>The returned release labels.</p>
-    #[doc(hidden)]
     pub release_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

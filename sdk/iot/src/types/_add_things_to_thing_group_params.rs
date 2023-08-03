@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    #[doc(hidden)]
     pub thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
-    #[doc(hidden)]
     pub override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl AddThingsToThingGroupParams {

@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutAccountDetailsInput {
     /// <p>The type of email your account will send.</p>
-    #[doc(hidden)]
     pub mail_type: ::std::option::Option<crate::types::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    #[doc(hidden)]
     pub website_url: ::std::option::Option<::std::string::String>,
     /// <p>The language you would prefer to be contacted with.</p>
-    #[doc(hidden)]
     pub contact_language: ::std::option::Option<crate::types::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
-    #[doc(hidden)]
     pub use_case_description: ::std::option::Option<::std::string::String>,
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    #[doc(hidden)]
     pub additional_contact_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    #[doc(hidden)]
     pub production_access_enabled: ::std::option::Option<bool>,
 }
 impl PutAccountDetailsInput {

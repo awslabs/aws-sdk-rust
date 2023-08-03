@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
     pub pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribePoolsInput {

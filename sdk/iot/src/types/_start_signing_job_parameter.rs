@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSigningJobParameter {
     /// <p>Describes the code-signing profile.</p>
-    #[doc(hidden)]
     pub signing_profile_parameter: ::std::option::Option<crate::types::SigningProfileParameter>,
     /// <p>The code-signing profile name.</p>
-    #[doc(hidden)]
     pub signing_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The location to write the code-signed file.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
 }
 impl StartSigningJobParameter {

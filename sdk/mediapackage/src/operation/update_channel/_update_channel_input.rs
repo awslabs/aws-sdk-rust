@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// A short text description of the Channel.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel to update.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {

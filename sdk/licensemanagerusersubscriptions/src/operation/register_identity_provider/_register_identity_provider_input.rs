@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
 }
 impl RegisterIdentityProviderInput {

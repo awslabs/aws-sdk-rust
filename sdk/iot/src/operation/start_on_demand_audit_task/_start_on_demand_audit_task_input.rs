@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartOnDemandAuditTaskInput {
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    #[doc(hidden)]
     pub target_check_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartOnDemandAuditTaskInput {

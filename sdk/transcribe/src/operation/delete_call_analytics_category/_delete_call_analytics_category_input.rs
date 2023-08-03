@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCallAnalyticsCategoryInput {

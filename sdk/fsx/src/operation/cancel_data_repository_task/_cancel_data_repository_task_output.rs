@@ -12,10 +12,8 @@ pub struct CancelDataRepositoryTaskOutput {
     /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
     /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
     /// <p>The ID of the task being canceled.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

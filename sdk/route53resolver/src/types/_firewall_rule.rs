@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallRule {
     /// <p>The unique identifier of the firewall rule group of the rule. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain list that's used in the rule. </p>
-    #[doc(hidden)]
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the rule in the rule group. This value must be unique within the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
@@ -22,7 +18,6 @@ pub struct FirewallRule {
     /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
     /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
@@ -30,25 +25,18 @@ pub struct FirewallRule {
     /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
     /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub block_response: ::std::option::Option<crate::types::BlockResponse>,
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    #[doc(hidden)]
     pub block_override_domain: ::std::option::Option<::std::string::String>,
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    #[doc(hidden)]
     pub block_override_dns_type: ::std::option::Option<crate::types::BlockOverrideDnsType>,
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    #[doc(hidden)]
     pub block_override_ttl: ::std::option::Option<i32>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRule {

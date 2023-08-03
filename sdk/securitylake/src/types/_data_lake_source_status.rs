@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeSourceStatus {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The health status of services, including error codes and patterns.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SourceCollectionStatus>,
 }
 impl DataLakeSourceStatus {

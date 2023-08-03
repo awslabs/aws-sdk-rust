@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationOutput {
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Required. The date and time of the configuration.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The latest revision of the configuration.</p>
-    #[doc(hidden)]
     pub latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

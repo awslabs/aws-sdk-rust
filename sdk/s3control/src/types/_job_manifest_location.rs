@@ -7,13 +7,10 @@ pub struct JobManifestLocation {
     /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub object_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    #[doc(hidden)]
     pub object_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ETag for the specified manifest object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl JobManifestLocation {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedLanguage {
     /// <p> 2 digit ISO 639-1 code. e.g. <code>en</code> </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p> Full language description e.g. <code>ENGLISH</code> </p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p> Language display value e.g. <code>ENGLISH</code> </p>
-    #[doc(hidden)]
     pub display: ::std::option::Option<::std::string::String>,
 }
 impl SupportedLanguage {

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Compute {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
-    #[doc(hidden)]
     pub compute_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
-    #[doc(hidden)]
     pub compute_status: ::std::option::Option<crate::types::ComputeStatus>,
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of operating system on your compute resource.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The compute type that the fleet uses. A fleet can use Anywhere compute resources that you own, or use managed Amazon EC2 instances.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
-    #[doc(hidden)]
     pub game_lift_service_sdk_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl Compute {

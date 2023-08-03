@@ -6,12 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSsmDocumentDetails {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
 }
 impl TemplateSsmDocumentDetails {

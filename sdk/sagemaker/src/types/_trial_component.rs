@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponent {
     /// <p>The name of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::TrialComponentSource>,
     /// <p>The status of the trial component.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the trial component.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the component was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The hyperparameters of the component.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
     /// <p>The input artifacts of the component.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The output artifacts of the component.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The metrics for the component.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>Details of the source of the component.</p>
-    #[doc(hidden)]
     pub source_detail: ::std::option::Option<crate::types::TrialComponentSourceDetail>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
-    #[doc(hidden)]
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     /// <p>The name of the experiment run.</p>
-    #[doc(hidden)]
     pub run_name: ::std::option::Option<::std::string::String>,
 }
 impl TrialComponent {

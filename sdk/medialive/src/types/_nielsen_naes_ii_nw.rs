@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
-    #[doc(hidden)]
     pub check_digit_string: ::std::option::Option<::std::string::String>,
     /// Enter the Nielsen Source ID (SID) to include in the watermark
-    #[doc(hidden)]
     pub sid: ::std::option::Option<f64>,
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<crate::types::NielsenWatermarkTimezones>,
 }
 impl NielsenNaesIiNw {

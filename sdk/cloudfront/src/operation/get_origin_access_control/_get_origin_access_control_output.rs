@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOriginAccessControlOutput {
     /// <p>Contains an origin access control, including its unique identifier.</p>
-    #[doc(hidden)]
     pub origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     /// <p>The version identifier for the current version of the origin access control.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterParameterGroup {
     /// <p>The name of the cluster parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster parameter group family that this cluster parameter group is compatible with.</p>
-    #[doc(hidden)]
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the cluster parameter group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ClusterParameterGroup {

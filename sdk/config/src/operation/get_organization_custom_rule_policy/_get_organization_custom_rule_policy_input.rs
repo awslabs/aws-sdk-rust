@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicyInput {
     /// <p>The name of your organization Config Custom Policy rule. </p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyInput {

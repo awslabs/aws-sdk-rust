@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    #[doc(hidden)]
     pub suggestion: ::std::option::Option<::std::string::String>,
     /// <p>The relevance score of a suggested match.</p>
-    #[doc(hidden)]
     pub score: i64,
     /// <p>The document ID of the suggested document.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl SuggestionMatch {

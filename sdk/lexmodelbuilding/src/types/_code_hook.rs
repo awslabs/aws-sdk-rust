@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    #[doc(hidden)]
     pub message_version: ::std::option::Option<::std::string::String>,
 }
 impl CodeHook {

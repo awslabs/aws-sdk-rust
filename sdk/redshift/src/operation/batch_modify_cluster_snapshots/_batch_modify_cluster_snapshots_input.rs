@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    #[doc(hidden)]
     pub snapshot_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
-    #[doc(hidden)]
     pub force: bool,
 }
 impl BatchModifyClusterSnapshotsInput {

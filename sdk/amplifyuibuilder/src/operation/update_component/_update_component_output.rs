@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentOutput {
     /// <p>Describes the configuration of the updated component.</p>
-    #[doc(hidden)]
     pub entity: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreKeyOutput {
     /// <p>The key material of the restored key. The <code>KeyState</code> will change to <code>CREATE_COMPLETE</code> and value for <code>DeletePendingTimestamp</code> gets removed. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }

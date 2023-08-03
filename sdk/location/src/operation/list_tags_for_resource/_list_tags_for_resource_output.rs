@@ -7,7 +7,6 @@ pub struct ListTagsForResourceOutput {
     /// <ul>
     /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

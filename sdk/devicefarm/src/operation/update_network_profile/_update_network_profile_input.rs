@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile about which you are returning information.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network profile about which you are returning information.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkProfileType>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    #[doc(hidden)]
     pub uplink_bandwidth_bits: ::std::option::Option<i64>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    #[doc(hidden)]
     pub downlink_bandwidth_bits: ::std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    #[doc(hidden)]
     pub uplink_delay_ms: ::std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    #[doc(hidden)]
     pub downlink_delay_ms: ::std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    #[doc(hidden)]
     pub uplink_jitter_ms: ::std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    #[doc(hidden)]
     pub downlink_jitter_ms: ::std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
-    #[doc(hidden)]
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-    #[doc(hidden)]
     pub downlink_loss_percent: i32,
 }
 impl UpdateNetworkProfileInput {

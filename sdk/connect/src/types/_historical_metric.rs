@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoricalMetric {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::HistoricalMetricName>,
     /// <p>The threshold for the metric, used with service level metrics.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<crate::types::Threshold>,
     /// <p>The statistic for the metric.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The unit for the metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl HistoricalMetric {

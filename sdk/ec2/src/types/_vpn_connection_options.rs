@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnConnectionOptions {
     /// <p>Indicates whether acceleration is enabled for the VPN connection.</p>
-    #[doc(hidden)]
     pub enable_acceleration: ::std::option::Option<bool>,
     /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
-    #[doc(hidden)]
     pub static_routes_only: ::std::option::Option<bool>,
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    #[doc(hidden)]
     pub local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    #[doc(hidden)]
     pub remote_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    #[doc(hidden)]
     pub local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    #[doc(hidden)]
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
     /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
     /// <p>Default: <code>PublicIpv4</code> </p>
-    #[doc(hidden)]
     pub outside_ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
-    #[doc(hidden)]
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    #[doc(hidden)]
     pub tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     /// <p>Indicates the VPN tunnel options.</p>
-    #[doc(hidden)]
     pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>,
 }
 impl VpnConnectionOptions {

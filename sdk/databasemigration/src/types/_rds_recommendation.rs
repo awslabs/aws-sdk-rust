@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsRecommendation {
     /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
-    #[doc(hidden)]
     pub requirements_to_target: ::std::option::Option<crate::types::RdsRequirements>,
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
 impl RdsRecommendation {

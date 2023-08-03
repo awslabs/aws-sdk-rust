@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetNamedQueryInput {
     /// <p>An array of query IDs.</p>
-    #[doc(hidden)]
     pub named_query_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetNamedQueryInput {

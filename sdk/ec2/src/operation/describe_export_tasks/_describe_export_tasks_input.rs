@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
     /// <p>The export task IDs.</p>
-    #[doc(hidden)]
     pub export_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>the filters for the export tasks.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeExportTasksInput {

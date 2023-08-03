@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenInput {
     /// <p>The name of the GitHub account connection to delete.</p>
-    #[doc(hidden)]
     pub token_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGitHubAccountTokenInput {

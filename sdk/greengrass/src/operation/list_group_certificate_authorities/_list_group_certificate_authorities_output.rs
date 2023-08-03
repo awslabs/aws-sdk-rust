@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupCertificateAuthoritiesOutput {
     /// A list of certificate authorities associated with the group.
-    #[doc(hidden)]
     pub group_certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::GroupCertificateAuthorityProperties>>,
     _request_id: Option<String>,
 }

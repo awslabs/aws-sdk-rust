@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the activity.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
-    #[doc(hidden)]
     pub scheduled_start: ::std::option::Option<::std::string::String>,
     /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
-    #[doc(hidden)]
     pub successful_endpoint_count: ::std::option::Option<i32>,
     /// <p>The total number of time zones that were completed.</p>
-    #[doc(hidden)]
     pub timezones_completed_count: ::std::option::Option<i32>,
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
-    #[doc(hidden)]
     pub timezones_total_count: ::std::option::Option<i32>,
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
-    #[doc(hidden)]
     pub total_endpoint_count: ::std::option::Option<i32>,
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
-    #[doc(hidden)]
     pub treatment_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub execution_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActivityResponse {

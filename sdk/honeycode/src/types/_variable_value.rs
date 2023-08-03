@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VariableValue {
     /// <p>Raw value of the variable.</p>
-    #[doc(hidden)]
     pub raw_value: ::std::option::Option<::std::string::String>,
 }
 impl VariableValue {

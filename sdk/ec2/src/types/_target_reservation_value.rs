@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetReservationValue {
     /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
-    #[doc(hidden)]
     pub reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
 }
 impl TargetReservationValue {

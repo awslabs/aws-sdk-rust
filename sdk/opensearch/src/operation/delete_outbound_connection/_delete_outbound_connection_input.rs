@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOutboundConnectionInput {

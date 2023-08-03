@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppValidationOutputOutput {
     /// <p>The validation output.</p>
-    #[doc(hidden)]
     pub validation_output_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
     _request_id: Option<String>,
 }

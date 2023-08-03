@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsStatusReason {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
-    #[doc(hidden)]
     pub status_reason_code: ::std::option::Option<crate::types::StatusReasonCode>,
 }
 impl StandardsStatusReason {

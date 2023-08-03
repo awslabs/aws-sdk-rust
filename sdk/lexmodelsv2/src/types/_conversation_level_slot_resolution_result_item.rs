@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelSlotResolutionResultItem {
     /// <p>The intents used in the slots list for the slot resolution details.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The slot name in the slots list for the slot resolution details.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
-    #[doc(hidden)]
     pub match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelSlotResolutionResultItem {

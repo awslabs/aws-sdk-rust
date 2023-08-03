@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersV2Input {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    #[doc(hidden)]
     pub cluster_name_filter: ::std::option::Option<::std::string::String>,
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    #[doc(hidden)]
     pub cluster_type_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListClustersV2Input {

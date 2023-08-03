@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListSuppressedDestinationsInput {

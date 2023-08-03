@@ -6,7 +6,6 @@
 pub struct ComponentDependencyRequirement {
     /// <p>The component version requirement for the component dependency.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    #[doc(hidden)]
     pub version_requirement: ::std::option::Option<::std::string::String>,
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct ComponentDependencyRequirement {
     /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
     /// <p>Default: <code>HARD</code> </p>
-    #[doc(hidden)]
     pub dependency_type: ::std::option::Option<crate::types::ComponentDependencyType>,
 }
 impl ComponentDependencyRequirement {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionEvent {
     /// <p>The blockchain network where the transaction occurred.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The type of transaction event.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::QueryTransactionEventType>,
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<::std::string::String>,
     /// <p>The value that was transacted.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain address. for the contract</p>
-    #[doc(hidden)]
     pub contract_address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the token involved in the transaction.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The position of the vout in the transaction output list.</p>
-    #[doc(hidden)]
     pub vout_index: ::std::option::Option<i32>,
 }
 impl TransactionEvent {

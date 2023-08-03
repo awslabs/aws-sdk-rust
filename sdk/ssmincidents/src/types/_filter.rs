@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The key that you're filtering on.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::Condition>,
 }
 impl Filter {

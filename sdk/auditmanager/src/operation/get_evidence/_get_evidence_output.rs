@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceOutput {
     /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
-    #[doc(hidden)]
     pub evidence: ::std::option::Option<crate::types::Evidence>,
     _request_id: Option<String>,
 }

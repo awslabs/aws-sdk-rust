@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the column.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
 }
 impl ColumnMetadata {

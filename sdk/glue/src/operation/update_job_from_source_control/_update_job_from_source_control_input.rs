@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlInput {
     /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The provider for the remote repository.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::SourceControlProvider>,
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    #[doc(hidden)]
     pub repository_owner: ::std::option::Option<::std::string::String>,
     /// <p>An optional branch in the remote repository.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional folder in the remote repository.</p>
-    #[doc(hidden)]
     pub folder: ::std::option::Option<::std::string::String>,
     /// <p>A commit ID for a commit in the remote repository.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    #[doc(hidden)]
     pub auth_strategy: ::std::option::Option<crate::types::SourceControlAuthStrategy>,
     /// <p>The value of the authorization token.</p>
-    #[doc(hidden)]
     pub auth_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobFromSourceControlInput {

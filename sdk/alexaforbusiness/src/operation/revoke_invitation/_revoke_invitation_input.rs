@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeInvitationInput {
     /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-    #[doc(hidden)]
     pub enrollment_id: ::std::option::Option<::std::string::String>,
 }
 impl RevokeInvitationInput {

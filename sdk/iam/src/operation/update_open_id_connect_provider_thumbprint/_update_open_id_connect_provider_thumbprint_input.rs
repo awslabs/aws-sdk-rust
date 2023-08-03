@@ -5,10 +5,8 @@
 pub struct UpdateOpenIdConnectProviderThumbprintInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    #[doc(hidden)]
     pub thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOpenIdConnectProviderThumbprintInput {

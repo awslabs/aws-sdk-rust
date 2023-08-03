@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesInput {
     /// <p>A list of locales that the slot type supports.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    #[doc(hidden)]
     pub signature_contains: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetBuiltinSlotTypesInput {

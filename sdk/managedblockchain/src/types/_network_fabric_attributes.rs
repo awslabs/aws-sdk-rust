@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFabricAttributes {
     /// <p>The endpoint of the ordering service for the network.</p>
-    #[doc(hidden)]
     pub ordering_service_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
 }
 impl NetworkFabricAttributes {

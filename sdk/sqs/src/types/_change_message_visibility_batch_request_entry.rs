@@ -8,13 +8,10 @@ pub struct ChangeMessageVisibilityBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A receipt handle.</p>
-    #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
-    #[doc(hidden)]
     pub visibility_timeout: i32,
 }
 impl ChangeMessageVisibilityBatchRequestEntry {

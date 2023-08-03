@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p> A list of <code>ImportSummary</code> objects. </p>
-    #[doc(hidden)]
     pub import_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>>,
     /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

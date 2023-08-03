@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentLocation {
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The GPS location and range for the segment.</p>
-    #[doc(hidden)]
     pub gps_point: ::std::option::Option<crate::types::GpsPointDimension>,
 }
 impl SegmentLocation {

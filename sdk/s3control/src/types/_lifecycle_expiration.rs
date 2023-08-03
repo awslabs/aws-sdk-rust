@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
-    #[doc(hidden)]
     pub expired_object_delete_marker: bool,
 }
 impl LifecycleExpiration {

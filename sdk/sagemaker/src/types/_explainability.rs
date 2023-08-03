@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Explainability {
     /// <p>The explainability report for a model.</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl Explainability {

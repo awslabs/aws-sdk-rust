@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-    #[doc(hidden)]
     pub agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
     /// <p> A list of tags to add to the created profiling group. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProfilingGroupInput {

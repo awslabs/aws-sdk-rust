@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
-    #[doc(hidden)]
     pub preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,
 }

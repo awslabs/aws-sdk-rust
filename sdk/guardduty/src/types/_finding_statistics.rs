@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingStatistics {
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
-    #[doc(hidden)]
     pub count_by_severity: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl FindingStatistics {

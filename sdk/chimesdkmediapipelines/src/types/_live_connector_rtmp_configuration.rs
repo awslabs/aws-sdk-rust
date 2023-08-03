@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LiveConnectorRtmpConfiguration {
     /// <p>The URL of the RTMP configuration.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The audio channels set for the RTMP configuration</p>
-    #[doc(hidden)]
     pub audio_channels: ::std::option::Option<crate::types::AudioChannelsOption>,
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    #[doc(hidden)]
     pub audio_sample_rate: ::std::option::Option<::std::string::String>,
 }
 impl LiveConnectorRtmpConfiguration {

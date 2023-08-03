@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryCodeInput {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>The S3 version ID of your script.</p>
-    #[doc(hidden)]
     pub s3_version: ::std::option::Option<::std::string::String>,
     /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
-    #[doc(hidden)]
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    #[doc(hidden)]
     pub handler: ::std::option::Option<::std::string::String>,
 }
 impl CanaryCodeInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSceneInput {
     /// <p>The ID of the workspace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene to delete.</p>
-    #[doc(hidden)]
     pub scene_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSceneInput {

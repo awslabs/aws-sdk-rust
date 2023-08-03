@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain list that's used in the rule. </p>
-    #[doc(hidden)]
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInput {

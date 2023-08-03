@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutput {
     /// <p>Indicates the current status of the flow. </p>
-    #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     _request_id: Option<String>,
 }

@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobInput {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new or updated <code>Notification</code> object.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    #[doc(hidden)]
     pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <code>Address</code> object.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
-    #[doc(hidden)]
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    #[doc(hidden)]
     pub snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-    #[doc(hidden)]
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>Information identifying the person picking up the device.</p>
-    #[doc(hidden)]
     pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl UpdateJobInput {

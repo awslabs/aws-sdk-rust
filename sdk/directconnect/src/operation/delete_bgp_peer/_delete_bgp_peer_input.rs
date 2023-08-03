@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    #[doc(hidden)]
     pub asn: ::std::option::Option<i32>,
     /// <p>The IP address assigned to the customer interface.</p>
-    #[doc(hidden)]
     pub customer_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the BGP peer.</p>
-    #[doc(hidden)]
     pub bgp_peer_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBgpPeerInput {

@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluatedModelVersion {
     /// <p> The model ID. </p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p> The model version. </p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The model type. </p>
     /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<::std::string::String>,
     /// <p> Evaluations generated for the model version. </p>
-    #[doc(hidden)]
     pub evaluations: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>>,
 }
 impl EvaluatedModelVersion {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDomainAssociations {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnets associated with the multicast domain.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::SubnetAssociation>>,
 }
 impl TransitGatewayMulticastDomainAssociations {

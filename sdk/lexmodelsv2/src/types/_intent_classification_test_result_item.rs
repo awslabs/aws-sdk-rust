@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultItem {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
-    #[doc(hidden)]
     pub multi_turn_conversation: bool,
     /// <p>The result of the intent classification test.</p>
-    #[doc(hidden)]
     pub result_counts: ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
 }
 impl IntentClassificationTestResultItem {

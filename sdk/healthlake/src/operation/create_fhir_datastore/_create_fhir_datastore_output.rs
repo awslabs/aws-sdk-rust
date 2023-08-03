@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
-    #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the FHIR data store.</p>
-    #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>The AWS endpoint for the created data store.</p>
-    #[doc(hidden)]
     pub datastore_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

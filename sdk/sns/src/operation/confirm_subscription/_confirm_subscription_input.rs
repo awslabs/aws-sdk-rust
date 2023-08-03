@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmSubscriptionInput {
     /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
-    #[doc(hidden)]
     pub authenticate_on_unsubscribe: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmSubscriptionInput {

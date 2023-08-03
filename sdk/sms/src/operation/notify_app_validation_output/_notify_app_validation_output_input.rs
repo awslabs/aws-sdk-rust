@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyAppValidationOutputInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The notification information.</p>
-    #[doc(hidden)]
     pub notification_context: ::std::option::Option<crate::types::NotificationContext>,
 }
 impl NotifyAppValidationOutputInput {

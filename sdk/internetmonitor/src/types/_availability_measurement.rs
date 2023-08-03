@@ -8,15 +8,12 @@
 pub struct AvailabilityMeasurement {
     /// <p>Experience scores, or health scores are calculated for different geographic and network provider combinations (that is, different granularities) and also summed into global scores. If you view performance or availability scores without filtering for any specific geography or service provider, Amazon CloudWatch Internet Monitor provides global health scores.</p>
     /// <p>The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes detailed information about how Internet Monitor calculates health scores, including performance and availability scores, and when it creates and resolves health events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Amazon Web Services calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub experience_score: ::std::option::Option<f64>,
     /// <p>The percentage of impact caused by a health event for total traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
-    #[doc(hidden)]
     pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     /// <p>The percentage of impact caused by a health event for client location traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
-    #[doc(hidden)]
     pub percent_of_client_location_impacted: ::std::option::Option<f64>,
 }
 impl AvailabilityMeasurement {

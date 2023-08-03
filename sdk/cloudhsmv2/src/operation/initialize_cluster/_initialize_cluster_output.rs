@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitializeClusterOutput {
     /// <p>The cluster's state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>A description of the cluster's state.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

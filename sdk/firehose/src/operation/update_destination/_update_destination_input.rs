@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    #[doc(hidden)]
     pub current_delivery_stream_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the destination.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub s3_destination_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub extended_s3_destination_update: ::std::option::Option<crate::types::ExtendedS3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
-    #[doc(hidden)]
     pub redshift_destination_update: ::std::option::Option<crate::types::RedshiftDestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon ES.</p>
-    #[doc(hidden)]
     pub elasticsearch_destination_update: ::std::option::Option<crate::types::ElasticsearchDestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
-    #[doc(hidden)]
     pub amazonopensearchservice_destination_update: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate>,
     /// <p>Describes an update for a destination in Splunk.</p>
-    #[doc(hidden)]
     pub splunk_destination_update: ::std::option::Option<crate::types::SplunkDestinationUpdate>,
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
-    #[doc(hidden)]
     pub http_endpoint_destination_update: ::std::option::Option<crate::types::HttpEndpointDestinationUpdate>,
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
-    #[doc(hidden)]
     pub amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
 }
 impl UpdateDestinationInput {

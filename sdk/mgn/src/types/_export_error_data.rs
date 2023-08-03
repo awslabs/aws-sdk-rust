@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportErrorData {
     /// <p>Export errors data raw error.</p>
-    #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl ExportErrorData {

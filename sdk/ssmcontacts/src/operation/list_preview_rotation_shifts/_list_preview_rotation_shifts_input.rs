@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsInput {
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
-    #[doc(hidden)]
     pub rotation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a rotation shift would end.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contacts that would be assigned to a rotation.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
     /// <p>Information about changes that would be made in a rotation override.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>,
     /// <p>A token to start the list. This token is used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that can be specified in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPreviewRotationShiftsInput {

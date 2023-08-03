@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-    #[doc(hidden)]
     pub recommender_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recommender.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for. </p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details of the recommender.</p>
-    #[doc(hidden)]
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the recommender.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -32,16 +25,12 @@ pub struct Recommender {
     /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a recommender fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Provides a summary of the latest updates to the recommender. </p>
-    #[doc(hidden)]
     pub latest_recommender_update: ::std::option::Option<crate::types::RecommenderUpdateSummary>,
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    #[doc(hidden)]
     pub model_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl Recommender {

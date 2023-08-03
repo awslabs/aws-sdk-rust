@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuthorizerOutput {
     /// <p>The authorizer description.</p>
-    #[doc(hidden)]
     pub authorizer_description: ::std::option::Option<crate::types::AuthorizerDescription>,
     _request_id: Option<String>,
 }

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagesInput {
     /// <p>A filter that returns only images created on or after the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images created on or before the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images modified on or after the specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images modified on or before the specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of images to return in the response. The default value is 10. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only images whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ImageSortBy>,
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::ImageSortOrder>,
 }
 impl ListImagesInput {

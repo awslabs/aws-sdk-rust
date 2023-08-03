@@ -18,13 +18,10 @@ pub struct ImageVersion {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of this specific version of an Image Builder image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageType>,
     /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -43,19 +40,14 @@ pub struct ImageVersion {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the image version.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
@@ -63,10 +55,8 @@ pub struct ImageVersion {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    #[doc(hidden)]
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
 }
 impl ImageVersion {

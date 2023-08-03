@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    #[doc(hidden)]
     pub item_list: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

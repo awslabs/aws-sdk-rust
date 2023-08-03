@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightsConfiguration {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
-    #[doc(hidden)]
     pub insights_enabled: ::std::option::Option<bool>,
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-    #[doc(hidden)]
     pub notifications_enabled: ::std::option::Option<bool>,
 }
 impl InsightsConfiguration {

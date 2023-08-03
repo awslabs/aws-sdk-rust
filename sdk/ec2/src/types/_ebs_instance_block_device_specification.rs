@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The ID of the EBS volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDeviceSpecification {

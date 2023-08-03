@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
-    #[doc(hidden)]
     pub mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,
 }

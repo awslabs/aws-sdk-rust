@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePermissionInput {
     /// <p>Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
     /// <ul>
@@ -19,15 +17,12 @@ pub struct CreatePermissionInput {
     /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    #[doc(hidden)]
     pub policy_template: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of one or more tag key and value pairs to attach to the permission.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePermissionInput {

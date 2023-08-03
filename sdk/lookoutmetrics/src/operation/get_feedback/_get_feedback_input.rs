@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The anomalous metric and group ID.</p>
-    #[doc(hidden)]
     pub anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetFeedbackInput {

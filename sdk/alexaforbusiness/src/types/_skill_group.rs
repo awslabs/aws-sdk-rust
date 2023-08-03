@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkillGroup {
     /// <p>The ARN of a skill group.</p>
-    #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a skill group.</p>
-    #[doc(hidden)]
     pub skill_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a skill group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl SkillGroup {

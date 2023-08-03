@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessagesOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-    #[doc(hidden)]
     pub message_response: ::std::option::Option<crate::types::MessageResponse>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageLayerAggregationResponse {
     /// <p>The repository the layer resides in.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the container image layer.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer hash.</p>
-    #[doc(hidden)]
     pub layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the count of matched findings per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl ImageLayerAggregationResponse {

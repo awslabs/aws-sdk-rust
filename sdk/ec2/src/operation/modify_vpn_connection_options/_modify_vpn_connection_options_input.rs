@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptionsInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    #[doc(hidden)]
     pub local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    #[doc(hidden)]
     pub remote_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    #[doc(hidden)]
     pub local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    #[doc(hidden)]
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyVpnConnectionOptionsInput {

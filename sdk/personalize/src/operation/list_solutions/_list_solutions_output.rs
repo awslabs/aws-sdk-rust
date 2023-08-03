@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolutionsOutput {
     /// <p>A list of the current solutions.</p>
-    #[doc(hidden)]
     pub solutions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
     /// <p>A token for getting the next set of solutions (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

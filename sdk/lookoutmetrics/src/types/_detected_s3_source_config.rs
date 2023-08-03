@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
-    #[doc(hidden)]
     pub file_format_descriptor: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
 }
 impl DetectedS3SourceConfig {

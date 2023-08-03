@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectDominantLanguageInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    #[doc(hidden)]
     pub text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDetectDominantLanguageInput {

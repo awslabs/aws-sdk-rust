@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunFilter {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub name_pattern: ::std::option::Option<::std::string::String>,
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub duration_range: ::std::option::Option<crate::types::DurationRange>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub start_time_range: ::std::option::Option<crate::types::TimestampRange>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub completion_time_range: ::std::option::Option<crate::types::TimestampRange>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    #[doc(hidden)]
     pub state_change_time_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl AssessmentRunFilter {

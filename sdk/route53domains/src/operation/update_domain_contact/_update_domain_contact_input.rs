@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDomainContactInput {
     /// <p>The name of the domain that you want to update contact information for.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub admin_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
-    #[doc(hidden)]
     pub consent: ::std::option::Option<crate::types::Consent>,
 }
 impl UpdateDomainContactInput {

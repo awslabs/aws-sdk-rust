@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
-    #[doc(hidden)]
     pub enable_dynamic_field_update: bool,
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
-    #[doc(hidden)]
     pub include_deleted_records: bool,
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
     /// <dl>
@@ -37,7 +34,6 @@ pub struct SalesforceSourceProperties {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceSourceProperties {

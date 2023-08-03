@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationAction {
     /// <p>The IAM role that grants permission to write to the Amazon Location resource.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the tracker resource in Amazon Location in which the location is updated.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the device providing the location data.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::LocationTimestamp>,
     /// <p>A string that evaluates to a double value that represents the latitude of the device's location.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<::std::string::String>,
     /// <p>A string that evaluates to a double value that represents the longitude of the device's location.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<::std::string::String>,
 }
 impl LocationAction {

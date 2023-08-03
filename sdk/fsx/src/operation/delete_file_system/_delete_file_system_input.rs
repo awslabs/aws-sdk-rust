@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system that you want to delete.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub windows_configuration: ::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
 }
 impl DeleteFileSystemInput {

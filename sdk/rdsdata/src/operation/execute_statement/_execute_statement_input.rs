@@ -5,46 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement to run.</p>
-    #[doc(hidden)]
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
-    #[doc(hidden)]
     pub include_result_metadata: bool,
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
-    #[doc(hidden)]
     pub continue_after_timeout: bool,
     /// <p>Options that control how the result set is returned.</p>
-    #[doc(hidden)]
     pub result_set_options: ::std::option::Option<crate::types::ResultSetOptions>,
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub format_records_as: ::std::option::Option<crate::types::RecordsFormatType>,
 }
 impl ExecuteStatementInput {

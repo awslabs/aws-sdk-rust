@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    #[doc(hidden)]
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
-    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
-    #[doc(hidden)]
     pub asn: i32,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
-    #[doc(hidden)]
     pub mtu: ::std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    #[doc(hidden)]
     pub auth_key: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
-    #[doc(hidden)]
     pub amazon_address: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
-    #[doc(hidden)]
     pub customer_address: ::std::option::Option<::std::string::String>,
     /// <p>The address family for the BGP peer.</p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
-    #[doc(hidden)]
     pub enable_site_link: ::std::option::Option<bool>,
 }
 impl NewPrivateVirtualInterface {

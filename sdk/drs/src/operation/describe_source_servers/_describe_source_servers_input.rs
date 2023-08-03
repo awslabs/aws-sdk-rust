@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceServersInput {
     /// <p>A set of filters by which to return Source Servers.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
     /// <p>Maximum number of Source Servers to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Source Server to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSourceServersInput {

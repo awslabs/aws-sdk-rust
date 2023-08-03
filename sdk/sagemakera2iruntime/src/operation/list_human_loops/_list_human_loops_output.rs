@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
-    #[doc(hidden)]
     pub human_loop_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
     /// <p>A token to display the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

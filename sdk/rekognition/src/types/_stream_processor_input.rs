@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream: ::std::option::Option<crate::types::KinesisVideoStream>,
 }
 impl StreamProcessorInput {

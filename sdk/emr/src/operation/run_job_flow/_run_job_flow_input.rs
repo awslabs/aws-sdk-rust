@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunJobFlowInput {
     /// <p>The name of the job flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR releases 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
-    #[doc(hidden)]
     pub log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string for selecting additional features.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
-    #[doc(hidden)]
     pub ami_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>A specification of the number and type of Amazon EC2 instances.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<crate::types::JobFlowInstancesConfig>,
     /// <p>A list of steps to run.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-    #[doc(hidden)]
     pub bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>>,
     /// <note>
     /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
@@ -39,7 +30,6 @@ pub struct RunJobFlowInput {
     /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
     /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub supported_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <note>
     /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
@@ -55,66 +45,47 @@ pub struct RunJobFlowInput {
     /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
     /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_supported_products: ::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>>,
     /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the Amazon EMR cluster that you are creating.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <important>
     /// <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>
     /// </important>
     /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform Amazon EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the Amazon EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
     /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding the Amazon EMR cluster VisibleToAllUsers setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub visible_to_all_users: ::std::option::Option<bool>,
     /// <p>Also called instance profile and Amazon EC2 role. An IAM role for an Amazon EMR cluster. The Amazon EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
-    #[doc(hidden)]
     pub job_flow_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of a security configuration to apply to the cluster.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
-    #[doc(hidden)]
     pub auto_scaling_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
-    #[doc(hidden)]
     pub scale_down_behavior: ::std::option::Option<crate::types::ScaleDownBehavior>,
     /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster Amazon EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR releases 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
     /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
-    #[doc(hidden)]
     pub ebs_root_volume_size: ::std::option::Option<i32>,
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
-    #[doc(hidden)]
     pub repo_upgrade_on_boot: ::std::option::Option<crate::types::RepoUpgradeOnBoot>,
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub kerberos_attributes: ::std::option::Option<crate::types::KerberosAttributes>,
     /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
-    #[doc(hidden)]
     pub step_concurrency_level: ::std::option::Option<i32>,
     /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
-    #[doc(hidden)]
     pub managed_scaling_policy: ::std::option::Option<crate::types::ManagedScalingPolicy>,
     /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
-    #[doc(hidden)]
     pub placement_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
-    #[doc(hidden)]
     pub auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,
     /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
-    #[doc(hidden)]
     pub os_release_label: ::std::option::Option<::std::string::String>,
 }
 impl RunJobFlowInput {

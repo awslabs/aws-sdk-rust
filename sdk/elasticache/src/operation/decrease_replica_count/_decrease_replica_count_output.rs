@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    #[doc(hidden)]
     pub replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
 }

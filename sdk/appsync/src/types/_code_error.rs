@@ -6,14 +6,11 @@
 pub struct CodeError {
     /// <p>The type of code error. </p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<::std::string::String>,
     /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The line, column, and span location of the error in the code.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::CodeErrorLocation>,
 }
 impl CodeError {

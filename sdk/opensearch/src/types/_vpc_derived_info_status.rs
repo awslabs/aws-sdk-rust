@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     /// <p>The status of the VPC options for the specified domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl VpcDerivedInfoStatus {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionParameters {
     /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
-    #[doc(hidden)]
     pub anchor: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>The element within the same component to modify when the action occurs.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
-    #[doc(hidden)]
     pub global: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::MutationActionSetStateParameter>,
 }
 impl ActionParameters {

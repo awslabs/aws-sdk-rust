@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchDevicesOutput {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of devices returned.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

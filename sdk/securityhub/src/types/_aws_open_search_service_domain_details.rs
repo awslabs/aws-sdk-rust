@@ -5,50 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainDetails {
     /// <p>The ARN of the OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>IAM policy document that specifies the access policies for the OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the domain.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The domain endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The version of the domain engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about the configuration for encryption at rest.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails>,
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails>,
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>,
     /// <p>Details about the configuration of an OpenSearch cluster.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigDetails>,
     /// <p>Additional options for the domain endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>,
     /// <p>Information that OpenSearch Service derives based on <code>VPCOptions</code> for the domain.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails>,
     /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>,
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies options for fine-grained access control. </p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
 }
 impl AwsOpenSearchServiceDomainDetails {

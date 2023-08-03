@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZookeeperNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
-    #[doc(hidden)]
     pub attached_eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) IP address of the client.</p>
-    #[doc(hidden)]
     pub client_vpc_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Endpoints for accessing the ZooKeeper.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The role-specific ID for Zookeeper.</p>
-    #[doc(hidden)]
     pub zookeeper_id: ::std::option::Option<f64>,
     /// <p>The version of Zookeeper.</p>
-    #[doc(hidden)]
     pub zookeeper_version: ::std::option::Option<::std::string::String>,
 }
 impl ZookeeperNodeInfo {

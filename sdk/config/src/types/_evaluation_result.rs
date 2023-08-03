@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
-    #[doc(hidden)]
     pub evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>The time when Config recorded the evaluation result.</p>
-    #[doc(hidden)]
     pub result_recorded_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub config_rule_invoked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    #[doc(hidden)]
     pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
-    #[doc(hidden)]
     pub result_token: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationResult {

@@ -7,7 +7,6 @@
 pub struct CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub insert_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
 impl CustomRequestHandling {

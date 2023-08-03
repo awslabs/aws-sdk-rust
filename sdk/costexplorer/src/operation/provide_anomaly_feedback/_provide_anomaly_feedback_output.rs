@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
-    #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 pub struct DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    #[doc(hidden)]
     pub budget_performance_history: ::std::option::Option<crate::types::BudgetPerformanceHistory>,
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP name.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
-    #[doc(hidden)]
     pub provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The IdP attribute mapping to be changed.</p>
-    #[doc(hidden)]
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
-    #[doc(hidden)]
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateIdentityProviderInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
-    #[doc(hidden)]
     pub enabled_in_broker: ::std::option::Option<bool>,
 }
 impl JmxExporterInfo {

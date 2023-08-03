@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    #[doc(hidden)]
     pub run_command_targets: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
 }
 impl RunCommandParameters {

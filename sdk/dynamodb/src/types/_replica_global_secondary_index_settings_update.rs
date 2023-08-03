@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[doc(hidden)]
     pub provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
-    #[doc(hidden)]
     pub provisioned_read_capacity_auto_scaling_settings_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdate {

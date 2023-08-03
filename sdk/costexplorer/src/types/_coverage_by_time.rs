@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The groups of instances that the reservation covered.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
     /// <p>The total reservation coverage, in hours.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::Coverage>,
 }
 impl CoverageByTime {

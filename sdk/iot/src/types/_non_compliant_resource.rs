@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NonCompliantResource {
     /// <p>The type of the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information that identifies the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p>Other information about the noncompliant resource.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NonCompliantResource {

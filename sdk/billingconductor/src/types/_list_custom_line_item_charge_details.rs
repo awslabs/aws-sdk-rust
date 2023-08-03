@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
-    #[doc(hidden)]
     pub flat: ::std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
-    #[doc(hidden)]
     pub percentage: ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CustomLineItemType>,
 }
 impl ListCustomLineItemChargeDetails {

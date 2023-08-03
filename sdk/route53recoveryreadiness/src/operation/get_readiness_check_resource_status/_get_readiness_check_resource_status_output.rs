@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The readiness at a rule level.</p>
-    #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Details of the rule's results.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
     _request_id: Option<String>,
 }

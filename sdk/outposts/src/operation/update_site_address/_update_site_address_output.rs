@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressOutput {
     /// <p> The type of the address. </p>
-    #[doc(hidden)]
     pub address_type: ::std::option::Option<crate::types::AddressType>,
     /// <p> Information about an address. </p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
     _request_id: Option<String>,
 }

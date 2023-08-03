@@ -6,31 +6,22 @@
 pub struct AwsCodeBuildProjectDetails {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
     /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
-    #[doc(hidden)]
     pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
     /// <p>Information about the build environment for this build project.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment>,
     /// <p>The name of the build project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build input source code for this build project.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::AwsCodeBuildProjectSource>,
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Information about logs for the build project.</p>
-    #[doc(hidden)]
     pub logs_config: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig>,
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
-    #[doc(hidden)]
     pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
 }
 impl AwsCodeBuildProjectDetails {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateConnectionStatus {
     /// <p>The ID of the client connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the client connection.</p>
-    #[doc(hidden)]
     pub previous_status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
     /// <p>A message about the status of the client connection, if applicable.</p>
-    #[doc(hidden)]
     pub current_status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
 }
 impl TerminateConnectionStatus {

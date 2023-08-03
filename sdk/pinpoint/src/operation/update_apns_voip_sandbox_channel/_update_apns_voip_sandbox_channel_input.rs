@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApnsVoipSandboxChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    #[doc(hidden)]
     pub apns_voip_sandbox_channel_request: ::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApnsVoipSandboxChannelInput {

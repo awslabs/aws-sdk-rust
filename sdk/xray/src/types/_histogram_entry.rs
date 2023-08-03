@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistogramEntry {
     /// <p>The value of the entry.</p>
-    #[doc(hidden)]
     pub value: f64,
     /// <p>The prevalence of the entry.</p>
-    #[doc(hidden)]
     pub count: i32,
 }
 impl HistogramEntry {

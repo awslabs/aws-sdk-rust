@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelTemplateInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
 }
 impl GetModelTemplateInput {

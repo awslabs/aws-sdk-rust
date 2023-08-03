@@ -8,7 +8,6 @@
 pub struct DeterminingPolicyItem {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DeterminingPolicyItem {

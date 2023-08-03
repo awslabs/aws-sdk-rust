@@ -5,38 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the distribution was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of invalidation batches currently in progress.</p>
-    #[doc(hidden)]
     pub in_progress_invalidation_batches: ::std::option::Option<i32>,
     /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    #[doc(hidden)]
     pub active_trusted_signers: ::std::option::Option<crate::types::ActiveTrustedSigners>,
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    #[doc(hidden)]
     pub active_trusted_key_groups: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>,
     /// <p>The distribution's configuration.</p>
-    #[doc(hidden)]
     pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    #[doc(hidden)]
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
 }
 impl Distribution {

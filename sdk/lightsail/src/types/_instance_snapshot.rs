@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSnapshot {
     /// <p>The name of the snapshot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The state the snapshot is in.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceSnapshotState>,
     /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>An array of disk objects containing information about all block storage disks.</p>
-    #[doc(hidden)]
     pub from_attached_disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>The instance from which the snapshot was created.</p>
-    #[doc(hidden)]
     pub from_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
-    #[doc(hidden)]
     pub from_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
-    #[doc(hidden)]
     pub from_blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub from_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
-    #[doc(hidden)]
     pub is_from_auto_snapshot: ::std::option::Option<bool>,
     /// <p>The size in GB of the SSD.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
 }
 impl InstanceSnapshot {

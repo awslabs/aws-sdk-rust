@@ -5,49 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverRule {
     /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A code that specifies the current status of the Resolver rule.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResolverRuleStatus>,
     /// <p>A detailed description of the status of a Resolver rule.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-    #[doc(hidden)]
     pub rule_type: ::std::option::Option<crate::types::RuleTypeOption>,
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
-    #[doc(hidden)]
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
     /// <p>The ID of the endpoint that the rule is associated with.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or another account is sharing the rule with the current account.</p>
-    #[doc(hidden)]
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRule {

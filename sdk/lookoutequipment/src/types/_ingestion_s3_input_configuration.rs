@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
-    #[doc(hidden)]
     pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl IngestionS3InputConfiguration {

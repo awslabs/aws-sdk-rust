@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsVolumeConfiguration {
     /// <p>The ID of the parent volume.</p>
-    #[doc(hidden)]
     pub parent_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the volume from the root volume. For example, <code>fsx/parentVolume/volume1</code>.</p>
-    #[doc(hidden)]
     pub volume_path: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    #[doc(hidden)]
     pub storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    #[doc(hidden)]
     pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub record_size_ki_b: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -25,31 +20,22 @@ pub struct OpenZfsVolumeConfiguration {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshots: ::std::option::Option<bool>,
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    #[doc(hidden)]
     pub origin_snapshot: ::std::option::Option<crate::types::OpenZfsOriginSnapshotConfiguration>,
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    #[doc(hidden)]
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    #[doc(hidden)]
     pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     /// <p>Specifies the ID of the snapshot to which the volume was restored.</p>
-    #[doc(hidden)]
     pub restore_to_snapshot: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether snapshots between the current state and the specified snapshot should be deleted when a volume is restored from snapshot.</p>
-    #[doc(hidden)]
     pub delete_intermediate_snaphots: ::std::option::Option<bool>,
     /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
-    #[doc(hidden)]
     pub delete_cloned_volumes: ::std::option::Option<bool>,
 }
 impl OpenZfsVolumeConfiguration {

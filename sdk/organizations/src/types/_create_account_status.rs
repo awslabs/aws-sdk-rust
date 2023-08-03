@@ -6,26 +6,19 @@
 pub struct CreateAccountStatus {
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The account name given to the account when it was created.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CreateAccountState>,
     /// <p>The date and time that the request was made for the account creation.</p>
-    #[doc(hidden)]
     pub requested_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the account was created and the request completed.</p>
-    #[doc(hidden)]
     pub completed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    #[doc(hidden)]
     pub gov_cloud_account_id: ::std::option::Option<::std::string::String>,
     /// <p>If the request failed, a description of the reason for the failure.</p>
     /// <ul>
@@ -44,7 +37,6 @@ pub struct CreateAccountStatus {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::CreateAccountFailureReason>,
 }
 impl CreateAccountStatus {

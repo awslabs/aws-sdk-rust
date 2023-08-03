@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectedLogEventsInfo {
     /// <p>The log events that are too new.</p>
-    #[doc(hidden)]
     pub too_new_log_event_start_index: ::std::option::Option<i32>,
     /// <p>The log events that are dated too far in the past.</p>
-    #[doc(hidden)]
     pub too_old_log_event_end_index: ::std::option::Option<i32>,
     /// <p>The expired log events.</p>
-    #[doc(hidden)]
     pub expired_log_event_end_index: ::std::option::Option<i32>,
 }
 impl RejectedLogEventsInfo {

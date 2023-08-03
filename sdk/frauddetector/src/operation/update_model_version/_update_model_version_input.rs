@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelVersionInput {
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The major version number.</p>
-    #[doc(hidden)]
     pub major_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateModelVersionInput {

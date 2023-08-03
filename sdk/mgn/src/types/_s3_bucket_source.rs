@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketSource {
     /// <p>S3 bucket source s3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>S3 bucket source s3 key.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>S3 bucket source s3 bucket owner.</p>
-    #[doc(hidden)]
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSource {

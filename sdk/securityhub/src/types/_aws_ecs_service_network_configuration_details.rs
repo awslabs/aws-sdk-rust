@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceNetworkConfigurationDetails {
     /// <p>The VPC subnet and security group configuration.</p>
-    #[doc(hidden)]
     pub aws_vpc_configuration: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
 }
 impl AwsEcsServiceNetworkConfigurationDetails {

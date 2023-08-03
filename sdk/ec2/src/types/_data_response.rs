@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataResponse {
     /// <p>The ID passed in the <code>DataQuery</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The statistic used for the network performance request.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>The period used for the network performance request.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::PeriodType>,
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    #[doc(hidden)]
     pub metric_points: ::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>>,
 }
 impl DataResponse {

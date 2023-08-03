@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginFileDescription {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    #[doc(hidden)]
     pub file_md5: ::std::option::Option<::std::string::String>,
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
-    #[doc(hidden)]
     pub file_size: i64,
 }
 impl CustomPluginFileDescription {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationInput {
     /// <p>The ARN or name of the secret.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The Regions of the replicas to remove.</p>
-    #[doc(hidden)]
     pub remove_replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveRegionsFromReplicationInput {

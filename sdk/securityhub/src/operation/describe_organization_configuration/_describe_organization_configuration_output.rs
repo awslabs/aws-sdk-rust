@@ -5,15 +5,12 @@
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
-    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
-    #[doc(hidden)]
     pub member_account_limit_reached: bool,
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
-    #[doc(hidden)]
     pub auto_enable_standards: ::std::option::Option<crate::types::AutoEnableStandards>,
     _request_id: Option<String>,
 }

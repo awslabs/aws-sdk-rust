@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateOutput {
     /// <p>Container for the state of your domain relative to the latest service software.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }

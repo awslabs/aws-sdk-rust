@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    #[doc(hidden)]
     pub hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
-    #[doc(hidden)]
     pub role_base: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    #[doc(hidden)]
     pub role_search_matching: ::std::option::Option<::std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
-    #[doc(hidden)]
     pub role_search_subtree: ::std::option::Option<bool>,
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    #[doc(hidden)]
     pub service_account_username: ::std::option::Option<::std::string::String>,
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
-    #[doc(hidden)]
     pub user_base: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    #[doc(hidden)]
     pub user_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    #[doc(hidden)]
     pub user_search_matching: ::std::option::Option<::std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
-    #[doc(hidden)]
     pub user_search_subtree: ::std::option::Option<bool>,
 }
 impl LdapServerMetadataOutput {

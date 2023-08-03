@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContactInput {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The contact's email address.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    #[doc(hidden)]
     pub topic_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
-    #[doc(hidden)]
     pub unsubscribe_all: ::std::option::Option<bool>,
     /// <p>The attribute data attached to a contact.</p>
-    #[doc(hidden)]
     pub attributes_data: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContactInput {

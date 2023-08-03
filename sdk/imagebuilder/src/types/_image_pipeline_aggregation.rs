@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImagePipelineAggregation {
     /// <p>The Amazon Resource Name (ARN) that identifies the image pipeline for this aggregation.</p>
-    #[doc(hidden)]
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image pipeline.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl ImagePipelineAggregation {

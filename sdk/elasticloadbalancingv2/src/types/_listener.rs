@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the load balancer is listening.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
-    #[doc(hidden)]
     pub ssl_policy: ::std::option::Option<::std::string::String>,
     /// <p>The default actions for the listener.</p>
-    #[doc(hidden)]
     pub default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    #[doc(hidden)]
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Listener {

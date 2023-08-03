@@ -11,74 +11,51 @@ pub struct CreateFunctionInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
-    #[doc(hidden)]
     pub handler: ::std::option::Option<::std::string::String>,
     /// <p>The code for the function.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::FunctionCode>,
     /// <p>A description of the function.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-    #[doc(hidden)]
     pub memory_size: ::std::option::Option<i32>,
     /// <p>Set to true to publish the first version of the function during creation.</p>
-    #[doc(hidden)]
     pub publish: ::std::option::Option<bool>,
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
-    #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>Environment variables that are accessible from function code during execution.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function using a container image, Lambda also uses this key to encrypt your function when it's deployed. Note that this is not the same key that's used to protect your container image in the Amazon Elastic Container Registry (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-    #[doc(hidden)]
     pub tracing_config: ::std::option::Option<crate::types::TracingConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
-    #[doc(hidden)]
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    #[doc(hidden)]
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
-    #[doc(hidden)]
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
 }
 impl CreateFunctionInput {

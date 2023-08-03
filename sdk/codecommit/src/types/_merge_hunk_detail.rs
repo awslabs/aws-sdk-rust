@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeHunkDetail {
     /// <p>The start position of the hunk in the merge result.</p>
-    #[doc(hidden)]
     pub start_line: ::std::option::Option<i32>,
     /// <p>The end position of the hunk in the merge result.</p>
-    #[doc(hidden)]
     pub end_line: ::std::option::Option<i32>,
     /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
-    #[doc(hidden)]
     pub hunk_content: ::std::option::Option<::std::string::String>,
 }
 impl MergeHunkDetail {

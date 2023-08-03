@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSatelliteInput {

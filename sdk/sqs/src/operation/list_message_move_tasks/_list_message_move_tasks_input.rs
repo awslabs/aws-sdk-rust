@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMessageMoveTasksInput {
     /// <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. The default is 1, which provides the most recent message movement task. The upper limit is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMessageMoveTasksInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiKeyInput {
     /// <p>The identifier of the ApiKey resource.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
-    #[doc(hidden)]
     pub include_value: ::std::option::Option<bool>,
 }
 impl GetApiKeyInput {

@@ -8,10 +8,8 @@ pub struct ListPrincipalsInput {
     /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
@@ -24,20 +22,15 @@ pub struct ListPrincipalsInput {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    #[doc(hidden)]
     pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPrincipalsInput {

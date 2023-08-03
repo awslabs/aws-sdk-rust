@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchReadOperation {
     /// <p>Lists all attributes that are associated with an object.</p>
-    #[doc(hidden)]
     pub list_object_attributes: ::std::option::Option<crate::types::BatchListObjectAttributes>,
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-    #[doc(hidden)]
     pub list_object_children: ::std::option::Option<crate::types::BatchListObjectChildren>,
     /// <p>Lists indices attached to an object.</p>
-    #[doc(hidden)]
     pub list_attached_indices: ::std::option::Option<crate::types::BatchListAttachedIndices>,
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-    #[doc(hidden)]
     pub list_object_parent_paths: ::std::option::Option<crate::types::BatchListObjectParentPaths>,
     /// <p>Retrieves metadata about an object.</p>
-    #[doc(hidden)]
     pub get_object_information: ::std::option::Option<crate::types::BatchGetObjectInformation>,
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-    #[doc(hidden)]
     pub get_object_attributes: ::std::option::Option<crate::types::BatchGetObjectAttributes>,
     /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
-    #[doc(hidden)]
     pub list_object_parents: ::std::option::Option<crate::types::BatchListObjectParents>,
     /// <p>Returns policies attached to an object in pagination fashion.</p>
-    #[doc(hidden)]
     pub list_object_policies: ::std::option::Option<crate::types::BatchListObjectPolicies>,
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-    #[doc(hidden)]
     pub list_policy_attachments: ::std::option::Option<crate::types::BatchListPolicyAttachments>,
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    #[doc(hidden)]
     pub lookup_policy: ::std::option::Option<crate::types::BatchLookupPolicy>,
     /// <p>Lists objects attached to the specified index.</p>
-    #[doc(hidden)]
     pub list_index: ::std::option::Option<crate::types::BatchListIndex>,
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub list_outgoing_typed_links: ::std::option::Option<crate::types::BatchListOutgoingTypedLinks>,
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub list_incoming_typed_links: ::std::option::Option<crate::types::BatchListIncomingTypedLinks>,
     /// <p>Retrieves attributes that are associated with a typed link.</p>
-    #[doc(hidden)]
     pub get_link_attributes: ::std::option::Option<crate::types::BatchGetLinkAttributes>,
 }
 impl BatchReadOperation {

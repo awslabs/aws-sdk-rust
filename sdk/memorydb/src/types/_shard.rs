@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Shard {
     /// <p>The name of the shard</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The keyspace for this shard.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>A list containing information about individual nodes within the shard</p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>The number of nodes in the shard</p>
-    #[doc(hidden)]
     pub number_of_nodes: ::std::option::Option<i32>,
 }
 impl Shard {

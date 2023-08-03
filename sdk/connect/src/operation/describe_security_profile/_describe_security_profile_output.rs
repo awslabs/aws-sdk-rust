@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileOutput {
     /// <p>The security profile.</p>
-    #[doc(hidden)]
     pub security_profile: ::std::option::Option<crate::types::SecurityProfile>,
     _request_id: Option<String>,
 }

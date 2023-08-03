@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTimerConfiguration {
     /// <p>The role of the participant in the chat conversation.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
-    #[doc(hidden)]
     pub timer_type: ::std::option::Option<crate::types::ParticipantTimerType>,
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
-    #[doc(hidden)]
     pub timer_value: ::std::option::Option<crate::types::ParticipantTimerValue>,
 }
 impl ParticipantTimerConfiguration {

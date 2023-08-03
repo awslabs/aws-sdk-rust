@@ -11,16 +11,12 @@ pub struct CreateDbClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster parameter group family name.</p>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description for the cluster parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the cluster parameter group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterParameterGroupInput {

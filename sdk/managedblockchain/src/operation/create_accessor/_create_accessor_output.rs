@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessorOutput {
     /// <p>The unique identifier of the accessor.</p>
-    #[doc(hidden)]
     pub accessor_id: ::std::option::Option<::std::string::String>,
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    #[doc(hidden)]
     pub billing_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

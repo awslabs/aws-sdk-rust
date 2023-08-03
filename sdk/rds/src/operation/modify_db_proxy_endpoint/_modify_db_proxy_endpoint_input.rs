@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbProxyEndpointInput {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub new_db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyDbProxyEndpointInput {

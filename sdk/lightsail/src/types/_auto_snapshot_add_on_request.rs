@@ -18,7 +18,6 @@ pub struct AutoSnapshotAddOnRequest {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
 impl AutoSnapshotAddOnRequest {

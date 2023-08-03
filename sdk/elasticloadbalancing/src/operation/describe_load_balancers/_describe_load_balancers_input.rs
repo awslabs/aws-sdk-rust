@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {

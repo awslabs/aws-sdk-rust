@@ -9,7 +9,6 @@ pub struct LineageConfiguration {
     /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
     /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub crawler_lineage_settings: ::std::option::Option<crate::types::CrawlerLineageSettings>,
 }
 impl LineageConfiguration {

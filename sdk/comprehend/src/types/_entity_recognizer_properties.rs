@@ -5,66 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityRecognizerProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    #[doc(hidden)]
     pub entity_recognizer_arn: ::std::option::Option<::std::string::String>,
     /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the status of the entity recognizer.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p> A description of the status of the recognizer.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the recognizer was submitted for processing.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the recognizer creation completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that training of the entity recognizer started.</p>
-    #[doc(hidden)]
     pub training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that training of the entity recognizer was completed.</p>
-    #[doc(hidden)]
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input data properties of an entity recognizer.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>,
     /// <p> Provides information about an entity recognizer.</p>
-    #[doc(hidden)]
     pub recognizer_metadata: ::std::option::Option<crate::types::EntityRecognizerMetadata>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The version name you assigned to the entity recognizer.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub source_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Output data configuration.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
 }
 impl EntityRecognizerProperties {

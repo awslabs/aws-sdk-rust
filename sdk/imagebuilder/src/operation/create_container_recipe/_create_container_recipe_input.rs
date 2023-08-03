@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerRecipeInput {
     /// <p>The type of container to create.</p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>The name of the container recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the container recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -28,43 +25,30 @@ pub struct CreateContainerRecipeInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    #[doc(hidden)]
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    #[doc(hidden)]
     pub dockerfile_template_data: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    #[doc(hidden)]
     pub dockerfile_template_uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
-    #[doc(hidden)]
     pub platform_override: ::std::option::Option<crate::types::Platform>,
     /// <p>Specifies the operating system version for the base image.</p>
-    #[doc(hidden)]
     pub image_os_version_override: ::std::option::Option<::std::string::String>,
     /// <p>The base image for the container recipe.</p>
-    #[doc(hidden)]
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The destination repository for the container image.</p>
-    #[doc(hidden)]
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token used to make this request idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateContainerRecipeInput {

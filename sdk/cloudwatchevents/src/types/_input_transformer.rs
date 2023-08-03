@@ -7,7 +7,6 @@ pub struct InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services." </p>
-    #[doc(hidden)]
     pub input_paths_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
@@ -53,7 +52,6 @@ pub struct InputTransformer {
     /// </instance>
     /// </instance></code> </p>
     /// <p> <code>}</code> </p>
-    #[doc(hidden)]
     pub input_template: ::std::option::Option<::std::string::String>,
 }
 impl InputTransformer {

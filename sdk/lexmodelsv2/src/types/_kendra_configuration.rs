@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub kendra_index: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the Amazon Kendra index.</p>
-    #[doc(hidden)]
     pub query_filter_string_enabled: bool,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    #[doc(hidden)]
     pub query_filter_string: ::std::option::Option<::std::string::String>,
 }
 impl KendraConfiguration {

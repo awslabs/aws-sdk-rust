@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachSecurityProfileInput {
     /// <p>The security profile that is detached.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    #[doc(hidden)]
     pub security_profile_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DetachSecurityProfileInput {

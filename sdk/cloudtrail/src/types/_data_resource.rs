@@ -45,7 +45,6 @@ pub struct DataResource {
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
@@ -62,7 +61,6 @@ pub struct DataResource {
     /// </note> </li>
     /// <li> <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataResource {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLocationFsxWindowsInput {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
@@ -16,20 +14,15 @@ pub struct CreateLocationFsxWindowsInput {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
     /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl CreateLocationFsxWindowsInput {

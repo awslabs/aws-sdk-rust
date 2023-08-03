@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultOutput {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>,
     /// <p>A list of result IDs for which results were not found.</p>
-    #[doc(hidden)]
     pub results_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

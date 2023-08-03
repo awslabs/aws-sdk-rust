@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
-    #[doc(hidden)]
     pub retention_period_value: ::std::option::Option<i32>,
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    #[doc(hidden)]
     pub retention_period_unit: ::std::option::Option<crate::types::RetentionPeriodUnit>,
 }
 impl RetentionPeriod {

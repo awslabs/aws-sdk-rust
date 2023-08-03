@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
-    #[doc(hidden)]
     pub domain_names: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     _request_id: Option<String>,
 }

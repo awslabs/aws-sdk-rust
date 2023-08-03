@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
-    #[doc(hidden)]
     pub route: ::std::option::Option<crate::types::RouteData>,
     _request_id: Option<String>,
 }

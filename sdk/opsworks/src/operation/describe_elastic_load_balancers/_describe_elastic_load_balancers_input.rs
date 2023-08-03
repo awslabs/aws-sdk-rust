@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersInput {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeElasticLoadBalancersInput {

@@ -9,10 +9,8 @@ pub struct GetDecryptedApiKeyInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The encrypted API key. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
 }
 impl GetDecryptedApiKeyInput {

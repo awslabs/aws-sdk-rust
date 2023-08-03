@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionRemotePortDetails {
     /// <p>The number of the port.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The port name of the remote connection.</p>
-    #[doc(hidden)]
     pub port_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionRemotePortDetails {

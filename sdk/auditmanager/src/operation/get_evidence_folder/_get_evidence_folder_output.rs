@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderOutput {
     /// <p> The folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub evidence_folder: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
     _request_id: Option<String>,
 }

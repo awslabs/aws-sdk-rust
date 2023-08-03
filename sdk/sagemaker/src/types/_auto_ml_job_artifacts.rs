@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobArtifacts {
     /// <p>The URL of the notebook location.</p>
-    #[doc(hidden)]
     pub candidate_definition_notebook_location: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the notebook location.</p>
-    #[doc(hidden)]
     pub data_exploration_notebook_location: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlJobArtifacts {

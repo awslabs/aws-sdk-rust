@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxEnvironment {
     /// <p>The name of the kdb environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the AWS account in which you create the kdb environment.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the environment creation. </p>
     /// <ul>
@@ -25,46 +22,32 @@ pub struct KxEnvironment {
     /// <li> <p>DELETED – Environment has been deleted.</p> </li>
     /// <li> <p>FAILED_DELETION – Environment deletion has failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>The status of the network configuration.</p>
-    #[doc(hidden)]
     pub tgw_status: ::std::option::Option<crate::types::TgwStatus>,
     /// <p>The status of DNS configuration.</p>
-    #[doc(hidden)]
     pub dns_status: ::std::option::Option<crate::types::DnsStatus>,
     /// <p>Specifies the error message that appears if a flow fails. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A description of the kdb environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your kdb environment.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
-    #[doc(hidden)]
     pub dedicated_service_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    #[doc(hidden)]
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    #[doc(hidden)]
     pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the kdb environment was modified in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    #[doc(hidden)]
     pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl KxEnvironment {

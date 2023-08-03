@@ -6,31 +6,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
-    #[doc(hidden)]
     pub global_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database.</p>
-    #[doc(hidden)]
     pub global_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this global database.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Neptune engine version used by the global database.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global database.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The deletion protection setting for the global database.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    #[doc(hidden)]
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
 }
 impl GlobalCluster {

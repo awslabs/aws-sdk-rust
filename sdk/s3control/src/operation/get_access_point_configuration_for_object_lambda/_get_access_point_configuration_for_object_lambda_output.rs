@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaOutput {
     /// <p>Object Lambda Access Point configuration document.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
     _request_id: Option<String>,
 }

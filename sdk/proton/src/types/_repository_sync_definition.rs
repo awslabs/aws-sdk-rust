@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The resource that is synced from.</p>
-    #[doc(hidden)]
     pub parent: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The directory in the repository.</p>
-    #[doc(hidden)]
     pub directory: ::std::option::Option<::std::string::String>,
 }
 impl RepositorySyncDefinition {

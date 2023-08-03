@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetError {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteFeaturedResultsSetError {

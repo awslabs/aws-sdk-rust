@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTaskInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTaskInput {

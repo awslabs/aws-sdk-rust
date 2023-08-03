@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceToIndexFieldMapping {
     /// <p>The name of the column or attribute in the data source.</p>
-    #[doc(hidden)]
     pub data_source_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data stored in the column or attribute.</p>
-    #[doc(hidden)]
     pub date_field_format: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field in the index.</p>
-    #[doc(hidden)]
     pub index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceToIndexFieldMapping {

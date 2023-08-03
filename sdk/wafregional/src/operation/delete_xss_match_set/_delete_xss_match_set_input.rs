@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    #[doc(hidden)]
     pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteXssMatchSetInput {

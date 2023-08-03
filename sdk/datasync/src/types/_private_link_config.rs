@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateLinkConfig {
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
-    #[doc(hidden)]
     pub private_link_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PrivateLinkConfig {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericAxisOptions {
     /// <p>The scale setup of a numeric axis.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<crate::types::AxisScale>,
     /// <p>The range setup of a numeric axis.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::AxisDisplayRange>,
 }
 impl NumericAxisOptions {

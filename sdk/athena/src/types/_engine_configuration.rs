@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
-    #[doc(hidden)]
     pub coordinator_dpu_size: ::std::option::Option<i32>,
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    #[doc(hidden)]
     pub max_concurrent_dpus: i32,
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
-    #[doc(hidden)]
     pub default_executor_dpu_size: ::std::option::Option<i32>,
     /// <p>Contains additional notebook engine <code>MAP
     /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
-    #[doc(hidden)]
     pub additional_configs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
-    #[doc(hidden)]
     pub spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EngineConfiguration {

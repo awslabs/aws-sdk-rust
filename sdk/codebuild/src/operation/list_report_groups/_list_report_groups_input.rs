@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReportGroupsInput {
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p> The criterion to be used to list build report groups. Valid values include: </p>
     /// <ul>
@@ -12,13 +11,10 @@ pub struct ListReportGroupsInput {
     /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
     /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ReportGroupSortByType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListReportGroupsInput {

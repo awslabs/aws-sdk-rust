@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyAquaConfigurationOutput {
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
-    #[doc(hidden)]
     pub aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
     _request_id: Option<String>,
 }

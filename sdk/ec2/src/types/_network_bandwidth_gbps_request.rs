@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkBandwidthGbpsRequest {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
 }
 impl NetworkBandwidthGbpsRequest {

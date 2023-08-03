@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecurrenceSettings {
     /// <p>Information about on-call rotations that recur monthly.</p>
-    #[doc(hidden)]
     pub monthly_settings: ::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>>,
     /// <p>Information about on-call rotations that recur weekly.</p>
-    #[doc(hidden)]
     pub weekly_settings: ::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>>,
     /// <p>Information about on-call rotations that recur daily.</p>
-    #[doc(hidden)]
     pub daily_settings: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>,
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
-    #[doc(hidden)]
     pub number_of_on_calls: ::std::option::Option<i32>,
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
-    #[doc(hidden)]
     pub shift_coverages: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
-    #[doc(hidden)]
     pub recurrence_multiplier: ::std::option::Option<i32>,
 }
 impl RecurrenceSettings {

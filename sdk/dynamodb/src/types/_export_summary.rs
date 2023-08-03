@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
-    #[doc(hidden)]
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
 }
 impl ExportSummary {

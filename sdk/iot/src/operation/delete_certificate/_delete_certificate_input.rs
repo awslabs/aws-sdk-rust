@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
-    #[doc(hidden)]
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteCertificateInput {

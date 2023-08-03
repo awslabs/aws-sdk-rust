@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>>,
 }
 impl QueryArgProfiles {

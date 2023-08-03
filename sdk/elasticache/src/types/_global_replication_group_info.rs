@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroupInfo {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
-    #[doc(hidden)]
     pub global_replication_group_member_role: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroupInfo {

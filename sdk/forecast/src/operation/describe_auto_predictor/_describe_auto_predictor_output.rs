@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
-    #[doc(hidden)]
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    #[doc(hidden)]
     pub forecast_frequency: ::std::option::Option<::std::string::String>,
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
-    #[doc(hidden)]
     pub forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
-    #[doc(hidden)]
     pub data_config: ::std::option::Option<crate::types::DataConfig>,
     /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
-    #[doc(hidden)]
     pub reference_predictor_summary: ::std::option::Option<crate::types::ReferencePredictorSummary>,
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The status of the predictor. States include: </p>
     /// <ul>
@@ -44,13 +33,10 @@ pub struct DescribeAutoPredictorOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>In the event of an error, a message detailing the cause of the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the CreateAutoPredictor request.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -60,19 +46,14 @@ pub struct DescribeAutoPredictorOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    #[doc(hidden)]
     pub optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
-    #[doc(hidden)]
     pub explainability_info: ::std::option::Option<crate::types::ExplainabilityInfo>,
     /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
-    #[doc(hidden)]
     pub monitor_info: ::std::option::Option<crate::types::MonitorInfo>,
     /// <p>The time boundary Forecast uses when aggregating data.</p>
-    #[doc(hidden)]
     pub time_alignment_boundary: ::std::option::Option<crate::types::TimeAlignmentBoundary>,
     _request_id: Option<String>,
 }

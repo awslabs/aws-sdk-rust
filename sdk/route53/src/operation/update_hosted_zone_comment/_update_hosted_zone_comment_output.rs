@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
-    #[doc(hidden)]
     pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     _request_id: Option<String>,
 }

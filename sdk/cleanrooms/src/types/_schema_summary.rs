@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaSummary {
     /// <p>The name for the schema object.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SchemaType>,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the schema object was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the schema object was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    #[doc(hidden)]
     pub collaboration_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    #[doc(hidden)]
     pub collaboration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    #[doc(hidden)]
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
-    #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
 impl SchemaSummary {

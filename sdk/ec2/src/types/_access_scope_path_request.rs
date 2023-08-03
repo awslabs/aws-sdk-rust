@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessScopePathRequest {
     /// <p>The source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The through resources.</p>
-    #[doc(hidden)]
     pub through_resources: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequest {

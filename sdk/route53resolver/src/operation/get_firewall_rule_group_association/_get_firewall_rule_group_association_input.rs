@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallRuleGroupAssociationInput {

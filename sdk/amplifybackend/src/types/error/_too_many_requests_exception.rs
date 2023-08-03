@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The type of limit that was exceeded.</p>
-    #[doc(hidden)]
     pub limit_type: ::std::option::Option<::std::string::String>,
     /// <p>An error message to inform that the request has failed.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

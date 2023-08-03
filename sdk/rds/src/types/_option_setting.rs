@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionSetting {
     /// <p>The name of the option that has settings that you can set.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current value of the option setting.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the option setting.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option setting.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The DB engine specific parameter type.</p>
-    #[doc(hidden)]
     pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the option setting.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The allowed values of the option setting.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
-    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>Indicates if the option setting is part of a collection.</p>
-    #[doc(hidden)]
     pub is_collection: bool,
 }
 impl OptionSetting {

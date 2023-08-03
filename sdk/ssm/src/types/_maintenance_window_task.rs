@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowTask {
     /// <p>The ID of the maintenance window where the task is registered.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The task ID.</p>
-    #[doc(hidden)]
     pub window_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of task.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
     /// <instanceid1>
@@ -25,48 +21,37 @@ pub struct MaintenanceWindowTask {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub task_parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The task name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    #[doc(hidden)]
     pub cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl MaintenanceWindowTask {

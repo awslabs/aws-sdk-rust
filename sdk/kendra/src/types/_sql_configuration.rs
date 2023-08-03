@@ -8,7 +8,6 @@ pub struct SqlConfiguration {
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
-    #[doc(hidden)]
     pub query_identifiers_enclosing_option: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }
 impl SqlConfiguration {

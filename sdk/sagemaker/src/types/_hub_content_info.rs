@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HubContentInfo {
     /// <p>The name of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The version of the hub content document schema.</p>
-    #[doc(hidden)]
     pub document_schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_description: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     /// <p>The date and time that the hub content was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HubContentInfo {

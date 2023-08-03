@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-    #[doc(hidden)]
     pub storage_virtual_machines: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachine>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

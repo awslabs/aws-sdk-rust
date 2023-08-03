@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextConditionalFormat {
     /// <p>The conditional formatting for the text background color.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     /// <p>The conditional formatting for the text color.</p>
-    #[doc(hidden)]
     pub text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     /// <p>The conditional formatting for the icon.</p>
-    #[doc(hidden)]
     pub icon: ::std::option::Option<crate::types::ConditionalFormattingIcon>,
 }
 impl TextConditionalFormat {

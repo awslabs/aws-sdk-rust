@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    #[doc(hidden)]
     pub application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,
 }

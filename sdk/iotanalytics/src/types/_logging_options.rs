@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging level. Currently, only ERROR is supported.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LoggingLevel>,
     /// <p>If true, logging is enabled for IoT Analytics.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl LoggingOptions {

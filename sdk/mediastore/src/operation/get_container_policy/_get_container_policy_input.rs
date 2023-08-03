@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerPolicyInput {

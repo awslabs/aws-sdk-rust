@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distributions that you want in the response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    #[doc(hidden)]
     pub realtime_log_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    #[doc(hidden)]
     pub realtime_log_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListDistributionsByRealtimeLogConfigInput {

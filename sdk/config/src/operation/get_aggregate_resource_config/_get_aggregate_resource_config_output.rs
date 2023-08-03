@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateResourceConfigOutput {
     /// <p>Returns a <code>ConfigurationItem</code> object.</p>
-    #[doc(hidden)]
     pub configuration_item: ::std::option::Option<crate::types::ConfigurationItem>,
     _request_id: Option<String>,
 }

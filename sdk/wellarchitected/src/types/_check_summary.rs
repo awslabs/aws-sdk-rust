@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckSummary {
     /// <p>Trusted Advisor check ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Trusted Advisor check name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Provider of the check related to the best practice.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::CheckProvider>,
     /// <p>Trusted Advisor check description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Well-Architected Lens ARN associated to the check.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a choice.</p>
-    #[doc(hidden)]
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>Status associated to the check.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CheckStatus>,
     /// <p>Account summary associated to the check.</p>
-    #[doc(hidden)]
     pub account_summary: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
 }
 impl CheckSummary {

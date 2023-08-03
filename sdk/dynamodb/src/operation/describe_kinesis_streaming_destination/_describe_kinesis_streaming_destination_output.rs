@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationOutput {
     /// <p>The name of the table being described.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of replica structures for the table being described.</p>
-    #[doc(hidden)]
     pub kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
     _request_id: Option<String>,
 }

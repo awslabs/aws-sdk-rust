@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketsAggregationOutput {
     /// <p>The total number of things that fit the query string criteria.</p>
-    #[doc(hidden)]
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p> <code>count</code>: The number of documents that have that value.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     _request_id: Option<String>,
 }

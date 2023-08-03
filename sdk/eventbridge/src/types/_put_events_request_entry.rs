@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsRequestEntry {
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source of the event.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
     /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
-    #[doc(hidden)]
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
 impl PutEventsRequestEntry {

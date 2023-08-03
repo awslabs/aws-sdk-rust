@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The profile ARN.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile description.</p>
-    #[doc(hidden)]
     pub profile_description: ::std::option::Option<::std::string::String>,
     /// <p>Profile questions.</p>
-    #[doc(hidden)]
     pub profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
 }
 impl UpdateProfileInput {

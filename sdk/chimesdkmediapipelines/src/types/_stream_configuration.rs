@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamConfiguration {
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    #[doc(hidden)]
     pub fragment_number: ::std::option::Option<::std::string::String>,
     /// <p>The streaming channel definition in the stream configuration.</p>
-    #[doc(hidden)]
     pub stream_channel_definition: ::std::option::Option<crate::types::StreamChannelDefinition>,
 }
 impl StreamConfiguration {

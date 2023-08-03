@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateInput {
     /// <p>The system-generated ID of the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID of the revision.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The approval state to associate with the user on the pull request.</p>
-    #[doc(hidden)]
     pub approval_state: ::std::option::Option<crate::types::ApprovalState>,
 }
 impl UpdatePullRequestApprovalStateInput {

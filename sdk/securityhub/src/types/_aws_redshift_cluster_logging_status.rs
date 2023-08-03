@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterLoggingStatus {
     /// <p>The name of the S3 bucket where the log files are stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The message indicating that the logs failed to be delivered.</p>
-    #[doc(hidden)]
     pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The last time when logs failed to be delivered.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_failure_time: ::std::option::Option<::std::string::String>,
     /// <p>The last time that logs were delivered successfully.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_successful_delivery_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether logging is enabled.</p>
-    #[doc(hidden)]
     pub logging_enabled: bool,
     /// <p>Provides the prefix applied to the log file names.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterLoggingStatus {

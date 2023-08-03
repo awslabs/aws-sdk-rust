@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTaskDefinitionOutput {
     /// <p>The full description of the registered task definition.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     /// <p>The list of tags associated with the task definition.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

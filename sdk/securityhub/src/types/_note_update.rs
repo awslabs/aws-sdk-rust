@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoteUpdate {
     /// <p>The updated note text.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The principal that updated the note.</p>
-    #[doc(hidden)]
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl NoteUpdate {

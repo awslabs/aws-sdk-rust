@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmPrivateVirtualInterfaceInput {

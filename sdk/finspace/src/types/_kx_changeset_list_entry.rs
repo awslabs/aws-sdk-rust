@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxChangesetListEntry {
     /// <p>A unique identifier for the changeset.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub active_from_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the changeset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Status of the changeset.</p>
     /// <ul>
@@ -23,7 +19,6 @@ pub struct KxChangesetListEntry {
     /// <li> <p>Failed – Changeset creation has failed.</p> </li>
     /// <li> <p>Complete – Changeset creation has succeeded.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangesetStatus>,
 }
 impl KxChangesetListEntry {

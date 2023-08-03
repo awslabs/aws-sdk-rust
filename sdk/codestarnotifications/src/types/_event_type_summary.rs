@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTypeSummary {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    #[doc(hidden)]
     pub event_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service for which the event applies.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the event.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl EventTypeSummary {

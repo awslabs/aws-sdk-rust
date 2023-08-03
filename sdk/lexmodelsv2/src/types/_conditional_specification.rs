@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-    #[doc(hidden)]
     pub conditional_branches: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>>,
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
-    #[doc(hidden)]
     pub default_branch: ::std::option::Option<crate::types::DefaultConditionalBranch>,
 }
 impl ConditionalSpecification {

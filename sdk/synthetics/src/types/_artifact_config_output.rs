@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactConfigOutput {
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
-    #[doc(hidden)]
     pub s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }
 impl ArtifactConfigOutput {

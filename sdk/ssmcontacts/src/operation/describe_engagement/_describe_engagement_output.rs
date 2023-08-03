@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the engagement.</p>
-    #[doc(hidden)]
     pub engagement_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user that started the engagement.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<::std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_subject: ::std::option::Option<::std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_content: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the incident in which the engagement occurred.</p>
-    #[doc(hidden)]
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the engagement started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the engagement ended.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

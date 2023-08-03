@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLineageGroupInput {
     /// <p>The name of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLineageGroupInput {

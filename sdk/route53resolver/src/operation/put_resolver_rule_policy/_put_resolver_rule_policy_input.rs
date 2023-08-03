@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct PutResolverRulePolicyInput {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub resolver_rule_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResolverRulePolicyInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentOutput {
     /// <p> The assessed replication task. </p>
-    #[doc(hidden)]
     pub replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }

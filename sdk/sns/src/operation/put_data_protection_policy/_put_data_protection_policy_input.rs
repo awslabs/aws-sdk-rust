@@ -5,12 +5,10 @@
 pub struct PutDataProtectionPolicyInput {
     /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
     /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    #[doc(hidden)]
     pub data_protection_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutDataProtectionPolicyInput {

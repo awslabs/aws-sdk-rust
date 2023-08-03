@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederatedUser {
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
-    #[doc(hidden)]
     pub federated_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl FederatedUser {

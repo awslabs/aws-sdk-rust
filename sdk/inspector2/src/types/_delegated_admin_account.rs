@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelegatedAdminAccount {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DelegatedAdminStatus>,
 }
 impl DelegatedAdminAccount {

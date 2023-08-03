@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventInformation {
     /// <p>The description of the event.</p>
-    #[doc(hidden)]
     pub event_description: ::std::option::Option<::std::string::String>,
     /// <p>The event.</p>
     /// <p> <code>error</code> events:</p>
@@ -40,10 +39,8 @@ pub struct EventInformation {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_sub_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl EventInformation {

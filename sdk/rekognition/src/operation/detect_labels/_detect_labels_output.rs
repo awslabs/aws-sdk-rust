@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsOutput {
     /// <p>An array of labels for the real-world objects detected. </p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    #[doc(hidden)]
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    #[doc(hidden)]
     pub label_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
-    #[doc(hidden)]
     pub image_properties: ::std::option::Option<crate::types::DetectLabelsImageProperties>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    #[doc(hidden)]
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AddRegionAction {

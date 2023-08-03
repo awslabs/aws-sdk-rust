@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServiceConfigurationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the endpoint service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>(Interface endpoint configuration) Removes the private DNS name of the endpoint service.</p>
-    #[doc(hidden)]
     pub remove_private_dns_name: ::std::option::Option<bool>,
     /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
-    #[doc(hidden)]
     pub acceptance_required: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
-    #[doc(hidden)]
     pub add_network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
-    #[doc(hidden)]
     pub remove_network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
-    #[doc(hidden)]
     pub add_gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
-    #[doc(hidden)]
     pub remove_gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address types to add to your service configuration.</p>
-    #[doc(hidden)]
     pub add_supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address types to remove from your service configuration.</p>
-    #[doc(hidden)]
     pub remove_supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyVpcEndpointServiceConfigurationInput {

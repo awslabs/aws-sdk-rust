@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JdbcTarget {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The path of the JDBC target.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    #[doc(hidden)]
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
     /// <p>If you do not need additional metadata, keep the field empty.</p>
-    #[doc(hidden)]
     pub enable_additional_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
 }
 impl JdbcTarget {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
-    #[doc(hidden)]
     pub prioritize_business_goals: ::std::option::Option<crate::types::PrioritizeBusinessGoals>,
     /// <p> The transformation preferences for non-database applications. </p>
-    #[doc(hidden)]
     pub application_preferences: ::std::option::Option<crate::types::ApplicationPreferences>,
     /// <p> The transformation preferences for database applications. </p>
-    #[doc(hidden)]
     pub database_preferences: ::std::option::Option<crate::types::DatabasePreferences>,
     /// <p>The classification for application component types.</p>
-    #[doc(hidden)]
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
     _request_id: Option<String>,
 }

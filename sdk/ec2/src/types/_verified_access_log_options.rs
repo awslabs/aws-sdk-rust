@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogOptions {
     /// <p>Sends Verified Access logs to Amazon S3.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions>,
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
     /// <p>Sends Verified Access logs to Kinesis.</p>
-    #[doc(hidden)]
     pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
     /// <p> The logging version to use. </p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
-    #[doc(hidden)]
     pub log_version: ::std::option::Option<::std::string::String>,
     /// <p> Include trust data sent by trust providers into the logs. </p>
-    #[doc(hidden)]
     pub include_trust_context: ::std::option::Option<bool>,
 }
 impl VerifiedAccessLogOptions {

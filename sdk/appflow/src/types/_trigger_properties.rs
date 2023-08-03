@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerProperties {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
-    #[doc(hidden)]
     pub scheduled: ::std::option::Option<crate::types::ScheduledTriggerProperties>,
 }
 impl TriggerProperties {

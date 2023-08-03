@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentInput {
     /// <p> The identifiers for the delegations. </p>
-    #[doc(hidden)]
     pub delegation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDelegationByAssessmentInput {

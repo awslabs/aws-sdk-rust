@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Server {
     /// <p>The ID of the server.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of server.</p>
-    #[doc(hidden)]
     pub server_type: ::std::option::Option<crate::types::ServerType>,
     /// <p>Information about the VM server.</p>
-    #[doc(hidden)]
     pub vm_server: ::std::option::Option<crate::types::VmServer>,
     /// <p>The ID of the replication job.</p>
-    #[doc(hidden)]
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the replication job is deleted or failed.</p>
-    #[doc(hidden)]
     pub replication_job_terminated: ::std::option::Option<bool>,
 }
 impl Server {

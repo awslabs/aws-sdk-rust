@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameCaptureCdnSettings {
     /// Frame Capture S3 Settings
-    #[doc(hidden)]
     pub frame_capture_s3_settings: ::std::option::Option<crate::types::FrameCaptureS3Settings>,
 }
 impl FrameCaptureCdnSettings {

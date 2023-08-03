@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFileUploadUrlOutput {
     /// <p>The name of the uploaded manual evidence file that the presigned URL was generated for.</p>
-    #[doc(hidden)]
     pub evidence_file_name: ::std::option::Option<::std::string::String>,
     /// <p>The presigned URL that was generated.</p>
-    #[doc(hidden)]
     pub upload_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

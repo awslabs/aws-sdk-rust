@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeviceInput {
     /// <p>The ARN of the device for which to request details.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeviceInput {

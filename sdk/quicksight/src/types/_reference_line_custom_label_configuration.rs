@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineCustomLabelConfiguration {
     /// <p>The string text of the custom label.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
 }
 impl ReferenceLineCustomLabelConfiguration {

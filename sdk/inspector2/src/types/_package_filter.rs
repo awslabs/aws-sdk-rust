@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::StringFilter>,
     /// <p>The package version to filter on.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that contains details on the package epoch to filter on.</p>
-    #[doc(hidden)]
     pub epoch: ::std::option::Option<crate::types::NumberFilter>,
     /// <p>An object that contains details on the package release to filter on.</p>
-    #[doc(hidden)]
     pub release: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that contains details on the package architecture type to filter on.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that contains details on the source layer hash to filter on.</p>
-    #[doc(hidden)]
     pub source_layer_hash: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that describes the details of a string filter.</p>
-    #[doc(hidden)]
     pub source_lambda_layer_arn: ::std::option::Option<crate::types::StringFilter>,
 }
 impl PackageFilter {

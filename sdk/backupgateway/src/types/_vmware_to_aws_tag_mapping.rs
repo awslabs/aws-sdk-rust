@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VmwareToAwsTagMapping {
     /// <p>The is the category of VMware.</p>
-    #[doc(hidden)]
     pub vmware_category: ::std::option::Option<::std::string::String>,
     /// <p>This is the user-defined name of a VMware tag.</p>
-    #[doc(hidden)]
     pub vmware_tag_name: ::std::option::Option<::std::string::String>,
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-    #[doc(hidden)]
     pub aws_tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    #[doc(hidden)]
     pub aws_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl VmwareToAwsTagMapping {

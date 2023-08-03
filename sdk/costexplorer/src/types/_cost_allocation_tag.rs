@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
     /// <p>The status of a cost allocation tag. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
 }
 impl CostAllocationTag {

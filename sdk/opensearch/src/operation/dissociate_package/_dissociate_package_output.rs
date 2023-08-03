@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DissociatePackageOutput {
     /// <p> Information about a package that has been dissociated from the domain.</p>
-    #[doc(hidden)]
     pub domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,
 }

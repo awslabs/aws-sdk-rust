@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupsOutput {
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
-    #[doc(hidden)]
     pub group_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

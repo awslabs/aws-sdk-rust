@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInfo {
     /// <p>The name of the on-premises instance.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
-    #[doc(hidden)]
     pub iam_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user ARN associated with the on-premises instance.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the on-premises instance.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the on-premises instance was registered.</p>
-    #[doc(hidden)]
     pub register_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.</p>
-    #[doc(hidden)]
     pub deregister_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags currently associated with the on-premises instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceInfo {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingJobStatusCounters {
     /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub completed: i32,
     /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub in_progress: i32,
     /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-    #[doc(hidden)]
     pub retryable_error: i32,
     /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-    #[doc(hidden)]
     pub non_retryable_error: i32,
     /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-    #[doc(hidden)]
     pub stopped: i32,
 }
 impl TrainingJobStatusCounters {

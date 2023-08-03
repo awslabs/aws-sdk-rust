@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventInfo {
     /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of an event. The state might be open, closed, or another state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl EventInfo {

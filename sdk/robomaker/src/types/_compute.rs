@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Compute {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
-    #[doc(hidden)]
     pub simulation_unit_limit: ::std::option::Option<i32>,
     /// <p>Compute type information for the simulation job.</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
-    #[doc(hidden)]
     pub gpu_unit_limit: ::std::option::Option<i32>,
 }
 impl Compute {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAliasOutput {
     /// <p>The requested alias resource.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::Alias>,
     _request_id: Option<String>,
 }

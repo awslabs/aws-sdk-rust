@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageType>,
     /// <p>The name of the image recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the image recipe.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The owner of the image recipe.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The version of the image recipe.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>The base image of the image recipe.</p>
-    #[doc(hidden)]
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The date on which this image recipe was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the image recipe.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory to be used during build and test workflows.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
-    #[doc(hidden)]
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
 }
 impl ImageRecipe {

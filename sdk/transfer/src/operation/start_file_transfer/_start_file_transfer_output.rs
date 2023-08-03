@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFileTransferOutput {
     /// <p>Returns the unique identifier for the file transfer.</p>
-    #[doc(hidden)]
     pub transfer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

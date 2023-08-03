@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineOutput {
     /// <p>The new media live connector pipeline.</p>
-    #[doc(hidden)]
     pub media_live_connector_pipeline: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     _request_id: Option<String>,
 }

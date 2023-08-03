@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityRuleRecommendationRunOutput {
     /// <p>The unique run identifier associated with this run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The data source (an Glue table) associated with this run.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The status for this run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>The error strings that are associated with the run.</p>
-    #[doc(hidden)]
     pub error_string: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this run started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when this run was completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
-    #[doc(hidden)]
     pub execution_time: i32,
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
-    #[doc(hidden)]
     pub recommended_ruleset: ::std::option::Option<::std::string::String>,
     /// <p>The name of the ruleset that was created by the run.</p>
-    #[doc(hidden)]
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryPolicy {
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
-    #[doc(hidden)]
     pub maximum_event_age_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts with exponential backoff continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is reached.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: ::std::option::Option<i32>,
 }
 impl RetryPolicy {

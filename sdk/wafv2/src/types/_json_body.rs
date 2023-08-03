@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonBody {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
-    #[doc(hidden)]
     pub match_pattern: ::std::option::Option<crate::types::JsonMatchPattern>,
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
-    #[doc(hidden)]
     pub match_scope: ::std::option::Option<crate::types::JsonMatchScope>,
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
@@ -27,7 +25,6 @@ pub struct JsonBody {
     /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
     /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub invalid_fallback_behavior: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>,
     /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection. </p>
     /// <p>The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees. </p>
@@ -39,7 +36,6 @@ pub struct JsonBody {
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit. </p>
     /// <p>Default: <code>CONTINUE</code> </p>
-    #[doc(hidden)]
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl JsonBody {

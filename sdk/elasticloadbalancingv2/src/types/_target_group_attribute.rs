@@ -47,10 +47,8 @@ pub struct TargetGroupAttribute {
     /// <li> <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must be the same. </p> </li>
     /// <li> <p> <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl TargetGroupAttribute {

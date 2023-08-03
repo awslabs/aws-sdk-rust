@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
-    #[doc(hidden)]
     pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
     /// <p>The Python-language Lambda functions for this job.</p>
-    #[doc(hidden)]
     pub lambda_resources: ::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>>,
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-    #[doc(hidden)]
     pub ec2_ami_resources: ::std::option::Option<::std::vec::Vec<crate::types::Ec2AmiResource>>,
 }
 impl JobResource {

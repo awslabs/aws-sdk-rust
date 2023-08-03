@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-    #[doc(hidden)]
     pub cluster_state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>The creation date for this cluster.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterListEntry {

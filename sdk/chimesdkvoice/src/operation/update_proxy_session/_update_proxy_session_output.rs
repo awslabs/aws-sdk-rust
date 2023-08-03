@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProxySessionOutput {
     /// <p>The updated proxy session details.</p>
-    #[doc(hidden)]
     pub proxy_session: ::std::option::Option<crate::types::ProxySession>,
     _request_id: Option<String>,
 }

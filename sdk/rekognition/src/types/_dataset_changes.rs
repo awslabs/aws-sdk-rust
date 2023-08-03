@@ -6,7 +6,6 @@
 pub struct DatasetChanges {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub ground_truth: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl DatasetChanges {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteSpec {
     /// <p>The ordering of the gateway routes spec.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
-    #[doc(hidden)]
     pub http_route: ::std::option::Option<crate::types::HttpGatewayRoute>,
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
-    #[doc(hidden)]
     pub http2_route: ::std::option::Option<crate::types::HttpGatewayRoute>,
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
-    #[doc(hidden)]
     pub grpc_route: ::std::option::Option<crate::types::GrpcGatewayRoute>,
 }
 impl GatewayRouteSpec {

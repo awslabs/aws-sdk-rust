@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilesInput {
     /// <p>Prefix for profile name.</p>
-    #[doc(hidden)]
     pub profile_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Profile owner type.</p>
-    #[doc(hidden)]
     pub profile_owner_type: ::std::option::Option<crate::types::ProfileOwnerType>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListProfilesInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    #[doc(hidden)]
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
-    #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
 }
 impl PutPermissionsBoundaryToPermissionSetInput {

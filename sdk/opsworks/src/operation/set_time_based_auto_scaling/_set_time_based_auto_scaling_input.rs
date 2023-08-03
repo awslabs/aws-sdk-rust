@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTimeBasedAutoScalingInput {
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
-    #[doc(hidden)]
     pub auto_scaling_schedule: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
 }
 impl SetTimeBasedAutoScalingInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventSelectorsOutput {
     /// <p>The specified trail ARN that has the event selectors.</p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event selectors that are configured for the trail.</p>
-    #[doc(hidden)]
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
     /// <p> The advanced event selectors that are configured for the trail. </p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     _request_id: Option<String>,
 }

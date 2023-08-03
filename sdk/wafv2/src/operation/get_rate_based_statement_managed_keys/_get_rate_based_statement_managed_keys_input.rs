@@ -9,19 +9,14 @@ pub struct GetRateBasedStatementManagedKeysInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    #[doc(hidden)]
     pub web_acl_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    #[doc(hidden)]
     pub rule_group_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRateBasedStatementManagedKeysInput {

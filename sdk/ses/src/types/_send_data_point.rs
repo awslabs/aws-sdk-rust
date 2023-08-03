@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendDataPoint {
     /// <p>Time of the data point.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of emails that have been sent.</p>
-    #[doc(hidden)]
     pub delivery_attempts: i64,
     /// <p>Number of emails that have bounced.</p>
-    #[doc(hidden)]
     pub bounces: i64,
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
-    #[doc(hidden)]
     pub complaints: i64,
     /// <p>Number of emails rejected by Amazon SES.</p>
-    #[doc(hidden)]
     pub rejects: i64,
 }
 impl SendDataPoint {

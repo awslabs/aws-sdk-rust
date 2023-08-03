@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingInput {
     /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>A customer-specified identifier to track this reservation.</p>
-    #[doc(hidden)]
     pub reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of Elasticsearch instances to reserve.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedElasticsearchInstanceOfferingInput {

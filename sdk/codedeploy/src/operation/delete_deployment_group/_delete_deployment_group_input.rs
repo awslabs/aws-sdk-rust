@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeploymentGroupInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p>
-    #[doc(hidden)]
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentGroupInput {

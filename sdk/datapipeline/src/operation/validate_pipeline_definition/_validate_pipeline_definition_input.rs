@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
-    #[doc(hidden)]
     pub parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
-    #[doc(hidden)]
     pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
 }
 impl ValidatePipelineDefinitionInput {

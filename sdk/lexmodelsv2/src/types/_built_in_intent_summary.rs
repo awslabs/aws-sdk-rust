@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltInIntentSummary {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
-    #[doc(hidden)]
     pub intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>The description of the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl BuiltInIntentSummary {

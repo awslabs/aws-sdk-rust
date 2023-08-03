@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
-    #[doc(hidden)]
     pub roll: ::std::option::Option<f32>,
     /// <p>Value representing the face rotation on the yaw axis.</p>
-    #[doc(hidden)]
     pub yaw: ::std::option::Option<f32>,
     /// <p>Value representing the face rotation on the pitch axis.</p>
-    #[doc(hidden)]
     pub pitch: ::std::option::Option<f32>,
 }
 impl Pose {

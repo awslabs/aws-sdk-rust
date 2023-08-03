@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The name of the rule. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleSummary {

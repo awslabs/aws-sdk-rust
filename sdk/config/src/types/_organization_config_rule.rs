@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConfigRule {
     /// <p>The name that you assign to organization Config rule.</p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
-    #[doc(hidden)]
     pub organization_config_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
-    #[doc(hidden)]
     pub organization_managed_rule_metadata: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
-    #[doc(hidden)]
     pub organization_custom_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    #[doc(hidden)]
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp of the last update.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    #[doc(hidden)]
     pub organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy>,
 }
 impl OrganizationConfigRule {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderOutput {
     /// <p>The phone number order details.</p>
-    #[doc(hidden)]
     pub phone_number_order: ::std::option::Option<crate::types::PhoneNumberOrder>,
     _request_id: Option<String>,
 }

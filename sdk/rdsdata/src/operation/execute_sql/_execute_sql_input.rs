@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_or_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    #[doc(hidden)]
     pub aws_secret_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    #[doc(hidden)]
     pub sql_statements: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteSqlInput {

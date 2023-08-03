@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsOutput {
     /// <p>Discovered accounts.</p>
-    #[doc(hidden)]
     pub ipam_discovered_accounts: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

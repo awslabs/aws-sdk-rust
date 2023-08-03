@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>The policy attached to the private CA as a JSON document.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

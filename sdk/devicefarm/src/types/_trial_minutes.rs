@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
     /// <p>The number of free trial minutes remaining in the account.</p>
-    #[doc(hidden)]
     pub remaining: ::std::option::Option<f64>,
 }
 impl TrialMinutes {

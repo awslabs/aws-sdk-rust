@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkReachabilityDetails {
     /// <p>An object that contains details about the open port range associated with a finding.</p>
-    #[doc(hidden)]
     pub open_port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The protocol associated with a finding.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::NetworkProtocol>,
     /// <p>An object that contains details about a network path associated with a finding.</p>
-    #[doc(hidden)]
     pub network_path: ::std::option::Option<crate::types::NetworkPath>,
 }
 impl NetworkReachabilityDetails {

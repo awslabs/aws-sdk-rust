@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessMetadata {
     /// <p>LoRaWAN device info.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
     /// <p>The Sidewalk account credentials.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkSendDataToDevice>,
 }
 impl WirelessMetadata {

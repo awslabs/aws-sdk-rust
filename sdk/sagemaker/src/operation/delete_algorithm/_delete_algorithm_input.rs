@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlgorithmInput {
     /// <p>The name of the algorithm to delete.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlgorithmInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormCta {
     /// <p>The position of the button.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::FormButtonsPosition>,
     /// <p>Displays a clear button.</p>
-    #[doc(hidden)]
     pub clear: ::std::option::Option<crate::types::FormButton>,
     /// <p>Displays a cancel button.</p>
-    #[doc(hidden)]
     pub cancel: ::std::option::Option<crate::types::FormButton>,
     /// <p>Displays a submit button.</p>
-    #[doc(hidden)]
     pub submit: ::std::option::Option<crate::types::FormButton>,
 }
 impl FormCta {

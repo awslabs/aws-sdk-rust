@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringAuthorizationsOutput {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_peering_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>>,
     _request_id: Option<String>,
 }

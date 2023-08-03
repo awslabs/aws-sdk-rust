@@ -11,10 +11,8 @@ pub struct FpgaImageState {
     /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
     /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::FpgaImageStateCode>,
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl FpgaImageState {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    #[doc(hidden)]
     pub single_master_channel_endpoint_configuration: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
 }
 impl GetSignalingChannelEndpointInput {

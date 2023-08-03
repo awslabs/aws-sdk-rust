@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEffectivePoliciesInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
-    #[doc(hidden)]
     pub cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing name.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GetEffectivePoliciesInput {

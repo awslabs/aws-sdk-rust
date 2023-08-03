@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePermissionInput {
     /// <p></p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
     /// <p></p>
-    #[doc(hidden)]
     pub source_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePermissionInput {

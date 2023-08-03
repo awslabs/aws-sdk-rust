@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchParameters {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
-    #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
-    #[doc(hidden)]
     pub array_properties: ::std::option::Option<crate::types::BatchArrayProperties>,
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::BatchRetryStrategy>,
 }
 impl BatchParameters {

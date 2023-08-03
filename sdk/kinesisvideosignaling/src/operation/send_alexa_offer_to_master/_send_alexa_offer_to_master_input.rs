@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterInput {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the sender client.</p>
-    #[doc(hidden)]
     pub sender_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded SDP offer content.</p>
-    #[doc(hidden)]
     pub message_payload: ::std::option::Option<::std::string::String>,
 }
 impl SendAlexaOfferToMasterInput {

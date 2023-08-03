@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvertiseByoipCidrInput {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl AdvertiseByoipCidrInput {

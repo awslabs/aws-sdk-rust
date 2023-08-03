@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for application validation.</p>
-    #[doc(hidden)]
     pub app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
     /// <p>The configuration for instance validation.</p>
-    #[doc(hidden)]
     pub server_group_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
 }
 impl PutAppValidationConfigurationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCodeReviewInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    #[doc(hidden)]
     pub code_review_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCodeReviewInput {

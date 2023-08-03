@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningTemplateVersionSummary {
     /// <p>The ID of the fleet provisioning template version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<i32>,
     /// <p>The date when the provisioning template version was created</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
 }
 impl ProvisioningTemplateVersionSummary {

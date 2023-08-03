@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopSnomedctInferenceJobInput {
     /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopSnomedctInferenceJobInput {

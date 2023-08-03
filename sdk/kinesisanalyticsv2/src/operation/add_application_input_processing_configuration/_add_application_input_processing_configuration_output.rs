@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version. </p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    #[doc(hidden)]
     pub input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
     _request_id: Option<String>,
 }

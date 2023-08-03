@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTerminologyInput {
     /// <p>The name of the custom terminology being imported.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The description of the custom terminology being imported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The terminology data for the custom terminology being imported.</p>
-    #[doc(hidden)]
     pub terminology_data: ::std::option::Option<crate::types::TerminologyData>,
     /// <p>The encryption key for the custom terminology being imported.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportTerminologyInput {

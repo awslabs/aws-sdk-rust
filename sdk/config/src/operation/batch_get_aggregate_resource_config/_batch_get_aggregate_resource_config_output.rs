@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    #[doc(hidden)]
     pub base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
-    #[doc(hidden)]
     pub unprocessed_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
-    #[doc(hidden)]
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFilter {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVpcIngressConnectionsFilter {

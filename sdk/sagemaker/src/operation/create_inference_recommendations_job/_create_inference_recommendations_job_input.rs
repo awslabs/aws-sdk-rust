@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInferenceRecommendationsJobInput {
     /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with the job name are truncated at 40 characters.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::RecommendationJobType>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::RecommendationJobInputConfig>,
     /// <p>Description of the recommendation job.</p>
-    #[doc(hidden)]
     pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    #[doc(hidden)]
     pub stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::RecommendationJobOutputConfig>,
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateInferenceRecommendationsJobInput {

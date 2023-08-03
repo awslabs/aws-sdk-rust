@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSyncJobInput {
     /// <p>The workspace ID.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSyncJobInput {

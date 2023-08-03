@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The request omitted one or more required parameters.</p>
-    #[doc(hidden)]
     pub required_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The request included parameters that cannot be provided together.</p>
-    #[doc(hidden)]
     pub mutually_exclusive_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

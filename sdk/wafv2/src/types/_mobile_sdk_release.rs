@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MobileSdkRelease {
     /// <p>The release version. </p>
-    #[doc(hidden)]
     pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the release. </p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Notes describing the release.</p>
-    #[doc(hidden)]
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the release. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MobileSdkRelease {

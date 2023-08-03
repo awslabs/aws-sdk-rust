@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalNetworkInterface {
     /// <p>The physical network interface ID.</p>
-    #[doc(hidden)]
     pub physical_network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The physical connector type.</p>
-    #[doc(hidden)]
     pub physical_connector_type: ::std::option::Option<crate::types::PhysicalConnectorType>,
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-    #[doc(hidden)]
     pub ip_address_assignment: ::std::option::Option<crate::types::IpAddressAssignment>,
     /// <p>The IP address of the device.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The netmask used to divide the IP address into subnets.</p>
-    #[doc(hidden)]
     pub netmask: ::std::option::Option<::std::string::String>,
     /// <p>The default gateway of the device.</p>
-    #[doc(hidden)]
     pub default_gateway: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address of the device.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalNetworkInterface {

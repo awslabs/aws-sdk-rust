@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlinkApplicationConfiguration {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
-    #[doc(hidden)]
     pub checkpoint_configuration: ::std::option::Option<crate::types::CheckpointConfiguration>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
-    #[doc(hidden)]
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
-    #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl FlinkApplicationConfiguration {

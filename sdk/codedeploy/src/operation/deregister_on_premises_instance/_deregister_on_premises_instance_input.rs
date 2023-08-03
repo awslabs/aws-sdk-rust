@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to deregister.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOnPremisesInstanceInput {

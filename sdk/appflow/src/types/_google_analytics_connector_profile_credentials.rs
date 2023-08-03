@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p> The credentials used to access protected Google Analytics resources. </p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    #[doc(hidden)]
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
 impl GoogleAnalyticsConnectorProfileCredentials {

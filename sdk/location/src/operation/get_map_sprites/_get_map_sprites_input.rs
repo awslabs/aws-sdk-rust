@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
@@ -16,10 +15,8 @@ pub struct GetMapSpritesInput {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapSpritesInput {

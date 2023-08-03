@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceServerOutput {
     /// <p>The resource server.</p>
-    #[doc(hidden)]
     pub resource_server: ::std::option::Option<crate::types::ResourceServerType>,
     _request_id: Option<String>,
 }

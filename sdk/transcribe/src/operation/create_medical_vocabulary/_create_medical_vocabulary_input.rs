@@ -5,18 +5,14 @@
 pub struct CreateMedicalVocabularyInput {
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom medical vocabulary with the same name as an existing custom medical vocabulary, you get a <code>ConflictException</code> error.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    #[doc(hidden)]
     pub vocabulary_file_uri: ::std::option::Option<::std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom medical vocabulary at the time you create this new custom vocabulary.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMedicalVocabularyInput {

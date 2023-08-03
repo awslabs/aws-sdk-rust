@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataInput {
     /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     /// <p>The unique version ID of the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    #[doc(hidden)]
     pub metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl QuerySchemaVersionMetadataInput {

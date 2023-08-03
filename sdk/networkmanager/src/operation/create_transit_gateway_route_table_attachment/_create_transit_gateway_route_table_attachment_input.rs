@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the peer for the </p>
-    #[doc(hidden)]
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBillingGroupInput {
     /// <p>The name you wish to give to the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,
     /// <p>Metadata which can be used to manage the billing group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBillingGroupInput {

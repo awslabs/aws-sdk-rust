@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSecretValueOutput {
     /// <p>The ARN of the secret.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this version of the secret.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
-    #[doc(hidden)]
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
-    #[doc(hidden)]
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    #[doc(hidden)]
     pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

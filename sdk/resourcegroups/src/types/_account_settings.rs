@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The desired target status of the group lifecycle events feature. If</p>
-    #[doc(hidden)]
     pub group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
     /// <p>The current status of the group lifecycle events feature.</p>
-    #[doc(hidden)]
     pub group_lifecycle_events_status: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
-    #[doc(hidden)]
     pub group_lifecycle_events_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountSettings {

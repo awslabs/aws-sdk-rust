@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p>A list of domains.</p>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    #[doc(hidden)]
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct TagResourceInput {
     /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
     /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

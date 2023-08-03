@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutput {
     /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
-    #[doc(hidden)]
     pub policy_hash: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

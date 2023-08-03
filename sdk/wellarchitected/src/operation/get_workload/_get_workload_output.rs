@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkloadOutput {
     /// <p>A workload return object.</p>
-    #[doc(hidden)]
     pub workload: ::std::option::Option<crate::types::Workload>,
     _request_id: Option<String>,
 }

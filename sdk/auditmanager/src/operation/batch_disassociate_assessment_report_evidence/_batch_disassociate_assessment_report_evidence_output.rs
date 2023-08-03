@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateAssessmentReportEvidenceOutput {
     /// <p> The identifier for the evidence. </p>
-    #[doc(hidden)]
     pub evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSmartHomeApplianceDiscoveryInput {
     /// <p>The room where smart home appliance discovery was initiated.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartSmartHomeApplianceDiscoveryInput {

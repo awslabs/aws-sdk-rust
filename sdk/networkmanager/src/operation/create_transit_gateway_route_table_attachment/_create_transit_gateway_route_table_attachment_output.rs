@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAttachmentOutput {
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_attachment: ::std::option::Option<crate::types::TransitGatewayRouteTableAttachment>,
     _request_id: Option<String>,
 }

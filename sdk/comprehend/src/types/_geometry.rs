@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-    #[doc(hidden)]
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl Geometry {

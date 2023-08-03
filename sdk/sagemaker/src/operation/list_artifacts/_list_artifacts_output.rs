@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsOutput {
     /// <p>A list of artifacts and their properties.</p>
-    #[doc(hidden)]
     pub artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
-    #[doc(hidden)]
     pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResult {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationResult {
     /// <p>The type of the validation result.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LaunchProfileValidationType>,
     /// <p>The current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LaunchProfileValidationState>,
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::LaunchProfileValidationStatusCode>,
     /// <p>The status message for the validation result.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationResult {

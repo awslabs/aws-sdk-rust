@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterDetails {
     /// <p>The ARN of the cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate authority data for the cluster.</p>
-    #[doc(hidden)]
     pub certificate_authority_data: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
@@ -19,25 +17,18 @@ pub struct AwsEksClusterDetails {
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the Amazon EKS API server.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration used by the cluster control plane.</p>
-    #[doc(hidden)]
     pub resources_vpc_config: ::std::option::Option<crate::types::AwsEksClusterResourcesVpcConfigDetails>,
     /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS server version for the cluster.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration for the cluster.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::AwsEksClusterLoggingDetails>,
 }
 impl AwsEksClusterDetails {

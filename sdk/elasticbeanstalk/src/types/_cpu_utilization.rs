@@ -5,34 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CpuUtilization {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub nice: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub system: ::std::option::Option<f64>,
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub idle: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub io_wait: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub irq: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub soft_irq: ::std::option::Option<f64>,
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub privileged: ::std::option::Option<f64>,
 }
 impl CpuUtilization {

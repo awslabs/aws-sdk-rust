@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogDestination {
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>,
 }
 impl LogDestination {

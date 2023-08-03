@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceOptions {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl DeviceOptions {

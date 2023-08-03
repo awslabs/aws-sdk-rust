@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPathComponent {
     /// <p>The identifier of a component in the network path.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of component.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the component that comes after the current component in the network path.</p>
-    #[doc(hidden)]
     pub egress: ::std::option::Option<crate::types::NetworkHeader>,
     /// <p>Information about the component that comes before the current node in the network path.</p>
-    #[doc(hidden)]
     pub ingress: ::std::option::Option<crate::types::NetworkHeader>,
 }
 impl NetworkPathComponent {

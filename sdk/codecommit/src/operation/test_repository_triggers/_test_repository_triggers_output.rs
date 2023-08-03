@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
-    #[doc(hidden)]
     pub successful_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
-    #[doc(hidden)]
     pub failed_executions: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
     _request_id: Option<String>,
 }

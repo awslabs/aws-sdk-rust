@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
 }
 impl EndpointsResponse {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageConfiguration {
     /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub adm_message: ::std::option::Option<crate::types::Message>,
     /// <p>The message that the campaign sends through the APNs (Apple Push Notification service) channel. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub apns_message: ::std::option::Option<crate::types::Message>,
     /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub baidu_message: ::std::option::Option<crate::types::Message>,
     /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub custom_message: ::std::option::Option<crate::types::CampaignCustomMessage>,
     /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
-    #[doc(hidden)]
     pub default_message: ::std::option::Option<crate::types::Message>,
     /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub email_message: ::std::option::Option<crate::types::CampaignEmailMessage>,
     /// <p>The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub gcm_message: ::std::option::Option<crate::types::Message>,
     /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
-    #[doc(hidden)]
     pub sms_message: ::std::option::Option<crate::types::CampaignSmsMessage>,
     /// <p>The in-app message configuration.</p>
-    #[doc(hidden)]
     pub in_app_message: ::std::option::Option<crate::types::CampaignInAppMessage>,
 }
 impl MessageConfiguration {

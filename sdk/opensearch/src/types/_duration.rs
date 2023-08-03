@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
-    #[doc(hidden)]
     pub value: i64,
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::TimeUnit>,
 }
 impl Duration {

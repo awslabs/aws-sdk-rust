@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
-    #[doc(hidden)]
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBrowserSettingsInput {

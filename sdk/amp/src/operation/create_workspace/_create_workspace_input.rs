@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Optional, user-provided tags for this workspace.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkspaceInput {

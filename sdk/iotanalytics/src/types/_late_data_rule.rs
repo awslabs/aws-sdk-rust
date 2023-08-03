@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LateDataRule {
     /// <p>The name of the late data rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The information needed to configure the late data rule.</p>
-    #[doc(hidden)]
     pub rule_configuration: ::std::option::Option<crate::types::LateDataRuleConfiguration>,
 }
 impl LateDataRule {

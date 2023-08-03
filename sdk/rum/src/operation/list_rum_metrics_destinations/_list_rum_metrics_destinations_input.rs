@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRumMetricsDestinationsInput {
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
-    #[doc(hidden)]
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRumMetricsDestinationsInput {

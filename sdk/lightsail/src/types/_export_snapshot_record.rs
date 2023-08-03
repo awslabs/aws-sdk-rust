@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSnapshotRecord {
     /// <p>The export snapshot record name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the export snapshot record was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The state of the export snapshot record.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RecordState>,
     /// <p>A list of objects describing the source of the export snapshot record.</p>
-    #[doc(hidden)]
     pub source_info: ::std::option::Option<crate::types::ExportSnapshotRecordSourceInfo>,
     /// <p>A list of objects describing the destination of the export snapshot record.</p>
-    #[doc(hidden)]
     pub destination_info: ::std::option::Option<crate::types::DestinationInfo>,
 }
 impl ExportSnapshotRecord {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Toolchain {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ToolchainSource>,
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    #[doc(hidden)]
     pub stack_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Toolchain {

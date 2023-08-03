@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateReason {
     /// <p>The reason code for the state change.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message for the state change.</p>
     /// <ul>
@@ -22,7 +21,6 @@ pub struct StateReason {
     /// <li> <p> <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.</p> </li>
     /// <li> <p> <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl StateReason {

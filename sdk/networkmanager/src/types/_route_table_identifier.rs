@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTableIdentifier {
     /// <p>The ARN of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The segment edge in a core network.</p>
-    #[doc(hidden)]
     pub core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
 }
 impl RouteTableIdentifier {

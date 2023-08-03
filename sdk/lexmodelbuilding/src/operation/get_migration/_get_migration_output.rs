@@ -4,39 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMigrationOutput {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
-    #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub v1_bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub v1_bot_locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
-    #[doc(hidden)]
     pub v2_bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub v2_bot_role: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    #[doc(hidden)]
     pub migration_status: ::std::option::Option<crate::types::MigrationStatus>,
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub migration_strategy: ::std::option::Option<crate::types::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
-    #[doc(hidden)]
     pub migration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    #[doc(hidden)]
     pub alerts: ::std::option::Option<::std::vec::Vec<crate::types::MigrationAlert>>,
     _request_id: Option<String>,
 }

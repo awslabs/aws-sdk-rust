@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFaceSearchOutput {
     /// <p>The current status of the face search job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
-    #[doc(hidden)]
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
-    #[doc(hidden)]
     pub persons: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>,
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

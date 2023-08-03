@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the new crawler.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of collection of targets to crawl.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<crate::types::CrawlerTargets>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    #[doc(hidden)]
     pub classifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The table prefix used for catalog tables that are created.</p>
-    #[doc(hidden)]
     pub table_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The policy for the crawler's update and deletion behavior.</p>
-    #[doc(hidden)]
     pub schema_change_policy: ::std::option::Option<crate::types::SchemaChangePolicy>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-    #[doc(hidden)]
     pub recrawl_policy: ::std::option::Option<crate::types::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
-    #[doc(hidden)]
     pub lineage_configuration: ::std::option::Option<crate::types::LineageConfiguration>,
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    #[doc(hidden)]
     pub lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    #[doc(hidden)]
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCrawlerInput {

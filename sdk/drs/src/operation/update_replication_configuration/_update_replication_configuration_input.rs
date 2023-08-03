@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationInput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Replication Configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
-    #[doc(hidden)]
     pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-    #[doc(hidden)]
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
-    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
-    #[doc(hidden)]
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    #[doc(hidden)]
     pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    #[doc(hidden)]
     pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    #[doc(hidden)]
     pub replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
     /// <p>The type of EBS encryption to be used during replication.</p>
-    #[doc(hidden)]
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-    #[doc(hidden)]
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    #[doc(hidden)]
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-    #[doc(hidden)]
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    #[doc(hidden)]
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    #[doc(hidden)]
     pub pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
-    #[doc(hidden)]
     pub auto_replicate_new_disks: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationInput {

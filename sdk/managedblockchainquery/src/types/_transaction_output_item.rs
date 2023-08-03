@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionOutputItem {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction occurred.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The time when the transaction occurred.</p>
-    #[doc(hidden)]
     pub transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TransactionOutputItem {

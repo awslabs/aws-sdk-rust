@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
@@ -29,44 +23,32 @@ pub struct UpdateDomainConfigInput {
     /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>Encryption at rest options for the domain.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Node-to-node encryption options for the domain.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Options for fine-grained access control.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     /// <p>Options for Auto-Tune.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of dry run to perform.</p>
     /// <ul>
     /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
     /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dry_run_mode: ::std::option::Option<crate::types::DryRunMode>,
     /// <p>Off-peak window options for the domain.</p>
-    #[doc(hidden)]
     pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
-    #[doc(hidden)]
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl UpdateDomainConfigInput {

@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationInput {
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    #[doc(hidden)]
     pub savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
-    #[doc(hidden)]
     pub term_in_years: ::std::option::Option<crate::types::TermInYears>,
     /// <p>The payment option that's used to generate these recommendations.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    #[doc(hidden)]
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
     /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
 }
 impl GetSavingsPlansPurchaseRecommendationInput {

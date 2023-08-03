@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationSubnetGroupInput {
     /// <p>The name of the replication instance subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the replication instance subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyReplicationSubnetGroupInput {

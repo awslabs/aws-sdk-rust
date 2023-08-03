@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p>The name of the domain that the summary information applies to.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-    #[doc(hidden)]
     pub auto_renew: ::std::option::Option<bool>,
     /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
-    #[doc(hidden)]
     pub transfer_lock: ::std::option::Option<bool>,
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DomainSummary {

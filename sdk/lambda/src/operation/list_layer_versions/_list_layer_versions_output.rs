@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLayerVersionsOutput {
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of versions.</p>
-    #[doc(hidden)]
     pub layer_versions: ::std::option::Option<::std::vec::Vec<crate::types::LayerVersionsListItem>>,
     _request_id: Option<String>,
 }

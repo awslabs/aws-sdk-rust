@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

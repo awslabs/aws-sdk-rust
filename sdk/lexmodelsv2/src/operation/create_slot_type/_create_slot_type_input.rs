@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSlotTypeInput {
     /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
-    #[doc(hidden)]
     pub slot_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
-    #[doc(hidden)]
     pub slot_type_values: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -18,26 +15,19 @@ pub struct CreateSlotTypeInput {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
-    #[doc(hidden)]
     pub value_selection_setting: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
     /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    #[doc(hidden)]
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with this slot type.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot version associated with this slot type.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the type of external information used to create the slot type.</p>
-    #[doc(hidden)]
     pub external_source_setting: ::std::option::Option<crate::types::ExternalSourceSetting>,
     /// <p>Specifications for a composite slot type.</p>
-    #[doc(hidden)]
     pub composite_slot_type_setting: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
 }
 impl CreateSlotTypeInput {

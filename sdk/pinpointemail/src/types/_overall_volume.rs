@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
-    #[doc(hidden)]
     pub volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
-    #[doc(hidden)]
     pub read_rate_percent: ::std::option::Option<f64>,
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
-    #[doc(hidden)]
     pub domain_isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
 }
 impl OverallVolume {

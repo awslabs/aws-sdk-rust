@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3WordsList {
     /// <p>The full name of the S3 bucket that contains the object.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The full name (key) of the object.</p>
-    #[doc(hidden)]
     pub object_key: ::std::option::Option<::std::string::String>,
 }
 impl S3WordsList {

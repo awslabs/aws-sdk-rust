@@ -5,13 +5,10 @@
 pub struct DescribeLaunchConfigurationsInput {
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    #[doc(hidden)]
     pub launch_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeLaunchConfigurationsInput {

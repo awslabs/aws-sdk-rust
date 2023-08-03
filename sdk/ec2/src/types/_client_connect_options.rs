@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientConnectOptions {
     /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClientConnectOptions {

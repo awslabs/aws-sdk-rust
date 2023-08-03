@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS address of the Cluster.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine is listening on.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Describes a connection endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
 impl Endpoint {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
-    #[doc(hidden)]
     pub dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateDatasetInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>Error type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::IngestionErrorType>,
     /// <p>Error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfo {

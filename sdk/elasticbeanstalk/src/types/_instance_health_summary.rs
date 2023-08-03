@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceHealthSummary {
     /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
-    #[doc(hidden)]
     pub no_data: ::std::option::Option<i32>,
     /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
-    #[doc(hidden)]
     pub unknown: ::std::option::Option<i32>,
     /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<i32>,
     /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
-    #[doc(hidden)]
     pub ok: ::std::option::Option<i32>,
     /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<i32>,
     /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
-    #[doc(hidden)]
     pub warning: ::std::option::Option<i32>,
     /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
-    #[doc(hidden)]
     pub degraded: ::std::option::Option<i32>,
     /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
-    #[doc(hidden)]
     pub severe: ::std::option::Option<i32>,
 }
 impl InstanceHealthSummary {

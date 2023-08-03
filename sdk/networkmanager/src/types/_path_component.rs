@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathComponent {
     /// <p>The sequence number in the path. The destination is 0.</p>
-    #[doc(hidden)]
     pub sequence: ::std::option::Option<i32>,
     /// <p>The resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::NetworkResourceSummary>,
     /// <p>The destination CIDR block in the route table.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl PathComponent {

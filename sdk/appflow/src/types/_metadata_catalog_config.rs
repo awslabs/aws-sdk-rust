@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataCatalogConfig {
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub glue_data_catalog: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
 }
 impl MetadataCatalogConfig {

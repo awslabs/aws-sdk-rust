@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Storage {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
-    #[doc(hidden)]
     pub aws_access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The beginning of the file name of the AMI.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.</p>
-    #[doc(hidden)]
     pub upload_policy: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The signature of the JSON document.</p>
-    #[doc(hidden)]
     pub upload_policy_signature: ::std::option::Option<::std::string::String>,
 }
 impl S3Storage {

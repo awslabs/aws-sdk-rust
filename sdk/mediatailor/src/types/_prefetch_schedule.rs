@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    #[doc(hidden)]
     pub consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    #[doc(hidden)]
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    #[doc(hidden)]
     pub retrieval: ::std::option::Option<crate::types::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PrefetchSchedule {

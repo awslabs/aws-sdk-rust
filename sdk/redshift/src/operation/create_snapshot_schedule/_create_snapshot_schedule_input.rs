@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleInput {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    #[doc(hidden)]
     pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description of the snapshot schedule.</p>
-    #[doc(hidden)]
     pub schedule_description: ::std::option::Option<::std::string::String>,
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p></p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p></p>
-    #[doc(hidden)]
     pub next_invocations: ::std::option::Option<i32>,
 }
 impl CreateSnapshotScheduleInput {

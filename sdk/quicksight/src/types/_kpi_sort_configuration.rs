@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiSortConfiguration {
     /// <p>The sort configuration of the trend group fields.</p>
-    #[doc(hidden)]
     pub trend_group_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
 }
 impl KpiSortConfiguration {

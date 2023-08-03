@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisioningParametersOutput {
     /// <p>Information about the parameters used to provision the product.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
     /// <p>Information about the constraints used to provision the product.</p>
-    #[doc(hidden)]
     pub constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
     /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
-    #[doc(hidden)]
     pub usage_instructions: ::std::option::Option<::std::vec::Vec<crate::types::UsageInstruction>>,
     /// <p>Information about the TagOptions associated with the resource.</p>
-    #[doc(hidden)]
     pub tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionSummary>>,
     /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_preferences: ::std::option::Option<crate::types::ProvisioningArtifactPreferences>,
     /// <p>The output of the provisioning artifact.</p>
     #[deprecated(
         note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
     )]
-    #[doc(hidden)]
     pub provisioning_artifact_outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactOutput>>,
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_output_keys: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactOutput>>,
     _request_id: Option<String>,
 }

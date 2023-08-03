@@ -4,31 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementInput {
     /// <p>The affinity setting for the instance.</p>
-    #[doc(hidden)]
     pub affinity: ::std::option::Option<crate::types::Affinity>,
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you are modifying.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy for the instance.</p> <note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::HostTenancy>,
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
-    #[doc(hidden)]
     pub partition_number: ::std::option::Option<i32>,
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    #[doc(hidden)]
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstancePlacementInput {

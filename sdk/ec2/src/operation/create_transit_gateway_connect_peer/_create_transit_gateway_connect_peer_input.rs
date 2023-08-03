@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectPeerInput {
     /// <p>The ID of the Connect attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The peer IP address (GRE outer IP address) on the transit gateway side of the Connect peer, which must be specified from a transit gateway CIDR block. If not specified, Amazon automatically assigns the first available IP address from the transit gateway CIDR block.</p>
-    #[doc(hidden)]
     pub transit_gateway_address: ::std::option::Option<::std::string::String>,
     /// <p>The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The BGP options for the Connect peer.</p>
-    #[doc(hidden)]
     pub bgp_options: ::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions>,
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to apply to the Connect peer.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayConnectPeerInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsTargetResource {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    #[doc(hidden)]
     pub hosted_zone_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    #[doc(hidden)]
     pub record_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of DNS record of the target resource.</p>
-    #[doc(hidden)]
     pub record_type: ::std::option::Option<::std::string::String>,
     /// <p>The target resource of the DNS target resource.</p>
-    #[doc(hidden)]
     pub target_resource: ::std::option::Option<crate::types::TargetResource>,
 }
 impl DnsTargetResource {

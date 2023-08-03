@@ -5,20 +5,16 @@
 pub struct TestTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the extension to test.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     /// <p>The name of the extension to test.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
     /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
@@ -28,7 +24,6 @@ pub struct TestTypeInput {
     /// <li> <p> <code>PutObject</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub log_delivery_bucket: ::std::option::Option<::std::string::String>,
 }
 impl TestTypeInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceRecord {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::Face>,
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-    #[doc(hidden)]
     pub face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceRecord {

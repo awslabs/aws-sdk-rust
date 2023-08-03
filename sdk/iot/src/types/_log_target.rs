@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogTarget {
     /// <p>The target type.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::LogTargetType>,
     /// <p>The target name.</p>
-    #[doc(hidden)]
     pub target_name: ::std::option::Option<::std::string::String>,
 }
 impl LogTarget {

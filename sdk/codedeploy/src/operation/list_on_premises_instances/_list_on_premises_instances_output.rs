@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

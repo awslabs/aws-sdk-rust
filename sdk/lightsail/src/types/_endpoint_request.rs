@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port of the container to which traffic is forwarded to.</p>
-    #[doc(hidden)]
     pub container_port: ::std::option::Option<i32>,
     /// <p>An object that describes the health check configuration of the container.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
 }
 impl EndpointRequest {

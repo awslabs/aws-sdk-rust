@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingGateways {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-    #[doc(hidden)]
     pub downlink_mode: ::std::option::Option<crate::types::DownlinkMode>,
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    #[doc(hidden)]
     pub gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>>,
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
-    #[doc(hidden)]
     pub transmission_interval: ::std::option::Option<i32>,
 }
 impl ParticipatingGateways {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonotonicValues {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
-    #[doc(hidden)]
     pub monotonicity: ::std::option::Option<crate::types::Monotonicity>,
 }
 impl MonotonicValues {

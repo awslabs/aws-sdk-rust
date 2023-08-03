@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-    #[doc(hidden)]
     pub asset_property: ::std::option::Option<crate::types::Property>,
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
-    #[doc(hidden)]
     pub composite_model: ::std::option::Option<crate::types::CompositeModelProperty>,
     _request_id: Option<String>,
 }

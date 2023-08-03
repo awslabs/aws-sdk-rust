@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationDetails {
     /// <p>The name of the CloudWatch Logs log group.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsDestinationDetails {

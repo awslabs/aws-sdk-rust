@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortSet {
     /// <p>The set of port ranges. </p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PortSet {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIngestionInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the ingestion.</p>
-    #[doc(hidden)]
     pub ingestion_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of ingestion that you want to create.</p>
-    #[doc(hidden)]
     pub ingestion_type: ::std::option::Option<crate::types::IngestionType>,
 }
 impl CreateIngestionInput {

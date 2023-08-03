@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrationTask {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
-    #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>Task object encapsulating task information.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<crate::types::Task>,
     /// <p>The timestamp when the task was gathered.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    #[doc(hidden)]
     pub resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
 }
 impl MigrationTask {

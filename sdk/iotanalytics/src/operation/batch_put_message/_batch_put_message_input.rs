@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMessageInput {
     /// <p>The name of the channel where the messages are sent.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
@@ -17,7 +16,6 @@ pub struct BatchPutMessageInput {
     /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
 }
 impl BatchPutMessageInput {

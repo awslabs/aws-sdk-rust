@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePortalInput {
     /// <p>The ARN of the web portal.</p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl UpdatePortalInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchRestrictions {
     /// <p>Specifies the maximum number of builds allowed.</p>
-    #[doc(hidden)]
     pub maximum_builds_allowed: ::std::option::Option<i32>,
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
-    #[doc(hidden)]
     pub compute_types_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchRestrictions {

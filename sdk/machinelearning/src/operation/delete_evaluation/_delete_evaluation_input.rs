@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEvaluationInput {

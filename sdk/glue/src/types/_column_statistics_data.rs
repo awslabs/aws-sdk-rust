@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ColumnStatisticsType>,
     /// <p>Boolean column statistics data.</p>
-    #[doc(hidden)]
     pub boolean_column_statistics_data: ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     /// <p>Date column statistics data.</p>
-    #[doc(hidden)]
     pub date_column_statistics_data: ::std::option::Option<crate::types::DateColumnStatisticsData>,
     /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
-    #[doc(hidden)]
     pub decimal_column_statistics_data: ::std::option::Option<crate::types::DecimalColumnStatisticsData>,
     /// <p>Double column statistics data.</p>
-    #[doc(hidden)]
     pub double_column_statistics_data: ::std::option::Option<crate::types::DoubleColumnStatisticsData>,
     /// <p>Long column statistics data.</p>
-    #[doc(hidden)]
     pub long_column_statistics_data: ::std::option::Option<crate::types::LongColumnStatisticsData>,
     /// <p>String column statistics data.</p>
-    #[doc(hidden)]
     pub string_column_statistics_data: ::std::option::Option<crate::types::StringColumnStatisticsData>,
     /// <p>Binary column statistics data.</p>
-    #[doc(hidden)]
     pub binary_column_statistics_data: ::std::option::Option<crate::types::BinaryColumnStatisticsData>,
 }
 impl ColumnStatisticsData {

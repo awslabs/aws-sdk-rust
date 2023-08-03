@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBridgeInput {
     /// The ARN of the bridge that you want to describe.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBridgeInput {

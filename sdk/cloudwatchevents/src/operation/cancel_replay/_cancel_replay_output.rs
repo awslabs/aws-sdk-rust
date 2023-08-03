@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelReplayOutput {
     /// <p>The ARN of the replay to cancel.</p>
-    #[doc(hidden)]
     pub replay_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replay.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplayState>,
     /// <p>The reason that the replay is in the current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

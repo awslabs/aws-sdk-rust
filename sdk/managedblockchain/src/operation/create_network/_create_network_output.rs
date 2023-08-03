@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkOutput {
     /// <p>The unique identifier for the network.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the first member within the network.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

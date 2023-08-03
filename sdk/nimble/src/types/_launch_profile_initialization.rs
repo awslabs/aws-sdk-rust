@@ -6,31 +6,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LaunchProfileInitialization {
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
-    #[doc(hidden)]
     pub active_directory: ::std::option::Option<crate::types::LaunchProfileInitializationActiveDirectory>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    #[doc(hidden)]
     pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    #[doc(hidden)]
     pub launch_profile_protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The launch purpose.</p>
-    #[doc(hidden)]
     pub launch_purpose: ::std::option::Option<::std::string::String>,
     /// <p>The name for the launch profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the launch platform, either Windows or Linux.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::LaunchProfilePlatform>,
     /// <p>The system initializtion scripts.</p>
-    #[doc(hidden)]
     pub system_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
     /// <p>The user initializtion scripts.</p>
-    #[doc(hidden)]
     pub user_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
 }
 impl LaunchProfileInitialization {

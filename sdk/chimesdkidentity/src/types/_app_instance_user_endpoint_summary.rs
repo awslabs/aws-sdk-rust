@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceUserEndpointSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
     /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    #[doc(hidden)]
     pub allow_messages: ::std::option::Option<crate::types::AllowMessages>,
     /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_state: ::std::option::Option<crate::types::EndpointState>,
 }
 impl AppInstanceUserEndpointSummary {

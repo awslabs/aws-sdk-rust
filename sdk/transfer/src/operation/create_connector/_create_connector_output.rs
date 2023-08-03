@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

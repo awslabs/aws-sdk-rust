@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceInput {
     /// <p> The name, ID, or ARN of the application. </p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource of which the application will be associated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name or ID of the resource of which the application will be associated.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl AssociateResourceInput {

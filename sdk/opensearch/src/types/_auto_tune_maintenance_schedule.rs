@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneMaintenanceSchedule {
     /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
-    #[doc(hidden)]
     pub start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<crate::types::Duration>,
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
-    #[doc(hidden)]
     pub cron_expression_for_recurrence: ::std::option::Option<::std::string::String>,
 }
 impl AutoTuneMaintenanceSchedule {

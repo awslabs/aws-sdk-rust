@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagScopeTerm {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>>,
     /// <p>The type of object to apply the condition to.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TagTarget>,
 }
 impl TagScopeTerm {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowAssociationRequest {
     /// <p>The IDs of the instances to associate with the event window. If the instance is on a Dedicated Host, you can't specify the Instance ID parameter; you must use the Dedicated Host ID parameter.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance tags to associate with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    #[doc(hidden)]
     pub instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IDs of the Dedicated Hosts to associate with the event window.</p>
-    #[doc(hidden)]
     pub dedicated_host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceEventWindowAssociationRequest {

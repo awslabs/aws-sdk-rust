@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectPolicy {
     /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID of the project policy.</p>
-    #[doc(hidden)]
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document for the project policy.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The Unix datetime for the creation of the project policy.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix datetime for when the project policy was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProjectPolicy {

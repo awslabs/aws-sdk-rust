@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
-    #[doc(hidden)]
     pub forward_when_content_type_is_unknown: ::std::option::Option<bool>,
     /// <p>The configuration for a field-level encryption content type-profile.</p>
-    #[doc(hidden)]
     pub content_type_profiles: ::std::option::Option<crate::types::ContentTypeProfiles>,
 }
 impl ContentTypeProfileConfig {

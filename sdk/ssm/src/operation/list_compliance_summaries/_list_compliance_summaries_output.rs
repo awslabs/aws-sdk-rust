@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    #[doc(hidden)]
     pub compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

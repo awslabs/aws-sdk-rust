@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to the results for this request.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
-    #[doc(hidden)]
     pub canned_acl: ::std::option::Option<crate::types::CannedAcl>,
     /// <p>A list of grants that control access to the staged results.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     /// <p>The tag-set that is applied to the job results.</p>
-    #[doc(hidden)]
     pub tagging: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    #[doc(hidden)]
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The storage class used to store the job results.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
 }
 impl S3Location {

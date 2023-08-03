@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendUsersMessageRequest {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
-    #[doc(hidden)]
     pub message_configuration: ::std::option::Option<crate::types::DirectMessageConfiguration>,
     /// <p>The message template to use for the message.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
-    #[doc(hidden)]
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointSendConfiguration>>,
 }
 impl SendUsersMessageRequest {

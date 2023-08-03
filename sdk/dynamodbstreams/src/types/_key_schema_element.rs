@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
@@ -17,7 +16,6 @@ pub struct KeySchemaElement {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::KeyType>,
 }
 impl KeySchemaElement {

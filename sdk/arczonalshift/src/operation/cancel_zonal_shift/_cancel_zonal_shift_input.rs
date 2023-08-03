@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelZonalShiftInput {
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    #[doc(hidden)]
     pub zonal_shift_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelZonalShiftInput {

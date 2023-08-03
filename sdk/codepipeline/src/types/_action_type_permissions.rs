@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypePermissions {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    #[doc(hidden)]
     pub allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ActionTypePermissions {

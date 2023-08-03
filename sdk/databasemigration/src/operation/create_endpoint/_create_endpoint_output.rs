@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     _request_id: Option<String>,
 }

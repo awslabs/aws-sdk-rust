@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeContentOutput {
     /// <p>The Network Access Scope content.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_content: ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
     _request_id: Option<String>,
 }

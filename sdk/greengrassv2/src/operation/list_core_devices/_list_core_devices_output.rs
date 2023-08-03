@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCoreDevicesOutput {
     /// <p>A list that summarizes each core device.</p>
-    #[doc(hidden)]
     pub core_devices: ::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

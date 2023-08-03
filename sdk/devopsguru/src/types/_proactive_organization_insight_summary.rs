@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProactiveOrganizationInsightSummary {
     /// <p>The ID of the insight summary.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organizational unit.</p>
-    #[doc(hidden)]
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the insight summary.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::InsightSeverity>,
     /// <p> An array of status values used to search for insights. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    #[doc(hidden)]
     pub insight_time_range: ::std::option::Option<crate::types::InsightTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    #[doc(hidden)]
     pub prediction_time_range: ::std::option::Option<crate::types::PredictionTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
 }
 impl ProactiveOrganizationInsightSummary {

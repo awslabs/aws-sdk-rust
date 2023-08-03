@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
-    #[doc(hidden)]
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
-    #[doc(hidden)]
     pub desired_change: ::std::option::Option<crate::types::ChangeDirectionEnum>,
 }
 impl MetricGoalConfig {

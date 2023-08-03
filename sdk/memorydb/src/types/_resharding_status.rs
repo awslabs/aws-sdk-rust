@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReshardingStatus {
     /// <p>The status of the online resharding slot migration</p>
-    #[doc(hidden)]
     pub slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
 impl ReshardingStatus {

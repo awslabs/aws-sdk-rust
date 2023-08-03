@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
-    #[doc(hidden)]
     pub languages: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>,
 }
 impl BatchDetectDominantLanguageItemResult {

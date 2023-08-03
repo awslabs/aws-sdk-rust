@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    #[doc(hidden)]
     pub template_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfig {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    #[doc(hidden)]
     pub replication_config_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this DMS Serverless replication configuration.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    #[doc(hidden)]
     pub source_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    #[doc(hidden)]
     pub target_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the replication.</p>
-    #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>Configuration parameters for provisioning an DMS serverless replication.</p>
-    #[doc(hidden)]
     pub compute_config: ::std::option::Option<crate::types::ComputeConfig>,
     /// <p>Configuration parameters for an DMS serverless replication.</p>
-    #[doc(hidden)]
     pub replication_settings: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters for an DMS serverless replication.</p>
-    #[doc(hidden)]
     pub supplemental_settings: ::std::option::Option<::std::string::String>,
     /// <p>Table mappings specified in the replication.</p>
-    #[doc(hidden)]
     pub table_mappings: ::std::option::Option<::std::string::String>,
     /// <p>The time the serverless replication config was created.</p>
-    #[doc(hidden)]
     pub replication_config_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the serverless replication config was updated.</p>
-    #[doc(hidden)]
     pub replication_config_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationConfig {

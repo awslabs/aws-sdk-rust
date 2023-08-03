@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    #[doc(hidden)]
     pub sms_template_response: ::std::option::Option<crate::types::SmsTemplateResponse>,
     _request_id: Option<String>,
 }

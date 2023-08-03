@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
-    #[doc(hidden)]
     pub virtual_mfa_device: ::std::option::Option<crate::types::VirtualMfaDevice>,
     _request_id: Option<String>,
 }

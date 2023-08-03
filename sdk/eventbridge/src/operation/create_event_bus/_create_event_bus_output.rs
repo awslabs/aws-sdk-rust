@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventBusOutput {
     /// <p>The ARN of the new event bus.</p>
-    #[doc(hidden)]
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

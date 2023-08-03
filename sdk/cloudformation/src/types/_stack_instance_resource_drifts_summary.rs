@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackInstanceResourceDriftsSummary {
     /// <p>The ID of the stack instance.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    #[doc(hidden)]
     pub physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
-    #[doc(hidden)]
     pub property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
@@ -29,10 +23,8 @@ pub struct StackInstanceResourceDriftsSummary {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackInstanceResourceDriftsSummary {

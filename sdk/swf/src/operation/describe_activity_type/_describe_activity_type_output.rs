@@ -10,10 +10,8 @@ pub struct DescribeActivityTypeOutput {
     /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub type_info: ::std::option::Option<crate::types::ActivityTypeInfo>,
     /// <p>The configuration settings registered with the activity type.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ActivityTypeConfiguration>,
     _request_id: Option<String>,
 }

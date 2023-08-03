@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopNotebookInstanceInput {
     /// <p>The name of the notebook instance to terminate.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookInstanceInput {

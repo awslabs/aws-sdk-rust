@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SplitDocument {
     /// <p>The index for a given document in a DocumentGroup of a specific Type.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl SplitDocument {

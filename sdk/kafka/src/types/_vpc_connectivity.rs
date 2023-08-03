@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivity {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
 }
 impl VpcConnectivity {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv6Pool {
     /// <p>The ID of the address pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the address pool.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR blocks for the address pool.</p>
-    #[doc(hidden)]
     pub pool_cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
     /// <p>Any tags for the address pool.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ipv6Pool {

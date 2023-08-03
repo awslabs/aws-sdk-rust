@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the streaming configurations being deleted.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppInstanceStreamingConfigurationsInput {

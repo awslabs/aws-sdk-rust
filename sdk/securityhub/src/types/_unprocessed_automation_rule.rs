@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedAutomationRule {
     /// <p> The Amazon Resource Name (ARN) for the unprocessed automation rule. </p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p> The error code associated with the unprocessed automation rule. </p>
-    #[doc(hidden)]
     pub error_code: i32,
     /// <p> An error message describing why a request didn't process a specific rule. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedAutomationRule {

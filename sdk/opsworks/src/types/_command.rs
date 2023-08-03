@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Command {
     /// <p>The command ID.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance where the command was executed.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The command deployment ID.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Date and time when the command was run.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Date and time when the command was acknowledged.</p>
-    #[doc(hidden)]
     pub acknowledged_at: ::std::option::Option<::std::string::String>,
     /// <p>Date when the command completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::std::string::String>,
     /// <p>The command status:</p>
     /// <ul>
@@ -29,13 +23,10 @@ pub struct Command {
     /// <li> <p>skipped</p> </li>
     /// <li> <p>pending</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The command exit code.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>The URL of the command log.</p>
-    #[doc(hidden)]
     pub log_url: ::std::option::Option<::std::string::String>,
     /// <p>The command type:</p>
     /// <ul>
@@ -52,7 +43,6 @@ pub struct Command {
     /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Command {

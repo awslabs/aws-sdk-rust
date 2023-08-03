@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub f_port: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    #[doc(hidden)]
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -12,7 +11,6 @@ pub struct CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    #[doc(hidden)]
     pub departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -20,7 +18,6 @@ pub struct CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    #[doc(hidden)]
     pub destination_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
@@ -33,7 +30,6 @@ pub struct CalculateRouteMatrixInput {
     /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code> </p>
-    #[doc(hidden)]
     pub travel_mode: ::std::option::Option<crate::types::TravelMode>,
     /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -41,27 +37,21 @@ pub struct CalculateRouteMatrixInput {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub departure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    #[doc(hidden)]
     pub depart_now: ::std::option::Option<bool>,
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    #[doc(hidden)]
     pub car_mode_options: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    #[doc(hidden)]
     pub truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteMatrixInput {

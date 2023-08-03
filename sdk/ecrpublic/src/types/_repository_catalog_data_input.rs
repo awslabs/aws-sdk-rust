@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryCatalogDataInput {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures appear as badges on the repository and are used as search filters.</p> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -16,7 +15,6 @@ pub struct RepositoryCatalogDataInput {
     /// <li> <p> <code>x86</code> </p> </li>
     /// <li> <p> <code>x86-64</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -25,18 +23,14 @@ pub struct RepositoryCatalogDataInput {
     /// <li> <p> <code>Linux</code> </p> </li>
     /// <li> <p> <code>Windows</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The base64-encoded repository logo payload.</p> <note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
-    #[doc(hidden)]
     pub logo_image_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.</p>
-    #[doc(hidden)]
     pub about_text: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
-    #[doc(hidden)]
     pub usage_text: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryCatalogDataInput {

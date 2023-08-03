@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>The physical resource identifier for the unsupported resource.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the unsupported resource.</p>
-    #[doc(hidden)]
     pub unsupported_resource_status: ::std::option::Option<::std::string::String>,
 }
 impl UnsupportedResource {

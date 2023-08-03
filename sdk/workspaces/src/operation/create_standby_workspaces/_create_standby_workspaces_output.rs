@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesOutput {
     /// <p>Information about the standby WorkSpace that could not be created. </p>
-    #[doc(hidden)]
     pub failed_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
     /// <p>Information about the standby WorkSpace that was created.</p>
-    #[doc(hidden)]
     pub pending_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     _request_id: Option<String>,
 }

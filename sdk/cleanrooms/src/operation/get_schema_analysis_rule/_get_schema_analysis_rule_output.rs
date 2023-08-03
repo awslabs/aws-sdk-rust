@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaAnalysisRuleOutput {
     /// <p>A specification about how data from the configured table can be used.</p>
-    #[doc(hidden)]
     pub analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
     _request_id: Option<String>,
 }

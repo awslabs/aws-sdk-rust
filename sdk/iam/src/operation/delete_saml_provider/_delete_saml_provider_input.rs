@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSamlProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    #[doc(hidden)]
     pub saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSamlProviderInput {

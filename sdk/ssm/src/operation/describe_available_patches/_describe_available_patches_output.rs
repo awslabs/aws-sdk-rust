@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesOutput {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
-    #[doc(hidden)]
     pub patches: ::std::option::Option<::std::vec::Vec<crate::types::Patch>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

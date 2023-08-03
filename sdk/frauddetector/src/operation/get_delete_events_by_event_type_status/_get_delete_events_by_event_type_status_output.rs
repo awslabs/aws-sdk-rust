@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeleteEventsByEventTypeStatusOutput {
     /// <p>The event type name.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The deletion status.</p>
-    #[doc(hidden)]
     pub events_deletion_status: ::std::option::Option<crate::types::AsyncJobStatus>,
     _request_id: Option<String>,
 }

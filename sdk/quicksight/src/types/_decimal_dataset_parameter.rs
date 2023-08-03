@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalDatasetParameter {
     /// <p>An identifier for the decimal parameter created in the dataset.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the decimal parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
-    #[doc(hidden)]
     pub default_values: ::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues>,
 }
 impl DecimalDatasetParameter {

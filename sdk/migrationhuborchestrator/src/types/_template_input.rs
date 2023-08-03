@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateInput {
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the template input.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>Determine if an input is required from the template.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
 }
 impl TemplateInput {

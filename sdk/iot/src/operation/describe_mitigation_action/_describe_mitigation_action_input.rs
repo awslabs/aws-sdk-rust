@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMitigationActionInput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMitigationActionInput {

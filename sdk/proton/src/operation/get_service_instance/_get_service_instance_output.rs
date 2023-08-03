@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceInstanceOutput {
     /// <p>The detailed data of the requested service instance.</p>
-    #[doc(hidden)]
     pub service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
 }

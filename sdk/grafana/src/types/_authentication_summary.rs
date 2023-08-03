@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationSummary {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    #[doc(hidden)]
     pub providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
-    #[doc(hidden)]
     pub saml_configuration_status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
 }
 impl AuthenticationSummary {

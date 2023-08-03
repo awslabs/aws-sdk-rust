@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLexiconOutput {
     /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
-    #[doc(hidden)]
     pub lexicon: ::std::option::Option<crate::types::Lexicon>,
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
-    #[doc(hidden)]
     pub lexicon_attributes: ::std::option::Option<crate::types::LexiconAttributes>,
     _request_id: Option<String>,
 }

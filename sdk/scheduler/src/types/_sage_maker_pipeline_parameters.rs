@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SageMakerPipelineParameters {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_parameter_list: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }
 impl SageMakerPipelineParameters {

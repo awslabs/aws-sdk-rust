@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainInformationContainer {
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub aws_domain_information: ::std::option::Option<crate::types::AwsDomainInformation>,
 }
 impl DomainInformationContainer {

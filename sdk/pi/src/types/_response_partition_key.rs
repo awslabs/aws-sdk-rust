@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResponsePartitionKey {

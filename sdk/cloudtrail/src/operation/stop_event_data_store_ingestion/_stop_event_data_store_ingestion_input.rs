@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopEventDataStoreIngestionInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl StopEventDataStoreIngestionInput {

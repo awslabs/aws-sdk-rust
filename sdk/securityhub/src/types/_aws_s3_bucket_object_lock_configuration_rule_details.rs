@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationRuleDetails {
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
-    #[doc(hidden)]
     pub default_retention: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
 }
 impl AwsS3BucketObjectLockConfigurationRuleDetails {

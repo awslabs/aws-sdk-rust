@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGrantPermissionsOutput {
     /// <p>A list of failures to grant permissions to the resources.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,
 }

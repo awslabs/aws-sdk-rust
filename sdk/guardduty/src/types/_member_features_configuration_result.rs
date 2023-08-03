@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFeaturesConfigurationResult {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeature>,
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The timestamp at which the feature object was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
-    #[doc(hidden)]
     pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
 }
 impl MemberFeaturesConfigurationResult {

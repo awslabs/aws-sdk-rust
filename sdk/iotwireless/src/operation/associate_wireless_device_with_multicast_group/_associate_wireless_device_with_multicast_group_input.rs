@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device.</p>
-    #[doc(hidden)]
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateWirelessDeviceWithMulticastGroupInput {

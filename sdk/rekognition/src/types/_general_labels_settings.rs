@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneralLabelsSettings {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    #[doc(hidden)]
     pub label_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    #[doc(hidden)]
     pub label_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    #[doc(hidden)]
     pub label_category_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    #[doc(hidden)]
     pub label_category_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeneralLabelsSettings {

@@ -6,7 +6,6 @@
 pub struct SetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes to set.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
@@ -71,7 +70,6 @@ pub struct SetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
 }
 impl SetQueueAttributesInput {

@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
-    #[doc(hidden)]
     pub minimum_trigger_interval_ms: ::std::option::Option<i64>,
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-    #[doc(hidden)]
     pub trigger_mode: ::std::option::Option<crate::types::TriggerMode>,
     /// <p>Specifies the version of the conditional expression language.</p>
-    #[doc(hidden)]
     pub condition_language_version: ::std::option::Option<i32>,
 }
 impl ConditionBasedCollectionScheme {

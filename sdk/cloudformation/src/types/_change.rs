@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Change {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
-    #[doc(hidden)]
     pub hook_invocation_count: ::std::option::Option<i32>,
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
-    #[doc(hidden)]
     pub resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
 impl Change {

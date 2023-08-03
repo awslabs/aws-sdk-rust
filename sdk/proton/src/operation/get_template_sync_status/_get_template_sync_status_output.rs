@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateSyncStatusOutput {
     /// <p>The details of the last sync that's returned by Proton.</p>
-    #[doc(hidden)]
     pub latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    #[doc(hidden)]
     pub latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     /// <p>The template sync desired state that's returned by Proton.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::Revision>,
     _request_id: Option<String>,
 }

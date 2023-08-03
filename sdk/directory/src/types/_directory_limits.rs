@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryLimits {
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
-    #[doc(hidden)]
     pub cloud_only_directories_limit: ::std::option::Option<i32>,
     /// <p>The current number of cloud directories in the Region.</p>
-    #[doc(hidden)]
     pub cloud_only_directories_current_count: ::std::option::Option<i32>,
     /// <p>Indicates if the cloud directory limit has been reached.</p>
-    #[doc(hidden)]
     pub cloud_only_directories_limit_reached: bool,
     /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
-    #[doc(hidden)]
     pub cloud_only_microsoft_ad_limit: ::std::option::Option<i32>,
     /// <p>The current number of Managed Microsoft AD directories in the region.</p>
-    #[doc(hidden)]
     pub cloud_only_microsoft_ad_current_count: ::std::option::Option<i32>,
     /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
-    #[doc(hidden)]
     pub cloud_only_microsoft_ad_limit_reached: bool,
     /// <p>The maximum number of connected directories allowed in the Region.</p>
-    #[doc(hidden)]
     pub connected_directories_limit: ::std::option::Option<i32>,
     /// <p>The current number of connected directories in the Region.</p>
-    #[doc(hidden)]
     pub connected_directories_current_count: ::std::option::Option<i32>,
     /// <p>Indicates if the connected directory limit has been reached.</p>
-    #[doc(hidden)]
     pub connected_directories_limit_reached: bool,
 }
 impl DirectoryLimits {

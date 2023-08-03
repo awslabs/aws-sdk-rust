@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationMode {
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputAuthenticationType>,
     /// <p>The password(s) used for authentication</p>
-    #[doc(hidden)]
     pub passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthenticationMode {

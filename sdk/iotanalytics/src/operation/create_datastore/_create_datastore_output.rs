@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatastoreOutput {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the data store.</p>
-    #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>How long, in days, message data is kept for the data store.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     _request_id: Option<String>,
 }

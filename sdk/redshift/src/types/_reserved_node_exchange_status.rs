@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNodeExchangeStatus {
     /// <p>The identifier of the reserved-node exchange request.</p>
-    #[doc(hidden)]
     pub reserved_node_exchange_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReservedNodeExchangeStatusType>,
     /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
-    #[doc(hidden)]
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the source reserved node.</p>
-    #[doc(hidden)]
     pub source_reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
-    #[doc(hidden)]
     pub source_reserved_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The source reserved-node count in the cluster.</p>
-    #[doc(hidden)]
     pub source_reserved_node_count: i32,
     /// <p>The identifier of the target reserved node offering.</p>
-    #[doc(hidden)]
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
-    #[doc(hidden)]
     pub target_reserved_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of target reserved nodes in the cluster.</p>
-    #[doc(hidden)]
     pub target_reserved_node_count: i32,
 }
 impl ReservedNodeExchangeStatus {

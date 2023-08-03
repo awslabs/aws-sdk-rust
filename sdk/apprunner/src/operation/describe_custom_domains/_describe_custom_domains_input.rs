@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeCustomDomainsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportPlaybackKeyPairOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,
 }

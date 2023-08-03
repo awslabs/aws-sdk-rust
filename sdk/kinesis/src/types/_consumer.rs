@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Consumer {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    #[doc(hidden)]
     pub consumer_name: ::std::option::Option<::std::string::String>,
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    #[doc(hidden)]
     pub consumer_status: ::std::option::Option<crate::types::ConsumerStatus>,
     /// <p></p>
-    #[doc(hidden)]
     pub consumer_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Consumer {

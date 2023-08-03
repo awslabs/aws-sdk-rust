@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserOutput {
     /// <p>The updated user details.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
 }

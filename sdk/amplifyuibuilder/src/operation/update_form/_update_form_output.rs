@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFormOutput {
     /// <p>Describes the configuration of the updated form.</p>
-    #[doc(hidden)]
     pub entity: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,
 }

@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the principal that can be associated with a resource share.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the principal was associated with the resource share.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
     /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
     /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub external: ::std::option::Option<bool>,
 }
 impl Principal {

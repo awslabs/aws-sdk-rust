@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
     /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl BatchGetAssetPropertyAggregatesInput {

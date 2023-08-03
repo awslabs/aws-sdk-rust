@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2TransitGatewayDetails {
     /// <p>The ID of the transit gateway. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the transit gateway. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table. </p>
-    #[doc(hidden)]
     pub default_route_table_propagation: ::std::option::Option<::std::string::String>,
     /// <p>Turn on or turn off automatic acceptance of attachment requests. </p>
-    #[doc(hidden)]
     pub auto_accept_shared_attachments: ::std::option::Option<::std::string::String>,
     /// <p>Turn on or turn off automatic association with the default association route table. </p>
-    #[doc(hidden)]
     pub default_route_table_association: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
-    #[doc(hidden)]
     pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the default association route table. </p>
-    #[doc(hidden)]
     pub association_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default propagation route table. </p>
-    #[doc(hidden)]
     pub propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support. </p>
-    #[doc(hidden)]
     pub vpn_ecmp_support: ::std::option::Option<::std::string::String>,
     /// <p>Turn on or turn off DNS support. </p>
-    #[doc(hidden)]
     pub dns_support: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether multicast is supported on the transit gateway. </p>
-    #[doc(hidden)]
     pub multicast_support: ::std::option::Option<::std::string::String>,
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. </p>
-    #[doc(hidden)]
     pub amazon_side_asn: i32,
 }
 impl AwsEc2TransitGatewayDetails {

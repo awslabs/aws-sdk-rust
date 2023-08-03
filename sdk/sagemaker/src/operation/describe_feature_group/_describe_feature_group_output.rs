@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
-    #[doc(hidden)]
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>he name of the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
-    #[doc(hidden)]
     pub record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
-    #[doc(hidden)]
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    #[doc(hidden)]
     pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the feature group was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
-    #[doc(hidden)]
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
@@ -36,35 +28,26 @@ pub struct DescribeFeatureGroupOutput {
     /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
     /// <li> <p>Encryption configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the feature group.</p>
-    #[doc(hidden)]
     pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
-    #[doc(hidden)]
     pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
-    #[doc(hidden)]
     pub last_update_status: ::std::option::Option<crate::types::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
     /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
     /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A free form description of the feature group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
-    #[doc(hidden)]
     pub online_store_total_size_bytes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

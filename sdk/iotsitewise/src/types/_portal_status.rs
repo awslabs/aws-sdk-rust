@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortalStatus {
     /// <p>The current state of the portal.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PortalState>,
     /// <p>Contains associated error information, if any.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::MonitorErrorDetails>,
 }
 impl PortalStatus {

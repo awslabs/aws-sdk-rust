@@ -6,29 +6,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstanceInfo {
     /// <p>Network function instance ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network function instance ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Network instance ID.</p>
-    #[doc(hidden)]
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Function package ID.</p>
-    #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
     /// <p>Function package name.</p>
-    #[doc(hidden)]
     pub vnf_pkg_name: ::std::option::Option<::std::string::String>,
     /// <p>Network function instance instantiation state.</p>
-    #[doc(hidden)]
     pub instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    #[doc(hidden)]
     pub instantiated_vnf_info: ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>,
     /// <p>Network function instance metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ListSolFunctionInstanceMetadata>,
 }
 impl ListSolFunctionInstanceInfo {

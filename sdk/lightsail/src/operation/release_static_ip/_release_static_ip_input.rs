@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseStaticIpInput {
     /// <p>The name of the static IP to delete.</p>
-    #[doc(hidden)]
     pub static_ip_name: ::std::option::Option<::std::string::String>,
 }
 impl ReleaseStaticIpInput {

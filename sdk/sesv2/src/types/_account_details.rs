@@ -9,22 +9,16 @@ pub struct AccountDetails {
     /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
     /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mail_type: ::std::option::Option<crate::types::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    #[doc(hidden)]
     pub website_url: ::std::option::Option<::std::string::String>,
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-    #[doc(hidden)]
     pub contact_language: ::std::option::Option<crate::types::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
-    #[doc(hidden)]
     pub use_case_description: ::std::option::Option<::std::string::String>,
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    #[doc(hidden)]
     pub additional_contact_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the review of the latest details you submitted.</p>
-    #[doc(hidden)]
     pub review_details: ::std::option::Option<crate::types::ReviewDetails>,
 }
 impl AccountDetails {

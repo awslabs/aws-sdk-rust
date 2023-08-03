@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamAction {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Amazon Timestream database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database table into which to write the measure records.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>,
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::TimestreamTimestamp>,
 }
 impl TimestreamAction {

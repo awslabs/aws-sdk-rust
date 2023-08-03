@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
-    #[doc(hidden)]
     pub s3_output_format_config: ::std::option::Option<crate::types::S3OutputFormatConfig>,
 }
 impl S3DestinationProperties {

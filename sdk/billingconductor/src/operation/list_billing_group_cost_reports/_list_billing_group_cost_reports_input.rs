@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsInput {
     /// <p>The preferred billing period for your report. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of reports to retrieve. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>,
 }
 impl ListBillingGroupCostReportsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
 }
 impl DeleteScalingPlanInput {

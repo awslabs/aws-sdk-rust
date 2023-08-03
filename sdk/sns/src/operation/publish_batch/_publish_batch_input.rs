@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    #[doc(hidden)]
     pub publish_batch_request_entries: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
 }
 impl PublishBatchInput {

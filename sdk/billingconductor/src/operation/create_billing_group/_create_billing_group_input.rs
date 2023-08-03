@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBillingGroupInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The billing group name. The names must be unique. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
-    #[doc(hidden)]
     pub account_grouping: ::std::option::Option<crate::types::AccountGrouping>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    #[doc(hidden)]
     pub computation_preference: ::std::option::Option<crate::types::ComputationPreference>,
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    #[doc(hidden)]
     pub primary_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the billing group. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBillingGroupInput {

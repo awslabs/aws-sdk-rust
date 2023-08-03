@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    #[doc(hidden)]
     pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

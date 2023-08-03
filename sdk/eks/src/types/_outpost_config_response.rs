@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
-    #[doc(hidden)]
     pub outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    #[doc(hidden)]
     pub control_plane_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    #[doc(hidden)]
     pub control_plane_placement: ::std::option::Option<crate::types::ControlPlanePlacementResponse>,
 }
 impl OutpostConfigResponse {

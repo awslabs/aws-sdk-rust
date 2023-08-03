@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    #[doc(hidden)]
     pub parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
-    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ResolvedTargets {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// The time, in milliseconds since the epoch, when the deployment was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// The ARN of the deployment.
-    #[doc(hidden)]
     pub deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the deployment.
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// The type of the deployment.
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// The ARN of the group for this deployment.
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
 impl Deployment {

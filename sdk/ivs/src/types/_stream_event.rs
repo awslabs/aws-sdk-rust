@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamEvent {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Logical group for certain events.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StreamEvent {

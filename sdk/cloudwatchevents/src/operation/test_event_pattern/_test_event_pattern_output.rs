@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestEventPatternOutput {
     /// <p>Indicates whether the event matches the event pattern.</p>
-    #[doc(hidden)]
     pub result: bool,
     _request_id: Option<String>,
 }

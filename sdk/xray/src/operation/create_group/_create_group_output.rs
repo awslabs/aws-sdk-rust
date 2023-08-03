@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }

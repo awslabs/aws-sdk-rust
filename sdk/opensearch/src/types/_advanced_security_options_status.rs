@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsStatus {
     /// <p>Container for fine-grained access control settings.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p>Status of the fine-grained access control settings for a domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedSecurityOptionsStatus {

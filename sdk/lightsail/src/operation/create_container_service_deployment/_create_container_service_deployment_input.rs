@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerServiceDeploymentInput {
     /// <p>The name of the container service for which to create the deployment.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
-    #[doc(hidden)]
     pub public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
 }
 impl CreateContainerServiceDeploymentInput {

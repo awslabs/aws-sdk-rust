@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesForWirelessDeviceImportTaskInput {
     /// <p>The identifier of the import task for which wireless devices are listed.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The status of the devices in the import task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OnboardStatus>,
 }
 impl ListDevicesForWirelessDeviceImportTaskInput {

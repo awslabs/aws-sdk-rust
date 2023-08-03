@@ -6,13 +6,10 @@
 pub struct ModerationLabel {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The label name for the type of unsafe content detected in the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
-    #[doc(hidden)]
     pub parent_name: ::std::option::Option<::std::string::String>,
 }
 impl ModerationLabel {

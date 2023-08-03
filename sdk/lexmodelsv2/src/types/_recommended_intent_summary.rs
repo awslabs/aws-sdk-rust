@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendedIntentSummary {
     /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a recommended intent associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
-    #[doc(hidden)]
     pub sample_utterances_count: ::std::option::Option<i32>,
 }
 impl RecommendedIntentSummary {

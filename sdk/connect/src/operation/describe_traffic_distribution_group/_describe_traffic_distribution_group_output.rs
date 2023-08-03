@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrafficDistributionGroupOutput {
     /// <p>Information about the traffic distribution group.</p>
-    #[doc(hidden)]
     pub traffic_distribution_group: ::std::option::Option<crate::types::TrafficDistributionGroup>,
     _request_id: Option<String>,
 }

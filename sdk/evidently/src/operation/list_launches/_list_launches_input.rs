@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LaunchStatus>,
 }
 impl ListLaunchesInput {

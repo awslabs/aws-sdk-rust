@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcCidrBlockAssociation {
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR block.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of the CIDR block.</p>
-    #[doc(hidden)]
     pub cidr_block_state: ::std::option::Option<crate::types::VpcCidrBlockState>,
 }
 impl VpcCidrBlockAssociation {

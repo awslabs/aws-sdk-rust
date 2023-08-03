@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayGroupOutput {
     /// <p>The details of the gateway group.</p>
-    #[doc(hidden)]
     pub gateway_group: ::std::option::Option<crate::types::GatewayGroup>,
     _request_id: Option<String>,
 }

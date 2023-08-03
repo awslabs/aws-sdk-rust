@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutCommentReactionInput {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    #[doc(hidden)]
     pub reaction_value: ::std::option::Option<::std::string::String>,
 }
 impl PutCommentReactionInput {

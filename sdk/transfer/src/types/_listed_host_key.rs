@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the host key.</p>
-    #[doc(hidden)]
     pub host_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    #[doc(hidden)]
     pub fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
@@ -24,10 +20,8 @@ pub struct ListedHostKey {
     /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
     /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the host key was added to the server.</p>
-    #[doc(hidden)]
     pub date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListedHostKey {

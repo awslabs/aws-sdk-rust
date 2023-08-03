@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnector {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
     /// <p>The name of the Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The outbound host name for the Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub outbound_host_name: ::std::option::Option<::std::string::String>,
     /// <p>Designates whether encryption is required for the Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub require_encryption: ::std::option::Option<bool>,
     /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub voice_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnector {

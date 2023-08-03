@@ -5,7 +5,6 @@
 pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -13,20 +12,15 @@ pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    #[doc(hidden)]
     pub lock_token: ::std::option::Option<::std::string::String>,
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
-    #[doc(hidden)]
     pub version_to_expire: ::std::option::Option<::std::string::String>,
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    #[doc(hidden)]
     pub expiry_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UpdateManagedRuleSetVersionExpiryDateInput {

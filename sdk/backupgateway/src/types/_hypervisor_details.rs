@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HypervisorDetails {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the name of the specified hypervisor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the current state of the specified hypervisor.</p>
     /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::HypervisorState>,
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    #[doc(hidden)]
     pub last_successful_metadata_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    #[doc(hidden)]
     pub latest_metadata_sync_status_message: ::std::option::Option<::std::string::String>,
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    #[doc(hidden)]
     pub latest_metadata_sync_status: ::std::option::Option<crate::types::SyncMetadataStatus>,
 }
 impl HypervisorDetails {

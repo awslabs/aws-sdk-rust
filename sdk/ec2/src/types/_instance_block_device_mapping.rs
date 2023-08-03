@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {

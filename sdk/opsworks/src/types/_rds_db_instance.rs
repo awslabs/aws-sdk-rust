@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsDbInstance {
     /// <p>The instance's ARN.</p>
-    #[doc(hidden)]
     pub rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance identifier.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The master user name.</p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    #[doc(hidden)]
     pub db_password: ::std::option::Option<::std::string::String>,
     /// <p>The instance's AWS region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The instance's address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The instance's database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack with which the instance is registered.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
-    #[doc(hidden)]
     pub missing_on_rds: ::std::option::Option<bool>,
 }
 impl RdsDbInstance {

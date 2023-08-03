@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorHandlingConfig {
     /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
-    #[doc(hidden)]
     pub fail_on_first_destination_error: bool,
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the name of the Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl ErrorHandlingConfig {

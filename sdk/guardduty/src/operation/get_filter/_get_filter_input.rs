@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the filter you want to get.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
 }
 impl GetFilterInput {

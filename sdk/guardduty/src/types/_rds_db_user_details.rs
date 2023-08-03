@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsDbUserDetails {
     /// <p>The user name used in the anomalous login attempt.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The application name used in the anomalous login attempt.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database instance involved in the anomalous login attempt.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
-    #[doc(hidden)]
     pub ssl: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method used by the user involved in the finding.</p>
-    #[doc(hidden)]
     pub auth_method: ::std::option::Option<::std::string::String>,
 }
 impl RdsDbUserDetails {

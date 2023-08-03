@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MsSmoothGroupSettings {
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    #[doc(hidden)]
     pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
-    #[doc(hidden)]
     pub audio_deduplication: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>,
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// Settings associated with the destination. Will vary based on the type of destination
-    #[doc(hidden)]
     pub destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::MsSmoothEncryptionSettings>,
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    #[doc(hidden)]
     pub fragment_length: ::std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    #[doc(hidden)]
     pub fragment_length_control: ::std::option::Option<crate::types::MsSmoothFragmentLengthControl>,
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
-    #[doc(hidden)]
     pub manifest_encoding: ::std::option::Option<crate::types::MsSmoothManifestEncoding>,
 }
 impl MsSmoothGroupSettings {

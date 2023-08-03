@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupOutput {
     /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }

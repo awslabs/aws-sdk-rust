@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamedEntityDefinition {
     /// <p>The name of the entity.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The property name to be used for the named entity.</p>
-    #[doc(hidden)]
     pub property_name: ::std::option::Option<::std::string::String>,
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
-    #[doc(hidden)]
     pub property_role: ::std::option::Option<crate::types::PropertyRole>,
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
-    #[doc(hidden)]
     pub property_usage: ::std::option::Option<crate::types::PropertyUsage>,
     /// <p>The definition of a metric.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
 }
 impl NamedEntityDefinition {

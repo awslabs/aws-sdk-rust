@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    #[doc(hidden)]
     pub discovery_region: ::std::option::Option<::std::string::String>,
     /// <p>Discovered account filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of discovered accounts to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetIpamDiscoveredAccountsInput {

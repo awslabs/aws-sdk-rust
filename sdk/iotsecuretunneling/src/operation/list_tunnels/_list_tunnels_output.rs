@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTunnelsOutput {
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub tunnel_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>>,
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

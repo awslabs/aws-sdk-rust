@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayPolicyTableOutput {
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
-    #[doc(hidden)]
     pub snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectVersionOutput {
     /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
-    #[doc(hidden)]
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

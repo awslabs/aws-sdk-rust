@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    #[doc(hidden)]
     pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
-    #[doc(hidden)]
     pub termination_protected: ::std::option::Option<bool>,
 }
 impl SetTerminationProtectionInput {

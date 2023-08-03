@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// <p>An ID for the connectivity information.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
-    #[doc(hidden)]
     pub host_address: ::std::option::Option<::std::string::String>,
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
-    #[doc(hidden)]
     pub port_number: i32,
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl ConnectivityInfo {

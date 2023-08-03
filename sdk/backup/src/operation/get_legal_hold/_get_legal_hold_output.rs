@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLegalHoldOutput {
     /// <p>This is the string title of the legal hold.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LegalHoldStatus>,
     /// <p>This is the returned string description of the legal hold.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>String describing the reason for removing the legal hold.</p>
-    #[doc(hidden)]
     pub cancel_description: ::std::option::Option<::std::string::String>,
     /// <p>This is the returned ID associated with a specified legal hold.</p>
-    #[doc(hidden)]
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub legal_hold_arn: ::std::option::Option<::std::string::String>,
     /// <p>Time in number format when legal hold was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time in number when legal hold was cancelled.</p>
-    #[doc(hidden)]
     pub cancellation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the date and time until which the legal hold record will be retained.</p>
-    #[doc(hidden)]
     pub retain_record_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    #[doc(hidden)]
     pub recovery_point_selection: ::std::option::Option<crate::types::RecoveryPointSelection>,
     _request_id: Option<String>,
 }

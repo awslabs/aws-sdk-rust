@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the blueprint was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    #[doc(hidden)]
     pub parameter_spec: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
-    #[doc(hidden)]
     pub blueprint_location: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_service_location: ::std::option::Option<::std::string::String>,
 }
 impl LastActiveDefinition {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway route host name to be matched on.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
     /// <p>The gateway route metadata to be matched on.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
     /// <p>The port number to match from the request.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl GrpcGatewayRouteMatch {

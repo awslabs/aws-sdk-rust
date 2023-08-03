@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentInput {
     /// <p>The identifier of the index that contains the documents to delete.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    #[doc(hidden)]
     pub document_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    #[doc(hidden)]
     pub data_source_sync_job_metric_target: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInput {

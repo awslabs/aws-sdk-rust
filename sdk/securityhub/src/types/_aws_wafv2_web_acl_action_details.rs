@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclActionDetails {
     /// <p> Specifies that WAF should allow requests by default. </p>
-    #[doc(hidden)]
     pub allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     /// <p> Specifies that WAF should block requests by default. </p>
-    #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
 }
 impl AwsWafv2WebAclActionDetails {

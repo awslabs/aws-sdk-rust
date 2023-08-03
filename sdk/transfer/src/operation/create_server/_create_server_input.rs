@@ -17,22 +17,18 @@ pub struct CreateServerInput {
     /// </ul> <note>
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_details: ::std::option::Option<crate::types::EndpointDetails>,
     /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
     /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
@@ -47,28 +43,22 @@ pub struct CreateServerInput {
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Manage host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
-    #[doc(hidden)]
     pub host_key: ::std::option::Option<::std::string::String>,
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
-    #[doc(hidden)]
     pub identity_provider_details: ::std::option::Option<crate::types::IdentityProviderDetails>,
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-    #[doc(hidden)]
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
-    #[doc(hidden)]
     pub logging_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
-    #[doc(hidden)]
     pub post_authentication_login_banner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
-    #[doc(hidden)]
     pub pre_authentication_login_banner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -85,7 +75,6 @@ pub struct CreateServerInput {
     /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
@@ -94,17 +83,13 @@ pub struct CreateServerInput {
     /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
     /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub protocol_details: ::std::option::Option<crate::types::ProtocolDetails>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub security_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
-    #[doc(hidden)]
     pub workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     /// <p>Specifies the log groups to which your server logs are sent.</p>
     /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
@@ -112,7 +97,6 @@ pub struct CreateServerInput {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    #[doc(hidden)]
     pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateServerInput {

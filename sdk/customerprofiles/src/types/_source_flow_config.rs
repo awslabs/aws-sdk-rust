@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFlowConfig {
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::SourceConnectorType>,
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
-    #[doc(hidden)]
     pub incremental_pull_config: ::std::option::Option<crate::types::IncrementalPullConfig>,
     /// <p>Specifies the information that is required to query a particular source connector.</p>
-    #[doc(hidden)]
     pub source_connector_properties: ::std::option::Option<crate::types::SourceConnectorProperties>,
 }
 impl SourceFlowConfig {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationParameters {
     /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
-    #[doc(hidden)]
     pub number_of_backtest_windows: ::std::option::Option<i32>,
     /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
     /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
-    #[doc(hidden)]
     pub back_test_window_offset: ::std::option::Option<i32>,
 }
 impl EvaluationParameters {

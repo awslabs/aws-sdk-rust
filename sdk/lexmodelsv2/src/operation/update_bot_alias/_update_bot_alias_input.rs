@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotAliasInput {
     /// <p>The unique identifier of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name to assign to the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description to assign to the bot alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new bot version to assign to the bot alias.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     /// <p>The identifier of the bot with the updated alias.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBotAliasInput {

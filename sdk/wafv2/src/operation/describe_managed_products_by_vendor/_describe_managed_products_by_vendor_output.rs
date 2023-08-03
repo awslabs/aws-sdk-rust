@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedProductsByVendorOutput {
     /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
-    #[doc(hidden)]
     pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }

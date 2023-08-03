@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configurations {
     /// <p>The broker's current configuration.</p>
-    #[doc(hidden)]
     pub current: ::std::option::Option<crate::types::ConfigurationId>,
     /// <p>The history of configurations applied to the broker.</p>
-    #[doc(hidden)]
     pub history: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>>,
     /// <p>The broker's pending configuration.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<crate::types::ConfigurationId>,
 }
 impl Configurations {

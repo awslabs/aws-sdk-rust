@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZendeskMetadata {
     /// <p> The desired authorization scope for the Zendesk account. </p>
-    #[doc(hidden)]
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ZendeskMetadata {

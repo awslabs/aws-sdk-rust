@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateLicenseInput {
     /// <p>The ID of the workspace to associate the license with.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of license to associate with the workspace.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
 }
 impl AssociateLicenseInput {

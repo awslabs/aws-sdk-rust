@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2StageDetails {
     /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Default route settings for the stage.</p>
-    #[doc(hidden)]
     pub default_route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
     /// <p>The identifier of the deployment that the stage is associated with. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::std::string::String>,
     /// <p>The route settings for the stage.</p>
-    #[doc(hidden)]
     pub route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the stage variables for the stage.</p>
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
@@ -38,19 +30,14 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about settings for logging access for the stage.</p>
-    #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
-    #[doc(hidden)]
     pub auto_deploy: bool,
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
-    #[doc(hidden)]
     pub last_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the stage is managed by API Gateway.</p>
-    #[doc(hidden)]
     pub api_gateway_managed: bool,
 }
 impl AwsApiGatewayV2StageDetails {

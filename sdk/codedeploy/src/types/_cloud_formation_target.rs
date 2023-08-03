@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationTarget {
     /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of&nbsp;<code>CloudFormationTarget</code>. </p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
-    #[doc(hidden)]
     pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p>The resource type for the CloudFormation blue/green deployment.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
-    #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl CloudFormationTarget {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterEventTopicInput {
     /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterEventTopicInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeSnapshot {
     /// <p>A unique identifier for the source cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the source node group (shard).</p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The cache node identifier for the node in the source cluster.</p>
-    #[doc(hidden)]
     pub cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the source node group (shard).</p>
-    #[doc(hidden)]
     pub node_group_configuration: ::std::option::Option<crate::types::NodeGroupConfiguration>,
     /// <p>The size of the cache on the source cache node.</p>
-    #[doc(hidden)]
     pub cache_size: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cache node was created in the source cluster.</p>
-    #[doc(hidden)]
     pub cache_node_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NodeSnapshot {

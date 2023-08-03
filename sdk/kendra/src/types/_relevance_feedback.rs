@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    #[doc(hidden)]
     pub relevance_value: ::std::option::Option<crate::types::RelevanceType>,
 }
 impl RelevanceFeedback {

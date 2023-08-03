@@ -11,10 +11,8 @@ pub struct GetFunctionConfigurationInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
 impl GetFunctionConfigurationInput {

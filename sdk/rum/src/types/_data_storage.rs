@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
-    #[doc(hidden)]
     pub cw_log: ::std::option::Option<crate::types::CwLog>,
 }
 impl DataStorage {

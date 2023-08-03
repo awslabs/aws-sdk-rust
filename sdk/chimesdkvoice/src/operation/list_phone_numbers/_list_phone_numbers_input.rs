@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersInput {
     /// <p>The status of your organization's phone numbers.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The phone number product types.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The filter to limit the number of results.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<crate::types::PhoneNumberAssociationName>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub filter_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token used to return the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersInput {

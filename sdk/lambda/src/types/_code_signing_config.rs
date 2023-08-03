@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    #[doc(hidden)]
     pub code_signing_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    #[doc(hidden)]
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Code signing configuration description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of allowed publishers.</p>
-    #[doc(hidden)]
     pub allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    #[doc(hidden)]
     pub code_signing_policies: ::std::option::Option<crate::types::CodeSigningPolicies>,
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
 }
 impl CodeSigningConfig {

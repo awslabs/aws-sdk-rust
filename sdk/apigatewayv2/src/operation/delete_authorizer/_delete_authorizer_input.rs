@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAuthorizerInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer identifier.</p>
-    #[doc(hidden)]
     pub authorizer_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAuthorizerInput {

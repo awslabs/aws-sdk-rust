@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSoftwareUpdateJobOutput {
     /// The IoT Job ARN corresponding to this update.
-    #[doc(hidden)]
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     /// The IoT Job Id corresponding to this update.
-    #[doc(hidden)]
     pub iot_job_id: ::std::option::Option<::std::string::String>,
     /// The software version installed on the device or devices after the update.
-    #[doc(hidden)]
     pub platform_software_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

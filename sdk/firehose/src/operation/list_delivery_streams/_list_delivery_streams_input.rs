@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsInput {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
@@ -12,10 +11,8 @@ pub struct ListDeliveryStreamsInput {
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    #[doc(hidden)]
     pub delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    #[doc(hidden)]
     pub exclusive_start_delivery_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ListDeliveryStreamsInput {

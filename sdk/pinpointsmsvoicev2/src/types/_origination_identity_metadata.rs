@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    #[doc(hidden)]
     pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the origination identity.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    #[doc(hidden)]
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl OriginationIdentityMetadata {

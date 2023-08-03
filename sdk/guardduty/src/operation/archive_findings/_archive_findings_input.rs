@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the findings that you want to archive.</p>
-    #[doc(hidden)]
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ArchiveFindingsInput {

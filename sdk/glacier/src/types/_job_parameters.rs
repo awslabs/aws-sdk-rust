@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobParameters {
     /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
-    #[doc(hidden)]
     pub archive_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
-    #[doc(hidden)]
     pub retrieval_byte_range: ::std::option::Option<::std::string::String>,
     /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters used for range inventory retrieval.</p>
-    #[doc(hidden)]
     pub inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
     /// <p>Contains the parameters that define a job.</p>
-    #[doc(hidden)]
     pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     /// <p>Contains information about the location where the select job results are stored.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl JobParameters {

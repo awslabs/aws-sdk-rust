@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub asserted_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the assertion rule. You can use any non-white space character in the name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many routing control states must be ON as the result of a transaction. For example, if you have three assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
-    #[doc(hidden)]
     pub rule_config: ::std::option::Option<crate::types::RuleConfig>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    #[doc(hidden)]
     pub safety_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status of an assertion rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    #[doc(hidden)]
     pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl AssertionRule {

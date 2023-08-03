@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeOutput {
     /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    #[doc(hidden)]
     pub create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     /// <p>The product codes.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The ID of the EBS snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

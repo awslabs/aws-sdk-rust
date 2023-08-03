@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddLayerVersionPermissionOutput {
     /// <p>The permission statement.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the current revision of the policy.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

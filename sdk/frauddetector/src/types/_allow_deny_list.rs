@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowDenyList {
     /// <p> The name of the list. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the list. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The variable type of the list. </p>
-    #[doc(hidden)]
     pub variable_type: ::std::option::Option<::std::string::String>,
     /// <p> The time the list was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p> The time the list was last updated. </p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the list. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AllowDenyList {

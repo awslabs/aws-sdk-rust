@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPreviewOutput {
     /// <p>An object that contains information about the access preview.</p>
-    #[doc(hidden)]
     pub access_preview: ::std::option::Option<crate::types::AccessPreview>,
     _request_id: Option<String>,
 }

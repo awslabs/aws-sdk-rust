@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cw_log_enabled: ::std::option::Option<bool>,
     /// <p>The name of the log group where the copies are stored.</p>
-    #[doc(hidden)]
     pub cw_log_group: ::std::option::Option<::std::string::String>,
 }
 impl CwLog {

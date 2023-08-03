@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose subscriber you want to update.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification whose subscriber you want to update.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The previous subscriber that is associated with a budget notification.</p>
-    #[doc(hidden)]
     pub old_subscriber: ::std::option::Option<crate::types::Subscriber>,
     /// <p>The updated subscriber that is associated with a budget notification.</p>
-    #[doc(hidden)]
     pub new_subscriber: ::std::option::Option<crate::types::Subscriber>,
 }
 impl UpdateSubscriberInput {

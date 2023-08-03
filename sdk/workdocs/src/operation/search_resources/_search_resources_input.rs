@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchResourcesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
-    #[doc(hidden)]
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    #[doc(hidden)]
     pub query_scopes: ::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>>,
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    #[doc(hidden)]
     pub additional_response_fields: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
     /// <p>Filters results based on entity metadata.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::Filters>,
     /// <p>Order by results in one or more categories.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>>,
     /// <p>Max results count per page.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl SearchResourcesInput {

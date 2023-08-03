@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the bucket where the restore results will be placed.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to the restore results for this request.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Contains the type of server-side encryption used.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>The canned ACL to apply to the restore results.</p>
-    #[doc(hidden)]
     pub canned_acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     /// <p>A list of grants that control access to the staged results.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     /// <p>The tag-set that is applied to the restore results.</p>
-    #[doc(hidden)]
     pub tagging: ::std::option::Option<crate::types::Tagging>,
     /// <p>A list of metadata to store with the restore results in S3.</p>
-    #[doc(hidden)]
     pub user_metadata: ::std::option::Option<::std::vec::Vec<crate::types::MetadataEntry>>,
     /// <p>The class of storage used to store the restore results.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
 }
 impl S3Location {

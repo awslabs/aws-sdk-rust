@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
-    #[doc(hidden)]
     pub query_arg_profile_config: ::std::option::Option<crate::types::QueryArgProfileConfig>,
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
-    #[doc(hidden)]
     pub content_type_profile_config: ::std::option::Option<crate::types::ContentTypeProfileConfig>,
 }
 impl FieldLevelEncryptionConfig {

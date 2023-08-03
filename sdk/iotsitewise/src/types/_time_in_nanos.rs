@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeInNanos {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
-    #[doc(hidden)]
     pub time_in_seconds: ::std::option::Option<i64>,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
-    #[doc(hidden)]
     pub offset_in_nanos: ::std::option::Option<i32>,
 }
 impl TimeInNanos {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetNetworkOutput {
     /// <p>Information about the network.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::Network>,
     /// <p> The network tags. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetUploadPartListItem {
     /// <p> The number identifying the part in an upload. </p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p> The size of the the part in an upload. </p>
-    #[doc(hidden)]
     pub part_size: ::std::option::Option<i64>,
     /// <p> The origin of the part being direct uploaded. </p>
-    #[doc(hidden)]
     pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p> The time stamp for when a direct upload was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time stamp for the most recent update to an uploaded part. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReadSetUploadPartListItem {

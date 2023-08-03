@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNotebookInstanceInput {
     /// <p>The name of the notebook instance to start.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl StartNotebookInstanceInput {

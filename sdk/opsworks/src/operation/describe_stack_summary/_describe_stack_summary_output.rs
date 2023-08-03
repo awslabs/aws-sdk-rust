@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSummaryOutput {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
-    #[doc(hidden)]
     pub stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,
 }

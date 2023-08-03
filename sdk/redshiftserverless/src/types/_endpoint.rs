@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    #[doc(hidden)]
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
 impl Endpoint {

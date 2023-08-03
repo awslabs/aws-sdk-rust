@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
-    #[doc(hidden)]
     pub dag_processing_logs: ::std::option::Option<crate::types::ModuleLoggingConfiguration>,
     /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
-    #[doc(hidden)]
     pub scheduler_logs: ::std::option::Option<crate::types::ModuleLoggingConfiguration>,
     /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
-    #[doc(hidden)]
     pub webserver_logs: ::std::option::Option<crate::types::ModuleLoggingConfiguration>,
     /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
-    #[doc(hidden)]
     pub worker_logs: ::std::option::Option<crate::types::ModuleLoggingConfiguration>,
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-    #[doc(hidden)]
     pub task_logs: ::std::option::Option<crate::types::ModuleLoggingConfiguration>,
 }
 impl LoggingConfiguration {

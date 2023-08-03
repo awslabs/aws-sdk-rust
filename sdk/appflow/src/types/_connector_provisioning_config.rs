@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
 }
 impl ConnectorProvisioningConfig {

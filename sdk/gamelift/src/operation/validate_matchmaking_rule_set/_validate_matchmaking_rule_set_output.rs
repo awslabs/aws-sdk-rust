@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetOutput {
     /// <p>A response indicating whether the rule set is valid.</p>
-    #[doc(hidden)]
     pub valid: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

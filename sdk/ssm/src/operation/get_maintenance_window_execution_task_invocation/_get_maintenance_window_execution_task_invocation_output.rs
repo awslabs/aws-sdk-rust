@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// <p>The maintenance window execution ID.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The task execution ID.</p>
-    #[doc(hidden)]
     pub task_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The invocation ID.</p>
-    #[doc(hidden)]
     pub invocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The execution ID.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the task type for a maintenance window.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The parameters used at the time that the task ran.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The task status for an invocation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Details are only available for certain status values.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time that the task started running on the target.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the task finished running on the target.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>The maintenance window target ID.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

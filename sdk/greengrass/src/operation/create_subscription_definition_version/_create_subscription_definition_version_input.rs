@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the subscription definition.
-    #[doc(hidden)]
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of subscriptions.
-    #[doc(hidden)]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
 }
 impl CreateSubscriptionDefinitionVersionInput {

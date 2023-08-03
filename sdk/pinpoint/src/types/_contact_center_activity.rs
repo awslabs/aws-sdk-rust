@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
-    #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
 }
 impl ContactCenterActivity {

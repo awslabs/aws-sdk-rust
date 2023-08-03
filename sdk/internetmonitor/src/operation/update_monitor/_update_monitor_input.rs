@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorInput {
     /// <p>The name of the monitor. </p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    #[doc(hidden)]
     pub resources_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub resources_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
-    #[doc(hidden)]
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
-    #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    #[doc(hidden)]
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl UpdateMonitorInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DryRunResults {
     /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<::std::string::String>,
     /// <p>Contains an optional message associated with the DryRunResults.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DryRunResults {

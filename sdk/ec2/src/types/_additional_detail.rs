@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalDetail {
     /// <p>The additional detail code.</p>
-    #[doc(hidden)]
     pub additional_detail_type: ::std::option::Option<::std::string::String>,
     /// <p>The path component.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The VPC endpoint service.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_service: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The rule options.</p>
-    #[doc(hidden)]
     pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
     /// <p>The rule group type.</p>
-    #[doc(hidden)]
     pub rule_group_type_pairs: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupTypePair>>,
     /// <p>The rule options.</p>
-    #[doc(hidden)]
     pub rule_group_rule_options_pairs: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupRuleOptionsPair>>,
     /// <p>The name of the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The load balancers.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisComponent>>,
 }
 impl AdditionalDetail {

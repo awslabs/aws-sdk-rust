@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The login name of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
-    #[doc(hidden)]
     pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The password of the user.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The time zone ID of the user.</p>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage for the user.</p>
-    #[doc(hidden)]
     pub storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {

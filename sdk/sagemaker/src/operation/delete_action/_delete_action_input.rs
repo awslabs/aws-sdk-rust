@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActionInput {
     /// <p>The name of the action to delete.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActionInput {

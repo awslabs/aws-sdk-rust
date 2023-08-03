@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSchemaInput {
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl PutSchemaInput {

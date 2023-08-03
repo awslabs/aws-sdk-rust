@@ -6,15 +6,12 @@
 pub struct AwsEcsServiceCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
     /// <p>The value must be between 0 and 100000.</p>
-    #[doc(hidden)]
     pub base: i32,
     /// <p>The short name of the capacity provider.</p>
-    #[doc(hidden)]
     pub capacity_provider: ::std::option::Option<::std::string::String>,
     /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
     /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
     /// <p>The value can be between 0 and 1000.</p>
-    #[doc(hidden)]
     pub weight: i32,
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {

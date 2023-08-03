@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaLayerAggregationResponse {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The Resource ID of the AWS Lambda function layer.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
-    #[doc(hidden)]
     pub layer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the AWS Lambda function layer.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl LambdaLayerAggregationResponse {

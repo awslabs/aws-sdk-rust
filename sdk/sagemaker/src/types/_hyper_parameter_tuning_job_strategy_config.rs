@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobStrategyConfig {
     /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
-    #[doc(hidden)]
     pub hyperband_strategy_config: ::std::option::Option<crate::types::HyperbandStrategyConfig>,
 }
 impl HyperParameterTuningJobStrategyConfig {

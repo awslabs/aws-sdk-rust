@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddInstanceFleetOutput {
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the instance fleet.</p>
-    #[doc(hidden)]
     pub instance_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

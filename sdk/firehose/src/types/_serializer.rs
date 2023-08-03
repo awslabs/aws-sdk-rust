@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Serializer {
     /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-    #[doc(hidden)]
     pub parquet_ser_de: ::std::option::Option<crate::types::ParquetSerDe>,
     /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-    #[doc(hidden)]
     pub orc_ser_de: ::std::option::Option<crate::types::OrcSerDe>,
 }
 impl Serializer {

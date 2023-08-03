@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageOutput {
     /// <p>The total amount of storage currently used for snapshots.</p>
-    #[doc(hidden)]
     pub total_backup_size_in_mega_bytes: f64,
     /// <p>The total amount of storage currently provisioned.</p>
-    #[doc(hidden)]
     pub total_provisioned_storage_in_mega_bytes: f64,
     _request_id: Option<String>,
 }

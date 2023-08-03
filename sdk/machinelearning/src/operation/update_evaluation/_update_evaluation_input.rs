@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    #[doc(hidden)]
     pub evaluation_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluationInput {

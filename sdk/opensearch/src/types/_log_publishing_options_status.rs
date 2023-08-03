@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>The status of the log publishing options for the domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::KeyPair>,
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    #[doc(hidden)]
     pub public_key_base64: ::std::option::Option<::std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
-    #[doc(hidden)]
     pub private_key_base64: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
 }

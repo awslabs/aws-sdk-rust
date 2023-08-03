@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PieChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::PieChartFieldWells>,
     /// <p>The sort configuration of a pie chart.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::PieChartSortConfiguration>,
     /// <p>The options that determine the shape of the chart. This option determines whether the chart is a pie chart or a donut chart.</p>
-    #[doc(hidden)]
     pub donut_options: ::std::option::Option<crate::types::DonutOptions>,
     /// <p>The small multiples setup for the visual.</p>
-    #[doc(hidden)]
     pub small_multiples_options: ::std::option::Option<crate::types::SmallMultiplesOptions>,
     /// <p>The label options of the group/color that is displayed in a pie chart.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options for the value that is displayed in a pie chart.</p>
-    #[doc(hidden)]
     pub value_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The palette (chart color) display setup of the visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    #[doc(hidden)]
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
 }
 impl PieChartConfiguration {

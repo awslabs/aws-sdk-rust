@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    #[doc(hidden)]
     pub index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,
 }

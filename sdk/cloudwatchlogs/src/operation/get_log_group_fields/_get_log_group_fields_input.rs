@@ -6,16 +6,13 @@ pub struct GetLogGroupFieldsInput {
     /// <p>The name of the log group to search.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<i64>,
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetLogGroupFieldsInput {

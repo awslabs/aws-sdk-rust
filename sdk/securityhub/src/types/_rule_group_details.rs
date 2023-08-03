@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupDetails {
     /// <p>Additional settings to use in the specified rules.</p>
-    #[doc(hidden)]
     pub rule_variables: ::std::option::Option<crate::types::RuleGroupVariables>,
     /// <p>The rules and actions for the rule group.</p>
     /// <p>For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>, or <code>StatefulRules</code>.</p>
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
-    #[doc(hidden)]
     pub rules_source: ::std::option::Option<crate::types::RuleGroupSource>,
 }
 impl RuleGroupDetails {

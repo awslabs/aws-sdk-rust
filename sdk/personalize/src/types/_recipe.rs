@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The name of the recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the FeatureTransformation object.</p>
-    #[doc(hidden)]
     pub feature_transformation_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the recipe.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The description of the recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One of the following values:</p>
     /// <ul>
@@ -31,10 +24,8 @@ pub struct Recipe {
     /// <li> <p>RELATED_ITEMS</p> </li>
     /// <li> <p>USER_PERSONALIZATION</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub recipe_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Recipe {

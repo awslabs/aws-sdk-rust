@@ -4,33 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotInput {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    #[doc(hidden)]
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
-    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    #[doc(hidden)]
     pub bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    #[doc(hidden)]
     pub test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of a bot to create.</p>
-    #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in a network to be created.</p>
-    #[doc(hidden)]
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
 }
 impl CreateBotInput {

@@ -9,10 +9,8 @@ pub struct CustomDeliveryConfiguration {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
 }
 impl CustomDeliveryConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleImage {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional name of a compatible image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CompatibleImage {

@@ -23,16 +23,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiKey {
     /// <p>The API key ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
-    #[doc(hidden)]
     pub expires: i64,
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
-    #[doc(hidden)]
     pub deletes: i64,
 }
 impl ApiKey {

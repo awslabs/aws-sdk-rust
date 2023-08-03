@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DirectTarget {
     /// <p>The name of the data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A single Amazon S3 path to write to.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data output format for the target.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TargetFormat>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    #[doc(hidden)]
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3DirectTarget {

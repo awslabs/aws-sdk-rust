@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameServerGroup {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A generated unique ID for the game server group.</p>
-    #[doc(hidden)]
     pub game_server_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
-    #[doc(hidden)]
     pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -24,13 +20,10 @@ pub struct GameServerGroup {
     /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
     /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
-    #[doc(hidden)]
     pub game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
@@ -42,19 +35,14 @@ pub struct GameServerGroup {
     /// <li> <p> <code>DELETED</code> - The game server group has been successfully deleted. </p> </li>
     /// <li> <p> <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GameServerGroupStatus>,
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    #[doc(hidden)]
     pub suspended_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameServerGroup {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataKeyValuePair {
     /// <p>A metadata key.</p>
-    #[doc(hidden)]
     pub metadata_key: ::std::option::Option<::std::string::String>,
     /// <p>A metadata key’s corresponding value.</p>
-    #[doc(hidden)]
     pub metadata_value: ::std::option::Option<::std::string::String>,
 }
 impl MetadataKeyValuePair {

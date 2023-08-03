@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyOutput {
     /// <p>The log group name or ARN that you specified in your request.</p>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The data protection policy document for this log group.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that this policy was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

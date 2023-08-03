@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    #[doc(hidden)]
     pub access_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    #[doc(hidden)]
     pub access_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
-    #[doc(hidden)]
     pub access_policy_identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
-    #[doc(hidden)]
     pub access_policy_resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    #[doc(hidden)]
     pub access_policy_permission: ::std::option::Option<crate::types::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub access_policy_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub access_policy_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

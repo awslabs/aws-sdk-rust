@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectAttributesOutput {
     /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
-    #[doc(hidden)]
     pub delete_marker: bool,
     /// <p>The creation date of the object.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version ID of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The checksum or digest of the object.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<crate::types::Checksum>,
     /// <p>A collection of parts associated with a multipart upload.</p>
-    #[doc(hidden)]
     pub object_parts: ::std::option::Option<crate::types::GetObjectAttributesParts>,
     /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>The size of the object in bytes.</p>
-    #[doc(hidden)]
     pub object_size: i64,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -11,7 +11,6 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub marketplace_onboarding_status: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
     _request_id: Option<String>,
 }

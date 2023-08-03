@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestIdentityProviderInput {
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
@@ -14,16 +13,12 @@ pub struct TestIdentityProviderInput {
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub server_protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The source IP address of the account to be tested.</p>
-    #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the account to be tested.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the account to be tested.</p>
-    #[doc(hidden)]
     pub user_password: ::std::option::Option<::std::string::String>,
 }
 impl TestIdentityProviderInput {

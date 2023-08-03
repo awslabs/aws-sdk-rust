@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyModesOfUse {
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
-    #[doc(hidden)]
     pub encrypt: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
-    #[doc(hidden)]
     pub decrypt: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to wrap other keys.</p>
-    #[doc(hidden)]
     pub wrap: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to unwrap other keys.</p>
-    #[doc(hidden)]
     pub unwrap: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to generate and verify other card and PIN verification keys.</p>
-    #[doc(hidden)]
     pub generate: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.</p>
-    #[doc(hidden)]
     pub sign: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to verify signatures.</p>
-    #[doc(hidden)]
     pub verify: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to derive new keys.</p>
-    #[doc(hidden)]
     pub derive_key: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
-    #[doc(hidden)]
     pub no_restrictions: bool,
 }
 impl KeyModesOfUse {

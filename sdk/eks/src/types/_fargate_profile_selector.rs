@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FargateProfileSelector {
     /// <p>The Kubernetes namespace that the selector should match.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileSelector {

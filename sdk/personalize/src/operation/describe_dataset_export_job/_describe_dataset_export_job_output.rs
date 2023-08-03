@@ -11,7 +11,6 @@ pub struct DescribeDatasetExportJobOutput {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dataset_export_job: ::std::option::Option<crate::types::DatasetExportJob>,
     _request_id: Option<String>,
 }

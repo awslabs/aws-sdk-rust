@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the first device in the connection.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the second device in the connection.</p>
-    #[doc(hidden)]
     pub connected_link_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInput {

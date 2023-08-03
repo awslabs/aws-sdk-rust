@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConfiguration {

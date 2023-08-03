@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
-    #[doc(hidden)]
     pub job_port: i32,
     /// <p>The port number on the application.</p>
-    #[doc(hidden)]
     pub application_port: i32,
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
-    #[doc(hidden)]
     pub enable_on_public_ip: bool,
 }
 impl PortMapping {

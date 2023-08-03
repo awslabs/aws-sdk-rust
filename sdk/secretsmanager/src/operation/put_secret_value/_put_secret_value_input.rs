@@ -6,7 +6,6 @@ pub struct PutSecretValueInput {
     /// <p>The ARN or name of the secret to add a new version to.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the new version of the secret. </p> <note>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty because they generate a random UUID for you. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>
@@ -18,22 +17,18 @@ pub struct PutSecretValueInput {
     /// <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you can't modify a secret version. You can only create new versions to store new secret values.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The binary data to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then pass the contents of the file as a parameter. </p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>You can't access this value from the Secrets Manager console.</p>
-    #[doc(hidden)]
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The text to encrypt and store in the new version of the secret. </p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>We recommend you create the secret string as JSON key/value pairs, as shown in the example.</p>
-    #[doc(hidden)]
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    #[doc(hidden)]
     pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutSecretValueInput {

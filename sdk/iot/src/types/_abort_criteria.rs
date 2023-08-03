@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<crate::types::JobExecutionFailureType>,
     /// <p>The type of job action to take to initiate the job abort.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::AbortAction>,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
-    #[doc(hidden)]
     pub threshold_percentage: ::std::option::Option<f64>,
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
-    #[doc(hidden)]
     pub min_number_of_executed_things: ::std::option::Option<i32>,
 }
 impl AbortCriteria {

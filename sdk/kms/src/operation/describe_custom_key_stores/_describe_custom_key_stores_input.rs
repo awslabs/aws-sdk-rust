@@ -5,17 +5,13 @@
 pub struct DescribeCustomKeyStoresInput {
     /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    #[doc(hidden)]
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    #[doc(hidden)]
     pub custom_key_store_name: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomKeyStoresInput {

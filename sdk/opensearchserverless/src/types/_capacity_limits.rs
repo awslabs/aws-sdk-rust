@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityLimits {
     /// <p>The maximum indexing capacity for collections.</p>
-    #[doc(hidden)]
     pub max_indexing_capacity_in_ocu: ::std::option::Option<i32>,
     /// <p>The maximum search capacity for collections.</p>
-    #[doc(hidden)]
     pub max_search_capacity_in_ocu: ::std::option::Option<i32>,
 }
 impl CapacityLimits {

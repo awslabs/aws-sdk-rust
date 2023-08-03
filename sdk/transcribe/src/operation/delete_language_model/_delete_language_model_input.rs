@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLanguageModelInput {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLanguageModelInput {

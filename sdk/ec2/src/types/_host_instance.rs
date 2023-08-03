@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostInstance {
     /// <p>The ID of instance that is running on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type (for example, <code>m3.medium</code>) of the running instance.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the instance.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl HostInstance {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose notification you want to update.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The previous notification that is associated with a budget.</p>
-    #[doc(hidden)]
     pub old_notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The updated notification to be associated with a budget.</p>
-    #[doc(hidden)]
     pub new_notification: ::std::option::Option<crate::types::Notification>,
 }
 impl UpdateNotificationInput {

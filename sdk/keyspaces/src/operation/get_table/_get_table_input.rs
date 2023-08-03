@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTableInput {

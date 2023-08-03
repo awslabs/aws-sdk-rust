@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
 }
 impl BaseKpiResult {

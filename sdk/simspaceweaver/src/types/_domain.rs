@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Domain {
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
     /// <p class="title"> <b>Lifecycle types</b> </p>
@@ -15,7 +14,6 @@ pub struct Domain {
     /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
 }
 impl Domain {

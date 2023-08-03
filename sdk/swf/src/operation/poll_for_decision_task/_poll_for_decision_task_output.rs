@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    #[doc(hidden)]
     pub task_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
-    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The workflow execution for which this decision task was created.</p>
-    #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of the workflow execution for which this decision task was created.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
-    #[doc(hidden)]
     pub previous_started_event_id: i64,
     _request_id: Option<String>,
 }

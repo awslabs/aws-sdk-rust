@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
-    #[doc(hidden)]
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAccountCustomizationInput {

@@ -6,22 +6,16 @@
 pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    #[doc(hidden)]
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
-    #[doc(hidden)]
     pub file_system_administrators_group: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {

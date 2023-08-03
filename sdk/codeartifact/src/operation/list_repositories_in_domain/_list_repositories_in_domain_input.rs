@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    #[doc(hidden)]
     pub administrator_account: ::std::option::Option<::std::string::String>,
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    #[doc(hidden)]
     pub repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRepositoriesInDomainInput {

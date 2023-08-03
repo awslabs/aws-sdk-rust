@@ -10,10 +10,8 @@ pub struct PersistentChat {
     /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
-    #[doc(hidden)]
     pub rehydration_type: ::std::option::Option<crate::types::RehydrationType>,
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    #[doc(hidden)]
     pub source_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl PersistentChat {

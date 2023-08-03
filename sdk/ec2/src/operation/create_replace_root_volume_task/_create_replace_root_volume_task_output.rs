@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplaceRootVolumeTaskOutput {
     /// <p>Information about the root volume replacement task.</p>
-    #[doc(hidden)]
     pub replace_root_volume_task: ::std::option::Option<crate::types::ReplaceRootVolumeTask>,
     _request_id: Option<String>,
 }

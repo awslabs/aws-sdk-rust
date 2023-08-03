@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppsListsOutput {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-    #[doc(hidden)]
     pub apps_lists: ::std::option::Option<::std::vec::Vec<crate::types::AppsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

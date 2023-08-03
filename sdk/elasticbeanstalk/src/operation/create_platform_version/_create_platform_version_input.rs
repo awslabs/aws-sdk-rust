@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlatformVersionInput {
     /// <p>The name of your custom platform.</p>
-    #[doc(hidden)]
     pub platform_name: ::std::option::Option<::std::string::String>,
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The location of the platform definition archive in Amazon S3.</p>
-    #[doc(hidden)]
     pub platform_definition_bundle: ::std::option::Option<crate::types::S3Location>,
     /// <p>The name of the builder environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>Specifies the tags applied to the new platform version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePlatformVersionInput {

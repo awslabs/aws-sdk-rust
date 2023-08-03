@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
-    #[doc(hidden)]
     pub partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

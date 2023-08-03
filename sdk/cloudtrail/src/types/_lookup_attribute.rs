@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    #[doc(hidden)]
     pub attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl LookupAttribute {

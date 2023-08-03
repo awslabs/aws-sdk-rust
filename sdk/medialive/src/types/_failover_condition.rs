@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverCondition {
     /// Failover condition type-specific settings.
-    #[doc(hidden)]
     pub failover_condition_settings: ::std::option::Option<crate::types::FailoverConditionSettings>,
 }
 impl FailoverCondition {

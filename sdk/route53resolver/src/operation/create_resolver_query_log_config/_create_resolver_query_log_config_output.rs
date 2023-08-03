@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfigOutput {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config: ::std::option::Option<crate::types::ResolverQueryLogConfig>,
     _request_id: Option<String>,
 }

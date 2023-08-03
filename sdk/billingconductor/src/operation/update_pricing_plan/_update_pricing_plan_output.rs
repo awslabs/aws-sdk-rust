@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The new description for the pricing rule. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p> The most recent time when the pricing plan was modified. </p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     _request_id: Option<String>,
 }

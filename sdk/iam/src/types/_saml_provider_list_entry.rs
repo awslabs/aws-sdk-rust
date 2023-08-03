@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date and time for the SAML provider.</p>
-    #[doc(hidden)]
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the SAML provider was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SamlProviderListEntry {

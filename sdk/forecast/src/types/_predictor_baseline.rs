@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorBaseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    #[doc(hidden)]
     pub baseline_metrics: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
 }
 impl PredictorBaseline {

@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMaintenanceInput {
     /// <p>The name of the server on which to run maintenance. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
     /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
     /// <ul>
     /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl StartMaintenanceInput {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDetail {
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PolicyDetail {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStudioOutput {
     /// <p>Information about a studio.</p>
-    #[doc(hidden)]
     pub studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,
 }

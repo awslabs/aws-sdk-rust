@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Fmtp {
     /// The format of the audio channel.
-    #[doc(hidden)]
     pub channel_order: ::std::option::Option<::std::string::String>,
     /// The format that is used for the representation of color.
-    #[doc(hidden)]
     pub colorimetry: ::std::option::Option<crate::types::Colorimetry>,
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    #[doc(hidden)]
     pub exact_framerate: ::std::option::Option<::std::string::String>,
     /// The pixel aspect ratio (PAR) of the video.
-    #[doc(hidden)]
     pub par: ::std::option::Option<::std::string::String>,
     /// The encoding range of the video.
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::Range>,
     /// The type of compression that was used to smooth the video’s appearance
-    #[doc(hidden)]
     pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
     /// The transfer characteristic system (TCS) that is used in the video.
-    #[doc(hidden)]
     pub tcs: ::std::option::Option<crate::types::Tcs>,
 }
 impl Fmtp {

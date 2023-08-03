@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    #[doc(hidden)]
     pub milestone_number: i32,
     _request_id: Option<String>,
 }

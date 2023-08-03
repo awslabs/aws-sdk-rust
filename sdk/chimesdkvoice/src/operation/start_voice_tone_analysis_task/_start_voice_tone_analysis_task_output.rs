@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartVoiceToneAnalysisTaskOutput {
     /// <p>The details of the voice tone analysis task.</p>
-    #[doc(hidden)]
     pub voice_tone_analysis_task: ::std::option::Option<crate::types::VoiceToneAnalysisTask>,
     _request_id: Option<String>,
 }

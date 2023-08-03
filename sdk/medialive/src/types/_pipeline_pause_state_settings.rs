@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
 impl PipelinePauseStateSettings {

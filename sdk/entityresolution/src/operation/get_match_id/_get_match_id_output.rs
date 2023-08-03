@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMatchIdOutput {
     /// <p>The unique identifiers for this group of match records.</p>
-    #[doc(hidden)]
     pub match_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

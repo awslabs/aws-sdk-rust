@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelVersionStatusInput {
     /// <p>The model ID of the model version to update.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The model version status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelVersionStatus>,
 }
 impl UpdateModelVersionStatusInput {

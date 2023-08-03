@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    #[doc(hidden)]
     pub principal_org_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique ID for the statement.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationPolicyStatement {

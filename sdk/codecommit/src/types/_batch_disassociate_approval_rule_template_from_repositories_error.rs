@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {

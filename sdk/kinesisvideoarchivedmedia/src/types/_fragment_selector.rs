@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    #[doc(hidden)]
     pub fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
-    #[doc(hidden)]
     pub timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelector {

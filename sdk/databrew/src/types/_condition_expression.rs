@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A column to apply this condition to.</p>
-    #[doc(hidden)]
     pub target_column: ::std::option::Option<::std::string::String>,
 }
 impl ConditionExpression {

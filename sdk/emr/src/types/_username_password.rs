@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UsernamePassword {
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl UsernamePassword {

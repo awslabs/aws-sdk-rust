@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegexMatchSetOutput {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
-    #[doc(hidden)]
     pub regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     _request_id: Option<String>,
 }

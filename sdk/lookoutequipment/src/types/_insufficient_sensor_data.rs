@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsufficientSensorData {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    #[doc(hidden)]
     pub missing_complete_sensor_data: ::std::option::Option<crate::types::MissingCompleteSensorData>,
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    #[doc(hidden)]
     pub sensors_with_short_date_range: ::std::option::Option<crate::types::SensorsWithShortDateRange>,
 }
 impl InsufficientSensorData {

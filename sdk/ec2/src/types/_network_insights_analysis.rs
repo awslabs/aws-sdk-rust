@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInsightsAnalysis {
     /// <p>The ID of the network insights analysis.</p>
-    #[doc(hidden)]
     pub network_insights_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network insights analysis.</p>
-    #[doc(hidden)]
     pub network_insights_analysis_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the path.</p>
-    #[doc(hidden)]
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    #[doc(hidden)]
     pub additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    #[doc(hidden)]
     pub filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time the analysis started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the network insights analysis.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>The status message, if the status is <code>failed</code>.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The warning message.</p>
-    #[doc(hidden)]
     pub warning_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the destination is reachable from the source.</p>
-    #[doc(hidden)]
     pub network_path_found: ::std::option::Option<bool>,
     /// <p>The components in the path from source to destination.</p>
-    #[doc(hidden)]
     pub forward_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
     /// <p>The components in the path from destination to source.</p>
-    #[doc(hidden)]
     pub return_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
     /// <p>The explanations. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability Analyzer explanation codes</a>.</p>
-    #[doc(hidden)]
     pub explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
     /// <p>Potential intermediate components.</p>
-    #[doc(hidden)]
     pub alternate_path_hints: ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
     /// <p>Potential intermediate accounts.</p>
-    #[doc(hidden)]
     pub suggested_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl NetworkInsightsAnalysis {

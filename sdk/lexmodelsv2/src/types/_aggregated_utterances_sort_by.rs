@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl AggregatedUtterancesSortBy {

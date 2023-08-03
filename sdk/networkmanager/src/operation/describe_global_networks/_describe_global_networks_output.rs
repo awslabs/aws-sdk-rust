@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalNetworksOutput {
     /// <p>Information about the global networks.</p>
-    #[doc(hidden)]
     pub global_networks: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
     pub evaluation_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub evaluation_data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEvaluationInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplacePermissionAssociationsWork {
     /// <p>The unique identifier for the background task associated with one <code>ReplacePermissionAssociations</code> request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that this background task is replacing.</p>
-    #[doc(hidden)]
     pub from_permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the managed permission that this background task is replacing.</p>
-    #[doc(hidden)]
     pub from_permission_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the managed permission that this background task is associating with the resource shares in place of the managed permission and version specified in <code>fromPermissionArn</code> and <code>fromPermissionVersion</code>.</p>
-    #[doc(hidden)]
     pub to_permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
-    #[doc(hidden)]
     pub to_permission_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
@@ -25,16 +20,12 @@ pub struct ReplacePermissionAssociationsWork {
     /// <li> <p> <code>COMPLETED</code> </p> </li>
     /// <li> <p> <code>FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
     /// <p>Specifies the reason for a <code>FAILED</code> status. This field is present only when there <code>status</code> is <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this asynchronous background task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the status of this background task was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplacePermissionAssociationsWork {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCrawlerScheduleInput {
     /// <p>The name of the crawler whose schedule to update.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCrawlerScheduleInput {

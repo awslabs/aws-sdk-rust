@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalClusterInput {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalClusterInput {

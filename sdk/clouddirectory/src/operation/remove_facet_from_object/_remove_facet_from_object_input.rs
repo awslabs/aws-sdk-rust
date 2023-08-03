@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFacetFromObjectInput {
     /// <p>The ARN of the directory in which the object resides.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>A reference to the object to remove the facet from.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl RemoveFacetFromObjectInput {

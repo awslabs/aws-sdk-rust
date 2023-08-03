@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetConfiguration {
     /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The ID of the Convertible Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetConfiguration {

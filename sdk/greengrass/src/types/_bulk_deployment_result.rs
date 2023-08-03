@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkDeploymentResult {
     /// The time, in ISO format, when the deployment was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// The ARN of the group deployment.
-    #[doc(hidden)]
     pub deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the group deployment.
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// The type of the deployment.
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// Details about the error.
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// The error message for a failed deployment
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// The ARN of the Greengrass group.
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
 impl BulkDeploymentResult {

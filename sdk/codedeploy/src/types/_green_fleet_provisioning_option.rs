@@ -9,7 +9,6 @@ pub struct GreenFleetProvisioningOption {
     /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
     /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::GreenFleetProvisioningAction>,
 }
 impl GreenFleetProvisioningOption {

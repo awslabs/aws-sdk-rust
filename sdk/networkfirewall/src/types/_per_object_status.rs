@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerObjectStatus {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
-    #[doc(hidden)]
     pub sync_status: ::std::option::Option<crate::types::PerObjectSyncStatus>,
     /// <p>The current version of the object that is either in sync or pending synchronization. </p>
-    #[doc(hidden)]
     pub update_token: ::std::option::Option<::std::string::String>,
 }
 impl PerObjectStatus {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageInput {

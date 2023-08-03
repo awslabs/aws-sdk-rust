@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestSetRecordsOutput {
     /// <p>The list of records from the test set.</p>
-    #[doc(hidden)]
     pub test_set_records: ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>,
     /// <p>A token that indicates whether there are more records to return in a response to the ListTestSetRecords operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSetRecords operation request to get the next page of records.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

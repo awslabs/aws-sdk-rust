@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerGateway {
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    #[doc(hidden)]
     pub bgp_asn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the customer gateway device's outside interface.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of customer gateway device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the customer gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CustomerGateway {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGuiSessionAccessDetailsOutput {
     /// <p>The resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The percentage of completion for the operation.</p>
-    #[doc(hidden)]
     pub percentage_complete: ::std::option::Option<i32>,
     /// <p>The reason the operation failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    #[doc(hidden)]
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
     _request_id: Option<String>,
 }

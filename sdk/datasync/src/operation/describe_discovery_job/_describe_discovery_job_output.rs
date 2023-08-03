@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDiscoveryJobOutput {
     /// <p>The ARN of the on-premises storage system you're running the discovery job on.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the discovery job.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes that the discovery job runs.</p>
-    #[doc(hidden)]
     pub collection_duration_minutes: ::std::option::Option<i32>,
     /// <p>Indicates the status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DiscoveryJobStatus>,
     /// <p>The time when the discovery job started.</p>
-    #[doc(hidden)]
     pub job_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the discovery job ended.</p>
-    #[doc(hidden)]
     pub job_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

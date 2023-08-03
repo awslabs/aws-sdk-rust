@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptionsStatus {
     /// <p>The configured EBS options for the specified domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>The status of the EBS options for the specified domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl EbsOptionsStatus {

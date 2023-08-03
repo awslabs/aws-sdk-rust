@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
-    #[doc(hidden)]
     pub retention_period: i32,
     /// <p>The name of the snapshot copy grant.</p>
-    #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterSnapshotCopyStatus {

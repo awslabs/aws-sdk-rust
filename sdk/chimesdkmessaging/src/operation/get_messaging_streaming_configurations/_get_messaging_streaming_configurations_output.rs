@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMessagingStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
-    #[doc(hidden)]
     pub streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,
 }

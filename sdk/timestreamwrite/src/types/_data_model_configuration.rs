@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataModelConfiguration {
     /// <p></p>
-    #[doc(hidden)]
     pub data_model: ::std::option::Option<crate::types::DataModel>,
     /// <p></p>
-    #[doc(hidden)]
     pub data_model_s3_configuration: ::std::option::Option<crate::types::DataModelS3Configuration>,
 }
 impl DataModelConfiguration {

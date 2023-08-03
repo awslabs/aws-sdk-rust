@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    #[doc(hidden)]
     pub event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     _request_id: Option<String>,
 }

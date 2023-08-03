@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksOutput {
     /// <p>Contains a list of user access results.</p>
-    #[doc(hidden)]
     pub user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,
 }

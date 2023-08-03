@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCopyJobInput {
     /// <p>Uniquely identifies a copy job.</p>
-    #[doc(hidden)]
     pub copy_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCopyJobInput {

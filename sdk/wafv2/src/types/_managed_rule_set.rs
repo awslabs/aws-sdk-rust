@@ -9,22 +9,16 @@
 pub struct ManagedRuleSet {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the set that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
-    #[doc(hidden)]
     pub published_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     /// <p>The version that you would like your customers to use.</p>
-    #[doc(hidden)]
     pub recommended_version: ::std::option::Option<::std::string::String>,
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
@@ -35,7 +29,6 @@ pub struct ManagedRuleSet {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub label_namespace: ::std::option::Option<::std::string::String>,
 }
 impl ManagedRuleSet {

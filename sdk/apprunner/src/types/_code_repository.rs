@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRepository {
     /// <p>The location of the repository that contains the source code.</p>
-    #[doc(hidden)]
     pub repository_url: ::std::option::Option<::std::string::String>,
     /// <p>The version that should be used within the source code repository.</p>
-    #[doc(hidden)]
     pub source_code_version: ::std::option::Option<crate::types::SourceCodeVersion>,
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
     /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
-    #[doc(hidden)]
     pub code_configuration: ::std::option::Option<crate::types::CodeConfiguration>,
 }
 impl CodeRepository {

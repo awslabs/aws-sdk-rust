@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
-    #[doc(hidden)]
     pub service_action_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionParameter>>,
     _request_id: Option<String>,
 }

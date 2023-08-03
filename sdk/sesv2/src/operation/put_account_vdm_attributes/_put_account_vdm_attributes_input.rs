@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountVdmAttributesInput {
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-    #[doc(hidden)]
     pub vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
 }
 impl PutAccountVdmAttributesInput {

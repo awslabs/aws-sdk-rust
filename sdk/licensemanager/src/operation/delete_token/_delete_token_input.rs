@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTokenInput {
     /// <p>Token ID.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTokenInput {

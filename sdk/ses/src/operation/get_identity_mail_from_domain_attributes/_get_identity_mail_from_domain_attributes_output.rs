@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
-    #[doc(hidden)]
     pub mail_from_domain_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,
     _request_id: Option<String>,

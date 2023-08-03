@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application to delete.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSimulationApplicationInput {

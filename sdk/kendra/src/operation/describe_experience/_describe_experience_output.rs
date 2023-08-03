@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExperienceOutput {
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the name of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ExperienceConfiguration>,
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Shows the description for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExperienceStatus>,
     /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

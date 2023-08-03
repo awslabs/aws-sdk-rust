@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelephonySettings {
     /// <p>Allows or denies inbound calling.</p>
-    #[doc(hidden)]
     pub inbound_calling: ::std::option::Option<bool>,
     /// <p>Allows or denies outbound calling.</p>
-    #[doc(hidden)]
     pub outbound_calling: ::std::option::Option<bool>,
     /// <p>Allows or denies SMS messaging.</p>
-    #[doc(hidden)]
     pub sms: ::std::option::Option<bool>,
 }
 impl TelephonySettings {

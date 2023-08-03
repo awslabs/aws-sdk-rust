@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
-    #[doc(hidden)]
     pub dashboard_enabled: ::std::option::Option<bool>,
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    #[doc(hidden)]
     pub subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInputProcessingConfigurationInput {

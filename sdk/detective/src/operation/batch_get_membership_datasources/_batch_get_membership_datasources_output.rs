@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesOutput {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    #[doc(hidden)]
     pub membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    #[doc(hidden)]
     pub unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
     _request_id: Option<String>,
 }

@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceExperimentsInput {
     /// <p>Selects inference experiments whose names contain this name.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
     /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::InferenceExperimentStatus>,
     /// <p>Selects inference experiments which were created after this timestamp.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects inference experiments which were created before this timestamp.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The column by which to sort the listed inference experiments.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortInferenceExperimentsBy>,
     /// <p>The direction of sorting (ascending or descending).</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p> The response from the last list when returning a list large enough to need tokening. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to select.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListInferenceExperimentsInput {

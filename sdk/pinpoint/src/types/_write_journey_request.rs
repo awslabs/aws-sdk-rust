@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteJourneyRequest {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
-    #[doc(hidden)]
     pub activities: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The messaging and entry limits for the journey.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::JourneyLimits>,
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. To base the schedule on each participant's local time, set this value to true.</p>
-    #[doc(hidden)]
     pub local_time: ::std::option::Option<bool>,
     /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
@@ -29,19 +23,14 @@ pub struct WriteJourneyRequest {
     /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
-    #[doc(hidden)]
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub refresh_frequency: ::std::option::Option<::std::string::String>,
     /// <p>The schedule settings for the journey.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::JourneySchedule>,
     /// <p>The unique identifier for the first activity in the journey. The identifier for this activity can contain a maximum of 128 characters. The characters must be alphanumeric characters.</p>
-    #[doc(hidden)]
     pub start_activity: ::std::option::Option<::std::string::String>,
     /// <p>The segment that defines which users are participants in the journey.</p>
-    #[doc(hidden)]
     pub start_condition: ::std::option::Option<crate::types::StartCondition>,
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
@@ -50,25 +39,18 @@ pub struct WriteJourneyRequest {
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
-    #[doc(hidden)]
     pub wait_for_quiet_time: ::std::option::Option<bool>,
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
-    #[doc(hidden)]
     pub refresh_on_segment_update: ::std::option::Option<bool>,
     /// <p>The channel-specific configurations for the journey.</p>
-    #[doc(hidden)]
     pub journey_channel_settings: ::std::option::Option<crate::types::JourneyChannelSettings>,
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
-    #[doc(hidden)]
     pub sending_schedule: ::std::option::Option<bool>,
     /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    #[doc(hidden)]
     pub open_hours: ::std::option::Option<crate::types::OpenHours>,
     /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    #[doc(hidden)]
     pub closed_days: ::std::option::Option<crate::types::ClosedDays>,
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
@@ -77,7 +59,6 @@ pub struct WriteJourneyRequest {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    #[doc(hidden)]
     pub timezone_estimation_methods: ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
 }
 impl WriteJourneyRequest {

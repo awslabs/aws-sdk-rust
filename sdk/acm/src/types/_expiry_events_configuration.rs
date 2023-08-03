@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpiryEventsConfiguration {
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
-    #[doc(hidden)]
     pub days_before_expiry: ::std::option::Option<i32>,
 }
 impl ExpiryEventsConfiguration {

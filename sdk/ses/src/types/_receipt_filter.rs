@@ -11,10 +11,8 @@ pub struct ReceiptFilter {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
-    #[doc(hidden)]
     pub ip_filter: ::std::option::Option<crate::types::ReceiptIpFilter>,
 }
 impl ReceiptFilter {

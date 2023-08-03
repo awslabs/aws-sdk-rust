@@ -10,7 +10,6 @@ pub struct GetSqlInjectionMatchSetOutput {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     _request_id: Option<String>,
 }

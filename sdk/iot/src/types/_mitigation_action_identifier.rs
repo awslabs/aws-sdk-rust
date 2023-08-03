@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when this mitigation action was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MitigationActionIdentifier {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImageBuilderInput {
     /// <p>The name of the image builder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    #[doc(hidden)]
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
 }
 impl StartImageBuilderInput {

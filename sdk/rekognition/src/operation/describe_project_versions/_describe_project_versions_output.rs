@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsOutput {
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
-    #[doc(hidden)]
     pub project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

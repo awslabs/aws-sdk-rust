@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
-    #[doc(hidden)]
     pub source_template: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
 }
 impl AnalysisSourceEntity {

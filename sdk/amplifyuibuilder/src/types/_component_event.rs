@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Describes information about the action.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::ActionParameters>,
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    #[doc(hidden)]
     pub binding_event: ::std::option::Option<::std::string::String>,
 }
 impl ComponentEvent {

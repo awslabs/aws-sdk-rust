@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyPreviewResult {
     /// <p>The list of tags associated with this image.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
-    #[doc(hidden)]
     pub image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of action to be taken.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::LifecyclePolicyRuleAction>,
     /// <p>The priority of the applied rule.</p>
-    #[doc(hidden)]
     pub applied_rule_priority: ::std::option::Option<i32>,
 }
 impl LifecyclePolicyPreviewResult {

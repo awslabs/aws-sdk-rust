@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyContentTypeOptions {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolvedArtifact {
     /// <p>Specifies the type of artifact.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ArtifactsType>,
     /// <p>The location of the artifact.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the artifact.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResolvedArtifact {

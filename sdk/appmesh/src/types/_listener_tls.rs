@@ -10,13 +10,10 @@ pub struct ListenerTls {
     /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
     /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ListenerTlsMode>,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::ListenerTlsCertificate>,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
 }
 impl ListenerTls {

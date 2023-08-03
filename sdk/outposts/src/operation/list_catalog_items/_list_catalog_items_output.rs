@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCatalogItemsOutput {
     /// <p>Information about the catalog items.</p>
-    #[doc(hidden)]
     pub catalog_items: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

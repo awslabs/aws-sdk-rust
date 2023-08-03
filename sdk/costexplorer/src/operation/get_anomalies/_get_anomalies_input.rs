@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomaliesInput {
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-    #[doc(hidden)]
     pub date_interval: ::std::option::Option<crate::types::AnomalyDateInterval>,
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
-    #[doc(hidden)]
     pub total_impact: ::std::option::Option<crate::types::TotalImpactFilter>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of entries a paginated response contains. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetAnomaliesInput {

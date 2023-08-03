@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group member (user).</p>
-    #[doc(hidden)]
     pub member_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupMember {

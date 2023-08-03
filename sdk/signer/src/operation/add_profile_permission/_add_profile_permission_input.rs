@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddProfilePermissionInput {
     /// <p>The human-readable name of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the current profile revision.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the cross-account permission statement.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
 impl AddProfilePermissionInput {

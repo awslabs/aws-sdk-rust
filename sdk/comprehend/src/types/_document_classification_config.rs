@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentClassificationConfig {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
     /// <p>One or more labels to associate with the custom classifier.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DocumentClassificationConfig {

@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQualificationTypeInput {
     /// <p>The ID of the Qualification type to update.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The new description of the Qualification type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    #[doc(hidden)]
     pub qualification_type_status: ::std::option::Option<crate::types::QualificationTypeStatus>,
     /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
-    #[doc(hidden)]
     pub test: ::std::option::Option<::std::string::String>,
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-    #[doc(hidden)]
     pub answer_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
-    #[doc(hidden)]
     pub test_duration_in_seconds: ::std::option::Option<i64>,
     /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
-    #[doc(hidden)]
     pub retry_delay_in_seconds: ::std::option::Option<i64>,
     /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
-    #[doc(hidden)]
     pub auto_granted: ::std::option::Option<bool>,
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
-    #[doc(hidden)]
     pub auto_granted_value: ::std::option::Option<i32>,
 }
 impl UpdateQualificationTypeInput {

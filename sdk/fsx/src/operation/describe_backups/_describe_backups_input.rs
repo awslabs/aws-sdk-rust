@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupsInput {
     /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
-    #[doc(hidden)]
     pub backup_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBackupsInput {

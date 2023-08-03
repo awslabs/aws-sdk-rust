@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsConfig {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-    #[doc(hidden)]
     pub server_name_to_verify: ::std::option::Option<::std::string::String>,
 }
 impl TlsConfig {

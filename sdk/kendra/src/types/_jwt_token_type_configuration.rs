@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
-    #[doc(hidden)]
     pub key_location: ::std::option::Option<crate::types::KeyLocation>,
     /// <p>The signing key URL.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    #[doc(hidden)]
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user name attribute field.</p>
-    #[doc(hidden)]
     pub user_name_attribute_field: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute field.</p>
-    #[doc(hidden)]
     pub group_attribute_field: ::std::option::Option<::std::string::String>,
     /// <p>The issuer of the token.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The regular expression that identifies the claim.</p>
-    #[doc(hidden)]
     pub claim_regex: ::std::option::Option<::std::string::String>,
 }
 impl JwtTokenTypeConfiguration {

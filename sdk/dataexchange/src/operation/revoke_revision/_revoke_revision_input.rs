@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    #[doc(hidden)]
     pub revocation_comment: ::std::option::Option<::std::string::String>,
 }
 impl RevokeRevisionInput {

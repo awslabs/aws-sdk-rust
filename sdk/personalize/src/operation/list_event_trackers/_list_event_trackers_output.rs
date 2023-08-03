@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventTrackersOutput {
     /// <p>A list of event trackers.</p>
-    #[doc(hidden)]
     pub event_trackers: ::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>>,
     /// <p>A token for getting the next set of event trackers (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

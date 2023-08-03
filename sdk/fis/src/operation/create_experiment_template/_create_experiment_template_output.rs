@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
-    #[doc(hidden)]
     pub experiment_template: ::std::option::Option<crate::types::ExperimentTemplate>,
     _request_id: Option<String>,
 }

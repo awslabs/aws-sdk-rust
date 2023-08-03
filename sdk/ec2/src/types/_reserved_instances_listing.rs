@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesListing {
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The time the listing was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of instances in this state.</p>
-    #[doc(hidden)]
     pub instance_counts: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCount>>,
     /// <p>The price of the Reserved Instance listing.</p>
-    #[doc(hidden)]
     pub price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceSchedule>>,
     /// <p>The ID of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Reserved Instance listing.</p>
-    #[doc(hidden)]
     pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Reserved Instance listing.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ListingStatus>,
     /// <p>The reason for the current status of the Reserved Instance listing. The response can be blank.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The last modified timestamp of the listing.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedInstancesListing {

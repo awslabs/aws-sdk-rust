@@ -6,22 +6,16 @@
 pub struct ModifySpotFleetRequestInput {
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    #[doc(hidden)]
     pub excess_capacity_termination_policy: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
-    #[doc(hidden)]
     pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
     /// <p>The ID of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the fleet.</p>
-    #[doc(hidden)]
     pub target_capacity: ::std::option::Option<i32>,
     /// <p>The number of On-Demand Instances in the fleet.</p>
-    #[doc(hidden)]
     pub on_demand_target_capacity: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
 }
 impl ModifySpotFleetRequestInput {

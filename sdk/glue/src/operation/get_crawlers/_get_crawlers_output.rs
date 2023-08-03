@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
-    #[doc(hidden)]
     pub crawlers: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

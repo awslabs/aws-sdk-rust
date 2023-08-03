@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    #[doc(hidden)]
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>>,
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    #[doc(hidden)]
     pub session_duration_in_minutes: i32,
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChatTokenInput {

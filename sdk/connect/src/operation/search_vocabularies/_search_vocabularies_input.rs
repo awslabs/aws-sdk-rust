@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VocabularyState>,
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    #[doc(hidden)]
     pub name_starts_with: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
 }
 impl SearchVocabulariesInput {

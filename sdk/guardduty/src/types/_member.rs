@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The ID of the member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID of the member account.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The administrator account ID.</p>
-    #[doc(hidden)]
     pub master_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the member and the administrator.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::std::string::String>,
     /// <p>The last-updated timestamp of the member.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::string::String>,
     /// <p>The administrator account ID.</p>
-    #[doc(hidden)]
     pub administrator_id: ::std::option::Option<::std::string::String>,
 }
 impl Member {

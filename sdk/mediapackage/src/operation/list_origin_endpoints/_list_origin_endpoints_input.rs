@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOriginEndpointsInput {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// The upper bound on the number of records to return.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// A token used to resume pagination from the end of a previous request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOriginEndpointsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
-    #[doc(hidden)]
     pub max: f64,
 }
 impl AttackVolumeStatistics {

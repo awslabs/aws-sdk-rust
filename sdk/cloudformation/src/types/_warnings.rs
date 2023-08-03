@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Warnings {
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    #[doc(hidden)]
     pub unrecognized_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Warnings {

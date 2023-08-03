@@ -14,10 +14,8 @@ pub struct Payload {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    #[doc(hidden)]
     pub content_expression: ::std::option::Option<::std::string::String>,
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PayloadType>,
 }
 impl Payload {

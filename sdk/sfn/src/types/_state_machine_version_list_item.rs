@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateMachineVersionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    #[doc(hidden)]
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation date of a state machine version.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StateMachineVersionListItem {

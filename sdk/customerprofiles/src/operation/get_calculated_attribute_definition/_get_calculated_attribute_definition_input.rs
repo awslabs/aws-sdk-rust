@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculatedAttributeDefinitionInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the calculated attribute.</p>
-    #[doc(hidden)]
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCalculatedAttributeDefinitionInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trust anchor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Indicates whether the trust anchor is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    #[doc(hidden)]
     pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>>,
 }
 impl TrustAnchorDetail {

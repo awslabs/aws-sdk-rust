@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionProfileOutput {
     /// <p>Returned when you create a new field-level encryption profile.</p>
-    #[doc(hidden)]
     pub field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     /// <p>The fully qualified URI of the new profile resource just created.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

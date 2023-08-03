@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub publish: ::std::option::Option<bool>,
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStateMachineInput {

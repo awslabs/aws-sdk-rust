@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     /// <p>The name of the index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {

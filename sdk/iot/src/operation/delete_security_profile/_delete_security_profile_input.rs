@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSecurityProfileInput {
     /// <p>The name of the security profile to be deleted.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
 }
 impl DeleteSecurityProfileInput {

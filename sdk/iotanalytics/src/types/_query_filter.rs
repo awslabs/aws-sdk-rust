@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
-    #[doc(hidden)]
     pub delta_time: ::std::option::Option<crate::types::DeltaTime>,
 }
 impl QueryFilter {

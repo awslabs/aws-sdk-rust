@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceRegion {
     /// <p>The name of the source Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The status of the source Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub supports_db_instance_automated_backups_replication: bool,
 }
 impl SourceRegion {

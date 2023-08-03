@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>The number of columns in the result set.</p>
-    #[doc(hidden)]
     pub column_count: i64,
     /// <p>The metadata of the columns in the result set.</p>
-    #[doc(hidden)]
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
 }
 impl ResultSetMetadata {

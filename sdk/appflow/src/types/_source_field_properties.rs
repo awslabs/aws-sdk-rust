@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFieldProperties {
     /// <p> Indicates whether the field can be returned in a search result. </p>
-    #[doc(hidden)]
     pub is_retrievable: bool,
     /// <p> Indicates if the field can be queried. </p>
-    #[doc(hidden)]
     pub is_queryable: bool,
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
-    #[doc(hidden)]
     pub is_timestamp_field_for_incremental_queries: bool,
 }
 impl SourceFieldProperties {

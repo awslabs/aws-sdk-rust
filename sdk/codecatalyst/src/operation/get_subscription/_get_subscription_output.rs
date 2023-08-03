@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriptionOutput {
     /// <p>The type of the billing plan for the space.</p>
-    #[doc(hidden)]
     pub subscription_type: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    #[doc(hidden)]
     pub aws_account_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

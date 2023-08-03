@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyProviderSettings {
     /// Static Key Settings
-    #[doc(hidden)]
     pub static_key_settings: ::std::option::Option<crate::types::StaticKeySettings>,
 }
 impl KeyProviderSettings {

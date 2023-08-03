@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    #[doc(hidden)]
     pub host_key_body: ::std::option::Option<::std::string::String>,
     /// <p>The text description that identifies this host key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportHostKeyInput {

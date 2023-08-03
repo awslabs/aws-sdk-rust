@@ -8,11 +8,9 @@
 pub struct EntityIdentifier {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an entity.</p>
     /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl EntityIdentifier {

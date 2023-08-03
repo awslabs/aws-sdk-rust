@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RescoreInput {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    #[doc(hidden)]
     pub rescore_execution_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The input query from the search service.</p>
-    #[doc(hidden)]
     pub search_query: ::std::option::Option<::std::string::String>,
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    #[doc(hidden)]
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
 }
 impl RescoreInput {

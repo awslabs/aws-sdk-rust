@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSamplingRuleOutput {
     /// <p>The deleted rule definition and metadata.</p>
-    #[doc(hidden)]
     pub sampling_rule_record: ::std::option::Option<crate::types::SamplingRuleRecord>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectAppAuthorizationOutput {
     /// <p>Contains a summary of the app authorization.</p>
-    #[doc(hidden)]
     pub app_authorization_summary: ::std::option::Option<crate::types::AppAuthorizationSummary>,
     _request_id: Option<String>,
 }

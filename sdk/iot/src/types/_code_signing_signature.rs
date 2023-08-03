@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigningSignature {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
-    #[doc(hidden)]
     pub inline_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CodeSigningSignature {

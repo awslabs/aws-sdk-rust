@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDiskInput {
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
-    #[doc(hidden)]
     pub force_delete_add_ons: ::std::option::Option<bool>,
 }
 impl DeleteDiskInput {

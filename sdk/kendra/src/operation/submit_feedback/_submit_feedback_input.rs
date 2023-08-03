@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    #[doc(hidden)]
     pub click_feedback_items: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>,
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    #[doc(hidden)]
     pub relevance_feedback_items: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>,
 }
 impl SubmitFeedbackInput {

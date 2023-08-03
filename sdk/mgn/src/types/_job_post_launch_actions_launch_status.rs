@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobPostLaunchActionsLaunchStatus {
     /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
-    #[doc(hidden)]
     pub ssm_document: ::std::option::Option<crate::types::SsmDocument>,
     /// <p>AWS Systems Manager Document type.</p>
-    #[doc(hidden)]
     pub ssm_document_type: ::std::option::Option<crate::types::SsmDocumentType>,
     /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Document's execution status.</p>
-    #[doc(hidden)]
     pub execution_status: ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>,
     /// <p>AWS Systems Manager Document's failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl JobPostLaunchActionsLaunchStatus {

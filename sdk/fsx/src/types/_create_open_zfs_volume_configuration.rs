@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpenZfsVolumeConfiguration {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
-    #[doc(hidden)]
     pub parent_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub record_size_ki_b: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -24,22 +20,16 @@ pub struct CreateOpenZfsVolumeConfiguration {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
     /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshots: ::std::option::Option<bool>,
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    #[doc(hidden)]
     pub origin_snapshot: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    #[doc(hidden)]
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    #[doc(hidden)]
     pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
 }
 impl CreateOpenZfsVolumeConfiguration {

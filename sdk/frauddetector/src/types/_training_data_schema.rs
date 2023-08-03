@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingDataSchema {
     /// <p>The training data schema variables.</p>
-    #[doc(hidden)]
     pub model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The label schema.</p>
-    #[doc(hidden)]
     pub label_schema: ::std::option::Option<crate::types::LabelSchema>,
 }
 impl TrainingDataSchema {

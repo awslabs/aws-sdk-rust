@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Preset {
     /// An identifier for this resource that is unique within all of AWS.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// An optional category you create to organize your presets.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for preset creation.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description you create for each preset.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds when the preset was last updated.
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A name you create for each preset. Each name must be unique within your account.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Settings for preset
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::PresetSettings>,
     /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl Preset {

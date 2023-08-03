@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::InvalidRequestReason>,
     /// <p>Provides additional detail about why the request failed:</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct InvalidRequestException {
     /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
     /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<crate::types::InvalidRequestDetail>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

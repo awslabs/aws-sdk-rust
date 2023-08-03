@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
-    #[doc(hidden)]
     pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>>,
 }
 impl MultiPolygonGeometryInput {

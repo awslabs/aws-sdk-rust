@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
-    #[doc(hidden)]
     pub annotation_value: ::std::option::Option<crate::types::AnnotationValue>,
     /// <p>Services to which the annotation applies.</p>
-    #[doc(hidden)]
     pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
 }
 impl ValueWithServiceIds {

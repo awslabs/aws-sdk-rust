@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoParameters {
     /// <p>The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.</p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
@@ -63,14 +62,12 @@ pub struct VideoParameters {
     /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
     /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
-    #[doc(hidden)]
     pub codec_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>The maximum number of frames between key frames. Key frames are fully encoded frames; the frames between key frames are encoded based, in part, on the content of the key frames. The value is an integer formatted as a string; valid values are between 1 (every frame is a key frame) and 100000, inclusive. A higher value results in higher compression but may also discernibly decrease video quality.</p>
     /// <p>For <code>Smooth</code> outputs, the <code>FrameRate</code> must have a constant ratio to the <code>KeyframesMaxDist</code>. This allows <code>Smooth</code> playlists to switch between different quality levels while the file is being played.</p>
     /// <p>For example, an input file can have a <code>FrameRate</code> of 30 with a <code>KeyframesMaxDist</code> of 90. The output file then needs to have a ratio of 1:3. Valid outputs would have <code>FrameRate</code> of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and 30, respectively.</p>
     /// <p>Alternately, this can be achieved by setting <code>FrameRate</code> to auto and having the same values for <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.</p>
-    #[doc(hidden)]
     pub keyframes_max_dist: ::std::option::Option<::std::string::String>,
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
@@ -80,7 +77,6 @@ pub struct VideoParameters {
     /// </ul> <important>
     /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
-    #[doc(hidden)]
     pub fixed_gop: ::std::option::Option<::std::string::String>,
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
     /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
@@ -97,7 +93,6 @@ pub struct VideoParameters {
     /// <li> <p>4 - 20000 : 25000</p> </li>
     /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub bit_rate: ::std::option::Option<::std::string::String>,
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
     /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
@@ -124,10 +119,8 @@ pub struct VideoParameters {
     /// <li> <p>4 - 62914560</p> </li>
     /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video. Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than the desired maximum frame rate of the output video. Valid values include: <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
-    #[doc(hidden)]
     pub max_frame_rate: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
@@ -160,7 +153,6 @@ pub struct VideoParameters {
     /// <li> <p>4.1 - 2097152</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
@@ -169,16 +161,12 @@ pub struct VideoParameters {
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
-    #[doc(hidden)]
     pub aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
-    #[doc(hidden)]
     pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 96 and 3072.</p>
-    #[doc(hidden)]
     pub max_height: ::std::option::Option<::std::string::String>,
     /// <p>The value that Elastic Transcoder adds to the metadata in the output file.</p>
-    #[doc(hidden)]
     pub display_aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
@@ -189,15 +177,12 @@ pub struct VideoParameters {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of the output video to make the total size of the output video match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
-    #[doc(hidden)]
     pub padding_policy: ::std::option::Option<::std::string::String>,
     /// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p>
     /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
     /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
-    #[doc(hidden)]
     pub watermarks: ::std::option::Option<::std::vec::Vec<crate::types::PresetWatermark>>,
 }
 impl VideoParameters {

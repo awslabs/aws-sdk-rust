@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    #[doc(hidden)]
     pub license_conversion_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLicenseConversionTaskInput {

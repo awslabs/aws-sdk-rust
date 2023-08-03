@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-    #[doc(hidden)]
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobSummary {
     /// <p>The name of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
     /// <p>The date and time that the tuning job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job ended.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.</p>
-    #[doc(hidden)]
     pub training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning job launched.</p>
-    #[doc(hidden)]
     pub objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.</p>
-    #[doc(hidden)]
     pub resource_limits: ::std::option::Option<crate::types::ResourceLimits>,
 }
 impl HyperParameterTuningJobSummary {

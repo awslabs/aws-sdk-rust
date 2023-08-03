@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointAccessOutput {
     /// <p>The list of endpoints with access to the cluster.</p>
-    #[doc(hidden)]
     pub endpoint_access_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

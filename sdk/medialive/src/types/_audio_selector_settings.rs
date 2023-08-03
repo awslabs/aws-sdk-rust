@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSelectorSettings {
     /// Audio Hls Rendition Selection
-    #[doc(hidden)]
     pub audio_hls_rendition_selection: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
     /// Audio Language Selection
-    #[doc(hidden)]
     pub audio_language_selection: ::std::option::Option<crate::types::AudioLanguageSelection>,
     /// Audio Pid Selection
-    #[doc(hidden)]
     pub audio_pid_selection: ::std::option::Option<crate::types::AudioPidSelection>,
     /// Audio Track Selection
-    #[doc(hidden)]
     pub audio_track_selection: ::std::option::Option<crate::types::AudioTrackSelection>,
 }
 impl AudioSelectorSettings {

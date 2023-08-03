@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemConfig {
     /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
-    #[doc(hidden)]
     pub mount_path: ::std::option::Option<::std::string::String>,
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
-    #[doc(hidden)]
     pub default_uid: ::std::option::Option<i32>,
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
-    #[doc(hidden)]
     pub default_gid: ::std::option::Option<i32>,
 }
 impl FileSystemConfig {

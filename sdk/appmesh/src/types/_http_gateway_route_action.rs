@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::GatewayRouteTarget>,
     /// <p>The gateway route action to rewrite.</p>
-    #[doc(hidden)]
     pub rewrite: ::std::option::Option<crate::types::HttpGatewayRouteRewrite>,
 }
 impl HttpGatewayRouteAction {

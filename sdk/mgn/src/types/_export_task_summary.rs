@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskSummary {
     /// <p>Export task summary servers count.</p>
-    #[doc(hidden)]
     pub servers_count: i64,
     /// <p>Export task summary applications count.</p>
-    #[doc(hidden)]
     pub applications_count: i64,
     /// <p>Export task summary waves count.</p>
-    #[doc(hidden)]
     pub waves_count: i64,
 }
 impl ExportTaskSummary {

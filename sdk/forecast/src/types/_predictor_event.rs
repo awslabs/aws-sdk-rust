@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorEvent {
     /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the event occurred.</p>
-    #[doc(hidden)]
     pub datetime: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PredictorEvent {

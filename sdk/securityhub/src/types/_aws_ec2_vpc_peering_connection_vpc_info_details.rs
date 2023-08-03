@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcPeeringConnectionVpcInfoDetails {
     /// <p>The IPv4 CIDR block for the VPC. </p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
-    #[doc(hidden)]
     pub cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
-    #[doc(hidden)]
     pub peering_options: ::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails>,
     /// <p>The Amazon Web Services Region in which the VPC is located. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcPeeringConnectionVpcInfoDetails {

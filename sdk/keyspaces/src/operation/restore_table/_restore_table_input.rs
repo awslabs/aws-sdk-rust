@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
-    #[doc(hidden)]
     pub source_keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table.</p>
-    #[doc(hidden)]
     pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target keyspace.</p>
-    #[doc(hidden)]
     pub target_keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target table.</p>
-    #[doc(hidden)]
     pub target_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The restore timestamp in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub restore_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
@@ -25,7 +20,6 @@ pub struct RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub capacity_specification_override: ::std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -34,7 +28,6 @@ pub struct RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
@@ -43,11 +36,9 @@ pub struct RestoreTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>A list of key-value pair tags to be attached to the restored table. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RestoreTableInput {

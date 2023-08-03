@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkillsStoreSkill {
     /// <p>The ARN of the skill.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the skill.</p>
-    #[doc(hidden)]
     pub skill_name: ::std::option::Option<::std::string::String>,
     /// <p>Short description about the skill.</p>
-    #[doc(hidden)]
     pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL where the skill icon resides.</p>
-    #[doc(hidden)]
     pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p>Sample utterances that interact with the skill.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the skill.</p>
-    #[doc(hidden)]
     pub skill_details: ::std::option::Option<crate::types::SkillDetails>,
     /// <p>Linking support for a skill.</p>
-    #[doc(hidden)]
     pub supports_linking: bool,
 }
 impl SkillsStoreSkill {

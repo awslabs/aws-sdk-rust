@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeAlias {
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the theme alias.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the theme alias.</p>
-    #[doc(hidden)]
     pub theme_version_number: ::std::option::Option<i64>,
 }
 impl ThemeAlias {

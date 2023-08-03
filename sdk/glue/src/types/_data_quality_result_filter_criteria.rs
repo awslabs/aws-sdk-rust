@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityResultFilterCriteria {
     /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Filter results by the specified job name.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter results by the specified job run ID.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Filter results by runs that started after this time.</p>
-    #[doc(hidden)]
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter results by runs that started before this time.</p>
-    #[doc(hidden)]
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataQualityResultFilterCriteria {

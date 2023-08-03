@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagProjectInput {
     /// <p>The ID of the project to remove tags from.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to remove from the project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagProjectInput {

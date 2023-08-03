@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterSet {
     /// <p>The name of the character set.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the character set.</p>
-    #[doc(hidden)]
     pub character_set_description: ::std::option::Option<::std::string::String>,
 }
 impl CharacterSet {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceAccountCredentials {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the account.</p>
-    #[doc(hidden)]
     pub account_password: ::std::option::Option<::std::string::String>,
 }
 impl ServiceAccountCredentials {

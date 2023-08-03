@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetReference {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
-    #[doc(hidden)]
     pub reference_arn: ::std::option::Option<::std::string::String>,
 }
 impl IpSetReference {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group: ::std::option::Option<crate::types::ClusterSubnetGroup>,
     _request_id: Option<String>,
 }

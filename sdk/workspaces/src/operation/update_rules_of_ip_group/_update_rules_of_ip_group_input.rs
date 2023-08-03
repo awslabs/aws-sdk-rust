@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRulesOfIpGroupInput {
     /// <p>The identifier of the group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more rules.</p>
-    #[doc(hidden)]
     pub user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
 }
 impl UpdateRulesOfIpGroupInput {

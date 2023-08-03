@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsInput {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    #[doc(hidden)]
     pub shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl GetRecordsInput {

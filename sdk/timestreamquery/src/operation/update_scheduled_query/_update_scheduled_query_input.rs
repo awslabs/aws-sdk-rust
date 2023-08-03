@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduledQueryInput {
     /// <p>ARN of the scheuled query.</p>
-    #[doc(hidden)]
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
     /// <p>State of the scheduled query. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl UpdateScheduledQueryInput {

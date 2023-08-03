@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TimeToLiveStatus>,
 }
 impl TimeToLive {

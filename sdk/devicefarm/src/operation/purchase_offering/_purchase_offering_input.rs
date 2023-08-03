@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of device slots to purchase in an offering request.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-    #[doc(hidden)]
     pub offering_promotion_id: ::std::option::Option<::std::string::String>,
 }
 impl PurchaseOfferingInput {

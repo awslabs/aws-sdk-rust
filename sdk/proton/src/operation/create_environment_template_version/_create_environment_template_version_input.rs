@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the new version of an environment template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEnvironmentTemplateVersionInput {

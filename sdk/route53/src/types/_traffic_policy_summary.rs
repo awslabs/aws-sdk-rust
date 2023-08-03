@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you specified for the traffic policy when you created it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RrType>,
     /// <p>The version number of the latest version of the traffic policy.</p>
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<i32>,
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub traffic_policy_count: ::std::option::Option<i32>,
 }
 impl TrafficPolicySummary {

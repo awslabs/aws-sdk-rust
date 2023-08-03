@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederatedDatabase {
     /// <p>A unique identifier for the federated database.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the external metastore.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
 }
 impl FederatedDatabase {

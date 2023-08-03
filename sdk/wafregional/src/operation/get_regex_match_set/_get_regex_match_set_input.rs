@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    #[doc(hidden)]
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRegexMatchSetInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoomInput {
     /// <p>The ARN of the room for which to request details. Required.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRoomInput {

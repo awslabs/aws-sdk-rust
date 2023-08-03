@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
-    #[doc(hidden)]
     pub match_attributes: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
 }
 impl RuleGroupSourceStatelessRuleDefinition {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceDeploymentSummary {
     /// <p>The ARN of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage in the edge deployment plan.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployed stage.</p>
-    #[doc(hidden)]
     pub deployed_stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet to which the device belongs to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status of the device.</p>
-    #[doc(hidden)]
     pub device_deployment_status: ::std::option::Option<crate::types::DeviceDeploymentStatus>,
     /// <p>The detailed error message for the deployoment status result.</p>
-    #[doc(hidden)]
     pub device_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the device.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time when the deployment on the device started.</p>
-    #[doc(hidden)]
     pub deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceDeploymentSummary {

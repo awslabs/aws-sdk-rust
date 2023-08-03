@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharedImagePermissions {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the permissions for a shared image.</p>
-    #[doc(hidden)]
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
 }
 impl SharedImagePermissions {

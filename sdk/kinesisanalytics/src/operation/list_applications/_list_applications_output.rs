@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
-    #[doc(hidden)]
     pub application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>Returns true if there are more applications to retrieve.</p>
-    #[doc(hidden)]
     pub has_more_applications: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

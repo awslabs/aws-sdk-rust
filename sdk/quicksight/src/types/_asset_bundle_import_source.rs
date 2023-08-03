@@ -6,10 +6,8 @@
 pub struct AssetBundleImportSource {
     /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
     /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportSource {

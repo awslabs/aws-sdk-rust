@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotChannelAssociationInput {
     /// <p>The name of the association. The name is case sensitive. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBotChannelAssociationInput {

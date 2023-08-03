@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromSkillGroupInput {
     /// <p>The unique identifier of a skill. Required.</p>
-    #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a skill group to associate to a skill.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSkillFromSkillGroupInput {

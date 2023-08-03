@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQuery {
     /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>The aggregation period used for the data query.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::PeriodType>,
 }
 impl DataQuery {

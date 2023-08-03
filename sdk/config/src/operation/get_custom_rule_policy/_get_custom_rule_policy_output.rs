@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomRulePolicyOutput {
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

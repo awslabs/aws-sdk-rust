@@ -5,13 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfig {

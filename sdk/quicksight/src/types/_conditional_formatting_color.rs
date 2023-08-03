@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalFormattingColor {
     /// <p>Formatting configuration for solid color.</p>
-    #[doc(hidden)]
     pub solid: ::std::option::Option<crate::types::ConditionalFormattingSolidColor>,
     /// <p>Formatting configuration for gradient color.</p>
-    #[doc(hidden)]
     pub gradient: ::std::option::Option<crate::types::ConditionalFormattingGradientColor>,
 }
 impl ConditionalFormattingColor {

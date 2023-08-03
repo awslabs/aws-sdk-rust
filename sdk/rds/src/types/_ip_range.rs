@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRange {
     /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the IP range.</p>
-    #[doc(hidden)]
     pub cidrip: ::std::option::Option<::std::string::String>,
 }
 impl IpRange {

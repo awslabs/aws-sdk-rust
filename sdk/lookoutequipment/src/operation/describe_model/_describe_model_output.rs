@@ -4,68 +4,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelOutput {
     /// <p>The name of the ML model being described. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset being used by the ML being described. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
-    #[doc(hidden)]
     pub labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
-    #[doc(hidden)]
     pub training_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
-    #[doc(hidden)]
     pub training_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
-    #[doc(hidden)]
     pub evaluation_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
-    #[doc(hidden)]
     pub evaluation_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    #[doc(hidden)]
     pub data_pre_processing_configuration: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
     /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>Indicates the time at which the training of the ML model began. </p>
-    #[doc(hidden)]
     pub training_execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
-    #[doc(hidden)]
     pub training_execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
-    #[doc(hidden)]
     pub failed_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
-    #[doc(hidden)]
     pub model_metrics: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time and date at which the ML model was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    #[doc(hidden)]
     pub off_condition: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
-    #[doc(hidden)]
     pub f1_score: ::std::option::Option<f32>,
     /// <p>The overall recall metric value for the trained model. </p>
-    #[doc(hidden)]
     pub recall: ::std::option::Option<f32>,
     /// <p>The overall precision metric value for the trained model.</p>
-    #[doc(hidden)]
     pub precision: ::std::option::Option<f32>,
 }
 impl ModelPerformance {

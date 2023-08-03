@@ -5,55 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the application that is associated with this environment.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the environment.</p>
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Your description for this environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
-    #[doc(hidden)]
     pub cname_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::EnvironmentTier>,
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    #[doc(hidden)]
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub operations_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInput {

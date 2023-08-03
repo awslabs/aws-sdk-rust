@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngressGatewayBridge {
     /// The ID of the instance running this bridge.
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// The maximum expected bitrate (in bps) of the ingress bridge.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// The maximum number of outputs on the ingress bridge.
-    #[doc(hidden)]
     pub max_outputs: ::std::option::Option<i32>,
 }
 impl IngressGatewayBridge {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the offerings.</p>
-    #[doc(hidden)]
     pub offering_set: ::std::option::Option<::std::vec::Vec<crate::types::HostOffering>>,
     _request_id: Option<String>,
 }

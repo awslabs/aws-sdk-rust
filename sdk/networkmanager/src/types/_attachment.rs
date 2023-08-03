@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment account owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of attachment.</p>
-    #[doc(hidden)]
     pub attachment_type: ::std::option::Option<crate::types::AttachmentType>,
     /// <p>The state of the attachment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AttachmentState>,
     /// <p>The Region where the edge is located.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The attachment resource ARN.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy rule number associated with the attachment.</p>
-    #[doc(hidden)]
     pub attachment_policy_rule_number: ::std::option::Option<i32>,
     /// <p>The name of the segment attachment.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the attachment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The attachment to move from one segment to another.</p>
-    #[doc(hidden)]
     pub proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
     /// <p>The timestamp when the attachment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the attachment was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Attachment {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    #[doc(hidden)]
     pub customer_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct DirectoryConnectSettings {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub customer_user_name: ::std::option::Option<::std::string::String>,
 }
 impl DirectoryConnectSettings {

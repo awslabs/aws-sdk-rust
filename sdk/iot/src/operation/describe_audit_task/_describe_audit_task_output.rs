@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuditTaskOutput {
     /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::AuditTaskStatus>,
     /// <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::AuditTaskType>,
     /// <p>The time the audit started.</p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Statistical information about the audit.</p>
-    #[doc(hidden)]
     pub task_statistics: ::std::option::Option<crate::types::TaskStatistics>,
     /// <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
-    #[doc(hidden)]
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about each check performed during this audit.</p>
-    #[doc(hidden)]
     pub audit_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>>,
     _request_id: Option<String>,
 }

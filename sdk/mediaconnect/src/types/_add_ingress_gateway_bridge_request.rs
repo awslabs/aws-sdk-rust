@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddIngressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// The maximum number of expected outputs.
-    #[doc(hidden)]
     pub max_outputs: ::std::option::Option<i32>,
 }
 impl AddIngressGatewayBridgeRequest {

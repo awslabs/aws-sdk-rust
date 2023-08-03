@@ -18,26 +18,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// <p>The input provided to the new workflow execution.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>If set, specifies the total duration for this workflow execution. This overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p> The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for the new workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -48,16 +43,12 @@ pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the workflow to start.</p>
-    #[doc(hidden)]
     pub workflow_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role to attach to the new (continued) execution.</p>
-    #[doc(hidden)]
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl ContinueAsNewWorkflowExecutionDecisionAttributes {

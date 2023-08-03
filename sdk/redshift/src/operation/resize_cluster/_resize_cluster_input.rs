@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResizeClusterInput {
     /// <p>The unique identifier for the cluster to resize.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster type for the specified cluster.</p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
-    #[doc(hidden)]
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
-    #[doc(hidden)]
     pub classic: ::std::option::Option<bool>,
     /// <p>The identifier of the reserved node.</p>
-    #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
-    #[doc(hidden)]
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl ResizeClusterInput {

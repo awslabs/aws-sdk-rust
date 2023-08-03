@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeDbSecurityGroupIngressInput {
     /// <p>The name of the DB security group to revoke ingress from.</p>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP range to revoke access from. Must be a valid CIDR range. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't be provided.</p>
-    #[doc(hidden)]
     pub cidrip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RevokeDbSecurityGroupIngressInput {

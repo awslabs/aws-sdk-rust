@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
-    #[doc(hidden)]
     pub mapping: ::std::option::Option<::std::string::String>,
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    #[doc(hidden)]
     pub sql_type: ::std::option::Option<::std::string::String>,
 }
 impl RecordColumn {

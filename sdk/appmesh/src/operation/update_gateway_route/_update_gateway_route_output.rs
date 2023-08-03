@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
-    #[doc(hidden)]
     pub gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,
 }

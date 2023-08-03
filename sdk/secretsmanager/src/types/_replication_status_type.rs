@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    #[doc(hidden)]
     pub last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationStatusType {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>The arguments for job application.</p>
-    #[doc(hidden)]
     pub entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    #[doc(hidden)]
     pub spark_submit_parameters: ::std::option::Option<::std::string::String>,
 }
 impl SparkSubmitJobDriver {

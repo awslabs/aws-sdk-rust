@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrialInput {
     /// <p>The name of the trial to delete.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrialInput {

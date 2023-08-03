@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplayInput {
     /// <p>The name of the replay to retrieve.</p>
-    #[doc(hidden)]
     pub replay_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReplayInput {

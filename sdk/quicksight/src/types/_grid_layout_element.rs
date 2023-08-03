@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
-    #[doc(hidden)]
     pub element_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of element.</p>
-    #[doc(hidden)]
     pub element_type: ::std::option::Option<crate::types::LayoutElementType>,
     /// <p>The column index for the upper left corner of an element.</p>
-    #[doc(hidden)]
     pub column_index: ::std::option::Option<i32>,
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
-    #[doc(hidden)]
     pub column_span: ::std::option::Option<i32>,
     /// <p>The row index for the upper left corner of an element.</p>
-    #[doc(hidden)]
     pub row_index: ::std::option::Option<i32>,
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
-    #[doc(hidden)]
     pub row_span: ::std::option::Option<i32>,
 }
 impl GridLayoutElement {

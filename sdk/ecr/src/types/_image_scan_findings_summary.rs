@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFindingsSummary {
     /// <p>The time of the last completed image scan.</p>
-    #[doc(hidden)]
     pub image_scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
-    #[doc(hidden)]
     pub vulnerability_source_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
-    #[doc(hidden)]
     pub finding_severity_counts: ::std::option::Option<::std::collections::HashMap<crate::types::FindingSeverity, i32>>,
 }
 impl ImageScanFindingsSummary {

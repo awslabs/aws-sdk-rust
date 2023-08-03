@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>An Glue table.</p>
-    #[doc(hidden)]
     pub glue_table: ::std::option::Option<crate::types::GlueTable>,
 }
 impl DataSource {

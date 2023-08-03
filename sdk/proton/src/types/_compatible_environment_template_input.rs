@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleEnvironmentTemplateInput {
     /// <p>The compatible environment template name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the compatible environment template.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
 }
 impl CompatibleEnvironmentTemplateInput {

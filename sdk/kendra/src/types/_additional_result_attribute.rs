@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the <code>Value</code> property.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::AdditionalResultAttributeValueType>,
     /// <p>An object that contains the attribute value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AdditionalResultAttributeValue>,
 }
 impl AdditionalResultAttribute {

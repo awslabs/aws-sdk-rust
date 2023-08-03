@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Av1Settings {
     /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization.
-    #[doc(hidden)]
     pub adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
-    #[doc(hidden)]
     pub bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    #[doc(hidden)]
     pub framerate_control: ::std::option::Option<crate::types::Av1FramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    #[doc(hidden)]
     pub framerate_conversion_algorithm: ::std::option::Option<crate::types::Av1FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    #[doc(hidden)]
     pub framerate_numerator: ::std::option::Option<i32>,
     /// Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
-    #[doc(hidden)]
     pub gop_size: ::std::option::Option<f64>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
-    #[doc(hidden)]
     pub number_b_frames_between_reference_frames: ::std::option::Option<i32>,
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
-    #[doc(hidden)]
     pub qvbr_settings: ::std::option::Option<crate::types::Av1QvbrSettings>,
     /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
-    #[doc(hidden)]
     pub rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
-    #[doc(hidden)]
     pub slices: ::std::option::Option<i32>,
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
-    #[doc(hidden)]
     pub spatial_adaptive_quantization: ::std::option::Option<crate::types::Av1SpatialAdaptiveQuantization>,
 }
 impl Av1Settings {

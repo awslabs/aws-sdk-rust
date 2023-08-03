@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorModel {
     /// <p>Information that defines how a detector operates.</p>
-    #[doc(hidden)]
     pub detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
     /// <p>Information about how the detector is configured.</p>
-    #[doc(hidden)]
     pub detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,
 }
 impl DetectorModel {

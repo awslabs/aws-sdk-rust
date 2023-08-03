@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyFpgaImageAttributeOutput {
     /// <p>Information about the attribute.</p>
-    #[doc(hidden)]
     pub fpga_image_attribute: ::std::option::Option<crate::types::FpgaImageAttribute>,
     _request_id: Option<String>,
 }

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitTypeInput {
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
-    #[doc(hidden)]
     pub auto_approval_delay_in_seconds: ::std::option::Option<i64>,
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
-    #[doc(hidden)]
     pub assignment_duration_in_seconds: ::std::option::Option<i64>,
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
-    #[doc(hidden)]
     pub reward: ::std::option::Option<::std::string::String>,
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::string::String>,
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    #[doc(hidden)]
     pub qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
 }
 impl CreateHitTypeInput {

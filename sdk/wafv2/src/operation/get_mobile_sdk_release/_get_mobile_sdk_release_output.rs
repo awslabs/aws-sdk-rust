@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMobileSdkReleaseOutput {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
-    #[doc(hidden)]
     pub mobile_sdk_release: ::std::option::Option<crate::types::MobileSdkRelease>,
     _request_id: Option<String>,
 }

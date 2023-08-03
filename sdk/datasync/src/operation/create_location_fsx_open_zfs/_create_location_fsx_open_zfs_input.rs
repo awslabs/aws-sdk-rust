@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::FsxProtocol>,
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationFsxOpenZfsInput {

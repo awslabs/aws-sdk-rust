@@ -10,7 +10,6 @@ pub struct ScanRange {
     /// 50
     /// </start>
     /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
-    #[doc(hidden)]
     pub start: i64,
     /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
     /// <scanrange>
@@ -18,7 +17,6 @@ pub struct ScanRange {
     /// 50
     /// </end>
     /// </scanrange></code> means scan the last 50 bytes.</p>
-    #[doc(hidden)]
     pub end: i64,
 }
 impl ScanRange {

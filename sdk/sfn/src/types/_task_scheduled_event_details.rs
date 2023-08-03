@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskScheduledEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The region of the scheduled task</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed duration of the task.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
-    #[doc(hidden)]
     pub heartbeat_in_seconds: ::std::option::Option<i64>,
     /// <p>The credentials that Step Functions uses for the task.</p>
-    #[doc(hidden)]
     pub task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl TaskScheduledEventDetails {

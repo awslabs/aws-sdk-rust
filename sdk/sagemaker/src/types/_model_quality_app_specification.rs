@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelQualityAppSpecification {
     /// <p>The address of the container image that the monitoring job runs.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the entrypoint for a container that the monitoring job runs.</p>
-    #[doc(hidden)]
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of arguments for the container used to run the monitoring job.</p>
-    #[doc(hidden)]
     pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
-    #[doc(hidden)]
     pub record_preprocessor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
-    #[doc(hidden)]
     pub post_analytics_processor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning problem type of the model that the monitoring job monitors.</p>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::MonitoringProblemType>,
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelQualityAppSpecification {

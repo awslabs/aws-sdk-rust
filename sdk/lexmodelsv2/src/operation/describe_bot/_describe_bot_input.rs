@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotInput {
     /// <p>The unique identifier of the bot to describe.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBotInput {

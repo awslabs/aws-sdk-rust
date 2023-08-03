@@ -4,53 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRecipeJobInput {
     /// <p>The name of the dataset that this job processes.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    #[doc(hidden)]
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
-    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>One or more artifacts that represent the output from running the job.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    #[doc(hidden)]
     pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
-    #[doc(hidden)]
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    #[doc(hidden)]
     pub timeout: i32,
 }
 impl CreateRecipeJobInput {

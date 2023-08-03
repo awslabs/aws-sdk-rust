@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualSubtitleLabelOptions {
     /// <p>The visibility of the subtitle label.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
-    #[doc(hidden)]
     pub format_text: ::std::option::Option<crate::types::LongFormatText>,
 }
 impl VisualSubtitleLabelOptions {

@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// <p>The name of the dataset being described. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the dataset. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    #[doc(hidden)]
     pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    #[doc(hidden)]
     pub data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    #[doc(hidden)]
     pub ingested_files_summary: ::std::option::Option<crate::types::IngestedFilesSummary>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    #[doc(hidden)]
     pub data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    #[doc(hidden)]
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

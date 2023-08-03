@@ -9,7 +9,6 @@ pub struct DeleteDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbInstanceInput {

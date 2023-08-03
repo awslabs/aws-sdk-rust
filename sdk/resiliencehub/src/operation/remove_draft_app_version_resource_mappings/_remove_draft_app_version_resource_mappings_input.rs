@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
-    #[doc(hidden)]
     pub resource_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
-    #[doc(hidden)]
     pub logical_stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
-    #[doc(hidden)]
     pub app_registry_app_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
-    #[doc(hidden)]
     pub resource_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
-    #[doc(hidden)]
     pub terraform_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    #[doc(hidden)]
     pub eks_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveDraftAppVersionResourceMappingsInput {

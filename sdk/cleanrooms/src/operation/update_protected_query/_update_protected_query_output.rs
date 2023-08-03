@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProtectedQueryOutput {
     /// <p>The protected query output.</p>
-    #[doc(hidden)]
     pub protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
     _request_id: Option<String>,
 }

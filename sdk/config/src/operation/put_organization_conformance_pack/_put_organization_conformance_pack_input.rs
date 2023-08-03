@@ -4,31 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
-    #[doc(hidden)]
     pub template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    #[doc(hidden)]
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    #[doc(hidden)]
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutOrganizationConformancePackInput {

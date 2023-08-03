@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceInstanceOutput {
     /// <p>The detailed data of the service instance being created.</p>
-    #[doc(hidden)]
     pub service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
 }

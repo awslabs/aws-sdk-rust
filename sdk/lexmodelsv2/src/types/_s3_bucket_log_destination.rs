@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to assign to audio log files.</p>
-    #[doc(hidden)]
     pub log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketLogDestination {

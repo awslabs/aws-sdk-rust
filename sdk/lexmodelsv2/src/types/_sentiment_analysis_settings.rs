@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentAnalysisSettings {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub detect_sentiment: bool,
 }
 impl SentimentAnalysisSettings {

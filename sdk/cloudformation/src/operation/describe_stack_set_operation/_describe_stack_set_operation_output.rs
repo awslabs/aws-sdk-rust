@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationOutput {
     /// <p>The specified stack set operation.</p>
-    #[doc(hidden)]
     pub stack_set_operation: ::std::option::Option<crate::types::StackSetOperation>,
     _request_id: Option<String>,
 }

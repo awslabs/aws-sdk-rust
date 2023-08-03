@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveBridgeOutputOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub output_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

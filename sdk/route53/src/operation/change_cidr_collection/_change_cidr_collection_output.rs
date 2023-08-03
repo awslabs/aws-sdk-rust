@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

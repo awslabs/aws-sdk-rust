@@ -10,7 +10,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
-    #[doc(hidden)]
     pub require_pin: ::std::option::Option<crate::types::RequirePin>,
 }
 impl MeetingSetting {

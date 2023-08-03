@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHyperParameterTuningJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

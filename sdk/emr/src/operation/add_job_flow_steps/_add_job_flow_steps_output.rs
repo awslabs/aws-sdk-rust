@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    #[doc(hidden)]
     pub step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

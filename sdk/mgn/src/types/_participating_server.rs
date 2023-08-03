@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Participating server launch status.</p>
-    #[doc(hidden)]
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
     /// <p>Participating server's launched ec2 instance ID.</p>
-    #[doc(hidden)]
     pub launched_ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Participating server's Post Launch Actions Status.</p>
-    #[doc(hidden)]
     pub post_launch_actions_status: ::std::option::Option<crate::types::PostLaunchActionsStatus>,
 }
 impl ParticipatingServer {

@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomMoversComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The category field that is used in a computation.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The mover size setup of the top and bottom movers computation.</p>
-    #[doc(hidden)]
     pub mover_size: i32,
     /// <p>The sort order setup of the top and bottom movers computation.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::TopBottomSortOrder>,
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
     /// <li> <p>TOP: Top movers computation.</p> </li>
     /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
 }
 impl TopBottomMoversComputation {

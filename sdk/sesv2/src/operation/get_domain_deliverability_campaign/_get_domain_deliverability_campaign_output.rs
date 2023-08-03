@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    #[doc(hidden)]
     pub domain_deliverability_campaign: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,
 }

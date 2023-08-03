@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    #[doc(hidden)]
     pub location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
     _request_id: Option<String>,
 }

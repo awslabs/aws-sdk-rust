@@ -11,13 +11,10 @@ pub struct DescribeReservedInstancesListingsInput {
     /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more Reserved Instance IDs.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more Reserved Instance listing IDs.</p>
-    #[doc(hidden)]
     pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesListingsInput {

@@ -6,7 +6,6 @@
 pub struct HumanLoopDataAttributes {
     /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
     /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
-    #[doc(hidden)]
     pub content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {

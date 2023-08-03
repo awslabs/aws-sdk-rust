@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesInput {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityDkimAttributesInput {

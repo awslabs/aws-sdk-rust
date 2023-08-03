@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSolutionVersionOutput {
     /// <p>The solution version.</p>
-    #[doc(hidden)]
     pub solution_version: ::std::option::Option<crate::types::SolutionVersion>,
     _request_id: Option<String>,
 }

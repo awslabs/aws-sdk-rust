@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchRelatedItemsResponseItem {
     /// <p>Unique identifier of a related item.</p>
-    #[doc(hidden)]
     pub related_item_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a related item.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RelatedItemType>,
     /// <p>Time at which a related item was associated with a case.</p>
-    #[doc(hidden)]
     pub association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Represents the content of a particular type of related item.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::RelatedItemContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl SearchRelatedItemsResponseItem {

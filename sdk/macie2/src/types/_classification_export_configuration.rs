@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl ClassificationExportConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessInstanceLoggingConfiguration {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the logging options.</p>
-    #[doc(hidden)]
     pub access_logs: ::std::option::Option<crate::types::VerifiedAccessLogs>,
 }
 impl VerifiedAccessInstanceLoggingConfiguration {

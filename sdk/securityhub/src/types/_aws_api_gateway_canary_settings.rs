@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayCanarySettings {
     /// <p>The percentage of traffic that is diverted to a canary deployment.</p>
-    #[doc(hidden)]
     pub percent_traffic: f64,
     /// <p>The deployment identifier for the canary deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
-    #[doc(hidden)]
     pub stage_variable_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
-    #[doc(hidden)]
     pub use_stage_cache: bool,
 }
 impl AwsApiGatewayCanarySettings {

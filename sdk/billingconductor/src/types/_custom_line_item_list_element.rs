@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomLineItemListElement {
     /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The custom line item's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
-    #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
     /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The custom line item's description. This is shown on the Bills page in association with the charge value.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The product code that's associated with the custom line item.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time created.</p>
-    #[doc(hidden)]
     pub creation_time: i64,
     /// <p>The most recent time when the custom line item was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>The number of resources that are associated to the custom line item.</p>
-    #[doc(hidden)]
     pub association_size: i64,
 }
 impl CustomLineItemListElement {

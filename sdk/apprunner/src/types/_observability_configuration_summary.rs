@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObservabilityConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    #[doc(hidden)]
     pub observability_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    #[doc(hidden)]
     pub observability_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
-    #[doc(hidden)]
     pub observability_configuration_revision: i32,
 }
 impl ObservabilityConfigurationSummary {

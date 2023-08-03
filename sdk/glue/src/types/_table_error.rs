@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableError {
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The details about the error.</p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl TableError {

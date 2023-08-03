@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetMetricOutput {
     /// <p>The name of the fleet metric to create.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
-    #[doc(hidden)]
     pub metric_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

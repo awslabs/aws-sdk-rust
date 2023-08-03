@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyCheckStepMetadata {
     /// <p>The type of the Clarify Check step</p>
-    #[doc(hidden)]
     pub check_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    #[doc(hidden)]
     pub baseline_used_for_drift_check_constraints: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    #[doc(hidden)]
     pub calculated_baseline_constraints: ::std::option::Option<::std::string::String>,
     /// <p>The model package group name.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    #[doc(hidden)]
     pub violation_report: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    #[doc(hidden)]
     pub check_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
-    #[doc(hidden)]
     pub skip_check: bool,
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
-    #[doc(hidden)]
     pub register_new_baseline: bool,
 }
 impl ClarifyCheckStepMetadata {

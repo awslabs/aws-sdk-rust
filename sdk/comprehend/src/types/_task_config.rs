@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskConfig {
     /// <p>Language code for the language that the model supports.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Configuration required for a classification model.</p>
-    #[doc(hidden)]
     pub document_classification_config: ::std::option::Option<crate::types::DocumentClassificationConfig>,
     /// <p>Configuration required for an entity recognition model.</p>
-    #[doc(hidden)]
     pub entity_recognition_config: ::std::option::Option<crate::types::EntityRecognitionConfig>,
 }
 impl TaskConfig {

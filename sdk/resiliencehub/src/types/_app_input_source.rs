@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInputSource {
     /// <p>The name of the input source.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the input source.</p>
-    #[doc(hidden)]
     pub import_type: ::std::option::Option<crate::types::ResourceMappingType>,
     /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Terraform s3 state ﬁle.</p>
-    #[doc(hidden)]
     pub terraform_source: ::std::option::Option<crate::types::TerraformSource>,
     /// <p>The number of resources.</p>
-    #[doc(hidden)]
     pub resource_count: i32,
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    #[doc(hidden)]
     pub eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
 impl AppInputSource {

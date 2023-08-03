@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfusionMatrix {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
-    #[doc(hidden)]
     pub num_true_positives: ::std::option::Option<i64>,
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
-    #[doc(hidden)]
     pub num_false_positives: ::std::option::Option<i64>,
     /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
-    #[doc(hidden)]
     pub num_true_negatives: ::std::option::Option<i64>,
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
-    #[doc(hidden)]
     pub num_false_negatives: ::std::option::Option<i64>,
 }
 impl ConfusionMatrix {

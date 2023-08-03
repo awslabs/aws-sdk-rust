@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotOptions {
     /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
-    #[doc(hidden)]
     pub automated_snapshot_start_hour: ::std::option::Option<i32>,
 }
 impl SnapshotOptions {

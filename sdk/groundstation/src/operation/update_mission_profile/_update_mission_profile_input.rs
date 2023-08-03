@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    #[doc(hidden)]
     pub mission_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a mission profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    #[doc(hidden)]
     pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    #[doc(hidden)]
     pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    #[doc(hidden)]
     pub dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    #[doc(hidden)]
     pub tracking_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>KMS key to use for encrypting streams.</p>
-    #[doc(hidden)]
     pub streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    #[doc(hidden)]
     pub streams_kms_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMissionProfileInput {

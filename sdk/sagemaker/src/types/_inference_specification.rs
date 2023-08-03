@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
-    #[doc(hidden)]
     pub supported_transform_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
-    #[doc(hidden)]
     pub supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
     /// <p>The supported MIME types for the input data.</p>
-    #[doc(hidden)]
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported MIME types for the output data.</p>
-    #[doc(hidden)]
     pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InferenceSpecification {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceSpaceToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
-    #[doc(hidden)]
     pub data_source_field_name: ::std::option::Option<crate::types::ConfluenceSpaceFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
-    #[doc(hidden)]
     pub date_field_format: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
-    #[doc(hidden)]
     pub index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfluenceSpaceToIndexFieldMapping {

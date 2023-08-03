@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataQualityRulesetsInput {
     /// <p>A paginated token to offset the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filter criteria. </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>,
     /// <p>A list of key-value pair tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDataQualityRulesetsInput {

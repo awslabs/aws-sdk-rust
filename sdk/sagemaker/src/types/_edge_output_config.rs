@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeOutputConfig {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    #[doc(hidden)]
     pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    #[doc(hidden)]
     pub preset_deployment_type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
@@ -23,7 +20,6 @@ pub struct EdgeOutputConfig {
     /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
 impl EdgeOutputConfig {

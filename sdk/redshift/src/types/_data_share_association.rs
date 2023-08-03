@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-    #[doc(hidden)]
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the datashare that is associated.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataShareStatus>,
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    #[doc(hidden)]
     pub consumer_region: ::std::option::Option<::std::string::String>,
     /// <p>The creation date of the datashare that is associated.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status change data of the datashare that is associated.</p>
-    #[doc(hidden)]
     pub status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataShareAssociation {

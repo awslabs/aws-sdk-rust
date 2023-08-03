@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceMapFilter {
     /// <p>The filter's comparison.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::ResourceMapComparison>,
     /// <p>The filter's key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The filter's value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMapFilter {

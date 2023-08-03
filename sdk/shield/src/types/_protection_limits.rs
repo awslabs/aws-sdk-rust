@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    #[doc(hidden)]
     pub protected_resource_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
 }
 impl ProtectionLimits {

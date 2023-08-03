@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Label {
     /// <p>The name (label) of the object or scene.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Level of confidence.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-    #[doc(hidden)]
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     /// <p>A list of potential aliases for a given label.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::LabelAlias>>,
     /// <p>A list of the categories associated with a given label.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::LabelCategory>>,
 }
 impl Label {

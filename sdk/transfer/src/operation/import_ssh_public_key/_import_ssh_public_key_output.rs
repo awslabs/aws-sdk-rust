@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The name given to a public key by the system that was imported.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

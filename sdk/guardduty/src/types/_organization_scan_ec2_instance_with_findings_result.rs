@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    #[doc(hidden)]
     pub ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }
 impl OrganizationScanEc2InstanceWithFindingsResult {

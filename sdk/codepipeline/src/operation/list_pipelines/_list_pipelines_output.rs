@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The list of pipelines.</p>
-    #[doc(hidden)]
     pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

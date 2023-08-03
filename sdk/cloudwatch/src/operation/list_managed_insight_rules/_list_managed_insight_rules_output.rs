@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesOutput {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    #[doc(hidden)]
     pub managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>,
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

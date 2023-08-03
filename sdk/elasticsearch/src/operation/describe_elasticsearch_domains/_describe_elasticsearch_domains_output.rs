@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    #[doc(hidden)]
     pub domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }

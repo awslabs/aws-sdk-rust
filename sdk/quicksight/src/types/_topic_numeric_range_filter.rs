@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicNumericRangeFilter {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
-    #[doc(hidden)]
     pub inclusive: bool,
     /// <p>The constant used in a numeric range filter.</p>
-    #[doc(hidden)]
     pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
 }
 impl TopicNumericRangeFilter {

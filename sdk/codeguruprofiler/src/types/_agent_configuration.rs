@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    #[doc(hidden)]
     pub should_profile: ::std::option::Option<bool>,
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
-    #[doc(hidden)]
     pub period_in_seconds: ::std::option::Option<i32>,
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct AgentConfiguration {
     /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
 }
 impl AgentConfiguration {

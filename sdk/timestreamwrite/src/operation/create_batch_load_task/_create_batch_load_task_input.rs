@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBatchLoadTaskInput {
     /// <p></p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub data_model_configuration: ::std::option::Option<crate::types::DataModelConfiguration>,
     /// <p>Defines configuration details about the data source for a batch load task.</p>
-    #[doc(hidden)]
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    #[doc(hidden)]
     pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
     /// <p>Target Timestream database for a batch load task.</p>
-    #[doc(hidden)]
     pub target_database_name: ::std::option::Option<::std::string::String>,
     /// <p>Target Timestream table for a batch load task.</p>
-    #[doc(hidden)]
     pub target_table_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub record_version: ::std::option::Option<i64>,
 }
 impl CreateBatchLoadTaskInput {

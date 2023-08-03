@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerResourceConfig {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The memory requirements for every worker instance of the worker type.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The disk requirements for every worker instance of the worker type.</p>
-    #[doc(hidden)]
     pub disk: ::std::option::Option<::std::string::String>,
 }
 impl WorkerResourceConfig {

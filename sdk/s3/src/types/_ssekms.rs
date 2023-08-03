@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Ssekms {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl Ssekms {

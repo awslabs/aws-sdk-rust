@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourceSetInput {
     /// <p>Name of a resource set.</p>
-    #[doc(hidden)]
     pub resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourceSetInput {

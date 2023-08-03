@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonInfo {
     /// <p>The name of the add-on.</p>
-    #[doc(hidden)]
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the add-on.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
-    #[doc(hidden)]
     pub addon_versions: ::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>>,
     /// <p>The publisher of the add-on.</p>
-    #[doc(hidden)]
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the add-on.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
 }
 impl AddonInfo {

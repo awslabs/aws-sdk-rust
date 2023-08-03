@@ -11,10 +11,8 @@ pub struct StackDriftInformationSummary {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
-    #[doc(hidden)]
     pub last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackDriftInformationSummary {

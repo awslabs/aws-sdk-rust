@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job.</p>
-    #[doc(hidden)]
     pub size: i32,
 }
 impl BatchArrayProperties {

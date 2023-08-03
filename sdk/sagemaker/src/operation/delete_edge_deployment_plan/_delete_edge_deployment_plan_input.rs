@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan to delete.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEdgeDeploymentPlanInput {

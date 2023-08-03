@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReplicationJobInput {
     /// <p>The ID of the replication job.</p>
-    #[doc(hidden)]
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The time between consecutive replication runs, in hours.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<i32>,
     /// <p>The start time of the next replication run.</p>
-    #[doc(hidden)]
     pub next_replication_run_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replication job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
-    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: ::std::option::Option<i32>,
     /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -35,7 +27,6 @@ pub struct UpdateReplicationJobInput {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReplicationJobInput {

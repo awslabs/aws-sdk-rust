@@ -5,47 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-    #[doc(hidden)]
     pub include_global_service_events: ::std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
-    #[doc(hidden)]
     pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
-    #[doc(hidden)]
     pub log_file_validation_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
-    #[doc(hidden)]
     pub is_organization_trail: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

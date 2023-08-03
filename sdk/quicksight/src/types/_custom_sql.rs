@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    #[doc(hidden)]
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the SQL query result.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query.</p>
-    #[doc(hidden)]
     pub sql_query: ::std::option::Option<::std::string::String>,
     /// <p>The column schema from the SQL query result set.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
 }
 impl CustomSql {

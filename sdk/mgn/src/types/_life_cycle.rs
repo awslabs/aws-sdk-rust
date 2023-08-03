@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycle {
     /// <p>Lifecycle added to service data and time.</p>
-    #[doc(hidden)]
     pub added_to_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle replication initiation date and time.</p>
-    #[doc(hidden)]
     pub first_byte_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle elapsed time and duration.</p>
-    #[doc(hidden)]
     pub elapsed_replication_duration: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle last seen date and time.</p>
-    #[doc(hidden)]
     pub last_seen_by_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle last Test.</p>
-    #[doc(hidden)]
     pub last_test: ::std::option::Option<crate::types::LifeCycleLastTest>,
     /// <p>Lifecycle last Cutover.</p>
-    #[doc(hidden)]
     pub last_cutover: ::std::option::Option<crate::types::LifeCycleLastCutover>,
     /// <p>Lifecycle state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LifeCycleState>,
 }
 impl LifeCycle {

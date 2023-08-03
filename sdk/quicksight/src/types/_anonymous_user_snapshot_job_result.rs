@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserSnapshotJobResult {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information on the files that are requested during a <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these objects contain the location where the snapshot artifacts are stored. If the job fails, the objects contain information about the error that caused the job to fail.</p>
-    #[doc(hidden)]
     pub file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultFileGroup>>,
 }
 impl AnonymousUserSnapshotJobResult {

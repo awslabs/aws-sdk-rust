@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    #[doc(hidden)]
     pub virtual_router_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualRouterServiceProvider {

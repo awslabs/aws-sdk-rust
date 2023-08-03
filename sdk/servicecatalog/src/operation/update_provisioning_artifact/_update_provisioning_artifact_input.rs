@@ -8,28 +8,21 @@ pub struct UpdateProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the product version is active.</p>
     /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    #[doc(hidden)]
     pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
 }
 impl UpdateProvisioningArtifactInput {

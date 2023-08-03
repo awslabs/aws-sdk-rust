@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketMetricDataInput {
     /// <p>The name of the bucket for which to get metric data.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
@@ -14,18 +13,14 @@ pub struct GetBucketMetricDataInput {
     /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
     /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::BucketMetricName>,
     /// <p>The timestamp indicating the earliest data to be returned.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp indicating the latest data to be returned.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -36,11 +31,9 @@ pub struct GetBucketMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl GetBucketMetricDataInput {

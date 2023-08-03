@@ -339,7 +339,6 @@ pub struct AnnotationConsolidationConfig {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl AnnotationConsolidationConfig {

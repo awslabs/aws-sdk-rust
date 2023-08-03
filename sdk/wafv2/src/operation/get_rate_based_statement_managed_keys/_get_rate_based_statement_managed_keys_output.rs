@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysOutput {
     /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-    #[doc(hidden)]
     pub managed_keys_ipv4: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,
     /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-    #[doc(hidden)]
     pub managed_keys_ipv6: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,
     _request_id: Option<String>,
 }

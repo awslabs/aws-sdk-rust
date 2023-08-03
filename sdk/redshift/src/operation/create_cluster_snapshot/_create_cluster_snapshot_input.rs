@@ -13,18 +13,14 @@ pub struct CreateClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterSnapshotInput {

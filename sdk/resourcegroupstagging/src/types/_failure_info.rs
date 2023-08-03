@@ -11,13 +11,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureInfo {
     /// <p>The HTTP status code of the common error.</p>
-    #[doc(hidden)]
     pub status_code: i32,
     /// <p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the Amazon Web Services service that hosts the resource that you want to tag.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The message of the common error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailureInfo {

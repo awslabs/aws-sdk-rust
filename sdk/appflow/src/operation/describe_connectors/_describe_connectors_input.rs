@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectorsInput {

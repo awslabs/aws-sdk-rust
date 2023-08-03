@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVersionsByFunctionOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of Lambda function versions.</p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     _request_id: Option<String>,
 }

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date the SSM document was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services user that created the document.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform. </p>
-    #[doc(hidden)]
     pub platform_types: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The document type.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
     /// <p>The schema version.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The document format, either JSON or YAML.</p>
-    #[doc(hidden)]
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    #[doc(hidden)]
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>The current status of a document review.</p>
-    #[doc(hidden)]
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The user in your organization who created the document.</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
 }
 impl DocumentIdentifier {

@@ -6,7 +6,6 @@
 pub struct GitConfigForUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl GitConfigForUpdate {

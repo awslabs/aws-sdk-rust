@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    #[doc(hidden)]
     pub rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }

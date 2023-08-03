@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct H264ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
-    #[doc(hidden)]
     pub color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     /// Rec601 Settings
-    #[doc(hidden)]
     pub rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     /// Rec709 Settings
-    #[doc(hidden)]
     pub rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
 }
 impl H264ColorSpaceSettings {

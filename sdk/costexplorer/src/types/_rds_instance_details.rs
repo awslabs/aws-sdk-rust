@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The database engine that the recommended reservation supports.</p>
-    #[doc(hidden)]
     pub database_engine: ::std::option::Option<::std::string::String>,
     /// <p>The database edition that the recommended reservation supports.</p>
-    #[doc(hidden)]
     pub database_edition: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    #[doc(hidden)]
     pub deployment_option: ::std::option::Option<::std::string::String>,
     /// <p>The license model that the recommended reservation supports.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
-    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
-    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl RdsInstanceDetails {

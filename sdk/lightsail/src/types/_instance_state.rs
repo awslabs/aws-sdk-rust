@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The status code for the instance.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<i32>,
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceState {

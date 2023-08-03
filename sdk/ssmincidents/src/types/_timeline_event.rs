@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimelineEvent {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the timeline event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the event occurred.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
-    #[doc(hidden)]
     pub event_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the event.</p>
-    #[doc(hidden)]
     pub event_data: ::std::option::Option<::std::string::String>,
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    #[doc(hidden)]
     pub event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
 }
 impl TimelineEvent {

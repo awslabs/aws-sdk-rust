@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
-    #[doc(hidden)]
     pub distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingResult {
     /// <p>The validation metrics.</p>
-    #[doc(hidden)]
     pub data_validation_metrics: ::std::option::Option<crate::types::DataValidationMetrics>,
     /// <p>The training metric details.</p>
-    #[doc(hidden)]
     pub training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,
     /// <p>The variable importance metrics.</p>
-    #[doc(hidden)]
     pub variable_importance_metrics: ::std::option::Option<crate::types::VariableImportanceMetrics>,
 }
 impl TrainingResult {

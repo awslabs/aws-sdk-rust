@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutModelPackageGroupPolicyInput {
     /// <p>The name of the model group to add a resource policy to.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy for the model group.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutModelPackageGroupPolicyInput {

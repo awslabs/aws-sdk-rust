@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionInput {

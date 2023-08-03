@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserRequestItem {
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The user license type.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::License>,
     /// <p>The user type.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
     /// <p>The Alexa for Business metadata.</p>
-    #[doc(hidden)]
     pub alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
 }
 impl UpdateUserRequestItem {

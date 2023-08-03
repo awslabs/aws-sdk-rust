@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportServerEngineAttributeOutput {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
-    #[doc(hidden)]
     pub engine_attribute: ::std::option::Option<crate::types::EngineAttribute>,
     /// <p>The server name used in the request.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

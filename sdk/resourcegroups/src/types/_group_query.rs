@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
-    #[doc(hidden)]
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
 }
 impl GroupQuery {

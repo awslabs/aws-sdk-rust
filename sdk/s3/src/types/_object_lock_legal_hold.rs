@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHold {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the tunnel. </p>
-    #[doc(hidden)]
     pub tunnel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TunnelStatus>,
     /// <p>A description of the tunnel.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time the tunnel was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the tunnel was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TunnelSummary {

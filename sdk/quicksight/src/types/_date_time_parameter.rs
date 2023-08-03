@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the date-time parameter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl DateTimeParameter {

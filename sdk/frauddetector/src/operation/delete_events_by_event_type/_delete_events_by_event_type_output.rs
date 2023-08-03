@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventsByEventTypeOutput {
     /// <p>Name of event type for which to delete the events.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the delete request.</p>
-    #[doc(hidden)]
     pub events_deletion_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

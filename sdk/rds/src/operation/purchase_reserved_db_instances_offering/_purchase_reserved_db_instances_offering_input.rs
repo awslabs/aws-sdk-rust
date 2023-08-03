@@ -6,18 +6,14 @@
 pub struct PurchaseReservedDbInstancesOfferingInput {
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    #[doc(hidden)]
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
-    #[doc(hidden)]
     pub reserved_db_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
-    #[doc(hidden)]
     pub db_instance_count: ::std::option::Option<i32>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PurchaseReservedDbInstancesOfferingInput {

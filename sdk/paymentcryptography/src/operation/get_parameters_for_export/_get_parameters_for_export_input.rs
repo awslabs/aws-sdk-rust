@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParametersForExportInput {
     /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
-    #[doc(hidden)]
     pub key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-    #[doc(hidden)]
     pub signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl GetParametersForExportInput {

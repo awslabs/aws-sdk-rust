@@ -7,12 +7,10 @@
 pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace for this filter.</p>
     /// <p>The namespace can contain only ASCII printable characters (ASCII range 32 through 126). It must contain at least one non-whitespace character.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
-    #[doc(hidden)]
     pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricStreamFilter {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertHistoryOutput {
     /// <p>An alert history for a model monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_alert_history: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

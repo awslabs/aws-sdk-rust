@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssistantAssociationOutput {
     /// <p>The assistant association.</p>
-    #[doc(hidden)]
     pub assistant_association: ::std::option::Option<crate::types::AssistantAssociationData>,
     _request_id: Option<String>,
 }

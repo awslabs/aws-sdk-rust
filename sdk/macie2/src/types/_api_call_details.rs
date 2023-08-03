@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
-    #[doc(hidden)]
     pub api: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
-    #[doc(hidden)]
     pub api_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-    #[doc(hidden)]
     pub first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-    #[doc(hidden)]
     pub last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApiCallDetails {

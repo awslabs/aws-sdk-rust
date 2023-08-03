@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWhatIfForecastExportInput {
     /// <p>The name of the what-if forecast to export.</p>
-    #[doc(hidden)]
     pub what_if_forecast_export_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    #[doc(hidden)]
     pub what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl CreateWhatIfForecastExportInput {

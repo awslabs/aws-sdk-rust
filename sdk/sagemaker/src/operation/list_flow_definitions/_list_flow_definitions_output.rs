@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowDefinitionsOutput {
     /// <p>An array of objects describing the flow definitions.</p>
-    #[doc(hidden)]
     pub flow_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
     /// <p>A token to resume pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

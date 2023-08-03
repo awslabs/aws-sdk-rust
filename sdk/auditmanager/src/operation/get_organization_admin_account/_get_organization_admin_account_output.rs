@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountOutput {
     /// <p> The identifier for the administrator account. </p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the organization. </p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

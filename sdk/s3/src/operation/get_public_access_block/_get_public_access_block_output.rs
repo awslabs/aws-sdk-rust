@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

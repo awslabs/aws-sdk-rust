@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>CIDR collection change action. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
     /// <p>List of CIDR blocks.</p>
-    #[doc(hidden)]
     pub cidr_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CidrCollectionChange {

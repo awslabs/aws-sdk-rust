@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionKey {
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PartitionKeyType>,
     /// <p> The name of the attribute used for a dimension key. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
-    #[doc(hidden)]
     pub enforcement_in_record: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>,
 }
 impl PartitionKey {

@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageOptimizer {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
-    #[doc(hidden)]
     pub storage_optimizer_type: ::std::option::Option<crate::types::OptimizerType>,
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A message that contains information about any warnings (if present).</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::string::String>,
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
-    #[doc(hidden)]
     pub last_run_details: ::std::option::Option<::std::string::String>,
 }
 impl StorageOptimizer {

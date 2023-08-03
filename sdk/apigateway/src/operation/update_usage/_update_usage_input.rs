@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    #[doc(hidden)]
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    #[doc(hidden)]
     pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateUsageInput {

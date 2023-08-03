@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalDataset {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
@@ -84,7 +83,6 @@ pub struct AdditionalDataset {
     /// <li> <p>"UY" - URUGUAY</p> </li>
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl AdditionalDataset {

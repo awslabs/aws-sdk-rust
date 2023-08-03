@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetFailure {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>The failure message.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl TargetFailure {

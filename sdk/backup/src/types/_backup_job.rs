@@ -5,74 +5,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupJob {
     /// <p>The account ID that owns the backup job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    #[doc(hidden)]
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of a resource recovery point.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
-    #[doc(hidden)]
     pub percent_done: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of a backup.</p>
-    #[doc(hidden)]
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions to perform backup jobs.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
     /// <p>The date and time a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub expected_completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub start_by: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
-    #[doc(hidden)]
     pub bytes_transferred: ::std::option::Option<i64>,
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    #[doc(hidden)]
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the type of backup for a backup job.</p>
-    #[doc(hidden)]
     pub backup_type: ::std::option::Option<::std::string::String>,
     /// <p>This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job ID.</p>
-    #[doc(hidden)]
     pub parent_job_id: ::std::option::Option<::std::string::String>,
     /// <p>This is a boolean value indicating this is a parent (composite) backup job.</p>
-    #[doc(hidden)]
     pub is_parent: bool,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl BackupJob {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountSettingOutput {
     /// <p>The account setting for the specified principal ARN.</p>
-    #[doc(hidden)]
     pub setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,
 }

@@ -5,61 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobSearchEntity {
     /// <p>The name of a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configures a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub training_job_definition: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
     /// <p>The job definitions included in a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub training_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
     /// <p>The status of a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>The time that a hyperparameter tuning job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that a hyperparameter tuning job ended.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that a hyperparameter tuning job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
-    #[doc(hidden)]
     pub training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
-    #[doc(hidden)]
     pub objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
     /// <p>The container for the summary information about a training job.</p>
-    #[doc(hidden)]
     pub best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>The container for the summary information about a training job.</p>
-    #[doc(hidden)]
     pub overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
     /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
     /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
     /// </note>
-    #[doc(hidden)]
     pub warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     /// <p>The error that was created when a hyperparameter tuning job failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
 }
 impl HyperParameterTuningJobSearchEntity {

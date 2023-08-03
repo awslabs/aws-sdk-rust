@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResiliencyPolicy {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the policy.</p>
-    #[doc(hidden)]
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    #[doc(hidden)]
     pub data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
-    #[doc(hidden)]
     pub estimated_cost_tier: ::std::option::Option<crate::types::EstimatedCostTier>,
     /// <p>The resiliency policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     /// <p>The timestamp for when the resiliency policy was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResiliencyPolicy {

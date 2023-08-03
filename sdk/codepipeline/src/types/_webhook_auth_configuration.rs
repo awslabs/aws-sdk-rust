@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-    #[doc(hidden)]
     pub allowed_ip_range: ::std::option::Option<::std::string::String>,
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
-    #[doc(hidden)]
     pub secret_token: ::std::option::Option<::std::string::String>,
 }
 impl WebhookAuthConfiguration {

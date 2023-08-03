@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOutput {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
-    #[doc(hidden)]
     pub quote_fields: ::std::option::Option<crate::types::QuoteFields>,
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    #[doc(hidden)]
     pub quote_escape_character: ::std::option::Option<::std::string::String>,
     /// <p>A value used to separate individual records from each other.</p>
-    #[doc(hidden)]
     pub record_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    #[doc(hidden)]
     pub field_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    #[doc(hidden)]
     pub quote_character: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutput {

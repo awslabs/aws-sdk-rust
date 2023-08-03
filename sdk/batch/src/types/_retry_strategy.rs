@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    #[doc(hidden)]
     pub attempts: ::std::option::Option<i32>,
     /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
-    #[doc(hidden)]
     pub evaluate_on_exit: ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>,
 }
 impl RetryStrategy {

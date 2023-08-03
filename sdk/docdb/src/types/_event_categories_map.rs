@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventCategoriesMap {
     /// <p>The source type that the returned categories belong to.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The event categories for the specified source type.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EventCategoriesMap {

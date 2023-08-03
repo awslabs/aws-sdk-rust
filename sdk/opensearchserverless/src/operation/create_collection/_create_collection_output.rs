@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollectionOutput {
     /// <p>Details about the collection.</p>
-    #[doc(hidden)]
     pub create_collection_detail: ::std::option::Option<crate::types::CreateCollectionDetail>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMacieSessionInput {
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MacieStatus>,
 }
 impl UpdateMacieSessionInput {

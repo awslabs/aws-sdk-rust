@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionData {
     /// <p>The current provisioning state </p>
-    #[doc(hidden)]
     pub provision_state: ::std::option::Option<::std::string::String>,
     /// <p>The number of capacity units the replication is using.</p>
-    #[doc(hidden)]
     pub provisioned_capacity_units: i32,
     /// <p>The timestamp when DMS provisioned replication resources.</p>
-    #[doc(hidden)]
     pub date_provisioned: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the new provisioning is available to the replication.</p>
-    #[doc(hidden)]
     pub is_new_provisioning_available: bool,
     /// <p>The timestamp when provisioning became available.</p>
-    #[doc(hidden)]
     pub date_new_provisioning_data_available: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
-    #[doc(hidden)]
     pub reason_for_new_provisioning_data: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionData {

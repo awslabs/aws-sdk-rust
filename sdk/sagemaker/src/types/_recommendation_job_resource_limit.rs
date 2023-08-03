@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobResourceLimit {
     /// <p>Defines the maximum number of load tests.</p>
-    #[doc(hidden)]
     pub max_number_of_tests: ::std::option::Option<i32>,
     /// <p>Defines the maximum number of parallel load tests.</p>
-    #[doc(hidden)]
     pub max_parallel_of_tests: ::std::option::Option<i32>,
 }
 impl RecommendationJobResourceLimit {

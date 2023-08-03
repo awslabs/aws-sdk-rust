@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of the workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The time when the execution was started.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    #[doc(hidden)]
     pub close_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
-    #[doc(hidden)]
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
@@ -28,16 +23,12 @@ pub struct WorkflowExecutionInfo {
     /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
     /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub close_status: ::std::option::Option<crate::types::CloseStatus>,
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
-    #[doc(hidden)]
     pub parent: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
-    #[doc(hidden)]
     pub cancel_requested: bool,
 }
 impl WorkflowExecutionInfo {

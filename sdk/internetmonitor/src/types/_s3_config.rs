@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The Amazon S3 bucket name.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix.</p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub log_delivery_status: ::std::option::Option<crate::types::LogDeliveryStatus>,
 }
 impl S3Config {

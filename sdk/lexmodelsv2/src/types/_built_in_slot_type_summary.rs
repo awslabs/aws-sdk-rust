@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltInSlotTypeSummary {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-    #[doc(hidden)]
     pub slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>The description of the built-in slot type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl BuiltInSlotTypeSummary {

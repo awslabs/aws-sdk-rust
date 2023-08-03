@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutput {
     /// <p>True if the token is authenticated, otherwise false.</p>
-    #[doc(hidden)]
     pub is_authenticated: ::std::option::Option<bool>,
     /// <p>The principal ID.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>IAM policy documents.</p>
-    #[doc(hidden)]
     pub policy_documents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
-    #[doc(hidden)]
     pub refresh_after_in_seconds: ::std::option::Option<i32>,
     /// <p>The number of seconds after which the connection is terminated.</p>
-    #[doc(hidden)]
     pub disconnect_after_in_seconds: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

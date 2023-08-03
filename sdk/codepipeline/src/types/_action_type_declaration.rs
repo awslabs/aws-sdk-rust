@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeDeclaration {
     /// <p>The description for the action type to be updated.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
-    #[doc(hidden)]
     pub executor: ::std::option::Option<crate::types::ActionTypeExecutor>,
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::ActionTypeIdentifier>,
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
-    #[doc(hidden)]
     pub input_artifact_details: ::std::option::Option<crate::types::ActionTypeArtifactDetails>,
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
-    #[doc(hidden)]
     pub output_artifact_details: ::std::option::Option<crate::types::ActionTypeArtifactDetails>,
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<crate::types::ActionTypePermissions>,
     /// <p>The properties of the action type to be updated.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionTypeProperty>>,
     /// <p>The links associated with the action type to be updated.</p>
-    #[doc(hidden)]
     pub urls: ::std::option::Option<crate::types::ActionTypeUrls>,
 }
 impl ActionTypeDeclaration {

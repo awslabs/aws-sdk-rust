@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
-    #[doc(hidden)]
     pub source_field: ::std::option::Option<::std::string::String>,
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
-    #[doc(hidden)]
     pub fuzzy_matching: ::std::option::Option<crate::types::SuggesterFuzzyMatching>,
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-    #[doc(hidden)]
     pub sort_expression: ::std::option::Option<::std::string::String>,
 }
 impl DocumentSuggesterOptions {

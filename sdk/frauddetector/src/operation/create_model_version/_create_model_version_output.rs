@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelVersionOutput {
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number of the model version created.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The model version status. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

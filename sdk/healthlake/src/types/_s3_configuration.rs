@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake. </p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> The KMS key ID used to access the S3 bucket. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {

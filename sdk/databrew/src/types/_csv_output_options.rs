@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOutputOptions {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutputOptions {

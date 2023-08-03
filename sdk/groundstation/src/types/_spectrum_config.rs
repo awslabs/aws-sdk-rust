@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpectrumConfig {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-    #[doc(hidden)]
     pub center_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
@@ -13,10 +12,8 @@ pub struct SpectrumConfig {
     /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<crate::types::FrequencyBandwidth>,
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
-    #[doc(hidden)]
     pub polarization: ::std::option::Option<crate::types::Polarization>,
 }
 impl SpectrumConfig {

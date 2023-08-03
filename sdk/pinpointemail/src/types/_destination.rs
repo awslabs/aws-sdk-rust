@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    #[doc(hidden)]
     pub to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    #[doc(hidden)]
     pub cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    #[doc(hidden)]
     pub bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Destination {

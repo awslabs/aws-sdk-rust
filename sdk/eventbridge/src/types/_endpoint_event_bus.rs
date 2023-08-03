@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    #[doc(hidden)]
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
 }
 impl EndpointEventBus {

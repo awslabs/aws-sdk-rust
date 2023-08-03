@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleInstanceHealth {
     /// <p>The ID of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<::std::string::String>,
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    #[doc(hidden)]
     pub causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the EC2 instance was launched.</p>
-    #[doc(hidden)]
     pub launched_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Request metrics from your application.</p>
-    #[doc(hidden)]
     pub application_metrics: ::std::option::Option<crate::types::ApplicationMetrics>,
     /// <p>Operating system metrics from the instance.</p>
-    #[doc(hidden)]
     pub system: ::std::option::Option<crate::types::SystemStatus>,
     /// <p>Information about the most recent deployment to an instance.</p>
-    #[doc(hidden)]
     pub deployment: ::std::option::Option<crate::types::Deployment>,
     /// <p>The availability zone in which the instance runs.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance's type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl SingleInstanceHealth {

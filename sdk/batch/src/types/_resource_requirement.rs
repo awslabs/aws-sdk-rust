@@ -162,10 +162,8 @@ pub struct ResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ResourceRequirement {

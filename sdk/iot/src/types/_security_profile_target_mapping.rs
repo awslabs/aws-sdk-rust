@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityProfileTargetMapping {
     /// <p>Information that identifies the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_identifier: ::std::option::Option<crate::types::SecurityProfileIdentifier>,
     /// <p>Information about the target (thing group) associated with the security profile.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::SecurityProfileTarget>,
 }
 impl SecurityProfileTargetMapping {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeClientAuthenticationSettingsInput {

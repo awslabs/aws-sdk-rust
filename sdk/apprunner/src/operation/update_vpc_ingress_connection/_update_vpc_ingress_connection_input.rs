@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    #[doc(hidden)]
     pub ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,
 }
 impl UpdateVpcIngressConnectionInput {

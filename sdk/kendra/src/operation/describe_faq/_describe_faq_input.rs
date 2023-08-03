@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFaqInput {
     /// <p>The identifier of the FAQ you want to get information on.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for the FAQ.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFaqInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackEvaluationResult {
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Uniquely identifies an evaluation result.</p>
-    #[doc(hidden)]
     pub evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub config_rule_invoked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when Config recorded the evaluation result. </p>
-    #[doc(hidden)]
     pub result_recorded_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
-    #[doc(hidden)]
     pub annotation: ::std::option::Option<::std::string::String>,
 }
 impl ConformancePackEvaluationResult {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutCanvasSizeOptions {
     /// <p>The options for a paper canvas of a section-based layout.</p>
-    #[doc(hidden)]
     pub paper_canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
 }
 impl SectionBasedLayoutCanvasSizeOptions {

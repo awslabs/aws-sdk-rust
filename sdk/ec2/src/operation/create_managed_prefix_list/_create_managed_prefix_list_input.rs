@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateManagedPrefixListInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
-    #[doc(hidden)]
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more entries for the prefix list.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
     /// <p>The maximum number of entries for the prefix list.</p>
-    #[doc(hidden)]
     pub max_entries: ::std::option::Option<i32>,
     /// <p>The tags to apply to the prefix list during creation.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     /// <p>Constraints: Up to 255 UTF-8 characters in length.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateManagedPrefixListInput {

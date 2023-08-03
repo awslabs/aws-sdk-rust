@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCopyProductStatusOutput {
     /// <p>The status of the copy product operation.</p>
-    #[doc(hidden)]
     pub copy_product_status: ::std::option::Option<crate::types::CopyProductStatus>,
     /// <p>The identifier of the copied product.</p>
-    #[doc(hidden)]
     pub target_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

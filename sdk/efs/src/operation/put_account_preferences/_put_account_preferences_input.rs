@@ -6,7 +6,6 @@ pub struct PutAccountPreferencesInput {
     /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
     /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_id_type: ::std::option::Option<crate::types::ResourceIdType>,
 }
 impl PutAccountPreferencesInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Problem {
     /// <p>Information about the associated run.</p>
-    #[doc(hidden)]
     pub run: ::std::option::Option<crate::types::ProblemDetail>,
     /// <p>Information about the associated job.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::ProblemDetail>,
     /// <p>Information about the associated suite.</p>
-    #[doc(hidden)]
     pub suite: ::std::option::Option<crate::types::ProblemDetail>,
     /// <p>Information about the associated test.</p>
-    #[doc(hidden)]
     pub test: ::std::option::Option<crate::types::ProblemDetail>,
     /// <p>Information about the associated device.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
@@ -30,10 +25,8 @@ pub struct Problem {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>A message about the problem's result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl Problem {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeviceSyncInput {
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device to sync. Required.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>Request structure to start the device sync. Required.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
 }
 impl StartDeviceSyncInput {

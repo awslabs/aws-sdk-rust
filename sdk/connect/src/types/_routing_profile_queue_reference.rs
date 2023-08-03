@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
 }
 impl RoutingProfileQueueReference {

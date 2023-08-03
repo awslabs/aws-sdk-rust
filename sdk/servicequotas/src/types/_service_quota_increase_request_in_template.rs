@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota name.</p>
-    #[doc(hidden)]
     pub quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The new, increased value of the quota.</p>
-    #[doc(hidden)]
     pub desired_value: ::std::option::Option<f64>,
     /// <p>The AWS Region.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measurement.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the quota is global.</p>
-    #[doc(hidden)]
     pub global_quota: bool,
 }
 impl ServiceQuotaIncreaseRequestInTemplate {

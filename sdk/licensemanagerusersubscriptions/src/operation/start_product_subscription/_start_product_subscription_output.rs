@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
-    #[doc(hidden)]
     pub product_user_summary: ::std::option::Option<crate::types::ProductUserSummary>,
     _request_id: Option<String>,
 }

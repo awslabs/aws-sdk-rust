@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComboChartSortConfiguration {
     /// <p>The sort configuration of the category field well in a combo chart.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
-    #[doc(hidden)]
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of the color field well in a combo chart.</p>
-    #[doc(hidden)]
     pub color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
-    #[doc(hidden)]
     pub color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl ComboChartSortConfiguration {

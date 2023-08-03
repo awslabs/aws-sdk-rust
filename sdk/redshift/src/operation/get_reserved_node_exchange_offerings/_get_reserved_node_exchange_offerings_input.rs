@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeOfferingsInput {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
-    #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl GetReservedNodeExchangeOfferingsInput {

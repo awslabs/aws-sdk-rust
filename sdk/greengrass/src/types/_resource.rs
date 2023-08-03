@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// A container of data for all resource types.
-    #[doc(hidden)]
     pub resource_data_container: ::std::option::Option<crate::types::ResourceDataContainer>,
 }
 impl Resource {

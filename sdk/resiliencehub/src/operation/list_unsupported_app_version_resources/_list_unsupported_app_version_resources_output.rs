@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
-    #[doc(hidden)]
     pub unsupported_resources: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
     /// <p>The identifier for a specific resolution.</p>
-    #[doc(hidden)]
     pub resolution_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

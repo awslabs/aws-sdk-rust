@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    #[doc(hidden)]
     pub vtl_device_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeVtlDevicesInput {

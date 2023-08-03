@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCodeSnippetOutput {
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    #[doc(hidden)]
     pub code_snippet_results: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>>,
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>>,
     _request_id: Option<String>,
 }

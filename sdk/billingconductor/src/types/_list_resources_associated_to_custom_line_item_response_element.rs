@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    #[doc(hidden)]
     pub relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
     /// <p>The end billing period of the associated resource.</p>
-    #[doc(hidden)]
     pub end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {

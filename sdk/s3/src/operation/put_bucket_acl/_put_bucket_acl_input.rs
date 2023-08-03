@@ -4,40 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketAclInput {
     /// <p>The canned ACL to apply to the bucket.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-    #[doc(hidden)]
     pub access_control_policy: ::std::option::Option<crate::types::AccessControlPolicy>,
     /// <p>The bucket to which to apply the ACL.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    #[doc(hidden)]
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    #[doc(hidden)]
     pub grant_full_control: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
-    #[doc(hidden)]
     pub grant_read: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p>
-    #[doc(hidden)]
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-    #[doc(hidden)]
     pub grant_write: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    #[doc(hidden)]
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl PutBucketAclInput {

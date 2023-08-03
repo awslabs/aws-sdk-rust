@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region that is associated with the latency value.</p>
-    #[doc(hidden)]
     pub region_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
-    #[doc(hidden)]
     pub latency_in_milliseconds: f32,
 }
 impl PlayerLatency {

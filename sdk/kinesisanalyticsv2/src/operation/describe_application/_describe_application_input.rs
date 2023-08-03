@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
-    #[doc(hidden)]
     pub include_additional_details: ::std::option::Option<bool>,
 }
 impl DescribeApplicationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallOutput {
     /// <p>The actual call.</p>
-    #[doc(hidden)]
     pub sip_media_application_call: ::std::option::Option<crate::types::SipMediaApplicationCall>,
     _request_id: Option<String>,
 }

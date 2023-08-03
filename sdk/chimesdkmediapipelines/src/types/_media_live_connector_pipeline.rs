@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaLiveConnectorPipeline {
     /// <p>The connector pipeline's data sources.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
     /// <p>The connector pipeline's data sinks.</p>
-    #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
     /// <p>The connector pipeline's ID.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The connector pipeline's ARN.</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connector pipeline's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MediaPipelineStatus>,
     /// <p>The time at which the connector pipeline was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the connector pipeline was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MediaLiveConnectorPipeline {

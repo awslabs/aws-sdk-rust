@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    #[doc(hidden)]
     pub explainability: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    #[doc(hidden)]
     pub model_insights: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
-    #[doc(hidden)]
     pub backtest_results: ::std::option::Option<::std::string::String>,
 }
 impl CandidateArtifactLocations {

@@ -5,44 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentResponse {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the segment was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The dimension settings for the segment.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::SegmentDimensions>,
     /// <p>The unique identifier for the segment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the import job that's associated with the segment.</p>
-    #[doc(hidden)]
     pub import_definition: ::std::option::Option<crate::types::SegmentImportResource>,
     /// <p>The date and time when the segment was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The name of the segment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
-    #[doc(hidden)]
     pub segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
     /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
     /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub segment_type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version number of the segment.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl SegmentResponse {

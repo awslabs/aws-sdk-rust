@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain.</p>
-    #[doc(hidden)]
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobRefreshScheduleOverrideProperties {
     /// <p>The ARN of the specific <code>RefreshSchedule</code> resource whose override properties are configured in this structure.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>>,
 }
 impl AssetBundleExportJobRefreshScheduleOverrideProperties {

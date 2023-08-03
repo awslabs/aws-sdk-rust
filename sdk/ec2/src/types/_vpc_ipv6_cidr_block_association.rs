@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcIpv6CidrBlockAssociation {
     /// <p>The association ID for the IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of the CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_state: ::std::option::Option<crate::types::VpcCidrBlockState>,
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p>
-    #[doc(hidden)]
     pub ipv6_pool: ::std::option::Option<::std::string::String>,
 }
 impl VpcIpv6CidrBlockAssociation {

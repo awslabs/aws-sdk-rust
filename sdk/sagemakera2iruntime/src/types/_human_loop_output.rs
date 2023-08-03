@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopOutput {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
-    #[doc(hidden)]
     pub output_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopOutput {

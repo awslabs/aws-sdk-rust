@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotVersionOutput {
     /// <p>The identifier of the bot that contains the version.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot that contains the version.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was described.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the bot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Data privacy settings for the bot version.</p>
-    #[doc(hidden)]
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
-    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A timestamp of the date and time that the bot version was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the networks to which the bot version you described belongs.</p>
-    #[doc(hidden)]
     pub parent_bot_networks: ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>,
     /// <p>The type of the bot in the version that was described.</p>
-    #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The members of bot network in the version that was described.</p>
-    #[doc(hidden)]
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }

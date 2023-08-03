@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseBundle {
     /// <p>The ID for the database bundle.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the database bundle.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cost of the database bundle in US currency.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f32>,
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
-    #[doc(hidden)]
     pub ram_size_in_gb: ::std::option::Option<f32>,
     /// <p>The size of the disk for the database bundle.</p>
-    #[doc(hidden)]
     pub disk_size_in_gb: ::std::option::Option<i32>,
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
-    #[doc(hidden)]
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
-    #[doc(hidden)]
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
-    #[doc(hidden)]
     pub is_encrypted: ::std::option::Option<bool>,
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
 }
 impl RelationalDatabaseBundle {

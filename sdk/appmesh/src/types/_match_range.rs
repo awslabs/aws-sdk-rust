@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchRange {
     /// <p>The start of the range.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<i64>,
     /// <p>The end of the range.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<i64>,
 }
 impl MatchRange {

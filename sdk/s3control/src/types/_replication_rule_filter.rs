@@ -7,17 +7,14 @@ pub struct ReplicationRuleFilter {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A container for a key-value name pair.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::S3Tag>,
     /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
     /// <ul>
     /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
     /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub and: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
 }
 impl ReplicationRuleFilter {

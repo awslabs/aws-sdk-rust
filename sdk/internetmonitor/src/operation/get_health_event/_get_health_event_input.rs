@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthEventInput {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInput {

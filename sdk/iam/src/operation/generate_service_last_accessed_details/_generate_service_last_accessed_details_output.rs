@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateServiceLastAccessedDetailsOutput {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

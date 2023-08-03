@@ -10,13 +10,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowLambdaParameters {
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
-    #[doc(hidden)]
     pub client_context: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>JSON to provide to your Lambda function as input.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl MaintenanceWindowLambdaParameters {

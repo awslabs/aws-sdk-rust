@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
 }
 impl DecisionTaskScheduledEventAttributes {

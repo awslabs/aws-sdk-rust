@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment provisioned resources.</p>
-    #[doc(hidden)]
     pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    #[doc(hidden)]
     pub simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
 impl AlarmRule {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    #[doc(hidden)]
     pub bind_ip: ::std::option::Option<::std::string::String>,
     /// <p>The port number on the container that's used with the network binding.</p>
-    #[doc(hidden)]
     pub container_port: ::std::option::Option<i32>,
     /// <p>The port number on the host that's used with the network binding.</p>
-    #[doc(hidden)]
     pub host_port: ::std::option::Option<i32>,
     /// <p>The protocol used for the network binding.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
@@ -36,10 +32,8 @@ pub struct NetworkBinding {
     /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
-    #[doc(hidden)]
     pub container_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
-    #[doc(hidden)]
     pub host_port_range: ::std::option::Option<::std::string::String>,
 }
 impl NetworkBinding {

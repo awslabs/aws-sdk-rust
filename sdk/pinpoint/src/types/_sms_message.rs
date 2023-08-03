@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsMessage {
     /// <p>The body of the SMS message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>This field is reserved for future use.</p>
-    #[doc(hidden)]
     pub media_url: ::std::option::Option<::std::string::String>,
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
-    #[doc(hidden)]
     pub origination_number: ::std::option::Option<::std::string::String>,
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
-    #[doc(hidden)]
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
 }
 impl SmsMessage {

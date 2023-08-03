@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePortfolioShareOutput {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-    #[doc(hidden)]
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

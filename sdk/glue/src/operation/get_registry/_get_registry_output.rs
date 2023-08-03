@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistryOutput {
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the registry.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the registry.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistryStatus>,
     /// <p>The date and time the registry was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the registry was updated.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -33,28 +33,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheNode {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
-    #[doc(hidden)]
     pub cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
-    #[doc(hidden)]
     pub cache_node_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cache node was created.</p>
-    #[doc(hidden)]
     pub cache_node_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this cache node.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The status of the parameter group applied to this cache node.</p>
-    #[doc(hidden)]
     pub parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
-    #[doc(hidden)]
     pub source_cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where this node was created and now resides.</p>
-    #[doc(hidden)]
     pub customer_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The customer outpost ARN of the cache node.</p>
-    #[doc(hidden)]
     pub customer_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheNode {

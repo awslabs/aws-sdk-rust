@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
-    #[doc(hidden)]
     pub kafka_broker_node_id: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume provisioned throughput information.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Size of the EBS volume to update.</p>
-    #[doc(hidden)]
     pub volume_size_gb: ::std::option::Option<i32>,
 }
 impl BrokerEbsVolumeInfo {

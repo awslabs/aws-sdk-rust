@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of usage statistics to retrieve.</p>
-    #[doc(hidden)]
     pub usage_statistic_type: ::std::option::Option<crate::types::UsageStatisticType>,
     /// <p>Represents the criteria used for querying usage.</p>
-    #[doc(hidden)]
     pub usage_criteria: ::std::option::Option<crate::types::UsageCriteria>,
     /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetUsageStatisticsInput {

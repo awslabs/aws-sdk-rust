@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
-    #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlatformApplicationInput {

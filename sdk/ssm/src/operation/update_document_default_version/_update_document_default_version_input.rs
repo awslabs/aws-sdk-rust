@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersionInput {
     /// <p>The name of a custom document that you want to set as the default version.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of a custom document that you want to set as the default version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDocumentDefaultVersionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
-    #[doc(hidden)]
     pub filter_by: ::std::option::Option<crate::types::StreamFilters>,
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of streams to return. Default: 100.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListStreamsInput {

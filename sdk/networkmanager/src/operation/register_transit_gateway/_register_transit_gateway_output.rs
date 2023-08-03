@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
-    #[doc(hidden)]
     pub transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,
 }

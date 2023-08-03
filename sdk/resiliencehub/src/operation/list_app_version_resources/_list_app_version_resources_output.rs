@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
-    #[doc(hidden)]
     pub physical_resources: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
     /// <p>The ID for a specific resolution.</p>
-    #[doc(hidden)]
     pub resolution_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

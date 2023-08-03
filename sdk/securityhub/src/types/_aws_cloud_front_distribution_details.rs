@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionDetails {
     /// <p>Provides information about the cache configuration for the distribution.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<crate::types::AwsCloudFrontDistributionCacheBehaviors>,
     /// <p>The default cache behavior for the configuration.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior>,
     /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
-    #[doc(hidden)]
     pub default_root_object: ::std::option::Option<::std::string::String>,
     /// <p>The domain name corresponding to the distribution.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The entity tag is a hash of the object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when that the distribution was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::AwsCloudFrontDistributionLogging>,
     /// <p>A complex type that contains information about origins for this distribution.</p>
-    #[doc(hidden)]
     pub origins: ::std::option::Option<crate::types::AwsCloudFrontDistributionOrigins>,
     /// <p>Provides information about the origin groups in the distribution.</p>
-    #[doc(hidden)]
     pub origin_groups: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroups>,
     /// <p>Provides information about the TLS/SSL configuration that the distribution uses to communicate with viewers.</p>
-    #[doc(hidden)]
     pub viewer_certificate: ::std::option::Option<crate::types::AwsCloudFrontDistributionViewerCertificate>,
     /// <p>Indicates the current status of the distribution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionDetails {

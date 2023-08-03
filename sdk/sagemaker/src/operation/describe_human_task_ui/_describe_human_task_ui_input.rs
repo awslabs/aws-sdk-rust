@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHumanTaskUiInput {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    #[doc(hidden)]
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHumanTaskUiInput {

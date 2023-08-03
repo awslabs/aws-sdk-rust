@@ -14,13 +14,10 @@ pub struct StateExitedEventDetails {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateExitedEventDetails {

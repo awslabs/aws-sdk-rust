@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceLimits {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
-    #[doc(hidden)]
     pub instance_count_limits: ::std::option::Option<crate::types::InstanceCountLimits>,
 }
 impl InstanceLimits {

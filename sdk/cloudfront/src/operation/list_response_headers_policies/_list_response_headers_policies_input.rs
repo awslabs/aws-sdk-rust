@@ -8,13 +8,10 @@ pub struct ListResponseHeadersPoliciesInput {
     /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListResponseHeadersPoliciesInput {

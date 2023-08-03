@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowInput {
     /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMaintenanceWindowInput {

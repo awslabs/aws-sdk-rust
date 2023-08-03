@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    #[doc(hidden)]
     pub parameter_group_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

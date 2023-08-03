@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The record.</p>
-    #[doc(hidden)]
     pub record: ::std::option::Option<crate::types::Record>,
 }
 impl PutRecordInput {

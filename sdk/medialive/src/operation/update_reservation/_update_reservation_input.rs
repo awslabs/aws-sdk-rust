@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReservationInput {
     /// Name of the reservation
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Renewal settings for the reservation
-    #[doc(hidden)]
     pub renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
-    #[doc(hidden)]
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReservationInput {

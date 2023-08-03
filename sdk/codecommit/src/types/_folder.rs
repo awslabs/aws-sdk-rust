@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Folder {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path of the folder in the repository.</p>
-    #[doc(hidden)]
     pub absolute_path: ::std::option::Option<::std::string::String>,
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
 }
 impl Folder {

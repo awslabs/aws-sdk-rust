@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardEndpoint {
     /// <p>The endpoint name.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the endpoint was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The endpoint status.</p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
 }
 impl ModelDashboardEndpoint {

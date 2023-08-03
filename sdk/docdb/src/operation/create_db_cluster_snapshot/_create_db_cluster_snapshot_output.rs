@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
-    #[doc(hidden)]
     pub db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
 }

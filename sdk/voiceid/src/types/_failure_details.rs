@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
     /// <p>A description of the error that caused the batch job failure.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetails {

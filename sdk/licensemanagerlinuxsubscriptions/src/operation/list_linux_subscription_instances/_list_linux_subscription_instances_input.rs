@@ -22,13 +22,10 @@ pub struct ListLinuxSubscriptionInstancesInput {
     /// <li> <p> <code>equals</code> </p> </li>
     /// <li> <p> <code>Notequal</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLinuxSubscriptionInstancesInput {

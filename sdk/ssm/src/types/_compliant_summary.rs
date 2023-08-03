@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
-    #[doc(hidden)]
     pub compliant_count: i32,
     /// <p>A summary of the compliance severity by compliance type.</p>
-    #[doc(hidden)]
     pub severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl CompliantSummary {

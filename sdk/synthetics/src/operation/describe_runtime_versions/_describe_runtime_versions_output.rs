@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuntimeVersionsOutput {
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
-    #[doc(hidden)]
     pub runtime_versions: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

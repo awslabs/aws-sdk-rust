@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobOutput {
     /// <p>A list of simulation jobs.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>>,
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub unprocessed_jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

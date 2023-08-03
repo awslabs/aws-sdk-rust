@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    #[doc(hidden)]
     pub metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

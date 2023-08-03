@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3RecordingSinkConfiguration {
     /// <p>The default URI of the Amazon S3 bucket used as the recording sink.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub recording_file_format: ::std::option::Option<crate::types::RecordingFileFormat>,
 }
 impl S3RecordingSinkConfiguration {

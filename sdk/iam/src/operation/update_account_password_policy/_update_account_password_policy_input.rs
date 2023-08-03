@@ -5,42 +5,33 @@
 pub struct UpdateAccountPasswordPolicyInput {
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
-    #[doc(hidden)]
     pub minimum_password_length: ::std::option::Option<i32>,
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
-    #[doc(hidden)]
     pub require_symbols: ::std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
-    #[doc(hidden)]
     pub require_numbers: ::std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
-    #[doc(hidden)]
     pub require_uppercase_characters: ::std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
-    #[doc(hidden)]
     pub require_lowercase_characters: ::std::option::Option<bool>,
     /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
-    #[doc(hidden)]
     pub allow_users_to_change_password: ::std::option::Option<bool>,
     /// <p>The number of days that an IAM user password is valid.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM user passwords never expire.</p>
-    #[doc(hidden)]
     pub max_password_age: ::std::option::Option<i32>,
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM users are not prevented from reusing previous passwords.</p>
-    #[doc(hidden)]
     pub password_reuse_prevention: ::std::option::Option<i32>,
     /// <p> Prevents IAM users who are accessing the account via the Amazon Web Services Management Console from setting a new console password after their password has expired. The IAM user cannot access the console until an administrator resets the password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users can change their passwords after they expire and continue to sign in as the user.</p> <note>
     /// <p> In the Amazon Web Services Management Console, the custom password policy option <b>Allow users to change their own password</b> gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
     /// </note>
-    #[doc(hidden)]
     pub hard_expiry: ::std::option::Option<bool>,
 }
 impl UpdateAccountPasswordPolicyInput {

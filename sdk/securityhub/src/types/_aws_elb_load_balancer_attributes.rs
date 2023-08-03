@@ -6,22 +6,17 @@
 pub struct AwsElbLoadBalancerAttributes {
     /// <p>Information about the access log configuration for the load balancer.</p>
     /// <p>If the access log is enabled, the load balancer captures detailed information about all requests. It delivers the information to a specified S3 bucket.</p>
-    #[doc(hidden)]
     pub access_log: ::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog>,
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
-    #[doc(hidden)]
     pub connection_draining: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
-    #[doc(hidden)]
     pub connection_settings: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    #[doc(hidden)]
     pub cross_zone_load_balancing: ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
     /// <p>Any additional attributes for a load balancer.</p>
-    #[doc(hidden)]
     pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
 }
 impl AwsElbLoadBalancerAttributes {

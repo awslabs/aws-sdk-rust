@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchApplyUpdateActionInput {
     /// <p>The replication group IDs</p>
-    #[doc(hidden)]
     pub replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cache cluster IDs</p>
-    #[doc(hidden)]
     pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchApplyUpdateActionInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlatformVersionOutput {
     /// <p>Detailed information about the version of the custom platform.</p>
-    #[doc(hidden)]
     pub platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     _request_id: Option<String>,
 }

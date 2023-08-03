@@ -5,21 +5,16 @@
 pub struct DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
     /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
     _request_id: Option<String>,
 }

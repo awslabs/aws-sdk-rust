@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentSource {
     /// <p>The source Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source job type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
 }
 impl TrialComponentSource {

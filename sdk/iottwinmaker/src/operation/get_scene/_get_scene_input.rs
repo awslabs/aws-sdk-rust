@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene.</p>
-    #[doc(hidden)]
     pub scene_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSceneInput {

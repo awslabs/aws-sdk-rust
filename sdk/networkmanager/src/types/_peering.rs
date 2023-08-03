@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Peering {
     /// <p>The ID of the core network for the peering request.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the peering attachment. </p>
-    #[doc(hidden)]
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
-    #[doc(hidden)]
     pub peering_type: ::std::option::Option<crate::types::PeeringType>,
     /// <p>The current state of the peering connection. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PeeringState>,
     /// <p>The edge location for the peer.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The resource ARN of the peer.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the peering.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The timestamp when the attachment peer was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Peering {

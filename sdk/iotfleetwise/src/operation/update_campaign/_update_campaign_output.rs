@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutput {
     /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the updated campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct UpdateCampaignOutput {
     /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
     /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CampaignStatus>,
     _request_id: Option<String>,
 }

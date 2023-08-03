@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionControlInfo {
     /// <p>The type of version control.</p>
-    #[doc(hidden)]
     pub version_control_type: ::std::option::Option<crate::types::VersionControlType>,
     /// <p>The time when the version control system was last configured.</p>
-    #[doc(hidden)]
     pub version_control_configuration_time_stamp: ::std::option::Option<::std::string::String>,
 }
 impl VersionControlInfo {

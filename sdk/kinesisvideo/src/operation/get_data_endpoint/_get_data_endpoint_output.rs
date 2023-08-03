@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataEndpointOutput {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    #[doc(hidden)]
     pub data_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

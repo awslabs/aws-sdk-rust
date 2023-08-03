@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateInput {
     /// <p>The ARN of the trust store certificate.</p>
-    #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thumbprint of the trust store certificate.</p>
-    #[doc(hidden)]
     pub thumbprint: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustStoreCertificateInput {

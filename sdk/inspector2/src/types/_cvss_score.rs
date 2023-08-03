@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
-    #[doc(hidden)]
     pub base_score: ::std::option::Option<f64>,
     /// <p>The vector string of the CVSS score.</p>
-    #[doc(hidden)]
     pub scoring_vector: ::std::option::Option<::std::string::String>,
     /// <p>The version of CVSS used for the score.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The source of the CVSS score.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl CvssScore {

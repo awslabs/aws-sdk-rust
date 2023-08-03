@@ -17,7 +17,6 @@ pub struct AutoMlJobObjective {
     /// <li> <p>For image or text classification problem types: <code>Accuracy</code> </p> </li>
     /// <li> <p>For time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
 impl AutoMlJobObjective {

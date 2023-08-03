@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
-    #[doc(hidden)]
     pub remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
 }
 impl PutRemediationConfigurationsInput {

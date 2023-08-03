@@ -5,65 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
-    #[doc(hidden)]
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The time at which the export task began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the export task completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the manifest file for the export task.</p>
-    #[doc(hidden)]
     pub export_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the table that was exported.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique ID of the table that was exported.</p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>Point in time from which table data was exported.</p>
-    #[doc(hidden)]
     pub export_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The client token that was provided for the export task. A client token makes calls to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket containing the export.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the bucket containing the export.</p>
-    #[doc(hidden)]
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix used as the file name and path of the exported snapshot.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Type of encryption used on the bucket where export data is stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub s3_sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data is stored (if applicable).</p>
-    #[doc(hidden)]
     pub s3_sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Status code for the result of the failed export.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>Export failure reason description.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The format of the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    #[doc(hidden)]
     pub export_format: ::std::option::Option<crate::types::ExportFormat>,
     /// <p>The billable size of the table export.</p>
-    #[doc(hidden)]
     pub billed_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of items exported.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i64>,
 }
 impl ExportDescription {

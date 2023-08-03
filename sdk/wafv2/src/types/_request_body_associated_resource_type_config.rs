@@ -9,7 +9,6 @@
 pub struct RequestBodyAssociatedResourceTypeConfig {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
-    #[doc(hidden)]
     pub default_size_inspection_limit: ::std::option::Option<crate::types::SizeInspectionLimit>,
 }
 impl RequestBodyAssociatedResourceTypeConfig {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackage {
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_package_name: ::std::option::Option<::std::string::String>,
     /// <p>The model group to which the model belongs.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a versioned model.</p>
-    #[doc(hidden)]
     pub model_package_version: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the model package.</p>
-    #[doc(hidden)]
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>The time that the model package was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines how to perform inference generation after a training job is run.</p>
-    #[doc(hidden)]
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>A list of algorithms that were used to create a model package.</p>
-    #[doc(hidden)]
     pub source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
     /// <p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>
-    #[doc(hidden)]
     pub validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
@@ -39,13 +30,10 @@ pub struct ModelPackage {
     /// <li> <p> <code>FAILED</code> - The model package failed.</p> </li>
     /// <li> <p> <code>DELETING</code> - The model package is in the process of being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>Specifies the validation and image scan statuses of the model package.</p>
-    #[doc(hidden)]
     pub model_package_status_details: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
     /// <p>Whether the model package is to be certified to be listed on Amazon Web Services Marketplace. For information about listing model packages on Amazon Web Services Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
-    #[doc(hidden)]
     pub certify_for_marketplace: bool,
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
@@ -53,46 +41,32 @@ pub struct ModelPackage {
     /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
     /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>Metrics for the model.</p>
-    #[doc(hidden)]
     pub model_metrics: ::std::option::Option<crate::types::ModelMetrics>,
     /// <p>The last time the model package was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A description provided when the model approval is set.</p>
-    #[doc(hidden)]
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    #[doc(hidden)]
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects.</p>
-    #[doc(hidden)]
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The metadata properties for the model package. </p>
-    #[doc(hidden)]
     pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
-    #[doc(hidden)]
     pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
 }
 impl ModelPackage {

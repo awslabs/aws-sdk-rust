@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceInput {
     /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    #[doc(hidden)]
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterGatewayInstanceInput {

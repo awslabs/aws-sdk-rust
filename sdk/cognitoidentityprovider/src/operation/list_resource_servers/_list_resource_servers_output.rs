@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceServersOutput {
     /// <p>The resource servers.</p>
-    #[doc(hidden)]
     pub resource_servers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>>,
     /// <p>A pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

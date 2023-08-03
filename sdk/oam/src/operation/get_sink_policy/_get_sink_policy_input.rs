@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSinkPolicyInput {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
-    #[doc(hidden)]
     pub sink_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetSinkPolicyInput {

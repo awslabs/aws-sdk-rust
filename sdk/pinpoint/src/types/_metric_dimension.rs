@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<::std::string::String>,
     /// <p>The value to compare.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl MetricDimension {

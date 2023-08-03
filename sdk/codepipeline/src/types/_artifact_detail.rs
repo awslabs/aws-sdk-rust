@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactDetail {
     /// <p>The artifact object name for the action execution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    #[doc(hidden)]
     pub s3location: ::std::option::Option<crate::types::S3Location>,
 }
 impl ArtifactDetail {

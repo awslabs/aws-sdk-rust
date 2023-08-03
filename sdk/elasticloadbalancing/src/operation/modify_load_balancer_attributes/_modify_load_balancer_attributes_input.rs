@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The attributes for the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesInput {

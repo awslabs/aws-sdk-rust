@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate to import.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The private key that matches the public key in the certificate.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The PEM encoded certificate chain.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {

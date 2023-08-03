@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluatePullRequestApprovalRulesInput {

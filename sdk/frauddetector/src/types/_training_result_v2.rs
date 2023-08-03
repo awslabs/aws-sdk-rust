@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingResultV2 {
     /// <p>The model training data validation metrics.</p>
-    #[doc(hidden)]
     pub data_validation_metrics: ::std::option::Option<crate::types::DataValidationMetrics>,
     /// <p> The training metric details. </p>
-    #[doc(hidden)]
     pub training_metrics_v2: ::std::option::Option<crate::types::TrainingMetricsV2>,
     /// <p>The variable importance metrics details.</p>
-    #[doc(hidden)]
     pub variable_importance_metrics: ::std::option::Option<crate::types::VariableImportanceMetrics>,
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    #[doc(hidden)]
     pub aggregated_variables_importance_metrics: ::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics>,
 }
 impl TrainingResultV2 {

@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsolidatedReportMetric {
     /// <p>The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported.</p>
-    #[doc(hidden)]
     pub metric_type: ::std::option::Option<crate::types::MetricType>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    #[doc(hidden)]
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
-    #[doc(hidden)]
     pub workload_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metrics for the lenses in the workload.</p>
-    #[doc(hidden)]
     pub lenses: ::std::option::Option<::std::vec::Vec<crate::types::LensMetric>>,
     /// <p>The total number of lenses applied to the workload.</p>
-    #[doc(hidden)]
     pub lenses_applied_count: i32,
 }
 impl ConsolidatedReportMetric {

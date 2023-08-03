@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageGroupBySpecification {
     /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
 }
 impl AnalyticsIntentStageGroupBySpecification {

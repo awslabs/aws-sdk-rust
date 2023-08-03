@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionCode {
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key of the deployment package.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    #[doc(hidden)]
     pub s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    #[doc(hidden)]
     pub zip_file: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionCode {

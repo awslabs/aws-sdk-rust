@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OAuth2Credentials {
     /// <p>The identifier for the desired client.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>The access token used to access the connector on your behalf.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The refresh token used to refresh an expired access token.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    #[doc(hidden)]
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
 impl OAuth2Credentials {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a pivot table.</p>
-    #[doc(hidden)]
     pub cell: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
 }
 impl PivotTableConditionalFormattingOption {

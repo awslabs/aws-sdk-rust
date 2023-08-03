@@ -6,28 +6,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypeConfigurationDetails {
     /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string specifying the configuration data for the extension, in this account and Region.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>When the configuration data was last updated for this extension.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
-    #[doc(hidden)]
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the extension.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether this configuration data is the default configuration for the extension.</p>
-    #[doc(hidden)]
     pub is_default_configuration: ::std::option::Option<bool>,
 }
 impl TypeConfigurationDetails {

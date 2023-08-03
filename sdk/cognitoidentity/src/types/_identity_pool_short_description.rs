@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that you provide.</p>
-    #[doc(hidden)]
     pub identity_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl IdentityPoolShortDescription {

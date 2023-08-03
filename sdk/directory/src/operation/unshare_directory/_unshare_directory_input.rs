@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnshareDirectoryInput {
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    #[doc(hidden)]
     pub unshare_target: ::std::option::Option<crate::types::UnshareTarget>,
 }
 impl UnshareDirectoryInput {

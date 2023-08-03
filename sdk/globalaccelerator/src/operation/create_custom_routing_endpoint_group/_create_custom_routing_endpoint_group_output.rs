@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupOutput {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
-    #[doc(hidden)]
     pub endpoint_group: ::std::option::Option<crate::types::CustomRoutingEndpointGroup>,
     _request_id: Option<String>,
 }

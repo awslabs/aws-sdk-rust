@@ -7,41 +7,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameServer {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
-    #[doc(hidden)]
     pub game_server_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub game_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
-    #[doc(hidden)]
     pub connection_info: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
-    #[doc(hidden)]
     pub game_server_data: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when an available game server has been reserved for gameplay but has not yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code> status for a maximum of one minute. During this time, game clients connect to the game server to start the game and trigger the game server to update its utilization status. After one minute, the game server claim status reverts to null.</p>
-    #[doc(hidden)]
     pub claim_status: ::std::option::Option<crate::types::GameServerClaimStatus>,
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity. </p> </li>
     /// <li> <p> <code>UTILIZED</code> - The game server is currently hosting a game session with players. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub utilization_status: ::std::option::Option<crate::types::GameServerUtilizationStatus>,
     /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub registration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
-    #[doc(hidden)]
     pub last_claim_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
-    #[doc(hidden)]
     pub last_health_check_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameServer {

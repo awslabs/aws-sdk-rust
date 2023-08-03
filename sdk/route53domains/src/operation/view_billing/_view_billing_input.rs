@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewBillingInput {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The number of billing records to be returned.</p>
     /// <p>Default: 20</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ViewBillingInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentitySourceOutput {
     /// <p>The date and time that the updated identity source was originally created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the updated identity source.</p>
-    #[doc(hidden)]
     pub identity_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the identity source was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the policy store that contains the updated identity source.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

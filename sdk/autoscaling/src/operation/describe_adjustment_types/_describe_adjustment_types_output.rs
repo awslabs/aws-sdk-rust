@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesOutput {
     /// <p>The policy adjustment types.</p>
-    #[doc(hidden)]
     pub adjustment_types: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
     _request_id: Option<String>,
 }

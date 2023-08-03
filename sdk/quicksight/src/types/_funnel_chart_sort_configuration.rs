@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of categories displayed.</p>
-    #[doc(hidden)]
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl FunnelChartSortConfiguration {

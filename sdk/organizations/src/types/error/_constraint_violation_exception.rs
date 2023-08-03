@@ -46,10 +46,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ConstraintViolationExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThingTypeOutput {
     /// <p>The name of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing type ID.</p>
-    #[doc(hidden)]
     pub thing_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing type ARN.</p>
-    #[doc(hidden)]
     pub thing_type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
-    #[doc(hidden)]
     pub thing_type_properties: ::std::option::Option<crate::types::ThingTypeProperties>,
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
-    #[doc(hidden)]
     pub thing_type_metadata: ::std::option::Option<crate::types::ThingTypeMetadata>,
     _request_id: Option<String>,
 }

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyScheduledActionInput {
     /// <p>The name of the scheduled action to modify. </p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub target_action: ::std::option::Option<crate::types::ScheduledActionType>,
     /// <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>A different IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A modified description of the scheduled action. </p>
-    #[doc(hidden)]
     pub scheduled_action_description: ::std::option::Option<::std::string::String>,
     /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
-    #[doc(hidden)]
     pub enable: ::std::option::Option<bool>,
 }
 impl ModifyScheduledActionInput {

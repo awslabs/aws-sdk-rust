@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predecessor {
     /// <p>The name of the job definition used by the predecessor job run.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job-run ID of the predecessor job run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl Predecessor {

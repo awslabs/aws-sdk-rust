@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceRouteInput {
     /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list for the route.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an internet gateway or virtual private gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a NAT instance in your VPC.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
-    #[doc(hidden)]
     pub local_target: ::std::option::Option<bool>,
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
-    #[doc(hidden)]
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceRouteInput {

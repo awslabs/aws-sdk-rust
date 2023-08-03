@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection definition to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
-    #[doc(hidden)]
     pub connection_input: ::std::option::Option<crate::types::ConnectionInput>,
 }
 impl UpdateConnectionInput {

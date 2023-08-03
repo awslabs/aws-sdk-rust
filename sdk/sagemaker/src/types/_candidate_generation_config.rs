@@ -13,7 +13,6 @@ pub struct CandidateGenerationConfig {
     /// </ul>
     /// <p>For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    #[doc(hidden)]
     pub algorithms_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
 }
 impl CandidateGenerationConfig {

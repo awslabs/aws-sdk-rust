@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobInput {
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The job name for the model packaging job. </p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackagingJobInput {

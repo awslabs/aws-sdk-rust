@@ -5,10 +5,8 @@
 pub struct ListCidrCollectionsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A complex type with information about the CIDR collection.</p>
-    #[doc(hidden)]
     pub cidr_collections: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
     _request_id: Option<String>,
 }

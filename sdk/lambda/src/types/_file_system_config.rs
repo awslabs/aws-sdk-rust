@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    #[doc(hidden)]
     pub local_mount_path: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemConfig {

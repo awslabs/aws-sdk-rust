@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusOutput {
     /// <p>Status information about your Config managed rules.</p>
-    #[doc(hidden)]
     pub config_rules_evaluation_status: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

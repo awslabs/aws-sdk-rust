@@ -5,40 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
     /// <p>Any messages about the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
     /// <p>The name of the Region.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    #[doc(hidden)]
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    #[doc(hidden)]
     pub zone_id: ::std::option::Option<::std::string::String>,
     /// <p> For Availability Zones, this parameter has the same value as the Region name.</p>
     /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
     /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network border group.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
-    #[doc(hidden)]
     pub zone_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    #[doc(hidden)]
     pub parent_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    #[doc(hidden)]
     pub parent_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {

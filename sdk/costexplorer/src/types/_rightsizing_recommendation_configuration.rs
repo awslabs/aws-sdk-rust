@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    #[doc(hidden)]
     pub recommendation_target: ::std::option::Option<crate::types::RecommendationTarget>,
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
-    #[doc(hidden)]
     pub benefits_considered: bool,
 }
 impl RightsizingRecommendationConfiguration {

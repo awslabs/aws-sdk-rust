@@ -8,7 +8,6 @@ pub struct CreateCacheSubnetGroupOutput {
     /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
     /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_subnet_group: ::std::option::Option<crate::types::CacheSubnetGroup>,
     _request_id: Option<String>,
 }

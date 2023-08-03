@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteControlInput {
     /// <p> The unique identifier for the control. </p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteControlInput {

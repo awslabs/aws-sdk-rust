@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextTransformation {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>You can specify the following transformation types:</p>
     /// <p> <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded string.</p>
@@ -53,7 +52,6 @@ pub struct TextTransformation {
     /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
     /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TextTransformationType>,
 }
 impl TextTransformation {

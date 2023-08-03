@@ -5,15 +5,12 @@
 pub struct DescribeTableDataImportJobInput {
     /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTableDataImportJobInput {

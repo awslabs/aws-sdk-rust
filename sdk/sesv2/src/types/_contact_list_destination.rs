@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactListDestination {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub contact_list_import_action: ::std::option::Option<crate::types::ContactListImportAction>,
 }
 impl ContactListDestination {

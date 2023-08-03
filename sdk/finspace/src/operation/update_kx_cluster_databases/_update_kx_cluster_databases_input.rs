@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKxClusterDatabasesInput {
     /// <p>The unique identifier of a kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the cluster that you want to modify.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The structure of databases mounted on the cluster.</p>
-    #[doc(hidden)]
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
 }
 impl UpdateKxClusterDatabasesInput {

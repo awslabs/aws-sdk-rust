@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedQueryExecutionId {
     /// <p>The unique identifier of the query execution.</p>
-    #[doc(hidden)]
     pub query_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedQueryExecutionId {

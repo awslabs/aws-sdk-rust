@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerService {
     /// <p>The name of the container service.</p>
-    #[doc(hidden)]
     pub container_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container service.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the container service was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The power specification of the container service.</p>
     /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the container service.</p>
-    #[doc(hidden)]
     pub power: ::std::option::Option<crate::types::ContainerServicePowerName>,
     /// <p>The ID of the power of the container service.</p>
-    #[doc(hidden)]
     pub power_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
@@ -40,34 +32,26 @@ pub struct ContainerService {
     /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
     /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ContainerServiceState>,
     /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    #[doc(hidden)]
     pub state_detail: ::std::option::Option<crate::types::ContainerServiceStateDetail>,
     /// <p>The scale specification of the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<i32>,
     /// <p>An object that describes the current container deployment of the container service.</p>
-    #[doc(hidden)]
     pub current_deployment: ::std::option::Option<crate::types::ContainerServiceDeployment>,
     /// <p>An object that describes the next deployment of the container service.</p>
     /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code> state.</p>
-    #[doc(hidden)]
     pub next_deployment: ::std::option::Option<crate::types::ContainerServiceDeployment>,
     /// <p>A Boolean value indicating whether the container service is disabled.</p>
-    #[doc(hidden)]
     pub is_disabled: ::std::option::Option<bool>,
     /// <p>The principal ARN of the container service.</p>
     /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The private domain name of the container service.</p>
     /// <p>The private domain name is accessible only by other resources within the default virtual private cloud (VPC) of your Lightsail account.</p>
-    #[doc(hidden)]
     pub private_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
@@ -75,15 +59,12 @@ pub struct ContainerService {
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
-    #[doc(hidden)]
     pub public_domain_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The publicly accessible URL of the container service.</p>
     /// <p>If no public endpoint is specified in the <code>currentDeployment</code>, this URL returns a 404 response.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub private_registry_access: ::std::option::Option<crate::types::PrivateRegistryAccess>,
 }
 impl ContainerService {

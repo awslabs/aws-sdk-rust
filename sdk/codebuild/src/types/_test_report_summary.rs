@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestReportSummary {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i32>,
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    #[doc(hidden)]
     pub status_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
-    #[doc(hidden)]
     pub duration_in_nano_seconds: ::std::option::Option<i64>,
 }
 impl TestReportSummary {

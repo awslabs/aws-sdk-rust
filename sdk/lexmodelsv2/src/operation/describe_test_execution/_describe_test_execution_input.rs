@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestExecutionInput {
     /// <p>The execution Id of the test set execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTestExecutionInput {

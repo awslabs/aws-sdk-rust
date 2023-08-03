@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID string assigned to each message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the channel message.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     /// <p>The ID of the SubChannel in the response.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

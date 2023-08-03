@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
-    #[doc(hidden)]
     pub event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
 }

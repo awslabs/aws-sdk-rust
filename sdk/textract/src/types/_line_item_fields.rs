@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    #[doc(hidden)]
     pub line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
 }
 impl LineItemFields {

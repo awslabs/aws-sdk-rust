@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
 }
 impl SegmentCondition {

@@ -5,42 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files. </p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>A section of the request or response body that provides information about the file that is being transcoded.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::JobInput>,
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file. </p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::JobOutput>,
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job. </p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>,
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
-    #[doc(hidden)]
     pub output_key_prefix: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    #[doc(hidden)]
     pub playlists: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>,
     /// <p> The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
@@ -50,10 +40,8 @@ pub struct Job {
     /// <li> <p> <code>Space</code> </p> </li>
     /// <li> <p>The following symbols: <code>_.:/=+-%@</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about the timing of a job.</p>
-    #[doc(hidden)]
     pub timing: ::std::option::Option<crate::types::Timing>,
 }
 impl Job {

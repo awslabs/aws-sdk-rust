@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotSortBy {
     /// <p>The attribute to use to sort the list of bots.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::BotSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl BotSortBy {

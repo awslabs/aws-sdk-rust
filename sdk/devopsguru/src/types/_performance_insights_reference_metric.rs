@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
-    #[doc(hidden)]
     pub metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }
 impl PerformanceInsightsReferenceMetric {

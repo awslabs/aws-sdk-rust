@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaCapturePipelineSourceConfiguration {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
-    #[doc(hidden)]
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
 }
 impl MediaCapturePipelineSourceConfiguration {

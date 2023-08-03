@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
-    #[doc(hidden)]
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional description of the route calculator resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
@@ -17,23 +15,19 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListRouteCalculatorsResponseEntry {

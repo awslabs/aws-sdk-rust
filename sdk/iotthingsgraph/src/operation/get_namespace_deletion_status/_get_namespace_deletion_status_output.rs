@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNamespaceDeletionStatusOutput {
     /// <p>The ARN of the namespace that is being deleted.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace that is being deleted.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deletion request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NamespaceDeletionStatus>,
     /// <p>An error code returned by the namespace deletion task.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes>,
     /// <p>An error code returned by the namespace deletion task.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

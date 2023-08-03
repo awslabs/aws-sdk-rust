@@ -23,7 +23,6 @@ pub struct PerformanceInsightsMetricDimensionGroup {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -46,10 +45,8 @@ pub struct PerformanceInsightsMetricDimensionGroup {
     /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl PerformanceInsightsMetricDimensionGroup {

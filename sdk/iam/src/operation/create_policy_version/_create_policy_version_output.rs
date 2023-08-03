@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
-    #[doc(hidden)]
     pub policy_version: ::std::option::Option<crate::types::PolicyVersion>,
     _request_id: Option<String>,
 }

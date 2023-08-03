@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourceDataSyncInput {
     /// <p>The name of the configuration to delete.</p>
-    #[doc(hidden)]
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the type of resource data sync to delete.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourceDataSyncInput {

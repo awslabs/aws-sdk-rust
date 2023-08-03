@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaColumn {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data in the column.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl SchemaColumn {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    #[doc(hidden)]
     pub ticket_list: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableSortConfiguration {
     /// <p>The field sort options for rows in the table.</p>
-    #[doc(hidden)]
     pub row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The pagination configuration (page size, page number) for the table.</p>
-    #[doc(hidden)]
     pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl TableSortConfiguration {

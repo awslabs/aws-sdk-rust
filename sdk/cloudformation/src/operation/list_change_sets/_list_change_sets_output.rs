@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutput {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    #[doc(hidden)]
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

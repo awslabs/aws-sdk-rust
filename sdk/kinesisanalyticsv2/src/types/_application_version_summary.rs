@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
 }
 impl ApplicationVersionSummary {

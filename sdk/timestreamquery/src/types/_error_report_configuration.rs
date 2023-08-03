@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorReportConfiguration {
     /// <p>The S3 configuration for the error reports.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
 impl ErrorReportConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::FailbackReplicationError>,
     /// <p>Error in data replication.</p>
-    #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationError {

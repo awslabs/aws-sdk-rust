@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>Detailed information about the lifecycle policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::LifecyclePolicy>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrialInput {
     /// <p>The name of the trial to describe.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrialInput {

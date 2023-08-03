@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesInput {
     /// <p> A list of rule ARNs to get details for. </p>
-    #[doc(hidden)]
     pub automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetAutomationRulesInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServicePipelineState {
     /// <p>The service spec that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
 }
 impl ServicePipelineState {

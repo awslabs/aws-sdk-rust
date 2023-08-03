@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartAggregatedFieldWells {
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FunnelChartAggregatedFieldWells {

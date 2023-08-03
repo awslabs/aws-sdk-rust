@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of your OpenSearch domain.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The index where you want to store your data.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<::std::string::String>,
     /// <p>The type of document you are storing.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the document you are storing.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ElasticsearchAction {

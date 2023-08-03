@@ -12,11 +12,9 @@ pub struct KubernetesNetworkConfigRequest {
     /// </ul> <important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
-    #[doc(hidden)]
     pub service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
     /// <p>You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
-    #[doc(hidden)]
     pub ip_family: ::std::option::Option<crate::types::IpFamily>,
 }
 impl KubernetesNetworkConfigRequest {

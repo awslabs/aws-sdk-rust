@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTierConfig {
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
-    #[doc(hidden)]
     pub activated: ::std::option::Option<bool>,
 }
 impl FreeTierConfig {

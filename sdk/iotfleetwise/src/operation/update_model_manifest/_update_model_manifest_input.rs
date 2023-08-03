@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelManifestInput {
     /// <p> The name of the vehicle model to update. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the vehicle model. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    #[doc(hidden)]
     pub nodes_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    #[doc(hidden)]
     pub nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
 }
 impl UpdateModelManifestInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
-    #[doc(hidden)]
     pub constraint: ::std::option::Option<::std::string::String>,
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The reason for an invalid configuration error.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The type of error for an invalid configuration.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl InvalidConfigurationDetail {

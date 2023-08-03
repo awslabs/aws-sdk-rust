@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
-    #[doc(hidden)]
     pub compliance_summary: ::std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl AggregateConformancePackComplianceSummary {

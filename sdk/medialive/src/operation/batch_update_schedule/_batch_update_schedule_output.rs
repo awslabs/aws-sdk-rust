@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleOutput {
     /// Schedule actions created in the schedule.
-    #[doc(hidden)]
     pub creates: ::std::option::Option<crate::types::BatchScheduleActionCreateResult>,
     /// Schedule actions deleted from the schedule.
-    #[doc(hidden)]
     pub deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteResult>,
     _request_id: Option<String>,
 }

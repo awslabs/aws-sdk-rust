@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsInput {
     /// <p>The ARN or name of the secret to replicate.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Regions in which to replicate the secret.</p>
-    #[doc(hidden)]
     pub add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
-    #[doc(hidden)]
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
 }
 impl ReplicateSecretToRegionsInput {

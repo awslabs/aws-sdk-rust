@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
 }
 impl DeleteCollectionDetail {

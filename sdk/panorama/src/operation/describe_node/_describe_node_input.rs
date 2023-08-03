@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeInput {
     /// <p>The node's ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the node's owner.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodeInput {

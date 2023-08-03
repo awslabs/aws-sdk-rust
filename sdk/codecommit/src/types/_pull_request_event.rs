@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    #[doc(hidden)]
     pub event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-    #[doc(hidden)]
     pub pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
-    #[doc(hidden)]
     pub actor_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source and destination branches for the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_created_event_metadata: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
     /// <p>Information about the change in status for the pull request event.</p>
-    #[doc(hidden)]
     pub pull_request_status_changed_event_metadata: ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
     /// <p>Information about the updated source branch for the pull request event. </p>
-    #[doc(hidden)]
     pub pull_request_source_reference_updated_event_metadata: ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
     /// <p>Information about the change in mergability state for the pull request event.</p>
-    #[doc(hidden)]
     pub pull_request_merged_state_changed_event_metadata: ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
     /// <p>Information about a pull request event.</p>
-    #[doc(hidden)]
     pub approval_rule_event_metadata: ::std::option::Option<crate::types::ApprovalRuleEventMetadata>,
     /// <p>Information about an approval state change for a pull request.</p>
-    #[doc(hidden)]
     pub approval_state_changed_event_metadata: ::std::option::Option<crate::types::ApprovalStateChangedEventMetadata>,
     /// <p>Information about an approval rule override event for a pull request.</p>
-    #[doc(hidden)]
     pub approval_rule_overridden_event_metadata: ::std::option::Option<crate::types::ApprovalRuleOverriddenEventMetadata>,
 }
 impl PullRequestEvent {

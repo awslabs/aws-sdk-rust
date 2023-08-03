@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeFlowEntitlementInput {
     /// The ARN of the entitlement that you want to revoke.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The flow that you want to revoke an entitlement from.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl RevokeFlowEntitlementInput {

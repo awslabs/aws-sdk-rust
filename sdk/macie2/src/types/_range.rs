@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<i64>,
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<i64>,
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
-    #[doc(hidden)]
     pub start_column: ::std::option::Option<i64>,
 }
 impl Range {

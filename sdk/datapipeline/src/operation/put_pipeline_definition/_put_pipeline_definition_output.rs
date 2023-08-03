@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    #[doc(hidden)]
     pub validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
-    #[doc(hidden)]
     pub errored: bool,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stream {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -17,7 +15,6 @@ pub struct Stream {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stream_label: ::std::option::Option<::std::string::String>,
 }
 impl Stream {

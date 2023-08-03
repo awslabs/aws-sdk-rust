@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateUserSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user settings.</p>
-    #[doc(hidden)]
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

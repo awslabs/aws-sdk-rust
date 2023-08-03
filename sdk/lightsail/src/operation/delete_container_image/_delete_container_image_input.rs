@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContainerImageInput {
     /// <p>The name of the container service for which to delete a registered container image.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container image to delete from the container service.</p>
     /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContainerImageInput {

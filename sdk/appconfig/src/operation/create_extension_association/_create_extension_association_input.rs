@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExtensionAssociationInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
-    #[doc(hidden)]
     pub extension_version_number: ::std::option::Option<i32>,
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExtensionAssociationInput {

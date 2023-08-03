@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeySummary {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
-    #[doc(hidden)]
     pub key_state: ::std::option::Option<crate::types::KeyState>,
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    #[doc(hidden)]
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    #[doc(hidden)]
     pub key_check_value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
-    #[doc(hidden)]
     pub exportable: ::std::option::Option<bool>,
     /// <p>Specifies whether the key is enabled. </p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl KeySummary {

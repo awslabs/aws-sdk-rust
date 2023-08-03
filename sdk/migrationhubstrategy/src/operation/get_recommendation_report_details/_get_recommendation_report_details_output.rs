@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsOutput {
     /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Detailed information about the recommendation report. </p>
-    #[doc(hidden)]
     pub recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,
     _request_id: Option<String>,
 }

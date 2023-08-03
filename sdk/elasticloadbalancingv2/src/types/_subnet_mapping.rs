@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    #[doc(hidden)]
     pub private_i_pv4_address: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    #[doc(hidden)]
     pub i_pv6_address: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMapping {

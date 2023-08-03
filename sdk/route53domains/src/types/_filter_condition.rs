@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ListDomainsAttributeName>,
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
@@ -13,10 +12,8 @@ pub struct FilterCondition {
     /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterCondition {

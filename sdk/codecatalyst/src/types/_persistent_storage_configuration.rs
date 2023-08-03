@@ -7,7 +7,6 @@ pub struct PersistentStorageConfiguration {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    #[doc(hidden)]
     pub size_in_gi_b: ::std::option::Option<i32>,
 }
 impl PersistentStorageConfiguration {

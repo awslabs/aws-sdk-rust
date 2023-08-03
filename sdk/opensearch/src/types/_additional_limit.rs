@@ -8,10 +8,8 @@ pub struct AdditionalLimit {
     /// <li> <p> <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p> </li>
     /// <li> <p> <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p> The values of the additional instance type limits.</p>
-    #[doc(hidden)]
     pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimit {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceDefinitionVersionOutput {
     /// Arn of the resource definition version.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// Information about the definition.
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::ResourceDefinitionVersion>,
     /// The ID of the resource definition version.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The version of the resource definition version.
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonOptions {
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
-    #[doc(hidden)]
     pub multi_line: bool,
 }
 impl JsonOptions {

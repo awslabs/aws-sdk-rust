@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-    #[doc(hidden)]
     pub wireless_device_frame_info: ::std::option::Option<crate::types::WirelessDeviceFrameInfo>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
-    #[doc(hidden)]
     pub multicast_frame_info: ::std::option::Option<crate::types::MulticastFrameInfo>,
 }
 impl TraceContent {

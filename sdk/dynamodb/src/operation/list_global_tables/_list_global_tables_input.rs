@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
-    #[doc(hidden)]
     pub exclusive_start_global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
     /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>Lists the global tables in a specific Region.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl ListGlobalTablesInput {

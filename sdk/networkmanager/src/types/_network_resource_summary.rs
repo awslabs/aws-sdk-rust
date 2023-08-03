@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceSummary {
     /// <p>The ARN of the gateway.</p>
-    #[doc(hidden)]
     pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The value for the Name tag.</p>
-    #[doc(hidden)]
     pub name_tag: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is a middlebox appliance.</p>
-    #[doc(hidden)]
     pub is_middlebox: bool,
 }
 impl NetworkResourceSummary {

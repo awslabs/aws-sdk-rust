@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
-    #[doc(hidden)]
     pub latest_launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the latest stack launched for this application.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the latest stack launched for this application.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchDetails {

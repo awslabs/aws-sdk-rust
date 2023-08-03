@@ -4,44 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstancesInput {
     /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    #[doc(hidden)]
     pub custom_image_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
-    #[doc(hidden)]
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The name of your key pair.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    #[doc(hidden)]
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateInstancesInput {

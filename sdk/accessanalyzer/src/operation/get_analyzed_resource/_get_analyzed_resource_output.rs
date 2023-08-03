@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::AnalyzedResource>,
     _request_id: Option<String>,
 }

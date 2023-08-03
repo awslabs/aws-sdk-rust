@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackInput {
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-    #[doc(hidden)]
     pub callback_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-    #[doc(hidden)]
     pub delete_resource: ::std::option::Option<bool>,
     /// <p>Stores information about the processed message.</p>
-    #[doc(hidden)]
     pub channel_message: ::std::option::Option<crate::types::ChannelMessageCallback>,
 }
 impl ChannelFlowCallbackInput {

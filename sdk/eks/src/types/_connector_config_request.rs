@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cloud provider for the target cluster to connect.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::ConnectorConfigProvider>,
 }
 impl ConnectorConfigRequest {

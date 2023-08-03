@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionModification {
     /// <p>The name of the section to be modified.</p>
-    #[doc(hidden)]
     pub section: ::std::option::Option<::std::string::String>,
     /// <p>The path within the section content to be modified.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl SectionModification {

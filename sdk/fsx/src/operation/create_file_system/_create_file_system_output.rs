@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFileSystemOutput {
     /// <p>The configuration of the file system that was created.</p>
-    #[doc(hidden)]
     pub file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
 }

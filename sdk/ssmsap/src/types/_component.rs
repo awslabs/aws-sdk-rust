@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Component {
     /// <p>The ID of the component.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
-    #[doc(hidden)]
     pub parent_component: ::std::option::Option<::std::string::String>,
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
-    #[doc(hidden)]
     pub child_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The status of the component.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>The hostname of the component.</p>
-    #[doc(hidden)]
     pub sap_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The kernel version of the component.</p>
-    #[doc(hidden)]
     pub sap_kernel_version: ::std::option::Option<::std::string::String>,
     /// <p>The SAP HANA version of the component.</p>
-    #[doc(hidden)]
     pub hdb_version: ::std::option::Option<::std::string::String>,
     /// <p>Details of the SAP HANA system replication for the component.</p>
-    #[doc(hidden)]
     pub resilience: ::std::option::Option<crate::types::Resilience>,
     /// <p>The associated host of the component.</p>
-    #[doc(hidden)]
     pub associated_host: ::std::option::Option<crate::types::AssociatedHost>,
     /// <p>The SAP HANA databases of the component.</p>
-    #[doc(hidden)]
     pub databases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The hosts of the component.</p>
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
-    #[doc(hidden)]
     pub hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     /// <p>The primary host of the component.</p>
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
-    #[doc(hidden)]
     pub primary_host: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the component was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Component {

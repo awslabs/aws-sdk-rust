@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceRegistryLogin {
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The container service registry password to use to push container images to the container image registry of a Lightsail account</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the container image registry sign-in credentials expire.</p>
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
-    #[doc(hidden)]
     pub registry: ::std::option::Option<::std::string::String>,
 }
 impl ContainerServiceRegistryLogin {

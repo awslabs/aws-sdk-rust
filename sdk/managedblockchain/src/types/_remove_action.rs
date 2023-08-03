@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAction {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The organization under which the member (user or group) exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The member (user or group) to which this alias is added.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias to add to the member set.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
 }
 impl CreateAliasInput {

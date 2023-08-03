@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationSetInput {

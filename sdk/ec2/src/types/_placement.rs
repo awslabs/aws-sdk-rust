@@ -7,37 +7,28 @@ pub struct Placement {
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The affinity setting for the instance on the Dedicated Host.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
-    #[doc(hidden)]
     pub affinity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group that the instance is in. If you specify <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of the partition that the instance is in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    #[doc(hidden)]
     pub partition_number: ::std::option::Option<i32>,
     /// <p>The ID of the Dedicated Host on which the instance resides.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>. The <code>host</code> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> or for T3 instances that are configured for the <code>unlimited</code> CPU credit option.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub spread_domain: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the host resource group in which to launch the instances.</p>
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    #[doc(hidden)]
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the placement group that the instance is in. If you specify <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl Placement {

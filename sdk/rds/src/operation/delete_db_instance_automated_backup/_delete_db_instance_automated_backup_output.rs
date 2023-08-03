@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceAutomatedBackupOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backup: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,
 }

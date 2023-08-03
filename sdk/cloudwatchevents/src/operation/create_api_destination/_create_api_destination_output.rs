@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiDestinationOutput {
     /// <p>The ARN of the API destination that was created by the request.</p>
-    #[doc(hidden)]
     pub api_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the API destination that was created by the request.</p>
-    #[doc(hidden)]
     pub api_destination_state: ::std::option::Option<crate::types::ApiDestinationState>,
     /// <p>A time stamp indicating the time that the API destination was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

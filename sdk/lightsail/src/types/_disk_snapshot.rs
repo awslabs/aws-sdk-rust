@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskSnapshot {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The date when the disk snapshot was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The size of the disk in GB.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The status of the disk snapshot operation.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DiskSnapshotState>,
     /// <p>The progress of the snapshot.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    #[doc(hidden)]
     pub from_disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    #[doc(hidden)]
     pub from_disk_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
-    #[doc(hidden)]
     pub from_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
-    #[doc(hidden)]
     pub from_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
-    #[doc(hidden)]
     pub is_from_auto_snapshot: ::std::option::Option<bool>,
 }
 impl DiskSnapshot {

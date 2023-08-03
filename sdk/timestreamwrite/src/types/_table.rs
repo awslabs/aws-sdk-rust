@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Table {
     /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database that contains this table.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>The retention duration for the memory store and magnetic store.</p>
-    #[doc(hidden)]
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p>The time when the Timestream table was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the Timestream table was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    #[doc(hidden)]
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p> The schema of the table. </p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
 impl Table {

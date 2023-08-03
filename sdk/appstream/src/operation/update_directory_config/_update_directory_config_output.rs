@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectoryConfigOutput {
     /// <p>Information about the Directory Config object.</p>
-    #[doc(hidden)]
     pub directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
     _request_id: Option<String>,
 }

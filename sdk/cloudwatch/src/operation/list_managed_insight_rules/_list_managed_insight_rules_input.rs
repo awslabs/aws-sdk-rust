@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesInput {
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListManagedInsightRulesInput {

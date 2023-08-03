@@ -9,10 +9,8 @@ pub struct AdditionalAttribute {
     /// <ul>
     /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>This value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AdditionalAttribute {

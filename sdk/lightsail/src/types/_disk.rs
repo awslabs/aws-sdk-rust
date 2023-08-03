@@ -5,66 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique name of the disk.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the disk.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The date when the disk was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of objects representing the add-ons enabled on the disk.</p>
-    #[doc(hidden)]
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
     /// <p>The size of the disk in GB.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
-    #[doc(hidden)]
     pub is_system_disk: ::std::option::Option<bool>,
     /// <p>The input/output operations per second (IOPS) of the disk.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The disk path.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the disk.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DiskState>,
     /// <p>The resources to which the disk is attached.</p>
-    #[doc(hidden)]
     pub attached_to: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the disk is attached.</p>
-    #[doc(hidden)]
     pub is_attached: ::std::option::Option<bool>,
     /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
-    #[doc(hidden)]
     pub attachment_state: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    #[doc(hidden)]
     pub gb_in_use: ::std::option::Option<i32>,
     /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub auto_mount_status: ::std::option::Option<crate::types::AutoMountStatus>,
 }
 impl Disk {

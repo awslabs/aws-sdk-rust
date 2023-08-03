@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
-    #[doc(hidden)]
     pub access_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>Renews the expiration timer for a generated token.</p>
-    #[doc(hidden)]
     pub refresh_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Credentials {

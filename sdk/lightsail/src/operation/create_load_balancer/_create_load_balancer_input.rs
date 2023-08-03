@@ -4,39 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerInput {
     /// <p>The name of your load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance port where you're creating your load balancer.</p>
-    #[doc(hidden)]
     pub instance_port: ::std::option::Option<i32>,
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
-    #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
-    #[doc(hidden)]
     pub certificate_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    #[doc(hidden)]
     pub certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IP address type for the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
     /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tls_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateLoadBalancerInput {

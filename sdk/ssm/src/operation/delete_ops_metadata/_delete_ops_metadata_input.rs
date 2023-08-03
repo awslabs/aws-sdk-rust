@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-    #[doc(hidden)]
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOpsMetadataInput {

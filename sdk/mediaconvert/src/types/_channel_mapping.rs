@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMapping {
     /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
-    #[doc(hidden)]
     pub output_channels: ::std::option::Option<::std::vec::Vec<crate::types::OutputChannelMapping>>,
 }
 impl ChannelMapping {

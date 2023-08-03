@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentMetadataItem {
     /// <p> The name of the assessment. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the assessment. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p> The roles that are associated with the assessment. </p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The delegations that are associated with the assessment. </p>
-    #[doc(hidden)]
     pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     /// <p> Specifies when the assessment was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time of the most recent update. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentMetadataItem {

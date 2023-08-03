@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
-    #[doc(hidden)]
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema name (database name) to which the query results belong.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The table name for the query results.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A column label.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
-    #[doc(hidden)]
     pub precision: i32,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
-    #[doc(hidden)]
     pub scale: i32,
     /// <p>Indicates the column's nullable status.</p>
-    #[doc(hidden)]
     pub nullable: ::std::option::Option<crate::types::ColumnNullable>,
     /// <p>Indicates whether values in the column are case-sensitive.</p>
-    #[doc(hidden)]
     pub case_sensitive: bool,
 }
 impl ColumnInfo {

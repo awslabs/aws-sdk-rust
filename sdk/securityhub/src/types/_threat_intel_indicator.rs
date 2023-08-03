@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatIntelIndicator {
     /// <p>The type of threat intelligence indicator.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThreatIntelIndicatorType>,
     /// <p>The value of a threat intelligence indicator.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The category of a threat intelligence indicator.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ThreatIntelIndicatorCategory>,
     /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_observed_at: ::std::option::Option<::std::string::String>,
     /// <p>The source of the threat intelligence indicator.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
-    #[doc(hidden)]
     pub source_url: ::std::option::Option<::std::string::String>,
 }
 impl ThreatIntelIndicator {

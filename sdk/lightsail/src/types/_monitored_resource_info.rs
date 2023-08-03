@@ -6,14 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoredResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lightsail resource being monitored.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Lightsail resource type of the resource being monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl MonitoredResourceInfo {

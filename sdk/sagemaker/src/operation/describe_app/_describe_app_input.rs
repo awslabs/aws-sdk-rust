@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInput {
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of app.</p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppInput {

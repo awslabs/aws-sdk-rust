@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FraudsterRegistrationJob {
     /// <p>The client-provided name for the fraudster registration job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the fraudster registration job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the fraudster registration job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-    #[doc(hidden)]
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>A timestamp of when the fraudster registration job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the fraudster registration job ended.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    #[doc(hidden)]
     pub job_progress: ::std::option::Option<crate::types::JobProgress>,
 }
 impl FraudsterRegistrationJob {

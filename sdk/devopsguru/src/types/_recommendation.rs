@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p> A description of the problem. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A hyperlink to information to help you address the problem. </p>
-    #[doc(hidden)]
     pub link: ::std::option::Option<::std::string::String>,
     /// <p> The name of the recommendation. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
-    #[doc(hidden)]
     pub related_events: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
-    #[doc(hidden)]
     pub related_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     /// <p>The category type of the recommendation.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {

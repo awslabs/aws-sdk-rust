@@ -14,7 +14,6 @@ pub struct NfsMountOptions {
     /// </ul> <note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::NfsVersion>,
 }
 impl NfsMountOptions {

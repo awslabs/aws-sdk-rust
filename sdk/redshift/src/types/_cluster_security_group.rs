@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSecurityGroup {
     /// <p>The name of the cluster security group to which the operation was applied.</p>
-    #[doc(hidden)]
     pub cluster_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-    #[doc(hidden)]
     pub ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
     /// <p>The list of tags for the cluster security group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ClusterSecurityGroup {

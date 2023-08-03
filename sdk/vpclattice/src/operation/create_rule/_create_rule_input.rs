@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The action for the default rule.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRuleInput {

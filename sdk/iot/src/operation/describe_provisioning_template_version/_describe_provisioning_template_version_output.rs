@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateVersionOutput {
     /// <p>The provisioning template version ID.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<i32>,
     /// <p>The date when the provisioning template version was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The JSON formatted contents of the provisioning template version.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>True if the provisioning template version is the default version.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     _request_id: Option<String>,
 }

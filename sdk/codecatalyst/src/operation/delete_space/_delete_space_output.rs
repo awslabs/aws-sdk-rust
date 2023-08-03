@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSpaceOutput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

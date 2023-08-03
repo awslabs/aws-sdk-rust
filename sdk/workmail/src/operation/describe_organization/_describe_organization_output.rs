@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOutput {
     /// <p>The identifier of an organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias for an organization.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The state of an organization.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the directory associated with an WorkMail organization.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of directory associated with the WorkMail organization.</p>
-    #[doc(hidden)]
     pub directory_type: ::std::option::Option<::std::string::String>,
     /// <p>The default mail domain associated with the organization.</p>
-    #[doc(hidden)]
     pub default_mail_domain: ::std::option::Option<::std::string::String>,
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub completed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

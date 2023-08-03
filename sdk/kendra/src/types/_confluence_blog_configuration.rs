@@ -6,7 +6,6 @@
 pub struct ConfluenceBlogConfiguration {
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    #[doc(hidden)]
     pub blog_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>,
 }
 impl ConfluenceBlogConfiguration {

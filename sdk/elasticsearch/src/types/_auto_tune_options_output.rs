@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsOutput {
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AutoTuneOptionsOutput {

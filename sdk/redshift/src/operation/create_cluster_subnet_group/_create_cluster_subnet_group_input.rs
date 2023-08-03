@@ -12,16 +12,12 @@ pub struct CreateClusterSubnetGroupInput {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the subnet group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterSubnetGroupInput {

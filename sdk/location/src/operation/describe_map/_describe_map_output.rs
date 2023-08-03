@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub map_arn: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::MapConfiguration>,
     /// <p>The optional description for the map resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the map resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

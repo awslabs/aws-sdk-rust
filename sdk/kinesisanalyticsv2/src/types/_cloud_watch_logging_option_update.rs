@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>The ID of the CloudWatch logging option to update</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    #[doc(hidden)]
     pub log_stream_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdate {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastSession {
     /// <p>Downlink data rate.</p>
-    #[doc(hidden)]
     pub dl_dr: ::std::option::Option<i32>,
     /// <p>Downlink frequency.</p>
-    #[doc(hidden)]
     pub dl_freq: ::std::option::Option<i32>,
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    #[doc(hidden)]
     pub session_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>How long before a multicast group session is to timeout.</p>
-    #[doc(hidden)]
     pub session_timeout: ::std::option::Option<i32>,
     /// <p>The PingSlotPeriod value.</p>
-    #[doc(hidden)]
     pub ping_slot_period: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastSession {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopTrainingJobInput {
     /// <p>The name of the training job to stop.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopTrainingJobInput {

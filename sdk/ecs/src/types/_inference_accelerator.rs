@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceAccelerator {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
 }
 impl InferenceAccelerator {

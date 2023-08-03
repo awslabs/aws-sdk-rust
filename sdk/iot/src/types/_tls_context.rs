@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl TlsContext {

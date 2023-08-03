@@ -9,38 +9,28 @@ pub struct AwsApiGatewayV2ApiDetails {
     /// <api-id></api-id></i>.execute-api.<i>
     /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
-    #[doc(hidden)]
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the API.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
-    #[doc(hidden)]
     pub api_key_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>A description of the API.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier for the API.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
-    #[doc(hidden)]
     pub protocol_type: ::std::option::Option<::std::string::String>,
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
     /// <p>For WebSocket APIs, there is no default value.</p>
-    #[doc(hidden)]
     pub route_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub cors_configuration: ::std::option::Option<crate::types::AwsCorsConfiguration>,
 }
 impl AwsApiGatewayV2ApiDetails {

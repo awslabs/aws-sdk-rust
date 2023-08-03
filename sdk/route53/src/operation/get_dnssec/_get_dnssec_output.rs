@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDnssecOutput {
     /// <p>A string repesenting the status of DNSSEC.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    #[doc(hidden)]
     pub key_signing_keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
     _request_id: Option<String>,
 }

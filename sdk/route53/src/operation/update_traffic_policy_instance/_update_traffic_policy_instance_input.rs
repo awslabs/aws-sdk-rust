@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    #[doc(hidden)]
     pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    #[doc(hidden)]
     pub traffic_policy_version: ::std::option::Option<i32>,
 }
 impl UpdateTrafficPolicyInstanceInput {

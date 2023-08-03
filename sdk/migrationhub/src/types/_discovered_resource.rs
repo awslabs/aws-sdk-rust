@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl DiscoveredResource {

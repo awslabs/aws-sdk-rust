@@ -6,16 +6,13 @@
 pub struct Thumbnails {
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The approximate number of seconds between thumbnails. Specify an integer value.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.</p>
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
@@ -23,13 +20,10 @@ pub struct Thumbnails {
     /// <p>The aspect ratio of thumbnails. Valid values include:</p>
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the output file.</p>
-    #[doc(hidden)]
     pub aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 4096.</p>
-    #[doc(hidden)]
     pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.</p>
-    #[doc(hidden)]
     pub max_height: ::std::option::Option<::std::string::String>,
     /// <p>Specify one of the following values to control scaling of thumbnails:</p>
     /// <ul>
@@ -40,10 +34,8 @@ pub struct Thumbnails {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    #[doc(hidden)]
     pub padding_policy: ::std::option::Option<::std::string::String>,
 }
 impl Thumbnails {

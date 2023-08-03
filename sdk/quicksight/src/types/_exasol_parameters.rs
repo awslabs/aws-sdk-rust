@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port for the Exasol data source.</p>
-    #[doc(hidden)]
     pub port: i32,
 }
 impl ExasolParameters {

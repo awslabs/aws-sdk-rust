@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileQuestionUpdate {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The selected choices.</p>
-    #[doc(hidden)]
     pub selected_choice_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProfileQuestionUpdate {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MissingCompleteSensorData {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
-    #[doc(hidden)]
     pub affected_sensor_count: ::std::option::Option<i32>,
 }
 impl MissingCompleteSensorData {

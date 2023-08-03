@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDynamicThingGroupOutput {
     /// <p>The dynamic thing group name.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group ARN.</p>
-    #[doc(hidden)]
     pub thing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group ID.</p>
-    #[doc(hidden)]
     pub thing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group query version.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

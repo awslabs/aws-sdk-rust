@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataAccessAsset {
     /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    #[doc(hidden)]
     pub key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>S3 keys made available using this asset.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
-    #[doc(hidden)]
     pub s3_access_point_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
-    #[doc(hidden)]
     pub s3_access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
-    #[doc(hidden)]
     pub kms_keys_to_grant: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAsset {

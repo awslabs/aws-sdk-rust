@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledActionType {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
-    #[doc(hidden)]
     pub resize_cluster: ::std::option::Option<crate::types::ResizeClusterMessage>,
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
-    #[doc(hidden)]
     pub pause_cluster: ::std::option::Option<crate::types::PauseClusterMessage>,
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
-    #[doc(hidden)]
     pub resume_cluster: ::std::option::Option<crate::types::ResumeClusterMessage>,
 }
 impl ScheduledActionType {

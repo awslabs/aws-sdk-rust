@@ -6,10 +6,8 @@ pub struct GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number that specifies the revision of the system to get.</p>
-    #[doc(hidden)]
     pub revision_number: ::std::option::Option<i64>,
 }
 impl GetSystemTemplateInput {

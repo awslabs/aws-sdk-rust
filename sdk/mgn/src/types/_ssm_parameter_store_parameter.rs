@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmParameterStoreParameter {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    #[doc(hidden)]
     pub parameter_type: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl SsmParameterStoreParameter {

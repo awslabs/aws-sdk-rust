@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectAclOutput {
     /// <p> Container for the bucket owner's display name and ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>A list of grants.</p>
-    #[doc(hidden)]
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

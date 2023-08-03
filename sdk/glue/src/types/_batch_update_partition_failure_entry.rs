@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
-    #[doc(hidden)]
     pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details about the batch update partition error.</p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchUpdatePartitionFailureEntry {

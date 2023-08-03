@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the component.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    #[doc(hidden)]
     pub supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes the current status of the component.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ComponentState>,
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The owner of the component.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The change description for the current version of the component.</p>
-    #[doc(hidden)]
     pub change_description: ::std::option::Option<::std::string::String>,
     /// <p>The original creation date of the component.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags that apply to the component.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
-    #[doc(hidden)]
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
-    #[doc(hidden)]
     pub obfuscate: bool,
 }
 impl ComponentSummary {

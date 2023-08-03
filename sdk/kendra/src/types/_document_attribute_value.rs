@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentAttributeValue {
     /// <p>A string, such as "department".</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    #[doc(hidden)]
     pub string_list_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A long integer value.</p>
-    #[doc(hidden)]
     pub long_value: ::std::option::Option<i64>,
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
-    #[doc(hidden)]
     pub date_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DocumentAttributeValue {

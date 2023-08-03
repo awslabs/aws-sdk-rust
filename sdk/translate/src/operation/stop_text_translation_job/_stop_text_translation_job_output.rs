@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopTextTranslationJobOutput {
     /// <p>The job ID of the stopped batch translation job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }

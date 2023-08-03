@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Grantee {
     /// <p></p>
-    #[doc(hidden)]
     pub type_identifier: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
     /// <p></p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl S3Grantee {

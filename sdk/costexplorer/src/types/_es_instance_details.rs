@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
-    #[doc(hidden)]
     pub instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The size of instance that Amazon Web Services recommends.</p>
-    #[doc(hidden)]
     pub instance_size: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
-    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
-    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl EsInstanceDetails {

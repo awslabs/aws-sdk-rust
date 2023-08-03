@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
-    #[doc(hidden)]
     pub vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]
     pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    #[doc(hidden)]
     pub last_inventory_date: ::std::option::Option<::std::string::String>,
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
-    #[doc(hidden)]
     pub number_of_archives: i64,
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
-    #[doc(hidden)]
     pub size_in_bytes: i64,
 }
 impl DescribeVaultOutput {

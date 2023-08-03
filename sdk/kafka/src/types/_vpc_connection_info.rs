@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectionInfo {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the VPC Connection.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Description of the requester that calls the API operation.</p>
-    #[doc(hidden)]
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcConnectionInfo {

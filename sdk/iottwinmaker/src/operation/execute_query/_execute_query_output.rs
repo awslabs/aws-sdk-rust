@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteQueryOutput {
     /// <p>A list of ColumnDescription objects.</p>
-    #[doc(hidden)]
     pub column_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
     /// <p>Represents a single row in the query results.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

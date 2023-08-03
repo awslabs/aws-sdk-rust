@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    #[doc(hidden)]
     pub developer_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    #[doc(hidden)]
     pub developer_user_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UnlinkDeveloperIdentityInput {

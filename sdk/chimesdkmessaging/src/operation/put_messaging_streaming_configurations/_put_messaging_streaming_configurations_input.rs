@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMessagingStreamingConfigurationsInput {
     /// <p>The ARN of the streaming configuration.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The streaming configurations.</p>
-    #[doc(hidden)]
     pub streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
 }
 impl PutMessagingStreamingConfigurationsInput {

@@ -5,7 +5,6 @@
 pub struct CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelBatchImportJobInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectTargetedSentimentInput {
     /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectTargetedSentimentInput {

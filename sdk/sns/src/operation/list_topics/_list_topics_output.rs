@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
-    #[doc(hidden)]
     pub topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

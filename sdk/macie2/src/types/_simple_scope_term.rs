@@ -11,10 +11,8 @@ pub struct SimpleScopeTerm {
     /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
     /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
     /// <p>The object property to use in the condition.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::ScopeFilterKey>,
     /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported property (key) are:</p>
@@ -25,7 +23,6 @@ pub struct SimpleScopeTerm {
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SimpleScopeTerm {

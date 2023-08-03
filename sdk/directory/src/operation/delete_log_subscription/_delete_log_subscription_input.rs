@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLogSubscriptionInput {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLogSubscriptionInput {

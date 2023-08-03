@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkCreateWirelessDevice {
     /// <p>The ID of the Sidewalk device profile.</p>
-    #[doc(hidden)]
     pub device_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkCreateWirelessDevice {

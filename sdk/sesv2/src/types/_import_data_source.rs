@@ -6,10 +6,8 @@
 pub struct ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the import job's data source.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
 }
 impl ImportDataSource {

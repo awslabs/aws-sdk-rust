@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPiiEntitiesDetectionJobInput {
     /// <p>The input properties for a PII entities detection job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>,
     /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    #[doc(hidden)]
     pub redaction_config: ::std::option::Option<crate::types::RedactionConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartPiiEntitiesDetectionJobInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProductAsAdminOutput {
     /// <p>Information about the product view.</p>
-    #[doc(hidden)]
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
     /// <p>Information about the tags associated with the product.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the TagOptions associated with the product.</p>
-    #[doc(hidden)]
     pub tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
-    #[doc(hidden)]
     pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
     _request_id: Option<String>,
 }

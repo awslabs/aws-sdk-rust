@@ -6,7 +6,6 @@
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {

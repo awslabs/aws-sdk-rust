@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStudioSessionMappingOutput {
     /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
-    #[doc(hidden)]
     pub session_mapping: ::std::option::Option<crate::types::SessionMappingDetail>,
     _request_id: Option<String>,
 }

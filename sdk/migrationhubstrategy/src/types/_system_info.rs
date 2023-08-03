@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemInfo {
     /// <p> Operating system corresponding to a server. </p>
-    #[doc(hidden)]
     pub os_info: ::std::option::Option<crate::types::OsInfo>,
     /// <p> File system type for the server. </p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<::std::string::String>,
     /// <p> Networking information related to a server. </p>
-    #[doc(hidden)]
     pub network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>,
     /// <p> CPU architecture type for the server. </p>
-    #[doc(hidden)]
     pub cpu_architecture: ::std::option::Option<::std::string::String>,
 }
 impl SystemInfo {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeployment {
     /// <p>The name and unique ID of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the deployment.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeploymentType>,
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    #[doc(hidden)]
     pub failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
     /// <p>Returns a list of Definition objects.</p>
-    #[doc(hidden)]
     pub definitions: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>,
 }
 impl EdgeDeployment {

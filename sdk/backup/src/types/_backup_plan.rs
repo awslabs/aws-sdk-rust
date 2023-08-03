@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPlan {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub backup_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRule>>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
-    #[doc(hidden)]
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlan {

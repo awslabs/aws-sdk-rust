@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
-    #[doc(hidden)]
     pub input_lambda_processor_description: ::std::option::Option<crate::types::InputLambdaProcessorDescription>,
 }
 impl InputProcessingConfigurationDescription {

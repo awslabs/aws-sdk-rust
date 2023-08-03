@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfigResponse {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of security group IDs associated with the simulation job.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC ID associated with your simulation job.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean indicating if a public IP was assigned.</p>
-    #[doc(hidden)]
     pub assign_public_ip: bool,
 }
 impl VpcConfigResponse {

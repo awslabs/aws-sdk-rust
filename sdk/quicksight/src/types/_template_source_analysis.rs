@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
-    #[doc(hidden)]
     pub data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
 }
 impl TemplateSourceAnalysis {

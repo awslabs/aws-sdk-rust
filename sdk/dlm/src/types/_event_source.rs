@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EventSourceValues>,
     /// <p>Information about the event.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::EventParameters>,
 }
 impl EventSource {

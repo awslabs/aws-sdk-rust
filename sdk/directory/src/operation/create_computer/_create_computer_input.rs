@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateComputerInput {
     /// <p>The identifier of the directory in which to create the computer account.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the computer account.</p>
-    #[doc(hidden)]
     pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    #[doc(hidden)]
     pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl CreateComputerInput {

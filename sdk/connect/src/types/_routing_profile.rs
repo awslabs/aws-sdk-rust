@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    #[doc(hidden)]
     pub routing_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
-    #[doc(hidden)]
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the routing profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    #[doc(hidden)]
     pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    #[doc(hidden)]
     pub default_outbound_queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of associated queues in routing profile.</p>
-    #[doc(hidden)]
     pub number_of_associated_queues: ::std::option::Option<i64>,
     /// <p>The number of associated users in routing profile.</p>
-    #[doc(hidden)]
     pub number_of_associated_users: ::std::option::Option<i64>,
 }
 impl RoutingProfile {

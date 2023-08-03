@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeValidDbInstanceModificationsInput {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeValidDbInstanceModificationsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the security policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetSecurityPolicyInput {

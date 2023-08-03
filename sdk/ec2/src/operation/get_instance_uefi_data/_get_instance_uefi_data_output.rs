@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceUefiDataOutput {
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
-    #[doc(hidden)]
     pub uefi_data: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

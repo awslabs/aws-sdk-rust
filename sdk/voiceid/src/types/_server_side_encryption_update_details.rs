@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionUpdateDetails {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-    #[doc(hidden)]
     pub old_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus>,
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionUpdateDetails {

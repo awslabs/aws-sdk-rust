@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EthernetPayload {
     /// <p>How the device gets an IP address.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>Network configuration for a static IP connection.</p>
-    #[doc(hidden)]
     pub static_ip_connection_info: ::std::option::Option<crate::types::StaticIpConnectionInfo>,
 }
 impl EthernetPayload {

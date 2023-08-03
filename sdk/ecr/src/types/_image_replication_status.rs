@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageReplicationStatus {
     /// <p>The destination Region for the image replication.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The image replication status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The failure code for a replication that has failed.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
 }
 impl ImageReplicationStatus {

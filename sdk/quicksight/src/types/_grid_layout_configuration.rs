@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridLayoutConfiguration {
     /// <p>The elements that are included in a grid layout.</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
     /// <p>Configuration options for the canvas of a grid layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl GridLayoutConfiguration {

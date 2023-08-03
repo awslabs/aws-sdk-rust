@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specified whether the value is a secret.</p>
-    #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionHeaderParameter {

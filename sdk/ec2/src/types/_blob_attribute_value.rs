@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlobAttributeValue {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub value: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl BlobAttributeValue {

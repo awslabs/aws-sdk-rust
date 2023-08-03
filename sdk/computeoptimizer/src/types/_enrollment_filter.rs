@@ -6,11 +6,9 @@
 pub struct EnrollmentFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EnrollmentFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnrollmentFilter {

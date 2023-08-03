@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsOutput {
     /// <p> A list of all requested findings.</p>
-    #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
-    #[doc(hidden)]
     pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
     _request_id: Option<String>,
 }

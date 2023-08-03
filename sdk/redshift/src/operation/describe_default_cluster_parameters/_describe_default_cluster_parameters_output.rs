@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDefaultClusterParametersOutput {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
-    #[doc(hidden)]
     pub default_cluster_parameters: ::std::option::Option<crate::types::DefaultClusterParameters>,
     _request_id: Option<String>,
 }

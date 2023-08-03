@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalNavigationConfiguration {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    #[doc(hidden)]
     pub target_sheet_id: ::std::option::Option<::std::string::String>,
 }
 impl LocalNavigationConfiguration {

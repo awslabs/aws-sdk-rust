@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringAuthorizationInput {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    #[doc(hidden)]
     pub game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    #[doc(hidden)]
     pub peer_vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcPeeringAuthorizationInput {

@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.
-    #[doc(hidden)]
     pub decryption: ::std::option::Option<crate::types::Encryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The port that the flow will be listening on for incoming content.
-    #[doc(hidden)]
     pub ingest_port: ::std::option::Option<i32>,
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    #[doc(hidden)]
     pub max_latency: ::std::option::Option<i32>,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
-    #[doc(hidden)]
     pub max_sync_buffer: ::std::option::Option<i32>,
     /// The media streams that are associated with the source, and the parameters for those associations.
-    #[doc(hidden)]
     pub media_stream_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    #[doc(hidden)]
     pub min_latency: ::std::option::Option<i32>,
     /// The name of the source.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The protocol that is used by the source.
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_control_port: ::std::option::Option<i32>,
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_ip_address: ::std::option::Option<::std::string::String>,
     /// Source IP or domain name for SRT-caller protocol.
-    #[doc(hidden)]
     pub source_listener_address: ::std::option::Option<::std::string::String>,
     /// Source port for SRT-caller protocol.
-    #[doc(hidden)]
     pub source_listener_port: ::std::option::Option<i32>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface to use for this source.
-    #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]
     pub whitelist_cidr: ::std::option::Option<::std::string::String>,
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    #[doc(hidden)]
     pub gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
 }
 impl SetSourceRequest {

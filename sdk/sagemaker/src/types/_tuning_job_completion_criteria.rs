@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TuningJobCompletionCriteria {
     /// <p>The value of the objective metric.</p>
-    #[doc(hidden)]
     pub target_objective_metric_value: ::std::option::Option<f32>,
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
-    #[doc(hidden)]
     pub best_objective_not_improving: ::std::option::Option<crate::types::BestObjectiveNotImproving>,
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
-    #[doc(hidden)]
     pub convergence_detected: ::std::option::Option<crate::types::ConvergenceDetected>,
 }
 impl TuningJobCompletionCriteria {

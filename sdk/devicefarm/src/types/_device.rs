@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// <p>The device's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device's display name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device's manufacturer name.</p>
-    #[doc(hidden)]
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The device's model name.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The device's model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
@@ -25,7 +20,6 @@ pub struct Device {
     /// <li> <p>PHONE</p> </li>
     /// <li> <p>TABLET</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub form_factor: ::std::option::Option<crate::types::DeviceFormFactor>,
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
@@ -33,50 +27,35 @@ pub struct Device {
     /// <li> <p>ANDROID</p> </li>
     /// <li> <p>IOS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::DevicePlatform>,
     /// <p>The device's operating system type.</p>
-    #[doc(hidden)]
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>Information about the device's CPU.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<crate::types::Cpu>,
     /// <p>The resolution of the device.</p>
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<crate::types::Resolution>,
     /// <p>The device's heap size, expressed in bytes.</p>
-    #[doc(hidden)]
     pub heap_size: ::std::option::Option<i64>,
     /// <p>The device's total memory size, expressed in bytes.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i64>,
     /// <p>The device's image name.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The device's carrier.</p>
-    #[doc(hidden)]
     pub carrier: ::std::option::Option<::std::string::String>,
     /// <p>The device's radio.</p>
-    #[doc(hidden)]
     pub radio: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether remote access has been enabled for the specified device.</p>
-    #[doc(hidden)]
     pub remote_access_enabled: ::std::option::Option<bool>,
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub remote_debug_enabled: ::std::option::Option<bool>,
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
-    #[doc(hidden)]
     pub fleet_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet to which this device belongs.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The instances that belong to this device.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
-    #[doc(hidden)]
     pub availability: ::std::option::Option<crate::types::DeviceAvailability>,
 }
 impl Device {

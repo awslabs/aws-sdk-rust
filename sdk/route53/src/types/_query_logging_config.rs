@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl QueryLoggingConfig {

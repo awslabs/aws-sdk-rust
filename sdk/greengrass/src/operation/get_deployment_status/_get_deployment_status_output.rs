@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentStatusOutput {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// The type of the deployment.
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// Error details
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// Error message
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

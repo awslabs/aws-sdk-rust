@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Details {
     /// <p>Information about the job error.</p>
-    #[doc(hidden)]
     pub import_asset_from_signed_url_job_error_details: ::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     /// <p>Details about the job error.</p>
-    #[doc(hidden)]
     pub import_assets_from_s3_job_error_details: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
 }
 impl Details {

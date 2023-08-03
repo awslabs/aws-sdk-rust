@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueGreenUpdatePolicy {
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
-    #[doc(hidden)]
     pub traffic_routing_configuration: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     /// <p>Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0.</p>
-    #[doc(hidden)]
     pub termination_wait_in_seconds: ::std::option::Option<i32>,
     /// <p>Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.</p>
-    #[doc(hidden)]
     pub maximum_execution_timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl BlueGreenUpdatePolicy {

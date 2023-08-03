@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    #[doc(hidden)]
     pub raw_secret_access_key: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyAuthenticationCredentialType {

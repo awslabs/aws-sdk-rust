@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary replication group is retained as a standalone replication group. </p>
-    #[doc(hidden)]
     pub retain_primary_replication_group: bool,
 }
 impl DeleteGlobalReplicationGroupInput {

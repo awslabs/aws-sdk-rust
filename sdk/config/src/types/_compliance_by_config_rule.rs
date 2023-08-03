@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceByConfigRule {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Config rule is compliant.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<crate::types::Compliance>,
 }
 impl ComplianceByConfigRule {

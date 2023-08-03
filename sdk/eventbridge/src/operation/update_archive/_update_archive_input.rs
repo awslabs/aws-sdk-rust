@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateArchiveInput {
     /// <p>The name of the archive to update.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the archive.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events in the archive.</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
 }
 impl UpdateArchiveInput {

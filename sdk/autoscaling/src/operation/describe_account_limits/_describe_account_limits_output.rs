@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
-    #[doc(hidden)]
     pub max_number_of_auto_scaling_groups: ::std::option::Option<i32>,
     /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
-    #[doc(hidden)]
     pub max_number_of_launch_configurations: ::std::option::Option<i32>,
     /// <p>The current number of groups for your account.</p>
-    #[doc(hidden)]
     pub number_of_auto_scaling_groups: ::std::option::Option<i32>,
     /// <p>The current number of launch configurations for your account.</p>
-    #[doc(hidden)]
     pub number_of_launch_configurations: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

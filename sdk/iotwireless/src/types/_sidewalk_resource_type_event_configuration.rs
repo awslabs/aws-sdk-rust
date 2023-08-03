@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_device_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl SidewalkResourceTypeEventConfiguration {

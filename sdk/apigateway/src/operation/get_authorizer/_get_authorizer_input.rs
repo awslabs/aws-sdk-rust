@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Authorizer resource.</p>
-    #[doc(hidden)]
     pub authorizer_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAuthorizerInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTableDataImportJobOutput {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import job immediately after submitting the request. </p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::TableDataImportJobStatus>,
     _request_id: Option<String>,
 }

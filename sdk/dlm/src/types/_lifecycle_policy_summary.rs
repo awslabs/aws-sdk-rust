@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicySummary {
     /// <p>The identifier of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The activation state of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
 }
 impl LifecyclePolicySummary {

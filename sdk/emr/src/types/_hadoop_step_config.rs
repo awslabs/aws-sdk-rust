@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
-    #[doc(hidden)]
     pub jar: ::std::option::Option<::std::string::String>,
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
-    #[doc(hidden)]
     pub main_class: ::std::option::Option<::std::string::String>,
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HadoopStepConfig {

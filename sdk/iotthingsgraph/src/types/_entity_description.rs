@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityDescription {
     /// <p>The entity ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The entity ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The entity type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EntityType>,
     /// <p>The time at which the entity was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The definition document of the entity.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
 }
 impl EntityDescription {

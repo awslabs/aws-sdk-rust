@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDeliveryChannel {
     /// <p>The unique name of the S3 bucket that receives your reports.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
-    #[doc(hidden)]
     pub formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDeliveryChannel {

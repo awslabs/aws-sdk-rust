@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperiencesSummary {
     /// <p>The name of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The processing status of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExperienceStatus>,
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
 }
 impl ExperiencesSummary {

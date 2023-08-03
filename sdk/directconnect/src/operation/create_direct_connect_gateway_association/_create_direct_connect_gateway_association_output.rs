@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationOutput {
     /// <p>The association to be created.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,
 }

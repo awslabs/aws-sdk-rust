@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableOutput {
     /// <p>Represents the properties of the table.</p>
-    #[doc(hidden)]
     pub table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }

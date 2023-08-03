@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invalidation {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the invalidation request was first made.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current invalidation information for the batch request.</p>
-    #[doc(hidden)]
     pub invalidation_batch: ::std::option::Option<crate::types::InvalidationBatch>,
 }
 impl Invalidation {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The participant phone numbers.</p>
-    #[doc(hidden)]
     pub participant_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the proxy session.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes allowed for the proxy session.</p>
-    #[doc(hidden)]
     pub expiry_minutes: ::std::option::Option<i32>,
     /// <p>The proxy session capabilities.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    #[doc(hidden)]
     pub number_selection_behavior: ::std::option::Option<crate::types::NumberSelectionBehavior>,
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-    #[doc(hidden)]
     pub geo_match_level: ::std::option::Option<crate::types::GeoMatchLevel>,
     /// <p>The country and area code for the proxy phone number.</p>
-    #[doc(hidden)]
     pub geo_match_params: ::std::option::Option<crate::types::GeoMatchParams>,
 }
 impl CreateProxySessionInput {

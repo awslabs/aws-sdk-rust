@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRuleGroupOutput {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
-    #[doc(hidden)]
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
     _request_id: Option<String>,
 }

@@ -28,15 +28,12 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>MinimumProtocolVersion</code> </p> </li>
     /// <li> <p> <code>SSLSupportMethod</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cloud_front_default_certificate: ::std::option::Option<bool>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
     /// <p>If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
-    #[doc(hidden)]
     pub iam_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
     /// <p>If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
-    #[doc(hidden)]
     pub acm_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
@@ -45,7 +42,6 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p> </li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
-    #[doc(hidden)]
     pub ssl_support_method: ::std::option::Option<crate::types::SslSupportMethod>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
@@ -57,7 +53,6 @@ pub struct ViewerCertificate {
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront automatically sets the security policy to <code>TLSv1</code> regardless of the value that you set here.</p>
-    #[doc(hidden)]
     pub minimum_protocol_version: ::std::option::Option<crate::types::MinimumProtocolVersion>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
@@ -66,7 +61,6 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>CloudFrontDefaultCertificate</code> </p> </li>
     /// </ul>
     #[deprecated]
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
@@ -75,7 +69,6 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>CloudFrontDefaultCertificate</code> </p> </li>
     /// </ul>
     #[deprecated]
-    #[doc(hidden)]
     pub certificate_source: ::std::option::Option<crate::types::CertificateSource>,
 }
 impl ViewerCertificate {

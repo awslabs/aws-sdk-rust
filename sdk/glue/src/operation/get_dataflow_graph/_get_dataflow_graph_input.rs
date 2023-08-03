@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataflowGraphInput {
     /// <p>The Python script to transform.</p>
-    #[doc(hidden)]
     pub python_script: ::std::option::Option<::std::string::String>,
 }
 impl GetDataflowGraphInput {

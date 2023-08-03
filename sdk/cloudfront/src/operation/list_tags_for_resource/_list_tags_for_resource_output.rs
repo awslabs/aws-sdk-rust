@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<crate::types::Tags>,
     _request_id: Option<String>,
 }

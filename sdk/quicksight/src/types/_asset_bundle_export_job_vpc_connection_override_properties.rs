@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobVpcConnectionOverrideProperties {
     /// <p>The ARN of the specific <code>VPCConnection</code> resource whose override properties are configured in this structure.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>>,
 }
 impl AssetBundleExportJobVpcConnectionOverrideProperties {

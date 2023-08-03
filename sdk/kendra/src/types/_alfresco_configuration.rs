@@ -7,48 +7,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlfrescoConfiguration {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
-    #[doc(hidden)]
     pub site_url: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The user name of the Alfresco account.</p> </li>
     /// <li> <p>password—The password of the Alfresco account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
-    #[doc(hidden)]
     pub ssl_certificate_s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p> <code>TRUE</code> to index shared files.</p>
-    #[doc(hidden)]
     pub crawl_system_folders: bool,
     /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
-    #[doc(hidden)]
     pub crawl_comments: bool,
     /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
-    #[doc(hidden)]
     pub entity_filter: ::std::option::Option<::std::vec::Vec<crate::types::AlfrescoEntity>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    #[doc(hidden)]
     pub document_library_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    #[doc(hidden)]
     pub blog_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    #[doc(hidden)]
     pub wiki_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
 }
 impl AlfrescoConfiguration {

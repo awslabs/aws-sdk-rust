@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationOutput {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
-    #[doc(hidden)]
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
 }

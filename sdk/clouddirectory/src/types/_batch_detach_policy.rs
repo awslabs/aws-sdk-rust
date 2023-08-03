@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
-    #[doc(hidden)]
     pub policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachPolicy {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagInput {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagInput {

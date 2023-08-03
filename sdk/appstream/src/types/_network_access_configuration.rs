@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    #[doc(hidden)]
     pub eni_private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
-    #[doc(hidden)]
     pub eni_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAccessConfiguration {

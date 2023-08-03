@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpContext {
     /// <p>The header keys and values in an HTTP authorization request.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The query string keys and values in an HTTP authorization request.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl HttpContext {

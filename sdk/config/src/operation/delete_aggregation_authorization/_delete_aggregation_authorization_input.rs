@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    #[doc(hidden)]
     pub authorized_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
-    #[doc(hidden)]
     pub authorized_aws_region: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAggregationAuthorizationInput {

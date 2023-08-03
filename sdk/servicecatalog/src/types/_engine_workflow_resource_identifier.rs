@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineWorkflowResourceIdentifier {
     /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
-    #[doc(hidden)]
     pub unique_tag: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
 }
 impl EngineWorkflowResourceIdentifier {

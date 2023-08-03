@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    #[doc(hidden)]
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Options>,
 }
 impl UpdateTaskExecutionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroupSummary {
     /// <p>The type of log.</p>
-    #[doc(hidden)]
     pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LogGroupSummary {

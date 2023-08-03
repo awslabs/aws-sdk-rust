@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: i32,
 }
 impl RetryStrategy {

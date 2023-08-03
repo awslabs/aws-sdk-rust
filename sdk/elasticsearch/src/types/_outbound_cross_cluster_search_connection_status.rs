@@ -15,10 +15,8 @@ pub struct OutboundCrossClusterSearchConnectionStatus {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
     /// <p>Specifies verbose information for the outbound connection status.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl OutboundCrossClusterSearchConnectionStatus {

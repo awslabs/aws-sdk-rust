@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
-    #[doc(hidden)]
     pub token_value: ::std::option::Option<::std::string::String>,
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
     /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
-    #[doc(hidden)]
     pub stream_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

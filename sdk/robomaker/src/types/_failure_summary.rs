@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureSummary {
     /// <p>The total number of failures.</p>
-    #[doc(hidden)]
     pub total_failure_count: i32,
     /// <p>The worlds that failed.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,
 }
 impl FailureSummary {

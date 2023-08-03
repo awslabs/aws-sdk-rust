@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlacementOutput {
     /// <p>An object describing the placement.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::PlacementDescription>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDigests {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
-    #[doc(hidden)]
     pub artifact_digest: ::std::option::Option<::std::string::String>,
 }
 impl ModelDigests {

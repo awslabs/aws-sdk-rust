@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineDataConfiguration {
     /// <p>The static data configuration of the reference line data configuration.</p>
-    #[doc(hidden)]
     pub static_configuration: ::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
     /// <p>The dynamic configuration of the reference line data configuration.</p>
-    #[doc(hidden)]
     pub dynamic_configuration: ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>PrimaryY</p> </li>
     /// <li> <p>SecondaryY</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
 }
 impl ReferenceLineDataConfiguration {

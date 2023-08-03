@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetUserMfaPreferenceInput {
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-    #[doc(hidden)]
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    #[doc(hidden)]
     pub software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl SetUserMfaPreferenceInput {

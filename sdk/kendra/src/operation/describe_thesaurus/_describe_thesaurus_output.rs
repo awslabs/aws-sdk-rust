@@ -4,44 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThesaurusOutput {
     /// <p>The identifier of the thesaurus.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The thesaurus name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The thesaurus description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ThesaurusStatus>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub source_s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p>The size of the thesaurus file in bytes.</p>
-    #[doc(hidden)]
     pub file_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4. </p>
-    #[doc(hidden)]
     pub term_count: ::std::option::Option<i64>,
     /// <p>The number of synonym rules in the thesaurus file.</p>
-    #[doc(hidden)]
     pub synonym_rule_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<::std::string::String>,
     /// <p>A description of the attribute.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the attribute, if applicable.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
@@ -24,7 +20,6 @@ pub struct PolicyAttributeTypeDescription {
     /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cardinality: ::std::option::Option<::std::string::String>,
 }
 impl PolicyAttributeTypeDescription {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobSummary {
     /// <p>The name of the AutoML job you are requesting.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
     /// <p>The secondary status of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     /// <p>When the AutoML job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of an AutoML job.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the AutoML job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason of an AutoML job.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    #[doc(hidden)]
     pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
 }
 impl AutoMlJobSummary {

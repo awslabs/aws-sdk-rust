@@ -5,56 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Trail {
     /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM. Otherwise, <b>False</b>.</p>
-    #[doc(hidden)]
     pub include_global_service_events: ::std::option::Option<bool>,
     /// <p>Specifies whether the trail exists only in one Region or exists in all Regions.</p>
-    #[doc(hidden)]
     pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>The Region in which the trail was created.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether log file validation is enabled.</p>
-    #[doc(hidden)]
     pub log_file_validation_enabled: ::std::option::Option<bool>,
     /// <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the trail has custom event selectors.</p>
-    #[doc(hidden)]
     pub has_custom_event_selectors: ::std::option::Option<bool>,
     /// <p>Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.</p>
-    #[doc(hidden)]
     pub has_insight_selectors: ::std::option::Option<bool>,
     /// <p>Specifies whether the trail is an organization trail.</p>
-    #[doc(hidden)]
     pub is_organization_trail: ::std::option::Option<bool>,
 }
 impl Trail {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    #[doc(hidden)]
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    #[doc(hidden)]
     pub customer_managed_policy_reference: ::std::option::Option<crate::types::CustomerManagedPolicyReference>,
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {

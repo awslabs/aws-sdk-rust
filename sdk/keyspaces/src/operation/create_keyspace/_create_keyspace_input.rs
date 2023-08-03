@@ -4,18 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> The replication specification of the keyspace includes:</p>
     /// <ul>
     /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li>
     /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_specification: ::std::option::Option<crate::types::ReplicationSpecification>,
 }
 impl CreateKeyspaceInput {

@@ -4,64 +4,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub ads_application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub ads_application_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The status message of the migration workflow.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the migration workflow was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the migration workflow was last started.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the migration workflow was last stopped.</p>
-    #[doc(hidden)]
     pub last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the migration workflow was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the migration workflow ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    #[doc(hidden)]
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     /// <p>The total number of steps in the migration workflow.</p>
-    #[doc(hidden)]
     pub total_steps: ::std::option::Option<i32>,
     /// <p>Get a list of completed steps in the migration workflow.</p>
-    #[doc(hidden)]
     pub completed_steps: ::std::option::Option<i32>,
     /// <p>The inputs required for creating the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The tags added to the migration workflow.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon S3 bucket where the migration logs are stored.</p>
-    #[doc(hidden)]
     pub workflow_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

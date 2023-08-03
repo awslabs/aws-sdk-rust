@@ -15,11 +15,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The name of the DynamoDB table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl DynamoDBv2Action {

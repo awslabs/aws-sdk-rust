@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    #[doc(hidden)]
     pub export_jobs_response: ::std::option::Option<crate::types::ExportJobsResponse>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAddressOutput {
     /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

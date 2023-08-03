@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntrospectionSchemaInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The schema format: SDL or JSON.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::OutputType>,
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
-    #[doc(hidden)]
     pub include_directives: ::std::option::Option<bool>,
 }
 impl GetIntrospectionSchemaInput {

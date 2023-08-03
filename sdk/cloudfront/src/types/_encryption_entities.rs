@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
 }
 impl EncryptionEntities {

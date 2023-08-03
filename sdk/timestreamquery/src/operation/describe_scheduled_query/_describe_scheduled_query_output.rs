@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledQueryOutput {
     /// <p>The scheduled query.</p>
-    #[doc(hidden)]
     pub scheduled_query: ::std::option::Option<crate::types::ScheduledQueryDescription>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl DeleteProgressUpdateStreamInput {

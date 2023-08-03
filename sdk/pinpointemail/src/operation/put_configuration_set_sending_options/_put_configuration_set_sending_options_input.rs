@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
-    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl PutConfigurationSetSendingOptionsInput {

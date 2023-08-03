@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetOutput {
     /// <p>The specified stack set.</p>
-    #[doc(hidden)]
     pub stack_set: ::std::option::Option<crate::types::StackSet>,
     _request_id: Option<String>,
 }

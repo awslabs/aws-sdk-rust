@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
-    #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The instance type for the runtime environment to update.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the runtime engine for the runtime environment.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    #[doc(hidden)]
     pub apply_during_maintenance_window: bool,
 }
 impl UpdateEnvironmentInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl Region {

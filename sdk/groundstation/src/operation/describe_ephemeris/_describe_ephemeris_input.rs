@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    #[doc(hidden)]
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEphemerisInput {

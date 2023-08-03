@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationDetail {
     /// <p>The list of events that trigger a notification.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters that determine which S3 buckets generate notifications.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationFilter>,
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct AwsS3BucketNotificationConfigurationDetail {
     /// <li> <p> <code>QueueConfiguration</code> </p> </li>
     /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketNotificationConfigurationDetail {

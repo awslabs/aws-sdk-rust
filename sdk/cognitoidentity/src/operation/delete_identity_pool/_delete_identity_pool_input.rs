@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityPoolInput {

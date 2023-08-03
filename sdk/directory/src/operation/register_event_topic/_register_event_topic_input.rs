@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterEventTopicInput {

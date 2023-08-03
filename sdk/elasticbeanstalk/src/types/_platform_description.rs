@@ -5,70 +5,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformDescription {
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    #[doc(hidden)]
     pub platform_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the platform version.</p>
-    #[doc(hidden)]
     pub platform_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the platform version.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the solution stack used by the platform version.</p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the platform version.</p>
-    #[doc(hidden)]
     pub platform_status: ::std::option::Option<crate::types::PlatformStatus>,
     /// <p>The date when the platform version was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the platform version was last updated.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The category of the platform version.</p>
-    #[doc(hidden)]
     pub platform_category: ::std::option::Option<::std::string::String>,
     /// <p>The description of the platform version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the maintainer of the platform version.</p>
-    #[doc(hidden)]
     pub maintainer: ::std::option::Option<::std::string::String>,
     /// <p>The operating system used by the platform version.</p>
-    #[doc(hidden)]
     pub operating_system_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the operating system used by the platform version.</p>
-    #[doc(hidden)]
     pub operating_system_version: ::std::option::Option<::std::string::String>,
     /// <p>The programming languages supported by the platform version.</p>
-    #[doc(hidden)]
     pub programming_languages: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>,
     /// <p>The frameworks supported by the platform version.</p>
-    #[doc(hidden)]
     pub frameworks: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>,
     /// <p>The custom AMIs supported by the platform version.</p>
-    #[doc(hidden)]
     pub custom_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>,
     /// <p>The tiers supported by the platform version.</p>
-    #[doc(hidden)]
     pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The additions supported by the platform version.</p>
-    #[doc(hidden)]
     pub supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
-    #[doc(hidden)]
     pub platform_lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
-    #[doc(hidden)]
     pub platform_branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
-    #[doc(hidden)]
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
 impl PlatformDescription {

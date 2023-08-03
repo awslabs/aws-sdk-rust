@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberDataSourceConfiguration {
     /// <p>The account ID for the member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information on the status of data sources for the account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
     /// <p>Contains information about the status of the features for the member account.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>,
 }
 impl MemberDataSourceConfiguration {

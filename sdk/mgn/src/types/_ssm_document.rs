@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmDocument {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    #[doc(hidden)]
     pub ssm_document_name: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Document timeout seconds.</p>
-    #[doc(hidden)]
     pub timeout_seconds: i32,
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
-    #[doc(hidden)]
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>AWS Systems Manager Document parameters.</p>
-    #[doc(hidden)]
     pub parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     /// <p>AWS Systems Manager Document external parameters.</p>
-    #[doc(hidden)]
     pub external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
 }
 impl SsmDocument {

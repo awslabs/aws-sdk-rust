@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionResult {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
-    #[doc(hidden)]
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
 impl StartSessionResult {

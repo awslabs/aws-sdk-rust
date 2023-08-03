@@ -5,7 +5,6 @@
 pub struct DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -17,39 +16,28 @@ pub struct DescribeStateMachineOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the state machine.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StateMachineStatus>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The revision identifier for the state machine.</p>
     /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the state machine version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

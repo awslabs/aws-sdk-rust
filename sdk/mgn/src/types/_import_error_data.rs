@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportErrorData {
     /// <p>Import error data source server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data wave id.</p>
-    #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    #[doc(hidden)]
     pub ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data row number.</p>
-    #[doc(hidden)]
     pub row_number: i64,
     /// <p>Import error data raw error.</p>
-    #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
     /// <p>Import error data source account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportErrorData {

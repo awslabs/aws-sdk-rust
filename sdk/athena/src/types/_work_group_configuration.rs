@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
-    #[doc(hidden)]
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    #[doc(hidden)]
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
-    #[doc(hidden)]
     pub publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>The upper data usage limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
-    #[doc(hidden)]
     pub bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub requester_pays_enabled: ::std::option::Option<bool>,
     /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
-    #[doc(hidden)]
     pub additional_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Role used in a session for accessing the user's resources.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
-    #[doc(hidden)]
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
-    #[doc(hidden)]
     pub enable_minimum_encryption_configuration: ::std::option::Option<bool>,
 }
 impl WorkGroupConfiguration {

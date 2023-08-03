@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportGenerator {
     /// <p>Name of the report generator.</p>
-    #[doc(hidden)]
     pub report_generator_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of reports that are generated.</p>
-    #[doc(hidden)]
     pub report_type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
     /// <p>License configuration type for this generator.</p>
-    #[doc(hidden)]
     pub report_context: ::std::option::Option<crate::types::ReportContext>,
     /// <p>Details about how frequently reports are generated.</p>
-    #[doc(hidden)]
     pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    #[doc(hidden)]
     pub license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status of the last report generation attempt.</p>
-    #[doc(hidden)]
     pub last_run_status: ::std::option::Option<::std::string::String>,
     /// <p>Failure message for the last report generation attempt.</p>
-    #[doc(hidden)]
     pub last_run_failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Time the last report was generated at.</p>
-    #[doc(hidden)]
     pub last_report_generation_time: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
-    #[doc(hidden)]
     pub report_creator_account: ::std::option::Option<::std::string::String>,
     /// <p>Description of the report generator.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Time the report was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the report generator.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ReportGenerator {

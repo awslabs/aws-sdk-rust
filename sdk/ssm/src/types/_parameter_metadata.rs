@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterMetadata {
     /// <p>The parameter name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The ID of the query key used for this parameter.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    #[doc(hidden)]
     pub last_modified_user: ::std::option::Option<::std::string::String>,
     /// <p>Description of the parameter actions.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A parameter name can include only the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The parameter version.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The parameter tier.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::ParameterTier>,
     /// <p>A list of policies associated with a parameter.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIpamScopeOutput {
     /// <p>Information about the results of the deletion.</p>
-    #[doc(hidden)]
     pub ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,
 }

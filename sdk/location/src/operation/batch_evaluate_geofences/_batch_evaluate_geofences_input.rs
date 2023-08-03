@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesInput {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    #[doc(hidden)]
     pub device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
 }
 impl BatchEvaluateGeofencesInput {

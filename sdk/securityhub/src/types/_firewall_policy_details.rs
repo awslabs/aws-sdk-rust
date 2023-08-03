@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyDetails {
     /// <p>The stateful rule groups that are used in the firewall policy.</p>
-    #[doc(hidden)]
     pub stateful_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>>,
     /// <p>The custom action definitions that are available to use in the firewall policy's <code>StatelessDefaultActions</code> setting.</p>
-    #[doc(hidden)]
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatelessCustomActionsDetails>>,
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
     /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
-    #[doc(hidden)]
     pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
     /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
-    #[doc(hidden)]
     pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The stateless rule groups that are used in the firewall policy.</p>
-    #[doc(hidden)]
     pub stateless_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails>>,
 }
 impl FirewallPolicyDetails {

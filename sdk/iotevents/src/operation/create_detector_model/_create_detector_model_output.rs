@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
-    #[doc(hidden)]
     pub detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,
     _request_id: Option<String>,
 }

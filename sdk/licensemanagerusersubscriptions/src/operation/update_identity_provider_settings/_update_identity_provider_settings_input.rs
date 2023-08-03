@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsInput {
     /// <p>Details about an identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct UpdateIdentityProviderSettingsInput {
     /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
     /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_settings: ::std::option::Option<crate::types::UpdateSettings>,
 }
 impl UpdateIdentityProviderSettingsInput {

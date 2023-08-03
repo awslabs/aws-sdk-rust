@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationStatus {
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceEvaluationStatus>,
     /// <p>An explanation for failed execution status.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationStatus {

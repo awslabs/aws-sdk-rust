@@ -18,10 +18,8 @@ pub struct NumericalAggregationFunction {
     /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
     /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub simple_numerical_aggregation: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
-    #[doc(hidden)]
     pub percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,
 }
 impl NumericalAggregationFunction {

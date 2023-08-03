@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The type of the failure.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FailureType>,
     /// <p>The message about the failure.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the run of the action that failed.</p>
-    #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetails {

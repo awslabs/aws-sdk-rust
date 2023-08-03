@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryData {
     /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub number_of_databases: ::std::option::Option<i32>,
     /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub number_of_schemas: ::std::option::Option<i32>,
 }
 impl InventoryData {

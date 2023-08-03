@@ -6,50 +6,40 @@ pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     /// <p>The name of the bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information for the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub create_bucket_configuration: ::std::option::Option<crate::types::CreateBucketConfiguration>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub grant_full_control: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub grant_read: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub grant_write: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub object_lock_enabled_for_bucket: ::std::option::Option<bool>,
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBucketInput {

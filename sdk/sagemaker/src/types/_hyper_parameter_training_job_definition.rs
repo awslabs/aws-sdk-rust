@@ -5,65 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTrainingJobDefinition {
     /// <p>The job definition name.</p>
-    #[doc(hidden)]
     pub definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-    #[doc(hidden)]
     pub tuning_objective: ::std::option::Option<crate::types::HyperParameterTuningJobObjective>,
     /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
-    #[doc(hidden)]
     pub hyper_parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
     /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
-    #[doc(hidden)]
     pub static_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
     pub algorithm_specification: ::std::option::Option<crate::types::HyperParameterAlgorithmSpecification>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a> objects that specify the input for the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
     /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    #[doc(hidden)]
     pub enable_network_isolation: bool,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    #[doc(hidden)]
     pub enable_inter_container_traffic_encryption: bool,
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    #[doc(hidden)]
     pub enable_managed_spot_training: bool,
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-    #[doc(hidden)]
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
     /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HyperParameterTrainingJobDefinition {

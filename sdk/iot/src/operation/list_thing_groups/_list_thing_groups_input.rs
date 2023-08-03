@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingGroupsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that limits the results to those with the specified parent group.</p>
-    #[doc(hidden)]
     pub parent_group: ::std::option::Option<::std::string::String>,
     /// <p>A filter that limits the results to those with the specified name prefix.</p>
-    #[doc(hidden)]
     pub name_prefix_filter: ::std::option::Option<::std::string::String>,
     /// <p>If true, return child groups as well.</p>
-    #[doc(hidden)]
     pub recursive: ::std::option::Option<bool>,
 }
 impl ListThingGroupsInput {

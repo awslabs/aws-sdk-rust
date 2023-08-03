@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose notification you want to delete.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification that you want to delete.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
 }
 impl DeleteNotificationInput {

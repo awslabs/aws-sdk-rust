@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
-    #[doc(hidden)]
     pub external_model: ::std::option::Option<crate::types::ExternalModelSummary>,
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ExternalModelOutputs {

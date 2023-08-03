@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Section {
     /// <p>The name of the section.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the section contents.</p>
-    #[doc(hidden)]
     pub size: i32,
     /// <p>The content of a configuration section.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl Section {

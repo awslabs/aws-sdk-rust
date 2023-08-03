@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionTarget {
     /// <p>Contains information about the bot alias used for the test execution.</p>
-    #[doc(hidden)]
     pub bot_alias_target: ::std::option::Option<crate::types::BotAliasTestExecutionTarget>,
 }
 impl TestExecutionTarget {

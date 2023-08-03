@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterInstanceTagAttributeRequest {
     /// <p>Indicates whether to deregister all tag keys in the current Region. Specify <code>false</code> to deregister all tag keys.</p>
-    #[doc(hidden)]
     pub include_all_tags_of_instance: ::std::option::Option<bool>,
     /// <p>Information about the tag keys to deregister.</p>
-    #[doc(hidden)]
     pub instance_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeregisterInstanceTagAttributeRequest {

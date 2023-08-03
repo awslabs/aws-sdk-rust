@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>A unique identifier for the contact evaluation.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    #[doc(hidden)]
     pub evaluation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the contact evaluation.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::EvaluationMetadata>,
     /// <p>A map of question identifiers to answer value.</p>
-    #[doc(hidden)]
     pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput>>,
     /// <p>A map of question identifiers to note value.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
     /// <p>The status of the contact evaluation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EvaluationStatus>,
     /// <p>A map of item (section or question) identifiers to score value.</p>
-    #[doc(hidden)]
     pub scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationScore>>,
     /// <p>The timestamp for when the evaluation was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Evaluation {

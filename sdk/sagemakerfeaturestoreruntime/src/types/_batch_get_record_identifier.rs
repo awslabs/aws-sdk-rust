@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordIdentifier {
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for a list of record identifiers in string format.</p>
-    #[doc(hidden)]
     pub record_identifiers_value_as_string: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    #[doc(hidden)]
     pub feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRecordIdentifier {

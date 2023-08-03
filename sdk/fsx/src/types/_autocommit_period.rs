@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutocommitPeriod {
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AutocommitPeriodType>,
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid: </p>
     /// <ul>
@@ -16,7 +15,6 @@ pub struct AutocommitPeriod {
     /// <li> <p> <code>Months</code>: 1 - 120</p> </li>
     /// <li> <p> <code>Years</code>: 1 - 10</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl AutocommitPeriod {

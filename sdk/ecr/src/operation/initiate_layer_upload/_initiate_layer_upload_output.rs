@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateLayerUploadOutput {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
-    #[doc(hidden)]
     pub part_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

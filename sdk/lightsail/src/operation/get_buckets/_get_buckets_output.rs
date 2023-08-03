@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketsOutput {
     /// <p>An array of objects that describe buckets.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
-    #[doc(hidden)]
     pub account_level_bpa_sync: ::std::option::Option<crate::types::AccountLevelBpaSync>,
     _request_id: Option<String>,
 }

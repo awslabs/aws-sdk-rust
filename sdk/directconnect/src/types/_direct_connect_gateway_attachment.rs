@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayAttachment {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    #[doc(hidden)]
     pub virtual_interface_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
@@ -23,13 +19,10 @@ pub struct DirectConnectGatewayAttachment {
     /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
     /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attachment_state: ::std::option::Option<crate::types::DirectConnectGatewayAttachmentState>,
     /// <p>The type of attachment.</p>
-    #[doc(hidden)]
     pub attachment_type: ::std::option::Option<crate::types::DirectConnectGatewayAttachmentType>,
     /// <p>The error message if the state of an object failed to advance.</p>
-    #[doc(hidden)]
     pub state_change_error: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGatewayAttachment {

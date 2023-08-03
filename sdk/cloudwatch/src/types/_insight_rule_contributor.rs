@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
-    #[doc(hidden)]
     pub approximate_aggregate_value: ::std::option::Option<f64>,
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
-    #[doc(hidden)]
     pub datapoints: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
 }
 impl InsightRuleContributor {

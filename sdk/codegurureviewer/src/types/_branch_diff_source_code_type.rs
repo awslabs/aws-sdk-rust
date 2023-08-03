@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
-    #[doc(hidden)]
     pub source_branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination branch for a diff in an associated repository.</p>
-    #[doc(hidden)]
     pub destination_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl BranchDiffSourceCodeType {

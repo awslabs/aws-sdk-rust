@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about errors that might have occurred during the API call.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the revisions, including the type and location.</p>
-    #[doc(hidden)]
     pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
     _request_id: Option<String>,
 }

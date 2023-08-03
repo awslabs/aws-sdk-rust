@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
-    #[doc(hidden)]
     pub table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }

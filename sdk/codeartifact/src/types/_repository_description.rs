@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryDescription {
     /// <p> The name of the repository. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
-    #[doc(hidden)]
     pub administrator_account: ::std::option::Option<::std::string::String>,
     /// <p> The name of the domain that contains the repository. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the repository. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A text description of the repository. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    #[doc(hidden)]
     pub upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
     /// <p> An array of external connections associated with the repository. </p>
-    #[doc(hidden)]
     pub external_connections: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
     /// <p>A timestamp that represents the date and time the repository was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RepositoryDescription {

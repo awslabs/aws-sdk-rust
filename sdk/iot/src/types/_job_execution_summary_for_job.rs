@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionSummaryForJob {
     /// <p>The ARN of the thing on which the job execution is running.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains a subset of information about a job execution.</p>
-    #[doc(hidden)]
     pub job_execution_summary: ::std::option::Option<crate::types::JobExecutionSummary>,
 }
 impl JobExecutionSummaryForJob {

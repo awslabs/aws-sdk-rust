@@ -5,19 +5,14 @@
 pub struct ListLayerVersionsInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub compatible_runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token returned by a previous call.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of versions to return.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    #[doc(hidden)]
     pub compatible_architecture: ::std::option::Option<crate::types::Architecture>,
 }
 impl ListLayerVersionsInput {

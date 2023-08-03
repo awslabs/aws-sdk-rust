@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEventExecutionDataDetails {
     /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
-    #[doc(hidden)]
     pub truncated: bool,
 }
 impl HistoryEventExecutionDataDetails {

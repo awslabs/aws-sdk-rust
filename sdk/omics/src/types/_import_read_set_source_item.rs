@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportReadSetSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
-    #[doc(hidden)]
     pub source_files: ::std::option::Option<crate::types::SourceFiles>,
     /// <p>The source's file type.</p>
-    #[doc(hidden)]
     pub source_file_type: ::std::option::Option<crate::types::FileType>,
     /// <p>The source's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReadSetImportJobItemStatus>,
     /// <p>The source's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The source's subject ID.</p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The source's sample ID.</p>
-    #[doc(hidden)]
     pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p>Where the source originated.</p>
-    #[doc(hidden)]
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The source's genome reference ARN.</p>
-    #[doc(hidden)]
     pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The source's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportReadSetSourceItem {

@@ -8,13 +8,10 @@ pub struct Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    #[doc(hidden)]
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    #[doc(hidden)]
     pub attendee_id: ::std::option::Option<::std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    #[doc(hidden)]
     pub join_token: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -25,7 +22,6 @@ pub struct Attendee {
     /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl Attendee {

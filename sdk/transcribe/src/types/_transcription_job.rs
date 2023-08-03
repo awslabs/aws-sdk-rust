@@ -7,38 +7,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptionJob {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub transcription_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the specified transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    #[doc(hidden)]
     pub transcription_job_status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
-    #[doc(hidden)]
     pub media_format: ::std::option::Option<crate::types::MediaFormat>,
     /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
-    #[doc(hidden)]
     pub media: ::std::option::Option<crate::types::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The date and time the specified transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -50,47 +40,33 @@ pub struct TranscriptionJob {
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
     /// <p>Provides information on the custom language model you included in your request.</p>
-    #[doc(hidden)]
     pub model_settings: ::std::option::Option<crate::types::ModelSettings>,
     /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
-    #[doc(hidden)]
     pub job_execution_settings: ::std::option::Option<crate::types::JobExecutionSettings>,
     /// <p>Indicates whether redaction was enabled in your transcript.</p>
-    #[doc(hidden)]
     pub content_redaction: ::std::option::Option<crate::types::ContentRedaction>,
     /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
-    #[doc(hidden)]
     pub identify_language: ::std::option::Option<bool>,
     /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
-    #[doc(hidden)]
     pub identify_multiple_languages: ::std::option::Option<bool>,
     /// <p>Provides the language codes you specified in your request.</p>
-    #[doc(hidden)]
     pub language_options: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
-    #[doc(hidden)]
     pub identified_language_score: ::std::option::Option<f32>,
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-    #[doc(hidden)]
     pub language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>>,
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether subtitles were generated with your transcription.</p>
-    #[doc(hidden)]
     pub subtitles: ::std::option::Option<crate::types::SubtitlesOutput>,
     /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
-    #[doc(hidden)]
     pub language_id_settings: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
     /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
-    #[doc(hidden)]
     pub toxicity_detection: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJob {

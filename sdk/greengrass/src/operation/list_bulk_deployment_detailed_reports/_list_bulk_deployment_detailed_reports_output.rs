@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsOutput {
     /// A list of the individual group deployments in the bulk deployment operation.
-    #[doc(hidden)]
     pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    #[doc(hidden)]
     pub service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactInput {

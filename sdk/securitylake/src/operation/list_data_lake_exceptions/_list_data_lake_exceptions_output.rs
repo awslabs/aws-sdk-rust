@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataLakeExceptionsOutput {
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
-    #[doc(hidden)]
     pub exceptions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>,
     /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

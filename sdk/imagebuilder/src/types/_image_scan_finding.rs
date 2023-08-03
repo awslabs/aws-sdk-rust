@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFinding {
     /// <p>The Amazon Web Services account ID that's associated with the finding.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
-    #[doc(hidden)]
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The title of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the details about how to remediate the finding.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<crate::types::Remediation>,
     /// <p>The severity of the finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the finding was first observed.</p>
-    #[doc(hidden)]
     pub first_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the finding was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The score that Amazon Inspector assigned for the finding.</p>
-    #[doc(hidden)]
     pub inspector_score: ::std::option::Option<f64>,
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    #[doc(hidden)]
     pub inspector_score_details: ::std::option::Option<crate::types::InspectorScoreDetails>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    #[doc(hidden)]
     pub package_vulnerability_details: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
-    #[doc(hidden)]
     pub fix_available: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanFinding {

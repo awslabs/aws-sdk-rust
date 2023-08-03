@@ -11,16 +11,12 @@ pub struct DescribeReportCreationOutput {
     /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
     /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the report was started. </p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>Details of the common errors that all operations return.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

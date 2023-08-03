@@ -5,7 +5,6 @@
 pub struct DeleteBucketInput {
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
@@ -17,7 +16,6 @@ pub struct DeleteBucketInput {
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
-    #[doc(hidden)]
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteBucketInput {

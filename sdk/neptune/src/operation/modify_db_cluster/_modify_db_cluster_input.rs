@@ -8,7 +8,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -18,12 +17,10 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    #[doc(hidden)]
     pub new_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -31,24 +28,18 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p> <i>Not supported by Neptune.</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
@@ -59,29 +50,23 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
-    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>
     /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
     /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
@@ -92,17 +77,13 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p> </li>
     /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
 }
 impl ModifyDbClusterInput {

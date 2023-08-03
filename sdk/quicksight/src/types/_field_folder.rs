@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldFolder {
     /// <p>The description for a field folder.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FieldFolder {

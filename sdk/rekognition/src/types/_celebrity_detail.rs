@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    #[doc(hidden)]
     pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the celebrity. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>Bounding box around the body of a celebrity.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Face details for the recognized celebrity.</p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::FaceDetail>,
     /// <p>Retrieves the known gender for the celebrity.</p>
-    #[doc(hidden)]
     pub known_gender: ::std::option::Option<crate::types::KnownGender>,
 }
 impl CelebrityDetail {

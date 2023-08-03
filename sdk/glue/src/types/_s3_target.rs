@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Target {
     /// <p>The path to the Amazon S3 target.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    #[doc(hidden)]
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
-    #[doc(hidden)]
     pub sample_size: ::std::option::Option<i32>,
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
-    #[doc(hidden)]
     pub event_queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    #[doc(hidden)]
     pub dlq_event_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Target {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
-    #[doc(hidden)]
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p> Describes the result of the given flow run. </p>
-    #[doc(hidden)]
     pub execution_result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p> Specifies the start time of the flow run. </p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the time of the most recent update. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
-    #[doc(hidden)]
     pub data_pull_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
-    #[doc(hidden)]
     pub data_pull_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    #[doc(hidden)]
     pub metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
 }
 impl ExecutionRecord {

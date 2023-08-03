@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNetworkSummary {
     /// <p>The ID of the service network.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service network.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of VPCs associated with the service network.</p>
-    #[doc(hidden)]
     pub number_of_associated_vp_cs: ::std::option::Option<i64>,
     /// <p>The number of services associated with the service network.</p>
-    #[doc(hidden)]
     pub number_of_associated_services: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummary {

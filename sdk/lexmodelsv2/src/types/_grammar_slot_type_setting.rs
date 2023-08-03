@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrammarSlotTypeSetting {
     /// <p>The source of the grammar used to create the slot type.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::GrammarSlotTypeSource>,
 }
 impl GrammarSlotTypeSetting {

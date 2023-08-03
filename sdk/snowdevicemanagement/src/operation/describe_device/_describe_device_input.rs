@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The ID of the device that you are checking the information of.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceInput {

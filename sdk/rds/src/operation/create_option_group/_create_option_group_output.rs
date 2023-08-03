@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOptionGroupOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub option_group: ::std::option::Option<crate::types::OptionGroup>,
     _request_id: Option<String>,
 }

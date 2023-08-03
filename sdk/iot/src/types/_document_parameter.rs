@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentParameter {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
-    #[doc(hidden)]
     pub example: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
-    #[doc(hidden)]
     pub optional: bool,
 }
 impl DocumentParameter {

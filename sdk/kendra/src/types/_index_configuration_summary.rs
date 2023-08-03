@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexConfigurationSummary {
     /// <p>The name of the index.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the index was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IndexStatus>,
 }
 impl IndexConfigurationSummary {

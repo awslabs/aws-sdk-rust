@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsCertificateData {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_serial: ::std::option::Option<::std::string::String>,
     /// <p>The status of the certificate.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl TlsCertificateData {

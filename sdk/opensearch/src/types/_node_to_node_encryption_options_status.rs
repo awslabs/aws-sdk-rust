@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptionsStatus {
     /// <p>The node-to-node encryption options for the specified domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl NodeToNodeEncryptionOptionsStatus {

@@ -5,57 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
     /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name to be used to log in to the endpoint database.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password to be used to log in to the endpoint database.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server where the endpoint database resides.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port used by the endpoint database.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub extra_connection_attributes: ::std::option::Option<::std::string::String>,
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags to be assigned to the endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
-    #[doc(hidden)]
     pub ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The external table definition. </p>
-    #[doc(hidden)]
     pub external_table_definition: ::std::option::Option<::std::string::String>,
     /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub s3_settings: ::std::option::Option<crate::types::S3Settings>,
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Possible settings include the following:</p>
@@ -65,58 +48,40 @@ pub struct CreateEndpointInput {
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
-    #[doc(hidden)]
     pub dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
     /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub mongo_db_settings: ::std::option::Option<crate::types::MongoDbSettings>,
     /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub kinesis_settings: ::std::option::Option<crate::types::KinesisSettings>,
     /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub kafka_settings: ::std::option::Option<crate::types::KafkaSettings>,
     /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
-    #[doc(hidden)]
     pub elasticsearch_settings: ::std::option::Option<crate::types::ElasticsearchSettings>,
     /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub neptune_settings: ::std::option::Option<crate::types::NeptuneSettings>,
     /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
-    #[doc(hidden)]
     pub redshift_settings: ::std::option::Option<crate::types::RedshiftSettings>,
     /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub postgre_sql_settings: ::std::option::Option<crate::types::PostgreSqlSettings>,
     /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub my_sql_settings: ::std::option::Option<crate::types::MySqlSettings>,
     /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub oracle_settings: ::std::option::Option<crate::types::OracleSettings>,
     /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub sybase_settings: ::std::option::Option<crate::types::SybaseSettings>,
     /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub microsoft_sql_server_settings: ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
     /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub ibm_db2_settings: ::std::option::Option<crate::types::IbmDb2Settings>,
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
-    #[doc(hidden)]
     pub doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
     /// <p>Settings in JSON format for the target Redis endpoint.</p>
-    #[doc(hidden)]
     pub redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-    #[doc(hidden)]
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
     /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
-    #[doc(hidden)]
     pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl CreateEndpointInput {

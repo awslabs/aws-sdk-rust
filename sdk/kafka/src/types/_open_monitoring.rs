@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
-    #[doc(hidden)]
     pub prometheus: ::std::option::Option<crate::types::Prometheus>,
 }
 impl OpenMonitoring {

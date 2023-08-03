@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
-    #[doc(hidden)]
     pub elasticsearch_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>>,
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

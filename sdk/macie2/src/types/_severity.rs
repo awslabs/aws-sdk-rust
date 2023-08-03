@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::SeverityDescription>,
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<i64>,
 }
 impl Severity {

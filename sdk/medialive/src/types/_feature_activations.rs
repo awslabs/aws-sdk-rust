@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureActivations {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
-    #[doc(hidden)]
     pub input_prepare_schedule_actions: ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
 }
 impl FeatureActivations {

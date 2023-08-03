@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    #[doc(hidden)]
     pub database_revision: ::std::option::Option<::std::string::String>,
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the database revision was released.</p>
-    #[doc(hidden)]
     pub database_revision_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RevisionTarget {

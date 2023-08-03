@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsolverDestinationProperties {
     /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
-    #[doc(hidden)]
     pub s3_output_format_config: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>,
 }
 impl UpsolverDestinationProperties {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcConnectionOutput {
     /// <p>The VPC connection ARN.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The State of Vpc Connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpcConnectionState>,
     /// <p>The authentication type of VPC connection.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of client subnets.</p>
-    #[doc(hidden)]
     pub client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security groups.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The creation time of VPC connection.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of tags for the VPC connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

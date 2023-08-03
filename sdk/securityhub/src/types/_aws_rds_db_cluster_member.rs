@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterMember {
     /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
-    #[doc(hidden)]
     pub is_cluster_writer: bool,
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
-    #[doc(hidden)]
     pub promotion_tier: i32,
     /// <p>The instance identifier for this member of the DB cluster.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbClusterMember {

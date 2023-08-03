@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    #[doc(hidden)]
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkerConfigurationInput {

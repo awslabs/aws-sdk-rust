@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    #[doc(hidden)]
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
 }
 impl AssetModelPropertyDefinition {

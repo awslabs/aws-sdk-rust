@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>The storage class to which you want the object to transition.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::TransitionStorageClass>,
 }
 impl Transition {

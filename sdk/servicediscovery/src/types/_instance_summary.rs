@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>The ID for an instance that you created by using a specified service.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information:</p>
     /// <ul>
@@ -57,7 +56,6 @@ pub struct InstanceSummary {
     /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InstanceSummary {

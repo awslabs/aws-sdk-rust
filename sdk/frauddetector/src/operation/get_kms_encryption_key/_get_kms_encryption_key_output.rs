@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKmsEncryptionKeyOutput {
     /// <p>The KMS encryption key.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<crate::types::KmsKey>,
     _request_id: Option<String>,
 }

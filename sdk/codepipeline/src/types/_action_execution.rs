@@ -7,34 +7,24 @@ pub struct ActionExecution {
     /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
-    #[doc(hidden)]
     pub action_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action, or for a completed action, the last status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionExecutionStatus>,
     /// <p>A summary of the run of the action.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The last status change of the action.</p>
-    #[doc(hidden)]
     pub last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> command. It is used to validate that the approval request corresponding to this token is still valid.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user who last changed the pipeline.</p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the run of the action.</p>
-    #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
-    #[doc(hidden)]
     pub external_execution_url: ::std::option::Option<::std::string::String>,
     /// <p>A percentage of completeness of the action as it runs.</p>
-    #[doc(hidden)]
     pub percent_complete: ::std::option::Option<i32>,
     /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ActionExecution {

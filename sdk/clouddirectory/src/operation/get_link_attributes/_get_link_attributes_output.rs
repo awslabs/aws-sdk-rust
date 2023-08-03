@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLinkAttributesOutput {
     /// <p>The attributes that are associated with the typed link.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,
 }

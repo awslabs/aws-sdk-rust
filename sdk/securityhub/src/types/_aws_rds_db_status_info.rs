@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbStatusInfo {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
-    #[doc(hidden)]
     pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether the read replica instance is operating normally.</p>
-    #[doc(hidden)]
     pub normal: bool,
     /// <p>The status of the read replica instance.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbStatusInfo {

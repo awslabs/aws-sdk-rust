@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IntentSummary {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
-    #[doc(hidden)]
     pub checkpoint_label: ::std::option::Option<::std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct IntentSummary {
     /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
     /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
@@ -29,7 +25,6 @@ pub struct IntentSummary {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dialog_action_type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
@@ -37,10 +32,8 @@ pub struct IntentSummary {
     /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
-    #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
 }
 impl IntentSummary {

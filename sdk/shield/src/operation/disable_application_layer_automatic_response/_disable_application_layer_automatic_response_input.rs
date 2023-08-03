@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseInput {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableApplicationLayerAutomaticResponseInput {

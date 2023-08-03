@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlanRateProperty {
     /// <p>The property name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
     /// <p>The property value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlanRateProperty {

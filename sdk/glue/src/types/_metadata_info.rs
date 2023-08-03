@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataInfo {
     /// <p>The metadata key’s corresponding value.</p>
-    #[doc(hidden)]
     pub metadata_value: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the entry was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>Other metadata belonging to the same metadata key.</p>
-    #[doc(hidden)]
     pub other_metadata_value_list: ::std::option::Option<::std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
 }
 impl MetadataInfo {

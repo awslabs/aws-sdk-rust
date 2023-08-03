@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPartitionOutput {
     /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<crate::types::Partition>,
     _request_id: Option<String>,
 }

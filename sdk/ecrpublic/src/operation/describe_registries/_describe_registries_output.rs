@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegistriesOutput {
     /// <p>An object that contains the details for a public registry.</p>
-    #[doc(hidden)]
     pub registries: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

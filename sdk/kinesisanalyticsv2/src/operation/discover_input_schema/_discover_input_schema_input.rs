@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverInputSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that is used to access the streaming source.</p>
-    #[doc(hidden)]
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    #[doc(hidden)]
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
-    #[doc(hidden)]
     pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl DiscoverInputSchemaInput {

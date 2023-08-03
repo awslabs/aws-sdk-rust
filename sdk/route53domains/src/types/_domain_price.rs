@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainPrice {
     /// <p>The name of the TLD for which the prices apply.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The price for domain registration with Route&nbsp;53.</p>
-    #[doc(hidden)]
     pub registration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
-    #[doc(hidden)]
     pub transfer_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
-    #[doc(hidden)]
     pub renewal_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for changing domain ownership.</p>
-    #[doc(hidden)]
     pub change_ownership_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
-    #[doc(hidden)]
     pub restoration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
 }
 impl DomainPrice {

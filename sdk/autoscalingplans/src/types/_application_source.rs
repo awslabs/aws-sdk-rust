@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSource {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    #[doc(hidden)]
     pub cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags (up to 50).</p>
-    #[doc(hidden)]
     pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
 }
 impl ApplicationSource {

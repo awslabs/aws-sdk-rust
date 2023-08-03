@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    #[doc(hidden)]
     pub associated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
     _request_id: Option<String>,
 }

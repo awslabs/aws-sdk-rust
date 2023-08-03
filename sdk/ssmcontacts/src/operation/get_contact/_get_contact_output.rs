@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContactType>,
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
-    #[doc(hidden)]
     pub plan: ::std::option::Option<crate::types::Plan>,
     _request_id: Option<String>,
 }

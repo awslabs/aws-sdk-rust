@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTimeSeriesOutput {
     /// <p>The ID of the asset in which the asset property was created.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the time series.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the time series.</p>
-    #[doc(hidden)]
     pub time_series_id: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    #[doc(hidden)]
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub time_series_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub time_series_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
-    #[doc(hidden)]
     pub time_series_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

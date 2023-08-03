@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// Unique ID of the channel.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChannelInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
-    #[doc(hidden)]
     pub script_name: ::std::option::Option<::std::string::String>,
 }
 impl ScriptBatchJobIdentifier {

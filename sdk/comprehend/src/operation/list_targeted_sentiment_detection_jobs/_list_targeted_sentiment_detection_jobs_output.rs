@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetedSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    #[doc(hidden)]
     pub targeted_sentiment_detection_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

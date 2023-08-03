@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlueprintInput {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
-    #[doc(hidden)]
     pub include_blueprint: ::std::option::Option<bool>,
     /// <p>Specifies whether or not to include the parameter specification.</p>
-    #[doc(hidden)]
     pub include_parameter_spec: ::std::option::Option<bool>,
 }
 impl GetBlueprintInput {

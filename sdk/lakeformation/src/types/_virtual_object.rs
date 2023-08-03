@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The ETag of the Amazon S3 object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl VirtualObject {

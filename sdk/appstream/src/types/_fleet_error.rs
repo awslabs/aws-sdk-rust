@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetError {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::FleetErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FleetError {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
-    #[doc(hidden)]
     pub elasticsearch_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

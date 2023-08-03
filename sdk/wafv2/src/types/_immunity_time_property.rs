@@ -6,7 +6,6 @@
 pub struct ImmunityTimeProperty {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
     /// <p>For the Challenge action, the minimum setting is 300. </p>
-    #[doc(hidden)]
     pub immunity_time: ::std::option::Option<i64>,
 }
 impl ImmunityTimeProperty {

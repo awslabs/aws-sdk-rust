@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateFilter {
     /// <p>A timestamp representing the start of the time period filtered on.</p>
-    #[doc(hidden)]
     pub start_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp representing the end of the time period filtered on.</p>
-    #[doc(hidden)]
     pub end_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateFilter {

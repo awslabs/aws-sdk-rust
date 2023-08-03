@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceSummaryByResourceType {
     /// <p>The type of Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
-    #[doc(hidden)]
     pub compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
 }
 impl ComplianceSummaryByResourceType {

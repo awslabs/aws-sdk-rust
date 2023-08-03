@@ -8,10 +8,8 @@
 pub struct QueryFilter {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryFilter {

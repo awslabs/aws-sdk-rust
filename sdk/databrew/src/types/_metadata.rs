@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metadata {
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl Metadata {

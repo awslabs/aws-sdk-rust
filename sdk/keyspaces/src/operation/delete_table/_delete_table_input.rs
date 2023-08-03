@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTableInput {
     /// <p>The name of the keyspace of the to be deleted table.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to be deleted.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTableInput {

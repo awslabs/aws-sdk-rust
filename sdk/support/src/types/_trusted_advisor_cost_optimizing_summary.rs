@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCostOptimizingSummary {
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings: f64,
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
-    #[doc(hidden)]
     pub estimated_percent_monthly_savings: f64,
 }
 impl TrustedAdvisorCostOptimizingSummary {

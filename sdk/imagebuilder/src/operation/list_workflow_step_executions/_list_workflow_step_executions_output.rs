@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowStepExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>,
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    #[doc(hidden)]
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output message from the list action, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

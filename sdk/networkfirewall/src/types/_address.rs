@@ -13,7 +13,6 @@ pub struct Address {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    #[doc(hidden)]
     pub address_definition: ::std::option::Option<::std::string::String>,
 }
 impl Address {

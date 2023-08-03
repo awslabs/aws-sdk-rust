@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub forgot_password: ::std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub mfa: ::std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub o_auth: ::std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub password_policy: ::std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub verification_message: ::std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
 }
 impl UpdateBackendAuthUserPoolConfig {

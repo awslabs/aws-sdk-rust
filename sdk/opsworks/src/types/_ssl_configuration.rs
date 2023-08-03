@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    #[doc(hidden)]
     pub chain: ::std::option::Option<::std::string::String>,
 }
 impl SslConfiguration {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineLabelConfiguration {
     /// <p>The value label configuration of the label in a reference line.</p>
-    #[doc(hidden)]
     pub value_label_configuration: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
     /// <p>The custom label configuration of the label in a reference line.</p>
-    #[doc(hidden)]
     pub custom_label_configuration: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,
     /// <p>The font configuration of the label in a reference line.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The font color configuration of the label in a reference line.</p>
-    #[doc(hidden)]
     pub font_color: ::std::option::Option<::std::string::String>,
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
@@ -22,14 +18,12 @@ pub struct ReferenceLineLabelConfiguration {
     /// <li> <p> <code>CENTER</code> </p> </li>
     /// <li> <p> <code>RIGHT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub horizontal_position: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ABOVE</code> </p> </li>
     /// <li> <p> <code>BELOW</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vertical_position: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>,
 }
 impl ReferenceLineLabelConfiguration {

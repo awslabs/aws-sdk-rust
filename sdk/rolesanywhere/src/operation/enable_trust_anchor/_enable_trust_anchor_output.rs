@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    #[doc(hidden)]
     pub trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
 }

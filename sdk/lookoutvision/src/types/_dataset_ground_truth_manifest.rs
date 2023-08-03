@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
 impl DatasetGroundTruthManifest {

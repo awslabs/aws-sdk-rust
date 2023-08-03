@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAwsNetworkPerformanceMetricSubscriptionInput {
     /// <p>The source Region or Availability Zone that the metric subscription is enabled for. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The target Region or Availability Zone that the metric subscription is enabled for. For example, <code>eu-west-1</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric used for the enabled subscription.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The statistic used for the enabled subscription.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl EnableAwsNetworkPerformanceMetricSubscriptionInput {

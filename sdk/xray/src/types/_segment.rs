@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Segment {
     /// <p>The segment's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The segment document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
 }
 impl Segment {

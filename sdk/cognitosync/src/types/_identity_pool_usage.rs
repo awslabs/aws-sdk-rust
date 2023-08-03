@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityPoolUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// Number of sync sessions for the identity pool.
-    #[doc(hidden)]
     pub sync_sessions_count: ::std::option::Option<i64>,
     /// Data storage information for the identity pool.
-    #[doc(hidden)]
     pub data_storage: ::std::option::Option<i64>,
     /// Date on which the identity pool was last modified.
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IdentityPoolUsage {

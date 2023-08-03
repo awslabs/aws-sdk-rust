@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
     /// <p>A list of event destinations associated with the configuration set. </p>
-    #[doc(hidden)]
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
-    #[doc(hidden)]
     pub tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    #[doc(hidden)]
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
     /// <p>An object that represents the reputation settings for the configuration set. </p>
-    #[doc(hidden)]
     pub reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     _request_id: Option<String>,
 }

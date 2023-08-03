@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    #[doc(hidden)]
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// The new category for the job template, if you are changing it.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// The new description for the job template, if you are changing it.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// Optional list of hop destinations.
-    #[doc(hidden)]
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The name of the job template you are modifying
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// The new queue for the job template, if you are changing it.
-    #[doc(hidden)]
     pub queue: ::std::option::Option<::std::string::String>,
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::JobTemplateSettings>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    #[doc(hidden)]
     pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
 }
 impl UpdateJobTemplateInput {

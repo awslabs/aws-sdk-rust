@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration in minutes of the channel schedule.</p>
-    #[doc(hidden)]
     pub duration_minutes: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetChannelScheduleInput {

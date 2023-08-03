@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldWells {
     /// <p>The aggregated field well for the table.</p>
-    #[doc(hidden)]
     pub table_aggregated_field_wells: ::std::option::Option<crate::types::TableAggregatedFieldWells>,
     /// <p>The unaggregated field well for the table.</p>
-    #[doc(hidden)]
     pub table_unaggregated_field_wells: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
 }
 impl TableFieldWells {

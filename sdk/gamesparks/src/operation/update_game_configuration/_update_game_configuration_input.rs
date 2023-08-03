@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of modifications to make.</p>
-    #[doc(hidden)]
     pub modifications: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>,
 }
 impl UpdateGameConfigurationInput {

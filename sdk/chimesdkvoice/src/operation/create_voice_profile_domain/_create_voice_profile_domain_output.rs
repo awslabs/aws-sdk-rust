@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVoiceProfileDomainOutput {
     /// <p>The requested voice profile domain.</p>
-    #[doc(hidden)]
     pub voice_profile_domain: ::std::option::Option<crate::types::VoiceProfileDomain>,
     _request_id: Option<String>,
 }

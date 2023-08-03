@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResultItem {
     /// <p>The conversation Id of the test result evaluation item.</p>
-    #[doc(hidden)]
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The end-to-end success or failure of the test result evaluation item.</p>
-    #[doc(hidden)]
     pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>The speech transcription success or failure of the test result evaluation item.</p>
-    #[doc(hidden)]
     pub speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>The intent classification of the test result evaluation item.</p>
-    #[doc(hidden)]
     pub intent_classification_results: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelIntentClassificationResultItem>>,
     /// <p>The slot success or failure of the test result evaluation item.</p>
-    #[doc(hidden)]
     pub slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelSlotResolutionResultItem>>,
 }
 impl ConversationLevelTestResultItem {

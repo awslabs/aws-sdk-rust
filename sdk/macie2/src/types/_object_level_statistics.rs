@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub file_type: ::std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i64>,
 }
 impl ObjectLevelStatistics {

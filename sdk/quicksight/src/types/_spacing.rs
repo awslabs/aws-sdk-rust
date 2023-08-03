@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spacing {
     /// <p>Define the top spacing.</p>
-    #[doc(hidden)]
     pub top: ::std::option::Option<::std::string::String>,
     /// <p>Define the bottom spacing.</p>
-    #[doc(hidden)]
     pub bottom: ::std::option::Option<::std::string::String>,
     /// <p>Define the left spacing.</p>
-    #[doc(hidden)]
     pub left: ::std::option::Option<::std::string::String>,
     /// <p>Define the right spacing.</p>
-    #[doc(hidden)]
     pub right: ::std::option::Option<::std::string::String>,
 }
 impl Spacing {

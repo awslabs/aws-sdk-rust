@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerLogDelivery {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsLogDelivery>,
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-    #[doc(hidden)]
     pub firehose: ::std::option::Option<crate::types::FirehoseLogDelivery>,
     /// <p>Details about delivering logs to Amazon S3.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3LogDelivery>,
 }
 impl WorkerLogDelivery {

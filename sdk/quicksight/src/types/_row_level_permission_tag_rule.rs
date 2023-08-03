@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RowLevelPermissionTagRule {
     /// <p>The unique key for a tag.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The column name that a tag key is assigned to.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
-    #[doc(hidden)]
     pub tag_multi_value_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
-    #[doc(hidden)]
     pub match_all_value: ::std::option::Option<::std::string::String>,
 }
 impl RowLevelPermissionTagRule {

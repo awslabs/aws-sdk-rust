@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckInLicenseInput {
     /// <p>License consumption token.</p>
-    #[doc(hidden)]
     pub license_consumption_token: ::std::option::Option<::std::string::String>,
     /// <p>License beneficiary.</p>
-    #[doc(hidden)]
     pub beneficiary: ::std::option::Option<::std::string::String>,
 }
 impl CheckInLicenseInput {

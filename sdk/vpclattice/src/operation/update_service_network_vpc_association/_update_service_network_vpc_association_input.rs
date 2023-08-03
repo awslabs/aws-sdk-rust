@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    #[doc(hidden)]
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups. </p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInput {

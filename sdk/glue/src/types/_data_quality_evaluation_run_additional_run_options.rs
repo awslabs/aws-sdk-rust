@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Prefix for Amazon S3 to store results.</p>
-    #[doc(hidden)]
     pub results_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {

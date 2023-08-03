@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
-    #[doc(hidden)]
     pub listener_port: ::std::option::Option<i32>,
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub endpoint_port: ::std::option::Option<i32>,
 }
 impl PortOverride {

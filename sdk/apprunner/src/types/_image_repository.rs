@@ -6,13 +6,10 @@
 pub struct ImageRepository {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    #[doc(hidden)]
     pub image_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for running the identified image.</p>
-    #[doc(hidden)]
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    #[doc(hidden)]
     pub image_repository_type: ::std::option::Option<crate::types::ImageRepositoryType>,
 }
 impl ImageRepository {

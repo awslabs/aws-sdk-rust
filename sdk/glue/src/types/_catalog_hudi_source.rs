@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogHudiSource {
     /// <p>The name of the Hudi data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to read from.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional connection options.</p>
-    #[doc(hidden)]
     pub additional_hudi_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the Hudi source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CatalogHudiSource {

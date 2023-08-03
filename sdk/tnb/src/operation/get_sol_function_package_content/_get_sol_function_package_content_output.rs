@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageContentOutput {
     /// <p>Indicates the media type of the resource.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::PackageContentType>,
     /// <p>Contents of the function package.</p>
-    #[doc(hidden)]
     pub package_content: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

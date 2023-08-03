@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Project {
     /// <p>The ID of the Amazon Web Services account that owns the project.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the project was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The dataset that the project is to act upon.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The last modification date and time for the project.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of a project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a recipe that will be developed during a project session.</p>
-    #[doc(hidden)]
     pub recipe_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.</p>
-    #[doc(hidden)]
     pub sample: ::std::option::Option<crate::types::Sample>,
     /// <p>Metadata tags that have been applied to the project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user that opened the project for use.</p>
-    #[doc(hidden)]
     pub opened_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the project was opened.</p>
-    #[doc(hidden)]
     pub open_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Project {

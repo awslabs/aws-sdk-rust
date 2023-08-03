@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
-    #[doc(hidden)]
     pub instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     _request_id: Option<String>,
 }

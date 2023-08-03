@@ -7,26 +7,19 @@ pub struct CreateLocationEfsInput {
     /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
     /// </note>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub efs_filesystem_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub ec2_config: ::std::option::Option<crate::types::Ec2Config>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub file_system_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    #[doc(hidden)]
     pub in_transit_encryption: ::std::option::Option<crate::types::EfsInTransitEncryption>,
 }
 impl CreateLocationEfsInput {

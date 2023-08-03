@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterElasticIpStatus {
     /// <p>The elastic IP address for the cluster.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>The status of the elastic IP address.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterElasticIpStatus {

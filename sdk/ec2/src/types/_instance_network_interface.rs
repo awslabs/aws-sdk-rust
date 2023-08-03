@@ -5,59 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterface {
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
     /// <p>The network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::InstanceNetworkInterfaceAttachment>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The security groups.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
     /// <p>The MAC address.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS name.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<bool>,
     /// <p>The status of the network interface.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkInterfaceStatus>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of network interface.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
-    #[doc(hidden)]
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv4Prefix>>,
     /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
 }
 impl InstanceNetworkInterface {

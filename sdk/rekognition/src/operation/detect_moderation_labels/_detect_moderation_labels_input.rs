@@ -5,14 +5,11 @@
 pub struct DetectModerationLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
-    #[doc(hidden)]
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
-    #[doc(hidden)]
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
 }
 impl DetectModerationLabelsInput {

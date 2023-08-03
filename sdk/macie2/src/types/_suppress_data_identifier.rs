@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuppressDataIdentifier {
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the type of sensitive data to exclude or include in the score.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataIdentifierType>,
 }
 impl SuppressDataIdentifier {

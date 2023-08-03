@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderedResourceDefinition {
     /// <p>The type of network resource in the order.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     /// <p>The number of network resources in the order.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    #[doc(hidden)]
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl OrderedResourceDefinition {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountOutput {
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    #[doc(hidden)]
     pub create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
 }

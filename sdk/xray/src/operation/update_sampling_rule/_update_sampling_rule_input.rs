@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSamplingRuleInput {
     /// <p>The rule and fields to change.</p>
-    #[doc(hidden)]
     pub sampling_rule_update: ::std::option::Option<crate::types::SamplingRuleUpdate>,
 }
 impl UpdateSamplingRuleInput {

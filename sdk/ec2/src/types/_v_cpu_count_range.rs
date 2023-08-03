@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VCpuCountRange {
     /// <p>The minimum number of vCPUs. If the value is <code>0</code>, there is no minimum limit.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of vCPUs. If this parameter is not specified, there is no maximum limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl VCpuCountRange {

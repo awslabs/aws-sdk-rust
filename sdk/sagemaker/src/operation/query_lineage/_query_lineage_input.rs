@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryLineageInput {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    #[doc(hidden)]
     pub start_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::Direction>,
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
-    #[doc(hidden)]
     pub include_edges: ::std::option::Option<bool>,
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
@@ -20,16 +17,12 @@ pub struct QueryLineageInput {
     /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
     /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::QueryFilters>,
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
-    #[doc(hidden)]
     pub max_depth: ::std::option::Option<i32>,
     /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl QueryLineageInput {

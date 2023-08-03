@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RequestSpotLaunchSpecification {
     /// <p>The IDs of the security groups.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Deprecated.</p>
-    #[doc(hidden)]
     pub addressing_type: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. Only one instance type can be specified.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The ID of the kernel.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
     /// <p>Default: Disabled</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information for the instance.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::SpotPlacement>,
     /// <p>The ID of the RAM disk.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which to launch the instance.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
 }
 impl RequestSpotLaunchSpecification {

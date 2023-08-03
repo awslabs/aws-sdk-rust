@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageFeatureResult {
     /// <p>The feature that generated the usage cost.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<crate::types::UsageFeature>,
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::Total>,
 }
 impl UsageFeatureResult {

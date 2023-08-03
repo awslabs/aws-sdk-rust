@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The repository that contains the package versions with the status you want to update. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -22,22 +18,16 @@ pub struct UpdatePackageVersionsStatusInput {
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package with the version statuses to update. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-    #[doc(hidden)]
     pub version_revisions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-    #[doc(hidden)]
     pub expected_status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p> The status you want to change the package version status to. </p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl UpdatePackageVersionsStatusInput {

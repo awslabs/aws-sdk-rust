@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
-    #[doc(hidden)]
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
-    #[doc(hidden)]
     pub rid: ::std::option::Option<::std::string::String>,
 }
 impl SearchStatus {

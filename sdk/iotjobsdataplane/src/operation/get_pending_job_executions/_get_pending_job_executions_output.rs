@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPendingJobExecutionsOutput {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    #[doc(hidden)]
     pub in_progress_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    #[doc(hidden)]
     pub queued_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryStatistics {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
-    #[doc(hidden)]
     pub total_duration_in_millis: ::std::option::Option<i64>,
 }
 impl ProtectedQueryStatistics {

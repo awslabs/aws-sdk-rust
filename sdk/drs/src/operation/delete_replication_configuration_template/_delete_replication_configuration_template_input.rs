@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationTemplateInput {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    #[doc(hidden)]
     pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationConfigurationTemplateInput {

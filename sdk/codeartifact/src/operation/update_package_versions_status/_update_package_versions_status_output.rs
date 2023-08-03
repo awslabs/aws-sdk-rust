@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusOutput {
     /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
-    #[doc(hidden)]
     pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
     /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
-    #[doc(hidden)]
     pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }

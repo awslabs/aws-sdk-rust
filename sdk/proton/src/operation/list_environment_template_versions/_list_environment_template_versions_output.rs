@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsOutput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    #[doc(hidden)]
     pub template_versions: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
     _request_id: Option<String>,
 }

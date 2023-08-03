@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where edges are located in a core network. </p>
-    #[doc(hidden)]
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ASN of a core network.</p>
-    #[doc(hidden)]
     pub asn: ::std::option::Option<i64>,
     /// <p>The IP addresses used for a core network.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the destination.</p>
-    #[doc(hidden)]
     pub destination_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The inside IP addresses used for core network change values.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The shared segments for a core network change value. </p>
-    #[doc(hidden)]
     pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CoreNetworkChangeValues {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationProfile {
     /// <p>The name of the authentication profile.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    #[doc(hidden)]
     pub authentication_profile_content: ::std::option::Option<::std::string::String>,
 }
 impl AuthenticationProfile {

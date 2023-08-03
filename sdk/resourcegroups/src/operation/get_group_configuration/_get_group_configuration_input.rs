@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupConfigurationInput {
     /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
 }
 impl GetGroupConfigurationInput {

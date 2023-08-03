@@ -4,31 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClassificationJobInput {
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    #[doc(hidden)]
     pub allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    #[doc(hidden)]
     pub custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
-    #[doc(hidden)]
     pub initial_run: ::std::option::Option<bool>,
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
     /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    #[doc(hidden)]
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
@@ -41,23 +34,17 @@ pub struct CreateClassificationJobInput {
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers.</p>
     /// <p>If the job is a recurring job and you don't specify a value for this property or you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the job starts to run.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    #[doc(hidden)]
     pub managed_data_identifier_selector: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>,
     /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    #[doc(hidden)]
     pub s3_job_definition: ::std::option::Option<crate::types::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
-    #[doc(hidden)]
     pub sampling_percentage: ::std::option::Option<i32>,
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-    #[doc(hidden)]
     pub schedule_frequency: ::std::option::Option<crate::types::JobScheduleFrequency>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateClassificationJobInput {

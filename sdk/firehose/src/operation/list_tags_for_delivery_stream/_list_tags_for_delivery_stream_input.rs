@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamInput {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    #[doc(hidden)]
     pub exclusive_start_tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListTagsForDeliveryStreamInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    #[doc(hidden)]
     pub webhook_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebhookInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The access key identifier.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The access key.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>The session token.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
 }
 impl Credentials {

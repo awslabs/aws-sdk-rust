@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppUnitError {
     /// <p>The category of the error.</p>
-    #[doc(hidden)]
     pub app_unit_error_category: ::std::option::Option<crate::types::AppUnitErrorCategory>,
 }
 impl AppUnitError {

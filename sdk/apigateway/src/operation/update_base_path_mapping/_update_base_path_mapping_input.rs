@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    #[doc(hidden)]
     pub base_path: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    #[doc(hidden)]
     pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateBasePathMappingInput {

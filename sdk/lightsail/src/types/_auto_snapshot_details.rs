@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoSnapshotDetails {
     /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the automatic snapshot was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the automatic snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutoSnapshotStatus>,
     /// <p>An array of objects that describe the block storage disks attached to the instance when the automatic snapshot was created.</p>
-    #[doc(hidden)]
     pub from_attached_disks: ::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>>,
 }
 impl AutoSnapshotDetails {

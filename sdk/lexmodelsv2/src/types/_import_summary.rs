@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
-    #[doc(hidden)]
     pub imported_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you gave the imported resource.</p>
-    #[doc(hidden)]
     pub imported_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The date and time that the import was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the import was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of resource that was imported.</p>
-    #[doc(hidden)]
     pub imported_resource_type: ::std::option::Option<crate::types::ImportResourceType>,
 }
 impl ImportSummary {

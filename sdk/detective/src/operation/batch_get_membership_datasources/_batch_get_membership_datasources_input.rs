@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetMembershipDatasourcesInput {

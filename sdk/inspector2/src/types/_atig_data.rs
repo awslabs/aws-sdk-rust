@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AtigData {
     /// <p>The date and time this vulnerability was first observed.</p>
-    #[doc(hidden)]
     pub first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time this vulnerability was last observed.</p>
-    #[doc(hidden)]
     pub last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The commercial sectors this vulnerability targets.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
-    #[doc(hidden)]
     pub ttps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AtigData {

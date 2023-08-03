@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
     /// <p>The current application version ID when the snapshot was created.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {

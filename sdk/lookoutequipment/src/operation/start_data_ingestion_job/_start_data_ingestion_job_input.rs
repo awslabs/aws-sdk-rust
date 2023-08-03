@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataIngestionJobInput {
     /// <p>The name of the dataset being used by the data ingestion job. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    #[doc(hidden)]
     pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartDataIngestionJobInput {

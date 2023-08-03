@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsInput {
     /// <p>The streaming distribution's configuration information.</p>
-    #[doc(hidden)]
     pub streaming_distribution_config_with_tags: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
 }
 impl CreateStreamingDistributionWithTagsInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkGroupInput {
     /// <p>The specified workgroup that will be updated.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    #[doc(hidden)]
     pub configuration_updates: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkGroupState>,
 }
 impl UpdateWorkGroupInput {

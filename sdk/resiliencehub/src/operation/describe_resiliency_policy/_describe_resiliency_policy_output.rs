@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResiliencyPolicyOutput {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
 }

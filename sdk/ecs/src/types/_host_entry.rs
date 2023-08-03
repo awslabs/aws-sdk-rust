@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostEntry {
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
 }
 impl HostEntry {

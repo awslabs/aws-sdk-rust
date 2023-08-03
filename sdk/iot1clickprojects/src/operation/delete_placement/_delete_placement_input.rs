@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlacementInput {
     /// <p>The name of the empty placement to delete.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The project containing the empty placement to delete.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlacementInput {

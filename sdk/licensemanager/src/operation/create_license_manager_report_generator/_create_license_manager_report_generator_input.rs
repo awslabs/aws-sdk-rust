@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
-    #[doc(hidden)]
     pub report_generator_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    #[doc(hidden)]
     pub report_context: ::std::option::Option<crate::types::ReportContext>,
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    #[doc(hidden)]
     pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Description of the report generator.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to add to the report generator.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLicenseManagerReportGeneratorInput {

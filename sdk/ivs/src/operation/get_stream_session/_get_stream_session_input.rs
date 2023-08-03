@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStreamSessionInput {

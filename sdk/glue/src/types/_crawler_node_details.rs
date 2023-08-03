@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
-    #[doc(hidden)]
     pub crawls: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
 }
 impl CrawlerNodeDetails {

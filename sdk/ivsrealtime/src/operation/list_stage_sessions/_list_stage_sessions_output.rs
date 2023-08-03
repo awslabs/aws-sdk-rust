@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStageSessionsOutput {
     /// <p>List of matching stage sessions.</p>
-    #[doc(hidden)]
     pub stage_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>,
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

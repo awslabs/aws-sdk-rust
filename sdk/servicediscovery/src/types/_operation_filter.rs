@@ -12,7 +12,6 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OperationFilterName>,
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
@@ -22,7 +21,6 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
@@ -30,7 +28,6 @@ pub struct OperationFilter {
     /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl OperationFilter {

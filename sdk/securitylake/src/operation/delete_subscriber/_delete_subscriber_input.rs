@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriberInput {
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
-    #[doc(hidden)]
     pub subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriberInput {

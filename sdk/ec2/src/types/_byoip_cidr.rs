@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The description of the address range.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
 }
 impl ByoipCidr {

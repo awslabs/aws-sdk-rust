@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The text of the message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of response.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::MessageContentType>,
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    #[doc(hidden)]
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
 impl Message {

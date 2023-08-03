@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResources {
     /// <p>Type of additional resource for a custom lens.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AdditionalResourceType>,
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>,
 }
 impl AdditionalResources {

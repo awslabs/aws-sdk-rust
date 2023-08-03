@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBuildBatchesInput {

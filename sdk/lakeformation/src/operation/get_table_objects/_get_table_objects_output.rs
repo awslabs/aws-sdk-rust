@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableObjectsOutput {
     /// <p>A list of objects organized by partition keys.</p>
-    #[doc(hidden)]
     pub objects: ::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>>,
     /// <p>A continuation token indicating whether additional data is available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

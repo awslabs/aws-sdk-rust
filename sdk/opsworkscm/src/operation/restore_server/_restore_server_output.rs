@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreServerOutput {
     /// <p>Describes a configuration management server. </p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }

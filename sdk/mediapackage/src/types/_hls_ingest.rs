@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
-    #[doc(hidden)]
     pub ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
 }
 impl HlsIngest {

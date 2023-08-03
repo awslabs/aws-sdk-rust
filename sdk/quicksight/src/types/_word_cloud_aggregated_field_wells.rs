@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudAggregatedFieldWells {
     /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The size field well of a word cloud. Values are aggregated based on group by fields.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl WordCloudAggregatedFieldWells {

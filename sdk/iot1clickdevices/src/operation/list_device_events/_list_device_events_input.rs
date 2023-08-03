@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceEventsInput {
     /// <p>The unique identifier of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    #[doc(hidden)]
     pub from_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    #[doc(hidden)]
     pub to_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListDeviceEventsInput {

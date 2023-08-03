@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceActionSummary {
     /// <p>The self-service action identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    #[doc(hidden)]
     pub definition_type: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
 }
 impl ServiceActionSummary {

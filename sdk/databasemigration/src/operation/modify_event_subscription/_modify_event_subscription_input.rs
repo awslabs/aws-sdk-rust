@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be modified.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {

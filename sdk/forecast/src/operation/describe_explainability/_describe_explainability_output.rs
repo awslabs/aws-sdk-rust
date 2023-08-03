@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExplainabilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_config: ::std::option::Option<crate::types::ExplainabilityConfig>,
     /// <p>Whether the visualization was enabled for the Explainability resource.</p>
-    #[doc(hidden)]
     pub enable_visualization: ::std::option::Option<bool>,
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>If an error occurred, a message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Explainability resource. States include: </p>
     /// <ul>
@@ -43,10 +32,8 @@ pub struct DescribeExplainabilityOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the Explainability resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -56,7 +43,6 @@ pub struct DescribeExplainabilityOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

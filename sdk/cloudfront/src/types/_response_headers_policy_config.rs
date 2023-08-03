@@ -7,26 +7,19 @@
 pub struct ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
     /// <p>The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
-    #[doc(hidden)]
     pub cors_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>,
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
-    #[doc(hidden)]
     pub security_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig>,
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
-    #[doc(hidden)]
     pub server_timing_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig>,
     /// <p>A configuration for a set of custom HTTP response headers.</p>
-    #[doc(hidden)]
     pub custom_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig>,
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
-    #[doc(hidden)]
     pub remove_headers_config: ::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig>,
 }
 impl ResponseHeadersPolicyConfig {

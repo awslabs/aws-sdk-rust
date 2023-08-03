@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub gateway_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {

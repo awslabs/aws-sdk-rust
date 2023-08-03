@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataOutput {
     /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
     _request_id: Option<String>,
 }

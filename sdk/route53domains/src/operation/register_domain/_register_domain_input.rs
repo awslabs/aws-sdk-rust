@@ -13,45 +13,35 @@ pub struct RegisterDomainInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub idn_lang_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub auto_renew: ::std::option::Option<bool>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    #[doc(hidden)]
     pub admin_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    #[doc(hidden)]
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_admin_contact: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_registrant_contact: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_tech_contact: ::std::option::Option<bool>,
 }
 impl RegisterDomainInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
-    #[doc(hidden)]
     pub collection_duration_minutes: ::std::option::Option<i32>,
 }
 impl UpdateDiscoveryJobInput {

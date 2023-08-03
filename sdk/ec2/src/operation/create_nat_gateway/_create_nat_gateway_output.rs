@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNatGatewayOutput {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway: ::std::option::Option<crate::types::NatGateway>,
     _request_id: Option<String>,
 }

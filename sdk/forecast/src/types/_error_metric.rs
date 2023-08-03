@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorMetric {
     /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
-    #[doc(hidden)]
     pub forecast_type: ::std::option::Option<::std::string::String>,
     /// <p> The weighted absolute percentage error (WAPE). </p>
-    #[doc(hidden)]
     pub wape: ::std::option::Option<f64>,
     /// <p> The root-mean-square error (RMSE). </p>
-    #[doc(hidden)]
     pub rmse: ::std::option::Option<f64>,
     /// <p>The Mean Absolute Scaled Error (MASE)</p>
-    #[doc(hidden)]
     pub mase: ::std::option::Option<f64>,
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
-    #[doc(hidden)]
     pub mape: ::std::option::Option<f64>,
 }
 impl ErrorMetric {

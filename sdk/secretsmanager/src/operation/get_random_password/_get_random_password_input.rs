@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRandomPasswordInput {
     /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
-    #[doc(hidden)]
     pub password_length: ::std::option::Option<i64>,
     /// <p>A string of the characters that you don't want in the password.</p>
-    #[doc(hidden)]
     pub exclude_characters: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
-    #[doc(hidden)]
     pub exclude_numbers: ::std::option::Option<bool>,
     /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
-    #[doc(hidden)]
     pub exclude_punctuation: ::std::option::Option<bool>,
     /// <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
-    #[doc(hidden)]
     pub exclude_uppercase: ::std::option::Option<bool>,
     /// <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
-    #[doc(hidden)]
     pub exclude_lowercase: ::std::option::Option<bool>,
     /// <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
-    #[doc(hidden)]
     pub include_space: ::std::option::Option<bool>,
     /// <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
-    #[doc(hidden)]
     pub require_each_included_type: ::std::option::Option<bool>,
 }
 impl GetRandomPasswordInput {

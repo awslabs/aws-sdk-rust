@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
-    #[doc(hidden)]
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    #[doc(hidden)]
     pub load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZone {

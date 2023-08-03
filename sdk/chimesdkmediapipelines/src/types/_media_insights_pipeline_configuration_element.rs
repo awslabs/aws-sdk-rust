@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub amazon_transcribe_call_analytics_processor_configuration:
         ::std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
     /// <p>The transcription processor configuration settings in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub amazon_transcribe_processor_configuration: ::std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
     /// <p>The configuration settings for the Kinesis Data Stream Sink in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub kinesis_data_stream_sink_configuration: ::std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
     /// <p>The configuration settings for the Amazon S3 recording bucket in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub s3_recording_sink_configuration: ::std::option::Option<crate::types::S3RecordingSinkConfiguration>,
     /// <p>The voice analytics configuration settings in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub voice_analytics_processor_configuration: ::std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
     /// <p>The configuration settings for the Amazon Web Services Lambda sink in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub lambda_function_sink_configuration: ::std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
     /// <p>The configuration settings for an SQS queue sink in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub sqs_queue_sink_configuration: ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     /// <p>The configuration settings for an SNS topic sink in a media insights pipeline configuration element.</p>
-    #[doc(hidden)]
     pub sns_topic_sink_configuration: ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
 }
 impl MediaInsightsPipelineConfigurationElement {

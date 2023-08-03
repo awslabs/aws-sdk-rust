@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManualEvidence {
     /// <p>The S3 URL of the object that's imported as manual evidence. </p>
-    #[doc(hidden)]
     pub s3_resource_path: ::std::option::Option<::std::string::String>,
     /// <p>The plain text response that's entered and saved as manual evidence.</p>
-    #[doc(hidden)]
     pub text_response: ::std::option::Option<::std::string::String>,
     /// <p>The name of the file that's uploaded as manual evidence. This name is populated using the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"> <code>GetEvidenceFileUploadUrl</code> </a> API response.</p>
-    #[doc(hidden)]
     pub evidence_file_name: ::std::option::Option<::std::string::String>,
 }
 impl ManualEvidence {

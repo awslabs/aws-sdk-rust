@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct UntagResourceInput {
     /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
     /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

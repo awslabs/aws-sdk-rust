@@ -27,10 +27,8 @@ pub struct EntityDetectorConfiguration {
     /// <li> <p>DATE</p> </li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    #[doc(hidden)]
     pub allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
 }
 impl EntityDetectorConfiguration {

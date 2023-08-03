@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMicrosoftAdInput {
     /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
-    #[doc(hidden)]
     pub short_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::DirectoryEdition>,
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMicrosoftAdInput {

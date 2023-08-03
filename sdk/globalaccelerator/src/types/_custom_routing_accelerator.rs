@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingAccelerator {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    #[doc(hidden)]
     pub ip_sets: ::std::option::Option<::std::vec::Vec<crate::types::IpSet>>,
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses. </p>
     /// <p>The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
     /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the deployment status of the accelerator.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomRoutingAcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the accelerator was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CustomRoutingAccelerator {

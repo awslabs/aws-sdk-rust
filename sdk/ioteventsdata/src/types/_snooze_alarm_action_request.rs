@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnoozeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
-    #[doc(hidden)]
     pub snooze_duration: ::std::option::Option<i32>,
 }
 impl SnoozeAlarmActionRequest {

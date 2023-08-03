@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
-    #[doc(hidden)]
     pub preferred_protocol: ::std::option::Option<crate::types::PreferredProtocol>,
 }
 impl StreamingExperienceSettings {

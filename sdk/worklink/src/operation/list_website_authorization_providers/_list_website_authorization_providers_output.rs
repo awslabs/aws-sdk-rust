@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
-    #[doc(hidden)]
     pub website_authorization_providers: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

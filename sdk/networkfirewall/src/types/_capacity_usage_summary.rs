@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    #[doc(hidden)]
     pub cid_rs: ::std::option::Option<crate::types::CidrSummary>,
 }
 impl CapacityUsageSummary {

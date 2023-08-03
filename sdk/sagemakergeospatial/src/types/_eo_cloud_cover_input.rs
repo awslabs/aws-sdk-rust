@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EoCloudCoverInput {
     /// <p>Lower bound for EoCloudCover.</p>
-    #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
     /// <p>Upper bound for EoCloudCover.</p>
-    #[doc(hidden)]
     pub upper_bound: ::std::option::Option<f32>,
 }
 impl EoCloudCoverInput {

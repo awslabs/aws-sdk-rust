@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectsOnCancelInput {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database that contains the governed table.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the governed table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>ID of the transaction that the writes occur in.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    #[doc(hidden)]
     pub objects: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>,
 }
 impl DeleteObjectsOnCancelInput {

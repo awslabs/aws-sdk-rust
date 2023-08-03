@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPortalsOutput {
     /// <p>The portals in the list.</p>
-    #[doc(hidden)]
     pub portals: ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

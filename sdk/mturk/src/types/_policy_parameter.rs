@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyParameter {
     /// <p> Name of the parameter from the list of Review Polices. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p> The list of values of the Parameter</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> List of ParameterMapEntry objects. </p>
-    #[doc(hidden)]
     pub map_entries: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapEntry>>,
 }
 impl PolicyParameter {

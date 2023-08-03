@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseInputIdentifier {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
-    #[doc(hidden)]
     pub iot_site_wise_asset_model_property_identifier: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
 }
 impl IotSiteWiseInputIdentifier {

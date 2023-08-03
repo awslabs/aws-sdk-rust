@@ -4,35 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    #[doc(hidden)]
     pub start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub type_filter: ::std::option::Option<crate::types::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
-    #[doc(hidden)]
     pub maximum_page_size: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
-    #[doc(hidden)]
     pub reverse_order: ::std::option::Option<bool>,
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub execution_filter: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
 }
 impl ListOpenWorkflowExecutionsInput {

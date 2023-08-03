@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the first device in the connection.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the second device in the connection.</p>
-    #[doc(hidden)]
     pub connected_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the first device.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the second device.</p>
-    #[doc(hidden)]
     pub connected_link_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateConnectionInput {

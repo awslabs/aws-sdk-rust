@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    #[doc(hidden)]
     pub dominant_language_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

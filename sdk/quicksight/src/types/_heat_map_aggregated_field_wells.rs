@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapAggregatedFieldWells {
     /// <p>The rows field well of a heat map.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The columns field well of a heat map.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values field well of a heat map.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl HeatMapAggregatedFieldWells {

@@ -6,7 +6,6 @@
 pub struct MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
-    #[doc(hidden)]
     pub transcript_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl MedicalTranscript {

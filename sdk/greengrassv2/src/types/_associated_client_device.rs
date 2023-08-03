@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub association_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssociatedClientDevice {

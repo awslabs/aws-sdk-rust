@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Folder {
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the folder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of folder it is.</p>
-    #[doc(hidden)]
     pub folder_type: ::std::option::Option<crate::types::FolderType>,
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    #[doc(hidden)]
     pub folder_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the folder was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Folder {

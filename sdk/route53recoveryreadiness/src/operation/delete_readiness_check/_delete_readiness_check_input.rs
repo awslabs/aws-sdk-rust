@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
-    #[doc(hidden)]
     pub readiness_check_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReadinessCheckInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaVersionsDiffOutput {
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
-    #[doc(hidden)]
     pub diff: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

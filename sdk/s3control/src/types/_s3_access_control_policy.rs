@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3AccessControlPolicy {
     /// <p></p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<crate::types::S3AccessControlList>,
     /// <p></p>
-    #[doc(hidden)]
     pub canned_access_control_list: ::std::option::Option<crate::types::S3CannedAccessControlList>,
 }
 impl S3AccessControlPolicy {

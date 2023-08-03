@@ -8,7 +8,6 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <ul>
     /// <li> <p>Must specify a valid DB cluster parameter group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -19,13 +18,10 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
-    #[doc(hidden)]
     pub target_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the copied DB cluster parameter group.</p>
-    #[doc(hidden)]
     pub target_db_cluster_parameter_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterParameterGroupInput {

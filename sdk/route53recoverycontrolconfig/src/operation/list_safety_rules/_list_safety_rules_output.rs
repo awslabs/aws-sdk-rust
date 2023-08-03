@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSafetyRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of safety rules in a control panel.</p>
-    #[doc(hidden)]
     pub safety_rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackEventsOutput {
     /// <p>A list of <code>StackEvents</code> structures.</p>
-    #[doc(hidden)]
     pub stack_events: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

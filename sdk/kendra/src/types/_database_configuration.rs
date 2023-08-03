@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
-    #[doc(hidden)]
     pub database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
     /// <p>Configuration information that's required to connect to a database.</p>
-    #[doc(hidden)]
     pub connection_configuration: ::std::option::Option<crate::types::ConnectionConfiguration>,
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>Information about where the index should get the document information from the database.</p>
-    #[doc(hidden)]
     pub column_configuration: ::std::option::Option<crate::types::ColumnConfiguration>,
     /// <p>Information about the database column that provides information for user context filtering.</p>
-    #[doc(hidden)]
     pub acl_configuration: ::std::option::Option<crate::types::AclConfiguration>,
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
-    #[doc(hidden)]
     pub sql_configuration: ::std::option::Option<crate::types::SqlConfiguration>,
 }
 impl DatabaseConfiguration {

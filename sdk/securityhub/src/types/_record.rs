@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
-    #[doc(hidden)]
     pub json_path: ::std::option::Option<::std::string::String>,
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
-    #[doc(hidden)]
     pub record_index: i64,
 }
 impl Record {

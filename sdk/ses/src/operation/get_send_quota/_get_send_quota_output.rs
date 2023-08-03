@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSendQuotaOutput {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
-    #[doc(hidden)]
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_send_rate: f64,
     /// <p>The number of emails sent during the previous 24 hours.</p>
-    #[doc(hidden)]
     pub sent_last24_hours: f64,
     _request_id: Option<String>,
 }

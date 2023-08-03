@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the user IDs and details to update.</p>
-    #[doc(hidden)]
     pub update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
 }
 impl BatchUpdateUserInput {

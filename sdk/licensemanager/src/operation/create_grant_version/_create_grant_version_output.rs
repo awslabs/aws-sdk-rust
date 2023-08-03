@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGrantVersionOutput {
     /// <p>Grant ARN.</p>
-    #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GrantStatus>,
     /// <p>New version of the grant.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password you want to set for your VM local console.</p>
-    #[doc(hidden)]
     pub local_console_password: ::std::option::Option<::std::string::String>,
 }
 impl SetLocalConsolePasswordInput {

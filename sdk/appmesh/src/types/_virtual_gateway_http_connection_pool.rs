@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
-    #[doc(hidden)]
     pub max_connections: i32,
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
-    #[doc(hidden)]
     pub max_pending_requests: ::std::option::Option<i32>,
 }
 impl VirtualGatewayHttpConnectionPool {

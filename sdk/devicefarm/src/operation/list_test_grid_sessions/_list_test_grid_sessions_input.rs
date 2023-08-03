@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionsInput {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Return only sessions in this state.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TestGridSessionStatus>,
     /// <p>Return only sessions created after this time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only sessions created before this time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only sessions that ended after this time.</p>
-    #[doc(hidden)]
     pub end_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only sessions that ended before this time.</p>
-    #[doc(hidden)]
     pub end_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only this many results at a time.</p>
-    #[doc(hidden)]
     pub max_result: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridSessionsInput {

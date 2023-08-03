@@ -5,72 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDomainDetailOutput {
     /// <p>The name of a domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name servers of the domain.</p>
-    #[doc(hidden)]
     pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
     /// <p>Specifies whether the domain registration is set to renew automatically.</p>
-    #[doc(hidden)]
     pub auto_renew: ::std::option::Option<bool>,
     /// <p>Provides details about the domain administrative contact.</p>
-    #[doc(hidden)]
     pub admin_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides details about the domain registrant.</p>
-    #[doc(hidden)]
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides details about the domain technical contact.</p>
-    #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
-    #[doc(hidden)]
     pub admin_privacy: ::std::option::Option<bool>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-    #[doc(hidden)]
     pub registrant_privacy: ::std::option::Option<bool>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
-    #[doc(hidden)]
     pub tech_privacy: ::std::option::Option<bool>,
     /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
-    #[doc(hidden)]
     pub registrar_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
-    #[doc(hidden)]
     pub who_is_server: ::std::option::Option<::std::string::String>,
     /// <p>Web address of the registrar.</p>
-    #[doc(hidden)]
     pub registrar_url: ::std::option::Option<::std::string::String>,
     /// <p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
-    #[doc(hidden)]
     pub abuse_contact_email: ::std::option::Option<::std::string::String>,
     /// <p>Phone number for reporting abuse.</p>
-    #[doc(hidden)]
     pub abuse_contact_phone: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub registry_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
-    #[doc(hidden)]
     pub reseller: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
-    #[doc(hidden)]
     pub dns_sec: ::std::option::Option<::std::string::String>,
     /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
     /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>
     /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
-    #[doc(hidden)]
     pub status_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A complex type that contains information about the DNSSEC configuration.</p>
-    #[doc(hidden)]
     pub dnssec_keys: ::std::option::Option<::std::vec::Vec<crate::types::DnssecKey>>,
     _request_id: Option<String>,
 }

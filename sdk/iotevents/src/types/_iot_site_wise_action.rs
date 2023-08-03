@@ -14,19 +14,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseAction {
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset that has the specified property.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the asset property.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
-    #[doc(hidden)]
     pub property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
 impl IotSiteWiseAction {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-    #[doc(hidden)]
     pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
 }
 impl IoTJobAbortConfig {

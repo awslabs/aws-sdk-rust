@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualPalette {
     /// <p>The chart color options for the visual palette.</p>
-    #[doc(hidden)]
     pub chart_color: ::std::option::Option<::std::string::String>,
     /// <p>The color map options for the visual palette.</p>
-    #[doc(hidden)]
     pub color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
 }
 impl VisualPalette {

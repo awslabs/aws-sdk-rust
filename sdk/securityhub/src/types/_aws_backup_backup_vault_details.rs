@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupBackupVaultDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
-    #[doc(hidden)]
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>,
     /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
-    #[doc(hidden)]
     pub access_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupVaultDetails {

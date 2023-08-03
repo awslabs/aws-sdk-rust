@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetV2LoggingLevelInput {
     /// <p>The log target.</p>
-    #[doc(hidden)]
     pub log_target: ::std::option::Option<crate::types::LogTarget>,
     /// <p>The log level.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl SetV2LoggingLevelInput {

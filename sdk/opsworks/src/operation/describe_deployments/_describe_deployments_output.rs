@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    #[doc(hidden)]
     pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     _request_id: Option<String>,
 }

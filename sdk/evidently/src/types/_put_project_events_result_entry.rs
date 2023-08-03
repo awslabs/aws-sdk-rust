@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProjectEventsResultEntry {
     /// <p>A unique ID assigned to this <code>PutProjectEvents</code> operation. </p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl PutProjectEventsResultEntry {

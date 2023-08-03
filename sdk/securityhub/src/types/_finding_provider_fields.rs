@@ -6,21 +6,16 @@
 pub struct FindingProviderFields {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    #[doc(hidden)]
     pub confidence: i32,
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    #[doc(hidden)]
     pub criticality: i32,
     /// <p>A list of findings that are related to the current finding.</p>
-    #[doc(hidden)]
     pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     /// <p>The severity of a finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::FindingProviderSeverity>,
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FindingProviderFields {

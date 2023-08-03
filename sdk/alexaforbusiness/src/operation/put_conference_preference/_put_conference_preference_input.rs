@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConferencePreferenceInput {
     /// <p>The conference preference of a specific conference provider.</p>
-    #[doc(hidden)]
     pub conference_preference: ::std::option::Option<crate::types::ConferencePreference>,
 }
 impl PutConferencePreferenceInput {

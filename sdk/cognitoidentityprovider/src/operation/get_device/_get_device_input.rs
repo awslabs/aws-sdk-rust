@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDeviceInput {
     /// <p>The device key.</p>
-    #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceInput {

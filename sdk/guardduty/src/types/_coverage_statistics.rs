@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageStatistics {
     /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
-    #[doc(hidden)]
     pub count_by_resource_type: ::std::option::Option<::std::collections::HashMap<crate::types::ResourceType, i64>>,
     /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
-    #[doc(hidden)]
     pub count_by_coverage_status: ::std::option::Option<::std::collections::HashMap<crate::types::CoverageStatus, i64>>,
 }
 impl CoverageStatistics {

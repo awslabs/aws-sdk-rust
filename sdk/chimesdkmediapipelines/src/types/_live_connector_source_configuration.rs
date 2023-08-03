@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::LiveConnectorSourceType>,
     /// <p>The configuration settings of the connector pipeline.</p>
-    #[doc(hidden)]
     pub chime_sdk_meeting_live_connector_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfiguration {

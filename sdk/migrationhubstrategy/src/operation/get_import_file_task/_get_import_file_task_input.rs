@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportFileTaskInput {
     /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetImportFileTaskInput {

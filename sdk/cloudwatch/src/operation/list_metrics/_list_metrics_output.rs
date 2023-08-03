@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricsOutput {
     /// <p>The metrics that match your request. </p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
     /// <p>The token that marks the start of the next batch of returned results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    #[doc(hidden)]
     pub owning_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

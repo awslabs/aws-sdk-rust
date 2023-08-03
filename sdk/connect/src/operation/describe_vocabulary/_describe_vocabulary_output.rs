@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVocabularyOutput {
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
-    #[doc(hidden)]
     pub vocabulary: ::std::option::Option<crate::types::Vocabulary>,
     _request_id: Option<String>,
 }

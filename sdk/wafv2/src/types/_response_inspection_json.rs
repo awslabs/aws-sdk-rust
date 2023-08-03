@@ -8,15 +8,12 @@
 pub struct ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code> </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    #[doc(hidden)]
     pub success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    #[doc(hidden)]
     pub failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseInspectionJson {

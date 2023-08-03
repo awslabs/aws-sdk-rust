@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    #[doc(hidden)]
     pub scaling_plan_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    #[doc(hidden)]
     pub application_sources: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScalingPlansInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityOutput {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the available Scheduled Instances.</p>
-    #[doc(hidden)]
     pub scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
     _request_id: Option<String>,
 }

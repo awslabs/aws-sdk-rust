@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInAppTemplateInput {
     /// <p>InApp Template Request.</p>
-    #[doc(hidden)]
     pub in_app_template_request: ::std::option::Option<crate::types::InAppTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateInAppTemplateInput {

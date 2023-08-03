@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetRevisionsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The asset objects listed by the request.</p>
-    #[doc(hidden)]
     pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>>,
     _request_id: Option<String>,
 }

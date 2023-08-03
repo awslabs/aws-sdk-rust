@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPreviewsOutput {
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    #[doc(hidden)]
     pub access_previews: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

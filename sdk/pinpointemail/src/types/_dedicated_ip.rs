@@ -6,20 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DedicatedIp {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub warmup_status: ::std::option::Option<crate::types::WarmupStatus>,
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
-    #[doc(hidden)]
     pub warmup_percentage: ::std::option::Option<i32>,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
 }
 impl DedicatedIp {

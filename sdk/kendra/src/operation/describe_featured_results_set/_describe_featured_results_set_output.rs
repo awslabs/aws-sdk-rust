@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeaturedResultsSetOutput {
     /// <p>The identifier of the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the set of featured results.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>The list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of document IDs for the documents you want to feature with their metadata information. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub featured_documents_with_metadata: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocumentWithMetadata>>,
     /// <p>The list of document IDs that don't exist but you have specified as featured documents. Amazon Kendra cannot feature these documents if they don't exist in the index. You can check the status of a document and its ID or check for documents with status errors using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html">BatchGetDocumentStatus</a> API.</p>
-    #[doc(hidden)]
     pub featured_documents_missing: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocumentMissing>>,
     /// <p>The timestamp when the set of featured results was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<i64>,
     /// <p>The Unix timestamp when the set of the featured results was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

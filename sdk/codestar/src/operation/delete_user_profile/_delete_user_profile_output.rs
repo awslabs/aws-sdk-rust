@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

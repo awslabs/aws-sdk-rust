@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
-    #[doc(hidden)]
     pub data_size: ::std::option::Option<i64>,
 }
 impl TelemetryMetadata {

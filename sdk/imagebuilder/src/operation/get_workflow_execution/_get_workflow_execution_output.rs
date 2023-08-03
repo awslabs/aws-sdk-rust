@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    #[doc(hidden)]
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow that Image Builder ran for the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     /// <p>The output message from the specified runtime instance of the workflow, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
-    #[doc(hidden)]
     pub total_step_count: i32,
     /// <p>A runtime count for the number of steps that ran successfully in the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub total_steps_succeeded: i32,
     /// <p>A runtime count for the number of steps that failed in the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub total_steps_failed: i32,
     /// <p>A runtime count for the number of steps that were skipped in the specified runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub total_steps_skipped: i32,
     /// <p>The timestamp when the specified runtime instance of the workflow started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime instance of the workflow finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

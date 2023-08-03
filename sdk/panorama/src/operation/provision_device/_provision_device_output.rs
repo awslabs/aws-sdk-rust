@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionDeviceOutput {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>The device's configuration bundle.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The device's IoT thing name.</p>
-    #[doc(hidden)]
     pub iot_thing_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

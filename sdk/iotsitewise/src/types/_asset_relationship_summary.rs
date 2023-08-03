@@ -6,13 +6,11 @@
 pub struct AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-    #[doc(hidden)]
     pub hierarchy_info: ::std::option::Option<crate::types::AssetHierarchyInfo>,
     /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relationship_type: ::std::option::Option<crate::types::AssetRelationshipType>,
 }
 impl AssetRelationshipSummary {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityInput {
     /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
-    #[doc(hidden)]
     pub certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
     /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. </p> <note>
     /// <p>The following requirements apply to revocation configurations.</p>
@@ -16,27 +15,21 @@ pub struct CreateCertificateAuthorityInput {
     /// </ul>
     /// </note>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
-    #[doc(hidden)]
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     /// <p>The type of the certificate authority.</p>
-    #[doc(hidden)]
     pub certificate_authority_type: ::std::option::Option<crate::types::CertificateAuthorityType>,
     /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, Amazon Web Services Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificate authorities.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <note>
     /// <p>Some Amazon Web Services Regions do not support the default. When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
     /// <p>For information about security standard support in various Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub key_storage_security_standard: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
-    #[doc(hidden)]
     pub usage_mode: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>,
 }
 impl CreateCertificateAuthorityInput {

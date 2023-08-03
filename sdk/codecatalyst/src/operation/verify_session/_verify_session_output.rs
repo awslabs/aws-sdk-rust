@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifySessionOutput {
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

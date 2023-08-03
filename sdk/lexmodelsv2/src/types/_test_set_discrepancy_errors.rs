@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetDiscrepancyErrors {
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    #[doc(hidden)]
     pub intent_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    #[doc(hidden)]
     pub slot_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
 }
 impl TestSetDiscrepancyErrors {

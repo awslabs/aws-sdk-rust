@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
-    #[doc(hidden)]
     pub subtitle: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    #[doc(hidden)]
     pub buttons: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
 }
 impl ImageResponseCard {

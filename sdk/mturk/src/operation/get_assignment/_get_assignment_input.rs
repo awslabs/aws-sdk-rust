@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssignmentInput {
     /// <p>The ID of the Assignment to be retrieved.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssignmentInput {

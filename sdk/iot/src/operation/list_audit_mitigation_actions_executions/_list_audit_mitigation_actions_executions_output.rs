@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsExecutionsOutput {
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
-    #[doc(hidden)]
     pub actions_executions: ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

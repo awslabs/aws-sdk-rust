@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestAuthorizationInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
-    #[doc(hidden)]
     pub cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    #[doc(hidden)]
     pub auth_infos: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>,
     /// <p>The MQTT client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    #[doc(hidden)]
     pub policy_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    #[doc(hidden)]
     pub policy_names_to_skip: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TestAuthorizationInput {

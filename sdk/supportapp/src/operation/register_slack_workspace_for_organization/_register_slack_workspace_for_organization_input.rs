@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterSlackWorkspaceForOrganizationInput {

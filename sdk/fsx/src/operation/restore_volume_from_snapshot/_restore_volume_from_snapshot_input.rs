@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that you are restoring.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
 }
 impl RestoreVolumeFromSnapshotInput {

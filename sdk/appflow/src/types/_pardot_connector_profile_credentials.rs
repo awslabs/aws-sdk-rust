@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PardotConnectorProfileCredentials {
     /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The credentials used to acquire new access tokens.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    #[doc(hidden)]
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
-    #[doc(hidden)]
     pub client_credentials_arn: ::std::option::Option<::std::string::String>,
 }
 impl PardotConnectorProfileCredentials {

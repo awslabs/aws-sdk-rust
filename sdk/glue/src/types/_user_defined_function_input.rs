@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDefinedFunctionInput {
     /// <p>The name of the function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The Java class that contains the function code.</p>
-    #[doc(hidden)]
     pub class_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the function.</p>
-    #[doc(hidden)]
     pub owner_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner type.</p>
-    #[doc(hidden)]
     pub owner_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The resource URIs for the function.</p>
-    #[doc(hidden)]
     pub resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
 }
 impl UserDefinedFunctionInput {

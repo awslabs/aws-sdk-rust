@@ -4,42 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tracker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for the tracker resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan_data_source: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The position filtering method of the tracker resource.</p>
-    #[doc(hidden)]
     pub position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
     /// <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
-    #[doc(hidden)]
     pub event_bridge_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

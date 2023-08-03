@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplySchemaOutput {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub applied_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

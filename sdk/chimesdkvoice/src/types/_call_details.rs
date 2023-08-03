@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallDetails {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID of a Voice Connector call.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a person as the caller or the callee.</p>
-    #[doc(hidden)]
     pub is_caller: ::std::option::Option<bool>,
 }
 impl CallDetails {

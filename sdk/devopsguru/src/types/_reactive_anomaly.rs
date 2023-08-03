@@ -5,47 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactiveAnomaly {
     /// <p>The ID of the reactive anomaly. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::AnomalySeverity>,
     /// <p> The status of the anomaly. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnomalyStatus>,
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
-    #[doc(hidden)]
     pub anomaly_time_range: ::std::option::Option<crate::types::AnomalyTimeRange>,
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
-    #[doc(hidden)]
     pub anomaly_reported_time_range: ::std::option::Option<crate::types::AnomalyReportedTimeRange>,
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
-    #[doc(hidden)]
     pub source_details: ::std::option::Option<crate::types::AnomalySourceDetails>,
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
-    #[doc(hidden)]
     pub associated_insight_id: ::std::option::Option<::std::string::String>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
     /// <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p> </li>
     /// <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AnomalyType>,
     /// <p>The name of the reactive anomaly.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the reactive anomaly.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the causal anomaly that is associated with this reactive anomaly. The ID of a `CAUSAL` anomaly is always `NULL`.</p>
-    #[doc(hidden)]
     pub causal_anomaly_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services resources in which anomalous behavior was detected by DevOps Guru.</p>
-    #[doc(hidden)]
     pub anomaly_resources: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>>,
 }
 impl ReactiveAnomaly {

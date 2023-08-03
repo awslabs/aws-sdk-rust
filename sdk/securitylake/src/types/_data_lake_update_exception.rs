@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeUpdateException {
     /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl DataLakeUpdateException {

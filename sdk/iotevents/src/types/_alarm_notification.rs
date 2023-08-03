@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
-    #[doc(hidden)]
     pub notification_actions: ::std::option::Option<::std::vec::Vec<crate::types::NotificationAction>>,
 }
 impl AlarmNotification {

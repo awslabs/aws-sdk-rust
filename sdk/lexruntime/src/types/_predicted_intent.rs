@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PredictedIntent {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
     /// <p>The slot and slot values associated with the predicted intent.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PredictedIntent {

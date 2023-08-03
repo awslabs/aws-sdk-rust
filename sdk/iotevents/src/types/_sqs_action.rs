@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The URL of the SQS queue where the data is written.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
-    #[doc(hidden)]
     pub use_base64: ::std::option::Option<bool>,
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl SqsAction {

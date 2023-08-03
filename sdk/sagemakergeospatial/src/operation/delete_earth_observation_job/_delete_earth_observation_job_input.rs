@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEarthObservationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEarthObservationJobInput {

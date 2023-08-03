@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    #[doc(hidden)]
     pub resolver_rule_association: ::std::option::Option<crate::types::ResolverRuleAssociation>,
     _request_id: Option<String>,
 }

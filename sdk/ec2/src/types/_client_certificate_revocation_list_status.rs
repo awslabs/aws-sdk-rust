@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientCertificateRevocationListStatus {
     /// <p>The state of the client certificate revocation list.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>,
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientCertificateRevocationListStatus {

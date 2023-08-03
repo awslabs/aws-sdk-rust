@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDashboardsOutput {
     /// <p>The list of matching dashboards.</p>
-    #[doc(hidden)]
     pub dashboard_entries: ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackupPlanVersionsOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of version list items containing metadata about your backup plans.</p>
-    #[doc(hidden)]
     pub backup_plan_versions_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }

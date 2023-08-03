@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecreaseReplicationFactorInput {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
-    #[doc(hidden)]
     pub new_replication_factor: i32,
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    #[doc(hidden)]
     pub node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DecreaseReplicationFactorInput {

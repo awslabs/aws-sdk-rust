@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSourceOverrideParameters {
     /// <p>The ID of the data source to apply overrides to.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    #[doc(hidden)]
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     /// <p>VPC connection properties.</p>
-    #[doc(hidden)]
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
-    #[doc(hidden)]
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
 }
 impl AssetBundleImportJobDataSourceOverrideParameters {

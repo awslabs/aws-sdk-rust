@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::HttpGatewayRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::HttpGatewayRouteAction>,
 }
 impl HttpGatewayRoute {

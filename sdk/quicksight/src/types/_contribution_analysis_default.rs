@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributionAnalysisDefault {
     /// <p>The measure field that is used in the contribution analysis.</p>
-    #[doc(hidden)]
     pub measure_field_id: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
-    #[doc(hidden)]
     pub contributor_dimensions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl ContributionAnalysisDefault {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudOptions {
     /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
-    #[doc(hidden)]
     pub word_orientation: ::std::option::Option<crate::types::WordCloudWordOrientation>,
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
-    #[doc(hidden)]
     pub word_scaling: ::std::option::Option<crate::types::WordCloudWordScaling>,
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
-    #[doc(hidden)]
     pub cloud_layout: ::std::option::Option<crate::types::WordCloudCloudLayout>,
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
-    #[doc(hidden)]
     pub word_casing: ::std::option::Option<crate::types::WordCloudWordCasing>,
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
-    #[doc(hidden)]
     pub word_padding: ::std::option::Option<crate::types::WordCloudWordPadding>,
     /// <p>The length limit of each word from 1-100.</p>
-    #[doc(hidden)]
     pub maximum_string_length: ::std::option::Option<i32>,
 }
 impl WordCloudOptions {

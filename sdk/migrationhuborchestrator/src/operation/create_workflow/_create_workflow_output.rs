@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub ads_application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The inputs for creating a migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The time at which the migration workflow was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags to add on a migration workflow.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

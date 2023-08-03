@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    #[doc(hidden)]
     pub successfully_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    #[doc(hidden)]
     pub failed_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     _request_id: Option<String>,
 }

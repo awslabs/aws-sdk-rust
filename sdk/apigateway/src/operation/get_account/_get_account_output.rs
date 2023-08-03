@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
-    #[doc(hidden)]
     pub cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the API request limits configured for the current Account.</p>
-    #[doc(hidden)]
     pub throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the API keys used for the account.</p>
-    #[doc(hidden)]
     pub api_key_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

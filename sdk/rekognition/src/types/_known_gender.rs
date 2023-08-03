@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::KnownGenderType>,
 }
 impl KnownGender {

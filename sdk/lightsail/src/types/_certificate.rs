@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The validation status of the certificate.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
     /// <p>The serial number of the certificate.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
-    #[doc(hidden)]
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    #[doc(hidden)]
     pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -38,46 +31,32 @@ pub struct Certificate {
     /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
     /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub request_failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of Lightsail resources that the certificate is attached to.</p>
-    #[doc(hidden)]
     pub in_use_resource_count: i32,
     /// <p>The algorithm used to generate the key pair (the public and private key) of the certificate.</p>
-    #[doc(hidden)]
     pub key_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the certificate was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the certificate was issued.</p>
-    #[doc(hidden)]
     pub issued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certificate authority that issued the certificate.</p>
-    #[doc(hidden)]
     pub issuer_ca: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the certificate is first valid.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the certificate expires.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The renewal eligibility of the certificate.</p>
-    #[doc(hidden)]
     pub eligible_to_renew: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
-    #[doc(hidden)]
     pub renewal_summary: ::std::option::Option<crate::types::RenewalSummary>,
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    #[doc(hidden)]
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    #[doc(hidden)]
     pub revocation_reason: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {

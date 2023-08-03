@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiskOutput {
     /// <p>An object containing information about the disk.</p>
-    #[doc(hidden)]
     pub disk: ::std::option::Option<crate::types::Disk>,
     _request_id: Option<String>,
 }

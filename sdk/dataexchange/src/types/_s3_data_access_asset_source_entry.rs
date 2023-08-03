@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The keys used to create the Amazon S3 data access.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
-    #[doc(hidden)]
     pub kms_keys_to_grant: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetSourceEntry {

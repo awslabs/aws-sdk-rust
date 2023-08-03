@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountOutput {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-    #[doc(hidden)]
     pub administrator: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
 }

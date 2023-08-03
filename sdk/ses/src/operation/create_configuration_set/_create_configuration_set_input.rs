@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>A data structure that contains the name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
 }
 impl CreateConfigurationSetInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FsxProtocol {
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
-    #[doc(hidden)]
     pub nfs: ::std::option::Option<crate::types::FsxProtocolNfs>,
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
-    #[doc(hidden)]
     pub smb: ::std::option::Option<crate::types::FsxProtocolSmb>,
 }
 impl FsxProtocol {

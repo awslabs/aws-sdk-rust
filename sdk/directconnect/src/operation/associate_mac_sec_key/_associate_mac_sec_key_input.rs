@@ -5,24 +5,20 @@
 pub struct AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-    #[doc(hidden)]
     pub ckn: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-    #[doc(hidden)]
     pub cak: ::std::option::Option<::std::string::String>,
 }
 impl AssociateMacSecKeyInput {

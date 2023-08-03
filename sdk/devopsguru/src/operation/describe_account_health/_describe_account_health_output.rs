@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountHealthOutput {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub open_reactive_insights: i32,
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub metrics_analyzed: i32,
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
-    #[doc(hidden)]
     pub resource_hours: ::std::option::Option<i64>,
     /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub analyzed_resource_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

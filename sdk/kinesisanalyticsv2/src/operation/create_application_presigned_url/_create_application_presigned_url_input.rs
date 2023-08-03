@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationPresignedUrlInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
-    #[doc(hidden)]
     pub url_type: ::std::option::Option<crate::types::UrlType>,
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
-    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl CreateApplicationPresignedUrlInput {

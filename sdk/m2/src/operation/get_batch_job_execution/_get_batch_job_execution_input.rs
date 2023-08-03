@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchJobExecutionInput {
     /// <p>The identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the batch job execution.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBatchJobExecutionInput {

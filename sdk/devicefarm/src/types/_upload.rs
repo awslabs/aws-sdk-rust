@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Upload {
     /// <p>The upload's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's file name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>When the upload was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -49,7 +46,6 @@ pub struct Upload {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
@@ -59,26 +55,20 @@ pub struct Upload {
     /// <li> <p>PROCESSING</p> </li>
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UploadStatus>,
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A message about the upload's result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
     /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::UploadCategory>,
 }
 impl Upload {

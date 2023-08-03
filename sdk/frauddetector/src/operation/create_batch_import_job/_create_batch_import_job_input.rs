@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchImportJobInput {
     /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
-    #[doc(hidden)]
     pub input_path: ::std::option::Option<::std::string::String>,
     /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
-    #[doc(hidden)]
     pub output_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
     /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key-value pairs associated with this request. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBatchImportJobInput {

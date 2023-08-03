@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorSessionOutput {
     /// <p>The ID of the deleted Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

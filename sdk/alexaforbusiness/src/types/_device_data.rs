@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceData {
     /// <p>The ARN of a device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of a device.</p>
-    #[doc(hidden)]
     pub device_serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of a device.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of a device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The software version of a device.</p>
-    #[doc(hidden)]
     pub software_version: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address of a device.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The status of a device.</p>
-    #[doc(hidden)]
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>The ARN of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The room ARN associated with a device.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the room associated with a device.</p>
-    #[doc(hidden)]
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about a device's status.</p>
-    #[doc(hidden)]
     pub device_status_info: ::std::option::Option<crate::types::DeviceStatusInfo>,
     /// <p>The time (in epoch) when the device data was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceData {

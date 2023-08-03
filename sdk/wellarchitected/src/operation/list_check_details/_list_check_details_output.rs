@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    #[doc(hidden)]
     pub check_details: ::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

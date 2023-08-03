@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationJobOutput {
     /// <p>The unique identifier of the replication job.</p>
-    #[doc(hidden)]
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

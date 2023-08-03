@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending database maintenance action.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Additional detail about the pending database maintenance action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effective date of the pending database maintenance action.</p>
-    #[doc(hidden)]
     pub current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PendingMaintenanceAction {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteParameterGroupOutput {
     /// <p>The parameter group that has been deleted.</p>
-    #[doc(hidden)]
     pub parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
 }

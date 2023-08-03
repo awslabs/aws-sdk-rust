@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    #[doc(hidden)]
     pub geo_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGeoMatchSetInput {

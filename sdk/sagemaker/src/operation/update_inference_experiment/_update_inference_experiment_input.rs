@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInferenceExperimentInput {
     /// <p>The name of the inference experiment to be updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     /// <p>The description of the inference experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
-    #[doc(hidden)]
     pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    #[doc(hidden)]
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
-    #[doc(hidden)]
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
 }
 impl UpdateInferenceExperimentInput {

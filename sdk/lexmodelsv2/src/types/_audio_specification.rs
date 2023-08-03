@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSpecification {
     /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
-    #[doc(hidden)]
     pub max_length_ms: ::std::option::Option<i32>,
     /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
-    #[doc(hidden)]
     pub end_timeout_ms: ::std::option::Option<i32>,
 }
 impl AudioSpecification {

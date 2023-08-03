@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePullThroughCacheRulesInput {
     /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    #[doc(hidden)]
     pub ecr_repository_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribePullThroughCacheRulesInput {

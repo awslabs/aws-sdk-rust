@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ImportFilterName>,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::ImportFilterOperator>,
 }
 impl ImportFilter {

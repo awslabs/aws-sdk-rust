@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
-    #[doc(hidden)]
     pub audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __listOf__integer
-    #[doc(hidden)]
     pub dvb_sub_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub dvb_teletext_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub etv_platform_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub etv_signal_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
-    #[doc(hidden)]
     pub klv_data_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub pcr_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub pmt_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub private_metadata_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
-    #[doc(hidden)]
     pub scte27_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub scte35_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub timed_metadata_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
-    #[doc(hidden)]
     pub video_pid: ::std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMap {

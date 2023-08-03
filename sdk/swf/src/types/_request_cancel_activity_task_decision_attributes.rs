@@ -13,7 +13,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
-    #[doc(hidden)]
     pub activity_id: ::std::option::Option<::std::string::String>,
 }
 impl RequestCancelActivityTaskDecisionAttributes {

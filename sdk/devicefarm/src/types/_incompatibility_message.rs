@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncompatibilityMessage {
     /// <p>A message about the incompatibility.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
@@ -17,7 +16,6 @@ pub struct IncompatibilityMessage {
     /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeviceAttribute>,
 }
 impl IncompatibilityMessage {

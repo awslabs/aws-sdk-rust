@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the media stream that was removed.
-    #[doc(hidden)]
     pub media_stream_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

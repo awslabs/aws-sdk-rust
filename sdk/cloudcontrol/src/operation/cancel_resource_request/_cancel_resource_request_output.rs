@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelResourceRequestOutput {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    #[doc(hidden)]
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
 }

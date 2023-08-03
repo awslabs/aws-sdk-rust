@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
-    #[doc(hidden)]
     pub attempts: i32,
 }
 impl BatchRetryStrategy {

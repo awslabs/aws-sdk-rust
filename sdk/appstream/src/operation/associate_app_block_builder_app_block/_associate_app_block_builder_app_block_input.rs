@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAppBlockBuilderAppBlockInput {
     /// <p>The ARN of the app block.</p>
-    #[doc(hidden)]
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app block builder.</p>
-    #[doc(hidden)]
     pub app_block_builder_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAppBlockBuilderAppBlockInput {

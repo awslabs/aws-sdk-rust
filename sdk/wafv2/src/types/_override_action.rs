@@ -10,10 +10,8 @@ pub struct OverrideAction {
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
-    #[doc(hidden)]
     pub count: ::std::option::Option<crate::types::CountAction>,
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
-    #[doc(hidden)]
     pub none: ::std::option::Option<crate::types::NoneAction>,
 }
 impl OverrideAction {

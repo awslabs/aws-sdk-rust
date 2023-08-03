@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsOutput {
     /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the stale security groups.</p>
-    #[doc(hidden)]
     pub stale_security_group_set: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
     _request_id: Option<String>,
 }

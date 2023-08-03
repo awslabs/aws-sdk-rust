@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Network {
     /// <p>The unique identifier of the network.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the blockchain framework for the network.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain framework that the network uses.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the blockchain framework that the network uses.</p>
-    #[doc(hidden)]
     pub framework_attributes: ::std::option::Option<crate::types::NetworkFrameworkAttributes>,
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The voting rules that the network uses to decide if a proposal is accepted.</p>
-    #[doc(hidden)]
     pub voting_policy: ::std::option::Option<crate::types::VotingPolicy>,
     /// <p>The current status of the network.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Network {

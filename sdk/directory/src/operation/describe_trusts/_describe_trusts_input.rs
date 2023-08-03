@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustsInput {
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    #[doc(hidden)]
     pub trust_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeTrustsInput {

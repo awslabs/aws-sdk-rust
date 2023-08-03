@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
     /// <p>The Elastic Inference accelerator device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {

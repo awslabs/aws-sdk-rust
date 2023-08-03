@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The client request path to match on.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<crate::types::HttpPathMatch>,
     /// <p>The client request query parameters to match on.</p>
-    #[doc(hidden)]
     pub query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
     /// <p>The client request method to match on. Specify only one.</p>
-    #[doc(hidden)]
     pub method: ::std::option::Option<crate::types::HttpMethod>,
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
-    #[doc(hidden)]
     pub scheme: ::std::option::Option<crate::types::HttpScheme>,
     /// <p>The client request headers to match on.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>>,
     /// <p>The port number to match on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl HttpRouteMatch {

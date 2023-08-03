@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistogramConfiguration {
     /// <p>The field well configuration of a histogram.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::HistogramFieldWells>,
     /// <p>The options that determine the presentation of the x-axis.</p>
-    #[doc(hidden)]
     pub x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The options that determine the presentation of the x-axis label.</p>
-    #[doc(hidden)]
     pub x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options that determine the presentation of the y-axis.</p>
-    #[doc(hidden)]
     pub y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The options that determine the presentation of histogram bins.</p>
-    #[doc(hidden)]
     pub bin_options: ::std::option::Option<crate::types::HistogramBinOptions>,
     /// <p>The data label configuration of a histogram.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip configuration of a histogram.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The visual palette configuration of a histogram.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl HistogramConfiguration {

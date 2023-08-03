@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleEmail {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
-    #[doc(hidden)]
     pub html_part: ::std::option::Option<crate::types::SimpleEmailPart>,
     /// <p>The subject line, or title, of the email.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<crate::types::SimpleEmailPart>,
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
-    #[doc(hidden)]
     pub text_part: ::std::option::Option<crate::types::SimpleEmailPart>,
 }
 impl SimpleEmail {

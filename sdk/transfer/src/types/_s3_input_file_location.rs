@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3InputFileLocation {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl S3InputFileLocation {

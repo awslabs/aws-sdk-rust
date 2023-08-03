@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was replaced.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated content of the authentication profile in JSON format.</p>
-    #[doc(hidden)]
     pub authentication_profile_content: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

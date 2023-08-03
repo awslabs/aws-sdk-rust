@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// Optional. A description of the queue that you are creating.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the queue that you are creating.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    #[doc(hidden)]
     pub reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInput {

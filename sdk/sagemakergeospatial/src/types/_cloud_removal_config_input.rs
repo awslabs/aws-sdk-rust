@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudRemovalConfigInput {
     /// <p>The name of the algorithm used for cloud removal.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>,
     /// <p>The interpolation value you provide for cloud removal.</p>
-    #[doc(hidden)]
     pub interpolation_value: ::std::option::Option<::std::string::String>,
     /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudRemovalConfigInput {

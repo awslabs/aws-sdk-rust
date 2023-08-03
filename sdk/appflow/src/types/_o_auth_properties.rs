@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
-    #[doc(hidden)]
     pub token_url: ::std::option::Option<::std::string::String>,
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    #[doc(hidden)]
     pub auth_code_url: ::std::option::Option<::std::string::String>,
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    #[doc(hidden)]
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OAuthProperties {

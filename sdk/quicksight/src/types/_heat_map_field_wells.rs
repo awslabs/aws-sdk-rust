@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapFieldWells {
     /// <p>The aggregated field wells of a heat map.</p>
-    #[doc(hidden)]
     pub heat_map_aggregated_field_wells: ::std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
 }
 impl HeatMapFieldWells {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot for which to get information.</p>
-    #[doc(hidden)]
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseSnapshotInput {

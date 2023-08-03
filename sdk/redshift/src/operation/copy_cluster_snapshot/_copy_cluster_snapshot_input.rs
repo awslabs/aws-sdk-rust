@@ -9,14 +9,12 @@ pub struct CopyClusterSnapshotInput {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
@@ -27,12 +25,10 @@ pub struct CopyClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
 }
 impl CopyClusterSnapshotInput {

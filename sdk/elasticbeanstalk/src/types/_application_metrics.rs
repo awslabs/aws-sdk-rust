@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationMetrics {
     /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub request_count: i32,
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-    #[doc(hidden)]
     pub status_codes: ::std::option::Option<crate::types::StatusCodes>,
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
-    #[doc(hidden)]
     pub latency: ::std::option::Option<crate::types::Latency>,
 }
 impl ApplicationMetrics {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    #[doc(hidden)]
     pub assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
 }

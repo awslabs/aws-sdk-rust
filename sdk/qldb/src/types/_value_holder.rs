@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    #[doc(hidden)]
     pub ion_text: ::std::option::Option<::std::string::String>,
 }
 impl ValueHolder {

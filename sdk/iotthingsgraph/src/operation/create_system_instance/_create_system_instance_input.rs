@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSystemInstanceInput {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A document that defines an entity. </p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::DeploymentTarget>,
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    #[doc(hidden)]
     pub greengrass_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    #[doc(hidden)]
     pub metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-    #[doc(hidden)]
     pub flow_actions_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSystemInstanceInput {

@@ -4,48 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInfrastructureConfigurationInput {
     /// <p>The name of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::Logging>,
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
-    #[doc(hidden)]
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
-    #[doc(hidden)]
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token used to make this request idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateInfrastructureConfigurationInput {

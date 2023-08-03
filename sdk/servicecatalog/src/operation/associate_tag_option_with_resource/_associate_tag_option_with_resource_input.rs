@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTagOptionWithResourceInput {
     /// <p>The resource identifier.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The TagOption identifier.</p>
-    #[doc(hidden)]
     pub tag_option_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateTagOptionWithResourceInput {

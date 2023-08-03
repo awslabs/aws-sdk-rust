@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsInput {
     /// <p> The preferred billing period to get account associations. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAccountAssociationsInput {

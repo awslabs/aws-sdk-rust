@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConformancePackStatusInput {
     /// <p>Comma-separated list of conformance pack names.</p>
-    #[doc(hidden)]
     pub conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of conformance packs status returned on each page.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConformancePackStatusInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
-    #[doc(hidden)]
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
     _request_id: Option<String>,
 }

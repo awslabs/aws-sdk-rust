@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsInput {
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    #[doc(hidden)]
     pub kubernetes_version: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    #[doc(hidden)]
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    #[doc(hidden)]
     pub publishers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    #[doc(hidden)]
     pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAddonVersionsInput {

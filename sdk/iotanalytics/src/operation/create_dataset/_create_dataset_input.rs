@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of actions that create the dataset contents.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>,
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    #[doc(hidden)]
     pub content_delivery_rules: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    #[doc(hidden)]
     pub versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
     /// <p>Metadata which can be used to manage the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    #[doc(hidden)]
     pub late_data_rules: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>,
 }
 impl CreateDatasetInput {

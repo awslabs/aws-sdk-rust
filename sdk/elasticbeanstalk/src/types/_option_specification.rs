@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
-    #[doc(hidden)]
     pub option_name: ::std::option::Option<::std::string::String>,
 }
 impl OptionSpecification {

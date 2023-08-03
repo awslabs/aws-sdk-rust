@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateArchiveInput {
     /// <p>The name for the archive to create.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description for the archive.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
 }
 impl CreateArchiveInput {

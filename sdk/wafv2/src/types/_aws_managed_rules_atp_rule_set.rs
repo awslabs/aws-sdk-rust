@@ -6,19 +6,15 @@
 pub struct AwsManagedRulesAtpRuleSet {
     /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
-    #[doc(hidden)]
     pub login_path: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
-    #[doc(hidden)]
     pub request_inspection: ::std::option::Option<crate::types::RequestInspection>,
     /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> <note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts for each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many failed login attempts in a short amount of time. </p>
-    #[doc(hidden)]
     pub response_inspection: ::std::option::Option<crate::types::ResponseInspection>,
     /// <p>Allow the use of regular expressions in the login page path. </p>
-    #[doc(hidden)]
     pub enable_regex_in_path: bool,
 }
 impl AwsManagedRulesAtpRuleSet {

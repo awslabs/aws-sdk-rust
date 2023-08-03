@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryPointSelection {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    #[doc(hidden)]
     pub vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    #[doc(hidden)]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub date_range: ::std::option::Option<crate::types::DateRange>,
 }
 impl RecoveryPointSelection {

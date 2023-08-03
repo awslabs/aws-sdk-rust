@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesCriteriaBlock {
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>>,
 }
 impl SearchResourcesCriteriaBlock {

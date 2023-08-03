@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of your training file.</p>
-    #[doc(hidden)]
     pub input_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of your output file.</p>
-    #[doc(hidden)]
     pub output_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector.</p>
-    #[doc(hidden)]
     pub detector_name: ::std::option::Option<::std::string::String>,
     /// <p>The detector version.</p>
-    #[doc(hidden)]
     pub detector_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBatchPredictionJobInput {

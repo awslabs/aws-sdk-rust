@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderByElement {
     /// <p>The field on which to order.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>Ordering direction.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::OrderString>,
 }
 impl OrderByElement {

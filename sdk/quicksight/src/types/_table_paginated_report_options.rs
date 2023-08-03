@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TablePaginatedReportOptions {
     /// <p>The visibility of printing table overflow across pages.</p>
-    #[doc(hidden)]
     pub vertical_overflow_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of repeating header rows on each page.</p>
-    #[doc(hidden)]
     pub overflow_column_header_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl TablePaginatedReportOptions {

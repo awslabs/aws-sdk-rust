@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobDataAttributes {
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    #[doc(hidden)]
     pub content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
 }
 impl LabelingJobDataAttributes {

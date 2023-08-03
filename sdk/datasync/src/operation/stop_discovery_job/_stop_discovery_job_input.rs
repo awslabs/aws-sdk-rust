@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopDiscoveryJobInput {

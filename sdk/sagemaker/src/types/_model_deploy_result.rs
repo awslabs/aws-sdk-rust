@@ -7,7 +7,6 @@ pub struct ModelDeployResult {
     /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployResult {

@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of a service template.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The recommended minor version of the service template.</p>
-    #[doc(hidden)]
     pub recommended_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The service template version status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
     /// <p>A service template version status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A description of the version of a service template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the version of a service template was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the version of a service template was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    #[doc(hidden)]
     pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
     /// <p>The schema of the version of a service template.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub supported_component_sources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl ServiceTemplateVersion {

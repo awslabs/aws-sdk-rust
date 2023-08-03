@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the robot application.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
 }
 impl CreateRobotApplicationInput {

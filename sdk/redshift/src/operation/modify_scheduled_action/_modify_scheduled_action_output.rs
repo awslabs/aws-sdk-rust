@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyScheduledActionOutput {
     /// <p>The name of the scheduled action. </p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
-    #[doc(hidden)]
     pub target_action: ::std::option::Option<crate::types::ScheduledActionType>,
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scheduled action. </p>
-    #[doc(hidden)]
     pub scheduled_action_description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
-    #[doc(hidden)]
     pub next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

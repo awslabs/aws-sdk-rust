@@ -5,85 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>Indicates whether the instance type is current generation.</p>
-    #[doc(hidden)]
     pub current_generation: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type is eligible for the free tier.</p>
-    #[doc(hidden)]
     pub free_tier_eligible: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
-    #[doc(hidden)]
     pub supported_usage_classes: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
     /// <p>The supported root device types.</p>
-    #[doc(hidden)]
     pub supported_root_device_types: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
     /// <p>The supported virtualization types.</p>
-    #[doc(hidden)]
     pub supported_virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
-    #[doc(hidden)]
     pub bare_metal: ::std::option::Option<bool>,
     /// <p>The hypervisor for the instance type.</p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<crate::types::InstanceTypeHypervisor>,
     /// <p>Describes the processor.</p>
-    #[doc(hidden)]
     pub processor_info: ::std::option::Option<crate::types::ProcessorInfo>,
     /// <p>Describes the vCPU configurations for the instance type.</p>
-    #[doc(hidden)]
     pub v_cpu_info: ::std::option::Option<crate::types::VCpuInfo>,
     /// <p>Describes the memory for the instance type.</p>
-    #[doc(hidden)]
     pub memory_info: ::std::option::Option<crate::types::MemoryInfo>,
     /// <p>Indicates whether instance storage is supported.</p>
-    #[doc(hidden)]
     pub instance_storage_supported: ::std::option::Option<bool>,
     /// <p>Describes the instance storage for the instance type.</p>
-    #[doc(hidden)]
     pub instance_storage_info: ::std::option::Option<crate::types::InstanceStorageInfo>,
     /// <p>Describes the Amazon EBS settings for the instance type.</p>
-    #[doc(hidden)]
     pub ebs_info: ::std::option::Option<crate::types::EbsInfo>,
     /// <p>Describes the network settings for the instance type.</p>
-    #[doc(hidden)]
     pub network_info: ::std::option::Option<crate::types::NetworkInfo>,
     /// <p>Describes the GPU accelerator settings for the instance type.</p>
-    #[doc(hidden)]
     pub gpu_info: ::std::option::Option<crate::types::GpuInfo>,
     /// <p>Describes the FPGA accelerator settings for the instance type.</p>
-    #[doc(hidden)]
     pub fpga_info: ::std::option::Option<crate::types::FpgaInfo>,
     /// <p>Describes the placement group settings for the instance type.</p>
-    #[doc(hidden)]
     pub placement_group_info: ::std::option::Option<crate::types::PlacementGroupInfo>,
     /// <p>Describes the Inference accelerator settings for the instance type.</p>
-    #[doc(hidden)]
     pub inference_accelerator_info: ::std::option::Option<crate::types::InferenceAcceleratorInfo>,
     /// <p>Indicates whether On-Demand hibernation is supported.</p>
-    #[doc(hidden)]
     pub hibernation_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type is a burstable performance T instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
-    #[doc(hidden)]
     pub burstable_performance_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
-    #[doc(hidden)]
     pub dedicated_hosts_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
-    #[doc(hidden)]
     pub auto_recovery_supported: ::std::option::Option<bool>,
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub supported_boot_modes: ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
     /// <p>Indicates whether Nitro Enclaves is supported.</p>
-    #[doc(hidden)]
     pub nitro_enclaves_support: ::std::option::Option<crate::types::NitroEnclavesSupport>,
     /// <p>Indicates whether NitroTPM is supported.</p>
-    #[doc(hidden)]
     pub nitro_tpm_support: ::std::option::Option<crate::types::NitroTpmSupport>,
     /// <p>Describes the supported NitroTPM versions for the instance type.</p>
-    #[doc(hidden)]
     pub nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
 }
 impl InstanceTypeInfo {

@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    #[doc(hidden)]
     pub finding_aggregators: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::License>,
     /// <p>The user type.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
     /// <p>The Alexa for Business metadata.</p>
-    #[doc(hidden)]
     pub alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
 }
 impl UpdateUserInput {

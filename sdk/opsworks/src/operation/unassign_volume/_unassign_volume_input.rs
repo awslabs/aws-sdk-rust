@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignVolumeInput {
     /// <p>The volume ID.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
 impl UnassignVolumeInput {

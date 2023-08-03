@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchConfigurationTemplateOutput {
     /// <p>Created Launch Configuration Template.</p>
-    #[doc(hidden)]
     pub launch_configuration_template: ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
     _request_id: Option<String>,
 }

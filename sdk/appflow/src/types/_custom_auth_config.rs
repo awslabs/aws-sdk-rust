@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAuthConfig {
     /// <p>The authentication type that the custom connector uses.</p>
-    #[doc(hidden)]
     pub custom_authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about authentication parameters required for authentication.</p>
-    #[doc(hidden)]
     pub auth_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AuthParameter>>,
 }
 impl CustomAuthConfig {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceOnboardingJobStatus {
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
     /// Enumeration of the possible states for instance onboarding job
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
     /// Enumeration of the possible failure codes for instance onboarding job
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
 }
 impl InstanceOnboardingJobStatus {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaqSummary {
     /// <p>The identifier of the FAQ.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you assigned the FAQ when you created or updated the FAQ.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the FAQ. When the status is <code>ACTIVE</code> the FAQ is ready for use.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FaqStatus>,
     /// <p>The Unix timestamp when the FAQ was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the FAQ was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The file type used to create the FAQ. </p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
 }
 impl FaqSummary {

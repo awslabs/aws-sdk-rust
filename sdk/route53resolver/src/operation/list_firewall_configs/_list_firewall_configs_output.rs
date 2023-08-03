@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    #[doc(hidden)]
     pub firewall_configs: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,
     _request_id: Option<String>,
 }

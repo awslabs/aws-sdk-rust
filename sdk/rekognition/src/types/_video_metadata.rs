@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>Length of the video in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>Number of frames per second in the video.</p>
-    #[doc(hidden)]
     pub frame_rate: ::std::option::Option<f32>,
     /// <p>Vertical pixel dimension of the video.</p>
-    #[doc(hidden)]
     pub frame_height: ::std::option::Option<i64>,
     /// <p>Horizontal pixel dimension of the video.</p>
-    #[doc(hidden)]
     pub frame_width: ::std::option::Option<i64>,
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
-    #[doc(hidden)]
     pub color_range: ::std::option::Option<crate::types::VideoColorRange>,
 }
 impl VideoMetadata {

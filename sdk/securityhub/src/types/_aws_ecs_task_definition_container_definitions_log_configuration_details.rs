@@ -23,13 +23,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <li> <p> <code>splunk</code> </p> </li>
     /// <li> <p> <code>syslog</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub log_driver: ::std::option::Option<::std::string::String>,
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The secrets to pass to the log configuration.</p>
-    #[doc(hidden)]
     pub secret_options:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
 }

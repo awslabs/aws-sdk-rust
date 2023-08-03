@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConfirmDeviceInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The device key.</p>
-    #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the device secret verifier.</p>
-    #[doc(hidden)]
     pub device_secret_verifier_config: ::std::option::Option<crate::types::DeviceSecretVerifierConfigType>,
     /// <p>The device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmDeviceInput {

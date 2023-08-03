@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-    #[doc(hidden)]
     pub authenticated: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    #[doc(hidden)]
     pub un_authenticated: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
 }
 impl BackendStoragePermissions {

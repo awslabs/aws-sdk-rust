@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template. It must be unique per domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of layouts associated to the template.</p>
-    #[doc(hidden)]
     pub layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    #[doc(hidden)]
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     /// <p>The status of the template.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
 }
 impl UpdateTemplateInput {

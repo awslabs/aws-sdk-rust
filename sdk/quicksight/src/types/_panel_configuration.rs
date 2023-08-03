@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PanelConfiguration {
     /// <p>Configures the title display within each small multiples panel.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<crate::types::PanelTitleOptions>,
     /// <p>Determines whether or not each panel displays a border.</p>
-    #[doc(hidden)]
     pub border_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Sets the line thickness of panel borders.</p>
-    #[doc(hidden)]
     pub border_thickness: ::std::option::Option<::std::string::String>,
     /// <p>Sets the line style of panel borders.</p>
-    #[doc(hidden)]
     pub border_style: ::std::option::Option<crate::types::PanelBorderStyle>,
     /// <p>Sets the line color of panel borders.</p>
-    #[doc(hidden)]
     pub border_color: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether or not negative space between sibling panels is rendered.</p>
-    #[doc(hidden)]
     pub gutter_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Sets the total amount of negative space to display between sibling panels.</p>
-    #[doc(hidden)]
     pub gutter_spacing: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether or not a background for each small multiples panel is rendered.</p>
-    #[doc(hidden)]
     pub background_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Sets the background color for each panel.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<::std::string::String>,
 }
 impl PanelConfiguration {

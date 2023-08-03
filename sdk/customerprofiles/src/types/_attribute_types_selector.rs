@@ -20,19 +20,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeTypesSelector {
     /// <p>Configures the <code>AttributeMatchingModel</code>, you can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>.</p>
-    #[doc(hidden)]
     pub attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,
     /// <p>The <code>Address</code> type. You can choose from <code>Address</code>, <code>BusinessAddress</code>, <code>MaillingAddress</code>, and <code>ShippingAddress</code>.</p>
     /// <p>You only can use the Address type in the <code>MatchingRule</code>. For example, if you want to match profile based on <code>BusinessAddress.City</code> or <code>MaillingAddress.City</code>, you need to choose the <code>BusinessAddress</code> and the <code>MaillingAddress</code> to represent the Address type and specify the <code>Address.City</code> on the matching rule.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>PhoneNumber</code> type. You can choose from <code>PhoneNumber</code>, <code>HomePhoneNumber</code>, and <code>MobilePhoneNumber</code>.</p>
     /// <p>You only can use the <code>PhoneNumber</code> type in the <code>MatchingRule</code>. For example, if you want to match a profile based on <code>Phone</code> or <code>HomePhone</code>, you need to choose the <code>Phone</code> and the <code>HomePhone</code> to represent the <code>PhoneNumber</code> type and only specify the <code>PhoneNumber</code> on the matching rule.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>Email</code> type. You can choose from <code>EmailAddress</code>, <code>BusinessEmailAddress</code> and <code>PersonalEmailAddress</code>.</p>
     /// <p>You only can use the <code>EmailAddress</code> type in the <code>MatchingRule</code>. For example, if you want to match profile based on <code>PersonalEmailAddress</code> or <code>BusinessEmailAddress</code>, you need to choose the <code>PersonalEmailAddress</code> and the <code>BusinessEmailAddress</code> to represent the <code>EmailAddress</code> type and only specify the <code>EmailAddress</code> on the matching rule.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeTypesSelector {

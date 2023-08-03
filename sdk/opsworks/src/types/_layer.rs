@@ -5,78 +5,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The layer stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LayerType>,
     /// <p>The layer name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The layer short name.</p>
-    #[doc(hidden)]
     pub shortname: ::std::option::Option<::std::string::String>,
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    #[doc(hidden)]
     pub custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
-    #[doc(hidden)]
     pub custom_json: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
-    #[doc(hidden)]
     pub custom_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array containing the layer's security group names.</p>
-    #[doc(hidden)]
     pub default_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    #[doc(hidden)]
     pub packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    #[doc(hidden)]
     pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
-    #[doc(hidden)]
     pub enable_auto_healing: ::std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    #[doc(hidden)]
     pub auto_assign_elastic_ips: ::std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    #[doc(hidden)]
     pub auto_assign_public_ips: ::std::option::Option<bool>,
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
-    #[doc(hidden)]
     pub default_recipes: ::std::option::Option<crate::types::Recipes>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    #[doc(hidden)]
     pub custom_recipes: ::std::option::Option<crate::types::Recipes>,
     /// <p>Date when the layer was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    #[doc(hidden)]
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
-    #[doc(hidden)]
     pub use_ebs_optimized_instances: ::std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    #[doc(hidden)]
     pub lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl Layer {

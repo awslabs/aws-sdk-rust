@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClustersOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusters</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
-    #[doc(hidden)]
     pub db_clusters: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>,
     _request_id: Option<String>,
 }

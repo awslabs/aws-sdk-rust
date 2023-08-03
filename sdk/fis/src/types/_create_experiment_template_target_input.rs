@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the target resources.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
@@ -23,10 +19,8 @@ pub struct CreateExperimentTemplateTargetInput {
     /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub selection_mode: ::std::option::Option<::std::string::String>,
     /// <p>The resource type parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExperimentTemplateTargetInput {

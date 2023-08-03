@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -14,7 +13,6 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
@@ -22,37 +20,28 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for the new DB cluster.</p>
     /// <p>Default: The same as source</p>
     /// <p>Constraint: Must be compatible with the engine of the source</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine to use for the new DB cluster.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be assigned to the restored DB cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -61,31 +50,24 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
     /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterFromSnapshotInput {

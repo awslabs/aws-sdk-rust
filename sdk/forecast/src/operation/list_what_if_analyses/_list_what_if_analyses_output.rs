@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWhatIfAnalysesOutput {
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
-    #[doc(hidden)]
     pub what_if_analyses: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

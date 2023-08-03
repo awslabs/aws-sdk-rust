@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    #[doc(hidden)]
     pub fragment_selector_type: ::std::option::Option<crate::types::ClipFragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
-    #[doc(hidden)]
     pub timestamp_range: ::std::option::Option<crate::types::ClipTimestampRange>,
 }
 impl ClipFragmentSelector {

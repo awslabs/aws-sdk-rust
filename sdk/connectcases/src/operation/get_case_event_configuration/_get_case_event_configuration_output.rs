@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCaseEventConfigurationOutput {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    #[doc(hidden)]
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
-    #[doc(hidden)]
     pub outgoing_certificates: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

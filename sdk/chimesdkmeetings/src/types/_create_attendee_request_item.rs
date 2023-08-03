@@ -7,10 +7,8 @@ pub struct CreateAttendeeRequestItem {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    #[doc(hidden)]
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more capabilities.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl CreateAttendeeRequestItem {

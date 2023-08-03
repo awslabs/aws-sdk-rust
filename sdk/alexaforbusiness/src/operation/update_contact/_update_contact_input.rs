@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateContactInput {
     /// <p>The ARN of the contact to update.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated display name of the contact.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated first name of the contact.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated last name of the contact.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
-    #[doc(hidden)]
     pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
-    #[doc(hidden)]
     pub sip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
 }
 impl UpdateContactInput {

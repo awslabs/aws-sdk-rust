@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNamespaceOutput {
     /// <p>The ARN of the namespace.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    #[doc(hidden)]
     pub tracking_namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the public namespace that the latest version is tracking.</p>
-    #[doc(hidden)]
     pub tracking_namespace_version: ::std::option::Option<i64>,
     /// <p>The version of the user's namespace to describe.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

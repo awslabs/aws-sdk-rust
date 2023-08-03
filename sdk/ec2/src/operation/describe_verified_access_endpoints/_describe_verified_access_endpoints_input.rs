@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessEndpointsInput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub verified_access_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Verified Access group.</p>
-    #[doc(hidden)]
     pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeVerifiedAccessEndpointsInput {

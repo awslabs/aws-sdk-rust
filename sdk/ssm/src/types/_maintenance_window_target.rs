@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowTarget {
     /// <p>The ID of the maintenance window to register the target with.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
@@ -26,16 +23,12 @@ pub struct MaintenanceWindowTarget {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>The name for the maintenance window target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the target.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowTarget {

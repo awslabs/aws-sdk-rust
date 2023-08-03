@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyConfigInput {
     /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetContinuousDeploymentPolicyConfigInput {

@@ -24,10 +24,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
     /// <p>A message about the error that occurred for the route calculation.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl RouteMatrixEntryError {

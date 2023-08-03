@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentInstance {
     /// <p>Resource ID of the current instance.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>,
     /// <p>Details about the resource and utilization.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    #[doc(hidden)]
     pub resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    #[doc(hidden)]
     pub reservation_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    #[doc(hidden)]
     pub savings_plans_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    #[doc(hidden)]
     pub on_demand_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    #[doc(hidden)]
     pub total_running_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
-    #[doc(hidden)]
     pub monthly_cost: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
 }
 impl CurrentInstance {

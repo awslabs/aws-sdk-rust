@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Filter {
     /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
-    #[doc(hidden)]
     pub formula: ::std::option::Option<::std::string::String>,
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
-    #[doc(hidden)]
     pub context_row_id: ::std::option::Option<::std::string::String>,
 }
 impl Filter {

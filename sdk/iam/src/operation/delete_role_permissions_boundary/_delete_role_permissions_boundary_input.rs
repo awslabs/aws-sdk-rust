@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRolePermissionsBoundaryInput {
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRolePermissionsBoundaryInput {

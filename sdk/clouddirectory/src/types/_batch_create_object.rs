@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    #[doc(hidden)]
     pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    #[doc(hidden)]
     pub batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateObject {

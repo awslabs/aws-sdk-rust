@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
-    #[doc(hidden)]
     pub parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperation {

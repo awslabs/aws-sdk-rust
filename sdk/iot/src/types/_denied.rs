@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Denied {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
-    #[doc(hidden)]
     pub implicit_deny: ::std::option::Option<crate::types::ImplicitDeny>,
     /// <p>Information that explicitly denies the authorization. </p>
-    #[doc(hidden)]
     pub explicit_deny: ::std::option::Option<crate::types::ExplicitDeny>,
 }
 impl Denied {

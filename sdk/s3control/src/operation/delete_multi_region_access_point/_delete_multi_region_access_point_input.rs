@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput>,
 }
 impl DeleteMultiRegionAccessPointInput {

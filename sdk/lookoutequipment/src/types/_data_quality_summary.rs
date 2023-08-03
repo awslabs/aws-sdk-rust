@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualitySummary {
     /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
-    #[doc(hidden)]
     pub insufficient_sensor_data: ::std::option::Option<crate::types::InsufficientSensorData>,
     /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
-    #[doc(hidden)]
     pub missing_sensor_data: ::std::option::Option<crate::types::MissingSensorData>,
     /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
-    #[doc(hidden)]
     pub invalid_sensor_data: ::std::option::Option<crate::types::InvalidSensorData>,
     /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
-    #[doc(hidden)]
     pub unsupported_timestamps: ::std::option::Option<crate::types::UnsupportedTimestamps>,
     /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
-    #[doc(hidden)]
     pub duplicate_timestamps: ::std::option::Option<crate::types::DuplicateTimestamps>,
 }
 impl DataQualitySummary {

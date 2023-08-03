@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    #[doc(hidden)]
     pub approval_rule_template_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 pub struct ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    #[doc(hidden)]
     pub application_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

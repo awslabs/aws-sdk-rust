@@ -14,23 +14,17 @@ pub struct TrainingJobDefinition {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    #[doc(hidden)]
     pub training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     /// <p>The hyperparameters used for the training job.</p>
-    #[doc(hidden)]
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
 }
 impl TrainingJobDefinition {

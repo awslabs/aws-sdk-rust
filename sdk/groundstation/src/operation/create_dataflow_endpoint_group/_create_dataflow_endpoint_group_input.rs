@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
     /// <p>Tags of a dataflow endpoint group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
-    #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
-    #[doc(hidden)]
     pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
 }
 impl CreateDataflowEndpointGroupInput {

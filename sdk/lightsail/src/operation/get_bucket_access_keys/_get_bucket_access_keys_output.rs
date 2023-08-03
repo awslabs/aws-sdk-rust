@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    #[doc(hidden)]
     pub access_keys: ::std::option::Option<::std::vec::Vec<crate::types::AccessKey>>,
     _request_id: Option<String>,
 }

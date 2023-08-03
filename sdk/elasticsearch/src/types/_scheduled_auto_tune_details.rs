@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAutoTuneDetails {
     /// <p>Specifies timestamp for the Auto-Tune action scheduled for the domain. </p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING. </p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ScheduledAutoTuneActionType>,
     /// <p>Specifies Auto-Tune action description. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH. </p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ScheduledAutoTuneSeverityType>,
 }
 impl ScheduledAutoTuneDetails {

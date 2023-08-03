@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeNetworkSourceRequest {
     /// The network source multicast IP.
-    #[doc(hidden)]
     pub multicast_ip: ::std::option::Option<::std::string::String>,
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The network source's gateway network name.
-    #[doc(hidden)]
     pub network_name: ::std::option::Option<::std::string::String>,
     /// The network source port.
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// The network source protocol.
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl AddBridgeNetworkSourceRequest {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The parent resource's identifier.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The last path segment for this resource.</p>
-    #[doc(hidden)]
     pub path_part: ::std::option::Option<::std::string::String>,
 }
 impl CreateResourceInput {

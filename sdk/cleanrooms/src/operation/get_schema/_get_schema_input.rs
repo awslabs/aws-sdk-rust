@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the relation to retrieve the schema for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetSchemaInput {

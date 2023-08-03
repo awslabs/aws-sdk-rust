@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
-    #[doc(hidden)]
     pub signing_alg: ::std::option::Option<crate::types::SigningAlg>,
     /// <p>The value of the chosen sidewalk certificate.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CertificateList {

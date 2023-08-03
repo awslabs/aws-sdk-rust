@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterApplicationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application.</p>
-    #[doc(hidden)]
     pub application_type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The SAP instance number of the application.</p>
-    #[doc(hidden)]
     pub sap_instance_number: ::std::option::Option<::std::string::String>,
     /// <p>The System ID of the application.</p>
-    #[doc(hidden)]
     pub sid: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be attached to the SAP application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The credentials of the SAP application.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
 }
 impl RegisterApplicationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
-    #[doc(hidden)]
     pub available_instance_capacity: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
-    #[doc(hidden)]
     pub available_v_cpus: ::std::option::Option<i32>,
 }
 impl AvailableCapacity {

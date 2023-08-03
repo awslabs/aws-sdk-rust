@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLogSourceAttributes {
     /// <p>The ARN of the Glue crawler.</p>
-    #[doc(hidden)]
     pub crawler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    #[doc(hidden)]
     pub database_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Glue table.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomLogSourceAttributes {

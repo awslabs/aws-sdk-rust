@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceUser {
     /// <p>The user's name.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Services that the user's request hit.</p>
-    #[doc(hidden)]
     pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
 }
 impl TraceUser {

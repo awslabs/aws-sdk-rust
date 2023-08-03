@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
-    #[doc(hidden)]
     pub incident_template_title: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -24,32 +20,23 @@ pub struct UpdateResponsePlanInput {
     /// <li> <p> <code>2</code> - Low impact</p> </li>
     /// <li> <p> <code>1</code> - No impact</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub incident_template_impact: ::std::option::Option<i32>,
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    #[doc(hidden)]
     pub incident_template_summary: ::std::option::Option<::std::string::String>,
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    #[doc(hidden)]
     pub incident_template_dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    #[doc(hidden)]
     pub incident_template_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
-    #[doc(hidden)]
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    #[doc(hidden)]
     pub engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    #[doc(hidden)]
     pub incident_template_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about third-party services integrated into the response plan.</p>
-    #[doc(hidden)]
     pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl UpdateResponsePlanInput {

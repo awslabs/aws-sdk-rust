@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
     /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
@@ -20,7 +18,6 @@ pub struct PutBackupVaultNotificationsInput {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    #[doc(hidden)]
     pub backup_vault_events: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
 }
 impl PutBackupVaultNotificationsInput {

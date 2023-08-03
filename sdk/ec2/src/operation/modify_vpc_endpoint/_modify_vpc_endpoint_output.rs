@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

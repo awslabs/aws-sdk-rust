@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizedPrincipal {
     /// <p>The type of principal.</p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The IAM principal that is allowed access to the domain.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizedPrincipal {

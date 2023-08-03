@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactWriteItem {
     /// <p>A request to perform a check item operation.</p>
-    #[doc(hidden)]
     pub condition_check: ::std::option::Option<crate::types::ConditionCheck>,
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    #[doc(hidden)]
     pub put: ::std::option::Option<crate::types::Put>,
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    #[doc(hidden)]
     pub delete: ::std::option::Option<crate::types::Delete>,
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::Update>,
 }
 impl TransactWriteItem {

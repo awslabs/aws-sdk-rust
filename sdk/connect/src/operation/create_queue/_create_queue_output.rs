@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueOutput {
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    #[doc(hidden)]
     pub queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
     pub queue_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

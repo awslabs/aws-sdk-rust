@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The document version required by the current document.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The document type of the required SSM document.</p>
-    #[doc(hidden)]
     pub require_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl DocumentRequires {

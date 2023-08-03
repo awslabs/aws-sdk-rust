@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
-    #[doc(hidden)]
     pub error_document: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index document for the website.</p>
-    #[doc(hidden)]
     pub index_document_suffix: ::std::option::Option<::std::string::String>,
     /// <p>The redirect behavior for requests to the website.</p>
-    #[doc(hidden)]
     pub redirect_all_requests_to: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
     /// <p>The rules for applying redirects for requests to the website.</p>
-    #[doc(hidden)]
     pub routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>>,
 }
 impl AwsS3BucketWebsiteConfiguration {

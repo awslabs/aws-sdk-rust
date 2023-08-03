@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub broker_logs: ::std::option::Option<crate::types::BrokerLogs>,
 }
 impl LoggingInfo {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
-    #[doc(hidden)]
     pub direct_connect_gateways: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
     /// <p>The token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

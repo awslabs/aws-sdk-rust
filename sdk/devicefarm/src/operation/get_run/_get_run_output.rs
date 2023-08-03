@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunOutput {
     /// <p>The run to get results from.</p>
-    #[doc(hidden)]
     pub run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }

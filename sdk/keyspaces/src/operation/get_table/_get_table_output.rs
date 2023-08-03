@@ -4,47 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation timestamp of the specified table.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the specified table.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>The schema definition of the specified table.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
     /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
     /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
     /// <p>The encryption settings of the specified table.</p>
-    #[doc(hidden)]
     pub encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>The point-in-time recovery status of the specified table.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecoverySummary>,
     /// <p>The custom Time to Live settings of the specified table.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<crate::types::TimeToLive>,
     /// <p>The default Time to Live settings in seconds of the specified table.</p>
-    #[doc(hidden)]
     pub default_time_to_live: ::std::option::Option<i32>,
     /// <p>The the description of the specified table.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     /// <p> The client-side timestamps setting of the table.</p>
-    #[doc(hidden)]
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
     _request_id: Option<String>,
 }

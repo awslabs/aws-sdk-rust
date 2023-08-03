@@ -4,24 +4,18 @@
 #[derive(::std::fmt::Debug)]
 pub struct PutChunkInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// Upload Id for the in-progress upload.
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// Describes this chunk's position relative to the other chunks
-    #[doc(hidden)]
     pub chunk_index: i64,
     /// Data to be uploaded
     pub data: ::aws_smithy_http::byte_stream::ByteStream,
     /// Data length
-    #[doc(hidden)]
     pub length: i64,
     /// Data checksum
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
 }
 impl PutChunkInput {

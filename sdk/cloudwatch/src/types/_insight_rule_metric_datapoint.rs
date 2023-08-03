@@ -6,35 +6,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub unique_contributors: ::std::option::Option<f64>,
     /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub max_contributor_value: ::std::option::Option<f64>,
     /// <p>The number of occurrences that matched the rule during this data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub sample_count: ::std::option::Option<f64>,
     /// <p>The average value from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<f64>,
     /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
 }
 impl InsightRuleMetricDatapoint {

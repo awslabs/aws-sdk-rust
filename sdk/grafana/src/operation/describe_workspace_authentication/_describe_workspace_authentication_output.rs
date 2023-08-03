@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationOutput {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::AuthenticationDescription>,
     _request_id: Option<String>,
 }

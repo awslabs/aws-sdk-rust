@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventTypesOutput {
     /// <p>An array of event types.</p>
-    #[doc(hidden)]
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>The next page token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

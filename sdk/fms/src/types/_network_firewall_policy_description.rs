@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallPolicyDescription {
     /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
-    #[doc(hidden)]
     pub stateless_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroup>>,
     /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
-    #[doc(hidden)]
     pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
-    #[doc(hidden)]
     pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
-    #[doc(hidden)]
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
-    #[doc(hidden)]
     pub stateful_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRuleGroup>>,
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p> Valid values of the stateful default action: </p>
@@ -27,10 +22,8 @@ pub struct NetworkFirewallPolicyDescription {
     /// <li> <p>aws:alert_strict</p> </li>
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
-    #[doc(hidden)]
     pub stateful_engine_options: ::std::option::Option<crate::types::StatefulEngineOptions>,
 }
 impl NetworkFirewallPolicyDescription {

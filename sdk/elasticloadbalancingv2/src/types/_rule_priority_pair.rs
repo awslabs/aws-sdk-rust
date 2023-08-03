@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RulePriorityPair {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl RulePriorityPair {

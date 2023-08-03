@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceServerScopeType {
     /// <p>The name of the scope.</p>
-    #[doc(hidden)]
     pub scope_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the scope.</p>
-    #[doc(hidden)]
     pub scope_description: ::std::option::Option<::std::string::String>,
 }
 impl ResourceServerScopeType {

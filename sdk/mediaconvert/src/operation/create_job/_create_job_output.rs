@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLocation {
     /// <p>The location's bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The location's repo prefix.</p>
-    #[doc(hidden)]
     pub repo_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's generated prefix.</p>
-    #[doc(hidden)]
     pub generated_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's binary prefix.</p>
-    #[doc(hidden)]
     pub binary_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's manifest prefix.</p>
-    #[doc(hidden)]
     pub manifest_prefix_location: ::std::option::Option<::std::string::String>,
 }
 impl StorageLocation {

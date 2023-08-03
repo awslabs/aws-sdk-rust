@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the logical volume in the file system.</p>
-    #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub add_group_owner: ::std::option::Option<bool>,
 }
 impl LambdaVolumeMount {

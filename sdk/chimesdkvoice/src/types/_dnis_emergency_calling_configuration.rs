@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
-    #[doc(hidden)]
     pub emergency_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
-    #[doc(hidden)]
     pub test_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    #[doc(hidden)]
     pub calling_country: ::std::option::Option<::std::string::String>,
 }
 impl DnisEmergencyCallingConfiguration {

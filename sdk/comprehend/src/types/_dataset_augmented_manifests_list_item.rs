@@ -7,20 +7,15 @@ pub struct DatasetAugmentedManifestsListItem {
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
-    #[doc(hidden)]
     pub annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
-    #[doc(hidden)]
     pub source_documents_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
     /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
 impl DatasetAugmentedManifestsListItem {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    #[doc(hidden)]
     pub order_arn: ::std::option::Option<::std::string::String>,
     /// <p>The shipping address of the order.</p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-    #[doc(hidden)]
     pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tracking information of the order.</p>
-    #[doc(hidden)]
     pub tracking_information: ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
     /// <p>The acknowledgement status of the order.</p>
-    #[doc(hidden)]
     pub acknowledgment_status: ::std::option::Option<crate::types::AcknowledgmentStatus>,
     /// <p>The creation time of the order.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the network resources placed in the order.</p>
-    #[doc(hidden)]
     pub ordered_resources: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
 }
 impl Order {

@@ -7,7 +7,6 @@
 pub struct PutSolFunctionPackageContentMetadata {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    #[doc(hidden)]
     pub vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }
 impl PutSolFunctionPackageContentMetadata {

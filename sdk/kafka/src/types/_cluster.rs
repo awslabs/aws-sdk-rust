@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
-    #[doc(hidden)]
     pub active_operation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Cluster Type.</p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<crate::types::ClusterType>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the cluster was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current version of the MSK cluster.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>State Info for the Amazon MSK cluster.</p>
-    #[doc(hidden)]
     pub state_info: ::std::option::Option<crate::types::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
-    #[doc(hidden)]
     pub provisioned: ::std::option::Option<crate::types::Provisioned>,
     /// <p>Information about the serverless cluster.</p>
-    #[doc(hidden)]
     pub serverless: ::std::option::Option<crate::types::Serverless>,
 }
 impl Cluster {

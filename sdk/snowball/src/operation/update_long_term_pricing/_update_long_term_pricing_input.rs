@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    #[doc(hidden)]
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-    #[doc(hidden)]
     pub replacement_job: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
-    #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: ::std::option::Option<bool>,
 }
 impl UpdateLongTermPricingInput {

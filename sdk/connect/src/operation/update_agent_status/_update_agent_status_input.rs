@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the agent status.</p>
-    #[doc(hidden)]
     pub agent_status_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the agent status.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the agent status.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the agent status.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AgentStatusState>,
     /// <p>The display order of the agent status.</p>
-    #[doc(hidden)]
     pub display_order: ::std::option::Option<i32>,
     /// <p>A number indicating the reset order of the agent status.</p>
-    #[doc(hidden)]
     pub reset_order_number: ::std::option::Option<bool>,
 }
 impl UpdateAgentStatusInput {

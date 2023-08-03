@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<i32>,
 }
 impl InsightImpactGraphEdge {

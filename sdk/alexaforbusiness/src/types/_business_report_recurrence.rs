@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReportRecurrence {
     /// <p>The start date.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
 }
 impl BusinessReportRecurrence {

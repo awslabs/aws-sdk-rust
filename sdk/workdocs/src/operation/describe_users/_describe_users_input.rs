@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeUsersInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the users.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::string::String>,
     /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
     /// <ul>
@@ -19,25 +16,18 @@ pub struct DescribeUsersInput {
     /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
     /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<crate::types::UserFilterType>,
     /// <p>The order for the results.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::OrderType>,
     /// <p>The sorting criteria.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::UserSortType>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUsersInput {

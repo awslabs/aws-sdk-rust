@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
-    #[doc(hidden)]
     pub wrapping_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExportTr31KeyBlock {

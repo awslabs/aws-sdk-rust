@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationInput {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>,
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetEnrollmentStatusesForOrganizationInput {

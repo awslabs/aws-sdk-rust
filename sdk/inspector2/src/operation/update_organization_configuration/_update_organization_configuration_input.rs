@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::AutoEnable>,
 }
 impl UpdateOrganizationConfigurationInput {

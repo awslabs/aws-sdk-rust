@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeysAndCertificateOutput {
     /// <p>The ARN of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The generated key pair.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::KeyPair>,
     _request_id: Option<String>,
 }

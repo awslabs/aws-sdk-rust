@@ -6,7 +6,6 @@ pub struct PutRetentionConfigurationInput {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    #[doc(hidden)]
     pub retention_period_in_days: ::std::option::Option<i32>,
 }
 impl PutRetentionConfigurationInput {

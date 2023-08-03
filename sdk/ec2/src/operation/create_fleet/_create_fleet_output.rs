@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetOutput {
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>>,
     /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>>,
     _request_id: Option<String>,
 }

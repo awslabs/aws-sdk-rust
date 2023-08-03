@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
-    #[doc(hidden)]
     pub contact_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>>,
     _request_id: Option<String>,
 }

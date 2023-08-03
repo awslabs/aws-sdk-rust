@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportErrorDetails {
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
-    #[doc(hidden)]
     pub export_results: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
-    #[doc(hidden)]
     pub export_source_images: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
 }
 impl ExportErrorDetails {

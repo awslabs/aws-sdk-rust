@@ -9,11 +9,9 @@ pub struct PasswordData {
     /// <p>If you are using a custom key pair, you need to use your own means of decryption.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
-    #[doc(hidden)]
     pub ciphertext: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<code>LightsailDefaultKeyPair</code>).</p>
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
 }
 impl PasswordData {

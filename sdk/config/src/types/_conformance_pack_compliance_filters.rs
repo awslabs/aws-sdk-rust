@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceFilters {
     /// <p>Filters the results by Config rule names.</p>
-    #[doc(hidden)]
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceFilters {

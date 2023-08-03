@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutput {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

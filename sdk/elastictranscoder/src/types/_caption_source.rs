@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSource {
     /// <p>The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
@@ -13,17 +12,13 @@ pub struct CaptionSource {
     /// <li> <p>3-character ISO 639-2 code</p> </li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
     /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
-    #[doc(hidden)]
     pub time_offset: ::std::option::Option<::std::string::String>,
     /// <p>The label of the caption shown in the player when choosing a language. We recommend that you put the caption language name here, in the language of the captions.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want Elastic Transcoder to apply to your caption sources.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl CaptionSource {

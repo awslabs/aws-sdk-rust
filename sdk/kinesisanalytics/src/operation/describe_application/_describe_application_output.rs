@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-    #[doc(hidden)]
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCrawlsInput {
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>,
     /// <p>A continuation token, if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCrawlsInput {

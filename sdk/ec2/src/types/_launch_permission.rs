@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchPermission {
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::PermissionGroup>,
     /// <p>The Amazon Web Services account ID.</p>
     /// <p>Constraints: Up to 10 000 account IDs can be specified in a single request.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-    #[doc(hidden)]
     pub organization_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
-    #[doc(hidden)]
     pub organizational_unit_arn: ::std::option::Option<::std::string::String>,
 }
 impl LaunchPermission {

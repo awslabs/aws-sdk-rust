@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>The average of the aggregated field values.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<f64>,
     /// <p>The sum of the aggregated field values.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The minimum aggregated field value.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum aggregated field value.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
     /// <p>The sum of the squares of the aggregated field values.</p>
-    #[doc(hidden)]
     pub sum_of_squares: ::std::option::Option<f64>,
     /// <p>The variance of the aggregated field values.</p>
-    #[doc(hidden)]
     pub variance: ::std::option::Option<f64>,
     /// <p>The standard deviation of the aggregated field values.</p>
-    #[doc(hidden)]
     pub std_deviation: ::std::option::Option<f64>,
 }
 impl Statistics {

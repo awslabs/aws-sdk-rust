@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
-    #[doc(hidden)]
     pub retryable: ::std::option::Option<bool>,
 }
 impl FailedItemDetails {

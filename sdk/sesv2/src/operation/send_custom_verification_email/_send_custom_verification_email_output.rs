@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

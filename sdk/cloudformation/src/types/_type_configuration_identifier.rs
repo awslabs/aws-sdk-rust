@@ -6,19 +6,14 @@
 pub struct TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
-    #[doc(hidden)]
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    #[doc(hidden)]
     pub type_configuration_alias: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and Region.</p>
-    #[doc(hidden)]
     pub type_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of extension.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     /// <p>The name of the extension type to which this configuration applies.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
 }
 impl TypeConfigurationIdentifier {

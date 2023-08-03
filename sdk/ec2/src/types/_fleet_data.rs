@@ -5,69 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetData {
     /// <p>The progress of the EC2 Fleet. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the EC2 Fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the EC2 Fleet is decreased, the status is <code>pending_termination</code> while instances are terminating.</p>
-    #[doc(hidden)]
     pub activity_status: ::std::option::Option<crate::types::FleetActivityStatus>,
     /// <p>The creation date and time of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraints: Maximum 64 ASCII characters</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    #[doc(hidden)]
     pub excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     /// <p>The number of units fulfilled by this request compared to the set target capacity.</p>
-    #[doc(hidden)]
     pub fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>The number of units fulfilled by this request compared to the set target On-Demand capacity.</p>
-    #[doc(hidden)]
     pub fulfilled_on_demand_capacity: ::std::option::Option<f64>,
     /// <p>The launch template and overrides.</p>
-    #[doc(hidden)]
     pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfig>>,
     /// <p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
-    #[doc(hidden)]
     pub target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecification>,
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
-    #[doc(hidden)]
     pub terminate_instances_with_expiration: ::std::option::Option<bool>,
     /// <p>The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FleetType>,
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
-    #[doc(hidden)]
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
-    #[doc(hidden)]
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub replace_unhealthy_instances: ::std::option::Option<bool>,
     /// <p>The configuration of Spot Instances in an EC2 Fleet.</p>
-    #[doc(hidden)]
     pub spot_options: ::std::option::Option<crate::types::SpotOptions>,
     /// <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
-    #[doc(hidden)]
     pub on_demand_options: ::std::option::Option<crate::types::OnDemandOptions>,
     /// <p>The tags for an EC2 Fleet resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetError>>,
     /// <p>Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetsInstances>>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
 }
 impl FleetData {

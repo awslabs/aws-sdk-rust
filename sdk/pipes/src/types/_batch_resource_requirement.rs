@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
@@ -165,7 +164,6 @@ pub struct BatchResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl BatchResourceRequirement {

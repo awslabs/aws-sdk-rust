@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceSetsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource sets associated with the account.</p>
-    #[doc(hidden)]
     pub resource_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>>,
     _request_id: Option<String>,
 }

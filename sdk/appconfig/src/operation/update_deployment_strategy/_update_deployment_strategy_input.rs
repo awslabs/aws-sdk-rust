@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeploymentStrategyInput {
     /// <p>The deployment strategy ID.</p>
-    #[doc(hidden)]
     pub deployment_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the deployment strategy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Total amount of time for a deployment to last.</p>
-    #[doc(hidden)]
     pub deployment_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    #[doc(hidden)]
     pub final_bake_time_in_minutes: ::std::option::Option<i32>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    #[doc(hidden)]
     pub growth_factor: ::std::option::Option<f32>,
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
     /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
@@ -25,7 +20,6 @@ pub struct UpdateDeploymentStrategyInput {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    #[doc(hidden)]
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
 }
 impl UpdateDeploymentStrategyInput {

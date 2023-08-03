@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    #[doc(hidden)]
     pub number_validate_request: ::std::option::Option<crate::types::NumberValidateRequest>,
 }
 impl PhoneNumberValidateInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenericAttachment {
     /// <p>The title of the option.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The subtitle shown below the title.</p>
-    #[doc(hidden)]
     pub sub_title: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an attachment to the response card.</p>
-    #[doc(hidden)]
     pub attachment_link_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image that is displayed to the user.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The list of options to show to the user.</p>
-    #[doc(hidden)]
     pub buttons: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
 }
 impl GenericAttachment {

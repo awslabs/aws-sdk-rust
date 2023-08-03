@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SankeyDiagramFieldWells {
     /// <p>The field well configuration of a sankey diagram.</p>
-    #[doc(hidden)]
     pub sankey_diagram_aggregated_field_wells: ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
 }
 impl SankeyDiagramFieldWells {

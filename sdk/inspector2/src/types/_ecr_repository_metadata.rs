@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrRepositoryMetadata {
     /// <p>The name of the Amazon ECR repository.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The frequency of scans.</p>
-    #[doc(hidden)]
     pub scan_frequency: ::std::option::Option<crate::types::EcrScanFrequency>,
 }
 impl EcrRepositoryMetadata {

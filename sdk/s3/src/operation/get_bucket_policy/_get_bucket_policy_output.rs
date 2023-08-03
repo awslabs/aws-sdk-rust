@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketPolicyOutput {
     /// <p>The bucket policy as a JSON document.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

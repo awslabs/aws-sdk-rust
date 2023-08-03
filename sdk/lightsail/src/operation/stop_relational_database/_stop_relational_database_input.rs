@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRelationalDatabaseInput {
     /// <p>The name of your database to stop.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    #[doc(hidden)]
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl StopRelationalDatabaseInput {

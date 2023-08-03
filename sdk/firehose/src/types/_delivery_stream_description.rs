@@ -5,44 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
-    #[doc(hidden)]
     pub delivery_stream_status: ::std::option::Option<crate::types::DeliveryStreamStatus>,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    #[doc(hidden)]
     pub failure_description: ::std::option::Option<crate::types::FailureDescription>,
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_encryption_configuration: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the delivery stream was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the delivery stream was last updated.</p>
-    #[doc(hidden)]
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::SourceDescription>,
     /// <p>The destinations.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationDescription>>,
     /// <p>Indicates whether there are more destinations available to list.</p>
-    #[doc(hidden)]
     pub has_more_destinations: ::std::option::Option<bool>,
 }
 impl DeliveryStreamDescription {

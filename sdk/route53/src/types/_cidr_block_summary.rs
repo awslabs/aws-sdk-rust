@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrBlockSummary {
     /// <p>Value for the CIDR block.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The location name of the CIDR block.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl CidrBlockSummary {

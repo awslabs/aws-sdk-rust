@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSimulationJobBatchOutput {
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -64,34 +63,24 @@ pub struct StartSimulationJobBatchOutput {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationJobBatchStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The batch policy.</p>
-    #[doc(hidden)]
     pub batch_policy: ::std::option::Option<crate::types::BatchPolicy>,
     /// <p>The failure code if the simulation job batch failed.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
-    #[doc(hidden)]
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>,
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    #[doc(hidden)]
     pub pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>,
     /// <p>A list of created simulation job request summaries.</p>
-    #[doc(hidden)]
     pub created_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    #[doc(hidden)]
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// Optional. A category for the job template you are creating
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// Optional. A description of the job template you are creating.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    #[doc(hidden)]
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The name of the job template you are creating.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    #[doc(hidden)]
     pub queue: ::std::option::Option<::std::string::String>,
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::JobTemplateSettings>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    #[doc(hidden)]
     pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateJobTemplateInput {

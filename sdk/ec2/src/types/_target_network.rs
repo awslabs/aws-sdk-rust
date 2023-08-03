@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetNetwork {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet specified as the target network.</p>
-    #[doc(hidden)]
     pub target_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the target network association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetNetwork {

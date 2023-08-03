@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    #[doc(hidden)]
     pub additional_staging_labels_to_download: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecretsManagerSecretResourceData {

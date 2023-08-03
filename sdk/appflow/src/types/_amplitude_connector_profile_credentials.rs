@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p> The Secret Access Key portion of the credentials. </p>
-    #[doc(hidden)]
     pub secret_key: ::std::option::Option<::std::string::String>,
 }
 impl AmplitudeConnectorProfileCredentials {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    #[doc(hidden)]
     pub sync_with_public_namespace: bool,
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    #[doc(hidden)]
     pub deprecate_existing_entities: bool,
 }
 impl UploadEntityDefinitionsInput {

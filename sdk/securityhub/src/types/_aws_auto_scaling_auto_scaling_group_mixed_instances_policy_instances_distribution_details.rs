@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
     /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
-    #[doc(hidden)]
     pub on_demand_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
-    #[doc(hidden)]
     pub on_demand_base_capacity: i32,
     /// <p>The percentage of On-Demand Instances and Spot Instances for additional capacity beyond <code>OnDemandBaseCapacity</code>.</p>
-    #[doc(hidden)]
     pub on_demand_percentage_above_base_capacity: i32,
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
@@ -19,13 +16,10 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributi
     /// <li> <p> <code>capacity-optimized</code> </p> </li>
     /// <li> <p> <code>capacity-optimized-prioritized</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub spot_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
-    #[doc(hidden)]
     pub spot_instance_pools: i32,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance.</p>
-    #[doc(hidden)]
     pub spot_max_price: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {

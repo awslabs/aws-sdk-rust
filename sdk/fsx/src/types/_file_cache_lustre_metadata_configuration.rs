@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileCacheLustreMetadataConfiguration {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
 }
 impl FileCacheLustreMetadataConfiguration {

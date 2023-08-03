@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// <p>The Amazon EFS access point identifier to use.</p>
-    #[doc(hidden)]
     pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub iam: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {

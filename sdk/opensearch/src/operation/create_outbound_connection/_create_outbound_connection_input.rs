@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOutboundConnectionInput {
     /// <p>Name and Region of the source (local) domain.</p>
-    #[doc(hidden)]
     pub local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Name and Region of the destination (remote) domain.</p>
-    #[doc(hidden)]
     pub remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Name of the connection.</p>
-    #[doc(hidden)]
     pub connection_alias: ::std::option::Option<::std::string::String>,
     /// <p>The connection mode.</p>
-    #[doc(hidden)]
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
-    #[doc(hidden)]
     pub connection_properties: ::std::option::Option<crate::types::ConnectionProperties>,
 }
 impl CreateOutboundConnectionInput {

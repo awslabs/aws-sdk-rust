@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewSunAzimuthInput {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
-    #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
-    #[doc(hidden)]
     pub upper_bound: ::std::option::Option<f32>,
 }
 impl ViewSunAzimuthInput {

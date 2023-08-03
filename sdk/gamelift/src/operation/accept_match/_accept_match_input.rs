@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptMatchInput {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
-    #[doc(hidden)]
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    #[doc(hidden)]
     pub player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Player response to the proposed match.</p>
-    #[doc(hidden)]
     pub acceptance_type: ::std::option::Option<crate::types::AcceptanceType>,
 }
 impl AcceptMatchInput {

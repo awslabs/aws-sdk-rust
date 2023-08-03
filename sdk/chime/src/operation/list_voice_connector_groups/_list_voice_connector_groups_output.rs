@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsOutput {
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
-    #[doc(hidden)]
     pub voice_connector_groups: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelIntentClassificationResultItem {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
-    #[doc(hidden)]
     pub match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelIntentClassificationResultItem {

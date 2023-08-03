@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContactType>,
 }
 impl Contact {

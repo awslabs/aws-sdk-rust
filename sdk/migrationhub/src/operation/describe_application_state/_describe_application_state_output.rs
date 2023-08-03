@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

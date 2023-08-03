@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStreamDestinationDetails {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventStreamDestinationStatus>,
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
-    #[doc(hidden)]
     pub unhealthy_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl EventStreamDestinationDetails {

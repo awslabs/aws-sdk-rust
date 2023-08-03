@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCount {
     /// <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The states of the listed Reserved Instances.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ListingState>,
 }
 impl InstanceCount {

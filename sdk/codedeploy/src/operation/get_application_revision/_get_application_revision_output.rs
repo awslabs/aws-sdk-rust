@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the revision, including type and location.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>General information about the revision.</p>
-    #[doc(hidden)]
     pub revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
     _request_id: Option<String>,
 }

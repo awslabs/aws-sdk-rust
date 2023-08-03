@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExtensionAssociationInput {
     /// <p>The system-generated ID for the association.</p>
-    #[doc(hidden)]
     pub extension_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the extension.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateExtensionAssociationInput {

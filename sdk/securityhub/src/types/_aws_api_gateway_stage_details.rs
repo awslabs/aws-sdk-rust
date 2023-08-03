@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayStageDetails {
     /// <p>The identifier of the deployment that the stage points to.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the client certificate for the stage.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a cache cluster is enabled for the stage.</p>
-    #[doc(hidden)]
     pub cache_cluster_enabled: bool,
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster_size: ::std::option::Option<::std::string::String>,
     /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>Defines the method settings for the stage.</p>
-    #[doc(hidden)]
     pub method_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
     /// <p>A map that defines the stage variables for the stage.</p>
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
@@ -36,30 +28,22 @@ pub struct AwsApiGatewayStageDetails {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the API documentation that is associated with the stage.</p>
-    #[doc(hidden)]
     pub documentation_version: ::std::option::Option<::std::string::String>,
     /// <p>Settings for logging access for the stage.</p>
-    #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
     /// <p>Information about settings for canary deployment in the stage.</p>
-    #[doc(hidden)]
     pub canary_settings: ::std::option::Option<crate::types::AwsApiGatewayCanarySettings>,
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
-    #[doc(hidden)]
     pub tracing_enabled: bool,
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the web ACL associated with the stage.</p>
-    #[doc(hidden)]
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiGatewayStageDetails {

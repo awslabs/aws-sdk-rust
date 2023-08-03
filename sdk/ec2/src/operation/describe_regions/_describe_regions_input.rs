@@ -9,16 +9,12 @@ pub struct DescribeRegionsInput {
     /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
     /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    #[doc(hidden)]
     pub region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
-    #[doc(hidden)]
     pub all_regions: ::std::option::Option<bool>,
 }
 impl DescribeRegionsInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectInput {
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    #[doc(hidden)]
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Connect attachment options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,
     /// <p>The tags to apply to the Connect attachment.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayConnectInput {

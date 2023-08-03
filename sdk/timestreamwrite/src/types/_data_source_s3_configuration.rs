@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceS3Configuration {
     /// <p>The bucket name of the customer S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> </p>
-    #[doc(hidden)]
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceS3Configuration {

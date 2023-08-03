@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEvaluationFormOutput {
     /// <p>Information about the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form: ::std::option::Option<crate::types::EvaluationForm>,
     _request_id: Option<String>,
 }

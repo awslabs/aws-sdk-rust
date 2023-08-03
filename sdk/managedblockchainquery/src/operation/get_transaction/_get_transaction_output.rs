@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransactionOutput {
     /// <p>Contains the details of the transaction.</p>
-    #[doc(hidden)]
     pub transaction: ::std::option::Option<crate::types::Transaction>,
     _request_id: Option<String>,
 }

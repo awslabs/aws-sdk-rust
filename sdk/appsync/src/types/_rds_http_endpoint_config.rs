@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsHttpEndpointConfig {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Logical database name.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Logical schema name.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-    #[doc(hidden)]
     pub aws_secret_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl RdsHttpEndpointConfig {

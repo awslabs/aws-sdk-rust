@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
-    #[doc(hidden)]
     pub port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
 }
 impl PortForwardingConfig {

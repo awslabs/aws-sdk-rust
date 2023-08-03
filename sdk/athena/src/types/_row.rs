@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Row {
     /// <p>The data that populates a row in a query result table.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
 }
 impl Row {

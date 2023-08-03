@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    #[doc(hidden)]
     pub recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInput {

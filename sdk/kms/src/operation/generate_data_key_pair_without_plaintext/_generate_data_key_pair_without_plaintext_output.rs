@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintextOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    #[doc(hidden)]
     pub private_key_ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
-    #[doc(hidden)]
     pub key_pair_spec: ::std::option::Option<crate::types::DataKeyPairSpec>,
     _request_id: Option<String>,
 }

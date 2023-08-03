@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
 }
 impl ListGroupResourcesItem {

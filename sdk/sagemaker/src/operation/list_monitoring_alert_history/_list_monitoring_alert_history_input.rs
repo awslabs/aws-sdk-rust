@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertHistoryInput {
     /// <p>The name of a monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring alert.</p>
-    #[doc(hidden)]
     pub monitoring_alert_name: ::std::option::Option<::std::string::String>,
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::MonitoringAlertHistorySortKey>,
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to display. The default is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that retrieves only alerts with a specific status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::MonitoringAlertStatus>,
 }
 impl ListMonitoringAlertHistoryInput {

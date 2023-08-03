@@ -26,16 +26,12 @@ pub struct ScheduleRunTest {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>The ARN of the uploaded test to be run.</p>
-    #[doc(hidden)]
     pub test_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    #[doc(hidden)]
     pub test_spec_arn: ::std::option::Option<::std::string::String>,
     /// <p>The test's filter.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::string::String>,
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
@@ -95,7 +91,6 @@ pub struct ScheduleRunTest {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ScheduleRunTest {

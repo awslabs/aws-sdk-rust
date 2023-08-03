@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlerMetrics {
     /// <p>The name of the crawler.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The estimated time left to complete a running crawl.</p>
-    #[doc(hidden)]
     pub time_left_seconds: f64,
     /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
-    #[doc(hidden)]
     pub still_estimating: bool,
     /// <p>The duration of the crawler's most recent run, in seconds.</p>
-    #[doc(hidden)]
     pub last_runtime_seconds: f64,
     /// <p>The median duration of this crawler's runs, in seconds.</p>
-    #[doc(hidden)]
     pub median_runtime_seconds: f64,
     /// <p>The number of tables created by this crawler.</p>
-    #[doc(hidden)]
     pub tables_created: i32,
     /// <p>The number of tables updated by this crawler.</p>
-    #[doc(hidden)]
     pub tables_updated: i32,
     /// <p>The number of tables deleted by this crawler.</p>
-    #[doc(hidden)]
     pub tables_deleted: i32,
 }
 impl CrawlerMetrics {

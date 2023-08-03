@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
-    #[doc(hidden)]
     pub supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnowflakeMetadata {

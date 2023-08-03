@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
     /// <p>The properties (metadata) of a column. </p>
-    #[doc(hidden)]
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
-    #[doc(hidden)]
     pub total_num_rows: i64,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

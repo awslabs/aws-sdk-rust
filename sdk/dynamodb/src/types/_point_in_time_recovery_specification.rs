@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery_enabled: ::std::option::Option<bool>,
 }
 impl PointInTimeRecoverySpecification {

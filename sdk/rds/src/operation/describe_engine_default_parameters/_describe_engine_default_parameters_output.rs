@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-    #[doc(hidden)]
     pub engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,
 }

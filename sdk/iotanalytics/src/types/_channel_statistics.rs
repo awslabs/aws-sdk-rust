@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
 impl ChannelStatistics {

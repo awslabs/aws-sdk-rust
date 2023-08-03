@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamSessionsOutput {
     /// <p>List of stream sessions.</p>
-    #[doc(hidden)]
     pub stream_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>,
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -10,11 +10,9 @@ pub struct DescribeStackResourceInput {
     /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStackResourceInput {

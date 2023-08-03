@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootInputDeviceInput {
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
-    #[doc(hidden)]
     pub force: ::std::option::Option<crate::types::RebootInputDeviceForce>,
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    #[doc(hidden)]
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl RebootInputDeviceInput {

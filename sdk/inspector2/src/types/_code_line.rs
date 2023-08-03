@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeLine {
     /// <p>The content of a line of code</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The line number that a section of code is located at.</p>
-    #[doc(hidden)]
     pub line_number: ::std::option::Option<i32>,
 }
 impl CodeLine {

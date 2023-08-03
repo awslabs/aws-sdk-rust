@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOriginEndpointsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of OriginEndpoint records.
-    #[doc(hidden)]
     pub origin_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>>,
     _request_id: Option<String>,
 }

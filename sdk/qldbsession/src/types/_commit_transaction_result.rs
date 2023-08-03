@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit digest of the committed transaction.</p>
-    #[doc(hidden)]
     pub commit_digest: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Contains server-side performance information for the command.</p>
-    #[doc(hidden)]
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    #[doc(hidden)]
     pub consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl CommitTransactionResult {

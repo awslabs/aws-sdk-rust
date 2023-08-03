@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryStatisticsOutput {
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
-    #[doc(hidden)]
     pub execution_statistics: ::std::option::Option<crate::types::ExecutionStatistics>,
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
-    #[doc(hidden)]
     pub planning_statistics: ::std::option::Option<crate::types::PlanningStatistics>,
     /// <p>The time that the query was submitted.</p>
-    #[doc(hidden)]
     pub query_submission_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

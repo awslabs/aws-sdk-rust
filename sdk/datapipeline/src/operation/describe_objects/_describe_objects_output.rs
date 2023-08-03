@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
-    #[doc(hidden)]
     pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
-    #[doc(hidden)]
     pub has_more_results: bool,
     _request_id: Option<String>,
 }

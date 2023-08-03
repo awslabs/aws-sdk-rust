@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchEntitiesInput {
     /// <p>The entity types for which to search.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
 }
 impl SearchEntitiesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfacePermissionInput {
     /// <p>The ID of the network interface permission.</p>
-    #[doc(hidden)]
     pub network_interface_permission_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>true</code> to remove the permission even if the network interface is attached to an instance.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteNetworkInterfacePermissionInput {

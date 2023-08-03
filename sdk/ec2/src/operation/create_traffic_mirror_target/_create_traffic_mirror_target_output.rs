@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorTargetOutput {
     /// <p>Information about the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub traffic_mirror_target: ::std::option::Option<crate::types::TrafficMirrorTarget>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

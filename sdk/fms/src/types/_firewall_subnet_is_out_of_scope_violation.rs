@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallSubnetIsOutOfScopeViolation {

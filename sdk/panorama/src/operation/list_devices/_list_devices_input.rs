@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListDevicesSortBy>,
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>Filter based on device's name. Prefixes supported.</p>
-    #[doc(hidden)]
     pub name_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter based on a device's status.</p>
-    #[doc(hidden)]
     pub device_aggregated_status_filter: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
 }
 impl ListDevicesInput {

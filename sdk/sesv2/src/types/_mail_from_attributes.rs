@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    #[doc(hidden)]
     pub mail_from_domain: ::std::option::Option<::std::string::String>,
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
@@ -14,11 +13,9 @@ pub struct MailFromAttributes {
     /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mail_from_domain_status: ::std::option::Option<crate::types::MailFromDomainStatus>,
     /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    #[doc(hidden)]
     pub behavior_on_mx_failure: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
 }
 impl MailFromAttributes {

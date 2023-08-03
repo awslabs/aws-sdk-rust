@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStandardsControlInput {
     /// <p>The ARN of the security standard control to enable or disable.</p>
-    #[doc(hidden)]
     pub standards_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated status of the security standard control.</p>
-    #[doc(hidden)]
     pub control_status: ::std::option::Option<crate::types::ControlStatus>,
     /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
-    #[doc(hidden)]
     pub disabled_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStandardsControlInput {

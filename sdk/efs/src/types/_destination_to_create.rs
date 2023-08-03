@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationToCreate {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
-    #[doc(hidden)]
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct DestinationToCreate {
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
     /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DestinationToCreate {

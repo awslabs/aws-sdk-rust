@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelOptions {
     /// <p>Determines whether or not the label is visible.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The font configuration of the label.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The text for the label.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
 }
 impl LabelOptions {

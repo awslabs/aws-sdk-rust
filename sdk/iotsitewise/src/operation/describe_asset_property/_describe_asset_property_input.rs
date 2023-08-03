@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetPropertyInput {

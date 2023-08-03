@@ -22,15 +22,12 @@ pub struct FeaturizationConfig {
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
-    #[doc(hidden)]
     pub forecast_frequency: ::std::option::Option<::std::string::String>,
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    #[doc(hidden)]
     pub forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    #[doc(hidden)]
     pub featurizations: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>,
 }
 impl FeaturizationConfig {

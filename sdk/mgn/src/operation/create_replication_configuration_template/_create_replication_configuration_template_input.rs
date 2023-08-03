@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    #[doc(hidden)]
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateReplicationConfigurationTemplateInput {

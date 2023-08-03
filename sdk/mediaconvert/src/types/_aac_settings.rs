@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AacSettings {
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
-    #[doc(hidden)]
     pub audio_description_broadcaster_mix: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile, Bitrate control mode, and Sample rate. Default values depend on Bitrate control mode and Profile.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// AAC Profile.
-    #[doc(hidden)]
     pub codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     /// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
     /// Rate Control Mode.
-    #[doc(hidden)]
     pub rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
-    #[doc(hidden)]
     pub raw_format: ::std::option::Option<crate::types::AacRawFormat>,
     /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i32>,
     /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-    #[doc(hidden)]
     pub specification: ::std::option::Option<crate::types::AacSpecification>,
     /// VBR Quality Level - Only used if rate_control_mode is VBR.
-    #[doc(hidden)]
     pub vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
 impl AacSettings {

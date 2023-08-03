@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkParameters {
     /// <p>Host.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
-    #[doc(hidden)]
     pub port: i32,
 }
 impl SparkParameters {

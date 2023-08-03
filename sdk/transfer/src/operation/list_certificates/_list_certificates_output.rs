@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
     _request_id: Option<String>,
 }

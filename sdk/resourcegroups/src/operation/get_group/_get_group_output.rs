@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupOutput {
     /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }

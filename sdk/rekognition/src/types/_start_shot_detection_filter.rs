@@ -6,7 +6,6 @@
 pub struct StartShotDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
-    #[doc(hidden)]
     pub min_segment_confidence: ::std::option::Option<f32>,
 }
 impl StartShotDetectionFilter {

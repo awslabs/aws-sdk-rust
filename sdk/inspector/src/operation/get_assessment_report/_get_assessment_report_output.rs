@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReportStatus>,
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateOriginationIdentityInput {

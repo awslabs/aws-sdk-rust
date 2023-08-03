@@ -6,15 +6,12 @@
 pub struct ProxyConfiguration {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::string::String>,
 }
 impl ProxyConfiguration {

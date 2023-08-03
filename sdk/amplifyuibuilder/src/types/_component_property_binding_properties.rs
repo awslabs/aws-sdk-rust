@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentPropertyBindingProperties {
     /// <p>The component property to bind to the data field.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
     /// <p>The data field to bind the property to.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
 }
 impl ComponentPropertyBindingProperties {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePackageInput {

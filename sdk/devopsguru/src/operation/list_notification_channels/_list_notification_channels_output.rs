@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsOutput {
     /// <p> An array that contains the requested notification channels. </p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

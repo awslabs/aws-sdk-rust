@@ -10,7 +10,6 @@ pub struct CreatePlaceIndexInput {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -24,17 +23,13 @@ pub struct CreatePlaceIndexInput {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data storage option requesting Places.</p>
-    #[doc(hidden)]
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -47,7 +42,6 @@ pub struct CreatePlaceIndexInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlaceIndexInput {

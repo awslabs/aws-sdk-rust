@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentEvent {
     /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::DeploymentEventType>,
     /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
-    #[doc(hidden)]
     pub triggered_by: ::std::option::Option<crate::types::TriggeredBy>,
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
-    #[doc(hidden)]
     pub action_invocations: ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>,
     /// <p>The date and time the event occurred.</p>
-    #[doc(hidden)]
     pub occurred_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentEvent {

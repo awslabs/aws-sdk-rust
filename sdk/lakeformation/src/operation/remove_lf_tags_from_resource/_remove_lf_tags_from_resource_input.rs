@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveLfTagsFromResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The LF-tags to be removed from the resource.</p>
-    #[doc(hidden)]
     pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
 }
 impl RemoveLfTagsFromResourceInput {

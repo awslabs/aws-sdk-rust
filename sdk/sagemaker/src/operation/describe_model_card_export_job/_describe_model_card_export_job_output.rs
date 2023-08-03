@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelCardExportJobOutput {
     /// <p>The name of the model card export job to describe.</p>
-    #[doc(hidden)]
     pub model_card_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    #[doc(hidden)]
     pub model_card_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
@@ -15,28 +13,20 @@ pub struct DescribeModelCardExportJobOutput {
     /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
     /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
     /// <p>The name of the model card that the model export job exports.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card that the model export job exports.</p>
-    #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The export output details for the model card.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::ModelCardExportOutputConfig>,
     /// <p>The date and time that the model export job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the model export job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason if the model export job fails.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The exported model card artifacts.</p>
-    #[doc(hidden)]
     pub export_artifacts: ::std::option::Option<crate::types::ModelCardExportArtifacts>,
     _request_id: Option<String>,
 }

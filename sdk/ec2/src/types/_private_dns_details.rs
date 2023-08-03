@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsDetails {
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
 }
 impl PrivateDnsDetails {

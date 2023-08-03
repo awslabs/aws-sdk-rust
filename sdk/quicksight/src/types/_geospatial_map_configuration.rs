@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::GeospatialMapFieldWells>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The window options of the geospatial map.</p>
-    #[doc(hidden)]
     pub window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     /// <p>The map style options of the geospatial map.</p>
-    #[doc(hidden)]
     pub map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
     /// <p>The point style options of the geospatial map.</p>
-    #[doc(hidden)]
     pub point_style_options: ::std::option::Option<crate::types::GeospatialPointStyleOptions>,
     /// <p>The visual display options for the visual palette.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl GeospatialMapConfiguration {

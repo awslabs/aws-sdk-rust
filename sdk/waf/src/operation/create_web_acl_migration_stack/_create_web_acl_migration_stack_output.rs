@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackOutput {
     /// <p>The URL of the template created in Amazon S3. </p>
-    #[doc(hidden)]
     pub s3_object_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

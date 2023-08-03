@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayGroupInput {
     /// <p>The ARN of the gateway group to update.</p>
-    #[doc(hidden)]
     pub gateway_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the gateway group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the gateway group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayGroupInput {

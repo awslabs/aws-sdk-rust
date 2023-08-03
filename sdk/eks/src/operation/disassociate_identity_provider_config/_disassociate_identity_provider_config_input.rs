@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigInput {
     /// <p>The name of the cluster to disassociate an identity provider from.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing an identity provider configuration.</p>
-    #[doc(hidden)]
     pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIdentityProviderConfigInput {

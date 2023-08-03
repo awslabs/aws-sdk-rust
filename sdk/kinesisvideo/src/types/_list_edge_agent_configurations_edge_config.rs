@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsEdgeConfig {
     /// <p>The name of the stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the stream first created the edge config.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the stream last updated the edge config.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current sync status of the stream's edge configuration.</p>
-    #[doc(hidden)]
     pub sync_status: ::std::option::Option<crate::types::SyncStatus>,
     /// <p>A description of the generated failure status.</p>
-    #[doc(hidden)]
     pub failed_status_details: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    #[doc(hidden)]
     pub edge_config: ::std::option::Option<crate::types::EdgeConfig>,
 }
 impl ListEdgeAgentConfigurationsEdgeConfig {

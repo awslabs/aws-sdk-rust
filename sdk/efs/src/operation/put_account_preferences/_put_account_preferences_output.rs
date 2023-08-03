@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountPreferencesOutput {
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub resource_id_preference: ::std::option::Option<crate::types::ResourceIdPreference>,
     _request_id: Option<String>,
 }

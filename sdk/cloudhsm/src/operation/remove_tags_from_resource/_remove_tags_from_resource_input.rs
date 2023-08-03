@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    #[doc(hidden)]
     pub tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {

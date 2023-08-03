@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationInfo {
     /// <p>The ID of the API request that triggered this operation.</p>
-    #[doc(hidden)]
     pub client_request_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the operation was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the operation finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the error if the operation fails.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>ARN of the cluster operation.</p>
-    #[doc(hidden)]
     pub operation_arn: ::std::option::Option<::std::string::String>,
     /// <p>State of the cluster operation.</p>
-    #[doc(hidden)]
     pub operation_state: ::std::option::Option<::std::string::String>,
     /// <p>Steps completed during the operation.</p>
-    #[doc(hidden)]
     pub operation_steps: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>,
     /// <p>Type of the cluster operation.</p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about cluster attributes before a cluster is updated.</p>
-    #[doc(hidden)]
     pub source_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     /// <p>Information about cluster attributes after a cluster is updated.</p>
-    #[doc(hidden)]
     pub target_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
-    #[doc(hidden)]
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationInfo {

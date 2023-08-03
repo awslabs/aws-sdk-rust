@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseError {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
     /// <p>The error message, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ResponseError {

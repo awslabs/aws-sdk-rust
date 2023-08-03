@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document associated with the version being deleted.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the version being deleted.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Deletes all versions of a document prior to the current version.</p>
-    #[doc(hidden)]
     pub delete_prior_versions: ::std::option::Option<bool>,
 }
 impl DeleteDocumentVersionInput {

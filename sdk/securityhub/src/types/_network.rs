@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Network {
     /// <p>The direction of network traffic associated with a finding.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::NetworkDirection>,
     /// <p>The protocol of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The range of open ports that is present on the network.</p>
-    #[doc(hidden)]
     pub open_port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub source_ip_v4: ::std::option::Option<::std::string::String>,
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub source_ip_v6: ::std::option::Option<::std::string::String>,
     /// <p>The source port of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub source_port: i32,
     /// <p>The source domain of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub source_domain: ::std::option::Option<::std::string::String>,
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub source_mac: ::std::option::Option<::std::string::String>,
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub destination_ip_v4: ::std::option::Option<::std::string::String>,
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub destination_ip_v6: ::std::option::Option<::std::string::String>,
     /// <p>The destination port of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub destination_port: i32,
     /// <p>The destination domain of network-related information about a finding.</p>
-    #[doc(hidden)]
     pub destination_domain: ::std::option::Option<::std::string::String>,
 }
 impl Network {

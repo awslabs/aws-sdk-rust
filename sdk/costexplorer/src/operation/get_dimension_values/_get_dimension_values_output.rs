@@ -43,16 +43,12 @@ pub struct GetDimensionValuesOutput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
-    #[doc(hidden)]
     pub return_size: ::std::option::Option<i32>,
     /// <p>The total number of search results.</p>
-    #[doc(hidden)]
     pub total_size: ::std::option::Option<i32>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

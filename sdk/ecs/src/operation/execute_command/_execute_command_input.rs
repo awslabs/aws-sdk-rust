@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandInput {
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<::std::string::String>,
     /// <p>The command to run on the container.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::string::String>,
     /// <p>Use this flag to run your command in interactive mode.</p>
-    #[doc(hidden)]
     pub interactive: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteCommandInput {

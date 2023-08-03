@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailChannelResponse {
     /// <p>The unique identifier for the application that the email channel applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that's applied to messages that are sent through the channel.</p>
-    #[doc(hidden)]
     pub configuration_set: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the email channel was enabled.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the email channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The verified email address that email is sent from when you send email through the channel.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub has_credential: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's used when you send email through the channel.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the email channel is archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>The user who last modified the email channel.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the email channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of emails that can be sent through the channel each second.</p>
-    #[doc(hidden)]
     pub messages_per_second: ::std::option::Option<i32>,
     /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the email channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl EmailChannelResponse {

@@ -9,10 +9,8 @@ pub struct Target {
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    #[doc(hidden)]
     pub target_address: ::std::option::Option<::std::string::String>,
 }
 impl Target {

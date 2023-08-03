@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldConfig {
     /// <p>The label for the field.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the field position.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::FieldPosition>,
     /// <p>Specifies whether to hide a field.</p>
-    #[doc(hidden)]
     pub excluded: ::std::option::Option<bool>,
     /// <p>Describes the configuration for the default input value to display for a field.</p>
-    #[doc(hidden)]
     pub input_type: ::std::option::Option<crate::types::FieldInputConfig>,
     /// <p>The validations to perform on the value in the field.</p>
-    #[doc(hidden)]
     pub validations: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
 }
 impl FieldConfig {

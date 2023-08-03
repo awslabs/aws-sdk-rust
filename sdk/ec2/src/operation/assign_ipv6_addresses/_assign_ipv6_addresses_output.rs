@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignIpv6AddressesOutput {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    #[doc(hidden)]
     pub assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

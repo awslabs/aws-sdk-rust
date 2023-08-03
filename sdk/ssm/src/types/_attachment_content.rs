@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentContent {
     /// <p>The name of an attachment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The size of an attachment in bytes.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>The cryptographic hash value of the document content.</p>
-    #[doc(hidden)]
     pub hash: ::std::option::Option<::std::string::String>,
     /// <p>The hash algorithm used to calculate the hash value.</p>
-    #[doc(hidden)]
     pub hash_type: ::std::option::Option<crate::types::AttachmentHashType>,
     /// <p>The URL location of the attachment content.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentContent {

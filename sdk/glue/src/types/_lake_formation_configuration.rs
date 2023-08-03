@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LakeFormationConfiguration {
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
-    #[doc(hidden)]
     pub use_lake_formation_credentials: ::std::option::Option<bool>,
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl LakeFormationConfiguration {

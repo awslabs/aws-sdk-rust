@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationCustomRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The lambda function ARN.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
@@ -16,27 +14,20 @@ pub struct OrganizationCustomRuleMetadata {
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// <li> <p> <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub organization_config_rule_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerType>>,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_types_scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_id_scope: ::std::option::Option<::std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
-    #[doc(hidden)]
     pub tag_key_scope: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). </p>
-    #[doc(hidden)]
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationCustomRuleMetadata {

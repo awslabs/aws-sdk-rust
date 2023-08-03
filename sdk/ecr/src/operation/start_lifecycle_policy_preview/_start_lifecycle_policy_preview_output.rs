@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartLifecyclePolicyPreviewOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON repository policy text.</p>
-    #[doc(hidden)]
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The status of the lifecycle policy preview request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
     _request_id: Option<String>,
 }

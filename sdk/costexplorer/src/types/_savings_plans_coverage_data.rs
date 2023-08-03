@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansCoverageData {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-    #[doc(hidden)]
     pub spend_covered_by_savings_plans: ::std::option::Option<::std::string::String>,
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
-    #[doc(hidden)]
     pub on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
-    #[doc(hidden)]
     pub total_cost: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
-    #[doc(hidden)]
     pub coverage_percentage: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansCoverageData {

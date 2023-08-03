@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTagOptionInput {
     /// <p>The TagOption identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The updated value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The updated active state.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl UpdateTagOptionInput {

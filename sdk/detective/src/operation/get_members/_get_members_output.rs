@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMembersOutput {
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    #[doc(hidden)]
     pub member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

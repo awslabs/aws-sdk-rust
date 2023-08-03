@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rotation {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
-    #[doc(hidden)]
     pub rotation_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rotation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    #[doc(hidden)]
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the rotation becomes active.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
 }
 impl Rotation {

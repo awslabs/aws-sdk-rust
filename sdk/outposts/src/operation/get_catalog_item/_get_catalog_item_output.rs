@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCatalogItemOutput {
     /// <p>Information about this catalog item.</p>
-    #[doc(hidden)]
     pub catalog_item: ::std::option::Option<crate::types::CatalogItem>,
     _request_id: Option<String>,
 }

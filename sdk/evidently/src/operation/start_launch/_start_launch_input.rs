@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartLaunchInput {
     /// <p>The name or ARN of the project that contains the launch to start.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch to start.</p>
-    #[doc(hidden)]
     pub launch: ::std::option::Option<::std::string::String>,
 }
 impl StartLaunchInput {

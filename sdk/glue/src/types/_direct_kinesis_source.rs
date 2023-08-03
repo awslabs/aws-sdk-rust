@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectKinesisSource {
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time to spend processing each micro batch.</p>
-    #[doc(hidden)]
     pub window_size: ::std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
-    #[doc(hidden)]
     pub detect_schema: ::std::option::Option<bool>,
     /// <p>Additional options for the Kinesis streaming data source.</p>
-    #[doc(hidden)]
     pub streaming_options: ::std::option::Option<crate::types::KinesisStreamingSourceOptions>,
     /// <p>Additional options for data preview.</p>
-    #[doc(hidden)]
     pub data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl DirectKinesisSource {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetImportInputLocation {
     /// <p>The name of the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
 }
 impl TestSetImportInputLocation {

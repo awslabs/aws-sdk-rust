@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenNodeArg {
     /// <p>The name of the argument or property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the argument or property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>True if the value is used as a parameter.</p>
-    #[doc(hidden)]
     pub param: bool,
 }
 impl CodeGenNodeArg {

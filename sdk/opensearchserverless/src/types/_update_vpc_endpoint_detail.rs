@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the endpoint update process.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
     /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp of when the endpoint was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl UpdateVpcEndpointDetail {

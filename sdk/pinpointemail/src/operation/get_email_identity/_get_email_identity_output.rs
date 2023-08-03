@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    #[doc(hidden)]
     pub feedback_forwarding_status: bool,
     /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
-    #[doc(hidden)]
     pub dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    #[doc(hidden)]
     pub mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

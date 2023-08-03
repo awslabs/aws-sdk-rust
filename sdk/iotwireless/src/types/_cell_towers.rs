@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CellTowers {
     /// <p>GSM object information.</p>
-    #[doc(hidden)]
     pub gsm: ::std::option::Option<::std::vec::Vec<crate::types::GsmObj>>,
     /// <p>WCDMA object information.</p>
-    #[doc(hidden)]
     pub wcdma: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>>,
     /// <p>TD-SCDMA object information.</p>
-    #[doc(hidden)]
     pub tdscdma: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaObj>>,
     /// <p>LTE object information.</p>
-    #[doc(hidden)]
     pub lte: ::std::option::Option<::std::vec::Vec<crate::types::LteObj>>,
     /// <p>CDMA object information.</p>
-    #[doc(hidden)]
     pub cdma: ::std::option::Option<::std::vec::Vec<crate::types::CdmaObj>>,
 }
 impl CellTowers {

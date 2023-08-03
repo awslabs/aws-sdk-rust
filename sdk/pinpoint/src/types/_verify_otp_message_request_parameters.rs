@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyOtpMessageRequestParameters {
     /// <p>The destination identity to send OTP to.</p>
-    #[doc(hidden)]
     pub destination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The OTP the end user provided for verification.</p>
-    #[doc(hidden)]
     pub otp: ::std::option::Option<::std::string::String>,
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
 }
 impl VerifyOtpMessageRequestParameters {

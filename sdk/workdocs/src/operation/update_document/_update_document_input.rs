@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent folder.</p>
-    #[doc(hidden)]
     pub parent_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
-    #[doc(hidden)]
     pub resource_state: ::std::option::Option<crate::types::ResourceStateType>,
 }
 impl UpdateDocumentInput {

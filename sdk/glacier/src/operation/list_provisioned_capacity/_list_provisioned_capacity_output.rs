@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
-    #[doc(hidden)]
     pub provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,
 }

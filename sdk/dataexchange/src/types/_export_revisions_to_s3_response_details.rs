@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportRevisionsToS3ResponseDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Encryption configuration of the export job.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    #[doc(hidden)]
     pub revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
-    #[doc(hidden)]
     pub event_action_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExportRevisionsToS3ResponseDetails {

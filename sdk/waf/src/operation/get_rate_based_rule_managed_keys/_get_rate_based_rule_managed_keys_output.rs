@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-    #[doc(hidden)]
     pub managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A null value and not currently used.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

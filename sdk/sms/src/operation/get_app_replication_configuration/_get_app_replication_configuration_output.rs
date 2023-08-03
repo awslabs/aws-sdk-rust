@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppReplicationConfigurationOutput {
     /// <p>The replication configurations associated with server groups in this application.</p>
-    #[doc(hidden)]
     pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     _request_id: Option<String>,
 }

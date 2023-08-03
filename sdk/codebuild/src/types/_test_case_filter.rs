@@ -12,10 +12,8 @@ pub struct TestCaseFilter {
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// <li> <p> <code>UNKNOWN</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
 }
 impl TestCaseFilter {

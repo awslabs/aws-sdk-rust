@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetAdvisorLsaAnalysisResponse {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub lsa_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl FleetAdvisorLsaAnalysisResponse {

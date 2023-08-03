@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamDiscoveredAccount {
     /// <p>The account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
-    #[doc(hidden)]
     pub discovery_region: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::IpamDiscoveryFailureReason>,
     /// <p>The last attempted resource discovery time.</p>
-    #[doc(hidden)]
     pub last_attempted_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last successful resource discovery time.</p>
-    #[doc(hidden)]
     pub last_successful_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpamDiscoveredAccount {

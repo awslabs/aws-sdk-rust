@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersV2Output {
     /// <p>Information on each of the MSK clusters in the response.</p>
-    #[doc(hidden)]
     pub cluster_info_list: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

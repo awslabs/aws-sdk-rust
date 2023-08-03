@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIdentityProviderConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::Update>,
     /// <p>The tags for the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatusEvent {
     /// <p>The ID of the event.</p>
-    #[doc(hidden)]
     pub instance_event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::EventCode>,
     /// <p>A description of the event.</p>
     /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The latest scheduled end time for the event.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The earliest scheduled start time for the event.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deadline for starting the event.</p>
-    #[doc(hidden)]
     pub not_before_deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InstanceStatusEvent {

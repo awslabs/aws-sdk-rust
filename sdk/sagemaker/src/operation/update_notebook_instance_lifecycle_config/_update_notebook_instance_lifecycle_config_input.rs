@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    #[doc(hidden)]
     pub on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    #[doc(hidden)]
     pub on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
 }
 impl UpdateNotebookInstanceLifecycleConfigInput {

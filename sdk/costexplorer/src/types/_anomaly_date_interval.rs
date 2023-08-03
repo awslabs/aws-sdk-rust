@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The last date an anomaly was observed. </p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyDateInterval {

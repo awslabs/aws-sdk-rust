@@ -13,7 +13,6 @@ pub struct GetEventSelectorsInput {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    #[doc(hidden)]
     pub trail_name: ::std::option::Option<::std::string::String>,
 }
 impl GetEventSelectorsInput {

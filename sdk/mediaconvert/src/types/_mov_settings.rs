@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MovSettings {
     /// When enabled, include 'clap' atom if appropriate for the video output settings.
-    #[doc(hidden)]
     pub clap_atom: ::std::option::Option<crate::types::MovClapAtom>,
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
-    #[doc(hidden)]
     pub cslg_atom: ::std::option::Option<crate::types::MovCslgAtom>,
     /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
-    #[doc(hidden)]
     pub mpeg2_four_cc_control: ::std::option::Option<crate::types::MovMpeg2FourCcControl>,
     /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
-    #[doc(hidden)]
     pub padding_control: ::std::option::Option<crate::types::MovPaddingControl>,
     /// Always keep the default value (SELF_CONTAINED) for this setting.
-    #[doc(hidden)]
     pub reference: ::std::option::Option<crate::types::MovReference>,
 }
 impl MovSettings {

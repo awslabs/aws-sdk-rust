@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicNumericEqualityFilter {
     /// <p>The constant used in a numeric equality filter.</p>
-    #[doc(hidden)]
     pub constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic. Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
 }
 impl TopicNumericEqualityFilter {

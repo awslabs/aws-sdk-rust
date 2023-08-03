@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    #[doc(hidden)]
     pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
-    #[doc(hidden)]
     pub logins_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnlinkIdentityInput {

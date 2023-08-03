@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultServerSideEncryption {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
-    #[doc(hidden)]
     pub kms_master_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl DefaultServerSideEncryption {

@@ -5,7 +5,6 @@
 pub struct CancelRotateSecretInput {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelRotateSecretInput {

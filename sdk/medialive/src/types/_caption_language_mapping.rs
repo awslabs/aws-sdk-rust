@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionLanguageMapping {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
-    #[doc(hidden)]
     pub caption_channel: ::std::option::Option<i32>,
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// Textual description of language
-    #[doc(hidden)]
     pub language_description: ::std::option::Option<::std::string::String>,
 }
 impl CaptionLanguageMapping {

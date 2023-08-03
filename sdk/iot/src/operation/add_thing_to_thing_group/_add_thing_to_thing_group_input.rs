@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddThingToThingGroupInput {
     /// <p>The name of the group to which you are adding a thing.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the group to which you are adding a thing.</p>
-    #[doc(hidden)]
     pub thing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing to add to a group.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to add to a group.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
-    #[doc(hidden)]
     pub override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl AddThingToThingGroupInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeGroup {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the primary node in this node group (shard).</p>
-    #[doc(hidden)]
     pub primary_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
-    #[doc(hidden)]
     pub reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The keyspace for this node group (shard).</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    #[doc(hidden)]
     pub node_group_members: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>>,
 }
 impl NodeGroup {

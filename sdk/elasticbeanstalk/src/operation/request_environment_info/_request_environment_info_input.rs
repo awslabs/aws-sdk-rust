@@ -7,15 +7,12 @@ pub struct RequestEnvironmentInfoInput {
     /// <p>The ID of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of information to request.</p>
-    #[doc(hidden)]
     pub info_type: ::std::option::Option<crate::types::EnvironmentInfoType>,
 }
 impl RequestEnvironmentInfoInput {

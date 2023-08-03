@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeContentDescription {
     /// <p>The text-format code</p>
-    #[doc(hidden)]
     pub text_content: ::std::option::Option<::std::string::String>,
     /// <p>The checksum that can be used to validate zip-format code.</p>
-    #[doc(hidden)]
     pub code_md5: ::std::option::Option<::std::string::String>,
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
-    #[doc(hidden)]
     pub code_size: ::std::option::Option<i64>,
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_application_code_location_description: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
 }
 impl CodeContentDescription {

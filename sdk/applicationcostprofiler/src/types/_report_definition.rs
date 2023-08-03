@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The ID of the report.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>Description of the report</p>
-    #[doc(hidden)]
     pub report_description: ::std::option::Option<::std::string::String>,
     /// <p>The cadence at which the report is generated.</p>
-    #[doc(hidden)]
     pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     /// <p>The format used for the generated reports.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
-    #[doc(hidden)]
     pub destination_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportDefinition {

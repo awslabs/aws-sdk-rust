@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTypeInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl CreateTypeInput {

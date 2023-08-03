@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioMembership {
     /// <p>The ID of the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The persona.</p>
-    #[doc(hidden)]
     pub persona: ::std::option::Option<crate::types::StudioPersona>,
     /// <p>The principal ID.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
-    #[doc(hidden)]
     pub sid: ::std::option::Option<::std::string::String>,
 }
 impl StudioMembership {

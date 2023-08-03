@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>Provides the identifier for the source of the event.</p>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the source type for this event.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>Provides the text of this event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the category for the event.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the date and time of the event.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl Event {

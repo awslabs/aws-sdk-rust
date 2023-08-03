@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayOutput {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
-    #[doc(hidden)]
     pub gateway: ::std::option::Option<crate::types::GatewayDetails>,
     _request_id: Option<String>,
 }

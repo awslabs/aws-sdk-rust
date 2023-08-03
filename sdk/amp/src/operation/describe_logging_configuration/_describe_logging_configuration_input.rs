@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoggingConfigurationInput {

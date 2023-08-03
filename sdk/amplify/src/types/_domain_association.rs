@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainAssociation {
     /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
-    #[doc(hidden)]
     pub domain_association_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> Enables the automated creation of subdomains for branches. </p>
-    #[doc(hidden)]
     pub enable_auto_sub_domain: ::std::option::Option<bool>,
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
-    #[doc(hidden)]
     pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    #[doc(hidden)]
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the domain association. </p>
-    #[doc(hidden)]
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p> The reason for the current status of the domain association. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p> The DNS record for certificate verification. </p>
-    #[doc(hidden)]
     pub certificate_verification_dns_record: ::std::option::Option<::std::string::String>,
     /// <p> The subdomains for the domain association. </p>
-    #[doc(hidden)]
     pub sub_domains: ::std::option::Option<::std::vec::Vec<crate::types::SubDomain>>,
 }
 impl DomainAssociation {

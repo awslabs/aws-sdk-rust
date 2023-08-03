@@ -6,19 +6,14 @@ pub struct GetLatestConfigurationOutput {
     /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub next_poll_configuration_token: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
-    #[doc(hidden)]
     pub next_poll_interval_in_seconds: i32,
     /// <p>A standard MIME type describing the format of the configuration content.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

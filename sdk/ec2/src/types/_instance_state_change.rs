@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStateChange {
     /// <p>The current state of the instance.</p>
-    #[doc(hidden)]
     pub current_state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The previous state of the instance.</p>
-    #[doc(hidden)]
     pub previous_state: ::std::option::Option<crate::types::InstanceState>,
 }
 impl InstanceStateChange {

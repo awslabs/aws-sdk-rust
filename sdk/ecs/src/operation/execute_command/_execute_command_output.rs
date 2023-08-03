@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    #[doc(hidden)]
     pub container_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
-    #[doc(hidden)]
     pub interactive: bool,
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<crate::types::Session>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

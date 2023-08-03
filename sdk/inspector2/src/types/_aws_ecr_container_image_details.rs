@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
-    #[doc(hidden)]
     pub pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The image author of the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The image hash of the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub image_hash: ::std::option::Option<::std::string::String>,
     /// <p>The registry for the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub registry: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetails {

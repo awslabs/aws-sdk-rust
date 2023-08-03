@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePublisherOutput {
     /// <p>The ID of the extension publisher.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-    #[doc(hidden)]
     pub publisher_status: ::std::option::Option<crate::types::PublisherStatus>,
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    #[doc(hidden)]
     pub publisher_profile: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallConfigInput {
     /// <p>The ID of the VPC that the configuration is for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct UpdateFirewallConfigInput {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    #[doc(hidden)]
     pub firewall_fail_open: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
 }
 impl UpdateFirewallConfigInput {

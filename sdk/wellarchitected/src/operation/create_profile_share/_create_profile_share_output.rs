@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileShareOutput {
     /// <p>The ID associated with the share.</p>
-    #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

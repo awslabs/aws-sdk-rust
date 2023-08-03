@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayersListItem {
     /// <p>The name of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    #[doc(hidden)]
     pub layer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The newest version of the layer.</p>
-    #[doc(hidden)]
     pub latest_matching_version: ::std::option::Option<crate::types::LayerVersionsListItem>,
 }
 impl LayersListItem {

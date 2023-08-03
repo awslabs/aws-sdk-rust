@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
-    #[doc(hidden)]
     pub datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,
 }

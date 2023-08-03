@@ -9,19 +9,16 @@ pub struct DataViewDestinationTypeParams {
     /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<::std::string::String>,
     /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
     /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub s3_destination_export_file_format: ::std::option::Option<crate::types::ExportFileFormat>,
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
     /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
-    #[doc(hidden)]
     pub s3_destination_export_file_format_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataViewDestinationTypeParams {

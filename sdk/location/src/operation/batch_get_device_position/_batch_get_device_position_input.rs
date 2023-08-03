@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDevicePositionInput {

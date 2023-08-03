@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFacesByImageOutput {
     /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
-    #[doc(hidden)]
     pub searched_face_bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
-    #[doc(hidden)]
     pub searched_face_confidence: ::std::option::Option<f32>,
     /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
-    #[doc(hidden)]
     pub face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

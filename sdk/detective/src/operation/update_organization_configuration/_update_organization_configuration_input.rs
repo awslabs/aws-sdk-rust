@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInput {

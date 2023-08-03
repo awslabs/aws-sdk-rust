@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSettings {
     /// <p>The ARN of the network settings.</p>
-    #[doc(hidden)]
     pub network_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC that streaming instances will connect to.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more security groups used to control access from streaming instances to your VPC. </p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkSettings {

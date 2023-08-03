@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportKeyInput {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
-    #[doc(hidden)]
     pub key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub export_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExportKeyInput {

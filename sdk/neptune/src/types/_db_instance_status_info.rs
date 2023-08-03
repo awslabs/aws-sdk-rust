@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
-    #[doc(hidden)]
     pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
-    #[doc(hidden)]
     pub normal: bool,
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceStatusInfo {

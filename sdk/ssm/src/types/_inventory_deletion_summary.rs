@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
-    #[doc(hidden)]
     pub total_count: i32,
     /// <p>Remaining number of items to delete.</p>
-    #[doc(hidden)]
     pub remaining_count: i32,
     /// <p>A list of counts and versions for deleted items.</p>
-    #[doc(hidden)]
     pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
 }
 impl InventoryDeletionSummary {

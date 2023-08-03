@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_delivery: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
 }
 impl PutLoggingOptionsInput {

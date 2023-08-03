@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceEventWindowOutput {
     /// <p>The state of the event window.</p>
-    #[doc(hidden)]
     pub instance_event_window_state: ::std::option::Option<crate::types::InstanceEventWindowStateChange>,
     _request_id: Option<String>,
 }

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
-    #[doc(hidden)]
     pub ops_center_enabled: ::std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
-    #[doc(hidden)]
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    #[doc(hidden)]
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
-    #[doc(hidden)]
     pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
-    #[doc(hidden)]
     pub auto_create: ::std::option::Option<bool>,
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
-    #[doc(hidden)]
     pub grouping_type: ::std::option::Option<crate::types::GroupingType>,
 }
 impl CreateApplicationInput {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
-    #[doc(hidden)]
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the flow definition. Valid values are listed below.</p>
-    #[doc(hidden)]
     pub flow_definition_status: ::std::option::Option<crate::types::FlowDefinitionStatus>,
     /// <p>The timestamp when the flow definition was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Container for configuring the source of human task requests. Used to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    #[doc(hidden)]
     pub human_loop_request_source: ::std::option::Option<crate::types::HumanLoopRequestSource>,
     /// <p>An object containing information about what triggers a human review workflow.</p>
-    #[doc(hidden)]
     pub human_loop_activation_config: ::std::option::Option<crate::types::HumanLoopActivationConfig>,
     /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
-    #[doc(hidden)]
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     /// <p>An object containing information about the output file.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::FlowDefinitionOutputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason your flow definition failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

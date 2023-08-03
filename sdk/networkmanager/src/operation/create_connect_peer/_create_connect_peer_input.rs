@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
-    #[doc(hidden)]
     pub connect_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>A Connect peer core network address.</p>
-    #[doc(hidden)]
     pub core_network_address: ::std::option::Option<::std::string::String>,
     /// <p>The Connect peer address.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The Connect peer BGP options.</p>
-    #[doc(hidden)]
     pub bgp_options: ::std::option::Option<crate::types::BgpOptions>,
     /// <p>The inside IP addresses used for BGP peering.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags associated with the peer request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectPeerInput {

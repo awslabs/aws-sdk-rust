@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransactionInput {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction occurred.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
 }
 impl GetTransactionInput {

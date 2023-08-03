@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }

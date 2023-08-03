@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGroundStationAgentEndpoint {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The egress address of AgentEndpoint.</p>
-    #[doc(hidden)]
     pub egress_address: ::std::option::Option<crate::types::ConnectionDetails>,
     /// <p>The ingress address of AgentEndpoint.</p>
-    #[doc(hidden)]
     pub ingress_address: ::std::option::Option<crate::types::RangedConnectionDetails>,
     /// <p>The status of AgentEndpoint.</p>
-    #[doc(hidden)]
     pub agent_status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>The results of the audit.</p>
-    #[doc(hidden)]
     pub audit_results: ::std::option::Option<crate::types::AuditResults>,
 }
 impl AwsGroundStationAgentEndpoint {

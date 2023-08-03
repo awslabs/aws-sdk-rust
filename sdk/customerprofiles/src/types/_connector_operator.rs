@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorOperator {
     /// <p>The operation to be performed on the provided Marketo source fields.</p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoConnectorOperator>,
     /// <p>The operation to be performed on the provided Amazon S3 source fields.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3ConnectorOperator>,
     /// <p>The operation to be performed on the provided Salesforce source fields.</p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceConnectorOperator>,
     /// <p>The operation to be performed on the provided ServiceNow source fields.</p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowConnectorOperator>,
     /// <p>The operation to be performed on the provided Zendesk source fields.</p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskConnectorOperator>,
 }
 impl ConnectorOperator {

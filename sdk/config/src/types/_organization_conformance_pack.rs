@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConformancePack {
     /// <p>The name you assign to an organization conformance pack.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    #[doc(hidden)]
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    #[doc(hidden)]
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Last time when organization conformation pack was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePack {

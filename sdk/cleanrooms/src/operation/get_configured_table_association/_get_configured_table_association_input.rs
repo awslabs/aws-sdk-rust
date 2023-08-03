@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfiguredTableAssociationInput {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    #[doc(hidden)]
     pub configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetConfiguredTableAssociationInput {

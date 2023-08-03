@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    #[doc(hidden)]
     pub account_enrollment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
     /// <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

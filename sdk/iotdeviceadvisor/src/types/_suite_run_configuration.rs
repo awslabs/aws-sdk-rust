@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuiteRunConfiguration {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    #[doc(hidden)]
     pub primary_device: ::std::option::Option<crate::types::DeviceUnderTest>,
     /// <p>Sets test case list.</p>
-    #[doc(hidden)]
     pub selected_test_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>TRUE if multiple test suites run in parallel.</p>
-    #[doc(hidden)]
     pub parallel_run: bool,
 }
 impl SuiteRunConfiguration {

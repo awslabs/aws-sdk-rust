@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
-    #[doc(hidden)]
     pub domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     /// <p>Contains result of DryRun. </p>
-    #[doc(hidden)]
     pub dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
     _request_id: Option<String>,
 }

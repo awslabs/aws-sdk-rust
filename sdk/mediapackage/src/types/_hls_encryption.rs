@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    #[doc(hidden)]
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// The encryption method to use.
-    #[doc(hidden)]
     pub encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
     /// Interval (in seconds) between each encryption key rotation.
-    #[doc(hidden)]
     pub key_rotation_interval_seconds: ::std::option::Option<i32>,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
-    #[doc(hidden)]
     pub repeat_ext_x_key: ::std::option::Option<bool>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl HlsEncryption {

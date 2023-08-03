@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkerOutput {
     /// Full ARN of the worker.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Filters access by the workers identifier
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Timestamp at which the resource was last updated.
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Site ARN.
-    #[doc(hidden)]
     pub site: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

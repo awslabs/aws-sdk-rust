@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     _request_id: Option<String>,
 }

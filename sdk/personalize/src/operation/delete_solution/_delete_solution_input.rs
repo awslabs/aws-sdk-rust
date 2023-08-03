@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSolutionInput {
     /// <p>The ARN of the solution to delete.</p>
-    #[doc(hidden)]
     pub solution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSolutionInput {

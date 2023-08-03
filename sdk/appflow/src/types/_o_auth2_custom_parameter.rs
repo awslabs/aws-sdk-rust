@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2CustomParameter {
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
-    #[doc(hidden)]
     pub is_sensitive_field: bool,
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    #[doc(hidden)]
     pub connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OAuth2CustomPropType>,
 }
 impl OAuth2CustomParameter {

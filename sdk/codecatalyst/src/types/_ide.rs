@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ide {
     /// <p>A link to the IDE runtime image.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IDE.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Ide {

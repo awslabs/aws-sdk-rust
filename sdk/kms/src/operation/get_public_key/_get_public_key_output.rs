@@ -4,33 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicKeyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The exported public key. </p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-    #[doc(hidden)]
     pub customer_master_key_spec: ::std::option::Option<crate::types::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
-    #[doc(hidden)]
     pub key_spec: ::std::option::Option<crate::types::KeySpec>,
     /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
     /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
-    #[doc(hidden)]
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
     /// <p>The encryption algorithms that KMS supports for this key. </p>
     /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
-    #[doc(hidden)]
     pub encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that KMS supports for this key.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
-    #[doc(hidden)]
     pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     _request_id: Option<String>,
 }

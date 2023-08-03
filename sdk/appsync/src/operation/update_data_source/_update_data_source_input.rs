@@ -4,41 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new description for the data source.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new data source type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new Amazon DynamoDB configuration.</p>
-    #[doc(hidden)]
     pub dynamodb_config: ::std::option::Option<crate::types::DynamodbDataSourceConfig>,
     /// <p>The new Lambda configuration.</p>
-    #[doc(hidden)]
     pub lambda_config: ::std::option::Option<crate::types::LambdaDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
-    #[doc(hidden)]
     pub elasticsearch_config: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
-    #[doc(hidden)]
     pub open_search_service_config: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     /// <p>The new HTTP endpoint configuration.</p>
-    #[doc(hidden)]
     pub http_config: ::std::option::Option<crate::types::HttpDataSourceConfig>,
     /// <p>The new relational database configuration.</p>
-    #[doc(hidden)]
     pub relational_database_config: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     /// <p>The new Amazon EventBridge settings.</p>
-    #[doc(hidden)]
     pub event_bridge_config: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl UpdateDataSourceInput {

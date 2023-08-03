@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
-    #[doc(hidden)]
     pub categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
-    #[doc(hidden)]
     pub continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
-    #[doc(hidden)]
     pub integer_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
 }
 impl ParameterRanges {

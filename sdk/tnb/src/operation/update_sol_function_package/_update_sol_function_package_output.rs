@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageOutput {
     /// <p>Operational state of the function package.</p>
-    #[doc(hidden)]
     pub operational_state: ::std::option::Option<crate::types::OperationalState>,
     _request_id: Option<String>,
 }

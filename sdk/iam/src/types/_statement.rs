@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>The identifier of the policy that was provided as an input.</p>
-    #[doc(hidden)]
     pub source_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the policy.</p>
-    #[doc(hidden)]
     pub source_policy_type: ::std::option::Option<crate::types::PolicySourceType>,
     /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM policy.</p>
-    #[doc(hidden)]
     pub start_position: ::std::option::Option<crate::types::Position>,
     /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
-    #[doc(hidden)]
     pub end_position: ::std::option::Option<crate::types::Position>,
 }
 impl Statement {

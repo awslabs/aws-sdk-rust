@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLabelOptions {
     /// <p>The font configuration of the axis label.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The text for the axis label.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>The options that indicate which field the label belongs to.</p>
-    #[doc(hidden)]
     pub apply_to: ::std::option::Option<crate::types::AxisLabelReferenceOptions>,
 }
 impl AxisLabelOptions {

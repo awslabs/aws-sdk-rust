@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle of the application. </p>
-    #[doc(hidden)]
     pub life_cycle: ::std::option::Option<::std::string::String>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    #[doc(hidden)]
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
-    #[doc(hidden)]
     pub ops_center_enabled: ::std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
-    #[doc(hidden)]
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub remarks: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
-    #[doc(hidden)]
     pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p> The method used by Application Insights to onboard your resources. </p>
-    #[doc(hidden)]
     pub discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
 }
 impl ApplicationInfo {

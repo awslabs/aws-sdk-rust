@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    #[doc(hidden)]
     pub unvalidated_json: ::std::option::Option<::std::string::String>,
 }
 impl DemodulationConfig {

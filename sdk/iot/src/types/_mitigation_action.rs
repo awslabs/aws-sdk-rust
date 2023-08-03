@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MitigationAction {
     /// <p>A user-friendly name for the mitigation action.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the mitigation action.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    #[doc(hidden)]
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
 }
 impl MitigationAction {

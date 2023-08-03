@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBranchOutput {
     /// <p>The name of the branch.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }

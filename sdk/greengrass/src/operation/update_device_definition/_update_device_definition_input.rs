@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceDefinitionInput {
     /// The ID of the device definition.
-    #[doc(hidden)]
     pub device_definition_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeviceDefinitionInput {

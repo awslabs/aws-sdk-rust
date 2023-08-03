@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current password of the Wi-Fi network.</p>
-    #[doc(hidden)]
     pub current_password: ::std::option::Option<::std::string::String>,
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    #[doc(hidden)]
     pub next_password: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    #[doc(hidden)]
     pub trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateNetworkProfileInput {

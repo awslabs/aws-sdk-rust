@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
-    #[doc(hidden)]
     pub app_instance_data_type: ::std::option::Option<crate::types::AppInstanceDataType>,
     /// <p>The resource ARN.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceStreamingConfiguration {

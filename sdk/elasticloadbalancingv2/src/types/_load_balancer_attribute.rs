@@ -34,10 +34,8 @@ pub struct LoadBalancerAttribute {
     /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerAttribute {

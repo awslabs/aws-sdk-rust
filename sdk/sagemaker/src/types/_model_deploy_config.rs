@@ -7,12 +7,10 @@ pub struct ModelDeployConfig {
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
-    #[doc(hidden)]
     pub auto_generate_endpoint_name: bool,
     /// <p>Specifies the endpoint name to use for a one-click Autopilot model deployment if the endpoint name is not generated automatically.</p> <note>
     /// <p>Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is thrown.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployConfig {

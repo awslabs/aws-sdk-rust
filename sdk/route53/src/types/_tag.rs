@@ -11,14 +11,12 @@ pub struct Tag {
     /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
     /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
     /// <ul>
     /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li>
     /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

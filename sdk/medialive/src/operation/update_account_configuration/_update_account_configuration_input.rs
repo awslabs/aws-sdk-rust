@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationInput {
     /// Placeholder documentation for AccountConfiguration
-    #[doc(hidden)]
     pub account_configuration: ::std::option::Option<crate::types::AccountConfiguration>,
 }
 impl UpdateAccountConfigurationInput {

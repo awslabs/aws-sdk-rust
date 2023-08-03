@@ -20,16 +20,13 @@ pub struct InstancesDistribution {
     /// <p>You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify <code>InstanceRequirements</code> and cannot be used for groups that do.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub on_demand_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
     /// <p>This number has the same unit of measurement as the group's desired capacity. If you change the default unit of measurement (number of instances) by specifying weighted capacity values in your launch template overrides list, or by changing the default desired capacity type setting of the group, you must specify this number using the same unit of measurement.</p>
     /// <p>Default: 0</p>
-    #[doc(hidden)]
     pub on_demand_base_capacity: ::std::option::Option<i32>,
     /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand Instances are used.</p>
     /// <p>Default: 100</p>
-    #[doc(hidden)]
     pub on_demand_percentage_above_base_capacity: ::std::option::Option<i32>,
     /// <p>The allocation strategy to apply to your Spot Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify.</p>
     /// <p>The following lists the valid values:</p>
@@ -59,17 +56,14 @@ pub struct InstancesDistribution {
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub spot_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: 2</p>
-    #[doc(hidden)]
     pub spot_instance_pools: ::std::option::Option<i32>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
-    #[doc(hidden)]
     pub spot_max_price: ::std::option::Option<::std::string::String>,
 }
 impl InstancesDistribution {

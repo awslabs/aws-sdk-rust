@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SshPublicKey {
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
-    #[doc(hidden)]
     pub date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    #[doc(hidden)]
     pub ssh_public_key_body: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SshPublicKey {

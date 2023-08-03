@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    #[doc(hidden)]
     pub scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2DeleteRouteAction {
     /// <p>A description of the DeleteRoute action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2DeleteRouteAction {

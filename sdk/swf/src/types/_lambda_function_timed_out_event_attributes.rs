@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The type of the timeout that caused this event.</p>
-    #[doc(hidden)]
     pub timeout_type: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>,
 }
 impl LambdaFunctionTimedOutEventAttributes {

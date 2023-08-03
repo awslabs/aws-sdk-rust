@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceOutput {
     /// The ARN of the flow that is associated with the VPC interface you removed.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    #[doc(hidden)]
     pub non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The name of the VPC interface that was removed.
-    #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

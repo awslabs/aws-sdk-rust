@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    #[doc(hidden)]
     pub geo_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGeoMatchSetInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsBlockDevice {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    #[doc(hidden)]
     pub volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<::std::string::String>,
 }
 impl EbsBlockDevice {

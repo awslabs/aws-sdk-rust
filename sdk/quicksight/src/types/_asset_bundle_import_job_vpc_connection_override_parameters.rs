@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobVpcConnectionOverrideParameters {
     /// <p>The ID of the VPC Connection to apply overrides to.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the VPC connection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of new subnet IDs for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A new security group ID for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
-    #[doc(hidden)]
     pub dns_resolvers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional override of the role ARN to be used by the VPC connection.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobVpcConnectionOverrideParameters {

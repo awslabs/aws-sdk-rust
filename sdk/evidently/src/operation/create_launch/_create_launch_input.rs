@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchInput {
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name for the new launch.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the launch.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    #[doc(hidden)]
     pub scheduled_splits_config: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    #[doc(hidden)]
     pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLaunchInput {

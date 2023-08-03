@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    #[doc(hidden)]
     pub session_type: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    #[doc(hidden)]
     pub execute_command_session_configuration: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfiguration {

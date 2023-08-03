@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatabaseInput {
     /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for the database.</p>
-    #[doc(hidden)]
     pub database_input: ::std::option::Option<crate::types::DatabaseInput>,
     /// <p>The tags you assign to the database.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatabaseInput {

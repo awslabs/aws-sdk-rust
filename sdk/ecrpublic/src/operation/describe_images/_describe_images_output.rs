@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    #[doc(hidden)]
     pub image_details: ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

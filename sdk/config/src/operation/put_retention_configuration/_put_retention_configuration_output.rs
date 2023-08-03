@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRetentionConfigurationOutput {
     /// <p>Returns a retention configuration object.</p>
-    #[doc(hidden)]
     pub retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     _request_id: Option<String>,
 }

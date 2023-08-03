@@ -7,7 +7,6 @@ pub struct CreateCompilationJobOutput {
     /// <ul>
     /// <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTask {
     /// <p>The ID of the export task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the export task.</p>
-    #[doc(hidden)]
     pub task_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group from which logs data was exported.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<i64>,
     /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<i64>,
     /// <p>The name of the S3 bucket to which the log data was exported.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
-    #[doc(hidden)]
     pub destination_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The status of the export task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExportTaskStatus>,
     /// <p>Execution information about the export task.</p>
-    #[doc(hidden)]
     pub execution_info: ::std::option::Option<crate::types::ExportTaskExecutionInfo>,
 }
 impl ExportTask {

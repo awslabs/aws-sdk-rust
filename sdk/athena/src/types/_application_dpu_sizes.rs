@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDpuSizes {
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
-    #[doc(hidden)]
     pub application_runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    #[doc(hidden)]
     pub supported_dpu_sizes: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ApplicationDpuSizes {

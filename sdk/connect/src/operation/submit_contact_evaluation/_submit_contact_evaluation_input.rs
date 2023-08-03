@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the contact evaluation.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of question identifiers to answer value.</p>
-    #[doc(hidden)]
     pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     /// <p>A map of question identifiers to note value.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
 }
 impl SubmitContactEvaluationInput {

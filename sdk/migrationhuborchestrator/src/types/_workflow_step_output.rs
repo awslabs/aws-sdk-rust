@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepOutput {
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the output.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>Determine if an output is required from a step.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
     /// <p>The value of the output.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::WorkflowStepOutputUnion>,
 }
 impl WorkflowStepOutput {

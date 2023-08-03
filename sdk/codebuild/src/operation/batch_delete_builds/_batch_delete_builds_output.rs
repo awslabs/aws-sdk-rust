@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteBuildsOutput {
     /// <p>The IDs of the builds that were successfully deleted.</p>
-    #[doc(hidden)]
     pub builds_deleted: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about any builds that could not be successfully deleted.</p>
-    #[doc(hidden)]
     pub builds_not_deleted: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,
     _request_id: Option<String>,
 }

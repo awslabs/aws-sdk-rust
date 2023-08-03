@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFirewallOutput {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
-    #[doc(hidden)]
     pub firewall: ::std::option::Option<crate::types::Firewall>,
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
-    #[doc(hidden)]
     pub firewall_status: ::std::option::Option<crate::types::FirewallStatus>,
     _request_id: Option<String>,
 }

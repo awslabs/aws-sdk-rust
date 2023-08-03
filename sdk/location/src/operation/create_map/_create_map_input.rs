@@ -10,17 +10,13 @@ pub struct CreateMapInput {
     /// <li> <p>Must be a unique map resource name. </p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::MapConfiguration>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>An optional description for the map resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -33,7 +29,6 @@ pub struct CreateMapInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMapInput {

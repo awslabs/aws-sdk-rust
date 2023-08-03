@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubnetGroupOutput {
     /// <p>The subnet group that has been modified.</p>
-    #[doc(hidden)]
     pub subnet_group: ::std::option::Option<crate::types::SubnetGroup>,
     _request_id: Option<String>,
 }

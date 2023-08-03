@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Variation {
     /// <p>The name of the variation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to this variation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::VariableValue>,
 }
 impl Variation {

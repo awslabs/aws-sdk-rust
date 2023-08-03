@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-    #[doc(hidden)]
     pub summary_map: ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
     _request_id: Option<String>,
 }

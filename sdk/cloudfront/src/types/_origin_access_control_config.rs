@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlConfig {
     /// <p>A name to identify the origin access control.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the origin access control.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    #[doc(hidden)]
     pub signing_protocol: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>This field can have one of the following values:</p>
@@ -20,10 +17,8 @@ pub struct OriginAccessControlConfig {
     /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests. This value turns off origin access control for all origins in all distributions that use this origin access control.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to a <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     /// <p>The type of origin that this origin access control is for.</p>
-    #[doc(hidden)]
     pub origin_access_control_origin_type: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlConfig {

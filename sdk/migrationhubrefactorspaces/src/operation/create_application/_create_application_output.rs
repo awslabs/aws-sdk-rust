@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of application creator.</p>
-    #[doc(hidden)]
     pub created_by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment in which the application is created.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon VPC. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
-    #[doc(hidden)]
     pub proxy_type: ::std::option::Option<crate::types::ProxyType>,
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-    #[doc(hidden)]
     pub api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
     /// <p>The current state of the application. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the application is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

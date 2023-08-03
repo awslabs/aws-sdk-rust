@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct H264FilterSettings {
     /// Temporal Filter Settings
-    #[doc(hidden)]
     pub temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
 impl H264FilterSettings {

@@ -6,7 +6,6 @@
 pub struct HibernationOptionsRequest {
     /// <p>Set to <code>true</code> to enable your instance for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
 }
 impl HibernationOptionsRequest {

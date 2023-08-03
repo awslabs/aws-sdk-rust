@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutKeywordOutput {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    #[doc(hidden)]
     pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The keyword that was added.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the keyword.</p>
-    #[doc(hidden)]
     pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform when the keyword is used.</p>
-    #[doc(hidden)]
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
     _request_id: Option<String>,
 }

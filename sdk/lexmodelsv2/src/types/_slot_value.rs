@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotValue {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-    #[doc(hidden)]
     pub interpreted_value: ::std::option::Option<::std::string::String>,
 }
 impl SlotValue {

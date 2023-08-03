@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
-    #[doc(hidden)]
     pub device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     /// <p> The tags on the device identifier. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

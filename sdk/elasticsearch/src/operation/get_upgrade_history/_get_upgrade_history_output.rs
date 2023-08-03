@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
-    #[doc(hidden)]
     pub upgrade_histories: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

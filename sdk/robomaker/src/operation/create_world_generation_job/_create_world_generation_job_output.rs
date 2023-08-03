@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorldGenerationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the world generator job.</p>
     /// <dl>
@@ -51,10 +50,8 @@ pub struct CreateWorldGenerationJobOutput {
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
@@ -89,22 +86,16 @@ pub struct CreateWorldGenerationJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>Information about the world count. </p>
-    #[doc(hidden)]
     pub world_count: ::std::option::Option<crate::types::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    #[doc(hidden)]
     pub world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

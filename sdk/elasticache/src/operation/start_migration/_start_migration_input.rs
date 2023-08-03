@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMigrationInput {
     /// <p>The ID of the replication group to which data should be migrated.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
-    #[doc(hidden)]
     pub customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
 }
 impl StartMigrationInput {

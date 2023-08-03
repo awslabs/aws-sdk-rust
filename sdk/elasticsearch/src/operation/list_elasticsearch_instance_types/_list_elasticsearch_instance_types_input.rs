@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesInput {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListElasticsearchInstanceTypesInput {

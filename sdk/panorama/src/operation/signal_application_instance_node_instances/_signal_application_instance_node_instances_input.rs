@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesInput {
     /// <p>An application instance ID.</p>
-    #[doc(hidden)]
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of signals.</p>
-    #[doc(hidden)]
     pub node_signals: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
 }
 impl SignalApplicationInstanceNodeInstancesInput {

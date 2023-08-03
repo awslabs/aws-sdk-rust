@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>The description of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_description: ::std::option::Option<crate::types::CertificateDescription>,
     _request_id: Option<String>,
 }

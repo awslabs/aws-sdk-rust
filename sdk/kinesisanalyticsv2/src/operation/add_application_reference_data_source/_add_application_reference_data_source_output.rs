@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes reference data sources configured for the application. </p>
-    #[doc(hidden)]
     pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }

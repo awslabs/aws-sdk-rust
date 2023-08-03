@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettings {

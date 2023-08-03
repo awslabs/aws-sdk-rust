@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
-    #[doc(hidden)]
     pub typed_link_name: ::std::option::Option<::std::string::String>,
 }
 impl TypedLinkSchemaAndFacetName {

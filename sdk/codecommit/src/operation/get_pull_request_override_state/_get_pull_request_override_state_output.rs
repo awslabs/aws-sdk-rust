@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateOutput {
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
-    #[doc(hidden)]
     pub overridden: bool,
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
-    #[doc(hidden)]
     pub overrider: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

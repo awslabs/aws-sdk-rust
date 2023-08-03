@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInput {

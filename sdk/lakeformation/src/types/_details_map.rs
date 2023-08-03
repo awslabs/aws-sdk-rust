@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    #[doc(hidden)]
     pub resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetailsMap {

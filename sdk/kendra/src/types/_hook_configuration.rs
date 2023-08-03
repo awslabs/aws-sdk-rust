@@ -7,13 +7,10 @@
 pub struct HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
-    #[doc(hidden)]
     pub invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
 }
 impl HookConfiguration {

@@ -20,10 +20,8 @@ pub struct LoadBalancerTlsCertificateRenewalSummary {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub renewal_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
-    #[doc(hidden)]
     pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>>,
 }
 impl LoadBalancerTlsCertificateRenewalSummary {

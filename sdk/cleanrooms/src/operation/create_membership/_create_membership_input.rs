@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    #[doc(hidden)]
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMembershipInput {

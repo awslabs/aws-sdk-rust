@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointProperties {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status before making inference requests.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
-    #[doc(hidden)]
     pub desired_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
-    #[doc(hidden)]
     pub desired_inference_units: ::std::option::Option<i32>,
     /// <p>The number of inference units currently used by the model using this endpoint.</p>
-    #[doc(hidden)]
     pub current_inference_units: ::std::option::Option<i32>,
     /// <p>The creation date and time of the endpoint.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the endpoint was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    #[doc(hidden)]
     pub desired_data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
 }
 impl EndpointProperties {

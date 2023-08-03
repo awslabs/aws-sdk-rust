@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesIdentifiers {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The format of the data, either CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesIdentifiers {

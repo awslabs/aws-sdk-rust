@@ -5,43 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTapesInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
-    #[doc(hidden)]
     pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note>
     /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p>
     /// </note>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of virtual tapes that you want to create.</p>
-    #[doc(hidden)]
     pub num_tapes_to_create: ::std::option::Option<i32>,
     /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    #[doc(hidden)]
     pub tape_barcode_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub kms_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
-    #[doc(hidden)]
     pub worm: bool,
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTapesInput {

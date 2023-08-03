@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
 }
 impl Oidc {

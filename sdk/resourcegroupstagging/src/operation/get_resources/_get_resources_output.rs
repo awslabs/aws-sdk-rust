@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
-    #[doc(hidden)]
     pub resource_tag_mapping_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagMapping>>,
     _request_id: Option<String>,
 }

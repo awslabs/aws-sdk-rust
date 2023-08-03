@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
-    #[doc(hidden)]
     pub duration_in_minutes: i64,
     /// <p>The FinSpace environment identifier.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProgrammaticAccessCredentialsInput {

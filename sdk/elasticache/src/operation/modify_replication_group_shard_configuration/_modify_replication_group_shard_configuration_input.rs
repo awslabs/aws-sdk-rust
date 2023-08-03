@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupShardConfigurationInput {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
-    #[doc(hidden)]
     pub node_group_count: i32,
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    #[doc(hidden)]
     pub resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    #[doc(hidden)]
     pub node_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    #[doc(hidden)]
     pub node_groups_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyReplicationGroupShardConfigurationInput {

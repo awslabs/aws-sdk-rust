@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReshardingConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
-    #[doc(hidden)]
     pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReshardingConfiguration {

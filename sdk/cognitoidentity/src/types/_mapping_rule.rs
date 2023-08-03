@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
-    #[doc(hidden)]
     pub claim: ::std::option::Option<::std::string::String>,
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    #[doc(hidden)]
     pub match_type: ::std::option::Option<crate::types::MappingRuleMatchType>,
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MappingRule {

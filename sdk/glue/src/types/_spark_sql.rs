@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkSql {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
-    #[doc(hidden)]
     pub sql_query: ::std::option::Option<::std::string::String>,
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
-    #[doc(hidden)]
     pub sql_aliases: ::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>>,
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl SparkSql {

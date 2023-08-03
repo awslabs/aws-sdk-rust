@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyConfigurationType {
     /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The destination to which the receiver of an email should reply to.</p>
-    #[doc(hidden)]
     pub reply_to: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Email template used when a detected risk event is blocked.</p>
-    #[doc(hidden)]
     pub block_email: ::std::option::Option<crate::types::NotifyEmailType>,
     /// <p>The email template used when a detected risk event is allowed.</p>
-    #[doc(hidden)]
     pub no_action_email: ::std::option::Option<crate::types::NotifyEmailType>,
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
-    #[doc(hidden)]
     pub mfa_email: ::std::option::Option<crate::types::NotifyEmailType>,
 }
 impl NotifyConfigurationType {

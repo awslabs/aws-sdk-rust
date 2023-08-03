@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootNodeInput {
     /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-assigned ID of the node to be rebooted.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl RebootNodeInput {

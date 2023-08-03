@@ -4,69 +4,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBotOutput {
     /// <p>The name of the bot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    #[doc(hidden)]
     pub intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
-    #[doc(hidden)]
     pub enable_model_improvements: ::std::option::Option<bool>,
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
-    #[doc(hidden)]
     pub clarification_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-    #[doc(hidden)]
     pub abort_statement: ::std::option::Option<crate::types::Statement>,
     /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
     /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
     /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
     /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
     /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
-    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the bot that you created.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> The target locale for the bot. </p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
-    #[doc(hidden)]
     pub child_directed: ::std::option::Option<bool>,
     /// <p> <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
-    #[doc(hidden)]
     pub create_version: ::std::option::Option<bool>,
     /// <p> <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
-    #[doc(hidden)]
     pub detect_sentiment: ::std::option::Option<bool>,
     /// <p>A list of tags associated with the bot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

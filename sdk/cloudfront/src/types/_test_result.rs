@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestResult {
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
-    #[doc(hidden)]
     pub function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
-    #[doc(hidden)]
     pub compute_utilization: ::std::option::Option<::std::string::String>,
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
-    #[doc(hidden)]
     pub function_execution_logs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
-    #[doc(hidden)]
     pub function_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub function_output: ::std::option::Option<::std::string::String>,
 }
 impl TestResult {

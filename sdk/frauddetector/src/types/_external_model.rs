@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalModel {
     /// <p>The Amazon SageMaker model endpoints.</p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
-    #[doc(hidden)]
     pub model_source: ::std::option::Option<crate::types::ModelSource>,
     /// <p>The role used to invoke the model. </p>
-    #[doc(hidden)]
     pub invoke_model_endpoint_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The input configuration.</p>
-    #[doc(hidden)]
     pub input_configuration: ::std::option::Option<crate::types::ModelInputConfiguration>,
     /// <p>The output configuration.</p>
-    #[doc(hidden)]
     pub output_configuration: ::std::option::Option<crate::types::ModelOutputConfiguration>,
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
-    #[doc(hidden)]
     pub model_endpoint_status: ::std::option::Option<crate::types::ModelEndpointStatus>,
     /// <p>Timestamp of when the model was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the model was last created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The model ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ExternalModel {

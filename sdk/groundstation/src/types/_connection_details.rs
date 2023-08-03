@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionDetails {
     /// <p>A socket address.</p>
-    #[doc(hidden)]
     pub socket_address: ::std::option::Option<crate::types::SocketAddress>,
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub mtu: ::std::option::Option<i32>,
 }
 impl ConnectionDetails {

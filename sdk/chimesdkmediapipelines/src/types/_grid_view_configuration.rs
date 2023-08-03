@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridViewConfiguration {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
-    #[doc(hidden)]
     pub content_share_layout: ::std::option::Option<crate::types::ContentShareLayoutOption>,
     /// <p>Defines the configuration options for a presenter only video tile.</p>
-    #[doc(hidden)]
     pub presenter_only_configuration: ::std::option::Option<crate::types::PresenterOnlyConfiguration>,
     /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
-    #[doc(hidden)]
     pub active_speaker_only_configuration: ::std::option::Option<crate::types::ActiveSpeakerOnlyConfiguration>,
     /// <p>The configuration settings for a horizontal layout.</p>
-    #[doc(hidden)]
     pub horizontal_layout_configuration: ::std::option::Option<crate::types::HorizontalLayoutConfiguration>,
     /// <p>The configuration settings for a vertical layout.</p>
-    #[doc(hidden)]
     pub vertical_layout_configuration: ::std::option::Option<crate::types::VerticalLayoutConfiguration>,
     /// <p>The attribute settings for the video tiles.</p>
-    #[doc(hidden)]
     pub video_attribute: ::std::option::Option<crate::types::VideoAttribute>,
     /// <p>The orientation setting, horizontal or vertical.</p>
-    #[doc(hidden)]
     pub canvas_orientation: ::std::option::Option<crate::types::CanvasOrientation>,
 }
 impl GridViewConfiguration {

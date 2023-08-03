@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl StartElasticsearchServiceSoftwareUpdateInput {

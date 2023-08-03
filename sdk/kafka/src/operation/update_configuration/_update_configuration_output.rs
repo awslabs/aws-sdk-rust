@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Latest revision of the configuration.</p>
-    #[doc(hidden)]
     pub latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
     _request_id: Option<String>,
 }

@@ -11,10 +11,8 @@ pub struct CachePolicyCookiesConfig {
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cookie_behavior: ::std::option::Option<crate::types::CachePolicyCookieBehavior>,
     /// <p>Contains a list of cookie names.</p>
-    #[doc(hidden)]
     pub cookies: ::std::option::Option<crate::types::CookieNames>,
 }
 impl CachePolicyCookiesConfig {

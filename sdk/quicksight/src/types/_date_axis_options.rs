@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateAxisOptions {
     /// <p>Determines whether or not missing dates are displayed.</p>
-    #[doc(hidden)]
     pub missing_date_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DateAxisOptions {

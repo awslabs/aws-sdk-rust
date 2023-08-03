@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCertificateInput {
     /// <p>The name for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    #[doc(hidden)]
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCertificateInput {

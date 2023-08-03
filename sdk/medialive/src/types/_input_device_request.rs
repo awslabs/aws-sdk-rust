@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDeviceRequest {
     /// The unique ID for the device.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceRequest {

@@ -5,7 +5,6 @@
 pub struct DeleteTaskDefinitionsInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    #[doc(hidden)]
     pub task_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteTaskDefinitionsInput {

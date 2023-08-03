@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that was used for the DNS request.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DNS request was blocked.</p>
-    #[doc(hidden)]
     pub blocked: bool,
 }
 impl DnsRequestAction {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Status reason for the delete request.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Current version of the grant.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGrantInput {

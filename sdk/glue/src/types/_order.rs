@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
-    #[doc(hidden)]
     pub sort_order: i32,
 }
 impl Order {

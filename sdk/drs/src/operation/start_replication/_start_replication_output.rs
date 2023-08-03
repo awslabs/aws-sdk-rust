@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationOutput {
     /// <p>The Source Server that this action was targeted on.</p>
-    #[doc(hidden)]
     pub source_server: ::std::option::Option<crate::types::SourceServer>,
     _request_id: Option<String>,
 }

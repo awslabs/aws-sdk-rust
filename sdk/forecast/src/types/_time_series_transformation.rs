@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesTransformation {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    #[doc(hidden)]
     pub time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
 }
 impl TimeSeriesTransformation {

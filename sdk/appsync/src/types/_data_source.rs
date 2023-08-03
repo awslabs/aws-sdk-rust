@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The data source Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the data source.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source.</p>
     /// <ul>
@@ -24,31 +21,22 @@ pub struct DataSource {
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>DynamoDB settings.</p>
-    #[doc(hidden)]
     pub dynamodb_config: ::std::option::Option<crate::types::DynamodbDataSourceConfig>,
     /// <p>Lambda settings.</p>
-    #[doc(hidden)]
     pub lambda_config: ::std::option::Option<crate::types::LambdaDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
-    #[doc(hidden)]
     pub elasticsearch_config: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
-    #[doc(hidden)]
     pub open_search_service_config: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
-    #[doc(hidden)]
     pub http_config: ::std::option::Option<crate::types::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
-    #[doc(hidden)]
     pub relational_database_config: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     /// <p>Amazon EventBridge settings.</p>
-    #[doc(hidden)]
     pub event_bridge_config: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl DataSource {

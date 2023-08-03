@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceInput {
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to delete the instance Elastic IP address.</p>
-    #[doc(hidden)]
     pub delete_elastic_ip: ::std::option::Option<bool>,
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
-    #[doc(hidden)]
     pub delete_volumes: ::std::option::Option<bool>,
 }
 impl DeleteInstanceInput {

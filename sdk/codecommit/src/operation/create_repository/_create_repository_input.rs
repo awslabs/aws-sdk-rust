@@ -7,15 +7,12 @@ pub struct CreateRepositoryInput {
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
     /// </note>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment or description about the new repository.</p> <note>
     /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    #[doc(hidden)]
     pub repository_description: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRepositoryInput {

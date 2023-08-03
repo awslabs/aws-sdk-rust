@@ -5,7 +5,6 @@
 pub struct SwitchoverBlueGreenDeploymentOutput {
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,
 }

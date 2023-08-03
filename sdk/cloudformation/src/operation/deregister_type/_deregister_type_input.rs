@@ -5,18 +5,14 @@
 pub struct DeregisterTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTypeInput {

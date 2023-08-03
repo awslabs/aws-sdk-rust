@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ClusteringKey {

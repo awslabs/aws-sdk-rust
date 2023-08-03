@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was created.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the authentication profile in JSON format.</p>
-    #[doc(hidden)]
     pub authentication_profile_content: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

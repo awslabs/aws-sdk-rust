@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesOutput {
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     _request_id: Option<String>,
 }

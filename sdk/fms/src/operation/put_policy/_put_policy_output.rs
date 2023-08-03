@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPolicyOutput {
     /// <p>The details of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

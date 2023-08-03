@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCheckerIpRangesOutput {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    #[doc(hidden)]
     pub checker_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessConfig {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
-    #[doc(hidden)]
     pub memory_size_in_mb: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p> <note>
     /// <p>This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more information about creating an Inference Recommender job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub provisioned_concurrency: ::std::option::Option<i32>,
 }
 impl ProductionVariantServerlessConfig {

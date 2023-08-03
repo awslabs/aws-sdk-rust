@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
-    #[doc(hidden)]
     pub ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
-    #[doc(hidden)]
     pub host_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
@@ -45,25 +37,18 @@ pub struct ResolverEndpoint {
     /// </ul> </li>
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResolverEndpointStatus>,
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
     /// <p> The Resolver endpoint IP address type. </p>
-    #[doc(hidden)]
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon EC2 instance type. </p>
-    #[doc(hidden)]
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResolverEndpoint {

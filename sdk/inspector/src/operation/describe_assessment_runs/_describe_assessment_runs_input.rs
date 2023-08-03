@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    #[doc(hidden)]
     pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAssessmentRunsInput {

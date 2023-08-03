@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ComputeFarmConfiguration {
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    #[doc(hidden)]
     pub active_directory_user: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ComputeFarmConfiguration {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    #[doc(hidden)]
     pub systems_manager_agent: ::std::option::Option<crate::types::SystemsManagerAgent>,
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
@@ -15,7 +14,6 @@ pub struct AdditionalInstanceConfiguration {
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
-    #[doc(hidden)]
     pub user_data_override: ::std::option::Option<::std::string::String>,
 }
 impl AdditionalInstanceConfiguration {

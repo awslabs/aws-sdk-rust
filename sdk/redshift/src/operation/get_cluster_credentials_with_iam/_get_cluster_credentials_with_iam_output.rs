@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetClusterCredentialsWithIamOutput {
     /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>A temporary password that you provide when you connect to a database.</p>
-    #[doc(hidden)]
     pub db_password: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub next_refresh_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

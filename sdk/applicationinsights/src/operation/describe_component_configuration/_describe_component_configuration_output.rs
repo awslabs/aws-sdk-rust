@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationOutput {
     /// <p>Indicates whether the application component is monitored.</p>
-    #[doc(hidden)]
     pub monitor: ::std::option::Option<bool>,
     /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    #[doc(hidden)]
     pub component_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

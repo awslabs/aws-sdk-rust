@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Offering {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// The length of time that your reservation would be active.
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// The unit of measurement for the duration of the offering.
-    #[doc(hidden)]
     pub duration_units: ::std::option::Option<crate::types::DurationUnits>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-    #[doc(hidden)]
     pub offering_arn: ::std::option::Option<::std::string::String>,
     /// A description of the offering.
-    #[doc(hidden)]
     pub offering_description: ::std::option::Option<::std::string::String>,
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-    #[doc(hidden)]
     pub price_per_unit: ::std::option::Option<::std::string::String>,
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
-    #[doc(hidden)]
     pub price_units: ::std::option::Option<crate::types::PriceUnits>,
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ResourceSpecification>,
 }
 impl Offering {

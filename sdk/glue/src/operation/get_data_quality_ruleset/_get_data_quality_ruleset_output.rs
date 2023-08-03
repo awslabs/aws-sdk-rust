@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetOutput {
     /// <p>The name of the ruleset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the ruleset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    #[doc(hidden)]
     pub ruleset: ::std::option::Option<::std::string::String>,
     /// <p>The name and database name of the target table.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
     /// <p>A timestamp. The time and date that this data quality ruleset was created.</p>
-    #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    #[doc(hidden)]
     pub recommendation_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayBridgeSourceRequest {
     /// The ARN of the bridge feeding this flow.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface attachment to use for this bridge source.
-    #[doc(hidden)]
     pub vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
 }
 impl UpdateGatewayBridgeSourceRequest {

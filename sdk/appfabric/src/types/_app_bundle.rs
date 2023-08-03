@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppBundle {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
-    #[doc(hidden)]
     pub customer_managed_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppBundle {

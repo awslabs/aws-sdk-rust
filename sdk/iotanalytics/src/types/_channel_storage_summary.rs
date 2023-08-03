@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelStorageSummary {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
-    #[doc(hidden)]
     pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3StorageSummary>,
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
-    #[doc(hidden)]
     pub customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3StorageSummary>,
 }
 impl ChannelStorageSummary {

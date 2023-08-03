@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStepsOutput {
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    #[doc(hidden)]
     pub cancel_steps_info_list: ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
     _request_id: Option<String>,
 }

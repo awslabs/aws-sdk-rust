@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl JourneyCustomMessage {

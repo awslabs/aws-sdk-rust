@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpSetOutput {
     /// <p>The user-friendly name for the IPSet.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::IpSetFormat>,
     /// <p>The URI of the file that contains the IPSet.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The status of IPSet file that was uploaded.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IpSetStatus>,
     /// <p>The tags of the IPSet resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

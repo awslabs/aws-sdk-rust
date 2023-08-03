@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<crate::types::Content>,
     /// <p>The message body.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<crate::types::Body>,
 }
 impl Message {

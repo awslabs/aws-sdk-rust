@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    #[doc(hidden)]
     pub successful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    #[doc(hidden)]
     pub unsuccessful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
     _request_id: Option<String>,
 }

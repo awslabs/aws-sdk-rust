@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetNotificationsForAccount {

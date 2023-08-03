@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfigurationInput {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupVaultLockConfigurationInput {

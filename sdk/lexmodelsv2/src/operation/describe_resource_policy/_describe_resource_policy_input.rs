@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourcePolicyInput {

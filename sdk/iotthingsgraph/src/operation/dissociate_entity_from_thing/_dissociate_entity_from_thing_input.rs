@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DissociateEntityFromThingInput {
     /// <p>The name of the thing to disassociate.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The entity type from which to disassociate the thing.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<crate::types::EntityType>,
 }
 impl DissociateEntityFromThingInput {

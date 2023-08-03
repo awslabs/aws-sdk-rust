@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskInput {
     /// <p>Specifies the type of data repository task to create.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataRepositoryTaskType>,
     /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
     /// <ul>
     /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
     /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::CompletionReport>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
-    #[doc(hidden)]
     pub capacity_to_release: ::std::option::Option<i64>,
 }
 impl CreateDataRepositoryTaskInput {

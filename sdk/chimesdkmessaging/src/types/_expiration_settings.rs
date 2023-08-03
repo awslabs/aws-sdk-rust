@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpirationSettings {
     /// <p>The period in days after which the system automatically deletes a channel.</p>
-    #[doc(hidden)]
     pub expiration_days: ::std::option::Option<i32>,
     /// <p>The conditions that must be met for a channel to expire.</p>
-    #[doc(hidden)]
     pub expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
 }
 impl ExpirationSettings {

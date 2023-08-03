@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceEventsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    #[doc(hidden)]
     pub inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }

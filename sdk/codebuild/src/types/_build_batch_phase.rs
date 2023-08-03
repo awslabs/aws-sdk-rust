@@ -49,7 +49,6 @@ pub struct BuildBatchPhase {
     /// <p>The batch build succeeded.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub phase_type: ::std::option::Option<crate::types::BuildBatchPhaseType>,
     /// <p>The current status of the batch build phase. Valid values include:</p>
     /// <dl>
@@ -90,19 +89,14 @@ pub struct BuildBatchPhase {
     /// <p>The build phase timed out.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub phase_status: ::std::option::Option<crate::types::StatusType>,
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i64>,
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
-    #[doc(hidden)]
     pub contexts: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>,
 }
 impl BuildBatchPhase {

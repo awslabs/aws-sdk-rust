@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesInput {
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVirtualInterfacesInput {

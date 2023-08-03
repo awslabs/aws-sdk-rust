@@ -14,10 +14,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbParameterGroupStatus {
     /// <p>The name of the DB parameter group.</p>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl DbParameterGroupStatus {

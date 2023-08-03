@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CookieMatchPattern {
     /// <p>Inspect all cookies. </p>
-    #[doc(hidden)]
     pub all: ::std::option::Option<crate::types::All>,
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here. </p>
-    #[doc(hidden)]
     pub included_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here. </p>
-    #[doc(hidden)]
     pub excluded_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CookieMatchPattern {

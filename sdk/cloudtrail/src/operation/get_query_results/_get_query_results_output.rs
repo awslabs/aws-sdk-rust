@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutput {
     /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    #[doc(hidden)]
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>Shows the count of query results.</p>
-    #[doc(hidden)]
     pub query_statistics: ::std::option::Option<crate::types::QueryStatistics>,
     /// <p>Contains the individual event results of the query.</p>
-    #[doc(hidden)]
     pub query_result_rows:
         ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>>,
     /// <p>A token you can use to get the next page of query results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The error message returned if a query failed.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

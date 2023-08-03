@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStudioLifecycleConfigOutput {
     /// <p>The ARN of your created Lifecycle Configuration.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

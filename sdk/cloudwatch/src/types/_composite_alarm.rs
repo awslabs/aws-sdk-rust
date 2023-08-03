@@ -5,65 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositeAlarm {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
-    #[doc(hidden)]
     pub actions_enabled: ::std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    #[doc(hidden)]
     pub alarm_configuration_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
-    #[doc(hidden)]
     pub alarm_rule: ::std::option::Option<::std::string::String>,
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An explanation for the alarm state, in text format.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
-    #[doc(hidden)]
     pub state_reason_data: ::std::option::Option<::std::string::String>,
     /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
-    #[doc(hidden)]
     pub state_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state value for the alarm.</p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<crate::types::StateValue>,
     /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
-    #[doc(hidden)]
     pub state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
-    #[doc(hidden)]
     pub actions_suppressed_by: ::std::option::Option<crate::types::ActionsSuppressedBy>,
     /// <p> Captures the reason for action suppression. </p>
-    #[doc(hidden)]
     pub actions_suppressed_reason: ::std::option::Option<::std::string::String>,
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
-    #[doc(hidden)]
     pub actions_suppressor: ::std::option::Option<::std::string::String>,
     /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
     /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
     /// </important>
-    #[doc(hidden)]
     pub actions_suppressor_wait_period: ::std::option::Option<i32>,
     /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
     /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
     /// </important>
-    #[doc(hidden)]
     pub actions_suppressor_extension_period: ::std::option::Option<i32>,
 }
 impl CompositeAlarm {

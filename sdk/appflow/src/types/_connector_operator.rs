@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorOperator {
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
-    #[doc(hidden)]
     pub amplitude: ::std::option::Option<crate::types::AmplitudeConnectorOperator>,
     /// <p> The operation to be performed on the provided Datadog source fields. </p>
-    #[doc(hidden)]
     pub datadog: ::std::option::Option<crate::types::DatadogConnectorOperator>,
     /// <p> The operation to be performed on the provided Dynatrace source fields. </p>
-    #[doc(hidden)]
     pub dynatrace: ::std::option::Option<crate::types::DynatraceConnectorOperator>,
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
-    #[doc(hidden)]
     pub google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator>,
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
-    #[doc(hidden)]
     pub infor_nexus: ::std::option::Option<crate::types::InforNexusConnectorOperator>,
     /// <p> The operation to be performed on the provided Marketo source fields. </p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoConnectorOperator>,
     /// <p> The operation to be performed on the provided Amazon S3 source fields. </p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3ConnectorOperator>,
     /// <p> The operation to be performed on the provided Salesforce source fields. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceConnectorOperator>,
     /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowConnectorOperator>,
     /// <p> The operation to be performed on the provided Singular source fields. </p>
-    #[doc(hidden)]
     pub singular: ::std::option::Option<crate::types::SingularConnectorOperator>,
     /// <p> The operation to be performed on the provided Slack source fields. </p>
-    #[doc(hidden)]
     pub slack: ::std::option::Option<crate::types::SlackConnectorOperator>,
     /// <p> The operation to be performed on the provided Trend Micro source fields. </p>
-    #[doc(hidden)]
     pub trendmicro: ::std::option::Option<crate::types::TrendmicroConnectorOperator>,
     /// <p> The operation to be performed on the provided Veeva source fields. </p>
-    #[doc(hidden)]
     pub veeva: ::std::option::Option<crate::types::VeevaConnectorOperator>,
     /// <p> The operation to be performed on the provided Zendesk source fields. </p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskConnectorOperator>,
     /// <p> The operation to be performed on the provided SAPOData source fields. </p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataConnectorOperator>,
     /// <p>Operators supported by the custom connector.</p>
-    #[doc(hidden)]
     pub custom_connector: ::std::option::Option<crate::types::Operator>,
     /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
-    #[doc(hidden)]
     pub pardot: ::std::option::Option<crate::types::PardotConnectorOperator>,
 }
 impl ConnectorOperator {

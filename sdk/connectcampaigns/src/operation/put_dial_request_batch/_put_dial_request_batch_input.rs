@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchInput {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A list of dial requests.
-    #[doc(hidden)]
     pub dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
 }
 impl PutDialRequestBatchInput {

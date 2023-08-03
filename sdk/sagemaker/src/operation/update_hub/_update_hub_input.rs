@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHubInput {
     /// <p>The name of the hub to update.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the updated hub.</p>
-    #[doc(hidden)]
     pub hub_description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub.</p>
-    #[doc(hidden)]
     pub hub_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub.</p>
-    #[doc(hidden)]
     pub hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateHubInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket to send logs to.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_encryption_enabled: bool,
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {

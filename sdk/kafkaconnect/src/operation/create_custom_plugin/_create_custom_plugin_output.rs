@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
     /// <p>The name of the custom plugin.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the custom plugin.</p>
-    #[doc(hidden)]
     pub revision: i64,
     _request_id: Option<String>,
 }

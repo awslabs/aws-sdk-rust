@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutImageOutput {
     /// <p>Details of the image uploaded.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionLayoutConfiguration {
     /// <p>The free-form layout configuration of a section.</p>
-    #[doc(hidden)]
     pub free_form_layout: ::std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
 }
 impl SectionLayoutConfiguration {

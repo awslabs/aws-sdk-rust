@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    #[doc(hidden)]
     pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }

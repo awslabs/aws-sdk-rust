@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The window options of the filled map visual.</p>
-    #[doc(hidden)]
     pub window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     /// <p>The map style options of the filled map visual.</p>
-    #[doc(hidden)]
     pub map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
 }
 impl FilledMapConfiguration {

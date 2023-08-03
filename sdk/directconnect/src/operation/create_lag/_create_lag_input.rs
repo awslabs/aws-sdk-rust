@@ -4,33 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
-    #[doc(hidden)]
     pub number_of_connections: ::std::option::Option<i32>,
     /// <p>The location for the LAG.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    #[doc(hidden)]
     pub connections_bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LAG.</p>
-    #[doc(hidden)]
     pub lag_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the LAG.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    #[doc(hidden)]
     pub child_connection_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateLagInput {

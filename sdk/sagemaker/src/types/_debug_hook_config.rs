@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DebugHookConfig {
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    #[doc(hidden)]
     pub hook_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
-    #[doc(hidden)]
     pub collection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>>,
 }
 impl DebugHookConfig {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DukptDerivationAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    #[doc(hidden)]
     pub key_serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
-    #[doc(hidden)]
     pub dukpt_key_derivation_type: ::std::option::Option<crate::types::DukptDerivationType>,
     /// <p>The type of use of DUKPT, which can be for incoming data decryption, outgoing data encryption, or both.</p>
-    #[doc(hidden)]
     pub dukpt_key_variant: ::std::option::Option<crate::types::DukptKeyVariant>,
 }
 impl DukptDerivationAttributes {

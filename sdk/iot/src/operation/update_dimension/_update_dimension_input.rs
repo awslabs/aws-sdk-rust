@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    #[doc(hidden)]
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDimensionInput {

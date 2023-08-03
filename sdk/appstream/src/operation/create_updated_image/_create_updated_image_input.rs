@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUpdatedImageInput {
     /// <p>The name of the image to update.</p>
-    #[doc(hidden)]
     pub existing_image_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
-    #[doc(hidden)]
     pub new_image_name: ::std::option::Option<::std::string::String>,
     /// <p>The description to display for the new image.</p>
-    #[doc(hidden)]
     pub new_image_description: ::std::option::Option<::std::string::String>,
     /// <p>The name to display for the new image.</p>
-    #[doc(hidden)]
     pub new_image_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub new_image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateUpdatedImageInput {

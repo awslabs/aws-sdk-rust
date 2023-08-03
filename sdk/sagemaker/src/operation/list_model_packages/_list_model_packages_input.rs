@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelPackagesInput {
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of model packages to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
@@ -27,16 +21,12 @@ pub struct ListModelPackagesInput {
     /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
     /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_package_type: ::std::option::Option<crate::types::ModelPackageType>,
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ModelPackageSortBy>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListModelPackagesInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachToIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the index that you are attaching the object to.</p>
-    #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
-    #[doc(hidden)]
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl AttachToIndexInput {

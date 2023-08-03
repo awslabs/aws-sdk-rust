@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestConnectionOutput {
     /// <p>The connection tested.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }

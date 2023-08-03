@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::Command>,
     _request_id: Option<String>,
 }

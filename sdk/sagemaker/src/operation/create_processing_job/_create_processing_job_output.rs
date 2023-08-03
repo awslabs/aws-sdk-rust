@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProcessingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    #[doc(hidden)]
     pub processing_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

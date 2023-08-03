@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPhoneNumberSettingsOutput {
     /// <p>The default outbound calling name for the account.</p>
-    #[doc(hidden)]
     pub calling_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub calling_name_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

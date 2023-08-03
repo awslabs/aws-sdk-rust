@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The CloudTrail ID of the event returned.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event returned.</p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the event is a write event or a read event. </p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the event returned.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service to which the request was made.</p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>A list of resources referenced by the event returned.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>A JSON string that contains a representation of the event returned.</p>
-    #[doc(hidden)]
     pub cloud_trail_event: ::std::option::Option<::std::string::String>,
 }
 impl Event {

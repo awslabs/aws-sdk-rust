@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model.</p>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>A description for the approval status of the model.</p>
-    #[doc(hidden)]
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
-    #[doc(hidden)]
     pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    #[doc(hidden)]
     pub customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    #[doc(hidden)]
     pub additional_inference_specifications_to_add: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
 }
 impl UpdateModelPackageInput {

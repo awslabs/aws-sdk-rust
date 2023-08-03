@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConformancePacksOutput {
     /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
-    #[doc(hidden)]
     pub aggregate_compliance_by_conformance_packs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceByConformancePack>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

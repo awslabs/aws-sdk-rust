@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
-    #[doc(hidden)]
     pub training_job: ::std::option::Option<crate::types::TrainingJobStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the processing job that was run by this step execution.</p>
-    #[doc(hidden)]
     pub processing_job: ::std::option::Option<crate::types::ProcessingJobStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
-    #[doc(hidden)]
     pub transform_job: ::std::option::Option<crate::types::TransformJobStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
-    #[doc(hidden)]
     pub tuning_job: ::std::option::Option<crate::types::TuningJobStepMetaData>,
     /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<crate::types::ModelStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.</p>
-    #[doc(hidden)]
     pub register_model: ::std::option::Option<crate::types::RegisterModelStepMetadata>,
     /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::ConditionStepMetadata>,
     /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token, and a list of output parameters.</p>
-    #[doc(hidden)]
     pub callback: ::std::option::Option<crate::types::CallbackStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
     /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
@@ -42,7 +33,6 @@ pub struct PipelineExecutionStepMetadata {
     /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
     /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub quality_check: ::std::option::Option<crate::types::QualityCheckStepMetadata>,
     /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
@@ -55,16 +45,12 @@ pub struct PipelineExecutionStepMetadata {
     /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
     /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    #[doc(hidden)]
     pub emr: ::std::option::Option<crate::types::EmrStepMetadata>,
     /// <p>The configurations and outcomes of a Fail step execution.</p>
-    #[doc(hidden)]
     pub fail: ::std::option::Option<crate::types::FailStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
-    #[doc(hidden)]
     pub auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {

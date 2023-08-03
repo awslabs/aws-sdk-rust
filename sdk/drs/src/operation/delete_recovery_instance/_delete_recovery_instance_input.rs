@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecoveryInstanceInput {
     /// <p>The ID of the Recovery Instance to be deleted.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecoveryInstanceInput {

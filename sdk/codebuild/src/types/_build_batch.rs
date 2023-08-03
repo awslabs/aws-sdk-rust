@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildBatch {
     /// <p>The identifier of the batch build.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the batch build.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the batch build started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the batch build ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current phase of the batch build.</p>
-    #[doc(hidden)]
     pub current_phase: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch build.</p>
-    #[doc(hidden)]
     pub build_batch_status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The identifier of the version of the source code to be built.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
@@ -31,19 +24,14 @@ pub struct BuildBatch {
     /// <li> <p>For CodePipeline, the source revision provided by CodePipeline.</p> </li>
     /// <li> <p>For Amazon S3, this does not apply.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resolved_source_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the batch build project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the batch build.</p>
-    #[doc(hidden)]
     pub phases: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>>,
     /// <p>Information about the build input source code for the build project.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch build.</p>
-    #[doc(hidden)]
     pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
     /// <ul>
@@ -52,34 +40,24 @@ pub struct BuildBatch {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
-    #[doc(hidden)]
     pub artifacts: ::std::option::Option<crate::types::BuildArtifacts>,
     /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts for this batch build.</p>
-    #[doc(hidden)]
     pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>>,
     /// <p>Information about the cache for the build project.</p>
-    #[doc(hidden)]
     pub cache: ::std::option::Option<crate::types::ProjectCache>,
     /// <p>Information about the build environment of the build project.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::ProjectEnvironment>,
     /// <p>The name of a service role used for builds in the batch.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p> Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both. </p>
-    #[doc(hidden)]
     pub log_config: ::std::option::Option<crate::types::LogsConfig>,
     /// <p>Specifies the maximum amount of time, in minutes, that the build in a batch must be completed in.</p>
-    #[doc(hidden)]
     pub build_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>Specifies the amount of time, in minutes, that the batch build is allowed to be queued before it times out.</p>
-    #[doc(hidden)]
     pub queued_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>Indicates if the batch build is complete.</p>
-    #[doc(hidden)]
     pub complete: bool,
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
@@ -87,32 +65,24 @@ pub struct BuildBatch {
     /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub initiator: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of the batch build. For each project, the <code>buildBatchNumber</code> of its first batch build is <code>1</code>. The <code>buildBatchNumber</code> of each subsequent batch build is incremented by <code>1</code>. If a batch build is deleted, the <code>buildBatchNumber</code> of other batch builds does not change.</p>
-    #[doc(hidden)]
     pub build_batch_number: ::std::option::Option<i64>,
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    #[doc(hidden)]
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     /// <p>Contains configuration information about a batch build project.</p>
-    #[doc(hidden)]
     pub build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
-    #[doc(hidden)]
     pub build_groups: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>,
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
-    #[doc(hidden)]
     pub debug_session_enabled: ::std::option::Option<bool>,
 }
 impl BuildBatch {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResults {
     /// <p>The item list in the test set results data at the conversation level.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
 }
 impl ConversationLevelTestResults {

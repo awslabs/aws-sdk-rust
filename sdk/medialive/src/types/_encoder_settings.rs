@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncoderSettings {
     /// Placeholder documentation for __listOfAudioDescription
-    #[doc(hidden)]
     pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     /// Settings for ad avail blanking.
-    #[doc(hidden)]
     pub avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     /// Event-wide configuration settings for ad avail insertion.
-    #[doc(hidden)]
     pub avail_configuration: ::std::option::Option<crate::types::AvailConfiguration>,
     /// Settings for blackout slate.
-    #[doc(hidden)]
     pub blackout_slate: ::std::option::Option<crate::types::BlackoutSlate>,
     /// Settings for caption decriptions
-    #[doc(hidden)]
     pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
     /// Feature Activations
-    #[doc(hidden)]
     pub feature_activations: ::std::option::Option<crate::types::FeatureActivations>,
     /// Configuration settings that apply to the event as a whole.
-    #[doc(hidden)]
     pub global_configuration: ::std::option::Option<crate::types::GlobalConfiguration>,
     /// Settings for motion graphics.
-    #[doc(hidden)]
     pub motion_graphics_configuration: ::std::option::Option<crate::types::MotionGraphicsConfiguration>,
     /// Nielsen configuration settings.
-    #[doc(hidden)]
     pub nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     /// Placeholder documentation for __listOfOutputGroup
-    #[doc(hidden)]
     pub output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
     /// Contains settings used to acquire and adjust timecode information from inputs.
-    #[doc(hidden)]
     pub timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
     /// Placeholder documentation for __listOfVideoDescription
-    #[doc(hidden)]
     pub video_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>,
     /// Thumbnail configuration settings.
-    #[doc(hidden)]
     pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
 }
 impl EncoderSettings {

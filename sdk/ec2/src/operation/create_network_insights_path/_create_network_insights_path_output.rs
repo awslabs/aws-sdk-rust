@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathOutput {
     /// <p>Information about the path.</p>
-    #[doc(hidden)]
     pub network_insights_path: ::std::option::Option<crate::types::NetworkInsightsPath>,
     _request_id: Option<String>,
 }

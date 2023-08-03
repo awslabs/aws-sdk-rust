@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SettingEntry {
     /// <p>The type, or category, of a directory setting. Similar settings have the same type. For example, <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your directory.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>The value of the directory setting that is applied to the directory.</p>
-    #[doc(hidden)]
     pub applied_value: ::std::option::Option<::std::string::String>,
     /// <p>The value that was last requested for the directory setting.</p>
-    #[doc(hidden)]
     pub requested_value: ::std::option::Option<::std::string::String>,
     /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub request_status: ::std::option::Option<crate::types::DirectoryConfigurationStatus>,
     /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
-    #[doc(hidden)]
     pub request_detailed_status:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DirectoryConfigurationStatus>>,
     /// <p>The last status message for the directory status request.</p>
-    #[doc(hidden)]
     pub request_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the directory setting was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the request to update a directory setting was last submitted.</p>
-    #[doc(hidden)]
     pub last_requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl SettingEntry {

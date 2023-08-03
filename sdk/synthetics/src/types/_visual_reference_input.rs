@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
-    #[doc(hidden)]
     pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
-    #[doc(hidden)]
     pub base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceInput {

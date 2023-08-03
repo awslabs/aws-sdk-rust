@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobInput {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDashboardSnapshotJobInput {

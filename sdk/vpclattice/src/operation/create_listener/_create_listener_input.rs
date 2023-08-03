@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The listener protocol HTTP or HTTPS.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ListenerProtocol>,
     /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the listener.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateListenerInput {

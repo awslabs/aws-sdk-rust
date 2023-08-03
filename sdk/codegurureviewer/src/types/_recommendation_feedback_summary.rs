@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationFeedbackSummary {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-    #[doc(hidden)]
     pub reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
     /// <p>The ID of the user that gave the feedback.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationFeedbackSummary {

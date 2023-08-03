@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotebookOutput {
     /// <p>A unique identifier for the notebook.</p>
-    #[doc(hidden)]
     pub notebook_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

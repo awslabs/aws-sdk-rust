@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoteOnProposalInput {
     /// <p> The unique identifier of the network. </p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the proposal. </p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member casting the vote. </p>
-    #[doc(hidden)]
     pub voter_member_id: ::std::option::Option<::std::string::String>,
     /// <p> The value of the vote. </p>
-    #[doc(hidden)]
     pub vote: ::std::option::Option<crate::types::VoteValue>,
 }
 impl VoteOnProposalInput {

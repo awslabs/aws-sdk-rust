@@ -10,13 +10,10 @@ pub struct VirtualGatewayListenerTls {
     /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
     /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::VirtualGatewayListenerTlsMode>,
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContext>,
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::VirtualGatewayListenerTlsCertificate>,
 }
 impl VirtualGatewayListenerTls {

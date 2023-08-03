@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageInput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageInput {

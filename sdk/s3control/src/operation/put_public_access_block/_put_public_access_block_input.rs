@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl PutPublicAccessBlockInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteObj {
     /// <p>Mobile Country Code.</p>
-    #[doc(hidden)]
     pub mcc: ::std::option::Option<i32>,
     /// <p>Mobile Network Code.</p>
-    #[doc(hidden)]
     pub mnc: ::std::option::Option<i32>,
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    #[doc(hidden)]
     pub eutran_cid: ::std::option::Option<i32>,
     /// <p>LTE tracking area code.</p>
-    #[doc(hidden)]
     pub tac: ::std::option::Option<i32>,
     /// <p>LTE local identification (local ID) information.</p>
-    #[doc(hidden)]
     pub lte_local_id: ::std::option::Option<crate::types::LteLocalId>,
     /// <p>LTE timing advance.</p>
-    #[doc(hidden)]
     pub lte_timing_advance: ::std::option::Option<i32>,
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub rsrp: ::std::option::Option<i32>,
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
-    #[doc(hidden)]
     pub rsrq: ::std::option::Option<f32>,
     /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
-    #[doc(hidden)]
     pub nr_capable: bool,
     /// <p>LTE object for network measurement reports.</p>
-    #[doc(hidden)]
     pub lte_nmr: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>,
 }
 impl LteObj {

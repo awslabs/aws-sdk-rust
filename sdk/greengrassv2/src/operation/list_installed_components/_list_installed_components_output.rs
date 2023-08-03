@@ -8,10 +8,8 @@ pub struct ListInstalledComponentsOutput {
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
-    #[doc(hidden)]
     pub installed_components: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

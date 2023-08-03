@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRegistryInput {

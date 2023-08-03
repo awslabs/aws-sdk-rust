@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTargetGroupOutput {
     /// <p>Information about the target group.</p>
-    #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     _request_id: Option<String>,
 }

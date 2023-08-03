@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightSummary {
     /// <p>The insights unique identifier. </p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group that the insight belongs to.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub root_cause_service_id: ::std::option::Option<crate::types::ServiceId>,
     /// <p> Categories The categories that label and describe the type of insight.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>,
     /// <p>The current state of the insight.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    #[doc(hidden)]
     pub client_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    #[doc(hidden)]
     pub root_cause_service_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    #[doc(hidden)]
     pub top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InsightSummary {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProviderUserIdentifierType {
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
-    #[doc(hidden)]
     pub provider_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
-    #[doc(hidden)]
     pub provider_attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl ProviderUserIdentifierType {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
-    #[doc(hidden)]
     pub closing_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
-    #[doc(hidden)]
     pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
-    #[doc(hidden)]
     pub conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
 }
 impl IntentClosingSetting {

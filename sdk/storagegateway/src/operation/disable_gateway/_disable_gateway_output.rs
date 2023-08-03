@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableGatewayOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

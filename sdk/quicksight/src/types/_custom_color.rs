@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomColor {
     /// <p>The data value that the color is applied to.</p>
-    #[doc(hidden)]
     pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The color that is applied to the data value.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The value of a special data value.</p>
-    #[doc(hidden)]
     pub special_value: ::std::option::Option<crate::types::SpecialValue>,
 }
 impl CustomColor {

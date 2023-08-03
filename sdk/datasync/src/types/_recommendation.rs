@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
-    #[doc(hidden)]
     pub storage_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    #[doc(hidden)]
     pub estimated_monthly_storage_cost: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {

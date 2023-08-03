@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLogSourceConfiguration {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl AwsLogSourceConfiguration {

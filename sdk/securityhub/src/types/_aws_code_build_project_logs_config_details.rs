@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigDetails {
     /// <p>Information about CloudWatch Logs for the build project.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,
 }
 impl AwsCodeBuildProjectLogsConfigDetails {

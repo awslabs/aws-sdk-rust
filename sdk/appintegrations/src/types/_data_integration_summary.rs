@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DataIntegration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the data source.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
 }
 impl DataIntegrationSummary {

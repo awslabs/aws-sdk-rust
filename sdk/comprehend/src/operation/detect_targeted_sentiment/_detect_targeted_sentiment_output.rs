@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectTargetedSentimentOutput {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
     _request_id: Option<String>,
 }

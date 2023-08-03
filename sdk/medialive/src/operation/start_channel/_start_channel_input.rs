@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChannelInput {
     /// A request to start a channel
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl StartChannelInput {

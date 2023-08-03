@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompareFacesOutput {
     /// <p>The face in the source image that was used for comparison.</p>
-    #[doc(hidden)]
     pub source_image_face: ::std::option::Option<crate::types::ComparedSourceImageFace>,
     /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
-    #[doc(hidden)]
     pub face_matches: ::std::option::Option<::std::vec::Vec<crate::types::CompareFacesMatch>>,
     /// <p>An array of faces in the target image that did not match the source image face.</p>
-    #[doc(hidden)]
     pub unmatched_faces: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
     /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    #[doc(hidden)]
     pub source_image_orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    #[doc(hidden)]
     pub target_image_orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-    #[doc(hidden)]
     pub ip_sets: ::std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails>,
     /// <p>A list of port ranges.</p>
-    #[doc(hidden)]
     pub port_sets: ::std::option::Option<crate::types::RuleGroupVariablesPortSetsDetails>,
 }
 impl RuleGroupVariables {

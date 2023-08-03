@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    #[doc(hidden)]
     pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>,
     _request_id: Option<String>,
 }

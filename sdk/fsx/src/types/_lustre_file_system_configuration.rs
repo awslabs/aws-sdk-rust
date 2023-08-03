@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LustreFileSystemConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
     /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
-    #[doc(hidden)]
     pub data_repository_configuration: ::std::option::Option<crate::types::DataRepositoryConfiguration>,
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::LustreDeploymentType>,
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types. </p>
     /// <p>Valid values:</p>
@@ -24,24 +21,18 @@ pub struct LustreFileSystemConfiguration {
     /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p> </li>
     /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
     /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> deployment types, this value is a string that is unique within an Amazon Web Services Region. </p>
-    #[doc(hidden)]
     pub mount_name: ::std::option::Option<::std::string::String>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    #[doc(hidden)]
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
-    #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A boolean flag indicating whether tags on the file system are copied to backups. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. (Default = false)</p>
-    #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The type of drive cache used by <code>PERSISTENT_1</code> file systems that are provisioned with HDD storage devices. This parameter is required when <code>StorageType</code> is HDD. When set to <code>READ</code> the file system has an SSD storage cache that is sized to 20% of the file system's storage capacity. This improves the performance for frequently accessed files by caching up to 20% of the total storage capacity.</p>
     /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
-    #[doc(hidden)]
     pub drive_cache_type: ::std::option::Option<crate::types::DriveCacheType>,
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
@@ -49,13 +40,10 @@ pub struct LustreFileSystemConfiguration {
     /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     /// <p>The Lustre logging configuration. Lustre logging writes the enabled log events for your file system to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
     /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
-    #[doc(hidden)]
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
 }
 impl LustreFileSystemConfiguration {

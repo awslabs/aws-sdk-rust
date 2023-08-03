@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The number of status codes that can cause a failover.</p>
-    #[doc(hidden)]
     pub quantity: i32,
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {

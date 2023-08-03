@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEndpoint {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub yarn_endpoint_address: ::std::option::Option<::std::string::String>,
     /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
-    #[doc(hidden)]
     pub private_address: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
-    #[doc(hidden)]
     pub zeppelin_remote_spark_interpreter_port: i32,
     /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub public_address: ::std::option::Option<::std::string::String>,
     /// <p>The current status of this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -38,59 +29,44 @@ pub struct DevEndpoint {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
-    #[doc(hidden)]
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub extra_python_libs_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub extra_jars_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The status of the last update.</p>
-    #[doc(hidden)]
     pub last_update_status: ::std::option::Option<::std::string::String>,
     /// <p>The point in time at which this DevEndpoint was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    #[doc(hidden)]
     pub public_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -98,7 +74,6 @@ pub struct DevEndpoint {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    #[doc(hidden)]
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DevEndpoint {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
-    #[doc(hidden)]
     pub task_object: ::std::option::Option<crate::types::TaskObject>,
     _request_id: Option<String>,
 }

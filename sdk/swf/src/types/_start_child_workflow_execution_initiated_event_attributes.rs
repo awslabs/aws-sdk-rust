@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the child workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the child workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks. This data isn't sent to the activity.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The inputs provided to the child workflow execution.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration for the child workflow execution. If the workflow execution isn't closed within this duration, it is timed out and force-terminated.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The name of the task list used for the decision tasks of the child workflow execution.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <code>Decision</code> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -37,17 +29,13 @@ pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The maximum duration allowed for the decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags to associated with the child workflow execution.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM role to attach to the child workflow execution.</p>
-    #[doc(hidden)]
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl StartChildWorkflowExecutionInitiatedEventAttributes {

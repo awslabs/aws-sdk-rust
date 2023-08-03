@@ -6,19 +6,14 @@ pub struct GetEcsServiceRecommendationProjectedMetricsInput {
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p> The statistic of the projected metrics. </p>
-    #[doc(hidden)]
     pub stat: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p> The granularity, in seconds, of the projected metrics data points. </p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p> The timestamp of the first projected metrics data point to return. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp of the last projected metrics data point to return. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsInput {

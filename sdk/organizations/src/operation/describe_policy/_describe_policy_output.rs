@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePolicyOutput {
     /// <p>A structure that contains details about the specified policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }

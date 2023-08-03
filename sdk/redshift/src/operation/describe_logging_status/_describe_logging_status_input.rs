@@ -6,7 +6,6 @@
 pub struct DescribeLoggingStatusInput {
     /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoggingStatusInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>When to start the service software update.</p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct StartServiceSoftwareUpdateInput {
     /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p>
-    #[doc(hidden)]
     pub schedule_at: ::std::option::Option<crate::types::ScheduleAt>,
     /// <p>The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
-    #[doc(hidden)]
     pub desired_start_time: ::std::option::Option<i64>,
 }
 impl StartServiceSoftwareUpdateInput {

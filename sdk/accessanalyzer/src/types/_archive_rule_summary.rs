@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter used to define the archive rule.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>The time at which the archive rule was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the archive rule was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ArchiveRuleSummary {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelInfo {
     /// <p>The name of the signaling channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the signaling channel.</p>
-    #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Current status of the signaling channel.</p>
-    #[doc(hidden)]
     pub channel_status: ::std::option::Option<crate::types::Status>,
     /// <p>The time at which the signaling channel was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    #[doc(hidden)]
     pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     /// <p>The current version of the signaling channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl ChannelInfo {

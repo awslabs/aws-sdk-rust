@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessingStartSelector {
     /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
-    #[doc(hidden)]
     pub kvs_stream_start_selector: ::std::option::Option<crate::types::KinesisVideoStreamStartSelector>,
 }
 impl StreamProcessingStartSelector {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendation {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
-    #[doc(hidden)]
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
-    #[doc(hidden)]
     pub term_in_years: ::std::option::Option<crate::types::TermInYears>,
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
-    #[doc(hidden)]
     pub service_specification: ::std::option::Option<crate::types::ServiceSpecification>,
     /// <p>Details about the recommended purchases.</p>
-    #[doc(hidden)]
     pub recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>>,
     /// <p>A summary about the recommended purchase.</p>
-    #[doc(hidden)]
     pub recommendation_summary: ::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary>,
 }
 impl ReservationPurchaseRecommendation {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentOverride {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
 }
 impl IntentOverride {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanRuleCopyActionsDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
-    #[doc(hidden)]
     pub destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
 }
 impl AwsBackupBackupPlanRuleCopyActionsDetails {

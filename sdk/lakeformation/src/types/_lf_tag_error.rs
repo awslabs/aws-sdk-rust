@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTagError {
     /// <p>The key-name of the LF-tag.</p>
-    #[doc(hidden)]
     pub lf_tag: ::std::option::Option<crate::types::LfTagPair>,
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl LfTagError {

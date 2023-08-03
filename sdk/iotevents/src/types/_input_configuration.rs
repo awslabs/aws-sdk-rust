@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>The name of the input.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the input.</p>
-    #[doc(hidden)]
     pub input_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the input.</p>
-    #[doc(hidden)]
     pub input_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the input was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the input was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the input.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InputStatus>,
 }
 impl InputConfiguration {

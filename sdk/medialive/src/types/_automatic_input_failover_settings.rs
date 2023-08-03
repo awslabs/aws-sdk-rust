@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomaticInputFailoverSettings {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
-    #[doc(hidden)]
     pub error_clear_time_msec: ::std::option::Option<i32>,
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-    #[doc(hidden)]
     pub failover_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
-    #[doc(hidden)]
     pub input_preference: ::std::option::Option<crate::types::InputPreference>,
     /// The input ID of the secondary input in the automatic input failover pair.
-    #[doc(hidden)]
     pub secondary_input_id: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticInputFailoverSettings {

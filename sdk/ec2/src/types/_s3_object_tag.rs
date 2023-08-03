@@ -6,11 +6,9 @@
 pub struct S3ObjectTag {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl S3ObjectTag {

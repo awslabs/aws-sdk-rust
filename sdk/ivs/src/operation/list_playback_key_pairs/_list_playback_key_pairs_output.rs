@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
-    #[doc(hidden)]
     pub key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

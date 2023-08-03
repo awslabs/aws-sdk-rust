@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSummary {
     /// <p> Type of operating system for the servers. </p>
-    #[doc(hidden)]
     pub server_os_type: ::std::option::Option<crate::types::ServerOsType>,
     /// <p> Number of servers. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ServerSummary {

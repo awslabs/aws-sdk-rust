@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
-    #[doc(hidden)]
     pub criterion: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>>,
 }
 impl FindingCriteria {

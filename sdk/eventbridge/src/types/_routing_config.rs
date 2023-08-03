@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    #[doc(hidden)]
     pub failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
 impl RoutingConfig {

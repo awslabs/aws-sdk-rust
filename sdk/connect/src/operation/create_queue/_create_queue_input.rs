@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the queue.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the queue.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    #[doc(hidden)]
     pub outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
     /// <p>The identifier for the hours of operation.</p>
-    #[doc(hidden)]
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-    #[doc(hidden)]
     pub max_contacts: ::std::option::Option<i32>,
     /// <p>The quick connects available to agents who are working the queue.</p>
-    #[doc(hidden)]
     pub quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInput {

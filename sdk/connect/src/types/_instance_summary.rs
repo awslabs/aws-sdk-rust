@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>The identifier of the instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity management type of the instance.</p>
-    #[doc(hidden)]
     pub identity_management_type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>The alias of the instance.</p>
-    #[doc(hidden)]
     pub instance_alias: ::std::option::Option<::std::string::String>,
     /// <p>When the instance was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The service role of the instance.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The state of the instance.</p>
-    #[doc(hidden)]
     pub instance_status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Whether inbound calls are enabled.</p>
-    #[doc(hidden)]
     pub inbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>Whether outbound calls are enabled.</p>
-    #[doc(hidden)]
     pub outbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
-    #[doc(hidden)]
     pub instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummary {

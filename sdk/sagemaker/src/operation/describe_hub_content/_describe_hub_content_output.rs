@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHubContentOutput {
     /// <p>The name of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The document schema version for the hub content.</p>
-    #[doc(hidden)]
     pub document_schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hub that contains the content.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
-    #[doc(hidden)]
     pub hub_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_description: ::std::option::Option<::std::string::String>,
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    #[doc(hidden)]
     pub hub_content_markdown: ::std::option::Option<::std::string::String>,
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    #[doc(hidden)]
     pub hub_content_document: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
-    #[doc(hidden)]
     pub hub_content_dependencies: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
     /// <p>The status of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     /// <p>The failure reason if importing hub content failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that hub content was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

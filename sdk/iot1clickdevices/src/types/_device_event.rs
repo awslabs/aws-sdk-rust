@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceEvent {
     /// <p>An object representing the device associated with the event.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
     /// <p>A serialized JSON object representing the device-type specific event.</p>
-    #[doc(hidden)]
     pub std_event: ::std::option::Option<::std::string::String>,
 }
 impl DeviceEvent {

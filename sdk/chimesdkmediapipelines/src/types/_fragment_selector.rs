@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FragmentSelector {
     /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
-    #[doc(hidden)]
     pub timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelector {

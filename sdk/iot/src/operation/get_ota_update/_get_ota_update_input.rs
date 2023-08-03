@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOtaUpdateInput {
     /// <p>The OTA update ID.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
 }
 impl GetOtaUpdateInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputInput {
     /// <p>The name of the input.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputInput {

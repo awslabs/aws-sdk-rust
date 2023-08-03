@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
-    #[doc(hidden)]
     pub traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     _request_id: Option<String>,
 }

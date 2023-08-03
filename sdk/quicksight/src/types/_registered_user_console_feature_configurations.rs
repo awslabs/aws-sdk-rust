@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurations {

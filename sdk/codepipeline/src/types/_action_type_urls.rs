@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeUrls {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
-    #[doc(hidden)]
     pub configuration_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
-    #[doc(hidden)]
     pub entity_url_template: ::std::option::Option<::std::string::String>,
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
-    #[doc(hidden)]
     pub execution_url_template: ::std::option::Option<::std::string::String>,
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    #[doc(hidden)]
     pub revision_url_template: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeUrls {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamSettings {
     /// <p>Database name for the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Set this attribute to specify the length of time to store all of the tables in memory that are migrated into Amazon Timestream from the source database. Time is measured in units of hours. When Timestream data comes in, it first resides in memory for the specified duration, which allows quick access to it.</p>
-    #[doc(hidden)]
     pub memory_duration: ::std::option::Option<i32>,
     /// <p>Set this attribute to specify the default magnetic duration applied to the Amazon Timestream tables in days. This is the number of days that records remain in magnetic store before being discarded. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub magnetic_duration: ::std::option::Option<i32>,
     /// <p>Set this attribute to <code>true</code> to specify that DMS only applies inserts and updates, and not deletes. Amazon Timestream does not allow deleting records, so if this value is <code>false</code>, DMS nulls out the corresponding record in the Timestream database rather than deleting it.</p>
-    #[doc(hidden)]
     pub cdc_inserts_and_updates: ::std::option::Option<bool>,
     /// <p>Set this attribute to <code>true</code> to enable memory store writes. When this value is <code>false</code>, DMS does not write records that are older in days than the value specified in <code>MagneticDuration</code>, because Amazon Timestream does not allow memory writes by default. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub enable_magnetic_store_writes: ::std::option::Option<bool>,
 }
 impl TimestreamSettings {

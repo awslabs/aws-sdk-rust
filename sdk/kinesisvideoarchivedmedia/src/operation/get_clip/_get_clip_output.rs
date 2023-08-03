@@ -4,7 +4,6 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
     pub payload: ::aws_smithy_http::byte_stream::ByteStream,

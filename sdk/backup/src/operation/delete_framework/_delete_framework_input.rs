@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFrameworkInput {
     /// <p>The unique name of a framework.</p>
-    #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFrameworkInput {

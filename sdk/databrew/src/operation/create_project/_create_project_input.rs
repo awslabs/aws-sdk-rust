@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of an existing dataset to associate this project with.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing recipe to associate with the project.</p>
-    #[doc(hidden)]
     pub recipe_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
-    #[doc(hidden)]
     pub sample: ::std::option::Option<crate::types::Sample>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInput {

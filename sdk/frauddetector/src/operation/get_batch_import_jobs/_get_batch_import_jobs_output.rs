@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchImportJobsOutput {
     /// <p>An array containing the details of each batch import job.</p>
-    #[doc(hidden)]
     pub batch_imports: ::std::option::Option<::std::vec::Vec<crate::types::BatchImport>>,
     /// <p>The next token for the subsequent resquest.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

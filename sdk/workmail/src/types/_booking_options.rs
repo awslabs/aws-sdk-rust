@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BookingOptions {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
-    #[doc(hidden)]
     pub auto_accept_requests: bool,
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
-    #[doc(hidden)]
     pub auto_decline_recurring_requests: bool,
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
-    #[doc(hidden)]
     pub auto_decline_conflicting_requests: bool,
 }
 impl BookingOptions {

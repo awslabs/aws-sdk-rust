@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSettings {
     /// <p>The ARN of the user settings.</p>
-    #[doc(hidden)]
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    #[doc(hidden)]
     pub copy_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    #[doc(hidden)]
     pub paste_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    #[doc(hidden)]
     pub download_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    #[doc(hidden)]
     pub upload_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
-    #[doc(hidden)]
     pub print_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
-    #[doc(hidden)]
     pub disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    #[doc(hidden)]
     pub idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl UserSettings {

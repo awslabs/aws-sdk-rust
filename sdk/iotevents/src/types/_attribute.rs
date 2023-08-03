@@ -12,7 +12,6 @@ pub struct Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    #[doc(hidden)]
     pub json_path: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateCertificateInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreStatus {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    #[doc(hidden)]
     pub current_restore_rate_in_mega_bytes_per_second: f64,
     /// <p>The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    #[doc(hidden)]
     pub snapshot_size_in_mega_bytes: i64,
     /// <p>The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    #[doc(hidden)]
     pub progress_in_mega_bytes: i64,
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: i64,
     /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: i64,
 }
 impl RestoreStatus {

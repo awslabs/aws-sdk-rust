@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunPipelineActivityOutput {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    #[doc(hidden)]
     pub payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
-    #[doc(hidden)]
     pub log_result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

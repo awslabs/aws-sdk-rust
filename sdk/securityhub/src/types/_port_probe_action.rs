@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeAction {
     /// <p>Information about the ports affected by the port probe.</p>
-    #[doc(hidden)]
     pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
     /// <p>Indicates whether the port probe was blocked.</p>
-    #[doc(hidden)]
     pub blocked: bool,
 }
 impl PortProbeAction {

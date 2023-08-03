@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanDetails {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    #[doc(hidden)]
     pub backup_plan: ::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
-    #[doc(hidden)]
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID for the backup plan. </p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupPlanDetails {

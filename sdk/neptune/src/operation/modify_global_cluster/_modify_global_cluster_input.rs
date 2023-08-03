@@ -5,7 +5,6 @@
 pub struct ModifyGlobalClusterInput {
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -15,19 +14,15 @@ pub struct ModifyGlobalClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    #[doc(hidden)]
     pub new_global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available Neptune engine versions, use the following command:</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInput {

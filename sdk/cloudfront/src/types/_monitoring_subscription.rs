@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
-    #[doc(hidden)]
     pub realtime_metrics_subscription_config: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
 }
 impl MonitoringSubscription {

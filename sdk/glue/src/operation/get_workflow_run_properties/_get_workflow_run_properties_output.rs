@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesOutput {
     /// <p>The workflow run properties which were set during the specified run.</p>
-    #[doc(hidden)]
     pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAnalysisOutput {
     /// <p>Information about the network insights analysis.</p>
-    #[doc(hidden)]
     pub network_insights_analysis: ::std::option::Option<crate::types::NetworkInsightsAnalysis>,
     _request_id: Option<String>,
 }

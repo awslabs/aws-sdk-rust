@@ -6,24 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueGreenDeployment {
     /// <p>The unique identifier of the blue/green deployment.</p>
-    #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of the blue/green deployment.</p>
-    #[doc(hidden)]
     pub blue_green_deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The source database for the blue/green deployment.</p>
     /// <p>Before switchover, the source database is the production database in the blue environment.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The target database for the blue/green deployment.</p>
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    #[doc(hidden)]
     pub switchover_details: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>,
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
@@ -36,19 +30,14 @@ pub struct BlueGreenDeployment {
     /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
     /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the status of the blue/green deployment.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl BlueGreenDeployment {

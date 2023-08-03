@@ -21,20 +21,15 @@ pub struct DescribeReservedInstancesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    #[doc(hidden)]
     pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
 }
 impl DescribeReservedInstancesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_canonical_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The current configuration information for the identity.</p>
-    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentity {

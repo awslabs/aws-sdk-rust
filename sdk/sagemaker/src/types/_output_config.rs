@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputConfig {
     /// <p>Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    #[doc(hidden)]
     pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the target device or the machine learning instance that you want to run your model on after the compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
     /// <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_device: ::std::option::Option<crate::types::TargetDevice>,
     /// <p>Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.</p>
     /// <p>The following examples show how to configure the <code>TargetPlatform</code> and <code>CompilerOptions</code> JSON strings for popular target platforms: </p>
@@ -22,7 +20,6 @@ pub struct OutputConfig {
     /// <li> <p>ARMv7 phone (CPU)</p> <p> <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code> </p> <p> <code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code> </p> </li>
     /// <li> <p>ARMv8 phone (CPU)</p> <p> <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code> </p> <p> <code> "CompilerOptions": {'ANDROID_PLATFORM': 29}</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_platform: ::std::option::Option<crate::types::TargetPlatform>,
     /// <p>Specifies additional parameters for compiler options in JSON format. The compiler options are <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
     /// <ul>
@@ -63,7 +60,6 @@ pub struct OutputConfig {
     /// <li> <p> <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
     /// </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub compiler_options: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -73,7 +69,6 @@ pub struct OutputConfig {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfig {

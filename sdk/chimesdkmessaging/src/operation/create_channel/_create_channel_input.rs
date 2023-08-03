@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The ARN of the channel request.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ChannelMode>,
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the creation request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the channel in the request.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the channel members in the request.</p>
-    #[doc(hidden)]
     pub member_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARNs of the channel moderators in the request.</p>
-    #[doc(hidden)]
     pub moderator_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    #[doc(hidden)]
     pub elastic_channel_configuration: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
-    #[doc(hidden)]
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateChannelInput {

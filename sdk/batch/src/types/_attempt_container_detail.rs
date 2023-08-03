@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttemptContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.</p>
-    #[doc(hidden)]
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The network interfaces that are associated with the job attempt.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl AttemptContainerDetail {

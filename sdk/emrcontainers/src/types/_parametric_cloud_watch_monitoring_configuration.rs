@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParametricCloudWatchMonitoringConfiguration {
     /// <p> The name of the log group for log publishing.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The specified name prefix for log streams.</p>
-    #[doc(hidden)]
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ParametricCloudWatchMonitoringConfiguration {

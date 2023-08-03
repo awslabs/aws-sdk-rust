@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// A list of Channel records.
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// A token that can be used to resume pagination from the end of the collection.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

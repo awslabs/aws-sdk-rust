@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    #[doc(hidden)]
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWhatIfAnalysisInput {

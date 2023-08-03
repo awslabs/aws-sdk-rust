@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamInstanceProfileAssociation {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IamInstanceProfileAssociationState>,
     /// <p>The time the IAM instance profile was associated with the instance.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IamInstanceProfileAssociation {

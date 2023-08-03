@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisplayFormatOptions {
     /// <p>A Boolean value that indicates whether to use blank cell format.</p>
-    #[doc(hidden)]
     pub use_blank_cell_format: bool,
     /// <p>Determines the blank cell format.</p>
-    #[doc(hidden)]
     pub blank_cell_format: ::std::option::Option<::std::string::String>,
     /// <p>Determines the <code>DateTime</code> format.</p>
-    #[doc(hidden)]
     pub date_format: ::std::option::Option<::std::string::String>,
     /// <p>Determines the decimal separator.</p>
-    #[doc(hidden)]
     pub decimal_separator: ::std::option::Option<crate::types::TopicNumericSeparatorSymbol>,
     /// <p>Determines the grouping separator.</p>
-    #[doc(hidden)]
     pub grouping_separator: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether to use grouping.</p>
-    #[doc(hidden)]
     pub use_grouping: bool,
     /// <p>Determines the number of fraction digits.</p>
-    #[doc(hidden)]
     pub fraction_digits: i32,
     /// <p>The prefix value for a display format.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The suffix value for a display format.</p>
-    #[doc(hidden)]
     pub suffix: ::std::option::Option<::std::string::String>,
     /// <p>The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>, <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.</p>
-    #[doc(hidden)]
     pub unit_scaler: ::std::option::Option<crate::types::NumberScale>,
     /// <p>The negative format.</p>
-    #[doc(hidden)]
     pub negative_format: ::std::option::Option<crate::types::NegativeFormat>,
     /// <p>The currency symbol, such as <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_symbol: ::std::option::Option<::std::string::String>,
 }
 impl DisplayFormatOptions {

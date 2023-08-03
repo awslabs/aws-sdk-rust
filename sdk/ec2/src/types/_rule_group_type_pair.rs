@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupTypePair {
     /// <p>The ARN of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
-    #[doc(hidden)]
     pub rule_group_type: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupTypePair {

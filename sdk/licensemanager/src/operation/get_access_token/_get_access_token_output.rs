@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

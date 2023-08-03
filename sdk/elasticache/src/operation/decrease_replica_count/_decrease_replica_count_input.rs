@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecreaseReplicaCountInput {
     /// <p>The id of the replication group from which you want to remove replica nodes.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
@@ -16,16 +15,12 @@ pub struct DecreaseReplicaCountInput {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_replica_count: ::std::option::Option<i32>,
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    #[doc(hidden)]
     pub replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
-    #[doc(hidden)]
     pub replicas_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl DecreaseReplicaCountInput {

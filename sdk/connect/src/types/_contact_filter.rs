@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    #[doc(hidden)]
     pub contact_states: ::std::option::Option<::std::vec::Vec<crate::types::ContactState>>,
 }
 impl ContactFilter {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessage {
     /// <p>In-app message content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to SDK.</p>
-    #[doc(hidden)]
     pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The layout of the message.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::Layout>,
 }
 impl InAppMessage {

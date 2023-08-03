@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportedSidewalkDevice {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
-    #[doc(hidden)]
     pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
-    #[doc(hidden)]
     pub onboarding_status: ::std::option::Option<crate::types::OnboardStatus>,
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
-    #[doc(hidden)]
     pub onboarding_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the status information was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportedSidewalkDevice {

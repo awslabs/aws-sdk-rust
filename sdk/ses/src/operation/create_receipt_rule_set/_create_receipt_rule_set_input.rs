@@ -10,7 +10,6 @@ pub struct CreateReceiptRuleSetInput {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateReceiptRuleSetInput {

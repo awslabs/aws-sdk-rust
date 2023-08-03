@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    #[doc(hidden)]
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetQuantumTaskInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageBuilder {
     /// <p>The name of the image builder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the image builder.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image from which this builder was created.</p>
-    #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The image builder name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration of the image builder.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
@@ -58,41 +52,29 @@ pub struct ImageBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image builder.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the image builder.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageBuilderState>,
     /// <p>The reason why the last state change occurred.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::ImageBuilderStateChangeReason>,
     /// <p>The time stamp when the image builder was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Enables or disables default internet access for the image builder.</p>
-    #[doc(hidden)]
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    #[doc(hidden)]
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    #[doc(hidden)]
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The image builder errors.</p>
-    #[doc(hidden)]
     pub image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
-    #[doc(hidden)]
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl ImageBuilder {

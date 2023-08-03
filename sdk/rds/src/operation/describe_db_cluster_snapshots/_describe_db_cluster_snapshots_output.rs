@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     _request_id: Option<String>,
 }

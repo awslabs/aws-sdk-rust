@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberAccountInput {

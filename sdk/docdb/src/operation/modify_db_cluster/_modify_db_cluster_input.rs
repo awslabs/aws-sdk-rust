@@ -9,7 +9,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -19,12 +18,10 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    #[doc(hidden)]
     pub new_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -32,22 +29,17 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the cluster parameter group to use for the cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>
     /// <p>Default: The same port as the original cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
@@ -58,29 +50,23 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
     /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInput {

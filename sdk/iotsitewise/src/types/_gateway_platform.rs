@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass.</p>
-    #[doc(hidden)]
     pub greengrass: ::std::option::Option<crate::types::Greengrass>,
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
-    #[doc(hidden)]
     pub greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,
 }
 impl GatewayPlatform {

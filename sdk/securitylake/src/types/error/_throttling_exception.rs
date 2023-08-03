@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The code for the service in Service Quotas.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>That the rate of requests to Security Lake is exceeding the request quotas for your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>Retry the request after the specified time.</p>
-    #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

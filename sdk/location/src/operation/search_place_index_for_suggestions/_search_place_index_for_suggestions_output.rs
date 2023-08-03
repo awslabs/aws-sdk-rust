@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
     /// <p>A list of place suggestions that best match the search text.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,
     _request_id: Option<String>,
 }

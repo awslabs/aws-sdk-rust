@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeLog {
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
-    #[doc(hidden)]
     pub object_type: ::std::option::Option<crate::types::ObjectTypeEnum>,
     /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
-    #[doc(hidden)]
     pub object_name: ::std::option::Option<::std::string::String>,
     /// <p> The action that was performed. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionEnum>,
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The user or role that performed the action. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl ChangeLog {

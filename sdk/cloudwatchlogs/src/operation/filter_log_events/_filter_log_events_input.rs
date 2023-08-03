@@ -6,47 +6,36 @@ pub struct FilterLogEventsInput {
     /// <p>The name of the log group to search.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    #[doc(hidden)]
     pub log_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    #[doc(hidden)]
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<i64>,
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<i64>,
     /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     /// <p>If not provided, all the events are matched.</p>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p> <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
     )]
-    #[doc(hidden)]
     pub interleaved: ::std::option::Option<bool>,
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
-    #[doc(hidden)]
     pub unmask: ::std::option::Option<bool>,
 }
 impl FilterLogEventsInput {

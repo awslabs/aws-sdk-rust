@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    #[doc(hidden)]
     pub flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerOutputDataConfig {

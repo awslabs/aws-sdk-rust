@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeReviewSummary {
     /// <p>The name of the code review.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    #[doc(hidden)]
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The provider type of the repository association.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
@@ -27,25 +22,18 @@ pub struct CodeReviewSummary {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    #[doc(hidden)]
     pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the code review.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The pull request ID for the code review.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The statistics from the code review.</p>
-    #[doc(hidden)]
     pub metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    #[doc(hidden)]
     pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl CodeReviewSummary {

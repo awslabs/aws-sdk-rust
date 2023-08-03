@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
-    #[doc(hidden)]
     pub discoverer_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the discoverer.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DiscovererState>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
-    #[doc(hidden)]
     pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
-    #[doc(hidden)]
     pub remote_access_security_group: ::std::option::Option<::std::string::String>,
 }
 impl NodegroupResources {

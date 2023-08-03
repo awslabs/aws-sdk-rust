@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressOutput {
     /// <p>The current state of the authorization rule.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
     _request_id: Option<String>,
 }

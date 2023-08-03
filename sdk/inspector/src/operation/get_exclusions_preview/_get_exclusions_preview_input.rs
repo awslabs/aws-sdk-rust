@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    #[doc(hidden)]
     pub assessment_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    #[doc(hidden)]
     pub preview_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
 }
 impl GetExclusionsPreviewInput {

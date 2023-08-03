@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetedSentimentMention {
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
-    #[doc(hidden)]
     pub group_score: ::std::option::Option<f32>,
     /// <p>The text in the document that identifies the entity.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetedSentimentEntityType>,
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
-    #[doc(hidden)]
     pub mention_sentiment: ::std::option::Option<crate::types::MentionSentiment>,
     /// <p>The offset into the document text where the mention begins.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The offset into the document text where the mention ends.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
 }
 impl TargetedSentimentMention {

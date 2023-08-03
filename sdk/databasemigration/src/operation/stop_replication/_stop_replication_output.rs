@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationOutput {
     /// <p>The replication that DMS stopped.</p>
-    #[doc(hidden)]
     pub replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,
 }

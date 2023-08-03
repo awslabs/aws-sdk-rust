@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExclusionByResourceTypes {
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
 }
 impl ExclusionByResourceTypes {

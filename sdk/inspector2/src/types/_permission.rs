@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The operations that can be performed with the given permissions.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
 }
 impl Permission {

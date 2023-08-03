@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VoiceProfileDomain {
     /// <p>The ID of the voice profile domain.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
-    #[doc(hidden)]
     pub voice_profile_domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the voice profile domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the voice profile domain.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The time at which the voice profile domain was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the voice profile was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileDomain {

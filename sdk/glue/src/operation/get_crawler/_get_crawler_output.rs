@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrawlerOutput {
     /// <p>The metadata for the specified crawler.</p>
-    #[doc(hidden)]
     pub crawler: ::std::option::Option<crate::types::Crawler>,
     _request_id: Option<String>,
 }

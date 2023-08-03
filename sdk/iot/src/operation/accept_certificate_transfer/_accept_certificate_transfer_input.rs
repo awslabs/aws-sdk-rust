@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
-    #[doc(hidden)]
     pub set_as_active: ::std::option::Option<bool>,
 }
 impl AcceptCertificateTransferInput {

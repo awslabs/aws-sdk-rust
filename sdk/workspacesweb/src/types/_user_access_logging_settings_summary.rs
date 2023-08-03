@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAccessLoggingSettingsSummary {
     /// <p>The ARN of the user access logging settings.</p>
-    #[doc(hidden)]
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Kinesis stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl UserAccessLoggingSettingsSummary {

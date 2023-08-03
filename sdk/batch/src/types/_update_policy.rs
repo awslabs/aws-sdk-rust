@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub terminate_jobs_on_update: ::std::option::Option<bool>,
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
-    #[doc(hidden)]
     pub job_execution_timeout_minutes: i64,
 }
 impl UpdatePolicy {

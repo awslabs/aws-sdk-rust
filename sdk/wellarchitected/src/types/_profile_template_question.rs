@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileTemplateQuestion {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the question.</p>
-    #[doc(hidden)]
     pub question_description: ::std::option::Option<::std::string::String>,
     /// <p>The question choices.</p>
-    #[doc(hidden)]
     pub question_choices: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
     /// <p>The minimum number of choices selected.</p>
-    #[doc(hidden)]
     pub min_selected_choices: i32,
     /// <p>The maximum number of choices selected.</p>
-    #[doc(hidden)]
     pub max_selected_choices: i32,
 }
 impl ProfileTemplateQuestion {

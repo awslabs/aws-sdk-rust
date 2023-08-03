@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomPluginInput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomPluginInput {

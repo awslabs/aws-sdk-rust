@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExportInput {
     /// <p>The name of the bot to export.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to export.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to export. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The format of the exported data.</p>
-    #[doc(hidden)]
     pub export_type: ::std::option::Option<crate::types::ExportType>,
 }
 impl GetExportInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicePoolsInput {
     /// <p>The project ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
@@ -13,10 +12,8 @@ pub struct ListDevicePoolsInput {
     /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DevicePoolType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicePoolsInput {

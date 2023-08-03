@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableRestoreStatusOutput {
     /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
-    #[doc(hidden)]
     pub table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,
 }

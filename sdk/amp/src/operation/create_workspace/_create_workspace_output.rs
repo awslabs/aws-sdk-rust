@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the workspace that was just created.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The status of the workspace that was just created (usually CREATING).
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// The tags of this workspace.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

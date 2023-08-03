@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to stop.</p>
-    #[doc(hidden)]
     pub placement_id: ::std::option::Option<::std::string::String>,
 }
 impl StopGameSessionPlacementInput {

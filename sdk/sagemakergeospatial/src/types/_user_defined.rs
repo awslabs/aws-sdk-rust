@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDefined {
     /// <p>The value for output resolution of the result.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f32>,
     /// <p>The units for output resolution of the result.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl UserDefined {

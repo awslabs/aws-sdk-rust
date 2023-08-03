@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricToRetain {
     /// <p>What is measured by the behavior.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
-    #[doc(hidden)]
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
 }
 impl MetricToRetain {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetOutput {
     /// <p>The newly created matchmaking rule set.</p>
-    #[doc(hidden)]
     pub rule_set: ::std::option::Option<crate::types::MatchmakingRuleSet>,
     _request_id: Option<String>,
 }

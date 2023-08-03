@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSoftwareTokenInput {

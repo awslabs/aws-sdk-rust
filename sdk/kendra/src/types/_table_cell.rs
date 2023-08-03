@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCell {
     /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
-    #[doc(hidden)]
     pub top_answer: bool,
     /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
-    #[doc(hidden)]
     pub highlighted: bool,
     /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
-    #[doc(hidden)]
     pub header: bool,
 }
 impl TableCell {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataOutput {
     /// <p>A Table object containing the table metadata.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::Table>,
     /// <p>A list of column names that the user has been granted access to.</p>
-    #[doc(hidden)]
     pub authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
-    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     /// <p>A list of column row filters.</p>
-    #[doc(hidden)]
     pub cell_filters: ::std::option::Option<::std::vec::Vec<crate::types::ColumnRowFilter>>,
     _request_id: Option<String>,
 }

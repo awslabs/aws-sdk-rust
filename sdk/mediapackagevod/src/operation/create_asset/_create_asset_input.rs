@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssetInput {
     /// The unique identifier for the Asset.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
-    #[doc(hidden)]
     pub packaging_group_id: ::std::option::Option<::std::string::String>,
     /// The resource ID to include in SPEKE key requests.
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// ARN of the source object in S3.
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// The IAM role ARN used to access the source S3 bucket.
-    #[doc(hidden)]
     pub source_role_arn: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssetInput {

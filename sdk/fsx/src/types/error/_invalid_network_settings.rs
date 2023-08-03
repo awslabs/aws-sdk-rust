@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidNetworkSettings {
     /// <p>Error message explaining what's wrong with network settings.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
     pub invalid_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
     pub invalid_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-    #[doc(hidden)]
     pub invalid_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

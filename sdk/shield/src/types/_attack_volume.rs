@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackVolume {
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
-    #[doc(hidden)]
     pub bits_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-    #[doc(hidden)]
     pub packets_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-    #[doc(hidden)]
     pub requests_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
 }
 impl AttackVolume {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingOptionsOutput {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_delivery: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
     _request_id: Option<String>,
 }

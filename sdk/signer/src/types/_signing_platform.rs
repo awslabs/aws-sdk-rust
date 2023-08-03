@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningPlatform {
     /// <p>The ID of a code signing platform.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a code signing platform.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Any partner entities linked to a code signing platform.</p>
-    #[doc(hidden)]
     pub partner: ::std::option::Option<::std::string::String>,
     /// <p>The types of targets that can be signed by a code signing platform.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The category of a code signing platform.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::Category>,
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
-    #[doc(hidden)]
     pub signing_configuration: ::std::option::Option<crate::types::SigningConfiguration>,
     /// <p>The image format of a code signing platform or profile.</p>
-    #[doc(hidden)]
     pub signing_image_format: ::std::option::Option<crate::types::SigningImageFormat>,
     /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
-    #[doc(hidden)]
     pub max_size_in_mb: i32,
     /// <p>Indicates whether revocation is supported for the platform.</p>
-    #[doc(hidden)]
     pub revocation_supported: bool,
 }
 impl SigningPlatform {

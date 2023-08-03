@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostLaunchActions {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    #[doc(hidden)]
     pub deployment: ::std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-    #[doc(hidden)]
     pub s3_log_bucket: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    #[doc(hidden)]
     pub s3_output_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Documents.</p>
-    #[doc(hidden)]
     pub ssm_documents: ::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>>,
 }
 impl PostLaunchActions {

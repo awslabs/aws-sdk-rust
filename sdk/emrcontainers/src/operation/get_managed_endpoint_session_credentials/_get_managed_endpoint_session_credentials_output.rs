@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsOutput {
     /// <p>The identifier of the session token returned.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing the session credentials.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The date and time when the session token will expire.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

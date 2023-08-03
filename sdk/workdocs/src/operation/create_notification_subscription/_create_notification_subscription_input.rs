@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::SubscriptionProtocolType>,
     /// <p>The notification type.</p>
-    #[doc(hidden)]
     pub subscription_type: ::std::option::Option<crate::types::SubscriptionType>,
 }
 impl CreateNotificationSubscriptionInput {

@@ -5,67 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotInstanceRequest {
     /// <p>Deprecated.</p>
-    #[doc(hidden)]
     pub actual_block_hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone group. If you specify the same Availability Zone group for all Spot Instance requests, all Spot Instances are launched in the same Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
-    #[doc(hidden)]
     pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p>The date and time when the Spot Instance request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    #[doc(hidden)]
     pub fault: ::std::option::Option<crate::types::SpotInstanceStateFault>,
     /// <p>The instance ID, if an instance has been launched to fulfill the Spot Instance request.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
-    #[doc(hidden)]
     pub launch_group: ::std::option::Option<::std::string::String>,
     /// <p>Additional information for launching instances.</p>
-    #[doc(hidden)]
     pub launch_specification: ::std::option::Option<crate::types::LaunchSpecification>,
     /// <p>The Availability Zone in which the request is launched.</p>
-    #[doc(hidden)]
     pub launched_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The product description associated with the Spot Instance.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The ID of the Spot Instance request.</p>
-    #[doc(hidden)]
     pub spot_instance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SpotInstanceState>,
     /// <p>The status code and status message describing the Spot Instance request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SpotInstanceStatus>,
     /// <p>Any tags assigned to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Spot Instance request type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SpotInstanceType>,
     /// <p>The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request becomes active at this date and time.</p>
-    #[doc(hidden)]
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     /// <ul>
     /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
     /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    #[doc(hidden)]
     pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotInstanceRequest {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

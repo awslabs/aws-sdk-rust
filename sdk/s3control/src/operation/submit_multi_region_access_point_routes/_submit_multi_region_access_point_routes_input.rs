@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitMultiRegionAccessPointRoutesInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Multi-Region Access Point ARN.</p>
-    #[doc(hidden)]
     pub mrap: ::std::option::Option<::std::string::String>,
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    #[doc(hidden)]
     pub route_updates: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
 }
 impl SubmitMultiRegionAccessPointRoutesInput {

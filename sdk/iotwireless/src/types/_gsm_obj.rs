@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmObj {
     /// <p>Mobile Country Code.</p>
-    #[doc(hidden)]
     pub mcc: ::std::option::Option<i32>,
     /// <p>Mobile Network Code.</p>
-    #[doc(hidden)]
     pub mnc: ::std::option::Option<i32>,
     /// <p>Location area code.</p>
-    #[doc(hidden)]
     pub lac: ::std::option::Option<i32>,
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
-    #[doc(hidden)]
     pub geran_cid: ::std::option::Option<i32>,
     /// <p>GSM local identification (local ID) information.</p>
-    #[doc(hidden)]
     pub gsm_local_id: ::std::option::Option<crate::types::GsmLocalId>,
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
-    #[doc(hidden)]
     pub gsm_timing_advance: ::std::option::Option<i32>,
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub rx_level: ::std::option::Option<i32>,
     /// <p>GSM object for network measurement reports.</p>
-    #[doc(hidden)]
     pub gsm_nmr: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>,
 }
 impl GsmObj {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenCbet {
     /// Enter the CBET check digits to use in the watermark.
-    #[doc(hidden)]
     pub cbet_check_digit_string: ::std::option::Option<::std::string::String>,
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
-    #[doc(hidden)]
     pub cbet_stepaside: ::std::option::Option<crate::types::NielsenWatermarksCbetStepaside>,
     /// Enter the CBET Source ID (CSID) to use in the watermark
-    #[doc(hidden)]
     pub csid: ::std::option::Option<::std::string::String>,
 }
 impl NielsenCbet {

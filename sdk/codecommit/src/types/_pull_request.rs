@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    #[doc(hidden)]
     pub last_activity_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    #[doc(hidden)]
     pub pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
-    #[doc(hidden)]
     pub author_arn: ::std::option::Option<::std::string::String>,
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_targets: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated revision ID for the pull request.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The approval rules applied to the pull request.</p>
-    #[doc(hidden)]
     pub approval_rules: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>,
 }
 impl PullRequest {

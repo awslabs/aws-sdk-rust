@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    #[doc(hidden)]
     pub timestream_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    #[doc(hidden)]
     pub timestream_table_name: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamResources {

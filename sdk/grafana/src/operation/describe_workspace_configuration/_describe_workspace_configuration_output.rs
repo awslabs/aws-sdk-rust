@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The supported Grafana version for the workspace.</p>
-    #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

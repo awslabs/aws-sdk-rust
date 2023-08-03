@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSource {

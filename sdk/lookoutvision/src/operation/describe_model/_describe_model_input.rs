@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelInput {
     /// <p>The project that contains the version of a model that you want to describe.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model that you want to describe.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStacksInput {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    #[doc(hidden)]
     pub stack_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeStacksInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRenderTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
-    #[doc(hidden)]
     pub rendered_template: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

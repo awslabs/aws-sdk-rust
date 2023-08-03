@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptionsInput {
     /// <p>The VPC peering connection options for the accepter VPC.</p>
-    #[doc(hidden)]
     pub accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The VPC peering connection options for the requester VPC.</p>
-    #[doc(hidden)]
     pub requester_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     /// <p>The ID of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVpcPeeringConnectionOptionsInput {

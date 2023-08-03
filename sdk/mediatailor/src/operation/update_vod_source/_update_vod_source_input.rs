@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    #[doc(hidden)]
     pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The name of the source location associated with this VOD Source.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VOD source.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVodSourceInput {

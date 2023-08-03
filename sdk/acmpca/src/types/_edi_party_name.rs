@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdiPartyName {
     /// <p>Specifies the party name.</p>
-    #[doc(hidden)]
     pub party_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name assigner.</p>
-    #[doc(hidden)]
     pub name_assigner: ::std::option::Option<::std::string::String>,
 }
 impl EdiPartyName {

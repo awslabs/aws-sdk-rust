@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentTargetInput {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a deployment target. </p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentTargetInput {

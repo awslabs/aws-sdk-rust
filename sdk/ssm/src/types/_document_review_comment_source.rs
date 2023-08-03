@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReviewCommentSource {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl DocumentReviewCommentSource {

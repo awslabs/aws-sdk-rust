@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizerSummary {
     /// <p>The authorizer name.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer ARN.</p>
-    #[doc(hidden)]
     pub authorizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizerSummary {

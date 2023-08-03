@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyExplainerConfig {
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
-    #[doc(hidden)]
     pub enable_explanations: ::std::option::Option<::std::string::String>,
     /// <p>The inference configuration parameter for the model container.</p>
-    #[doc(hidden)]
     pub inference_config: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
     /// <p>The configuration for SHAP analysis.</p>
-    #[doc(hidden)]
     pub shap_config: ::std::option::Option<crate::types::ClarifyShapConfig>,
 }
 impl ClarifyExplainerConfig {

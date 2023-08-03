@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Purchase {
     /// <p>The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The duration of the reservation's term in seconds.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    #[doc(hidden)]
     pub host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the reservation.</p>
-    #[doc(hidden)]
     pub host_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The hourly price of the reservation per hour.</p>
-    #[doc(hidden)]
     pub hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The instance family on the Dedicated Host that the reservation can be associated with.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The payment option for the reservation.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The upfront price of the reservation.</p>
-    #[doc(hidden)]
     pub upfront_price: ::std::option::Option<::std::string::String>,
 }
 impl Purchase {

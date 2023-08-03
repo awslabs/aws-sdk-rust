@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchedulingPoliciesOutput {
     /// <p>A list of scheduling policies that match the request.</p>
-    #[doc(hidden)]
     pub scheduling_policies: ::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyListingDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

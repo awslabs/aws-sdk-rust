@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBotsOutput {
     /// <p>List of bots and bot details.</p>
-    #[doc(hidden)]
     pub bots: ::std::option::Option<::std::vec::Vec<crate::types::Bot>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

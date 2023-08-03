@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
-    #[doc(hidden)]
     pub egress_configuration: ::std::option::Option<crate::types::EgressConfiguration>,
     /// <p>Network configuration settings for inbound message traffic.</p>
-    #[doc(hidden)]
     pub ingress_configuration: ::std::option::Option<crate::types::IngressConfiguration>,
 }
 impl NetworkConfiguration {

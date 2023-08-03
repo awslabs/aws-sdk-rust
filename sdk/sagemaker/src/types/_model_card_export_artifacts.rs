@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelCardExportArtifacts {
     /// <p>The Amazon S3 URI of the exported model artifacts.</p>
-    #[doc(hidden)]
     pub s3_export_artifacts: ::std::option::Option<::std::string::String>,
 }
 impl ModelCardExportArtifacts {

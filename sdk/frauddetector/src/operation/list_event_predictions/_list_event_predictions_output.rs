@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
-    #[doc(hidden)]
     pub event_prediction_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

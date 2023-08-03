@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>In-application table name that is created by this update.</p>
-    #[doc(hidden)]
     pub table_name_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
-    #[doc(hidden)]
     pub s3_reference_data_source_update: ::std::option::Option<crate::types::S3ReferenceDataSourceUpdate>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
-    #[doc(hidden)]
     pub reference_schema_update: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSourceUpdate {

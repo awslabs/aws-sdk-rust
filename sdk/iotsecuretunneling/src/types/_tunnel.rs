@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TunnelStatus>,
     /// <p>The connection state of the source application.</p>
-    #[doc(hidden)]
     pub source_connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The connection state of the destination application.</p>
-    #[doc(hidden)]
     pub destination_connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>A description of the tunnel.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>Timeout configuration for the tunnel.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>A list of tag metadata associated with the secure tunnel.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time when the tunnel was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the tunnel was updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Tunnel {

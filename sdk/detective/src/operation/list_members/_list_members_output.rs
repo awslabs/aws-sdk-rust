@@ -6,10 +6,8 @@ pub struct ListMembersOutput {
     /// <p>The list of member accounts in the behavior graph.</p>
     /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
-    #[doc(hidden)]
     pub member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

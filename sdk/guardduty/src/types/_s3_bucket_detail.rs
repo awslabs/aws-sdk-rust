@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketDetail {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the bucket was created at.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The owner of the S3 bucket.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>All tags attached to the S3 bucket</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    #[doc(hidden)]
     pub default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
-    #[doc(hidden)]
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
 }
 impl S3BucketDetail {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusOutput {
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
 }

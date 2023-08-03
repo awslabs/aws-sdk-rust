@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafWebAclDetails {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
     /// <p>A unique identifier for a web ACL.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclDetails {

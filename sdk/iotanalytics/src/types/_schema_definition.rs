@@ -6,7 +6,6 @@
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
 }
 impl SchemaDefinition {

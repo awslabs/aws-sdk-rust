@@ -19,39 +19,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p> The type of the workflow execution to be started.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The input to be provided to the workflow execution.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p> A task priority that, if set, specifies the priority for a decision task of this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p> If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -62,13 +54,10 @@ pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM role attached to the child workflow execution.</p>
-    #[doc(hidden)]
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl StartChildWorkflowExecutionDecisionAttributes {

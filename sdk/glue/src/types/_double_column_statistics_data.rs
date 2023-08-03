@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
-    #[doc(hidden)]
     pub minimum_value: f64,
     /// <p>The highest value in the column.</p>
-    #[doc(hidden)]
     pub maximum_value: f64,
     /// <p>The number of null values in the column.</p>
-    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
-    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl DoubleColumnStatisticsData {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionOutput {
     /// <p>The <code>Protection</code> that you requested. </p>
-    #[doc(hidden)]
     pub protection: ::std::option::Option<crate::types::Protection>,
     _request_id: Option<String>,
 }

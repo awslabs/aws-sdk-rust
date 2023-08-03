@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
     /// <p>The maximum time window during which a schedule can be invoked.</p>
-    #[doc(hidden)]
     pub maximum_window_in_minutes: ::std::option::Option<i32>,
 }
 impl FlexibleTimeWindow {

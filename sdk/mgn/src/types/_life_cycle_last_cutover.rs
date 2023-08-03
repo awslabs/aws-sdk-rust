@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastCutover {
     /// <p>Lifecycle last Cutover initiated.</p>
-    #[doc(hidden)]
     pub initiated: ::std::option::Option<crate::types::LifeCycleLastCutoverInitiated>,
     /// <p>Lifecycle last Cutover reverted.</p>
-    #[doc(hidden)]
     pub reverted: ::std::option::Option<crate::types::LifeCycleLastCutoverReverted>,
     /// <p>Lifecycle Cutover finalized date and time.</p>
-    #[doc(hidden)]
     pub finalized: ::std::option::Option<crate::types::LifeCycleLastCutoverFinalized>,
 }
 impl LifeCycleLastCutover {

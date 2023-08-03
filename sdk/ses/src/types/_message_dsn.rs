@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDsn {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub reporting_mta: ::std::option::Option<::std::string::String>,
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    #[doc(hidden)]
     pub arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
-    #[doc(hidden)]
     pub extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl MessageDsn {

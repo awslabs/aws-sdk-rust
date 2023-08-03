@@ -6,25 +6,18 @@
 pub struct BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-    #[doc(hidden)]
     pub broker_az_distribution: ::std::option::Option<crate::types::BrokerAzDistribution>,
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    #[doc(hidden)]
     pub client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-    #[doc(hidden)]
     pub storage_info: ::std::option::Option<crate::types::StorageInfo>,
     /// <p>Information about the broker access configuration.</p>
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    #[doc(hidden)]
     pub zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BrokerNodeGroupInfo {

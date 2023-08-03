@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallFirewallPolicy {

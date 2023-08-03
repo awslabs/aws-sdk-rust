@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
-    #[doc(hidden)]
     pub fact: ::std::option::Option<::std::string::String>,
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    #[doc(hidden)]
     pub facts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellInput {

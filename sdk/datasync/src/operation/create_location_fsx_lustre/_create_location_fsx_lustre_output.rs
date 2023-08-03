@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

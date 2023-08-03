@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplica {
     /// <p>List of global secondary indexes for the replica.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
     /// <p>The name of the Region where the replica is located.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
@@ -24,10 +20,8 @@ pub struct AwsDynamoDbTableReplica {
     /// <li> <p> <code>DELETING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replica_status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the replica status.</p>
-    #[doc(hidden)]
     pub replica_status_description: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableReplica {

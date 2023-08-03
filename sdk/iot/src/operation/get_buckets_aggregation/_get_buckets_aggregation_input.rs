@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketsAggregationInput {
     /// <p>The name of the index to search.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation field.</p>
-    #[doc(hidden)]
     pub aggregation_field: ::std::option::Option<::std::string::String>,
     /// <p>The version of the query.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
-    #[doc(hidden)]
     pub buckets_aggregation_type: ::std::option::Option<crate::types::BucketsAggregationType>,
 }
 impl GetBucketsAggregationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteRunReportOutput {
     /// <p>Download URL of the qualification report.</p>
-    #[doc(hidden)]
     pub qualification_report_download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

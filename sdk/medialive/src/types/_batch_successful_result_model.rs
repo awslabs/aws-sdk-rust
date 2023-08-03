@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSuccessfulResultModel {
     /// ARN of the resource
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// ID of the resource
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Current state of the resource
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl BatchSuccessfulResultModel {

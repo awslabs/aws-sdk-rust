@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupEc2SecurityGroup {
     /// <p>Specifies the ID for the EC2 security group.</p>
-    #[doc(hidden)]
     pub ec2_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the EC2 security group.</p>
-    #[doc(hidden)]
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    #[doc(hidden)]
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the EC2 security group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupEc2SecurityGroup {

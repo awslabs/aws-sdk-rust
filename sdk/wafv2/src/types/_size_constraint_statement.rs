@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraintStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>The operator to use to compare the request part to the size setting. </p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    #[doc(hidden)]
     pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl SizeConstraintStatement {

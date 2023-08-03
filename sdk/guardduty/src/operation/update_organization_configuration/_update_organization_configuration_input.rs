@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector that configures the delegated administrator.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
     /// <p>A list of features that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>,
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>
     /// <ul>
@@ -24,7 +20,6 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
 }
 impl UpdateOrganizationConfigurationInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The request to change the source server migration lifecycle state.</p>
-    #[doc(hidden)]
     pub life_cycle: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
     /// <p>The request to change the source server migration account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ChangeServerLifeCycleStateInput {

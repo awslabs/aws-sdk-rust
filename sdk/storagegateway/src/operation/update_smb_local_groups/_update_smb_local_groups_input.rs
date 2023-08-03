@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSmbLocalGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
-    #[doc(hidden)]
     pub smb_local_groups: ::std::option::Option<crate::types::SmbLocalGroups>,
 }
 impl UpdateSmbLocalGroupsInput {

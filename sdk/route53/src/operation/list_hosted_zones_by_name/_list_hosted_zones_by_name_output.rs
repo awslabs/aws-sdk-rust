@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostedZonesByNameOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
     /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub next_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub next_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

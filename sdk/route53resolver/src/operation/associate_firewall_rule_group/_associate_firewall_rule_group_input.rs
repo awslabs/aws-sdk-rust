@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the firewall rule group. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>A name that lets you identify the association, to manage and use it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    #[doc(hidden)]
     pub mutation_protection: ::std::option::Option<crate::types::MutationProtectionStatus>,
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AssociateFirewallRuleGroupInput {

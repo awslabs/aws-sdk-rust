@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The offset for the start of the highlight.</p>
-    #[doc(hidden)]
     pub begin_offset_inclusive: i32,
     /// <p>The offset for the end of the highlight.</p>
-    #[doc(hidden)]
     pub end_offset_exclusive: i32,
 }
 impl Highlight {

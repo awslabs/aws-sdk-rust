@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCellReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The readiness at a cell level.</p>
-    #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    #[doc(hidden)]
     pub readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }

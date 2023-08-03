@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatasetContentOutput {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>>,
     /// <p>The time when the request was made.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the dataset content.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetContentStatus>,
     _request_id: Option<String>,
 }

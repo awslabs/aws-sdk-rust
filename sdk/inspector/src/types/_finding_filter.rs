@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingFilter {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub severities: ::std::option::Option<::std::vec::Vec<crate::types::Severity>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The time range during which the finding is generated.</p>
-    #[doc(hidden)]
     pub creation_time_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FindingFilter {

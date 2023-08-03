@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    #[doc(hidden)]
     pub object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-    #[doc(hidden)]
     pub evaluate_expressions: bool,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeObjectsInput {

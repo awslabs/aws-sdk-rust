@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub property_values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

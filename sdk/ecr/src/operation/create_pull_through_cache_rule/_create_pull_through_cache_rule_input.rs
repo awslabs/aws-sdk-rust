@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePullThroughCacheRuleInput {
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
-    #[doc(hidden)]
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
-    #[doc(hidden)]
     pub upstream_registry_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl CreatePullThroughCacheRuleInput {

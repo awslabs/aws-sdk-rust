@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bias {
     /// <p>The bias report for a model</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The pre-training bias report for a model.</p>
-    #[doc(hidden)]
     pub pre_training_report: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The post-training bias report for a model.</p>
-    #[doc(hidden)]
     pub post_training_report: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl Bias {

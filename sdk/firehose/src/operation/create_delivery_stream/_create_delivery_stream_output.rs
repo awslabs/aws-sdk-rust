@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliveryStreamOutput {
     /// <p>The ARN of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationTrigger {
     /// <p>The identifier of the recommendation trigger.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of recommendation trigger.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RecommendationTriggerType>,
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
     /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
     /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::RecommendationSourceType>,
     /// <p>A union type containing information related to the trigger.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::RecommendationTriggerData>,
     /// <p>The identifiers of the recommendations.</p>
-    #[doc(hidden)]
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecommendationTrigger {

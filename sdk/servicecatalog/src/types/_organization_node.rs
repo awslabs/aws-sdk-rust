@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationNode {
     /// <p>The organization node type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OrganizationNodeType>,
     /// <p>The identifier of the organization node.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationNode {

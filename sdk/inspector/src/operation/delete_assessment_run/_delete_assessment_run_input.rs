@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentRunInput {

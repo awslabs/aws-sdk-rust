@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseMetricDataInput {
     /// <p>The name of your database from which to get metric data.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid relational database metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value. All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
@@ -16,11 +15,9 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::RelationalDatabaseMetricName>,
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The start of the time interval from which to get metric data.</p>
     /// <p>Constraints:</p>
@@ -28,7 +25,6 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval from which to get metric data.</p>
     /// <p>Constraints:</p>
@@ -36,10 +32,8 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -50,7 +44,6 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
 }
 impl GetRelationalDatabaseMetricDataInput {

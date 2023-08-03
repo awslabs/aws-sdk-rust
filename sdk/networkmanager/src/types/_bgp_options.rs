@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BgpOptions {
     /// <p>The Peer ASN of the BGP.</p>
-    #[doc(hidden)]
     pub peer_asn: ::std::option::Option<i64>,
 }
 impl BgpOptions {

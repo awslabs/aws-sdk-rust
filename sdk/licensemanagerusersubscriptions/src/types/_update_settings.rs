@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    #[doc(hidden)]
     pub add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of one or more subnets to remove.</p>
-    #[doc(hidden)]
     pub remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSettings {

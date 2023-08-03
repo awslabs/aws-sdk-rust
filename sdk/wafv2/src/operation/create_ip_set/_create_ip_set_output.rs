@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpSetOutput {
     /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::IpSetSummary>,
     _request_id: Option<String>,
 }

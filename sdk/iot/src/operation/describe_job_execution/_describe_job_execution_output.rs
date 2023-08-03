@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionOutput {
     /// <p>Information about the job execution.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::JobExecution>,
     _request_id: Option<String>,
 }

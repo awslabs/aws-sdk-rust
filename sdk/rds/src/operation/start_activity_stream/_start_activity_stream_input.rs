@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
-    #[doc(hidden)]
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
-    #[doc(hidden)]
     pub engine_native_audit_fields_included: ::std::option::Option<bool>,
 }
 impl StartActivityStreamInput {

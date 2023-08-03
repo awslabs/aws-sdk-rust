@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceEvaluationFilters {
     /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
-    #[doc(hidden)]
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>Returns a <code>TimeWindow</code> object.</p>
-    #[doc(hidden)]
     pub time_window: ::std::option::Option<crate::types::TimeWindow>,
     /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
-    #[doc(hidden)]
     pub evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEvaluationFilters {

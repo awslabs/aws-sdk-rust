@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionOutput {
     /// <p>The detailed data of the service template version being deleted.</p>
-    #[doc(hidden)]
     pub service_template_version: ::std::option::Option<crate::types::ServiceTemplateVersion>,
     _request_id: Option<String>,
 }

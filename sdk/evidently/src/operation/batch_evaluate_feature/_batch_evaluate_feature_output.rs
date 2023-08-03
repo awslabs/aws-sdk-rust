@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureOutput {
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     _request_id: Option<String>,
 }

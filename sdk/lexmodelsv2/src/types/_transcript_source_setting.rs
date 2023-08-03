@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_transcript_source: ::std::option::Option<crate::types::S3BucketTranscriptSource>,
 }
 impl TranscriptSourceSetting {

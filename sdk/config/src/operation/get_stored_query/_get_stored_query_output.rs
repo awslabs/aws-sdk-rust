@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStoredQueryOutput {
     /// <p>Returns a <code>StoredQuery</code> object.</p>
-    #[doc(hidden)]
     pub stored_query: ::std::option::Option<crate::types::StoredQuery>,
     _request_id: Option<String>,
 }

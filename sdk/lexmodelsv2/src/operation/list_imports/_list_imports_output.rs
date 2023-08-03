@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    #[doc(hidden)]
     pub import_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The locale specified in the request.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

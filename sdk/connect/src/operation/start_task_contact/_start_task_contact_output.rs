@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTaskContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

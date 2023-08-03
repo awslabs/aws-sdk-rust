@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanningRepositoryFilter {
     /// <p>The filter to use when scanning.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::string::String>,
     /// <p>The type associated with the filter.</p>
-    #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::ScanningRepositoryFilterType>,
 }
 impl ScanningRepositoryFilter {

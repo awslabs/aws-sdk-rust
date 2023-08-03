@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
-    #[doc(hidden)]
     pub availability_options: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     _request_id: Option<String>,
 }

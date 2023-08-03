@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
 }
 impl NetworkFabricConfiguration {

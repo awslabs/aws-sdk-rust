@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
-    #[doc(hidden)]
     pub propagation: ::std::option::Option<crate::types::TransitGatewayPropagation>,
     _request_id: Option<String>,
 }

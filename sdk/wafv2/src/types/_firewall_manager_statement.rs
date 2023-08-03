@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallManagerStatement {
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a managed rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    #[doc(hidden)]
     pub managed_rule_group_statement: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    #[doc(hidden)]
     pub rule_group_reference_statement: ::std::option::Option<crate::types::RuleGroupReferenceStatement>,
 }
 impl FirewallManagerStatement {

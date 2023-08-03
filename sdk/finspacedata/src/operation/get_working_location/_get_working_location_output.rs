@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon S3 Path for the working location.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

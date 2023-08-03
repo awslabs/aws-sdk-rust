@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Updates the attributes for your ABAC configuration.</p>
-    #[doc(hidden)]
     pub instance_access_control_attribute_configuration: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInput {

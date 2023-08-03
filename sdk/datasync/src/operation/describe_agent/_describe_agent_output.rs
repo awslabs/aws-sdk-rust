@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentOutput {
     /// <p>The ARN of the agent.</p>
-    #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the agent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>The time that the agent last connected to DataSync.</p>
-    #[doc(hidden)]
     pub last_connection_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    #[doc(hidden)]
     pub private_link_config: ::std::option::Option<crate::types::PrivateLinkConfig>,
     _request_id: Option<String>,
 }

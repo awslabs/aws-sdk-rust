@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSource {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    #[doc(hidden)]
     pub ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DatasetSource {

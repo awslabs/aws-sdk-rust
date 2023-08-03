@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutput {
     /// <p>The policy that was created or updated.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }

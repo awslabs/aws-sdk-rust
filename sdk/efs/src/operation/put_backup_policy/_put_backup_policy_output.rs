@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBackupPolicyOutput {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-    #[doc(hidden)]
     pub backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Secret Access Key portion of the credentials</p>
-    #[doc(hidden)]
     pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>The Session Token portion of the credentials</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>The date at which these credentials will expire.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Credentials {

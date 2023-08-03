@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAlgorithmSpecification {
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    #[doc(hidden)]
     pub source_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>>,
 }
 impl SourceAlgorithmSpecification {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Session {
     /// <p>The identifier of the streaming session.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user for whom the session was created.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack for the streaming session.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet for the streaming session.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the streaming session.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SessionState>,
     /// <p>Specifies whether a user is connected to the streaming session.</p>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::SessionConnectionState>,
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    #[doc(hidden)]
     pub max_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
-    #[doc(hidden)]
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
 }
 impl Session {

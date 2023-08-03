@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }

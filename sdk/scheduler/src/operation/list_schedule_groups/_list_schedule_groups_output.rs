@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScheduleGroupsOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedule groups that match the specified criteria.</p>
-    #[doc(hidden)]
     pub schedule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
     _request_id: Option<String>,
 }

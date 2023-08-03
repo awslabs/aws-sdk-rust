@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    #[doc(hidden)]
     pub event_triggers: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
 }
 impl LambdaResource {

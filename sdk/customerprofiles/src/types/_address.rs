@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
     /// <p>The first line of a customer address.</p>
-    #[doc(hidden)]
     pub address1: ::std::option::Option<::std::string::String>,
     /// <p>The second line of a customer address.</p>
-    #[doc(hidden)]
     pub address2: ::std::option::Option<::std::string::String>,
     /// <p>The third line of a customer address.</p>
-    #[doc(hidden)]
     pub address3: ::std::option::Option<::std::string::String>,
     /// <p>The fourth line of a customer address.</p>
-    #[doc(hidden)]
     pub address4: ::std::option::Option<::std::string::String>,
     /// <p>The city in which a customer lives.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The county in which a customer lives.</p>
-    #[doc(hidden)]
     pub county: ::std::option::Option<::std::string::String>,
     /// <p>The state in which a customer lives.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The province in which a customer lives.</p>
-    #[doc(hidden)]
     pub province: ::std::option::Option<::std::string::String>,
     /// <p>The country in which a customer lives.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The postal code of a customer address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
 }
 impl Address {

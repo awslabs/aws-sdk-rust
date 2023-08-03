@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value of a room skill parameter.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RoomSkillParameter {

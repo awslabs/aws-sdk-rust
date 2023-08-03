@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
-    #[doc(hidden)]
     pub value_as_string: ::std::option::Option<::std::string::String>,
 }
 impl FeatureValue {

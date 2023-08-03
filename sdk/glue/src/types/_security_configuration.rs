@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which this security configuration was created.</p>
-    #[doc(hidden)]
     pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The encryption configuration associated with this security configuration.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SecurityConfiguration {

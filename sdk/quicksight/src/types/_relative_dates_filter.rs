@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeDatesFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    #[doc(hidden)]
     pub filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The date configuration of the filter.</p>
-    #[doc(hidden)]
     pub anchor_date_configuration: ::std::option::Option<crate::types::AnchorDateConfiguration>,
     /// <p>The minimum granularity (period granularity) of the relative dates filter.</p>
-    #[doc(hidden)]
     pub minimum_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
@@ -27,13 +22,10 @@ pub struct RelativeDatesFilter {
     /// <li> <p> <code>NOW</code> </p> </li>
     /// <li> <p> <code>NEXT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relative_date_type: ::std::option::Option<crate::types::RelativeDateType>,
     /// <p>The date value of the filter.</p>
-    #[doc(hidden)]
     pub relative_date_value: ::std::option::Option<i32>,
     /// <p>The parameter whose value should be used for the filter value.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -41,10 +33,8 @@ pub struct RelativeDatesFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
     /// <p>The configuration for the exclude period of the filter.</p>
-    #[doc(hidden)]
     pub exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
 }
 impl RelativeDatesFilter {

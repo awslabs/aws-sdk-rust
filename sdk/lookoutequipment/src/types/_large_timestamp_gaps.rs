@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LargeTimestampGaps {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
-    #[doc(hidden)]
     pub number_of_large_timestamp_gaps: ::std::option::Option<i32>,
     /// <p> Indicates the size of the largest timestamp gap, in days. </p>
-    #[doc(hidden)]
     pub max_timestamp_gap_in_days: ::std::option::Option<i32>,
 }
 impl LargeTimestampGaps {

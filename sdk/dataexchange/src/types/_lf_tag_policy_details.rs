@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTagPolicyDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::LfResourceType>,
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::LfResourceDetails>,
 }
 impl LfTagPolicyDetails {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Comment {
     /// <p>The system-generated comment ID.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the comment.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
-    #[doc(hidden)]
     pub in_reply_to: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
-    #[doc(hidden)]
     pub author_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
-    #[doc(hidden)]
     pub deleted: bool,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    #[doc(hidden)]
     pub caller_reactions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    #[doc(hidden)]
     pub reaction_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Comment {

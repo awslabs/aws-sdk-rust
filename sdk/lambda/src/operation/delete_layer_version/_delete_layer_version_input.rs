@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
 }
 impl DeleteLayerVersionInput {

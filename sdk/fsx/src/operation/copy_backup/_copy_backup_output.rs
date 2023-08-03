@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyBackupOutput {
     /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecipeVersionsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of versions for the specified recipe.</p>
-    #[doc(hidden)]
     pub recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
     _request_id: Option<String>,
 }

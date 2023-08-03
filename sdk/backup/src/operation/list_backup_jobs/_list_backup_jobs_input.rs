@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackupJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub by_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only backup jobs that are in the specified state.</p>
-    #[doc(hidden)]
     pub by_state: ::std::option::Option<crate::types::BackupJobState>,
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub by_backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    #[doc(hidden)]
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    #[doc(hidden)]
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
@@ -39,20 +32,15 @@ pub struct ListBackupJobsInput {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    #[doc(hidden)]
     pub by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    #[doc(hidden)]
     pub by_parent_job_id: ::std::option::Option<::std::string::String>,
 }
 impl ListBackupJobsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicInput {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSubscriptionsByTopicInput {

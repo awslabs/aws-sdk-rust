@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelBiasJobInput {
     /// <p>Input object for the endpoint</p>
-    #[doc(hidden)]
     pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
-    #[doc(hidden)]
     pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
     /// <p>Location of ground truth labels to use in model bias job.</p>
-    #[doc(hidden)]
     pub ground_truth_s3_input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
 }
 impl ModelBiasJobInput {

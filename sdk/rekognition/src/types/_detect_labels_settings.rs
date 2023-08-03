@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsSettings {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
-    #[doc(hidden)]
     pub general_labels: ::std::option::Option<crate::types::GeneralLabelsSettings>,
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-    #[doc(hidden)]
     pub image_properties: ::std::option::Option<crate::types::DetectLabelsImagePropertiesSettings>,
 }
 impl DetectLabelsSettings {

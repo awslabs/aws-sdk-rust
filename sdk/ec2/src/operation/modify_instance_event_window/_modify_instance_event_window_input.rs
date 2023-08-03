@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceEventWindowInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The name of the event window.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event window.</p>
-    #[doc(hidden)]
     pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>The time ranges of the event window.</p>
-    #[doc(hidden)]
     pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
@@ -26,7 +22,6 @@ pub struct ModifyInstanceEventWindowInput {
     /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    #[doc(hidden)]
     pub cron_expression: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstanceEventWindowInput {

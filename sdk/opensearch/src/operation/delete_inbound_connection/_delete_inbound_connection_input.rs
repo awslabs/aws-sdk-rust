@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInboundConnectionInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminScope {
     /// <p>Defines the accounts that the specified Firewall Manager administrator can apply policies to.</p>
-    #[doc(hidden)]
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
-    #[doc(hidden)]
     pub organizational_unit_scope: ::std::option::Option<crate::types::OrganizationalUnitScope>,
     /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    #[doc(hidden)]
     pub region_scope: ::std::option::Option<crate::types::RegionScope>,
     /// <p>Defines the Firewall Manager policy types that the specified Firewall Manager administrator can create and manage.</p>
-    #[doc(hidden)]
     pub policy_type_scope: ::std::option::Option<crate::types::PolicyTypeScope>,
 }
 impl AdminScope {

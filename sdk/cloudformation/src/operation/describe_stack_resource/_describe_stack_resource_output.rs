@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackResourceOutput {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    #[doc(hidden)]
     pub stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
 }

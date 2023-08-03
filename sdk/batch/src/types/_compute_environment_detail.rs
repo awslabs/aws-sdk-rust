@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    #[doc(hidden)]
     pub compute_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    #[doc(hidden)]
     pub compute_environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
-    #[doc(hidden)]
     pub unmanagedv_cpus: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
-    #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CeType>,
     /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
     /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
@@ -28,31 +22,22 @@ pub struct ComputeEnvironmentDetail {
     /// <p>Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent additional charges, turn off and then delete the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code> instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CeState>,
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CeStatus>,
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub compute_resources: ::std::option::Option<crate::types::ComputeResource>,
     /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
     /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
-    #[doc(hidden)]
     pub eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    #[doc(hidden)]
     pub container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
     /// <p>Unique identifier for the compute environment.</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentDetail {

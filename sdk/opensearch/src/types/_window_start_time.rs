@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WindowStartTime {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
-    #[doc(hidden)]
     pub hours: i64,
     /// <p>The start minute of the window, in UTC.</p>
-    #[doc(hidden)]
     pub minutes: i64,
 }
 impl WindowStartTime {

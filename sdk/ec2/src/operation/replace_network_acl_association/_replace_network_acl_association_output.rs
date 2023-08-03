@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationOutput {
     /// <p>The ID of the new association.</p>
-    #[doc(hidden)]
     pub new_association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

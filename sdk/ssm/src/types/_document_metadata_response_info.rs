@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadataResponseInfo {
     /// <p>Details about a reviewer's response to a document review request.</p>
-    #[doc(hidden)]
     pub reviewer_response: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>>,
 }
 impl DocumentMetadataResponseInfo {

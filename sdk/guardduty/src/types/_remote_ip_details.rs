@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteIpDetails {
     /// <p>The city information of the remote IP address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<crate::types::City>,
     /// <p>The country code of the remote IP address.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<crate::types::Country>,
     /// <p>The location information of the remote IP address.</p>
-    #[doc(hidden)]
     pub geo_location: ::std::option::Option<crate::types::GeoLocation>,
     /// <p>The IPv4 remote address of the connection.</p>
-    #[doc(hidden)]
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
     /// <p>The ISP organization information of the remote IP address.</p>
-    #[doc(hidden)]
     pub organization: ::std::option::Option<crate::types::Organization>,
 }
 impl RemoteIpDetails {

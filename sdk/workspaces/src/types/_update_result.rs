@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
-    #[doc(hidden)]
     pub update_available: ::std::option::Option<bool>,
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResult {

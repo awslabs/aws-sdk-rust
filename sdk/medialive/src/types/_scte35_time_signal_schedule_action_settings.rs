@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
-    #[doc(hidden)]
     pub scte35_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::Scte35Descriptor>>,
 }
 impl Scte35TimeSignalScheduleActionSettings {

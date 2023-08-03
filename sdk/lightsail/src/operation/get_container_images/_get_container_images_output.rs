@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerImagesOutput {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    #[doc(hidden)]
     pub container_images: ::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>>,
     _request_id: Option<String>,
 }

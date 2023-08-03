@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// A comma-separated list of the tag keys to remove from the resource.
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

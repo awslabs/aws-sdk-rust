@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
-    #[doc(hidden)]
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWhatIfAnalysisInput {

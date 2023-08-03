@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeLimitsOutput {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
-    #[doc(hidden)]
     pub limits_by_role: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     _request_id: Option<String>,
 }

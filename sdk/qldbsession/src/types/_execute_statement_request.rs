@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the statement of the request.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
 }
 impl ExecuteStatementRequest {

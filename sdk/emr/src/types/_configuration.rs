@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Configuration {

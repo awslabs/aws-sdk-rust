@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicRangeFilterConstant {
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
-    #[doc(hidden)]
     pub constant_type: ::std::option::Option<crate::types::ConstantType>,
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
-    #[doc(hidden)]
     pub range_constant: ::std::option::Option<crate::types::RangeConstant>,
 }
 impl TopicRangeFilterConstant {

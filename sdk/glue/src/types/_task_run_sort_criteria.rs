@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::TaskRunSortColumnType>,
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    #[doc(hidden)]
     pub sort_direction: ::std::option::Option<crate::types::SortDirectionType>,
 }
 impl TaskRunSortCriteria {

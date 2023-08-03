@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectPeerBgpConfiguration {
     /// <p>The ASN of the Coret Network.</p>
-    #[doc(hidden)]
     pub core_network_asn: ::std::option::Option<i64>,
     /// <p>The ASN of the Connect peer.</p>
-    #[doc(hidden)]
     pub peer_asn: ::std::option::Option<i64>,
     /// <p>The address of a core network.</p>
-    #[doc(hidden)]
     pub core_network_address: ::std::option::Option<::std::string::String>,
     /// <p>The address of a core network Connect peer.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerBgpConfiguration {

@@ -6,7 +6,6 @@
 pub struct CreditSpecification {
     /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
-    #[doc(hidden)]
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl CreditSpecification {

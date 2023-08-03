@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ImagePermission {

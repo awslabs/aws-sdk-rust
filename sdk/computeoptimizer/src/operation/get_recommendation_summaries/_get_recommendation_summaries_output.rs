@@ -5,10 +5,8 @@
 pub struct GetRecommendationSummariesOutput {
     /// <p>The token to use to advance to the next page of recommendation summaries.</p>
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that summarize a recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }

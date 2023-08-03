@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VtlDevice {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
-    #[doc(hidden)]
     pub vtl_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of device that the VTL device emulates.</p>
-    #[doc(hidden)]
     pub vtl_device_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
-    #[doc(hidden)]
     pub vtl_device_vendor: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
-    #[doc(hidden)]
     pub vtl_device_product_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of iSCSI information about a VTL device.</p>
-    #[doc(hidden)]
     pub devicei_scsi_attributes: ::std::option::Option<crate::types::DeviceiScsiAttributes>,
 }
 impl VtlDevice {

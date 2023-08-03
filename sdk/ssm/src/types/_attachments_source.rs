@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentsSource {
     /// <p>The key of a key-value pair that identifies the location of an attachment to a document.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AttachmentsSourceKey>,
     /// <p>The value of a key-value pair that identifies the location of an attachment to a document. The format for <b>Value</b> depends on the type of key you specify.</p>
     /// <ul>
@@ -13,10 +12,8 @@ pub struct AttachmentsSource {
     /// <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p> </li>
     /// <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the document attachment file.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentsSource {

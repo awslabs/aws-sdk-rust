@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceNowConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowConnectorProfileCredentials {

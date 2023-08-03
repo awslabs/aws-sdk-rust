@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
-    #[doc(hidden)]
     pub assume_control: bool,
 }
 impl StartProjectSessionInput {

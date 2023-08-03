@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProgramOutput {
     /// <p>The ad break configuration settings.</p>
-    #[doc(hidden)]
     pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     /// <p>The ARN of the program.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel that the program belongs to.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the LiveSource for this Program.</p>
-    #[doc(hidden)]
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    #[doc(hidden)]
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source location name.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The clip range configuration settings.</p>
-    #[doc(hidden)]
     pub clip_range: ::std::option::Option<crate::types::ClipRange>,
     /// <p>The duration of the live program in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

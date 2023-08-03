@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSchemaOutput {
     /// <p>The retrieved list of schemas.</p>
-    #[doc(hidden)]
     pub schemas: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>,
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>,
     _request_id: Option<String>,
 }

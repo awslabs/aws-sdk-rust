@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the lens.</p>
-    #[doc(hidden)]
     pub lens_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

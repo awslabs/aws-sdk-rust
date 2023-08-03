@@ -6,7 +6,6 @@ pub struct ResetServiceSpecificCredentialOutput {
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
-    #[doc(hidden)]
     pub service_specific_credential: ::std::option::Option<crate::types::ServiceSpecificCredential>,
     _request_id: Option<String>,
 }

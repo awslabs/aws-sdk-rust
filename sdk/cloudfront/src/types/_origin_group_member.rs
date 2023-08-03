@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
-    #[doc(hidden)]
     pub origin_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginGroupMember {

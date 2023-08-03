@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Protection {
     /// <p>The unique identifier (ID) of the protection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
-    #[doc(hidden)]
     pub health_check_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
-    #[doc(hidden)]
     pub protection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
-    #[doc(hidden)]
     pub application_layer_automatic_response_configuration: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseConfiguration>,
 }
 impl Protection {

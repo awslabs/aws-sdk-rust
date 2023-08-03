@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamEncryptionInput {
     /// <p>The name of the stream for which to start encrypting records.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
@@ -17,10 +15,8 @@ pub struct StartStreamEncryptionInput {
     /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
     /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamEncryptionInput {

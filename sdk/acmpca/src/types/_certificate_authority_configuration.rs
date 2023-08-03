@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
-    #[doc(hidden)]
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
-    #[doc(hidden)]
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithm>,
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<crate::types::Asn1Subject>,
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
-    #[doc(hidden)]
     pub csr_extensions: ::std::option::Option<crate::types::CsrExtensions>,
 }
 impl CertificateAuthorityConfiguration {

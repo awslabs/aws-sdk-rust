@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the decoder manifest to update. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
-    #[doc(hidden)]
     pub signal_decoders_to_add: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     /// <p> A list of updated information about decoding signals to update in the decoder manifest. </p>
-    #[doc(hidden)]
     pub signal_decoders_to_update: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     /// <p> A list of signal decoders to remove from the decoder manifest. </p>
-    #[doc(hidden)]
     pub signal_decoders_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of information about the network interfaces to add to the decoder manifest. </p>
-    #[doc(hidden)]
     pub network_interfaces_to_add: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p> A list of information about the network interfaces to update in the decoder manifest. </p>
-    #[doc(hidden)]
     pub network_interfaces_to_update: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p> A list of network interfaces to remove from the decoder manifest.</p>
-    #[doc(hidden)]
     pub network_interfaces_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is <code>DRAFT</code>, you can edit the decoder manifest. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
 }
 impl UpdateDecoderManifestInput {

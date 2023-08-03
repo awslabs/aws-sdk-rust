@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureTransformationOutput {
     /// <p>A listing of the FeatureTransformation properties.</p>
-    #[doc(hidden)]
     pub feature_transformation: ::std::option::Option<crate::types::FeatureTransformation>,
     _request_id: Option<String>,
 }

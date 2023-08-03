@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AliasIcpRecordal {
     /// <p>A domain name associated with a distribution.</p>
-    #[doc(hidden)]
     pub cname: ::std::option::Option<::std::string::String>,
     /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
@@ -15,7 +14,6 @@ pub struct AliasIcpRecordal {
     /// <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p> </li>
     /// <li> <p> <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the distribution because there was an error in trying to determine the status. You can try again to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub icp_recordal_status: ::std::option::Option<crate::types::IcpRecordalStatus>,
 }
 impl AliasIcpRecordal {

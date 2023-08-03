@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServicePowersOutput {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    #[doc(hidden)]
     pub powers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
     _request_id: Option<String>,
 }

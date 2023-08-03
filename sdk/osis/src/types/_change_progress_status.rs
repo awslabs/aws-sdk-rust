@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressStatus {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The overall status of the pipeline configuration change.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeProgressStatuses>,
     /// <p>The total number of stages required for the pipeline configuration change.</p>
-    #[doc(hidden)]
     pub total_number_of_stages: i32,
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    #[doc(hidden)]
     pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatus {

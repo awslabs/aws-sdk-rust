@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceErrorInfo {
     /// <p>Error type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
     /// <p>Error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceErrorInfo {

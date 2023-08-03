@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyRotationStatusOutput {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
-    #[doc(hidden)]
     pub key_rotation_enabled: bool,
     _request_id: Option<String>,
 }

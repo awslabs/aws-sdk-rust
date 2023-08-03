@@ -5,80 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
-    #[doc(hidden)]
     pub account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     /// <p>The date that the workspace was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
     /// <p>The user-defined description of the workspace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The version of Grafana supported in this workspace.</p>
-    #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of this workspace.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date that the workspace was modified.</p>
-    #[doc(hidden)]
     pub modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the workspace.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
-    #[doc(hidden)]
     pub organization_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    #[doc(hidden)]
     pub notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    #[doc(hidden)]
     pub organizational_units: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
     /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the workspace.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
-    #[doc(hidden)]
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
-    #[doc(hidden)]
     pub free_trial_consumed: ::std::option::Option<bool>,
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
-    #[doc(hidden)]
     pub license_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
-    #[doc(hidden)]
     pub free_trial_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The configuration settings for network access to your workspace.</p>
-    #[doc(hidden)]
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
 }
 impl WorkspaceDescription {

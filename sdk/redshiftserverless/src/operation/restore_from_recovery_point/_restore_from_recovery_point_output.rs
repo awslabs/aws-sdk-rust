@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromRecoveryPointOutput {
     /// <p>The unique identifier of the recovery point used for the restore.</p>
-    #[doc(hidden)]
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that data was restored into.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,
 }

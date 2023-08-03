@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
-    #[doc(hidden)]
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
@@ -30,11 +25,9 @@ pub struct BatchExecuteStatementInput {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchExecuteStatementInput {

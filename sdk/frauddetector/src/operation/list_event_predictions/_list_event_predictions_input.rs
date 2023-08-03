@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventPredictionsInput {
     /// <p> The event ID. </p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<crate::types::FilterCondition>,
     /// <p> The event type associated with the detector. </p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::FilterCondition>,
     /// <p> The detector ID. </p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<crate::types::FilterCondition>,
     /// <p> The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<crate::types::FilterCondition>,
     /// <p> The time period for when the predictions were generated. </p>
-    #[doc(hidden)]
     pub prediction_time_range: ::std::option::Option<crate::types::PredictionTimeRange>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of predictions to return for the request. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEventPredictionsInput {

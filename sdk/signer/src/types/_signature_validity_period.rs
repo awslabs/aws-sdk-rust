@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignatureValidityPeriod {
     /// <p>The numerical value of the time unit for signature validity.</p>
-    #[doc(hidden)]
     pub value: i32,
     /// <p>The time unit for signature validity.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ValidityType>,
 }
 impl SignatureValidityPeriod {

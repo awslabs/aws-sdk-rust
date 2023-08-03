@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAuthPolicyInput {

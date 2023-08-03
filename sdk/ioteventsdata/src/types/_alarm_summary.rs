@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmSummary {
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_version: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -22,13 +19,10 @@ pub struct AlarmSummary {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<crate::types::AlarmStateName>,
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AlarmSummary {

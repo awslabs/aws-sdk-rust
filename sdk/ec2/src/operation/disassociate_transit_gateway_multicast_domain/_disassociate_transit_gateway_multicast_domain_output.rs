@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,
 }

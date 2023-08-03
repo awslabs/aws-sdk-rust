@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    #[doc(hidden)]
     pub lifecycle_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

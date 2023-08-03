@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyDescription {
     /// <p>The status of an automatic scaling policy. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutoScalingPolicyStatus>,
     /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::ScalingConstraints>,
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>,
 }
 impl AutoScalingPolicyDescription {

@@ -4,67 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment that was deployed.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    #[doc(hidden)]
     pub deployment_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile that was deployed.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The sequence number of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_number: i32,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source location of the configuration.</p>
-    #[doc(hidden)]
     pub configuration_location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The configuration version that was deployed.</p>
-    #[doc(hidden)]
     pub configuration_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the deployment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
-    #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    #[doc(hidden)]
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    #[doc(hidden)]
     pub growth_factor: f32,
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    #[doc(hidden)]
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    #[doc(hidden)]
     pub event_log: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>>,
     /// <p>The percentage of targets for which the deployment is available.</p>
-    #[doc(hidden)]
     pub percentage_complete: f32,
     /// <p>The time the deployment started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    #[doc(hidden)]
     pub applied_extensions: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
     /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    #[doc(hidden)]
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

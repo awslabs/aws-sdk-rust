@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestCreatedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-    #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    #[doc(hidden)]
     pub merge_base: ::std::option::Option<::std::string::String>,
 }
 impl PullRequestCreatedEventMetadata {

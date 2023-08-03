@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgram {
     /// The MediaLive channel associated with the program.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// The settings for this multiplex program.
-    #[doc(hidden)]
     pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
-    #[doc(hidden)]
     pub packet_identifiers_map: ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    #[doc(hidden)]
     pub pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgram {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    #[doc(hidden)]
     pub percentage_value: ::std::option::Option<f64>,
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
-    #[doc(hidden)]
     pub associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetails {

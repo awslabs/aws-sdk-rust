@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetDiscrepancyReportResourceTarget {
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub bot_alias_target: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
 }
 impl TestSetDiscrepancyReportResourceTarget {

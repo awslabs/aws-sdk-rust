@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentCloudWatchLogsLogConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserPoolOutput {
     /// <p>The container of metadata returned by the server to describe the pool.</p>
-    #[doc(hidden)]
     pub user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaExtensionInfo {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the schema extension.</p>
-    #[doc(hidden)]
     pub schema_extension_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema extension.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the schema extension.</p>
-    #[doc(hidden)]
     pub schema_extension_status: ::std::option::Option<crate::types::SchemaExtensionStatus>,
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-    #[doc(hidden)]
     pub schema_extension_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the schema extension was completed.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SchemaExtensionInfo {

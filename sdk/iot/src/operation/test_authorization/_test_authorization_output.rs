@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestAuthorizationOutput {
     /// <p>The authentication results.</p>
-    #[doc(hidden)]
     pub auth_results: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
     _request_id: Option<String>,
 }

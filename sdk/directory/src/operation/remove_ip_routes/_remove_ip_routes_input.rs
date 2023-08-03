@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveIpRoutesInput {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address blocks that you want to remove.</p>
-    #[doc(hidden)]
     pub cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveIpRoutesInput {

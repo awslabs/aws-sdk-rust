@@ -10,7 +10,6 @@ pub struct ContactChannelAddress {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub simple_address: ::std::option::Option<::std::string::String>,
 }
 impl ContactChannelAddress {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsOutput {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    #[doc(hidden)]
     pub standards_control_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

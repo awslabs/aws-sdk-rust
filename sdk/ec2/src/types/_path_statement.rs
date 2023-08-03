@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathStatement {
     /// <p>The packet header statement.</p>
-    #[doc(hidden)]
     pub packet_header_statement: ::std::option::Option<crate::types::PacketHeaderStatement>,
     /// <p>The resource statement.</p>
-    #[doc(hidden)]
     pub resource_statement: ::std::option::Option<crate::types::ResourceStatement>,
 }
 impl PathStatement {

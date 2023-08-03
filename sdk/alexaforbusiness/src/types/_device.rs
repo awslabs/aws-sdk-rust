@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// <p>The ARN of a device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of a device.</p>
-    #[doc(hidden)]
     pub device_serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of a device.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of a device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The software version of a device.</p>
-    #[doc(hidden)]
     pub software_version: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address of a device.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The room ARN of a device.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
-    #[doc(hidden)]
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>Detailed information about a device's status.</p>
-    #[doc(hidden)]
     pub device_status_info: ::std::option::Option<crate::types::DeviceStatusInfo>,
     /// <p>Detailed information about a device's network profile.</p>
-    #[doc(hidden)]
     pub network_profile_info: ::std::option::Option<crate::types::DeviceNetworkProfileInfo>,
 }
 impl Device {

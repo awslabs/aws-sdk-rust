@@ -8,28 +8,21 @@ pub struct SearchProvisionedProductsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    #[doc(hidden)]
     pub access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    #[doc(hidden)]
     pub filters:
         ::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::string::String>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchProvisionedProductsInput {

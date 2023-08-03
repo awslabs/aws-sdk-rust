@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedEndpointType {
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if change data capture (CDC) is supported.</p>
-    #[doc(hidden)]
     pub supports_cdc: bool,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
     /// <p>The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS versions earlier than 3.1.1 do not return a value for this parameter.</p>
-    #[doc(hidden)]
     pub replication_instance_engine_minimum_version: ::std::option::Option<::std::string::String>,
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
-    #[doc(hidden)]
     pub engine_display_name: ::std::option::Option<::std::string::String>,
 }
 impl SupportedEndpointType {

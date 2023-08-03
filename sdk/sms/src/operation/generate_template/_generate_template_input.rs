@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateTemplateInput {
     /// <p>The ID of the application associated with the CloudFormation template.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The format for generating the CloudFormation template.</p>
-    #[doc(hidden)]
     pub template_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl GenerateTemplateInput {

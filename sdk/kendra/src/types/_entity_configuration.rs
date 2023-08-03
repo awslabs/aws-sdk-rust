@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<crate::types::EntityType>,
 }
 impl EntityConfiguration {

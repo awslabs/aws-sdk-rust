@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSystemTemplateOutput {
     /// <p>The summary object that describes the created system.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,
 }

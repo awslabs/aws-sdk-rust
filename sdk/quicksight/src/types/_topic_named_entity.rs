@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicNamedEntity {
     /// <p>The name of the named entity.</p>
-    #[doc(hidden)]
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the named entity.</p>
-    #[doc(hidden)]
     pub entity_description: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the named entity.</p>
-    #[doc(hidden)]
     pub entity_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of named entity that a topic represents.</p>
-    #[doc(hidden)]
     pub semantic_entity_type: ::std::option::Option<crate::types::SemanticEntityType>,
     /// <p>The definition of a named entity.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
 }
 impl TopicNamedEntity {

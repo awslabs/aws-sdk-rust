@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
     /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentReportsDestination {

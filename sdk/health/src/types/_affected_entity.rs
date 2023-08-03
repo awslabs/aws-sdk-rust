@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
-    #[doc(hidden)]
     pub entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    #[doc(hidden)]
     pub event_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the affected entity.</p>
-    #[doc(hidden)]
     pub entity_value: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the affected entity.</p>
-    #[doc(hidden)]
     pub entity_url: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The most recent time that the entity was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::EntityStatusCode>,
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AffectedEntity {

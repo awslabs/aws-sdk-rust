@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfacePermissionState {
     /// <p>The state of the permission.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
     /// <p>A status message, if applicable.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfacePermissionState {

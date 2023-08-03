@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroup {
     /// <p>The ID of the user group.</p>
-    #[doc(hidden)]
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
-    #[doc(hidden)]
     pub pending_changes: ::std::option::Option<crate::types::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
-    #[doc(hidden)]
     pub replication_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl UserGroup {

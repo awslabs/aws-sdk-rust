@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSignalCatalogOutput {
     /// <p> The name of the signal catalog. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the signal catalog. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the signal catalog. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The total number of network nodes specified in a signal catalog. </p>
-    #[doc(hidden)]
     pub node_counts: ::std::option::Option<crate::types::NodeCounts>,
     /// <p> The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the signal catalog was modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

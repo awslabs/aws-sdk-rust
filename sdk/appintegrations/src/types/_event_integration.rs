@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventIntegration {
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
-    #[doc(hidden)]
     pub event_integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event integration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The event integration description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The event integration filter.</p>
-    #[doc(hidden)]
     pub event_filter: ::std::option::Option<crate::types::EventFilter>,
     /// <p>The Amazon EventBridge bus for the event integration.</p>
-    #[doc(hidden)]
     pub event_bridge_bus: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventIntegration {

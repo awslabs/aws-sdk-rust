@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionOutput {
     /// <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

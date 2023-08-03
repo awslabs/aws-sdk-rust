@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCacheParameterGroupOutput {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-    #[doc(hidden)]
     pub cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroup>,
     _request_id: Option<String>,
 }

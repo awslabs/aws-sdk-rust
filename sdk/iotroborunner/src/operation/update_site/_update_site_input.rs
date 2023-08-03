@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteInput {
     /// Site ARN.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// A high-level description of the site.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSiteInput {

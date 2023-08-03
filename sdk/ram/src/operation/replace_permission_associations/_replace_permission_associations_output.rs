@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplacePermissionAssociationsOutput {
     /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
-    #[doc(hidden)]
     pub replace_permission_associations_work: ::std::option::Option<crate::types::ReplacePermissionAssociationsWork>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentAttribute {
     /// <p>The identifier for the attribute.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttribute {

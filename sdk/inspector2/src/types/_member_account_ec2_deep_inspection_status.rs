@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatus {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
-    #[doc(hidden)]
     pub activate_deep_inspection: ::std::option::Option<bool>,
 }
 impl MemberAccountEc2DeepInspectionStatus {

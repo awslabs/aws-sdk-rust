@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceRegistrationStateEventConfiguration {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl DeviceRegistrationStateEventConfiguration {

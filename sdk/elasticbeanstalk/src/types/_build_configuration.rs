@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-    #[doc(hidden)]
     pub artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    #[doc(hidden)]
     pub code_build_service_role: ::std::option::Option<::std::string::String>,
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
@@ -16,13 +14,10 @@ pub struct BuildConfiguration {
     /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
     /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The ID of the Docker image to use for this build project.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
-    #[doc(hidden)]
     pub timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl BuildConfiguration {

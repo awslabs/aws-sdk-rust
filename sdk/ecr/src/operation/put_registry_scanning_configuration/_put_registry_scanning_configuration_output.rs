@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationOutput {
     /// <p>The scanning configuration for your registry.</p>
-    #[doc(hidden)]
     pub registry_scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,
 }

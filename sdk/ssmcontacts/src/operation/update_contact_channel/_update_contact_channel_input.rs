@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    #[doc(hidden)]
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
 }
 impl UpdateContactChannelInput {

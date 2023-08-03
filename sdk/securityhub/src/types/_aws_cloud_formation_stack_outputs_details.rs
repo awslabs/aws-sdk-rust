@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFormationStackOutputsDetails {
     /// <p>A user-defined description associated with the output. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key associated with the output. </p>
-    #[doc(hidden)]
     pub output_key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the output. </p>
-    #[doc(hidden)]
     pub output_value: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFormationStackOutputsDetails {

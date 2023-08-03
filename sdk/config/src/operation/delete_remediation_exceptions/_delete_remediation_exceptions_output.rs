@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRemediationExceptionsOutput {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    #[doc(hidden)]
     pub failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>>,
     _request_id: Option<String>,
 }

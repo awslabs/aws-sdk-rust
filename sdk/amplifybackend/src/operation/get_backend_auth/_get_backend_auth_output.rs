@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendAuthOutput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::CreateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

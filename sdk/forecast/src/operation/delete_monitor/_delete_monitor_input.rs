@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMonitorInput {

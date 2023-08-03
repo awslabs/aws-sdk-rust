@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHsmInput {
     /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
 }
 impl CreateHsmInput {

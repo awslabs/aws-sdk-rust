@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionConfiguration {
     /// <p>The number of minutes a test run executes before it times out.</p>
-    #[doc(hidden)]
     pub job_timeout_minutes: ::std::option::Option<i32>,
     /// <p>True if account cleanup is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub accounts_cleanup: ::std::option::Option<bool>,
     /// <p>True if app package cleanup is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub app_packages_cleanup: ::std::option::Option<bool>,
     /// <p>Set to true to enable video capture. Otherwise, set to false. The default is true.</p>
-    #[doc(hidden)]
     pub video_capture: ::std::option::Option<bool>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
-    #[doc(hidden)]
     pub skip_app_resign: ::std::option::Option<bool>,
 }
 impl ExecutionConfiguration {

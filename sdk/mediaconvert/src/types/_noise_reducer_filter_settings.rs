@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoiseReducerFilterSettings {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
-    #[doc(hidden)]
     pub strength: ::std::option::Option<i32>,
 }
 impl NoiseReducerFilterSettings {

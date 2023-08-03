@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostEstimate {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p>The cost estimate result that's associated with a time period.</p>
-    #[doc(hidden)]
     pub results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
 }
 impl CostEstimate {

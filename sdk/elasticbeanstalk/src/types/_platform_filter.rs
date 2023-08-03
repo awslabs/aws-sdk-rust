@@ -7,11 +7,9 @@
 pub struct PlatformFilter {
     /// <p>The platform version attribute to which the filter values are applied.</p>
     /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
     /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
@@ -21,7 +19,6 @@ pub struct PlatformFilter {
     /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
     /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlatformFilter {

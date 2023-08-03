@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationData {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
-    #[doc(hidden)]
     pub rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }
 impl RecommendationData {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMembershipOutput {
     /// <p>The membership retrieved for the provided identifier.</p>
-    #[doc(hidden)]
     pub membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
 }

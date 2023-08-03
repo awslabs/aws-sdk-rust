@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataResult {
     /// <p>The query identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of timestamps for the metric data results.</p>
-    #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl MetricDataResult {

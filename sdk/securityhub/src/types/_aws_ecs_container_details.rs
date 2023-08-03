@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsContainerDetails {
     /// <p>The name of the container. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The image used for the container. </p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The mount points for data volumes in your container. </p>
-    #[doc(hidden)]
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>,
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    #[doc(hidden)]
     pub privileged: bool,
 }
 impl AwsEcsContainerDetails {

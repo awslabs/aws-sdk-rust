@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
-    #[doc(hidden)]
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the recovery point is created.</p>
-    #[doc(hidden)]
     pub recovery_point_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total size of the data in the recovery point in megabytes.</p>
-    #[doc(hidden)]
     pub total_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The name of the namespace the recovery point is associated with.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup the recovery point is associated with.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryPoint {

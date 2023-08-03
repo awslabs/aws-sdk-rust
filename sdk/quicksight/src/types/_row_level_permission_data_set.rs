@@ -6,20 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowLevelPermissionDataSet {
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-    #[doc(hidden)]
     pub permission_policy: ::std::option::Option<crate::types::RowLevelPermissionPolicy>,
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
-    #[doc(hidden)]
     pub format_version: ::std::option::Option<crate::types::RowLevelPermissionFormatVersion>,
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl RowLevelPermissionDataSet {

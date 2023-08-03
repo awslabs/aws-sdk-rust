@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAttributeGroupOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
-    #[doc(hidden)]
     pub attribute_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

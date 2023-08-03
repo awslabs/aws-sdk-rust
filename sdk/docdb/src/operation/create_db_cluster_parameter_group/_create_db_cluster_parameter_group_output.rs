@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<crate::types::DbClusterParameterGroup>,
     _request_id: Option<String>,
 }

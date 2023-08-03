@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectorInput {
     /// <p>The target capacity.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<crate::types::CapacityUpdate>,
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the connector that you want to update.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorInput {

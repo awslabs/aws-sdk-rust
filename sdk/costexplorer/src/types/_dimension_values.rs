@@ -8,15 +8,12 @@ pub struct DimensionValues {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The match options that you can use to filter your results.</p>
     /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    #[doc(hidden)]
     pub match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
 }
 impl DimensionValues {

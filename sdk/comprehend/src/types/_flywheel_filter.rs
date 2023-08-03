@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlywheelFilter {
     /// <p>Filter the flywheels based on the flywheel status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FlywheelStatus>,
     /// <p>Filter the flywheels to include flywheels created after the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the flywheels to include flywheels created before the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FlywheelFilter {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature associated with the metadata.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata information to store.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<crate::types::PutMetadataFlagBody>,
 }
 impl PutMetadataFlagInput {

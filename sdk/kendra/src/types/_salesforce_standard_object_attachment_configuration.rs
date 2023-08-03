@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceStandardObjectAttachmentConfiguration {
     /// <p>The name of the field used for the document title.</p>
-    #[doc(hidden)]
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceStandardObjectAttachmentConfiguration {

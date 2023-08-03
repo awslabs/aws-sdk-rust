@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoipPool {
     /// <p>The ID of the address pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The address ranges of the address pool.</p>
-    #[doc(hidden)]
     pub pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the address pool.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
 }
 impl CoipPool {

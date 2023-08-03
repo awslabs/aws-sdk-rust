@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyProductOutput {
     /// <p>The token to use to track the progress of the operation.</p>
-    #[doc(hidden)]
     pub copy_product_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

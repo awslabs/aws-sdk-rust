@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>Information about the activity that is described in a finding.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>An evidence object associated with the service.</p>
-    #[doc(hidden)]
     pub evidence: ::std::option::Option<crate::types::Evidence>,
     /// <p>Indicates whether this finding is archived.</p>
-    #[doc(hidden)]
     pub archived: bool,
     /// <p>The total count of the occurrences of this finding type.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>The detector ID for the GuardDuty service.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    #[doc(hidden)]
     pub event_first_seen: ::std::option::Option<::std::string::String>,
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    #[doc(hidden)]
     pub event_last_seen: ::std::option::Option<::std::string::String>,
     /// <p>The resource role information for this finding.</p>
-    #[doc(hidden)]
     pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback that was submitted about the finding.</p>
-    #[doc(hidden)]
     pub user_feedback: ::std::option::Option<::std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<crate::types::ServiceAdditionalInfo>,
     /// <p>The name of the feature that generated a finding.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns details from the malware scan that created a finding.</p>
-    #[doc(hidden)]
     pub ebs_volume_scan_details: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
     /// <p>Information about the process and any required context values for a specific finding</p>
-    #[doc(hidden)]
     pub runtime_details: ::std::option::Option<crate::types::RuntimeDetails>,
 }
 impl Service {

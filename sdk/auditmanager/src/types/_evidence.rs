@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evidence {
     /// <p> The data source where the evidence was collected from. </p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub evidence_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp that represents when the evidence was collected. </p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Service that the evidence is collected from. </p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p> The name of the evidence event. </p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of automated evidence. </p>
-    #[doc(hidden)]
     pub evidence_by_type: ::std::option::Option<::std::string::String>,
     /// <p> The list of resources that are assessed to generate the evidence. </p>
-    #[doc(hidden)]
     pub resources_included: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
-    #[doc(hidden)]
     pub iam_id: ::std::option::Option<::std::string::String>,
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
@@ -37,22 +28,16 @@ pub struct Evidence {
     /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
     /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub compliance_check: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
-    #[doc(hidden)]
     pub aws_organization: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the evidence. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the evidence is included in the assessment report. </p>
-    #[doc(hidden)]
     pub assessment_report_selection: ::std::option::Option<::std::string::String>,
 }
 impl Evidence {

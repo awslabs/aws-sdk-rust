@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotAggregatedFieldWells {
     /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl BoxPlotAggregatedFieldWells {

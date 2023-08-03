@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the create or update operation.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

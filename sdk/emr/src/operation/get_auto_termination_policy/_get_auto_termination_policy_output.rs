@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoTerminationPolicyOutput {
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
-    #[doc(hidden)]
     pub auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,
     _request_id: Option<String>,
 }

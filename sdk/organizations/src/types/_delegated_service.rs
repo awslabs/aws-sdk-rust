@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelegatedService {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
     /// <p>The date that the account became a delegated administrator for this service. </p>
-    #[doc(hidden)]
     pub delegation_enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DelegatedService {

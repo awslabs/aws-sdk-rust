@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadShareSummary {
     /// <p>The ID associated with the share.</p>
-    #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
-    #[doc(hidden)]
     pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a share request.</p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The status of the share request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>Optional message to compliment the Status field.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadShareSummary {

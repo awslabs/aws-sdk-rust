@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFileEntry {

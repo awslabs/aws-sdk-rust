@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
-    #[doc(hidden)]
     pub cdn_identifier_secret: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    #[doc(hidden)]
     pub secrets_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Authorization {

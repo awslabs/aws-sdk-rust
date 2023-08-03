@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessTrustProvidersOutput {
     /// <p>The IDs of the Verified Access trust providers.</p>
-    #[doc(hidden)]
     pub verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

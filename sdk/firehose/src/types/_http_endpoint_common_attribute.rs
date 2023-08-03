@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HttpEndpointCommonAttribute {
     /// <p>The name of the HTTP endpoint common attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the HTTP endpoint common attribute.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointCommonAttribute {

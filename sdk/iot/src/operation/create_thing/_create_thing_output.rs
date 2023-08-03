@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingOutput {
     /// <p>The name of the new thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new thing.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thing ID.</p>
-    #[doc(hidden)]
     pub thing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RadiusSettings {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    #[doc(hidden)]
     pub radius_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
-    #[doc(hidden)]
     pub radius_port: i32,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
-    #[doc(hidden)]
     pub radius_timeout: i32,
     /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
-    #[doc(hidden)]
     pub radius_retries: i32,
     /// <p>Required for enabling RADIUS on the directory.</p>
-    #[doc(hidden)]
     pub shared_secret: ::std::option::Option<::std::string::String>,
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    #[doc(hidden)]
     pub authentication_protocol: ::std::option::Option<crate::types::RadiusAuthenticationProtocol>,
     /// <p>Not currently used.</p>
-    #[doc(hidden)]
     pub display_label: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used.</p>
-    #[doc(hidden)]
     pub use_same_username: bool,
 }
 impl RadiusSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerContentEncryptionConfiguration {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl CustomerContentEncryptionConfiguration {

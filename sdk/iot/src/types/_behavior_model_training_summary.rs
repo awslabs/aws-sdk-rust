@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BehaviorModelTrainingSummary {
     /// <p> The name of the security profile. </p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the behavior. </p>
-    #[doc(hidden)]
     pub behavior_name: ::std::option::Option<::std::string::String>,
     /// <p> The date a training model started collecting data. </p>
-    #[doc(hidden)]
     pub training_data_collection_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the behavior model. </p>
-    #[doc(hidden)]
     pub model_status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p> The percentage of datapoints collected. </p>
-    #[doc(hidden)]
     pub datapoints_collection_percentage: ::std::option::Option<f64>,
     /// <p> The date the model was last refreshed. </p>
-    #[doc(hidden)]
     pub last_model_refresh_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BehaviorModelTrainingSummary {

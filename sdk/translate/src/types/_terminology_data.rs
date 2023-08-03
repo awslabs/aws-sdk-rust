@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The data format of the custom terminology.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TerminologyDataFormat>,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -26,7 +24,6 @@ pub struct TerminologyData {
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-    #[doc(hidden)]
     pub directionality: ::std::option::Option<crate::types::Directionality>,
 }
 impl TerminologyData {

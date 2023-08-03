@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    #[doc(hidden)]
     pub filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>Value</code>.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
 impl TimeEqualityFilter {

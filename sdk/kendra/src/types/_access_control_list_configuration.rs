@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlListConfiguration {
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
-    #[doc(hidden)]
     pub key_path: ::std::option::Option<::std::string::String>,
 }
 impl AccessControlListConfiguration {

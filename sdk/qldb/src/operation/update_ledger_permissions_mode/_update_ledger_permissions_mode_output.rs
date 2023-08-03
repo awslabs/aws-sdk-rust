@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeOutput {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The current permissions mode of the ledger.</p>
-    #[doc(hidden)]
     pub permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
     _request_id: Option<String>,
 }

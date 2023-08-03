@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
-    #[doc(hidden)]
     pub fabric: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfiguration {

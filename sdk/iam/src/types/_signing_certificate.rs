@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningCertificate {
     /// <p>The name of the user the signing certificate is associated with.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the signing certificate.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the signing certificate.</p>
-    #[doc(hidden)]
     pub certificate_body: ::std::option::Option<::std::string::String>,
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date when the signing certificate was uploaded.</p>
-    #[doc(hidden)]
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SigningCertificate {

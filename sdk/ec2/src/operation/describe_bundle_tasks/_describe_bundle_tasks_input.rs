@@ -5,7 +5,6 @@
 pub struct DescribeBundleTasksInput {
     /// <p>The bundle task IDs.</p>
     /// <p>Default: Describes all your bundle tasks.</p>
-    #[doc(hidden)]
     pub bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
@@ -20,10 +19,8 @@ pub struct DescribeBundleTasksInput {
     /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeBundleTasksInput {

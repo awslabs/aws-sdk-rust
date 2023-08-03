@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the component type.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the component type.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,
 }

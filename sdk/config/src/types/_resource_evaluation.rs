@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceEvaluation {
     /// <p>The ResourceEvaluationId of a evaluation.</p>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    #[doc(hidden)]
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>The starting time of an execution.</p>
-    #[doc(hidden)]
     pub evaluation_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceEvaluation {

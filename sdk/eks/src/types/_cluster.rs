@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Kubernetes server version for the cluster.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for your Kubernetes API server.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    #[doc(hidden)]
     pub resources_vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    #[doc(hidden)]
     pub kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
     /// <p>The logging configuration for your cluster.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::Logging>,
     /// <p>The identity provider information for the cluster.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The current status of the cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClusterStatus>,
     /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
-    #[doc(hidden)]
     pub certificate_authority: ::std::option::Option<crate::types::Certificate>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     /// <p>The configuration used to connect to a cluster for registration.</p>
-    #[doc(hidden)]
     pub connector_config: ::std::option::Option<crate::types::ConnectorConfigResponse>,
     /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::ClusterHealth>,
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
-    #[doc(hidden)]
     pub outpost_config: ::std::option::Option<crate::types::OutpostConfigResponse>,
 }
 impl Cluster {

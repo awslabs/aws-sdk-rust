@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the node.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
 }
 impl UpdateNodeInput {

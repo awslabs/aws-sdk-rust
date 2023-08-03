@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the decimal parameter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DecimalParameter {

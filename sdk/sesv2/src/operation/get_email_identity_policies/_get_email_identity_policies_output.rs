@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

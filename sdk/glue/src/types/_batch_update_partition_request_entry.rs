@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
-    #[doc(hidden)]
     pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The structure used to update a partition.</p>
-    #[doc(hidden)]
     pub partition_input: ::std::option::Option<crate::types::PartitionInput>,
 }
 impl BatchUpdatePartitionRequestEntry {

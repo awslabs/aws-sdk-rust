@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstanceInput {
     /// <p>The name of the instance (a virtual private server) to start.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl StartInstanceInput {

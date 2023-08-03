@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mustache {
     /// <p>Boolean value that indicates whether the face has mustache or not.</p>
-    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl Mustache {

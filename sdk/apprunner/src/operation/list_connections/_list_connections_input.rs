@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectionsInput {

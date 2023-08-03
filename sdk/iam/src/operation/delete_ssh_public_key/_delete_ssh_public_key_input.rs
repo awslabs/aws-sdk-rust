@@ -5,11 +5,9 @@
 pub struct DeleteSshPublicKeyInput {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSshPublicKeyInput {

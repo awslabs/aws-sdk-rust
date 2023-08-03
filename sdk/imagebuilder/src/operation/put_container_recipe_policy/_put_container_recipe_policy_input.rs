@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
-    #[doc(hidden)]
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to apply to the container recipe.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutContainerRecipePolicyInput {

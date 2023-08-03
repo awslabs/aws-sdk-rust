@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFilters {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
-    #[doc(hidden)]
     pub job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The start date in a date range query.</p>
-    #[doc(hidden)]
     pub from_date: ::std::option::Option<::std::string::String>,
     /// <p>The end date in a date range query.</p>
-    #[doc(hidden)]
     pub to_date: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsRequestFilters {

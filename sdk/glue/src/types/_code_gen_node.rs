@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of node that this is.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>The line number of the node.</p>
-    #[doc(hidden)]
     pub line_number: i32,
 }
 impl CodeGenNode {

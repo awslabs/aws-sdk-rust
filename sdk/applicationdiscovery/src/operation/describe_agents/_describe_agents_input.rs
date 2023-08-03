@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentsInput {
     /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
-    #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAgentsInput {

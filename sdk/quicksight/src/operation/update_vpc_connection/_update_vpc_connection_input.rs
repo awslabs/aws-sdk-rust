@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcConnectionInput {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the VPC connection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs for the VPC connection.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of security group IDs for the VPC connection.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    #[doc(hidden)]
     pub dns_resolvers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An IAM role associated with the VPC connection.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVpcConnectionInput {

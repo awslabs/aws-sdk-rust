@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
-    #[doc(hidden)]
     pub channel_ban: ::std::option::Option<crate::types::ChannelBan>,
     _request_id: Option<String>,
 }

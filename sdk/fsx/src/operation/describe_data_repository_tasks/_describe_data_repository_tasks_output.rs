@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
-    #[doc(hidden)]
     pub data_repository_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

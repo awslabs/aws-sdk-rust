@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupMembersOutput {
     /// <p>The members associated to the group.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

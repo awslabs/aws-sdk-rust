@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    #[doc(hidden)]
     pub raster_data_collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     /// <p>The area of interest being queried for the raster data collection.</p>
-    #[doc(hidden)]
     pub area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,
     /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<crate::types::PropertyFilters>,
 }
 impl RasterDataCollectionQueryInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// Destination ARN.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// State of the destination.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DestinationState>,
     /// JSON document containing additional fixed properties regarding the destination
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDestinationInput {

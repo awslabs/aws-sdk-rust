@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionHealth {
     /// <p>The connection type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>The connection status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The time the status was last updated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConnectionHealth {

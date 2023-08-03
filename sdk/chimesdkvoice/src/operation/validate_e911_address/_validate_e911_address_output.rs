@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateE911AddressOutput {
     /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
-    #[doc(hidden)]
     pub validation_result: i32,
     /// <p>The ID that represents the address.</p>
-    #[doc(hidden)]
     pub address_external_id: ::std::option::Option<::std::string::String>,
     /// <p>The validated address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
     /// <p>The list of address suggestions..</p>
-    #[doc(hidden)]
     pub candidate_address_list: ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
     _request_id: Option<String>,
 }

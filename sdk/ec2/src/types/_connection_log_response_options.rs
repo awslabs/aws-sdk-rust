@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionLogResponseOptions {
     /// <p>Indicates whether client connection logging is enabled for the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The name of the Amazon CloudWatch Logs log group to which connection logging data is published.</p>
-    #[doc(hidden)]
     pub cloudwatch_log_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon CloudWatch Logs log stream to which connection logging data is published.</p>
-    #[doc(hidden)]
     pub cloudwatch_log_stream: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionLogResponseOptions {

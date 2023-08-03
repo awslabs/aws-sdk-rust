@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbProxyEndpointsOutput {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyEndpoint>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

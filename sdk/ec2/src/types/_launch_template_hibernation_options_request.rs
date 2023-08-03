@@ -6,7 +6,6 @@
 pub struct LaunchTemplateHibernationOptionsRequest {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
 }
 impl LaunchTemplateHibernationOptionsRequest {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSnapshotInfo {
     /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub from_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
-    #[doc(hidden)]
     pub from_blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
-    #[doc(hidden)]
     pub from_disk_info: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
 }
 impl InstanceSnapshotInfo {

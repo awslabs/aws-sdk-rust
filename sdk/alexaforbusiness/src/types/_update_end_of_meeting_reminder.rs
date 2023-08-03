@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndOfMeetingReminder {
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-    #[doc(hidden)]
     pub reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    #[doc(hidden)]
     pub reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateEndOfMeetingReminder {

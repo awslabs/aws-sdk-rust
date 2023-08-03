@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVocabularyInput {
     /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
 }
 impl GetVocabularyInput {

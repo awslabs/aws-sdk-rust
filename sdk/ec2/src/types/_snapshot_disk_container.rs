@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotDiskContainer {
     /// <p>The description of the disk image being imported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The format of the disk image being imported.</p>
     /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the disk image.</p>
-    #[doc(hidden)]
     pub user_bucket: ::std::option::Option<crate::types::UserBucket>,
 }
 impl SnapshotDiskContainer {

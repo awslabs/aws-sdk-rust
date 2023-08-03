@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceEndpointOutput {
     /// <p>The endpoint's service type.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
     /// <p>The service endpoint value.</p>
-    #[doc(hidden)]
     pub service_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Root CA of the server trust certificate.</p>
-    #[doc(hidden)]
     pub server_trust: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

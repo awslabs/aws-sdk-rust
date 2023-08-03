@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationS3KeyFilter {
     /// <p>The filter rules for the filter.</p>
-    #[doc(hidden)]
     pub filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {

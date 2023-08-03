@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// <p>The order in which to run the stateless rule group.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The ARN of the stateless rule group.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {

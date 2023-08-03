@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCacheParameterGroupInput {
     /// <p>The name of the cache parameter group to modify.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    #[doc(hidden)]
     pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl ModifyCacheParameterGroupInput {

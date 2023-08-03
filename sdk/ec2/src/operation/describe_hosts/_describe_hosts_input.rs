@@ -13,17 +13,13 @@ pub struct DescribeHostsInput {
     /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    #[doc(hidden)]
     pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostsInput {

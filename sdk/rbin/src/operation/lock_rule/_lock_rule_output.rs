@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LockRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The retention rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The resource type retained by the retention rule.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RuleStatus>,
     /// <p>Information about the retention rule lock configuration.</p>
-    #[doc(hidden)]
     pub lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
@@ -31,7 +24,6 @@ pub struct LockRuleOutput {
     /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lock_state: ::std::option::Option<crate::types::LockState>,
     _request_id: Option<String>,
 }

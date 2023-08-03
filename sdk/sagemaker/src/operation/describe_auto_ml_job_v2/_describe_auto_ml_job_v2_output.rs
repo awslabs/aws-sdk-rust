@@ -4,70 +4,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobV2Output {
     /// <p>Returns the name of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of channel objects describing the input data and their location.</p>
-    #[doc(hidden)]
     pub auto_ml_job_input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>,
     /// <p>Returns the job's output data config.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
     /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns the job's objective.</p>
-    #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>Returns the configuration settings of the problem type set for the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_problem_type_config: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>,
     /// <p>Returns the creation time of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the end time of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the job's last modified time.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the reason for the failure of the AutoML job V2, when applicable.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of reasons for partial failures within an AutoML job V2.</p>
-    #[doc(hidden)]
     pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     /// <p>Information about the candidate produced by an AutoML training job V2, including its status, steps, and other properties.</p>
-    #[doc(hidden)]
     pub best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
     /// <p>Returns the status of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
     /// <p>Returns the secondary status of the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
-    #[doc(hidden)]
     pub model_deploy_config: ::std::option::Option<crate::types::ModelDeployConfig>,
     /// <p>Provides information about endpoint for the model deployment.</p>
-    #[doc(hidden)]
     pub model_deploy_result: ::std::option::Option<crate::types::ModelDeployResult>,
     /// <p>Returns the configuration settings of how the data are split into train and validation datasets.</p>
-    #[doc(hidden)]
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     /// <p>Returns the security configuration for traffic encryption or Amazon VPC settings.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
     /// <p>The artifacts that are generated during an AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
     /// <p>Returns the resolved attributes used by the AutoML job V2.</p>
-    #[doc(hidden)]
     pub resolved_attributes: ::std::option::Option<crate::types::AutoMlResolvedAttributes>,
     /// <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
-    #[doc(hidden)]
     pub auto_ml_problem_type_config_name: ::std::option::Option<crate::types::AutoMlProblemTypeConfigName>,
     _request_id: Option<String>,
 }

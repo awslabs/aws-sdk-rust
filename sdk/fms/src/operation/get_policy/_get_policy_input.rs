@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyInput {

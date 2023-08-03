@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastReportGenerationExecutionError {
     /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UsageReportExecutionErrorCode>,
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl LastReportGenerationExecutionError {

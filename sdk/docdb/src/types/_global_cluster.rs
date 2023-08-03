@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
-    #[doc(hidden)]
     pub global_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this global cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The default database name within the new global cluster.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global cluster.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The deletion protection setting for the new global cluster.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
-    #[doc(hidden)]
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
 }
 impl GlobalCluster {

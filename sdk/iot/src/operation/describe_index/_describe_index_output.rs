@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexOutput {
     /// <p>The index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The index status.</p>
-    #[doc(hidden)]
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct DescribeIndexOutput {
     /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
     /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

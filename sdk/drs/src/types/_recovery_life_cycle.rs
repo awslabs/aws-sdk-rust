@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryLifeCycle {
     /// <p>The date and time the last Source Network recovery was initiated.</p>
-    #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the last recovery status of this Source Network.</p>
-    #[doc(hidden)]
     pub last_recovery_result: ::std::option::Option<crate::types::RecoveryResult>,
 }
 impl RecoveryLifeCycle {

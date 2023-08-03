@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResultItem {
     /// <p>The record number of the result.</p>
-    #[doc(hidden)]
     pub record_number: ::std::option::Option<i64>,
     /// <p>The unique identifier for the conversation associated with the result.</p>
-    #[doc(hidden)]
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the turn associated with the result.</p>
-    #[doc(hidden)]
     pub turn_result: ::std::option::Option<crate::types::TestSetTurnResult>,
 }
 impl UtteranceLevelTestResultItem {

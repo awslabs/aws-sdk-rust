@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecretsManagerSecretConfiguration {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-    #[doc(hidden)]
     pub secret_policy: ::std::option::Option<::std::string::String>,
 }
 impl SecretsManagerSecretConfiguration {

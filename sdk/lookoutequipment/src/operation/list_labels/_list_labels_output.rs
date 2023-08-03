@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> A summary of the items in the label group. </p>
-    #[doc(hidden)]
     pub label_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourcesFreeTrial {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
-    #[doc(hidden)]
     pub cloud_trail: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
-    #[doc(hidden)]
     pub dns_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
-    #[doc(hidden)]
     pub flow_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
-    #[doc(hidden)]
     pub kubernetes: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
-    #[doc(hidden)]
     pub malware_protection: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {

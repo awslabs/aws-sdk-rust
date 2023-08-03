@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchClusterConfig {
     /// <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     /// <p>The number of instances in the specified domain cluster.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
-    #[doc(hidden)]
     pub dedicated_master_enabled: ::std::option::Option<bool>,
     /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
-    #[doc(hidden)]
     pub zone_awareness_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the zone awareness configuration for a domain when zone awareness is enabled.</p>
-    #[doc(hidden)]
     pub zone_awareness_config: ::std::option::Option<crate::types::ZoneAwarenessConfig>,
     /// <p>The instance type for a dedicated master node.</p>
-    #[doc(hidden)]
     pub dedicated_master_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     /// <p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>
-    #[doc(hidden)]
     pub dedicated_master_count: ::std::option::Option<i32>,
     /// <p>True to enable warm storage.</p>
-    #[doc(hidden)]
     pub warm_enabled: ::std::option::Option<bool>,
     /// <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
-    #[doc(hidden)]
     pub warm_type: ::std::option::Option<crate::types::EsWarmPartitionInstanceType>,
     /// <p>The number of warm nodes in the cluster.</p>
-    #[doc(hidden)]
     pub warm_count: ::std::option::Option<i32>,
     /// <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain</p>
-    #[doc(hidden)]
     pub cold_storage_options: ::std::option::Option<crate::types::ColdStorageOptions>,
 }
 impl ElasticsearchClusterConfig {

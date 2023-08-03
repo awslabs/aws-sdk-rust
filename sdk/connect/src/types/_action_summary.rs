@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionSummary {
     /// <p>The action type.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
 }
 impl ActionSummary {

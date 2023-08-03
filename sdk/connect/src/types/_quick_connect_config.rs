@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
-    #[doc(hidden)]
     pub quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
-    #[doc(hidden)]
     pub user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
-    #[doc(hidden)]
     pub queue_config: ::std::option::Option<crate::types::QueueQuickConnectConfig>,
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
-    #[doc(hidden)]
     pub phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
 }
 impl QuickConnectConfig {

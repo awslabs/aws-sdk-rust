@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperatingSystem {
     /// <p>The operating system.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperatingSystemType>,
 }
 impl OperatingSystem {

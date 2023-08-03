@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigurationInput {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    #[doc(hidden)]
     pub source_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
 }
 impl CreateReplicationConfigurationInput {

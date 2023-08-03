@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureException {
     /// <p>Exception name.</p>
-    #[doc(hidden)]
     pub exception_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the failure.</p>
-    #[doc(hidden)]
     pub exception_description: ::std::option::Option<::std::string::String>,
 }
 impl FailureException {

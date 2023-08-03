@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRestoreJobOutput {
     /// <p>Returns the account ID that owns the restore job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    #[doc(hidden)]
     pub restore_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status code specifying the state of the job that is initiated by Backup to restore a recovery point.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RestoreJobStatus>,
     /// <p>A message showing the status of a job to restore a recovery point.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Contains an estimated percentage that is complete of a job at the time the job status was queried.</p>
-    #[doc(hidden)]
     pub percent_done: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the restored resource.</p>
-    #[doc(hidden)]
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
-    #[doc(hidden)]
     pub expected_completion_time_minutes: ::std::option::Option<i64>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
-    #[doc(hidden)]
     pub created_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns metadata associated with a restore job listed by resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
-    #[doc(hidden)]
     pub image_tag_details: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

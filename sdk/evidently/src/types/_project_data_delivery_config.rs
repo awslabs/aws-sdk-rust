@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDataDeliveryConfig {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3DestinationConfig>,
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
 }
 impl ProjectDataDeliveryConfig {

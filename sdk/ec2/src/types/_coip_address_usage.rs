@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoipAddressUsage {
     /// <p>The allocation ID of the address.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub aws_service: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address.</p>
-    #[doc(hidden)]
     pub co_ip: ::std::option::Option<::std::string::String>,
 }
 impl CoipAddressUsage {

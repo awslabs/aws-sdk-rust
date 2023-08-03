@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationSubscriptionOutput {
     /// <p>The subscription.</p>
-    #[doc(hidden)]
     pub subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,
 }

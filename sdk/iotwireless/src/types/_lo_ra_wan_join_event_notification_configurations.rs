@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanJoinEventNotificationConfigurations {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub dev_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {

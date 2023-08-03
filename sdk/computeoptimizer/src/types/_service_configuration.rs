@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceConfiguration {
     /// <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
     /// <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<i32>,
     /// <p> The container configurations within a task of an Amazon ECS service. </p>
-    #[doc(hidden)]
     pub container_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerConfiguration>>,
     /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
     /// <p>The Auto Scaling configuration methods include:</p>
@@ -20,10 +17,8 @@ pub struct ServiceConfiguration {
     /// <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li>
     /// </ul>
     /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     /// <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceConfiguration {

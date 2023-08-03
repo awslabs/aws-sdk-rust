@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
-    #[doc(hidden)]
     pub workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
 }
 impl DomainConfiguration {

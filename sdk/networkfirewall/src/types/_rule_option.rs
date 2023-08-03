@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleOption {
     /// <p></p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleOption {

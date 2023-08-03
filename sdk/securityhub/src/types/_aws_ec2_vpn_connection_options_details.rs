@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsDetails {
     /// <p>Whether the VPN connection uses static routes only.</p>
-    #[doc(hidden)]
     pub static_routes_only: bool,
     /// <p>The VPN tunnel options.</p>
-    #[doc(hidden)]
     pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
 }
 impl AwsEc2VpnConnectionOptionsDetails {

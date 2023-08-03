@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

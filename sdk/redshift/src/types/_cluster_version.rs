@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterVersion {
     /// <p>The version number used by the cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster parameter group family for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterVersion {

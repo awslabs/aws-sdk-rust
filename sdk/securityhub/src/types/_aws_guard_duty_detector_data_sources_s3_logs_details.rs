@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDataSourcesS3LogsDetails {
     /// <p> A value that describes whether S3 data event logs are automatically enabled for new members of an organization. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsGuardDutyDetectorDataSourcesS3LogsDetails {

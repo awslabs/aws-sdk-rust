@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The action that the bot should execute. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>When true the next message for the intent is not used.</p>
-    #[doc(hidden)]
     pub suppress_next_message: ::std::option::Option<bool>,
 }
 impl DialogAction {

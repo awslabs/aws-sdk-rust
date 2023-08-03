@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentInfo {
     /// <p>The application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p> The deployment group name. </p>
-    #[doc(hidden)]
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The deployment configuration name. </p>
-    #[doc(hidden)]
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the application revision that was deployed to the deployment group before the most recent successful deployment.</p>
-    #[doc(hidden)]
     pub previous_revision: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>Information about the location of stored application artifacts and the service from which to retrieve them.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>The current state of the deployment as a whole.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Information about any error associated with this deployment.</p>
-    #[doc(hidden)]
     pub error_information: ::std::option::Option<crate::types::ErrorInformation>,
     /// <p>A timestamp that indicates when the deployment was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment was deployed to the deployment group.</p>
     /// <p>In some cases, the reported value of the start time might be later than the complete time. This is due to differences in the clock settings of backend servers that participate in the deployment process.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment was complete.</p>
-    #[doc(hidden)]
     pub complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A summary of the deployment status of the instances in the deployment.</p>
-    #[doc(hidden)]
     pub deployment_overview: ::std::option::Option<crate::types::DeploymentOverview>,
     /// <p>A comment about the deployment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
@@ -51,40 +38,29 @@ pub struct DeploymentInfo {
     /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
     /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub creator: ::std::option::Option<crate::types::DeploymentCreator>,
     /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
-    #[doc(hidden)]
     pub ignore_application_stop_failures: bool,
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
-    #[doc(hidden)]
     pub auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
     /// <p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>
-    #[doc(hidden)]
     pub update_outdated_instances_only: bool,
     /// <p>Information about a deployment rollback.</p>
-    #[doc(hidden)]
     pub rollback_info: ::std::option::Option<crate::types::RollbackInfo>,
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
-    #[doc(hidden)]
     pub deployment_style: ::std::option::Option<crate::types::DeploymentStyle>,
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
-    #[doc(hidden)]
     pub target_instances: ::std::option::Option<crate::types::TargetInstances>,
     /// <p>Indicates whether the wait period set for the termination of instances in the original environment has started. Status is 'false' if the KEEP_ALIVE option is specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
-    #[doc(hidden)]
     pub instance_termination_wait_time_started: bool,
     /// <p>Information about blue/green deployment options for this deployment.</p>
-    #[doc(hidden)]
     pub blue_green_deployment_configuration: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in the deployment.</p>
-    #[doc(hidden)]
     pub load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
-    #[doc(hidden)]
     pub additional_deployment_status_info: ::std::option::Option<::std::string::String>,
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
@@ -92,22 +68,16 @@ pub struct DeploymentInfo {
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
     /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
     /// <p>Messages that contain information about the status of a deployment.</p>
-    #[doc(hidden)]
     pub deployment_status_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p>The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this deployment.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about deployments related to the specified deployment.</p>
-    #[doc(hidden)]
     pub related_deployments: ::std::option::Option<crate::types::RelatedDeployments>,
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
-    #[doc(hidden)]
     pub override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl DeploymentInfo {

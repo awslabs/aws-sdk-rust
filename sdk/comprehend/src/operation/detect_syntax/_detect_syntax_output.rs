@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    #[doc(hidden)]
     pub syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
     _request_id: Option<String>,
 }

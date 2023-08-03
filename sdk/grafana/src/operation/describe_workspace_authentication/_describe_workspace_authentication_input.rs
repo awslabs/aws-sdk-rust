@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspaceAuthenticationInput {

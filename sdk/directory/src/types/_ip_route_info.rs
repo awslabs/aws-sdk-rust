@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRouteInfo {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address block in the <code>IpRoute</code>.</p>
-    #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>The status of the IP address block.</p>
-    #[doc(hidden)]
     pub ip_route_status_msg: ::std::option::Option<crate::types::IpRouteStatusMsg>,
     /// <p>The date and time the address block was added to the directory.</p>
-    #[doc(hidden)]
     pub added_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason for the IpRouteStatusMsg.</p>
-    #[doc(hidden)]
     pub ip_route_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Description of the <code>IpRouteInfo</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl IpRouteInfo {

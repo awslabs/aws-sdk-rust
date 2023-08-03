@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-    #[doc(hidden)]
     pub passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Access permissions string used for this user.</p>
-    #[doc(hidden)]
     pub access_string: ::std::option::Option<::std::string::String>,
     /// <p>Indicates a password is not required for this user.</p>
-    #[doc(hidden)]
     pub no_password_required: ::std::option::Option<bool>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies how to authenticate the user.</p>
-    #[doc(hidden)]
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
 impl CreateUserInput {

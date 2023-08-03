@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingHistoryOutput {
     /// <p> A list of events that altered the specified finding during the specified time period. </p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>>,
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

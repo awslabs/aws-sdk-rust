@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UniqueProblem {
     /// <p>A message about the unique problems' result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the problems.</p>
-    #[doc(hidden)]
     pub problems: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
 }
 impl UniqueProblem {

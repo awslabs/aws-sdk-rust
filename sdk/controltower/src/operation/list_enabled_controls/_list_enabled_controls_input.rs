@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit.</p>
-    #[doc(hidden)]
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>How many results to return per API call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEnabledControlsInput {

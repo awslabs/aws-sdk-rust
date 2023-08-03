@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Run {
     /// <p>The run's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -34,7 +32,6 @@ pub struct Run {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
@@ -42,10 +39,8 @@ pub struct Run {
     /// <li> <p>ANDROID</p> </li>
     /// <li> <p>IOS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::DevicePlatform>,
     /// <p>When the run was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
@@ -60,7 +55,6 @@ pub struct Run {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
@@ -73,85 +67,59 @@ pub struct Run {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>The run's start time.</p>
-    #[doc(hidden)]
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The run's stop time.</p>
-    #[doc(hidden)]
     pub stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The run's result counters.</p>
-    #[doc(hidden)]
     pub counters: ::std::option::Option<crate::types::Counters>,
     /// <p>A message about the run's result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The total number of jobs for the run.</p>
-    #[doc(hidden)]
     pub total_jobs: ::std::option::Option<i32>,
     /// <p>The total number of completed jobs.</p>
-    #[doc(hidden)]
     pub completed_jobs: ::std::option::Option<i32>,
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
-    #[doc(hidden)]
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
-    #[doc(hidden)]
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     /// <p>The network profile being used for a test run.</p>
-    #[doc(hidden)]
     pub network_profile: ::std::option::Option<crate::types::NetworkProfile>,
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
-    #[doc(hidden)]
     pub parsing_result_url: ::std::option::Option<::std::string::String>,
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
-    #[doc(hidden)]
     pub result_code: ::std::option::Option<crate::types::ExecutionResultCode>,
     /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
-    #[doc(hidden)]
     pub seed: ::std::option::Option<i32>,
     /// <p>An app to upload or that has been uploaded.</p>
-    #[doc(hidden)]
     pub app_upload: ::std::option::Option<::std::string::String>,
     /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
-    #[doc(hidden)]
     pub event_count: ::std::option::Option<i32>,
     /// <p>The number of minutes the job executes before it times out.</p>
-    #[doc(hidden)]
     pub job_timeout_minutes: ::std::option::Option<i32>,
     /// <p>The ARN of the device pool for the run.</p>
-    #[doc(hidden)]
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the locale that is used for the run.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>Information about the radio states for the run.</p>
-    #[doc(hidden)]
     pub radios: ::std::option::Option<crate::types::Radios>,
     /// <p>Information about the location that is used for the run.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
-    #[doc(hidden)]
     pub customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     /// <p>The Device Farm console URL for the recording of the run.</p>
-    #[doc(hidden)]
     pub web_url: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
-    #[doc(hidden)]
     pub skip_app_resign: ::std::option::Option<bool>,
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
-    #[doc(hidden)]
     pub test_spec_arn: ::std::option::Option<::std::string::String>,
     /// <p>The results of a device filter used to select the devices for a test run.</p>
-    #[doc(hidden)]
     pub device_selection_result: ::std::option::Option<crate::types::DeviceSelectionResult>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl Run {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterPatchBaselineForPatchGroupInput {
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterPatchBaselineForPatchGroupInput {

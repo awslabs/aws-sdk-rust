@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsLogGroup {
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code> </p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsLogGroup {

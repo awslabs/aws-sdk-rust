@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaUpdateSummary {
     /// <p>The OTA update ID.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>The OTA update ARN.</p>
-    #[doc(hidden)]
     pub ota_update_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the OTA update was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OtaUpdateSummary {

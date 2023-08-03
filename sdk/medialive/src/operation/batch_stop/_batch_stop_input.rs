@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopInput {
     /// List of channel IDs
-    #[doc(hidden)]
     pub channel_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// List of multiplex IDs
-    #[doc(hidden)]
     pub multiplex_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchStopInput {

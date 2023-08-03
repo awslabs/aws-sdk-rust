@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRegexPatternSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    #[doc(hidden)]
     pub next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineBlueprintsOutput {
     /// <p>A list of available blueprints for Data Prepper.</p>
-    #[doc(hidden)]
     pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>,
     _request_id: Option<String>,
 }

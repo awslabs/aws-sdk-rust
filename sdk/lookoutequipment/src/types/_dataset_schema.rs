@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSchema {
     /// <p> </p>
-    #[doc(hidden)]
     pub inline_data_schema: ::std::option::Option<::std::string::String>,
 }
 impl DatasetSchema {

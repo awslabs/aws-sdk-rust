@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGameSessionLogUrlInput {
     /// <p>A unique identifier for the game session to get logs for. </p>
-    #[doc(hidden)]
     pub game_session_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGameSessionLogUrlInput {

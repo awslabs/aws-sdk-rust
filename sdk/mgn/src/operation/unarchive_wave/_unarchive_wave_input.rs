@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnarchiveWaveInput {
     /// <p>Wave ID.</p>
-    #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveWaveInput {

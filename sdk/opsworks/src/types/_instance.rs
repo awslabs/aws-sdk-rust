@@ -5,117 +5,80 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance architecture: "i386" or "x86_64".</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The instance's Amazon Resource Number (ARN).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>For load-based or time-based instances, the type.</p>
-    #[doc(hidden)]
     pub auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>The time that the instance was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The ID of the associated Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-    #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>For container instances, the instance's ARN.</p>
-    #[doc(hidden)]
     pub ecs_container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>The instance host name.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-    #[doc(hidden)]
     pub infrastructure_class: ::std::option::Option<::std::string::String>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    #[doc(hidden)]
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    #[doc(hidden)]
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-    #[doc(hidden)]
     pub last_service_error_id: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the instance layer IDs.</p>
-    #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance's operating system.</p>
-    #[doc(hidden)]
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>The instance's platform.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The instance's private DNS name.</p>
-    #[doc(hidden)]
     pub private_dns: ::std::option::Option<::std::string::String>,
     /// <p>The instance's private IP address.</p>
-    #[doc(hidden)]
     pub private_ip: ::std::option::Option<::std::string::String>,
     /// <p>The instance public DNS name.</p>
-    #[doc(hidden)]
     pub public_dns: ::std::option::Option<::std::string::String>,
     /// <p>The instance public IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, who performed the registration.</p>
-    #[doc(hidden)]
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-    #[doc(hidden)]
     pub reported_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, the reported operating system.</p>
-    #[doc(hidden)]
     pub reported_os: ::std::option::Option<crate::types::ReportedOs>,
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    #[doc(hidden)]
     pub root_device_type: ::std::option::Option<crate::types::RootDeviceType>,
     /// <p>The root device volume ID.</p>
-    #[doc(hidden)]
     pub root_device_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the instance security group IDs.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    #[doc(hidden)]
     pub ssh_host_dsa_key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The SSH key's RSA fingerprint.</p>
-    #[doc(hidden)]
     pub ssh_host_rsa_key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The instance's Amazon EC2 key-pair name.</p>
-    #[doc(hidden)]
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance status:</p>
     /// <ul>
@@ -135,16 +98,12 @@ pub struct Instance {
     /// <li> <p> <code>terminated</code> </p> </li>
     /// <li> <p> <code>terminating</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<::std::string::String>,
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
 }
 impl Instance {

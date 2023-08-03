@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicFilter {
     /// <p>A description of the filter used to select items for a topic.</p>
-    #[doc(hidden)]
     pub filter_description: ::std::option::Option<::std::string::String>,
     /// <p>The class of the filter. Valid values for this structure are <code>ENFORCED_VALUE_FILTER</code>, <code>CONDITIONAL_VALUE_FILTER</code>, and <code>NAMED_VALUE_FILTER</code>.</p>
-    #[doc(hidden)]
     pub filter_class: ::std::option::Option<crate::types::FilterClass>,
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the filter.</p>
-    #[doc(hidden)]
     pub filter_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the field that the filter operates on.</p>
-    #[doc(hidden)]
     pub operand_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>, <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>, and <code>RELATIVE_DATE_FILTER</code>.</p>
-    #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::NamedFilterType>,
     /// <p>The category filter that is associated with this filter.</p>
-    #[doc(hidden)]
     pub category_filter: ::std::option::Option<crate::types::TopicCategoryFilter>,
     /// <p>The numeric equality filter.</p>
-    #[doc(hidden)]
     pub numeric_equality_filter: ::std::option::Option<crate::types::TopicNumericEqualityFilter>,
     /// <p>The numeric range filter.</p>
-    #[doc(hidden)]
     pub numeric_range_filter: ::std::option::Option<crate::types::TopicNumericRangeFilter>,
     /// <p>The date range filter.</p>
-    #[doc(hidden)]
     pub date_range_filter: ::std::option::Option<crate::types::TopicDateRangeFilter>,
     /// <p>The relative date filter.</p>
-    #[doc(hidden)]
     pub relative_date_filter: ::std::option::Option<crate::types::TopicRelativeDateFilter>,
 }
 impl TopicFilter {

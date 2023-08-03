@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceEvaluationOutput {
     /// <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

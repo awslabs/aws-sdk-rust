@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentStatusData {
     /// <p>The Component type.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Capability ARN of the component.</p>
-    #[doc(hidden)]
     pub capability_arn: ::std::option::Option<::std::string::String>,
     /// <p>Component status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>Bytes sent by the component.</p>
-    #[doc(hidden)]
     pub bytes_sent: ::std::option::Option<i64>,
     /// <p>Bytes received by the component.</p>
-    #[doc(hidden)]
     pub bytes_received: ::std::option::Option<i64>,
     /// <p>Packets dropped by component.</p>
-    #[doc(hidden)]
     pub packets_dropped: ::std::option::Option<i64>,
     /// <p>Dataflow UUID associated with the component.</p>
-    #[doc(hidden)]
     pub dataflow_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentStatusData {

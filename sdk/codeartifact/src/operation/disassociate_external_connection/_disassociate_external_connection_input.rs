@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository from which the external connection will be removed. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The name of the external connection to be removed from the repository. </p>
-    #[doc(hidden)]
     pub external_connection: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateExternalConnectionInput {

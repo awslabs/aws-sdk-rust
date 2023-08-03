@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainLogPublishingOption {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the log publishing is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsOpenSearchServiceDomainLogPublishingOption {

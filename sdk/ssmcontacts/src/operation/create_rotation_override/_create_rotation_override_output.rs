@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRotationOverrideOutput {
     /// <p>The Amazon Resource Name (ARN) of the created rotation override.</p>
-    #[doc(hidden)]
     pub rotation_override_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

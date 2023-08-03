@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseSpecification {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    #[doc(hidden)]
     pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
-    #[doc(hidden)]
     pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl ResponseSpecification {

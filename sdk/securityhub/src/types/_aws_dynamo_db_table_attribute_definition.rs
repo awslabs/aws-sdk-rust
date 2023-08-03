@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableAttributeDefinition {
     /// <p>The name of the attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute.</p>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableAttributeDefinition {

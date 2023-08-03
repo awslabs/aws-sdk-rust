@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRotationInput {

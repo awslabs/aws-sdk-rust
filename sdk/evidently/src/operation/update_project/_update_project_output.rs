@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectOutput {
     /// <p>A structure containing information about the updated project.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
 }

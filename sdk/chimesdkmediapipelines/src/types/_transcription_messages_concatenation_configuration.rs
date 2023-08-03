@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl TranscriptionMessagesConcatenationConfiguration {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExtensionAssociationOutput {
     /// <p>The system-generated ID for the association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the extension defined in the association.</p>
-    #[doc(hidden)]
     pub extension_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
-    #[doc(hidden)]
     pub extension_version_number: i32,
     _request_id: Option<String>,
 }

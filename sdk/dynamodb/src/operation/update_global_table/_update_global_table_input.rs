@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableInput {
     /// <p>The global table name.</p>
-    #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    #[doc(hidden)]
     pub replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
 }
 impl UpdateGlobalTableInput {

@@ -26,7 +26,6 @@ pub struct AutoMlAlgorithmConfig {
     /// <li> <p>"xgboost"</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auto_ml_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
 }
 impl AutoMlAlgorithmConfig {

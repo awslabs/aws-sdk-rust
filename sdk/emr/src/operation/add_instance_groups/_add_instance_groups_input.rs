@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
-    #[doc(hidden)]
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
     /// <p>Job flow in which to add the instance groups.</p>
-    #[doc(hidden)]
     pub job_flow_id: ::std::option::Option<::std::string::String>,
 }
 impl AddInstanceGroupsInput {

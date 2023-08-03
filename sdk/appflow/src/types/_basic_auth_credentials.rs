@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password to use to connect to a resource.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl BasicAuthCredentials {

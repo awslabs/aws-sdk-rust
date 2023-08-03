@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    #[doc(hidden)]
     pub expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size of the volume in GB.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
-    #[doc(hidden)]
     pub block_size: ::std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy that you want to delete.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    #[doc(hidden)]
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectPolicyInput {

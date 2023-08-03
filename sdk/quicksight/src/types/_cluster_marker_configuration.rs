@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterMarkerConfiguration {
     /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
-    #[doc(hidden)]
     pub cluster_marker: ::std::option::Option<crate::types::ClusterMarker>,
 }
 impl ClusterMarkerConfiguration {

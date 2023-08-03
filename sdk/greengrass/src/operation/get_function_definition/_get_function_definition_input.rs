@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
-    #[doc(hidden)]
     pub function_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFunctionDefinitionInput {

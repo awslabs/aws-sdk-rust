@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     _request_id: Option<String>,
 }

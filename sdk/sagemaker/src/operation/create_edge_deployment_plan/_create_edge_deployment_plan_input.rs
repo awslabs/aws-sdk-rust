@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of models associated with the edge deployment plan.</p>
-    #[doc(hidden)]
     pub model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     /// <p>The device fleet used for this edge deployment plan.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
     /// <p>List of tags with which to tag the edge deployment plan.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEdgeDeploymentPlanInput {

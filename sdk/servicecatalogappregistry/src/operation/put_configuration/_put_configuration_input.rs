@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationInput {
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }
 impl PutConfigurationInput {

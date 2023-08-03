@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
-    #[doc(hidden)]
     pub migration_task: ::std::option::Option<crate::types::MigrationTask>,
     _request_id: Option<String>,
 }

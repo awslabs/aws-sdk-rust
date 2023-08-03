@@ -6,28 +6,21 @@
 pub struct Account {
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the account in the organization.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccountStatus>,
     /// <p>The method by which the account joined the organization.</p>
-    #[doc(hidden)]
     pub joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     /// <p>The date the account became a part of the organization.</p>
-    #[doc(hidden)]
     pub joined_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Account {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
-    #[doc(hidden)]
     pub rule_groups_namespaces: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

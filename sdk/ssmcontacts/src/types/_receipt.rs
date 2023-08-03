@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-    #[doc(hidden)]
     pub contact_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    #[doc(hidden)]
     pub receipt_type: ::std::option::Option<crate::types::ReceiptType>,
     /// <p>Information provided during the page acknowledgement.</p>
-    #[doc(hidden)]
     pub receipt_info: ::std::option::Option<::std::string::String>,
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    #[doc(hidden)]
     pub receipt_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Receipt {

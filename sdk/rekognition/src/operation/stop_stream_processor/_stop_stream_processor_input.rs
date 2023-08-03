@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl StopStreamProcessorInput {

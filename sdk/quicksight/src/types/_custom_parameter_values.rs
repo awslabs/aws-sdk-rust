@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomParameterValues {
     /// <p>A list of string-type parameter values.</p>
-    #[doc(hidden)]
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of integer-type parameter values.</p>
-    #[doc(hidden)]
     pub integer_values: ::std::option::Option<::std::vec::Vec<i64>>,
     /// <p>A list of decimal-type parameter values.</p>
-    #[doc(hidden)]
     pub decimal_values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>A list of datetime-type parameter values.</p>
-    #[doc(hidden)]
     pub date_time_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl CustomParameterValues {

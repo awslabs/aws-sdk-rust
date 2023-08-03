@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSummary {
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    #[doc(hidden)]
     pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title of the evaluation form.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the evaluation form was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the evaluation form was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the evaluation form was last activated.</p>
-    #[doc(hidden)]
     pub last_activated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
-    #[doc(hidden)]
     pub last_activated_by: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the latest evaluation form version.</p>
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<i32>,
     /// <p>The version of the active evaluation form version.</p>
-    #[doc(hidden)]
     pub active_version: ::std::option::Option<i32>,
 }
 impl EvaluationFormSummary {

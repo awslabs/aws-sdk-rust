@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationInput {
     /// <p>The description of the configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    #[doc(hidden)]
     pub kafka_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contents of the <filename>
     /// server.properties
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    #[doc(hidden)]
     pub server_properties: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateConfigurationInput {

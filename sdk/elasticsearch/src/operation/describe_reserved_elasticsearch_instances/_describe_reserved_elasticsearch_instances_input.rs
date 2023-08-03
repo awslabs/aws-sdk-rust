@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesInput {
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedElasticsearchInstancesInput {

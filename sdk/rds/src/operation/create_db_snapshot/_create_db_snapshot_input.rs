@@ -13,17 +13,14 @@ pub struct CreateDbSnapshotInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSnapshotInput {

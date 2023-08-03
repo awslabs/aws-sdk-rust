@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsInput {
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    #[doc(hidden)]
     pub query_definition_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Limits the number of returned query definitions to the specified number.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryDefinitionsInput {

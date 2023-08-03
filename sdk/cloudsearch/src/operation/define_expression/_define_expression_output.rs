@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }

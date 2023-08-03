@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p> <note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub pipeline_version: ::std::option::Option<i32>,
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    #[doc(hidden)]
     pub stage_states: ::std::option::Option<::std::vec::Vec<crate::types::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    #[doc(hidden)]
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

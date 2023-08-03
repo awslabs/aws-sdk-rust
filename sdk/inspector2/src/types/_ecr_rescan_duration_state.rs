@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrRescanDurationState {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    #[doc(hidden)]
     pub rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EcrRescanDurationStatus>,
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EcrRescanDurationState {

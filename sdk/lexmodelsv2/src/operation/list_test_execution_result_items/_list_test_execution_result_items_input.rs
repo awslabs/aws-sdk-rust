@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestExecutionResultItemsInput {
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of results from the test set execution.</p>
-    #[doc(hidden)]
     pub result_filter_by: ::std::option::Option<crate::types::TestExecutionResultFilterBy>,
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestExecutionResultItemsInput {

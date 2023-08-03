@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionOutput {
     /// <p>The position information of the resource.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f32>>,
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
-    #[doc(hidden)]
     pub accuracy: ::std::option::Option<crate::types::Accuracy>,
     /// <p>The type of solver used to identify the position of the resource.</p>
-    #[doc(hidden)]
     pub solver_type: ::std::option::Option<crate::types::PositionSolverType>,
     /// <p>The vendor of the positioning solver.</p>
-    #[doc(hidden)]
     pub solver_provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     /// <p>The version of the positioning solver.</p>
-    #[doc(hidden)]
     pub solver_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device's position was determined.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartConfiguration {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::FunnelChartFieldWells>,
     /// <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::FunnelChartSortConfiguration>,
     /// <p>The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options for the values that are displayed in a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub value_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The tooltip configuration of a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The options that determine the presentation of the data labels.</p>
-    #[doc(hidden)]
     pub data_label_options: ::std::option::Option<crate::types::FunnelChartDataLabelOptions>,
     /// <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl FunnelChartConfiguration {

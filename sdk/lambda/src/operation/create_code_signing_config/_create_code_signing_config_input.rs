@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCodeSigningConfigInput {
     /// <p>Descriptive name for this code signing configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Signing profiles for this code signing configuration.</p>
-    #[doc(hidden)]
     pub allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    #[doc(hidden)]
     pub code_signing_policies: ::std::option::Option<crate::types::CodeSigningPolicies>,
 }
 impl CreateCodeSigningConfigInput {

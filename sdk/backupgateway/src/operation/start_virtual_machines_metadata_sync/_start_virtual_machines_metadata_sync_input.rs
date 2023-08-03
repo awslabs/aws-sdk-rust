@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartVirtualMachinesMetadataSyncInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartVirtualMachinesMetadataSyncInput {

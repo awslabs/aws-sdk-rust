@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The attribute name used to search for things.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute value used to search for things.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type used to search for things.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
     /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
-    #[doc(hidden)]
     pub use_prefix_attribute_value: ::std::option::Option<bool>,
 }
 impl ListThingsInput {

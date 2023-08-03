@@ -4,33 +4,24 @@
 #[derive(::std::fmt::Debug)]
 pub struct PutObjectInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// The name of the Object to be uploaded.
-    #[doc(hidden)]
     pub object_name: ::std::option::Option<::std::string::String>,
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    #[doc(hidden)]
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Inline chunk data to be uploaded.
     pub inline_chunk: ::aws_smithy_http::byte_stream::ByteStream,
     /// Length of the inline chunk data.
-    #[doc(hidden)]
     pub inline_chunk_length: i64,
     /// Inline chunk checksum
-    #[doc(hidden)]
     pub inline_chunk_checksum: ::std::option::Option<::std::string::String>,
     /// Inline chunk checksum algorithm
-    #[doc(hidden)]
     pub inline_chunk_checksum_algorithm: ::std::option::Option<::std::string::String>,
     /// object checksum
-    #[doc(hidden)]
     pub object_checksum: ::std::option::Option<::std::string::String>,
     /// object checksum algorithm
-    #[doc(hidden)]
     pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     /// Throw an exception if Object name is already exist.
-    #[doc(hidden)]
     pub throw_on_duplicate: bool,
 }
 impl PutObjectInput {

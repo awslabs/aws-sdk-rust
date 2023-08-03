@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveRoomInput {
     /// <p>The ARN of the user. Required.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the skill that was requested. Required.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolveRoomInput {

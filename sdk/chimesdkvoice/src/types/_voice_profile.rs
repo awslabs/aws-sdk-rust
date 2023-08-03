@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VoiceProfile {
     /// <p>The ID of the voice profile.</p>
-    #[doc(hidden)]
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the voice profile.</p>
-    #[doc(hidden)]
     pub voice_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain that contains the voice profile.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the voice profile was created and enrolled.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the voice profile was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a voice profile expires unless you re-enroll the caller via the <code>UpdateVoiceProfile</code> API.</p>
-    #[doc(hidden)]
     pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfile {

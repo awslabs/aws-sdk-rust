@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>The expression string that is evaluated. </p>
-    #[doc(hidden)]
     pub expression_string: ::std::option::Option<::std::string::String>,
 }
 impl Condition {

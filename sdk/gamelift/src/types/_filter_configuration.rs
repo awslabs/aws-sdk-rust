@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub allowed_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterConfiguration {

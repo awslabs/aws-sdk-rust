@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
-    #[doc(hidden)]
     pub lat: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
-    #[doc(hidden)]
     pub lon: ::std::option::Option<f64>,
 }
 impl IpGeoLocation {

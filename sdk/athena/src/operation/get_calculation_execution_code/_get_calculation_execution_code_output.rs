@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionCodeOutput {
     /// <p>The unencrypted code that was executed for the calculation.</p>
-    #[doc(hidden)]
     pub code_block: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

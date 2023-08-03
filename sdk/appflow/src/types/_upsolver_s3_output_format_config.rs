@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsolverS3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub file_type: ::std::option::Option<crate::types::FileType>,
     /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
-    #[doc(hidden)]
     pub prefix_config: ::std::option::Option<crate::types::PrefixConfig>,
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
-    #[doc(hidden)]
     pub aggregation_config: ::std::option::Option<crate::types::AggregationConfig>,
 }
 impl UpsolverS3OutputFormatConfig {

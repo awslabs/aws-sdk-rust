@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetResizingSpecifications {
     /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period. </p>
-    #[doc(hidden)]
     pub spot_resize_specification: ::std::option::Option<crate::types::SpotResizingSpecification>,
     /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period. </p>
-    #[doc(hidden)]
     pub on_demand_resize_specification: ::std::option::Option<crate::types::OnDemandResizingSpecification>,
 }
 impl InstanceFleetResizingSpecifications {

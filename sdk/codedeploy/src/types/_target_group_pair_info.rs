@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupPairInfo {
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
-    #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
-    #[doc(hidden)]
     pub prod_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
     /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
-    #[doc(hidden)]
     pub test_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
 }
 impl TargetGroupPairInfo {

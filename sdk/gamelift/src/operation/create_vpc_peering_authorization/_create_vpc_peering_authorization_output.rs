@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    #[doc(hidden)]
     pub vpc_peering_authorization: ::std::option::Option<crate::types::VpcPeeringAuthorization>,
     _request_id: Option<String>,
 }

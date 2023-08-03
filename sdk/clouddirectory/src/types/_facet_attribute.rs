@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    #[doc(hidden)]
     pub attribute_definition: ::std::option::Option<crate::types::FacetAttributeDefinition>,
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    #[doc(hidden)]
     pub attribute_reference: ::std::option::Option<crate::types::FacetAttributeReference>,
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
-    #[doc(hidden)]
     pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
 impl FacetAttribute {

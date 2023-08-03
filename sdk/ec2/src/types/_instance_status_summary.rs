@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatusSummary {
     /// <p>The system instance health or application instance health.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SummaryStatus>,
 }
 impl InstanceStatusSummary {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
-    #[doc(hidden)]
     pub lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>>,
     _request_id: Option<String>,
 }

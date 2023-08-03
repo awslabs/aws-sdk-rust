@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusOutput {
     /// <p>The status of the deletion.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeletionTaskStatusType>,
     /// <p>An object that contains details about the reason the deletion failed.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::DeletionTaskFailureReasonType>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-    #[doc(hidden)]
     pub exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamInput {

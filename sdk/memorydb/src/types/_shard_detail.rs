@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShardDetail {
     /// <p>The name of the shard</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details of the shard</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ShardConfiguration>,
     /// <p>The size of the shard's snapshot</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the shard's snapshot was created</p>
-    #[doc(hidden)]
     pub snapshot_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ShardDetail {

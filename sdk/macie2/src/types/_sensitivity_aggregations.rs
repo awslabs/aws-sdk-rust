@@ -6,17 +6,13 @@
 pub struct SensitivityAggregations {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    #[doc(hidden)]
     pub classifiable_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    #[doc(hidden)]
     pub publicly_accessible_count: ::std::option::Option<i64>,
     /// <p>The total number of buckets.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    #[doc(hidden)]
     pub total_size_in_bytes: ::std::option::Option<i64>,
 }
 impl SensitivityAggregations {

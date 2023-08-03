@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub profile_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub profile_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    #[doc(hidden)]
     pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     _request_id: Option<String>,
 }

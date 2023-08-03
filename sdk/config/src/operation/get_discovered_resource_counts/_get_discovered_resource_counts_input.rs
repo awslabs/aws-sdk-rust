@@ -7,13 +7,10 @@ pub struct GetDiscoveredResourceCountsInput {
     /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDiscoveredResourceCountsInput {

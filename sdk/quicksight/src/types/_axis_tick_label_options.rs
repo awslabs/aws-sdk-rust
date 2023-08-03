@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisTickLabelOptions {
     /// <p>Determines whether or not the axis ticks are visible.</p>
-    #[doc(hidden)]
     pub label_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The rotation angle of the axis tick labels.</p>
-    #[doc(hidden)]
     pub rotation_angle: ::std::option::Option<f64>,
 }
 impl AxisTickLabelOptions {

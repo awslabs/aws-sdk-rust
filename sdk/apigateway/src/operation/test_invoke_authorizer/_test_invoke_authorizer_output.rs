@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutput {
     /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
-    #[doc(hidden)]
     pub client_status: i32,
     /// <p>The API Gateway execution log for the test authorizer request.</p>
-    #[doc(hidden)]
     pub log: ::std::option::Option<::std::string::String>,
     /// <p>The execution latency of the test authorizer request.</p>
-    #[doc(hidden)]
     pub latency: i64,
     /// <p>The principal identity returned by the Authorizer</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document returned by the Authorizer</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The authorization response.</p>
-    #[doc(hidden)]
     pub authorization: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
-    #[doc(hidden)]
     pub claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

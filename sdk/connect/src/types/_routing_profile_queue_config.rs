@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
-    #[doc(hidden)]
     pub queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub delay: ::std::option::Option<i32>,
 }
 impl RoutingProfileQueueConfig {

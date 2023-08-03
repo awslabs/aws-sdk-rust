@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
-    #[doc(hidden)]
     pub access_key_details: ::std::option::Option<crate::types::AccessKeyDetails>,
     /// <p>Contains information on the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_details: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDetail>>,
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
-    #[doc(hidden)]
     pub instance_details: ::std::option::Option<crate::types::InstanceDetails>,
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
-    #[doc(hidden)]
     pub eks_cluster_details: ::std::option::Option<crate::types::EksClusterDetails>,
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
-    #[doc(hidden)]
     pub kubernetes_details: ::std::option::Option<crate::types::KubernetesDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
-    #[doc(hidden)]
     pub ebs_volume_details: ::std::option::Option<crate::types::EbsVolumeDetails>,
     /// <p>Contains information about the details of the ECS Cluster.</p>
-    #[doc(hidden)]
     pub ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
     /// <p>Details of a container.</p>
-    #[doc(hidden)]
     pub container_details: ::std::option::Option<crate::types::Container>,
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
-    #[doc(hidden)]
     pub rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
-    #[doc(hidden)]
     pub rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    #[doc(hidden)]
     pub lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
 }
 impl Resource {

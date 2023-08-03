@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerNodeEndpoint {
     /// <p>The address of the node endpoint</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port of the node endpoint</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl CustomerNodeEndpoint {

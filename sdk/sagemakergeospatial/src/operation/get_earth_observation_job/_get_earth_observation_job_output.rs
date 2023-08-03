@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEarthObservationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Earth Observation job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the initiated Earth Observation job.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of Earth Observation job, in seconds.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The status of a previously initiated Earth Observation job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Input data for the Earth Observation job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::InputConfigOutput>,
     /// <p>An object containing information about the job configuration.</p>
-    #[doc(hidden)]
     pub job_config: ::std::option::Option<crate::types::JobConfigInput>,
     /// <p>Bands available in the output of an operation.</p>
-    #[doc(hidden)]
     pub output_bands: ::std::option::Option<::std::vec::Vec<crate::types::OutputBand>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details about the errors generated during the Earth Observation job.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::EarthObservationJobErrorDetails>,
     /// <p>The status of the Earth Observation job.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::EarthObservationJobExportStatus>,
     /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
-    #[doc(hidden)]
     pub export_error_details: ::std::option::Option<crate::types::ExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverDnssecConfig {
     /// <p>The ID for a configuration for DNSSEC validation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct ResolverDnssecConfig {
     /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
     /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
 }
 impl ResolverDnssecConfig {

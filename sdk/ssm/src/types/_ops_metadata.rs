@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsMetadata {
     /// <p>The ID of the Application Manager application.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>
-    #[doc(hidden)]
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date the OpsMetadata object was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user name who last updated the OpsMetadata object.</p>
-    #[doc(hidden)]
     pub last_modified_user: ::std::option::Option<::std::string::String>,
     /// <p>The date the OpsMetadata objects was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OpsMetadata {

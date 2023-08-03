@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-    #[doc(hidden)]
     pub engagement_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEngagementInput {

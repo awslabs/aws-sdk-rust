@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    #[doc(hidden)]
     pub volume_retention_mode: ::std::option::Option<crate::types::VolumeRetentionMode>,
 }
 impl StopStreamingSessionInput {

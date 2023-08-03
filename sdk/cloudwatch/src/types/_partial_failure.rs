@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartialFailure {
     /// <p>The specified rule that could not be deleted.</p>
-    #[doc(hidden)]
     pub failure_resource: ::std::option::Option<::std::string::String>,
     /// <p>The type of error.</p>
-    #[doc(hidden)]
     pub exception_type: ::std::option::Option<::std::string::String>,
     /// <p>The code of the error.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the error.</p>
-    #[doc(hidden)]
     pub failure_description: ::std::option::Option<::std::string::String>,
 }
 impl PartialFailure {

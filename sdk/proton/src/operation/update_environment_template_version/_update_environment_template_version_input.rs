@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of environment template version to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the environment template minor version to update.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
 }
 impl UpdateEnvironmentTemplateVersionInput {

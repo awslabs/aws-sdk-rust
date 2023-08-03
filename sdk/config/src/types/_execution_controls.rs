@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionControls {
     /// <p>A SsmControls object.</p>
-    #[doc(hidden)]
     pub ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }
 impl ExecutionControls {

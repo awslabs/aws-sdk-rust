@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
-    #[doc(hidden)]
     pub size_constraint_set: ::std::option::Option<crate::types::SizeConstraintSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

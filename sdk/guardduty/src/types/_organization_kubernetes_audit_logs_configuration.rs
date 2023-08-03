@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesAuditLogsConfiguration {
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationKubernetesAuditLogsConfiguration {

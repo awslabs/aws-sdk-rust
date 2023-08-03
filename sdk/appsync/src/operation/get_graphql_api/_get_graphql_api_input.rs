@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGraphqlApiInput {
     /// <p>The API ID for the GraphQL API.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGraphqlApiInput {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSettings {
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    #[doc(hidden)]
     pub audio_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AudioSelector>>,
     /// Used to select the caption input to use for inputs that have multiple available.
-    #[doc(hidden)]
     pub caption_selectors: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSelector>>,
     /// Enable or disable the deblock filter when filtering.
-    #[doc(hidden)]
     pub deblock_filter: ::std::option::Option<crate::types::InputDeblockFilter>,
     /// Enable or disable the denoise filter when filtering.
-    #[doc(hidden)]
     pub denoise_filter: ::std::option::Option<crate::types::InputDenoiseFilter>,
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
-    #[doc(hidden)]
     pub filter_strength: ::std::option::Option<i32>,
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
-    #[doc(hidden)]
     pub input_filter: ::std::option::Option<crate::types::InputFilter>,
     /// Input settings.
-    #[doc(hidden)]
     pub network_input_settings: ::std::option::Option<crate::types::NetworkInputSettings>,
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
-    #[doc(hidden)]
     pub scte35_pid: ::std::option::Option<i32>,
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
-    #[doc(hidden)]
     pub smpte2038_data_preference: ::std::option::Option<crate::types::Smpte2038DataPreference>,
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
-    #[doc(hidden)]
     pub source_end_behavior: ::std::option::Option<crate::types::InputSourceEndBehavior>,
     /// Informs which video elementary stream to decode for input types that have multiple available.
-    #[doc(hidden)]
     pub video_selector: ::std::option::Option<crate::types::VideoSelector>,
 }
 impl InputSettings {

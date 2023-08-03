@@ -9,7 +9,6 @@ pub struct CustomLogSourceCrawlerConfiguration {
     /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
     /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomLogSourceCrawlerConfiguration {

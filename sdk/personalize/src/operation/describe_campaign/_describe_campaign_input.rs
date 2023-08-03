@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    #[doc(hidden)]
     pub campaign_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCampaignInput {

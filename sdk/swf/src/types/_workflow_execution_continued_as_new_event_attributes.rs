@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The input provided to the new workflow execution.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    #[doc(hidden)]
     pub new_execution_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -34,16 +27,12 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The list of tags associated with the new workflow execution.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The workflow type of this execution.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
-    #[doc(hidden)]
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionContinuedAsNewEventAttributes {

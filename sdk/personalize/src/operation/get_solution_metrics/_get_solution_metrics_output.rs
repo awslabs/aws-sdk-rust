@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolutionMetricsOutput {
     /// <p>The same solution version ARN as specified in the request.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     _request_id: Option<String>,
 }

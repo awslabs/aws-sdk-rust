@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceFiles {
     /// <p>The source file's location in Amazon S3.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The files' index.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReferenceFiles {

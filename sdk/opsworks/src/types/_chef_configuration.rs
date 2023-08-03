@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChefConfiguration {
     /// <p>Whether to enable Berkshelf.</p>
-    #[doc(hidden)]
     pub manage_berkshelf: ::std::option::Option<bool>,
     /// <p>The Berkshelf version.</p>
-    #[doc(hidden)]
     pub berkshelf_version: ::std::option::Option<::std::string::String>,
 }
 impl ChefConfiguration {

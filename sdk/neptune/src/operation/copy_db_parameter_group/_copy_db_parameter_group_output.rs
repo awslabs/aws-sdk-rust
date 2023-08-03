@@ -5,7 +5,6 @@
 pub struct CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    #[doc(hidden)]
     pub db_parameter_group: ::std::option::Option<crate::types::DbParameterGroup>,
     _request_id: Option<String>,
 }

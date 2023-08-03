@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectPeerSummary {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a Connect peer attachment.</p>
-    #[doc(hidden)]
     pub connect_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the edge is located.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The state of a Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer_state: ::std::option::Option<crate::types::ConnectPeerState>,
     /// <p>The timestamp when a Connect peer was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of key-value tags associated with the Connect peer summary.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ConnectPeerSummary {

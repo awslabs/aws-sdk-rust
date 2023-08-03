@@ -9,19 +9,14 @@ pub struct CsvOutput {
     /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
     /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub quote_fields: ::std::option::Option<crate::types::QuoteFields>,
     /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
-    #[doc(hidden)]
     pub quote_escape_character: ::std::option::Option<::std::string::String>,
     /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
-    #[doc(hidden)]
     pub record_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
-    #[doc(hidden)]
     pub field_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
-    #[doc(hidden)]
     pub quote_character: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutput {

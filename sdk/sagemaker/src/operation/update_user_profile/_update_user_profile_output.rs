@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserProfileOutput {
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub user_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

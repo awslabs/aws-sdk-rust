@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchPredictionJobsOutput {
     /// <p>An array containing the details of each batch prediction job.</p>
-    #[doc(hidden)]
     pub batch_predictions: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
     /// <p>The next token for the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

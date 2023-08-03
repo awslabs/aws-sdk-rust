@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRulesAndCustomActionsDetails {
     /// <p>Custom actions for the rule group.</p>
-    #[doc(hidden)]
     pub custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>,
     /// <p>Stateless rules for the rule group.</p>
-    #[doc(hidden)]
     pub stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>,
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {

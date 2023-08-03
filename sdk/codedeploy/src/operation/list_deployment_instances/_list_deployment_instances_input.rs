@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
@@ -19,10 +17,8 @@ pub struct ListDeploymentInstancesInput {
     /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
     /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    #[doc(hidden)]
     pub instance_type_filter: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
 }
 impl ListDeploymentInstancesInput {

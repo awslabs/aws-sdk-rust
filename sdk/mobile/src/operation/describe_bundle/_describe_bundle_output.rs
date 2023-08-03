@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::BundleDetails>,
     _request_id: Option<String>,
 }

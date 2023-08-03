@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormVersionSummary {
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    #[doc(hidden)]
     pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_version: ::std::option::Option<i32>,
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
-    #[doc(hidden)]
     pub locked: bool,
     /// <p>The status of the evaluation form.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EvaluationFormVersionStatus>,
     /// <p>The timestamp for when the evaluation form was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the evaluation form was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationFormVersionSummary {

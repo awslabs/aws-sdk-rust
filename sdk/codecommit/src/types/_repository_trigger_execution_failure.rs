@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
-    #[doc(hidden)]
     pub trigger: ::std::option::Option<::std::string::String>,
     /// <p>Message information about the trigger that did not run.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryTriggerExecutionFailure {

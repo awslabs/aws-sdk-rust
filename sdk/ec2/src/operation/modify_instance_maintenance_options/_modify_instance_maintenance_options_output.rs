@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceMaintenanceOptionsOutput {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    #[doc(hidden)]
     pub auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
     _request_id: Option<String>,
 }

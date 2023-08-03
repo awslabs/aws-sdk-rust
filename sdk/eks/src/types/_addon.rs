@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Addon {
     /// <p>The name of the add-on.</p>
-    #[doc(hidden)]
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the add-on.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AddonStatus>,
     /// <p>The version of the add-on.</p>
-    #[doc(hidden)]
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the health of the add-on.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::AddonHealth>,
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
-    #[doc(hidden)]
     pub addon_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the add-on was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the add-on was last modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
-    #[doc(hidden)]
     pub service_account_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The publisher of the add-on.</p>
-    #[doc(hidden)]
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the add-on.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
     /// <p>The configuration values that you provided.</p>
-    #[doc(hidden)]
     pub configuration_values: ::std::option::Option<::std::string::String>,
 }
 impl Addon {

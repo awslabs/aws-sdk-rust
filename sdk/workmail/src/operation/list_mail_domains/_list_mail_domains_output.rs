@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMailDomainsOutput {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    #[doc(hidden)]
     pub mail_domains: ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

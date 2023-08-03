@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>Details of the exception error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::AccessDeniedErrorCode>,
     /// <p>You can immediately retry your request.</p>
-    #[doc(hidden)]
     pub can_retry: ::std::option::Option<bool>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLegalHoldInput {
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
-    #[doc(hidden)]
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLegalHoldInput {

@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    #[doc(hidden)]
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     /// <p>Do not provide this parameter when connecting to a Redshift Serverless workgroup.</p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement text to run.</p>
-    #[doc(hidden)]
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
-    #[doc(hidden)]
     pub with_event: bool,
     /// A list of SQLs.
-    #[doc(hidden)]
     pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RedshiftDataParameters {

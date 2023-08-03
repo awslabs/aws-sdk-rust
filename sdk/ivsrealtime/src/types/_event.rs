@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The name of the event.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EventName>,
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
-    #[doc(hidden)]
     pub remote_participant_id: ::std::option::Option<::std::string::String>,
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::EventErrorCode>,
 }
 impl Event {

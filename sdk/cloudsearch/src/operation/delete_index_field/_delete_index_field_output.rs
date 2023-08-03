@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
-    #[doc(hidden)]
     pub index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }

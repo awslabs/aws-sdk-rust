@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFaqsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>information about the FAQs associated with the specified index.</p>
-    #[doc(hidden)]
     pub faq_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>,
     _request_id: Option<String>,
 }

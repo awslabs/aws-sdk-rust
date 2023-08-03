@@ -13,11 +13,9 @@ pub struct SignInput {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
     /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
     /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p> <important>
@@ -32,19 +30,15 @@ pub struct SignInput {
     /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
     /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
-    #[doc(hidden)]
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl SignInput {

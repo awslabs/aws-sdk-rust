@@ -9,12 +9,10 @@ pub struct BlueInstanceTerminationOption {
     /// <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li>
     /// <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::InstanceAction>,
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
     /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p>
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
-    #[doc(hidden)]
     pub termination_wait_time_in_minutes: i32,
 }
 impl BlueInstanceTerminationOption {

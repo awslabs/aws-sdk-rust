@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesInput {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    #[doc(hidden)]
     pub source_user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    #[doc(hidden)]
     pub destination_user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    #[doc(hidden)]
     pub developer_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl MergeDeveloperIdentitiesInput {

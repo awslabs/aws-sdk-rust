@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     /// <p>The description of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the names of the experiment and trial created by a pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_experiment_config: ::std::option::Option<crate::types::PipelineExperimentConfig>,
     /// <p>If the execution failed, a message describing why.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time when the pipeline execution was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the pipeline execution was modified last.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The parallelism configuration applied to the pipeline.</p>
-    #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     /// <p>The selective execution configuration applied to the pipeline run.</p>
-    #[doc(hidden)]
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     _request_id: Option<String>,
 }

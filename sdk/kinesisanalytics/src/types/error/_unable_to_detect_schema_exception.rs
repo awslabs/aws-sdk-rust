@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnableToDetectSchemaException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

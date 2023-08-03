@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
-    #[doc(hidden)]
     pub port_mapping: ::std::option::Option<crate::types::PortMapping>,
 }
 impl VirtualRouterListener {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SplunkRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl SplunkRetryOptions {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreKeyInput {
     /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RestoreKeyInput {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGrant {
     /// <p>Container for the person being granted permissions.</p>
-    #[doc(hidden)]
     pub grantee: ::std::option::Option<crate::types::Grantee>,
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::BucketLogsPermission>,
 }
 impl TargetGrant {

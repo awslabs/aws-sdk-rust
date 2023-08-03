@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverallTestResultItem {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
-    #[doc(hidden)]
     pub multi_turn_conversation: bool,
     /// <p>The total number of overall results in the result of the test execution.</p>
-    #[doc(hidden)]
     pub total_result_count: ::std::option::Option<i32>,
     /// <p>The number of speech transcription results in the overall test.</p>
-    #[doc(hidden)]
     pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of results that succeeded.</p>
-    #[doc(hidden)]
     pub end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl OverallTestResultItem {

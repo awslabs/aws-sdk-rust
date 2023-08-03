@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceUtilization {
     /// <p>The aggregated vCPU used per hour from the time the job starts executing until the job is terminated.</p>
-    #[doc(hidden)]
     pub v_cpu_hour: ::std::option::Option<f64>,
     /// <p>The aggregated memory used per hour from the time the job starts executing until the job is terminated.</p>
-    #[doc(hidden)]
     pub memory_gb_hour: ::std::option::Option<f64>,
     /// <p>The aggregated storage used per hour from the time the job starts executing until the job is terminated.</p>
-    #[doc(hidden)]
     pub storage_gb_hour: ::std::option::Option<f64>,
 }
 impl ResourceUtilization {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHumanTaskUiInput {
     /// <p>The name of the user interface you are creating.</p>
-    #[doc(hidden)]
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
     /// <p>The Liquid template for the worker user interface.</p>
-    #[doc(hidden)]
     pub ui_template: ::std::option::Option<crate::types::UiTemplate>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHumanTaskUiInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filters {
     /// <p>Filters by the locale of the content or comment.</p>
-    #[doc(hidden)]
     pub text_locales: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>,
     /// <p>Filters by content category.</p>
-    #[doc(hidden)]
     pub content_categories: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
     /// <p>Filters based on entity type.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>,
     /// <p>Filter by labels using exact match.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter based on UserIds or GroupIds.</p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>>,
     /// <p>Filter based on resource’s path.</p>
-    #[doc(hidden)]
     pub ancestor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter based on file groupings.</p>
-    #[doc(hidden)]
     pub search_collection_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
     /// <p>Filter based on size (in bytes).</p>
-    #[doc(hidden)]
     pub size_range: ::std::option::Option<crate::types::LongRangeType>,
     /// <p>Filter based on resource’s creation timestamp.</p>
-    #[doc(hidden)]
     pub created_range: ::std::option::Option<crate::types::DateRangeType>,
     /// <p>Filter based on resource’s modified timestamp.</p>
-    #[doc(hidden)]
     pub modified_range: ::std::option::Option<crate::types::DateRangeType>,
 }
 impl Filters {

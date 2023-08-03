@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    #[doc(hidden)]
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateResolverRuleInput {

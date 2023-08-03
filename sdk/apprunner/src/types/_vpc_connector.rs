@@ -8,30 +8,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnector {
     /// <p>The customer-provided VPC connector name.</p>
-    #[doc(hidden)]
     pub vpc_connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
-    #[doc(hidden)]
     pub vpc_connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p> <note>
     /// <p>At this time, App Runner supports only one revision per name.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_connector_revision: i32,
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcConnectorStatus>,
     /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcConnector {

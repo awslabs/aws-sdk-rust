@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeConnectorProfileProperties {
     /// <p> The name of the Snowflake warehouse. </p>
-    #[doc(hidden)]
     pub warehouse: ::std::option::Option<::std::string::String>,
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
     /// .
     /// </stage></p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
-    #[doc(hidden)]
     pub private_link_service_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the account. </p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeConnectorProfileProperties {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTlsCertificateInput {
     /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of your SSL/TLS certificate.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachLoadBalancerTlsCertificateInput {

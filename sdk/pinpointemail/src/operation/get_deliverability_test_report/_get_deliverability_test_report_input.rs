@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeliverabilityTestReportInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyNetworkInterfaceAttributeInput {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>,
     /// <p>A description for the network interface.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    #[doc(hidden)]
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
 }
 impl ModifyNetworkInterfaceAttributeInput {

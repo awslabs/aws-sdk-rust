@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
     pub email_identities: ::std::option::Option<::std::vec::Vec<crate::types::IdentityInfo>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

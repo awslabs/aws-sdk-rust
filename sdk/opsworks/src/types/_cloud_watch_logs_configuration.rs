@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsConfiguration {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of configuration options for CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_streams: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
 }
 impl CloudWatchLogsConfiguration {

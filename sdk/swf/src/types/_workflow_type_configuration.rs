@@ -6,19 +6,15 @@
 pub struct WorkflowTypeConfiguration {
     /// <p> The default maximum duration, specified when registering the workflow type, that a decision task for executions of this workflow type might take before returning completion or failure. If the task doesn'tdo close in the specified time then the task is automatically timed out and rescheduled. If the decider eventually reports a completion or failure, it is ignored. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub default_task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p> The default maximum duration, specified when registering the workflow type, for executions of this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub default_execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p> The default task list, specified when registering the workflow type, for decisions tasks scheduled for workflow executions of this type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-    #[doc(hidden)]
     pub default_task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p> The default task priority, specified when registering the workflow type, for all decision tasks of this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> decision.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub default_task_priority: ::std::option::Option<::std::string::String>,
     /// <p> The default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -27,12 +23,10 @@ pub struct WorkflowTypeConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub default_child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when starting this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub default_lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowTypeConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRuntimeConfigurationInput {

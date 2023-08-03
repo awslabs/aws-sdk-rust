@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageVirtualMachine {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    #[doc(hidden)]
     pub active_directory_configuration: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<crate::types::SvmEndpoints>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
@@ -25,31 +21,22 @@ pub struct StorageVirtualMachine {
     /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>,
     /// <p>The name of the SVM, if provisioned.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SVM's system generated unique ID.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the SVM's subtype.</p>
-    #[doc(hidden)]
     pub subtype: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>,
     /// <p>The SVM's UUID (universally unique identifier).</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    #[doc(hidden)]
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>The security style of the root volume of the SVM.</p>
-    #[doc(hidden)]
     pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl StorageVirtualMachine {

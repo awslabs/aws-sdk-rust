@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
-    #[doc(hidden)]
     pub last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the resource's readiness.</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>The readiness at rule level.</p>
-    #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>The identifier of the rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl RuleResult {

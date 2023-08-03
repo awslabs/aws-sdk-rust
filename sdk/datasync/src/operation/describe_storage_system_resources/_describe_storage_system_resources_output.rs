@@ -5,10 +5,8 @@
 pub struct DescribeStorageSystemResourcesOutput {
     /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

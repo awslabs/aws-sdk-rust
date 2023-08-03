@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateTrackerConsumerInput {

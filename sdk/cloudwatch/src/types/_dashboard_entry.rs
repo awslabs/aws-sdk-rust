@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardEntry {
     /// <p>The name of the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size of the dashboard, in bytes.</p>
-    #[doc(hidden)]
     pub size: i64,
 }
 impl DashboardEntry {

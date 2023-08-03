@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
 }

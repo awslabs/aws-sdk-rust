@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreDefinitionVersion {
     /// A list of cores in the core definition version.
-    #[doc(hidden)]
     pub cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
 }
 impl CoreDefinitionVersion {

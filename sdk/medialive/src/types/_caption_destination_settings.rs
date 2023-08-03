@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionDestinationSettings {
     /// Arib Destination Settings
-    #[doc(hidden)]
     pub arib_destination_settings: ::std::option::Option<crate::types::AribDestinationSettings>,
     /// Burn In Destination Settings
-    #[doc(hidden)]
     pub burn_in_destination_settings: ::std::option::Option<crate::types::BurnInDestinationSettings>,
     /// Dvb Sub Destination Settings
-    #[doc(hidden)]
     pub dvb_sub_destination_settings: ::std::option::Option<crate::types::DvbSubDestinationSettings>,
     /// Ebu Tt DDestination Settings
-    #[doc(hidden)]
     pub ebu_tt_d_destination_settings: ::std::option::Option<crate::types::EbuTtDDestinationSettings>,
     /// Embedded Destination Settings
-    #[doc(hidden)]
     pub embedded_destination_settings: ::std::option::Option<crate::types::EmbeddedDestinationSettings>,
     /// Embedded Plus Scte20 Destination Settings
-    #[doc(hidden)]
     pub embedded_plus_scte20_destination_settings: ::std::option::Option<crate::types::EmbeddedPlusScte20DestinationSettings>,
     /// Rtmp Caption Info Destination Settings
-    #[doc(hidden)]
     pub rtmp_caption_info_destination_settings: ::std::option::Option<crate::types::RtmpCaptionInfoDestinationSettings>,
     /// Scte20 Plus Embedded Destination Settings
-    #[doc(hidden)]
     pub scte20_plus_embedded_destination_settings: ::std::option::Option<crate::types::Scte20PlusEmbeddedDestinationSettings>,
     /// Scte27 Destination Settings
-    #[doc(hidden)]
     pub scte27_destination_settings: ::std::option::Option<crate::types::Scte27DestinationSettings>,
     /// Smpte Tt Destination Settings
-    #[doc(hidden)]
     pub smpte_tt_destination_settings: ::std::option::Option<crate::types::SmpteTtDestinationSettings>,
     /// Teletext Destination Settings
-    #[doc(hidden)]
     pub teletext_destination_settings: ::std::option::Option<crate::types::TeletextDestinationSettings>,
     /// Ttml Destination Settings
-    #[doc(hidden)]
     pub ttml_destination_settings: ::std::option::Option<crate::types::TtmlDestinationSettings>,
     /// Webvtt Destination Settings
-    #[doc(hidden)]
     pub webvtt_destination_settings: ::std::option::Option<crate::types::WebvttDestinationSettings>,
 }
 impl CaptionDestinationSettings {

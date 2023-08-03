@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PeriodToDateComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
     /// <li> <p>YEAR: Year to date.</p> </li>
     /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub period_time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
 impl PeriodToDateComputation {

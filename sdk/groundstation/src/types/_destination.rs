@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>Type of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>UUID of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
-    #[doc(hidden)]
     pub config_details: ::std::option::Option<crate::types::ConfigDetails>,
     /// <p>Region of a dataflow destination.</p>
-    #[doc(hidden)]
     pub dataflow_destination_region: ::std::option::Option<::std::string::String>,
 }
 impl Destination {

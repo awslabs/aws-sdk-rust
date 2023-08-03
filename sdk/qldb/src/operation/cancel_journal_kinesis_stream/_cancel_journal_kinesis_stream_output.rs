@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamOutput {
     /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

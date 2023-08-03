@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHostedZoneOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
-    #[doc(hidden)]
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

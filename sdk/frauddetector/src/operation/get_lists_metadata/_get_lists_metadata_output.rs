@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListsMetadataOutput {
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    #[doc(hidden)]
     pub lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
     /// <p> The next page token. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicySummary {
     /// <p>The continuous deployment policy.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
 }
 impl ContinuousDeploymentPolicySummary {

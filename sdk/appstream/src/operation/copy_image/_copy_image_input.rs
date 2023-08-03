@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyImageInput {
     /// <p>The name of the image to copy.</p>
-    #[doc(hidden)]
     pub source_image_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that the image will have when it is copied to the destination.</p>
-    #[doc(hidden)]
     pub destination_image_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    #[doc(hidden)]
     pub destination_image_description: ::std::option::Option<::std::string::String>,
 }
 impl CopyImageInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBatchPredictionInput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub batch_prediction_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBatchPredictionInput {

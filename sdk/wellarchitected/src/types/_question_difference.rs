@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuestionDifference {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of change to the question.</p>
-    #[doc(hidden)]
     pub difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
 }
 impl QuestionDifference {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
-    #[doc(hidden)]
     pub include_content: ::std::option::Option<bool>,
 }
 impl RelatedItemEventIncludedData {

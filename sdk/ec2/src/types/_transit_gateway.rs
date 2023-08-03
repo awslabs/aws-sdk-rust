@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGateway {
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the transit gateway.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayState>,
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the transit gateway.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The transit gateway options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::TransitGatewayOptions>,
     /// <p>The tags for the transit gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGateway {

@@ -5,10 +5,8 @@
 pub struct CreateLedgerInput {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
     /// <ul>
@@ -17,11 +15,9 @@ pub struct CreateLedgerInput {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    #[doc(hidden)]
     pub permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
@@ -39,7 +35,6 @@ pub struct CreateLedgerInput {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl CreateLedgerInput {

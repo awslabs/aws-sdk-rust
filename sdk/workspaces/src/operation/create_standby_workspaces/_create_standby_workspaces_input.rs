@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesInput {
     /// <p>The Region of the primary WorkSpace.</p>
-    #[doc(hidden)]
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>Information about the standby WorkSpace to be created.</p>
-    #[doc(hidden)]
     pub standby_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
 }
 impl CreateStandbyWorkspacesInput {

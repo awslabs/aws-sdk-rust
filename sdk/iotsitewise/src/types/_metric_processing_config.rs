@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
-    #[doc(hidden)]
     pub compute_location: ::std::option::Option<crate::types::ComputeLocation>,
 }
 impl MetricProcessingConfig {

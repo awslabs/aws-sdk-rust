@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegistryOutput {
     /// <p>The ID of the registry.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication configuration for the registry.</p>
-    #[doc(hidden)]
     pub replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }

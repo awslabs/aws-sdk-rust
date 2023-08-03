@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionCacheBehaviors {
     /// <p>The cache behaviors for the distribution.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionCacheBehavior>>,
 }
 impl AwsCloudFrontDistributionCacheBehaviors {

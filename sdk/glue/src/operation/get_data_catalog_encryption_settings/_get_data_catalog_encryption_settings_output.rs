@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataCatalogEncryptionSettingsOutput {
     /// <p>The requested security configuration.</p>
-    #[doc(hidden)]
     pub data_catalog_encryption_settings: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>,
     _request_id: Option<String>,
 }

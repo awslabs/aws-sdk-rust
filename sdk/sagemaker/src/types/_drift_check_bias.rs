@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckBias {
     /// <p>The bias config file for a model.</p>
-    #[doc(hidden)]
     pub config_file: ::std::option::Option<crate::types::FileSource>,
     /// <p>The pre-training constraints.</p>
-    #[doc(hidden)]
     pub pre_training_constraints: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The post-training constraints.</p>
-    #[doc(hidden)]
     pub post_training_constraints: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl DriftCheckBias {

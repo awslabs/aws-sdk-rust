@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotAliasOutput {
     /// <p>The identifier of the updated bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the bot alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated version of the bot that the alias points to.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The updated Lambda functions to use in each locale for the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     /// <p>The current status of the bot alias. When the status is <code>Available</code> the alias is ready for use.</p>
-    #[doc(hidden)]
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     /// <p>The identifier of the bot with the updated alias.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the bot was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

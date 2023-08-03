@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfigurationOutput {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
-    #[doc(hidden)]
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
-    #[doc(hidden)]
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

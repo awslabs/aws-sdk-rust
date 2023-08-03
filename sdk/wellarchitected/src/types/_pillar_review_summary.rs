@@ -6,19 +6,14 @@
 pub struct PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pillar.</p>
-    #[doc(hidden)]
     pub pillar_name: ::std::option::Option<::std::string::String>,
     /// <p>The notes associated with the workload.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl PillarReviewSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemeralStorage {
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
 }
 impl EphemeralStorage {

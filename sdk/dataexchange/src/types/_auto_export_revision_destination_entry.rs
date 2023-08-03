@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
-    #[doc(hidden)]
     pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AutoExportRevisionDestinationEntry {

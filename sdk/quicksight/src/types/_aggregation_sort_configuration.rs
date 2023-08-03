@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationSortConfiguration {
     /// <p>The column that determines the sort order of aggregated values.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction of values.</p>
     /// <ul>
     /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
     /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_direction: ::std::option::Option<crate::types::SortDirection>,
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
-    #[doc(hidden)]
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
 impl AggregationSortConfiguration {

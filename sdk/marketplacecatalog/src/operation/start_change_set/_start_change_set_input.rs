@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Array of <code>change</code> object.</p>
-    #[doc(hidden)]
     pub change_set: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    #[doc(hidden)]
     pub change_set_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartChangeSetInput {

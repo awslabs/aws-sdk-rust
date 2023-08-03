@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMonitoringDetails {
     /// <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise, basic monitoring is enabled. For more information about detailed monitoring, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable or turn off detailed monitoring for your instances</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsEc2LaunchTemplateDataMonitoringDetails {

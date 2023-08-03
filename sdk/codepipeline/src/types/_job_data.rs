@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct JobData {
     /// <p>Represents information about an action type.</p>
-    #[doc(hidden)]
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
-    #[doc(hidden)]
     pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
-    #[doc(hidden)]
     pub pipeline_context: ::std::option::Option<crate::types::PipelineContext>,
     /// <p>The artifact supplied to the job.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
     /// <p>The output of the job.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
-    #[doc(hidden)]
     pub artifact_credentials: ::std::option::Option<crate::types::AwsSessionCredentials>,
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
 impl JobData {

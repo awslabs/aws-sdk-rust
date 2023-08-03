@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SharedDirectory {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the directory in the directory owner account. </p>
-    #[doc(hidden)]
     pub owner_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    #[doc(hidden)]
     pub share_method: ::std::option::Option<crate::types::ShareMethod>,
     /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    #[doc(hidden)]
     pub shared_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    #[doc(hidden)]
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    #[doc(hidden)]
     pub share_notes: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the shared directory was created.</p>
-    #[doc(hidden)]
     pub created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the shared directory was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SharedDirectory {

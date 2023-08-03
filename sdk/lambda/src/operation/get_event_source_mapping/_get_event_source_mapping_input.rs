@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
 }
 impl GetEventSourceMappingInput {

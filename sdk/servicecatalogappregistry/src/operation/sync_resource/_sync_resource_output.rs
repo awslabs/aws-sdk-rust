@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
-    #[doc(hidden)]
     pub action_taken: ::std::option::Option<crate::types::SyncAction>,
     _request_id: Option<String>,
 }

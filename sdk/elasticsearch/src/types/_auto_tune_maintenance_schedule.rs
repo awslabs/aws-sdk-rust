@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneMaintenanceSchedule {
     /// <p>Specifies timestamp at which Auto-Tune maintenance schedule start. </p>
-    #[doc(hidden)]
     pub start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<crate::types::Duration>,
     /// <p>Specifies cron expression for a recurring maintenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    #[doc(hidden)]
     pub cron_expression_for_recurrence: ::std::option::Option<::std::string::String>,
 }
 impl AutoTuneMaintenanceSchedule {

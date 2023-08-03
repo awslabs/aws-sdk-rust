@@ -6,7 +6,6 @@
 pub struct AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    #[doc(hidden)]
     pub basic_authentication: ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
 }
 impl AuthenticationConfiguration {

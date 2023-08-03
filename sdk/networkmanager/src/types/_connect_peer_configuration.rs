@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectPeerConfiguration {
     /// <p>The IP address of a core network.</p>
-    #[doc(hidden)]
     pub core_network_address: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the Connect peer.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The inside IP addresses used for a Connect peer configuration.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocol used for a Connect peer configuration.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TunnelProtocol>,
     /// <p>The Connect peer BGP configurations.</p>
-    #[doc(hidden)]
     pub bgp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerBgpConfiguration>>,
 }
 impl ConnectPeerConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDetail {
     /// The error code.
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// The name of the resource.
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl MessageDetail {

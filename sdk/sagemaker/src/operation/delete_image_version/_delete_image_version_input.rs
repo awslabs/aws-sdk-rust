@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageVersionInput {
     /// <p>The name of the image to delete.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The version to delete.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The alias of the image to delete.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageVersionInput {

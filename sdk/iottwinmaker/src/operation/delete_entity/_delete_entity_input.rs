@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity to delete.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
-    #[doc(hidden)]
     pub is_recursive: ::std::option::Option<bool>,
 }
 impl DeleteEntityInput {

@@ -11,16 +11,12 @@ pub struct EcsServiceProjectedMetric {
     /// <li> <p> <code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p> </li>
     /// <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p> The timestamps of the projected metric. </p>
-    #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p> The upper bound values for the projected metric. </p>
-    #[doc(hidden)]
     pub upper_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p> The lower bound values for the projected metric. </p>
-    #[doc(hidden)]
     pub lower_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl EcsServiceProjectedMetric {

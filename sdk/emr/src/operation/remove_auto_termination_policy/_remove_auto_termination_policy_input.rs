@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAutoTerminationPolicyInput {

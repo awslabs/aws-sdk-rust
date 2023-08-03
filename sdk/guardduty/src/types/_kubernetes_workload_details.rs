@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesWorkloadDetails {
     /// <p>Kubernetes workload name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Kubernetes workload ID.</p>
-    #[doc(hidden)]
     pub uid: ::std::option::Option<::std::string::String>,
     /// <p>Kubernetes namespace that the workload is part of.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-    #[doc(hidden)]
     pub host_network: bool,
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
 }
 impl KubernetesWorkloadDetails {

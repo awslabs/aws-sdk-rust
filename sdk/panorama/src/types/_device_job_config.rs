@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-    #[doc(hidden)]
     pub ota_job_config: ::std::option::Option<crate::types::OtaJobConfig>,
 }
 impl DeviceJobConfig {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestInput {
     /// <p> The unique name of the decoder manifest to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the decoder manifest. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about signal decoders. </p>
-    #[doc(hidden)]
     pub signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     /// <p> A list of information about available network interfaces. </p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDecoderManifestInput {

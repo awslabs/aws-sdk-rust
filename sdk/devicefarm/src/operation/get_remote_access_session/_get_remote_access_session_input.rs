@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRemoteAccessSessionInput {

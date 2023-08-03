@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
     pub reset_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
 }
 impl BatchResetAlarmInput {

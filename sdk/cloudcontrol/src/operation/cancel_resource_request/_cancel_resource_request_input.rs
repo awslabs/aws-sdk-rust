@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    #[doc(hidden)]
     pub request_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelResourceRequestInput {

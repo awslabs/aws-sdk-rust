@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineBlueprintSummary {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprintSummary {

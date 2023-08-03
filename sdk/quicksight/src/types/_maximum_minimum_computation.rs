@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaximumMinimumComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
     /// <li> <p>MINIMUM: A minimum computation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MaximumMinimumComputationType>,
 }
 impl MaximumMinimumComputation {

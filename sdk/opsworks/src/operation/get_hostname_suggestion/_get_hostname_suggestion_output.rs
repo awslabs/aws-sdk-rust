@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostnameSuggestionOutput {
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The generated host name.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

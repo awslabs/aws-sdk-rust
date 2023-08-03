@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallConfig {
     /// <p>The ID of the firewall configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct FirewallConfig {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    #[doc(hidden)]
     pub firewall_fail_open: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
 }
 impl FirewallConfig {

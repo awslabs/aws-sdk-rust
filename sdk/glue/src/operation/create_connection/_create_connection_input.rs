@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
-    #[doc(hidden)]
     pub connection_input: ::std::option::Option<crate::types::ConnectionInput>,
     /// <p>The tags you assign to the connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConnectionInput {

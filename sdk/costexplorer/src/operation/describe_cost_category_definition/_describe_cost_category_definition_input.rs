@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the Cost Category was effective. </p>
-    #[doc(hidden)]
     pub effective_on: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInput {

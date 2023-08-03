@@ -5,74 +5,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamPool {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source IPAM pool. You can use this option to create an IPAM pool within an existing source pool.</p>
-    #[doc(hidden)]
     pub source_ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the scope of the IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_scope_arn: ::std::option::Option<::std::string::String>,
     /// <p>In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>
-    #[doc(hidden)]
     pub ipam_scope_type: ::std::option::Option<crate::types::IpamScopeType>,
     /// <p>The ARN of the IPAM.</p>
-    #[doc(hidden)]
     pub ipam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_region: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the IPAM pool. In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you choose an Amazon Web Services Region for locale that has not been configured as an operating Region for the IPAM, you'll get an error.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub pool_depth: ::std::option::Option<i32>,
     /// <p>The state of the IPAM pool.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IpamPoolState>,
     /// <p>A message related to the failed creation of an IPAM pool.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IPAM pool.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
     /// <p>A locale must be set on the pool for this feature to work.</p>
-    #[doc(hidden)]
     pub auto_import: ::std::option::Option<bool>,
     /// <p>Determines if a pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
-    #[doc(hidden)]
     pub publicly_advertisable: ::std::option::Option<bool>,
     /// <p>The address family of the pool.</p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
     /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
-    #[doc(hidden)]
     pub allocation_min_netmask_length: ::std::option::Option<i32>,
     /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. The maximum netmask length must be greater than the minimum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
-    #[doc(hidden)]
     pub allocation_max_netmask_length: ::std::option::Option<i32>,
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    #[doc(hidden)]
     pub allocation_default_netmask_length: ::std::option::Option<i32>,
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    #[doc(hidden)]
     pub allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
-    #[doc(hidden)]
     pub aws_service: ::std::option::Option<crate::types::IpamPoolAwsService>,
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub public_ip_source: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
 }
 impl IpamPool {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Partition {
     /// <p>The values of the partition.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the catalog database in which to create the partition.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database table in which to create the partition.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the partition was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time at which the partition was accessed.</p>
-    #[doc(hidden)]
     pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the physical location where the partition is stored.</p>
-    #[doc(hidden)]
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    #[doc(hidden)]
     pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl Partition {

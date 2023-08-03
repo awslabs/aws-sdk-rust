@@ -5,17 +5,13 @@
 pub struct CreateComponentVersionInput {
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-    #[doc(hidden)]
     pub inline_recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-    #[doc(hidden)]
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionRecipeSource>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateComponentVersionInput {

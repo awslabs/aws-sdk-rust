@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
-    #[doc(hidden)]
     pub domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSystemInstanceOutput {
     /// <p>An object that describes the system instance.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::SystemInstanceDescription>,
     _request_id: Option<String>,
 }

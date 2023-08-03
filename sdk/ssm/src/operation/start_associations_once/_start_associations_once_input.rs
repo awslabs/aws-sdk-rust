@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssociationsOnceInput {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    #[doc(hidden)]
     pub association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartAssociationsOnceInput {

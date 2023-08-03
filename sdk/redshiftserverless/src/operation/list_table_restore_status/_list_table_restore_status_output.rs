@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableRestoreStatusOutput {
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    #[doc(hidden)]
     pub table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     _request_id: Option<String>,
 }

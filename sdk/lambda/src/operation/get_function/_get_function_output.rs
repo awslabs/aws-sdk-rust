@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFunctionOutput {
     /// <p>The configuration of the function or version.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     /// <p>The deployment package of the function or version.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::FunctionCodeLocation>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
-    #[doc(hidden)]
     pub concurrency: ::std::option::Option<crate::types::Concurrency>,
     _request_id: Option<String>,
 }

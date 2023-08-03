@@ -6,10 +6,8 @@
 pub struct StreamConfigurationSessionBackup {
     /// <p>Specifies how artists sessions are backed up.</p>
     /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::SessionBackupMode>,
     /// <p>The maximum number of backups that each streaming session created from this launch profile can have.</p>
-    #[doc(hidden)]
     pub max_backups_to_retain: i32,
 }
 impl StreamConfigurationSessionBackup {

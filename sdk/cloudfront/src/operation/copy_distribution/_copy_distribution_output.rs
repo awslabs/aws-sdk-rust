@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyDistributionOutput {
     /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    #[doc(hidden)]
     pub distribution: ::std::option::Option<crate::types::Distribution>,
     /// <p>The URL of the staging distribution.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier for the current version of the staging distribution.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

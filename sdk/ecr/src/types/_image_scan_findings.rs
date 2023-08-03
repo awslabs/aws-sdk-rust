@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
-    #[doc(hidden)]
     pub image_scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
-    #[doc(hidden)]
     pub vulnerability_source_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
-    #[doc(hidden)]
     pub finding_severity_counts: ::std::option::Option<::std::collections::HashMap<crate::types::FindingSeverity, i32>>,
     /// <p>The findings from the image scan.</p>
-    #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
-    #[doc(hidden)]
     pub enhanced_findings: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
 }
 impl ImageScanFindings {

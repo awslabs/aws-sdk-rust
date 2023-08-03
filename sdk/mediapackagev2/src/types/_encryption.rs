@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Encryption {
     /// <p>A 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).</p>
-    #[doc(hidden)]
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// <p>The encryption method to use.</p>
-    #[doc(hidden)]
     pub encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
     /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
-    #[doc(hidden)]
     pub key_rotation_interval_seconds: ::std::option::Option<i32>,
     /// <p>The parameters for the SPEKE key provider.</p>
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl Encryption {

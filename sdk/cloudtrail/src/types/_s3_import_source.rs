@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ImportSource {
     /// <p> The URI for the source S3 bucket. </p>
-    #[doc(hidden)]
     pub s3_location_uri: ::std::option::Option<::std::string::String>,
     /// <p> The Region associated with the source S3 bucket. </p>
-    #[doc(hidden)]
     pub s3_bucket_region: ::std::option::Option<::std::string::String>,
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
-    #[doc(hidden)]
     pub s3_bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ImportSource {

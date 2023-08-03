@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
-    #[doc(hidden)]
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the image source.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl Image {

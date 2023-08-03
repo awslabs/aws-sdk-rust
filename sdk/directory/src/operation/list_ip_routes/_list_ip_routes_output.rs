@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIpRoutesOutput {
     /// <p>A list of <code>IpRoute</code>s.</p>
-    #[doc(hidden)]
     pub ip_routes_info: ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>>,
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

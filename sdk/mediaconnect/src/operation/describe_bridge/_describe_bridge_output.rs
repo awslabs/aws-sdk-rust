@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBridgeOutput {
     /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
-    #[doc(hidden)]
     pub bridge: ::std::option::Option<crate::types::Bridge>,
     _request_id: Option<String>,
 }

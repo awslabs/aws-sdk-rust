@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
-    #[doc(hidden)]
     pub base_url: ::std::option::Option<::std::string::String>,
 }
 impl DefaultSegmentDeliveryConfiguration {

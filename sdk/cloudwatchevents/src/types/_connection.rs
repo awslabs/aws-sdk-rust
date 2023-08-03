@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ARN of the connection.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connection.</p>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The reason that the connection is in the connection state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The authorization type specified for the connection.</p>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    #[doc(hidden)]
     pub last_authorized_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Connection {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentGroupsInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentGroupsInput {

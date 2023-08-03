@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomKeyStoreOutput {
     /// <p>A unique identifier for the new custom key store.</p>
-    #[doc(hidden)]
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

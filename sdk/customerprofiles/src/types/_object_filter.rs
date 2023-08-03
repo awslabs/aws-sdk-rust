@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectFilter {
     /// <p>A searchable identifier of a profile object. The predefined keys you can use to search for <code>_asset</code> include: <code>_assetId</code>, <code>_assetName</code>, and <code>_serialNumber</code>. The predefined keys you can use to search for <code>_case</code> include: <code>_caseId</code>. The predefined keys you can use to search for <code>_order</code> include: <code>_orderId</code>.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ObjectFilter {

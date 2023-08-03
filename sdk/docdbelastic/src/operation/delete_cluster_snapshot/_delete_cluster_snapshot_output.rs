@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterSnapshotOutput {
     /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,
 }

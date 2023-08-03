@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOperationOutput {
     /// <p>A complex type that contains information about the operation.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
 }

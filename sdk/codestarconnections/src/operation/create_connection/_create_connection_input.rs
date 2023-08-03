@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair to use when tagging the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-    #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionInput {

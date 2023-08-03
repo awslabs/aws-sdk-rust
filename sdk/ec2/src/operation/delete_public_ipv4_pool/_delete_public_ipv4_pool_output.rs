@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePublicIpv4PoolOutput {
     /// <p>Information about the result of deleting the public IPv4 pool.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

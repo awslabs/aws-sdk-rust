@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    #[doc(hidden)]
     pub webhooks: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

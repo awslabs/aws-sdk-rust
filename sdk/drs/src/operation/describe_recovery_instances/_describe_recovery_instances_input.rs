@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesInput {
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Recovery Instance to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecoveryInstancesInput {

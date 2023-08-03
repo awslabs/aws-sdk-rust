@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStateMachineAliasInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStateMachineAliasInput {

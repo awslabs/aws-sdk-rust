@@ -4,28 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDiskFromSnapshotInput {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    #[doc(hidden)]
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
     /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
     /// <p>Constraints:</p>
@@ -33,7 +27,6 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
     /// <p>Constraints:</p>
@@ -42,7 +35,6 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub restore_date: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
     /// <p>Constraints:</p>
@@ -50,7 +42,6 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
 impl CreateDiskFromSnapshotInput {

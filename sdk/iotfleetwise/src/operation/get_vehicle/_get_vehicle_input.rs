@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl GetVehicleInput {

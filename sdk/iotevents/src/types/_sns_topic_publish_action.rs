@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl SnsTopicPublishAction {

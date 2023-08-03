@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualNodeInput {
     /// <p>The name of the virtual node to describe.</p>
-    #[doc(hidden)]
     pub virtual_node_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    #[doc(hidden)]
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVirtualNodeInput {

@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
-    #[doc(hidden)]
     pub use_service_linked_role: ::std::option::Option<bool>,
     /// <p>The identifier for the role that registers the resource.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the resource is a federated resource.</p>
-    #[doc(hidden)]
     pub with_federation: ::std::option::Option<bool>,
 }
 impl RegisterResourceInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    #[doc(hidden)]
     pub object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathToObjectIdentifiers {

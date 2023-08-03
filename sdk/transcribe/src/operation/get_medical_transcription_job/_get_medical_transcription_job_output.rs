@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
-    #[doc(hidden)]
     pub medical_transcription_job: ::std::option::Option<crate::types::MedicalTranscriptionJob>,
     _request_id: Option<String>,
 }

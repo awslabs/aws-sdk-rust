@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommitInput {
     /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    #[doc(hidden)]
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    #[doc(hidden)]
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    #[doc(hidden)]
     pub conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
-    #[doc(hidden)]
     pub author_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the person who created the unreferenced commit.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The commit message for the unreferenced commit.</p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
-    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    #[doc(hidden)]
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
 }
 impl CreateUnreferencedMergeCommitInput {

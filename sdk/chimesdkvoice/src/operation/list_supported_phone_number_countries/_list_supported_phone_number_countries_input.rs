@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesInput {
     /// <p>The phone number product type.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
 }
 impl ListSupportedPhoneNumberCountriesInput {

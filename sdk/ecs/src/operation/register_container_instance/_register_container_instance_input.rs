@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterContainerInstanceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    #[doc(hidden)]
     pub instance_identity_document: ::std::option::Option<::std::string::String>,
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    #[doc(hidden)]
     pub instance_identity_document_signature: ::std::option::Option<::std::string::String>,
     /// <p>The resources available on the instance.</p>
-    #[doc(hidden)]
     pub total_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
-    #[doc(hidden)]
     pub version_info: ::std::option::Option<crate::types::VersionInfo>,
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    #[doc(hidden)]
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The container instance attributes that this container instance supports.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    #[doc(hidden)]
     pub platform_devices: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -38,7 +30,6 @@ pub struct RegisterContainerInstanceInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterContainerInstanceInput {

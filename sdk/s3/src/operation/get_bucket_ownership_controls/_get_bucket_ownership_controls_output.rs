@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketOwnershipControlsOutput {
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

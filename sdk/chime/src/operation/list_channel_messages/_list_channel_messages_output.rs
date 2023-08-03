@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelMessagesOutput {
     /// <p>The ARN of the channel containing the requested messages.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The information about, and content of, each requested message.</p>
-    #[doc(hidden)]
     pub channel_messages: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMessageSummary>>,
     _request_id: Option<String>,
 }

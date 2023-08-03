@@ -10,13 +10,10 @@
 pub struct GeoMatchSet {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    #[doc(hidden)]
     pub geo_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
-    #[doc(hidden)]
     pub geo_match_constraints: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchConstraint>>,
 }
 impl GeoMatchSet {

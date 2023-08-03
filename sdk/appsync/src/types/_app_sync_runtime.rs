@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSyncRuntime {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::RuntimeName>,
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    #[doc(hidden)]
     pub runtime_version: ::std::option::Option<::std::string::String>,
 }
 impl AppSyncRuntime {

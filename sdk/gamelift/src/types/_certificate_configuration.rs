@@ -10,7 +10,6 @@ pub struct CertificateConfiguration {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
 impl CertificateConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAdministratorAccountInput {

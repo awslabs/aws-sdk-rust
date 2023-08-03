@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsInput {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionsInput {

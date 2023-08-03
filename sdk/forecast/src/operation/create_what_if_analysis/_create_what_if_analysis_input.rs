@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWhatIfAnalysisInput {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
-    #[doc(hidden)]
     pub what_if_analysis_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -16,10 +14,8 @@ pub struct CreateWhatIfAnalysisInput {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWhatIfAnalysisInput {

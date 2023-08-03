@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueAttributesOutput {
     /// <p>A map of attributes to their respective values.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
     _request_id: Option<String>,
 }

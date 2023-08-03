@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOtaUpdateOutput {
     /// <p>The OTA update ID.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>The IoT job ID associated with the OTA update.</p>
-    #[doc(hidden)]
     pub aws_iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The OTA update ARN.</p>
-    #[doc(hidden)]
     pub ota_update_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    #[doc(hidden)]
     pub aws_iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The OTA update status.</p>
-    #[doc(hidden)]
     pub ota_update_status: ::std::option::Option<crate::types::OtaUpdateStatus>,
     _request_id: Option<String>,
 }

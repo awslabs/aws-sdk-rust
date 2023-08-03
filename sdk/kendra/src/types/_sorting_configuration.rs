@@ -23,10 +23,8 @@ pub struct SortingConfiguration {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortingConfiguration {

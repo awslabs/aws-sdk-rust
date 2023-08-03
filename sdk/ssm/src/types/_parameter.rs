@@ -5,37 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The parameter value.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The parameter version.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
     /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
-    #[doc(hidden)]
     pub selector: ::std::option::Option<::std::string::String>,
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
-    #[doc(hidden)]
     pub source_result: ::std::option::Option<::std::string::String>,
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl Parameter {

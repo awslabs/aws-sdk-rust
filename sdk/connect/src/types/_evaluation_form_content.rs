@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_version: ::std::option::Option<i32>,
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    #[doc(hidden)]
     pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title of the evaluation form.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the evaluation form.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     /// <p>A scoring strategy of the evaluation form.</p>
-    #[doc(hidden)]
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
 }
 impl EvaluationFormContent {

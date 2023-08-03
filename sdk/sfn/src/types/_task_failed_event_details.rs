@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskFailedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The error code of the failure.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
 }
 impl TaskFailedEventDetails {

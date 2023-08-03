@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCorsPolicyOutput {
     /// <p>The CORS policy assigned to the container.</p>
-    #[doc(hidden)]
     pub cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
-    #[doc(hidden)]
     pub volumes_modifications: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

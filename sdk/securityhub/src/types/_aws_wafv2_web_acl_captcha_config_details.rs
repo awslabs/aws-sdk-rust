@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigDetails {
     /// <p> Determines how long a CAPTCHA timestamp in the token remains valid after the client successfully solves a CAPTCHA puzzle. </p>
-    #[doc(hidden)]
     pub immunity_time_property: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
 }
 impl AwsWafv2WebAclCaptchaConfigDetails {

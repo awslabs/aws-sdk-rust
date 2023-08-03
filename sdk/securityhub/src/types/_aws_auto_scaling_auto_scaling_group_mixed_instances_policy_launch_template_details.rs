@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
     /// <p>The launch template to use for a mixed instances policy.</p>
-    #[doc(hidden)]
     pub launch_template_specification:
         ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Property values to use to override the values in the launch template.</p>
-    #[doc(hidden)]
     pub overrides:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
 }

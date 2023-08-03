@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-    #[doc(hidden)]
     pub successes: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceSuccess>>,
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceError>>,
     _request_id: Option<String>,
 }

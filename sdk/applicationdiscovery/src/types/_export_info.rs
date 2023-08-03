@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data export job.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>A status message provided for API callers.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
-    #[doc(hidden)]
     pub configurations_download_url: ::std::option::Option<::std::string::String>,
     /// <p>The time that the data export was initiated.</p>
-    #[doc(hidden)]
     pub export_request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
-    #[doc(hidden)]
     pub requested_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
-    #[doc(hidden)]
     pub requested_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExportInfo {

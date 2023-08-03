@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
-    #[doc(hidden)]
     pub enable_answer_machine_detection: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfig {

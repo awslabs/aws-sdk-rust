@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmStatusDetails {
     /// <p>The status of algorithm validation.</p>
-    #[doc(hidden)]
     pub validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
-    #[doc(hidden)]
     pub image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
 }
 impl AlgorithmStatusDetails {

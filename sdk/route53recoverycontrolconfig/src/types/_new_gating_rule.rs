@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
-    #[doc(hidden)]
     pub gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for the new gating rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
-    #[doc(hidden)]
     pub rule_config: ::std::option::Option<crate::types::RuleConfig>,
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
-    #[doc(hidden)]
     pub target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    #[doc(hidden)]
     pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl NewGatingRule {

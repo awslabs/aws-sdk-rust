@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
-    #[doc(hidden)]
     pub terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    #[doc(hidden)]
     pub auxiliary_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrialOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
-    #[doc(hidden)]
     pub trial_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

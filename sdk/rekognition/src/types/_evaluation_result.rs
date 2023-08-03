@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
-    #[doc(hidden)]
     pub f1_score: ::std::option::Option<f32>,
     /// <p>The S3 bucket that contains the training summary.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::Summary>,
 }
 impl EvaluationResult {

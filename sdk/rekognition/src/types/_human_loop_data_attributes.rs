@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
-    #[doc(hidden)]
     pub content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {

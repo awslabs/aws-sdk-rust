@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
-    #[doc(hidden)]
     pub s3_encryption_mode: ::std::option::Option<crate::types::S3EncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Encryption {

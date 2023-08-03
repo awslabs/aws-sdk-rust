@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The ID of the deployment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target of the deployment.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the target resource was created.</p>
-    #[doc(hidden)]
     pub target_resource_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    #[doc(hidden)]
     pub target_resource_type: ::std::option::Option<crate::types::DeploymentTargetResourceType>,
     /// <p>The date and time the deployment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the deployment was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the deployment was completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the environment associated with the deployment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service associated with the deployment.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance associated with the deployment.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component associated with the deployment.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last attempted deployment.</p>
-    #[doc(hidden)]
     pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last successful deployment.</p>
-    #[doc(hidden)]
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
 }
 impl DeploymentSummary {

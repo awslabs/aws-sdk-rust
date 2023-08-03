@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInventoryEntriesOutput {
     /// <p>The type of inventory item returned by the request.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The inventory schema version used by the managed node(s).</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The time that inventory information was collected for the managed node(s).</p>
-    #[doc(hidden)]
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of inventory items on the managed node(s).</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

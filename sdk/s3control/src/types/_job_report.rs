@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobReport {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The format of the specified job-completion report.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::JobReportFormat>,
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
     /// <prefix>
@@ -20,10 +17,8 @@ pub struct JobReport {
     /// /report.json
     /// </job-id>
     /// </prefix></code>.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
-    #[doc(hidden)]
     pub report_scope: ::std::option::Option<crate::types::JobReportScope>,
 }
 impl JobReport {

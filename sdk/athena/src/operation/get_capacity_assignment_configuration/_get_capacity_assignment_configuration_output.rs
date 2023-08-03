@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCapacityAssignmentConfigurationOutput {
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
-    #[doc(hidden)]
     pub capacity_assignment_configuration: ::std::option::Option<crate::types::CapacityAssignmentConfiguration>,
     _request_id: Option<String>,
 }

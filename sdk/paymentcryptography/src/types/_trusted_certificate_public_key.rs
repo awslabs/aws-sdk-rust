@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrustedCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
-    #[doc(hidden)]
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Parameter information for trusted public key certificate import.</p>
-    #[doc(hidden)]
     pub public_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    #[doc(hidden)]
     pub certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl TrustedCertificatePublicKey {

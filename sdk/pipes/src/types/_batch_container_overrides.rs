@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>>,
     /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[doc(hidden)]
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
 }
 impl BatchContainerOverrides {

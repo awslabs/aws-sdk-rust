@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    #[doc(hidden)]
     pub reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
     _request_id: Option<String>,
 }

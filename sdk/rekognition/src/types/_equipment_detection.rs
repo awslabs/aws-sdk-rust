@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The type of detected PPE.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProtectiveEquipmentType>,
     /// <p>Information about the body part covered by the detected PPE.</p>
-    #[doc(hidden)]
     pub covers_body_part: ::std::option::Option<crate::types::CoversBodyPart>,
 }
 impl EquipmentDetection {

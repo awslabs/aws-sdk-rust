@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The encryption key used to encrypt this object.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
 impl OutputDataConfig {

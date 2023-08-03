@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_type: ::std::option::Option<crate::types::TransformType>,
     /// <p>The evaluation metrics for the find matches algorithm.</p>
-    #[doc(hidden)]
     pub find_matches_metrics: ::std::option::Option<crate::types::FindMatchesMetrics>,
 }
 impl EvaluationMetrics {

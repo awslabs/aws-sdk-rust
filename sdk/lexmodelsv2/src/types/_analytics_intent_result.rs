@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentResult {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    #[doc(hidden)]
     pub bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the groups.</p>
-    #[doc(hidden)]
     pub group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupByKey>>,
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    #[doc(hidden)]
     pub metrics_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetricResult>>,
 }
 impl AnalyticsIntentResult {

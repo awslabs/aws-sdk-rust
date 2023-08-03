@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobOutput {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
-    #[doc(hidden)]
     pub job_metadata: ::std::option::Option<crate::types::JobMetadata>,
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    #[doc(hidden)]
     pub sub_job_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>,
     _request_id: Option<String>,
 }

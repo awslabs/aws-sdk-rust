@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
-    #[doc(hidden)]
     pub signing_enabled: ::std::option::Option<bool>,
 }
 impl PutEmailIdentityDkimAttributesInput {

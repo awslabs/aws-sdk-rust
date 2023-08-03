@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the version.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the document.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the document, in bytes.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
     /// <p>The signature of the document.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>The status of the document.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DocumentStatusType>,
     /// <p>The timestamp when the document was first uploaded.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the document was last uploaded.</p>
-    #[doc(hidden)]
     pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was originally created.</p>
-    #[doc(hidden)]
     pub content_created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
-    #[doc(hidden)]
     pub content_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the creator.</p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The thumbnail of the document.</p>
-    #[doc(hidden)]
     pub thumbnail: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>>,
     /// <p>The source of the document.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>>,
 }
 impl DocumentVersionMetadata {

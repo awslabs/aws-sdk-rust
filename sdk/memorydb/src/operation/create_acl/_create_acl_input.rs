@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAclInput {
     /// <p>The name of the Access Control List.</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of users that belong to the Access Control List.</p>
-    #[doc(hidden)]
     pub user_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAclInput {

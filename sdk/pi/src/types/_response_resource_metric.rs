@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The description of the metric.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl ResponseResourceMetric {

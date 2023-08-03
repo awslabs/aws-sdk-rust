@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
-    #[doc(hidden)]
     pub vault_notification_config: ::std::option::Option<crate::types::VaultNotificationConfig>,
     _request_id: Option<String>,
 }

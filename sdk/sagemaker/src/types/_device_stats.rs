@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceStats {
     /// <p>The number of devices connected with a heartbeat.</p>
-    #[doc(hidden)]
     pub connected_device_count: i64,
     /// <p>The number of registered devices.</p>
-    #[doc(hidden)]
     pub registered_device_count: i64,
 }
 impl DeviceStats {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReportPlanInput {
     /// <p>The unique name of a report plan.</p>
-    #[doc(hidden)]
     pub report_plan_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReportPlanInput {

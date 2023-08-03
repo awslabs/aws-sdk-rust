@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDetectorSummary {
     /// <p>The ARN of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_description: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the detector was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of detector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AnomalyDetectorSummary {

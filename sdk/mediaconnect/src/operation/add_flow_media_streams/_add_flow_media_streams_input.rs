@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that you want to add to the flow.
-    #[doc(hidden)]
     pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInput {

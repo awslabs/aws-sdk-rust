@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoutingProfileQueuesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the routing profiles.</p>
-    #[doc(hidden)]
     pub routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
     _request_id: Option<String>,
 }

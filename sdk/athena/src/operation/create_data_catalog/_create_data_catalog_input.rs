@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataCatalogInput {
     /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -27,10 +24,8 @@ pub struct CreateDataCatalogInput {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataCatalogInput {

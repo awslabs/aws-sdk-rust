@@ -6,7 +6,6 @@
 pub struct CampaignState {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
-    #[doc(hidden)]
     pub campaign_status: ::std::option::Option<crate::types::CampaignStatus>,
 }
 impl CampaignState {

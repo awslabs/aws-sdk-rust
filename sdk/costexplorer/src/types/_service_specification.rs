@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
-    #[doc(hidden)]
     pub ec2_specification: ::std::option::Option<crate::types::Ec2Specification>,
 }
 impl ServiceSpecification {

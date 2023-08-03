@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedAgent {
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
-    #[doc(hidden)]
     pub last_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ManagedAgentName>,
     /// <p>The reason for why the managed agent is in the state it is in.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The last known status of the managed agent.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<::std::string::String>,
 }
 impl ManagedAgent {

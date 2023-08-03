@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>Specifies the error message that appears if a flow fails. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of error.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ErrorInfo {

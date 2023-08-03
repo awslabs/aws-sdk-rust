@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    #[doc(hidden)]
     pub context_key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

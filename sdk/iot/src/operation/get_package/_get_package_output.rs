@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPackageOutput {
     /// <p>The name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the package.</p>
-    #[doc(hidden)]
     pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The package description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the default package version.</p>
-    #[doc(hidden)]
     pub default_version_name: ::std::option::Option<::std::string::String>,
     /// <p>The date the package was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the package was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

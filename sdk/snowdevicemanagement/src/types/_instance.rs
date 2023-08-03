@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
-    #[doc(hidden)]
     pub ami_launch_index: ::std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the current state of an instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address assigned to the instance.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>When the instance was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the instance was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The security groups for the instance.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The CPU options for the instance.</p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    #[doc(hidden)]
     pub root_device_name: ::std::option::Option<::std::string::String>,
 }
 impl Instance {

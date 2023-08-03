@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetFieldLevelEncryptionConfigInput {

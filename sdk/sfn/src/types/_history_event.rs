@@ -5,118 +5,80 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the event.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HistoryEventType>,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
-    #[doc(hidden)]
     pub id: i64,
     /// <p>The id of the previous event.</p>
-    #[doc(hidden)]
     pub previous_event_id: i64,
     /// <p>Contains details about an activity that failed during an execution.</p>
-    #[doc(hidden)]
     pub activity_failed_event_details: ::std::option::Option<crate::types::ActivityFailedEventDetails>,
     /// <p>Contains details about an activity schedule event that failed during an execution.</p>
-    #[doc(hidden)]
     pub activity_schedule_failed_event_details: ::std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
     /// <p>Contains details about an activity scheduled during an execution.</p>
-    #[doc(hidden)]
     pub activity_scheduled_event_details: ::std::option::Option<crate::types::ActivityScheduledEventDetails>,
     /// <p>Contains details about the start of an activity during an execution.</p>
-    #[doc(hidden)]
     pub activity_started_event_details: ::std::option::Option<crate::types::ActivityStartedEventDetails>,
     /// <p>Contains details about an activity that successfully terminated during an execution.</p>
-    #[doc(hidden)]
     pub activity_succeeded_event_details: ::std::option::Option<crate::types::ActivitySucceededEventDetails>,
     /// <p>Contains details about an activity timeout that occurred during an execution.</p>
-    #[doc(hidden)]
     pub activity_timed_out_event_details: ::std::option::Option<crate::types::ActivityTimedOutEventDetails>,
     /// <p>Contains details about the failure of a task.</p>
-    #[doc(hidden)]
     pub task_failed_event_details: ::std::option::Option<crate::types::TaskFailedEventDetails>,
     /// <p>Contains details about a task that was scheduled.</p>
-    #[doc(hidden)]
     pub task_scheduled_event_details: ::std::option::Option<crate::types::TaskScheduledEventDetails>,
     /// <p>Contains details about a task that failed to start.</p>
-    #[doc(hidden)]
     pub task_start_failed_event_details: ::std::option::Option<crate::types::TaskStartFailedEventDetails>,
     /// <p>Contains details about a task that was started.</p>
-    #[doc(hidden)]
     pub task_started_event_details: ::std::option::Option<crate::types::TaskStartedEventDetails>,
     /// <p>Contains details about a task that where the submit failed.</p>
-    #[doc(hidden)]
     pub task_submit_failed_event_details: ::std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
     /// <p>Contains details about a submitted task.</p>
-    #[doc(hidden)]
     pub task_submitted_event_details: ::std::option::Option<crate::types::TaskSubmittedEventDetails>,
     /// <p>Contains details about a task that succeeded.</p>
-    #[doc(hidden)]
     pub task_succeeded_event_details: ::std::option::Option<crate::types::TaskSucceededEventDetails>,
     /// <p>Contains details about a task that timed out.</p>
-    #[doc(hidden)]
     pub task_timed_out_event_details: ::std::option::Option<crate::types::TaskTimedOutEventDetails>,
     /// <p>Contains details about an execution failure event.</p>
-    #[doc(hidden)]
     pub execution_failed_event_details: ::std::option::Option<crate::types::ExecutionFailedEventDetails>,
     /// <p>Contains details about the start of the execution.</p>
-    #[doc(hidden)]
     pub execution_started_event_details: ::std::option::Option<crate::types::ExecutionStartedEventDetails>,
     /// <p>Contains details about the successful termination of the execution.</p>
-    #[doc(hidden)]
     pub execution_succeeded_event_details: ::std::option::Option<crate::types::ExecutionSucceededEventDetails>,
     /// <p>Contains details about an abort of an execution.</p>
-    #[doc(hidden)]
     pub execution_aborted_event_details: ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
-    #[doc(hidden)]
     pub execution_timed_out_event_details: ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
     /// <p>Contains details about Map state that was started.</p>
-    #[doc(hidden)]
     pub map_state_started_event_details: ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was started.</p>
-    #[doc(hidden)]
     pub map_iteration_started_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that succeeded.</p>
-    #[doc(hidden)]
     pub map_iteration_succeeded_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that failed.</p>
-    #[doc(hidden)]
     pub map_iteration_failed_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was aborted.</p>
-    #[doc(hidden)]
     pub map_iteration_aborted_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about a Lambda function that failed during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_failed_event_details: ::std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
     /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_schedule_failed_event_details: ::std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
     /// <p>Contains details about a Lambda function scheduled during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_scheduled_event_details: ::std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
     /// <p>Contains details about a lambda function that failed to start during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_start_failed_event_details: ::std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
     /// <p>Contains details about a Lambda function that terminated successfully during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_succeeded_event_details: ::std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
     /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
-    #[doc(hidden)]
     pub lambda_function_timed_out_event_details: ::std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
     /// <p>Contains details about a state entered during an execution.</p>
-    #[doc(hidden)]
     pub state_entered_event_details: ::std::option::Option<crate::types::StateEnteredEventDetails>,
     /// <p>Contains details about an exit from a state during an execution.</p>
-    #[doc(hidden)]
     pub state_exited_event_details: ::std::option::Option<crate::types::StateExitedEventDetails>,
     /// <p>Contains details, such as <code>mapRunArn</code>, and the start date and time of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that was started.</p>
-    #[doc(hidden)]
     pub map_run_started_event_details: ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     /// <p>Contains error and cause details about a Map Run that failed.</p>
-    #[doc(hidden)]
     pub map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
 }
 impl HistoryEvent {

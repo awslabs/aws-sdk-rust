@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogDeliveryDescription {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    #[doc(hidden)]
     pub worker_log_delivery: ::std::option::Option<crate::types::WorkerLogDeliveryDescription>,
 }
 impl LogDeliveryDescription {

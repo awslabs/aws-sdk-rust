@@ -5,14 +5,11 @@
 pub struct ListKeysInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ApiKeyFilter>,
 }
 impl ListKeysInput {

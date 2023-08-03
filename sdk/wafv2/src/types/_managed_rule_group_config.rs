@@ -15,37 +15,30 @@ pub struct ManagedRuleGroupConfig {
     /// <p>Instead of this setting, provide your configuration under <code>AWSManagedRulesATPRuleSet</code>. </p>
     /// </note>
     #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet LoginPath")]
-    #[doc(hidden)]
     pub login_path: ::std::option::Option<::std::string::String>,
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
     #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PayloadType")]
-    #[doc(hidden)]
     pub payload_type: ::std::option::Option<crate::types::PayloadType>,
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
     #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
-    #[doc(hidden)]
     pub username_field: ::std::option::Option<crate::types::UsernameField>,
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
     #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
-    #[doc(hidden)]
     pub password_field: ::std::option::Option<crate::types::PasswordField>,
     /// <p>Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. For information about using the Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub aws_managed_rules_bot_control_rule_set: ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub aws_managed_rules_atp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub aws_managed_rules_acfp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
 }
 impl ManagedRuleGroupConfig {

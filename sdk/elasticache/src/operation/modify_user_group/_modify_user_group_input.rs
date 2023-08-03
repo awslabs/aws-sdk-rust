@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyUserGroupInput {
     /// <p>The ID of the user group.</p>
-    #[doc(hidden)]
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs to add to the user group.</p>
-    #[doc(hidden)]
     pub user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of user IDs to remove from the user group.</p>
-    #[doc(hidden)]
     pub user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyUserGroupInput {

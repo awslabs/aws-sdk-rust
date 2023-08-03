@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringFormatConfiguration {
     /// <p>The options that determine the null value format configuration.</p>
-    #[doc(hidden)]
     pub null_value_format_configuration: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     /// <p>The formatting configuration for numeric strings.</p>
-    #[doc(hidden)]
     pub numeric_format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl StringFormatConfiguration {

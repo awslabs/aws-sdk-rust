@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedJobTemplateInput {
     /// <p>The unique name of a managed job template, which is required.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
-    #[doc(hidden)]
     pub template_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeManagedJobTemplateInput {

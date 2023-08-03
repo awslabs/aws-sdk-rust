@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryRunConfigOutput {
     /// <p>How long the canary is allowed to run before it must stop.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
-    #[doc(hidden)]
     pub memory_in_mb: ::std::option::Option<i32>,
     /// <p>Displays whether this canary run used active X-Ray tracing. </p>
-    #[doc(hidden)]
     pub active_tracing: ::std::option::Option<bool>,
 }
 impl CanaryRunConfigOutput {

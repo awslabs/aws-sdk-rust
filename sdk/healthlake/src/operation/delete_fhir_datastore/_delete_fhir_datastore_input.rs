@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreInput {
     /// <p> The AWS-generated ID for the data store to be deleted.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFhirDatastoreInput {

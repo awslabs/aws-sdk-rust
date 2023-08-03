@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaaV10X {
     /// <p>The AppKey value.</p>
-    #[doc(hidden)]
     pub app_key: ::std::option::Option<::std::string::String>,
     /// <p>The AppEUI value.</p>
-    #[doc(hidden)]
     pub app_eui: ::std::option::Option<::std::string::String>,
     /// <p>The GenAppKey value.</p>
-    #[doc(hidden)]
     pub gen_app_key: ::std::option::Option<::std::string::String>,
 }
 impl OtaaV10X {

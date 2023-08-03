@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AiffSettings {
     /// Specify Bit depth, in bits per sample, to choose the encoding quality for this audio track.
-    #[doc(hidden)]
     pub bit_depth: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
-    #[doc(hidden)]
     pub channels: ::std::option::Option<i32>,
     /// Sample rate in hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i32>,
 }
 impl AiffSettings {

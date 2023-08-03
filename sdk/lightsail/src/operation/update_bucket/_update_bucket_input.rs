@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBucketInput {
     /// <p>The name of the bucket to update.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
-    #[doc(hidden)]
     pub access_rules: ::std::option::Option<crate::types::AccessRules>,
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
@@ -15,14 +13,11 @@ pub struct UpdateBucketInput {
     /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
     /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub versioning: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    #[doc(hidden)]
     pub readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    #[doc(hidden)]
     pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl UpdateBucketInput {

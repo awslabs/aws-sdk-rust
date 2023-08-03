@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionKey {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl MultiRegionKey {

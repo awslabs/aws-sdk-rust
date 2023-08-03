@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyGroupResponse {
     /// <p>The group types.</p>
-    #[doc(hidden)]
     pub group_type: ::std::option::Option<crate::types::GroupType>,
     /// <p>The names of properties.</p>
-    #[doc(hidden)]
     pub property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
-    #[doc(hidden)]
     pub is_inherited: ::std::option::Option<bool>,
 }
 impl PropertyGroupResponse {

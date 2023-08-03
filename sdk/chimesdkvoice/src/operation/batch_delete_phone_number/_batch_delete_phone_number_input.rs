@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
-    #[doc(hidden)]
     pub phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeletePhoneNumberInput {

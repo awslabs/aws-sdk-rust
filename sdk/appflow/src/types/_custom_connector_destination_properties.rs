@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorDestinationProperties {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
-    #[doc(hidden)]
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
-    #[doc(hidden)]
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
-    #[doc(hidden)]
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    #[doc(hidden)]
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    #[doc(hidden)]
     pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomConnectorDestinationProperties {

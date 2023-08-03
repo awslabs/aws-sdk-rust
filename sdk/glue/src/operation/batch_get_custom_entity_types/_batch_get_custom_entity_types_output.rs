@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCustomEntityTypesOutput {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    #[doc(hidden)]
     pub custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
     /// <p>A list of the names of custom patterns that were not found.</p>
-    #[doc(hidden)]
     pub custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

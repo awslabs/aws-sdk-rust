@@ -6,10 +6,8 @@
 pub struct ListAllowedNodeTypeModificationsOutput {
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-    #[doc(hidden)]
     pub scale_up_modifications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-    #[doc(hidden)]
     pub scale_down_modifications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentationPartsOutput {
     /// <p>The current page of elements from this collection.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::DocumentationPart>>,
     /// <p>The current pagination position in the paged result set.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

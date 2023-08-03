@@ -6,23 +6,17 @@ pub struct GetAutoScalingGroupRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    #[doc(hidden)]
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetAutoScalingGroupRecommendationsInput {

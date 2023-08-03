@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetModelInput {
     /// <p>The ID of the asset model to update.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, friendly name for the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub asset_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    #[doc(hidden)]
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssetModelInput {

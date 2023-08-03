@@ -5,39 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcIngressConnection {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided VPC Ingress Connection name.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the VPC Ingress Connection. The VPC Ingress Connection displays one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>, <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>, <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>.. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcIngressConnectionStatus>,
     /// <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name associated with the VPC Ingress Connection resource.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the customer’s VPC and related PrivateLink VPC endpoint that are used to associate with the VPC Ingress Connection resource.</p>
-    #[doc(hidden)]
     pub ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: Yes </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: No </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcIngressConnection {

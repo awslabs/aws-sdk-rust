@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::EventType>,
 }
 impl FunctionAssociation {

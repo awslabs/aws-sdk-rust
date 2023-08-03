@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeProperties {
     /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
-    #[doc(hidden)]
     pub num_nodes: ::std::option::Option<i32>,
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
-    #[doc(hidden)]
     pub main_node: ::std::option::Option<i32>,
     /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
-    #[doc(hidden)]
     pub node_range_properties: ::std::option::Option<::std::vec::Vec<crate::types::NodeRangeProperty>>,
 }
 impl NodeProperties {

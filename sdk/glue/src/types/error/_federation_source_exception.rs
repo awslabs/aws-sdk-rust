@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederationSourceException {
     /// <p>The error code of the problem.</p>
-    #[doc(hidden)]
     pub federation_source_error_code: ::std::option::Option<crate::types::FederationSourceErrorCode>,
     /// <p>The message describing the problem.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

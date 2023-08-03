@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
-    #[doc(hidden)]
     pub quota: ::std::option::Option<crate::types::ServiceQuota>,
     _request_id: Option<String>,
 }

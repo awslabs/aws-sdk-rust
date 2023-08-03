@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSolutionOutput {
     /// <p>An object that describes the solution.</p>
-    #[doc(hidden)]
     pub solution: ::std::option::Option<crate::types::Solution>,
     _request_id: Option<String>,
 }

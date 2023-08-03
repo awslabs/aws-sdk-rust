@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataBarsOptions {
     /// <p>The field ID for the data bars options.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The color of the positive data bar.</p>
-    #[doc(hidden)]
     pub positive_color: ::std::option::Option<::std::string::String>,
     /// <p>The color of the negative data bar.</p>
-    #[doc(hidden)]
     pub negative_color: ::std::option::Option<::std::string::String>,
 }
 impl DataBarsOptions {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p> Specifies the failure count for the attempted flow. </p>
-    #[doc(hidden)]
     pub put_failures_count: ::std::option::Option<i64>,
     /// <p> Specifies the error message that appears if a flow fails. </p>
-    #[doc(hidden)]
     pub execution_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfo {

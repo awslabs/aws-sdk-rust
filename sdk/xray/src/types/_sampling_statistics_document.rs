@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the service in hexadecimal.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The current time.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
-    #[doc(hidden)]
     pub request_count: i32,
     /// <p>The number of requests recorded.</p>
-    #[doc(hidden)]
     pub sampled_count: i32,
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
-    #[doc(hidden)]
     pub borrow_count: i32,
 }
 impl SamplingStatisticsDocument {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub invert: ::std::option::Option<bool>,
     /// <p>The criteria for determining a metadata match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::GrpcMetadataMatchMethod>,
 }
 impl GrpcGatewayRouteMetadata {

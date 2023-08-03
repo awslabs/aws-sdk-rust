@@ -4,44 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileJobInput {
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The name of the job to be updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    #[doc(hidden)]
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
-    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    #[doc(hidden)]
     pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    #[doc(hidden)]
     pub timeout: i32,
     /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
-    #[doc(hidden)]
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
 }
 impl UpdateProfileJobInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsConfigurationOutput {
     /// <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
-    #[doc(hidden)]
     pub events_configuration: ::std::option::Option<crate::types::EventsConfiguration>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The external identifier of the server that the access is attached to.</p>
-    #[doc(hidden)]
     pub access: ::std::option::Option<crate::types::DescribedAccess>,
     _request_id: Option<String>,
 }

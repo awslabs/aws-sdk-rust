@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFindingsFeedbackInput {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    #[doc(hidden)]
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The feedback for the finding.</p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<crate::types::Feedback>,
     /// <p>Additional feedback about the GuardDuty findings.</p>
-    #[doc(hidden)]
     pub comments: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFindingsFeedbackInput {

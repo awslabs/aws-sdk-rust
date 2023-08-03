@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanFilter {
     /// <p>The value of the boolean.</p>
-    #[doc(hidden)]
     pub value: bool,
 }
 impl BooleanFilter {

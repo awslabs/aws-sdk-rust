@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViolationEventAdditionalInfo {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    #[doc(hidden)]
     pub confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
 impl ViolationEventAdditionalInfo {

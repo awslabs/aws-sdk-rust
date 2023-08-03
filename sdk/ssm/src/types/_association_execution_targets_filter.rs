@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
     /// <p>The value specified for the key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationExecutionTargetsFilter {

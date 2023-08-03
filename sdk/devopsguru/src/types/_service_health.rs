@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceHealth {
     /// <p>The name of the Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
-    #[doc(hidden)]
     pub insight: ::std::option::Option<crate::types::ServiceInsightHealth>,
     /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
-    #[doc(hidden)]
     pub analyzed_resource_count: ::std::option::Option<i64>,
 }
 impl ServiceHealth {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
-    #[doc(hidden)]
     pub sasl: ::std::option::Option<crate::types::Sasl>,
     /// <p>Details for ClientAuthentication using TLS.</p>
-    #[doc(hidden)]
     pub tls: ::std::option::Option<crate::types::Tls>,
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
-    #[doc(hidden)]
     pub unauthenticated: ::std::option::Option<crate::types::Unauthenticated>,
 }
 impl ClientAuthentication {

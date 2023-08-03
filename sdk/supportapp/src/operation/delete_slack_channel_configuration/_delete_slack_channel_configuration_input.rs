@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSlackChannelConfigurationInput {

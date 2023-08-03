@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaTransformation {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-    #[doc(hidden)]
     pub function_payload: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaTransformation {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the rule.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>. This means that the rule should be an exact match on HTTP constraints which are made up of the HTTP method, path, and header.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The priority assigned to the rule. The lower the priority number the higher the priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
     _request_id: Option<String>,
 }

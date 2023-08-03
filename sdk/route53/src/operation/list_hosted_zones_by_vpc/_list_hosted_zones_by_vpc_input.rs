@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostedZonesByVpcInput {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
-    #[doc(hidden)]
     pub vpc_region: ::std::option::Option<crate::types::VpcRegion>,
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHostedZonesByVpcInput {

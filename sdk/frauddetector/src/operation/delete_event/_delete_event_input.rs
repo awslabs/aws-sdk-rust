@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventInput {
     /// <p>The ID of the event to delete.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
-    #[doc(hidden)]
     pub delete_audit_history: ::std::option::Option<bool>,
 }
 impl DeleteEventInput {

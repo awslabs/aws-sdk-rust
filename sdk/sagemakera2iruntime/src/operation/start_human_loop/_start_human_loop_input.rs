@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
-    #[doc(hidden)]
     pub human_loop_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    #[doc(hidden)]
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains information about the human loop.</p>
-    #[doc(hidden)]
     pub human_loop_input: ::std::option::Option<crate::types::HumanLoopInput>,
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
-    #[doc(hidden)]
     pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl StartHumanLoopInput {

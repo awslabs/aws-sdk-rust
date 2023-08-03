@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    #[doc(hidden)]
     pub change_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an optional message associated with the domain configuration change.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ChangeProgressDetails {

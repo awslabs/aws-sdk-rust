@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationResultSummary {
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region for this operation result.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The result status of the stack set operation for the given account in the given Region.</p>
     /// <ul>
@@ -18,16 +16,12 @@ pub struct StackSetOperationResultSummary {
     /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StackSetOperationResultStatus>,
     /// <p>The reason for the assigned result status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
-    #[doc(hidden)]
     pub account_gate_result: ::std::option::Option<crate::types::AccountGateResult>,
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    #[doc(hidden)]
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl StackSetOperationResultSummary {

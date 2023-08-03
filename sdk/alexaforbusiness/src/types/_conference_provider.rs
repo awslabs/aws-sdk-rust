@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConferenceProvider {
     /// <p>The ARN of the newly created conference provider.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the conference provider.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of conference providers.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConferenceProviderType>,
     /// <p>The IP endpoint and protocol for calling.</p>
-    #[doc(hidden)]
     pub ip_dial_in: ::std::option::Option<crate::types::IpDialIn>,
     /// <p>The information for PSTN conferencing.</p>
-    #[doc(hidden)]
     pub pstn_dial_in: ::std::option::Option<crate::types::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
-    #[doc(hidden)]
     pub meeting_setting: ::std::option::Option<crate::types::MeetingSetting>,
 }
 impl ConferenceProvider {

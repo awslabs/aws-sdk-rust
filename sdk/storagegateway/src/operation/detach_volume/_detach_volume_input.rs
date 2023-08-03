@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub force_detach: ::std::option::Option<bool>,
 }
 impl DetachVolumeInput {

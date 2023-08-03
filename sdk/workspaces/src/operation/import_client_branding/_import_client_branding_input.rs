@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The branding information to import for Windows devices.</p>
-    #[doc(hidden)]
     pub device_type_windows: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for macOS devices.</p>
-    #[doc(hidden)]
     pub device_type_osx: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for Android devices.</p>
-    #[doc(hidden)]
     pub device_type_android: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for iOS devices.</p>
-    #[doc(hidden)]
     pub device_type_ios: ::std::option::Option<crate::types::IosImportClientBrandingAttributes>,
     /// <p>The branding information to import for Linux devices.</p>
-    #[doc(hidden)]
     pub device_type_linux: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for web access.</p>
-    #[doc(hidden)]
     pub device_type_web: ::std::option::Option<crate::types::DefaultImportClientBrandingAttributes>,
 }
 impl ImportClientBrandingInput {

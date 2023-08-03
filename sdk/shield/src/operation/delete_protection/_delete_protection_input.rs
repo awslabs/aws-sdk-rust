@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProtectionInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
-    #[doc(hidden)]
     pub protection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProtectionInput {

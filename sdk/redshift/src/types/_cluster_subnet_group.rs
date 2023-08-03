@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSubnetGroup {
     /// <p>The name of the cluster subnet group.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster subnet group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the cluster subnet group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-    #[doc(hidden)]
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The list of tags for the cluster subnet group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ClusterSubnetGroup {

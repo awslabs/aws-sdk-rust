@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
-    #[doc(hidden)]
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines this workflow step.</p>
-    #[doc(hidden)]
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    #[doc(hidden)]
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified runtime instance of the workflow step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the specified workflow step.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action that the specified step performs.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The current status for the specified runtime version of the workflow step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
     /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
-    #[doc(hidden)]
     pub rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     /// <p>The output message from the specified runtime instance of the workflow step, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::string::String>,
     /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime instance of the workflow step finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if the workflow step fails.</p>
-    #[doc(hidden)]
     pub on_failure: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration in seconds for this step to complete its action.</p>
-    #[doc(hidden)]
     pub timeout_seconds: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldWells {
     /// <p>The aggregated field well for the pivot table.</p>
-    #[doc(hidden)]
     pub pivot_table_aggregated_field_wells: ::std::option::Option<crate::types::PivotTableAggregatedFieldWells>,
 }
 impl PivotTableFieldWells {

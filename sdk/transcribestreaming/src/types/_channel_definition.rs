@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
-    #[doc(hidden)]
     pub channel_id: i32,
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
 impl ChannelDefinition {

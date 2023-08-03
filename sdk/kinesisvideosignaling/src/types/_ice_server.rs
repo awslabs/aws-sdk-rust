@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    #[doc(hidden)]
     pub uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A username to login to the ICE server.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>A password to login to the ICE server.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
-    #[doc(hidden)]
     pub ttl: i32,
 }
 impl IceServer {

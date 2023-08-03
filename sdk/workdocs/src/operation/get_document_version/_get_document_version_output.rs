@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentVersionOutput {
     /// <p>The version metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
     /// <p>The custom metadata on the document version.</p>
-    #[doc(hidden)]
     pub custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

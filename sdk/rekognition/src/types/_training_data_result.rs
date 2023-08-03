@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::TrainingData>,
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::TrainingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::ValidationData>,
 }
 impl TrainingDataResult {

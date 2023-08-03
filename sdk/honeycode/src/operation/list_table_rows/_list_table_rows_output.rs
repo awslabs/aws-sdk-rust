@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    #[doc(hidden)]
     pub column_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
     /// <p> The list of row ids included in the request that were not found in the table. </p>
-    #[doc(hidden)]
     pub row_ids_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     _request_id: Option<String>,
 }

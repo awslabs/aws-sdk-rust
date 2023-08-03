@@ -6,52 +6,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeModification {
     /// <p>The ID of the volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The current modification state. The modification state is null for unmodified volumes.</p>
-    #[doc(hidden)]
     pub modification_state: ::std::option::Option<crate::types::VolumeModificationState>,
     /// <p>A status message about the modification progress or failure.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The target size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub target_size: ::std::option::Option<i32>,
     /// <p>The target IOPS rate of the volume.</p>
-    #[doc(hidden)]
     pub target_iops: ::std::option::Option<i32>,
     /// <p>The target EBS volume type of the volume.</p>
-    #[doc(hidden)]
     pub target_volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The target throughput of the volume, in MiB/s.</p>
-    #[doc(hidden)]
     pub target_throughput: ::std::option::Option<i32>,
     /// <p>The target setting for Amazon EBS Multi-Attach.</p>
-    #[doc(hidden)]
     pub target_multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The original size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub original_size: ::std::option::Option<i32>,
     /// <p>The original IOPS rate of the volume.</p>
-    #[doc(hidden)]
     pub original_iops: ::std::option::Option<i32>,
     /// <p>The original EBS volume type of the volume.</p>
-    #[doc(hidden)]
     pub original_volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The original throughput of the volume, in MiB/s.</p>
-    #[doc(hidden)]
     pub original_throughput: ::std::option::Option<i32>,
     /// <p>The original setting for Amazon EBS Multi-Attach.</p>
-    #[doc(hidden)]
     pub original_multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The modification progress, from 0 to 100 percent complete.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<i64>,
     /// <p>The modification start time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The modification completion or failure time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VolumeModification {

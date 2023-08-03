@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3MonitoringConfiguration {

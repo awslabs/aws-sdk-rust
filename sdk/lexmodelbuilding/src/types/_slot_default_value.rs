@@ -10,7 +10,6 @@ pub struct SlotDefaultValue {
     /// <li> <p> <code>{attribute}</code> - The slot value of the session attribute "attribute."</p> </li>
     /// <li> <p> <code>'value'</code> - The discrete value "value."</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl SlotDefaultValue {

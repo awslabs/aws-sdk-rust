@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MoveByoipCidrToIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The BYOIP CIDR.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM pool ID.</p>
-    #[doc(hidden)]
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_pool_owner: ::std::option::Option<::std::string::String>,
 }
 impl MoveByoipCidrToIpamInput {

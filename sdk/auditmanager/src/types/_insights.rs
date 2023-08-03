@@ -13,27 +13,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Insights {
     /// <p>The number of active assessments in Audit Manager. </p>
-    #[doc(hidden)]
     pub active_assessments_count: ::std::option::Option<i32>,
     /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
-    #[doc(hidden)]
     pub noncompliant_evidence_count: ::std::option::Option<i32>,
     /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
-    #[doc(hidden)]
     pub compliant_evidence_count: ::std::option::Option<i32>,
     /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
-    #[doc(hidden)]
     pub inconclusive_evidence_count: ::std::option::Option<i32>,
     /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
-    #[doc(hidden)]
     pub assessment_controls_count_by_noncompliant_evidence: ::std::option::Option<i32>,
     /// <p>The total number of controls across all active assessments. </p>
-    #[doc(hidden)]
     pub total_assessment_controls_count: ::std::option::Option<i32>,
     /// <p>The time when the cross-assessment insights were last updated. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Insights {

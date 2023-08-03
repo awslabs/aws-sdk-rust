@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
-    #[doc(hidden)]
     pub assertion_rule: ::std::option::Option<crate::types::NewAssertionRule>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The gating rule requested.</p>
-    #[doc(hidden)]
     pub gating_rule: ::std::option::Option<crate::types::NewGatingRule>,
     /// <p>The tags associated with the safety rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSafetyRuleInput {

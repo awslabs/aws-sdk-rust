@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to delete.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFlywheelInput {

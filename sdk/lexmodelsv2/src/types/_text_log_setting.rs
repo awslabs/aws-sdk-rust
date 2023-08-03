@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::TextLogDestination>,
 }
 impl TextLogSetting {

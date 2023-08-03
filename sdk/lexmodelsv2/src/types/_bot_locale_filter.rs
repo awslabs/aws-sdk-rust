@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::BotLocaleFilterName>,
     /// <p>The value to use for filtering the list of bots.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::BotLocaleFilterOperator>,
 }
 impl BotLocaleFilter {

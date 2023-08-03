@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityInput {
     /// <p>The email address or domain to verify.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
-    #[doc(hidden)]
     pub dkim_signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateEmailIdentityInput {

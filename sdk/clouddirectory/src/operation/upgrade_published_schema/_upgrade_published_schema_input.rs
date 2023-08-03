@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradePublishedSchemaInput {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    #[doc(hidden)]
     pub development_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the published schema to be upgraded.</p>
-    #[doc(hidden)]
     pub published_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl UpgradePublishedSchemaInput {

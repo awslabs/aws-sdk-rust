@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The possible types of dialer config parameters
-    #[doc(hidden)]
     pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
 }
 impl UpdateCampaignDialerConfigInput {

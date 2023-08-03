@@ -8,14 +8,12 @@ pub struct AwsEcsServicePlacementStrategiesDetails {
     /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
     /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
     /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The type of placement strategy.</p>
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
     /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServicePlacementStrategiesDetails {

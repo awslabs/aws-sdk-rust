@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the upgrade target database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
-    #[doc(hidden)]
     pub auto_upgrade: bool,
     /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
-    #[doc(hidden)]
     pub is_major_version_upgrade: bool,
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    #[doc(hidden)]
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
-    #[doc(hidden)]
     pub supports_parallel_query: ::std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
-    #[doc(hidden)]
     pub supports_global_databases: ::std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
-    #[doc(hidden)]
     pub supports_babelfish: ::std::option::Option<bool>,
 }
 impl UpgradeTarget {

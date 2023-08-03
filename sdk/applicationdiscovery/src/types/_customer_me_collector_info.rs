@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerMeCollectorInfo {
     /// <p> The number of active Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub active_me_collectors: i32,
     /// <p> The number of healthy Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub healthy_me_collectors: i32,
     /// <p> The number of deny-listed Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub deny_listed_me_collectors: i32,
     /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
-    #[doc(hidden)]
     pub shutdown_me_collectors: i32,
     /// <p> The number of unhealthy Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub unhealthy_me_collectors: i32,
     /// <p> The total number of Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub total_me_collectors: i32,
     /// <p> The number of unknown Migration Evaluator collectors. </p>
-    #[doc(hidden)]
     pub unknown_me_collectors: i32,
 }
 impl CustomerMeCollectorInfo {

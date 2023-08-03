@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceInput {
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    #[doc(hidden)]
     pub get_token_balance_inputs: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
 }
 impl BatchGetTokenBalanceInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppInstanceBotOutput {
     /// <p>The ARN of the <code>AppinstanceBot</code>.</p>
-    #[doc(hidden)]
     pub app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

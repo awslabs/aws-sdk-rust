@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeConflictsInput {
     /// <p>The name of the repository where the pull request was created.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code. </p>
-    #[doc(hidden)]
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    #[doc(hidden)]
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     /// <p>The maximum number of files to include in the output.</p>
-    #[doc(hidden)]
     pub max_conflict_files: ::std::option::Option<i32>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    #[doc(hidden)]
     pub conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetMergeConflictsInput {

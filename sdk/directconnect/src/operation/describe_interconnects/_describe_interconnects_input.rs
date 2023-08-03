@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInterconnectsInput {
     /// <p>The ID of the interconnect.</p>
-    #[doc(hidden)]
     pub interconnect_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInterconnectsInput {

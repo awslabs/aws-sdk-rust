@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersOutput {
     /// <p>The phone number order details.</p>
-    #[doc(hidden)]
     pub phone_number_orders: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

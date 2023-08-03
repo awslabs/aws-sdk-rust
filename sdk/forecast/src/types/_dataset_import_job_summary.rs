@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
@@ -21,13 +18,10 @@ pub struct DatasetImportJobSummary {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the dataset import job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -37,10 +31,8 @@ pub struct DatasetImportJobSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
 }
 impl DatasetImportJobSummary {

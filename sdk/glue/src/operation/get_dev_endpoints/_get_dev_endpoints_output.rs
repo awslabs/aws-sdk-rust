@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    #[doc(hidden)]
     pub dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectSyntaxItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
-    #[doc(hidden)]
     pub syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
 }
 impl BatchDetectSyntaxItemResult {

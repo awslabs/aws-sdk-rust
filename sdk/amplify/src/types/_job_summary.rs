@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p> The Amazon Resource Name (ARN) for the job. </p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID for the job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> The commit ID from a third-party repository provider for the job. </p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p> The commit date and time for the job. </p>
-    #[doc(hidden)]
     pub commit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The start date and time for the job. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The current status for the job. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p> The end date and time for the job. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl JobSummary {

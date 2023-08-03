@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositorySummary {

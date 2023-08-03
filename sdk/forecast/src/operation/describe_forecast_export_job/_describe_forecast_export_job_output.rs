@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeForecastExportJobOutput {
     /// <p>The ARN of the forecast export job.</p>
-    #[doc(hidden)]
     pub forecast_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the forecast export job.</p>
-    #[doc(hidden)]
     pub forecast_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the exported forecast.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
@@ -27,10 +22,8 @@ pub struct DescribeForecastExportJobOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the forecast export job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -40,10 +33,8 @@ pub struct DescribeForecastExportJobOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

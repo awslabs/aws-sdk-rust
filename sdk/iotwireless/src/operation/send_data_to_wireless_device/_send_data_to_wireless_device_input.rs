@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceInput {
     /// <p>The ID of the wireless device to receive the data.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-    #[doc(hidden)]
     pub transmit_mode: ::std::option::Option<i32>,
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
-    #[doc(hidden)]
     pub payload_data: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the message request.</p>
-    #[doc(hidden)]
     pub wireless_metadata: ::std::option::Option<crate::types::WirelessMetadata>,
 }
 impl SendDataToWirelessDeviceInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     /// <p>The parameter that caused the error.</p>
-    #[doc(hidden)]
     pub invalid_parameter: ::std::option::Option<::std::string::String>,
     /// <p>The description of the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

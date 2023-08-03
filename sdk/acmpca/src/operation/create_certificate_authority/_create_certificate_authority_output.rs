@@ -5,7 +5,6 @@
 pub struct CreateCertificateAuthorityOutput {
     /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

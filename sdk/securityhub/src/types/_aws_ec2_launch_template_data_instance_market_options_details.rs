@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
     /// <p> The market type. </p>
-    #[doc(hidden)]
     pub market_type: ::std::option::Option<::std::string::String>,
     /// <p> The options for Spot Instances. </p>
-    #[doc(hidden)]
     pub spot_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {

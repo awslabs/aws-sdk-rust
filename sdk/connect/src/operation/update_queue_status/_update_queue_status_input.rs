@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQueueStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the queue.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueueStatus>,
 }
 impl UpdateQueueStatusInput {

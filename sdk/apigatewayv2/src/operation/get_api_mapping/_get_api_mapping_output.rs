@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiMappingOutput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API mapping identifier.</p>
-    #[doc(hidden)]
     pub api_mapping_id: ::std::option::Option<::std::string::String>,
     /// <p>The API mapping key.</p>
-    #[doc(hidden)]
     pub api_mapping_key: ::std::option::Option<::std::string::String>,
     /// <p>The API stage.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

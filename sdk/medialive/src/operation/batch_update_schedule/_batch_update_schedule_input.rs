@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// Schedule actions to create in the schedule.
-    #[doc(hidden)]
     pub creates: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
     /// Schedule actions to delete from the schedule.
-    #[doc(hidden)]
     pub deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
 }
 impl BatchUpdateScheduleInput {

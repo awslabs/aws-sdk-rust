@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    #[doc(hidden)]
     pub preferred_channel_pipeline: ::std::option::Option<crate::types::PreferredChannelPipeline>,
     /// Unique program number.
-    #[doc(hidden)]
     pub program_number: ::std::option::Option<i32>,
     /// Transport stream service descriptor configuration for the Multiplex program.
-    #[doc(hidden)]
     pub service_descriptor: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
     /// Program video settings configuration.
-    #[doc(hidden)]
     pub video_settings: ::std::option::Option<crate::types::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettings {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The formatted specification that defines the update.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the environment to update.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the environment to update.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
-    #[doc(hidden)]
     pub proton_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
@@ -44,22 +38,17 @@ pub struct UpdateEnvironmentInput {
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The ID of the environment account connection.</p>
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
-    #[doc(hidden)]
     pub environment_account_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    #[doc(hidden)]
     pub provisioning_repository: ::std::option::Option<crate::types::RepositoryBranchInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub component_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
-    #[doc(hidden)]
     pub codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEnvironmentInput {

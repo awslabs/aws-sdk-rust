@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionResultItems {
     /// <p>Overall results for the test execution, including the breakdown of conversations and single-input utterances.</p>
-    #[doc(hidden)]
     pub overall_test_results: ::std::option::Option<crate::types::OverallTestResults>,
     /// <p>Results related to conversations in the test set, including metrics about success and failure of conversations and intent and slot failures.</p>
-    #[doc(hidden)]
     pub conversation_level_test_results: ::std::option::Option<crate::types::ConversationLevelTestResults>,
     /// <p>Intent recognition results aggregated by intent name. The aggregated results contain success and failure rates of intent recognition, speech transcriptions, and end-to-end conversations.</p>
-    #[doc(hidden)]
     pub intent_classification_test_results: ::std::option::Option<crate::types::IntentClassificationTestResults>,
     /// <p>Slot resolution results aggregated by intent and slot name. The aggregated results contain success and failure rates of slot resolution, speech transcriptions, and end-to-end conversations</p>
-    #[doc(hidden)]
     pub intent_level_slot_resolution_test_results: ::std::option::Option<crate::types::IntentLevelSlotResolutionTestResults>,
     /// <p>Results related to utterances in the test set.</p>
-    #[doc(hidden)]
     pub utterance_level_test_results: ::std::option::Option<crate::types::UtteranceLevelTestResults>,
 }
 impl TestExecutionResultItems {

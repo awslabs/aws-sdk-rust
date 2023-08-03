@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryMiB {
     /// <p>The minimum amount of memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum amount of memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl MemoryMiB {

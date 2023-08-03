@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationOutput {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    #[doc(hidden)]
     pub certificate_authority_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     /// The ID of the group certificate configuration.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

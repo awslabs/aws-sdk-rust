@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfacePermissionOutput {
     /// <p>Information about the permission for the network interface.</p>
-    #[doc(hidden)]
     pub interface_permission: ::std::option::Option<crate::types::NetworkInterfacePermission>,
     _request_id: Option<String>,
 }

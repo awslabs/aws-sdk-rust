@@ -6,13 +6,10 @@
 pub struct Dimension {
     /// <p> Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the dimension.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the dimension for the time-series data point.</p>
-    #[doc(hidden)]
     pub dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
 }
 impl Dimension {

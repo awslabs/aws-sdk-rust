@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterStateChangeReason {
     /// <p>The programmatic code for the state change reason.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClusterStateChangeReason {

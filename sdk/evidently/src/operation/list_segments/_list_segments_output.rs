@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSegmentsOutput {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
-    #[doc(hidden)]
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

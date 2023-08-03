@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelChangeSetInput {

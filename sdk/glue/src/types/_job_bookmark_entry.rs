@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobBookmarkEntry {
     /// <p>The name of the job in question.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the job.</p>
-    #[doc(hidden)]
     pub version: i32,
     /// <p>The run ID number.</p>
-    #[doc(hidden)]
     pub run: i32,
     /// <p>The attempt ID number.</p>
-    #[doc(hidden)]
     pub attempt: i32,
     /// <p>The unique run identifier associated with the previous job run.</p>
-    #[doc(hidden)]
     pub previous_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The run ID number.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The bookmark itself.</p>
-    #[doc(hidden)]
     pub job_bookmark: ::std::option::Option<::std::string::String>,
 }
 impl JobBookmarkEntry {

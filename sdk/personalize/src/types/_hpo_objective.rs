@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression for finding the metric in the training job logs.</p>
-    #[doc(hidden)]
     pub metric_regex: ::std::option::Option<::std::string::String>,
 }
 impl HpoObjective {

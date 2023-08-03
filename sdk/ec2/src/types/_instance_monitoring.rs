@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMonitoring {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring for the instance.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::Monitoring>,
 }
 impl InstanceMonitoring {

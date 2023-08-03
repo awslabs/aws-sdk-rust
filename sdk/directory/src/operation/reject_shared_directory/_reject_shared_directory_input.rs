@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    #[doc(hidden)]
     pub shared_directory_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectSharedDirectoryInput {

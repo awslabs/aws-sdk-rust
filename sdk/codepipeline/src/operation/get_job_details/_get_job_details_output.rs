@@ -7,7 +7,6 @@ pub struct GetJobDetailsOutput {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
     _request_id: Option<String>,
 }

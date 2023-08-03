@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The customer-entered description of the workspace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Grafana version that the workspace is running.</p>
-    #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the workspace.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date that the workspace was modified.</p>
-    #[doc(hidden)]
     pub modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the workspace.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    #[doc(hidden)]
     pub notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkspaceSummary {

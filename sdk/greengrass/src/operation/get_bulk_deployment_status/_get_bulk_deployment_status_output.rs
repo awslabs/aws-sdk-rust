@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBulkDeploymentStatusOutput {
     /// Relevant metrics on input records processed during bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_metrics: ::std::option::Option<crate::types::BulkDeploymentMetrics>,
     /// The status of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_status: ::std::option::Option<crate::types::BulkDeploymentStatus>,
     /// The time, in ISO format, when the deployment was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// Error details
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// Error message
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// Tag(s) attached to the resource arn.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

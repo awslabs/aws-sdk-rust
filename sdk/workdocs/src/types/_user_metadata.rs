@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserMetadata {
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user before a rename operation.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
-    #[doc(hidden)]
     pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl UserMetadata {

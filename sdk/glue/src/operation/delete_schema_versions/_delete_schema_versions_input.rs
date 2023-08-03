@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSchemaVersionsInput {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
     /// <li> <p>a single version number, 5</p> </li>
     /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSchemaVersionsInput {

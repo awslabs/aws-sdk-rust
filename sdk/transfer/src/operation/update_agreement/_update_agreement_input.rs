@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>To replace the existing description, provide a short description for the agreement. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    #[doc(hidden)]
     pub local_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    #[doc(hidden)]
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    #[doc(hidden)]
     pub base_directory: ::std::option::Option<::std::string::String>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
-    #[doc(hidden)]
     pub access_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgreementInput {

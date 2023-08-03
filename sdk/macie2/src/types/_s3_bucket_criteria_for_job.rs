@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketCriteriaForJob {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::CriteriaBlockForJob>,
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::CriteriaBlockForJob>,
 }
 impl S3BucketCriteriaForJob {

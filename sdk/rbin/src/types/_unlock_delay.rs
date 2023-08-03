@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
-    #[doc(hidden)]
     pub unlock_delay_value: ::std::option::Option<i32>,
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    #[doc(hidden)]
     pub unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,
 }
 impl UnlockDelay {

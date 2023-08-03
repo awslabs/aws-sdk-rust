@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionsInput {
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transactions occurred.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The container for time.</p>
-    #[doc(hidden)]
     pub from_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
     /// <p>The container for time.</p>
-    #[doc(hidden)]
     pub to_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::ListTransactionsSort>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of transactions to list.</p> <note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListTransactionsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserData {
     /// <p>The ARN of a user.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first name of a user.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of a user.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email of a user.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The enrollment status of a user.</p>
-    #[doc(hidden)]
     pub enrollment_status: ::std::option::Option<crate::types::EnrollmentStatus>,
     /// <p>The enrollment ARN of a user.</p>
-    #[doc(hidden)]
     pub enrollment_id: ::std::option::Option<::std::string::String>,
 }
 impl UserData {

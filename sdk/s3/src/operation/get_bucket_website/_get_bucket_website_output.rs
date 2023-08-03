@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketWebsiteOutput {
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
-    #[doc(hidden)]
     pub index_document: ::std::option::Option<crate::types::IndexDocument>,
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
-    #[doc(hidden)]
     pub error_document: ::std::option::Option<crate::types::ErrorDocument>,
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    #[doc(hidden)]
     pub routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

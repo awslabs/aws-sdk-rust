@@ -5,78 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Backup {
     /// <p>The ARN of the backup. </p>
-    #[doc(hidden)]
     pub backup_arn: ::std::option::Option<::std::string::String>,
     /// <p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>
-    #[doc(hidden)]
     pub backup_type: ::std::option::Option<crate::types::BackupType>,
     /// <p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> A user-provided description for a manual backup. This field is empty for automated backups. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The engine type that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p> The engine model that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub engine_model: ::std::option::Option<::std::string::String>,
     /// <p> The engine version that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>
-    #[doc(hidden)]
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p> The instance type that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The key pair that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p> The preferred backup period that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p> The preferred maintenance period that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
-    #[doc(hidden)]
     pub s3_data_size: ::std::option::Option<i32>,
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
-    #[doc(hidden)]
     pub s3_data_url: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 URL of the backup's log file. </p>
-    #[doc(hidden)]
     pub s3_log_url: ::std::option::Option<::std::string::String>,
     /// <p> The security group IDs that are obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The name of the server from which the backup was made. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p> The service role ARN that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a backup while in progress. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BackupStatus>,
     /// <p> An informational message about backup status. </p>
-    #[doc(hidden)]
     pub status_description: ::std::option::Option<::std::string::String>,
     /// <p> The subnet IDs that are obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>
-    #[doc(hidden)]
     pub tools_version: ::std::option::Option<::std::string::String>,
     /// <p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl Backup {

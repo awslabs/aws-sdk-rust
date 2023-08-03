@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    #[doc(hidden)]
     pub data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
     /// <p>Source of this logical table.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::LogicalTableSource>,
 }
 impl LogicalTable {

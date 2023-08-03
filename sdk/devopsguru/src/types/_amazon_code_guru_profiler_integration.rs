@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonCodeGuruProfilerIntegration {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventSourceOptInStatus>,
 }
 impl AmazonCodeGuruProfilerIntegration {

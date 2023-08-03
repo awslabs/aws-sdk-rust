@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    #[doc(hidden)]
     pub virtual_services: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

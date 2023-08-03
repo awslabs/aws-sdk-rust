@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
-    #[doc(hidden)]
     pub uid: ::std::option::Option<i64>,
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
-    #[doc(hidden)]
     pub gid: ::std::option::Option<i64>,
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
-    #[doc(hidden)]
     pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixProfile {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
-    #[doc(hidden)]
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

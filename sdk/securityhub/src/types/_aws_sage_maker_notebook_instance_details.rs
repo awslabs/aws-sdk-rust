@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSageMakerNotebookInstanceDetails {
     /// <p> A list of Amazon Elastic Inference instance types to associate with the notebook instance. Currently, only one instance type can be associated with a notebook instance. </p>
-    #[doc(hidden)]
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p> Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code>, this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a Network Address Translation (NAT) Gateway in your VPC. </p>
-    #[doc(hidden)]
     pub direct_internet_access: ::std::option::Option<::std::string::String>,
     /// <p> If status of the instance is <code>Failed</code>, the reason it failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p> Information on the IMDS configuration of the notebook instance. </p>
-    #[doc(hidden)]
     pub instance_metadata_service_configuration: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails>,
     /// <p> The type of machine learning (ML) compute instance to launch for the notebook instance. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of an Key Management Service (KMS) key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and disabling keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The network interface ID that SageMaker created when the instance was created. </p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the notebook instance. </p>
-    #[doc(hidden)]
     pub notebook_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of a notebook instance lifecycle configuration. </p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the new notebook instance. </p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p> The status of the notebook instance. </p>
-    #[doc(hidden)]
     pub notebook_instance_status: ::std::option::Option<::std::string::String>,
     /// <p> The platform identifier of the notebook instance runtime environment. </p>
-    #[doc(hidden)]
     pub platform_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Whether root access is enabled or disabled for users of the notebook instance. </p>
-    #[doc(hidden)]
     pub root_access: ::std::option::Option<::std::string::String>,
     /// <p> The VPC security group IDs. </p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The ID of the VPC subnet to which you have a connectivity from your ML compute instance. </p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p> The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p> The size, in GB, of the ML storage volume to attach to the notebook instance. </p>
-    #[doc(hidden)]
     pub volume_size_in_gb: i32,
 }
 impl AwsSageMakerNotebookInstanceDetails {

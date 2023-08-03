@@ -9,35 +9,26 @@ pub struct DescribeDomainHealthOutput {
     /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
     /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub domain_state: ::std::option::Option<crate::types::DomainState>,
     /// <p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    #[doc(hidden)]
     pub availability_zone_count: ::std::option::Option<::std::string::String>,
     /// <p>The number of active Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    #[doc(hidden)]
     pub active_availability_zone_count: ::std::option::Option<::std::string::String>,
     /// <p>The number of standby Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    #[doc(hidden)]
     pub stand_by_availability_zone_count: ::std::option::Option<::std::string::String>,
     /// <p>The number of data nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    #[doc(hidden)]
     pub data_node_count: ::std::option::Option<::std::string::String>,
     /// <p>A boolean that indicates if dedicated master nodes are activated for the domain.</p>
-    #[doc(hidden)]
     pub dedicated_master: ::std::option::Option<bool>,
     /// <p>The number of nodes that can be elected as a master node. If dedicated master nodes is turned on, this value is the number of dedicated master nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    #[doc(hidden)]
     pub master_eligible_node_count: ::std::option::Option<::std::string::String>,
     /// <p>The number of warm nodes configured for the domain.</p>
-    #[doc(hidden)]
     pub warm_node_count: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
     /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
     /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_node: ::std::option::Option<crate::types::MasterNodeStatus>,
     /// <p>The current health status of your cluster.</p>
     /// <ul>
@@ -46,16 +37,12 @@ pub struct DescribeDomainHealthOutput {
     /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
     /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_health: ::std::option::Option<crate::types::DomainHealth>,
     /// <p>The total number of primary and replica shards for the domain.</p>
-    #[doc(hidden)]
     pub total_shards: ::std::option::Option<::std::string::String>,
     /// <p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>
-    #[doc(hidden)]
     pub total_un_assigned_shards: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
-    #[doc(hidden)]
     pub environment_information: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
     _request_id: Option<String>,
 }

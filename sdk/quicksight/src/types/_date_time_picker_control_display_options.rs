@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimePickerControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>Customize how dates are formatted in controls.</p>
-    #[doc(hidden)]
     pub date_time_format: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of info icon label options.</p>
-    #[doc(hidden)]
     pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl DateTimePickerControlDisplayOptions {

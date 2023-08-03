@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationRequest {

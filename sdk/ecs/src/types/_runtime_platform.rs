@@ -7,10 +7,8 @@
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
-    #[doc(hidden)]
     pub cpu_architecture: ::std::option::Option<crate::types::CpuArchitecture>,
     /// <p>The operating system.</p>
-    #[doc(hidden)]
     pub operating_system_family: ::std::option::Option<crate::types::OsFamily>,
 }
 impl RuntimePlatform {

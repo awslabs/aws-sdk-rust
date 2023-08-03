@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The destination of the import job.</p>
-    #[doc(hidden)]
     pub import_destination: ::std::option::Option<crate::types::ImportDestination>,
     /// <p>The data source of the import job.</p>
-    #[doc(hidden)]
     pub import_data_source: ::std::option::Option<crate::types::ImportDataSource>,
     /// <p>The failure details about an import job.</p>
-    #[doc(hidden)]
     pub failure_info: ::std::option::Option<crate::types::FailureInfo>,
     /// <p>The status of the import job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time stamp of when the import job was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time stamp of when the import job was completed.</p>
-    #[doc(hidden)]
     pub completed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current number of records processed.</p>
-    #[doc(hidden)]
     pub processed_records_count: ::std::option::Option<i32>,
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
-    #[doc(hidden)]
     pub failed_records_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultiplexProgramsOutput {
     /// List of multiplex programs.
-    #[doc(hidden)]
     pub multiplex_programs: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
     /// Token for the next ListMultiplexProgram request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

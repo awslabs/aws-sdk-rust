@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategoryProcessingStatus {
     /// <p>The Cost Management product name of the applied status. </p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::CostCategoryStatusComponent>,
     /// <p>The process status for a specific cost category. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostCategoryStatus>,
 }
 impl CostCategoryProcessingStatus {

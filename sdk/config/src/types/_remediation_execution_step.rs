@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExecutionStep {
     /// <p>The details of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The valid status of the step.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RemediationExecutionStepState>,
     /// <p>An error message if the step was interrupted during execution.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the step started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the step stopped.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStep {

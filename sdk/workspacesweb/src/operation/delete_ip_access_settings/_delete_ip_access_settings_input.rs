@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIpAccessSettingsInput {
     /// <p>The ARN of the IP access settings.</p>
-    #[doc(hidden)]
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIpAccessSettingsInput {

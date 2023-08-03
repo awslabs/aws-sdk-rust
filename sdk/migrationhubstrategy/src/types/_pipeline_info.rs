@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineInfo {
     /// <p>The type of pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     /// <p>The time when the pipeline info was configured.</p>
-    #[doc(hidden)]
     pub pipeline_configuration_time_stamp: ::std::option::Option<::std::string::String>,
 }
 impl PipelineInfo {

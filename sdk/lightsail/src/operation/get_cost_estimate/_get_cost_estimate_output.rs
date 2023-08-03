@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostEstimateOutput {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    #[doc(hidden)]
     pub resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The version label of the application version in the deployment.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<i64>,
     /// <p>The status of the deployment:</p>
     /// <ul>
@@ -16,11 +14,9 @@ pub struct Deployment {
     /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
     /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    #[doc(hidden)]
     pub deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Deployment {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsInput {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    #[doc(hidden)]
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
 }
 impl BatchDeleteClusterSnapshotsInput {

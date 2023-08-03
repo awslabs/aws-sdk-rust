@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    #[doc(hidden)]
     pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl ListEulaAcceptancesInput {

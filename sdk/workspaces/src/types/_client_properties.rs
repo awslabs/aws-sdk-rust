@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
-    #[doc(hidden)]
     pub reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
-    #[doc(hidden)]
     pub log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
 }
 impl ClientProperties {

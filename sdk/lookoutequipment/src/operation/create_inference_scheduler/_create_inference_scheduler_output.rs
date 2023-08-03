@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
-    #[doc(hidden)]
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of inference scheduler being created. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
     _request_id: Option<String>,
 }

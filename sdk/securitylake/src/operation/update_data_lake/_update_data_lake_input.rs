@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataLakeInput {
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>>,
 }
 impl UpdateDataLakeInput {

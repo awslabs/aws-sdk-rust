@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaUpdateInfo {
     /// <p>The OTA update ID.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>The OTA update ARN.</p>
-    #[doc(hidden)]
     pub ota_update_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the OTA update was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the OTA update was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the OTA update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets of the OTA update.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>Configuration for the rollout of OTA updates.</p>
-    #[doc(hidden)]
     pub aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
-    #[doc(hidden)]
     pub aws_job_presigned_url_config: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
     /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>A list of files associated with the OTA update.</p>
-    #[doc(hidden)]
     pub ota_update_files: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
     /// <p>The status of the OTA update.</p>
-    #[doc(hidden)]
     pub ota_update_status: ::std::option::Option<crate::types::OtaUpdateStatus>,
     /// <p>The IoT job ID associated with the OTA update.</p>
-    #[doc(hidden)]
     pub aws_iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    #[doc(hidden)]
     pub aws_iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Error information associated with the OTA update.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>A collection of name/value pairs</p>
-    #[doc(hidden)]
     pub additional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateInfo {

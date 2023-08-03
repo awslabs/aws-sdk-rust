@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageOutput {
     /// <p> Information about the deleted package.</p>
-    #[doc(hidden)]
     pub package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }

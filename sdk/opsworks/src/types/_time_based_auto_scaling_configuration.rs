@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedAutoScalingConfiguration {
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-    #[doc(hidden)]
     pub auto_scaling_schedule: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
 }
 impl TimeBasedAutoScalingConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageOutput {
     /// <p>Information about the image.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     _request_id: Option<String>,
 }

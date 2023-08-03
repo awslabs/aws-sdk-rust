@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
-    #[doc(hidden)]
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated. </p>
-    #[doc(hidden)]
     pub is_writer: bool,
 }
 impl GlobalClusterMember {

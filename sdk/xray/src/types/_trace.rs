@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<f64>,
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
-    #[doc(hidden)]
     pub limit_exceeded: ::std::option::Option<bool>,
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    #[doc(hidden)]
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
 }
 impl Trace {

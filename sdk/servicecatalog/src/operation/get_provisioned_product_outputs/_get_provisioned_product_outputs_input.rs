@@ -8,22 +8,16 @@ pub struct GetProvisionedProductOutputsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioned product that you want the outputs from.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    #[doc(hidden)]
     pub output_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetProvisionedProductOutputsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddResourcePermissionsOutput {
     /// <p>The share results.</p>
-    #[doc(hidden)]
     pub share_results: ::std::option::Option<::std::vec::Vec<crate::types::ShareResult>>,
     _request_id: Option<String>,
 }

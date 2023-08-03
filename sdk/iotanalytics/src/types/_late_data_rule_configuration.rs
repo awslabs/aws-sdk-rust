@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
-    #[doc(hidden)]
     pub delta_time_session_window_configuration: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
 }
 impl LateDataRuleConfiguration {

@@ -15,7 +15,6 @@ pub struct ConfirmConnectionOutput {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     _request_id: Option<String>,
 }

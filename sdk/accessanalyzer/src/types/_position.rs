@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The line of the position, starting from 1.</p>
-    #[doc(hidden)]
     pub line: ::std::option::Option<i32>,
     /// <p>The column of the position, starting from 0.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<i32>,
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<i32>,
 }
 impl Position {

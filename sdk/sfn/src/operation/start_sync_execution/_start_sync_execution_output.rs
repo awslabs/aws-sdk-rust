@@ -4,48 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date the execution is started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SyncExecutionStatus>,
     /// <p>The error code of the failure.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    #[doc(hidden)]
     pub trace_header: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
-    #[doc(hidden)]
     pub billing_details: ::std::option::Option<crate::types::BillingDetails>,
     _request_id: Option<String>,
 }

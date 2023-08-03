@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOpenZfsVolumeConfiguration {
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
-    #[doc(hidden)]
     pub storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
     /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
-    #[doc(hidden)]
     pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
     /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    #[doc(hidden)]
     pub record_size_ki_b: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -19,16 +16,12 @@ pub struct UpdateOpenZfsVolumeConfiguration {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    #[doc(hidden)]
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    #[doc(hidden)]
     pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
 }
 impl UpdateOpenZfsVolumeConfiguration {

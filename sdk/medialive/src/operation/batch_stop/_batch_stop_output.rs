@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopOutput {
     /// List of failed operations
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     /// List of successful operations
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifestSpec {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::JobManifestFormat>,
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
 }
 impl JobManifestSpec {

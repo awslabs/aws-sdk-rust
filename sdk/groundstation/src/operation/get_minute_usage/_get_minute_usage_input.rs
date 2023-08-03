@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMinuteUsageInput {
     /// <p>The month being requested, with a value of 1-12.</p>
-    #[doc(hidden)]
     pub month: ::std::option::Option<i32>,
     /// <p>The year being requested, in the format of YYYY.</p>
-    #[doc(hidden)]
     pub year: ::std::option::Option<i32>,
 }
 impl GetMinuteUsageInput {

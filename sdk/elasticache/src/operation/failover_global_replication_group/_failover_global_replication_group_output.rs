@@ -7,7 +7,6 @@ pub struct FailoverGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,
 }

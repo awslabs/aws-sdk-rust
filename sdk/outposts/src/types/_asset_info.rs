@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetInfo {
     /// <p> The ID of the asset. </p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p> The rack ID of the asset. </p>
-    #[doc(hidden)]
     pub rack_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of the asset. </p>
-    #[doc(hidden)]
     pub asset_type: ::std::option::Option<crate::types::AssetType>,
     /// <p> Information about compute hardware assets. </p>
-    #[doc(hidden)]
     pub compute_attributes: ::std::option::Option<crate::types::ComputeAttributes>,
     /// <p> The position of an asset in a rack. </p>
-    #[doc(hidden)]
     pub asset_location: ::std::option::Option<crate::types::AssetLocation>,
 }
 impl AssetInfo {

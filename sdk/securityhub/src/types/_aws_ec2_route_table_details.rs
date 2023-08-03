@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2RouteTableDetails {
     /// <p> The associations between a route table and one or more subnets or a gateway. </p>
-    #[doc(hidden)]
     pub association_set: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
     /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p> Describes a virtual private gateway propagating route. </p>
-    #[doc(hidden)]
     pub propagating_vgw_set: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
     /// <p> The ID of the route table. </p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p> The routes in the route table. </p>
-    #[doc(hidden)]
     pub route_set: ::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>>,
     /// <p> The ID of the virtual private cloud (VPC). </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2RouteTableDetails {

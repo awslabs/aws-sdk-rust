@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::ScalingParameters>,
     /// <p>The status of domain configuration option.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ScalingParametersStatus {

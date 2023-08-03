@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RSessionAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    #[doc(hidden)]
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    #[doc(hidden)]
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
 }
 impl RSessionAppSettings {

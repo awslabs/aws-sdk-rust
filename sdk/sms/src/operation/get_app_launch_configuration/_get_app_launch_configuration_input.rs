@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAppLaunchConfigurationInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PercentageDisplayFormatConfiguration {
     /// <p>Determines the prefix value of the percentage format.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Determines the suffix value of the percentage format.</p>
-    #[doc(hidden)]
     pub suffix: ::std::option::Option<::std::string::String>,
     /// <p>The options that determine the numeric separator configuration.</p>
-    #[doc(hidden)]
     pub separator_configuration: ::std::option::Option<crate::types::NumericSeparatorConfiguration>,
     /// <p>The option that determines the decimal places configuration.</p>
-    #[doc(hidden)]
     pub decimal_places_configuration: ::std::option::Option<crate::types::DecimalPlacesConfiguration>,
     /// <p>The options that determine the negative value configuration.</p>
-    #[doc(hidden)]
     pub negative_value_configuration: ::std::option::Option<crate::types::NegativeValueConfiguration>,
     /// <p>The options that determine the null value format configuration.</p>
-    #[doc(hidden)]
     pub null_value_format_configuration: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
 impl PercentageDisplayFormatConfiguration {

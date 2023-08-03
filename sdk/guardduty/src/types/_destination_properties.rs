@@ -6,10 +6,8 @@
 pub struct DestinationProperties {
     /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use for encryption.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl DestinationProperties {

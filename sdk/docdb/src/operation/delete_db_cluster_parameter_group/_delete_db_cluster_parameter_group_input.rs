@@ -11,7 +11,6 @@ pub struct DeleteDbClusterParameterGroupInput {
     /// <li> <p>You can't delete a default cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any clusters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbClusterParameterGroupInput {

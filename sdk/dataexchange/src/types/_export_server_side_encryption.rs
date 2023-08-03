@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
 }
 impl ExportServerSideEncryption {

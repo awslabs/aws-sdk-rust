@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListPricingRulesFilter>,
     /// <p> The maximum number of pricing rules to retrieve. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingRulesInput {

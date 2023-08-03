@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistic of the projected metrics.</p>
-    #[doc(hidden)]
     pub stat: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
-    #[doc(hidden)]
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetEc2RecommendationProjectedMetricsInput {

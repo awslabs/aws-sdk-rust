@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemsInput {
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub creation_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFileSystemsInput {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name to assign to the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the channel is in a running state or not.</p>
-    #[doc(hidden)]
     pub channel_state: ::std::option::Option<crate::types::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    #[doc(hidden)]
     pub filler_slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The output properties to assign to the channel.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
     /// <p>The playback mode to assign to the channel.</p>
-    #[doc(hidden)]
     pub playback_mode: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier of the channel.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsInput {
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub ads_application_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowsInput {

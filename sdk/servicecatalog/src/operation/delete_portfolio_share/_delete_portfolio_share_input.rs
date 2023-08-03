@@ -8,16 +8,12 @@ pub struct DeletePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization node to whom you are going to stop sharing.</p>
-    #[doc(hidden)]
     pub organization_node: ::std::option::Option<crate::types::OrganizationNode>,
 }
 impl DeletePortfolioShareInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageResource {
     /// <p>The unique ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::CoverageResourceDetails>,
     /// <p>Represents the status of the EKS cluster coverage.</p>
-    #[doc(hidden)]
     pub coverage_status: ::std::option::Option<crate::types::CoverageStatus>,
     /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
-    #[doc(hidden)]
     pub issue: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoverageResource {

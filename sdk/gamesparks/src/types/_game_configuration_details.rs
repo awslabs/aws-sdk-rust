@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
-    #[doc(hidden)]
     pub sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     /// <p>The date when the game was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the game was last modified.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameConfigurationDetails {

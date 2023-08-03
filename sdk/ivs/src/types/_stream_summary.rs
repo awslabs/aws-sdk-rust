@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>Channel ARN for the stream.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StreamState>,
     /// <p>The stream’s health.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::StreamHealth>,
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
-    #[doc(hidden)]
     pub viewer_count: i64,
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StreamSummary {

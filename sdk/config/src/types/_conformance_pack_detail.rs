@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    #[doc(hidden)]
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>The last time a conformation pack update was requested. </p>
-    #[doc(hidden)]
     pub last_update_requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service that created the conformance pack.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
-    #[doc(hidden)]
     pub template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
 }
 impl ConformancePackDetail {

@@ -6,56 +6,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
-    #[doc(hidden)]
     pub input_path: ::std::option::Option<::std::string::String>,
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
-    #[doc(hidden)]
     pub input_transformer: ::std::option::Option<crate::types::InputTransformer>,
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
-    #[doc(hidden)]
     pub kinesis_parameters: ::std::option::Option<crate::types::KinesisParameters>,
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
-    #[doc(hidden)]
     pub run_command_parameters: ::std::option::Option<crate::types::RunCommandParameters>,
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub batch_parameters: ::std::option::Option<crate::types::BatchParameters>,
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
-    #[doc(hidden)]
     pub sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    #[doc(hidden)]
     pub http_parameters: ::std::option::Option<crate::types::HttpParameters>,
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
-    #[doc(hidden)]
     pub redshift_data_parameters: ::std::option::Option<crate::types::RedshiftDataParameters>,
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    #[doc(hidden)]
     pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
-    #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
-    #[doc(hidden)]
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
 }
 impl Target {

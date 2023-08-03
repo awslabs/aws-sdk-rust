@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementOutput {
     /// <p>The list of prepared statements returned.</p>
-    #[doc(hidden)]
     pub prepared_statements: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
-    #[doc(hidden)]
     pub unprocessed_prepared_statement_names: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
     _request_id: Option<String>,
 }

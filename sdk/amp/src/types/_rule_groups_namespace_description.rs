@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The rule groups namespace name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The status of rule groups namespace.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     /// The rule groups namespace data.
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// The time when the rule groups namespace was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceDescription {

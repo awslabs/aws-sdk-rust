@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    #[doc(hidden)]
     pub trust: ::std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
-    #[doc(hidden)]
     pub subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl VirtualGatewayListenerTlsValidationContext {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThesaurusInput {
     /// <p>The identifier of the thesaurus you want to get information on.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThesaurusInput {

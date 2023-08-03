@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExplainabilityInput {
     /// <p>A unique name for the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_config: ::std::option::Option<crate::types::ExplainabilityConfig>,
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
-    #[doc(hidden)]
     pub enable_visualization: ::std::option::Option<bool>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -39,7 +31,6 @@ pub struct CreateExplainabilityInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateExplainabilityInput {

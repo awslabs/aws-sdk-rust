@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorReportLocation {
     /// <p>The S3 location where error reports are written.</p>
-    #[doc(hidden)]
     pub s3_report_location: ::std::option::Option<crate::types::S3ReportLocation>,
 }
 impl ErrorReportLocation {

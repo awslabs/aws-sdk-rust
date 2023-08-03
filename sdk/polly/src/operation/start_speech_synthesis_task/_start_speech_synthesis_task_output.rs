@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
-    #[doc(hidden)]
     pub synthesis_task: ::std::option::Option<crate::types::SynthesisTask>,
     _request_id: Option<String>,
 }

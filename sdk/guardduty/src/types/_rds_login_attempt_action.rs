@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsLoginAttemptAction {
     /// <p>Contains information about the remote IP address of the connection.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    #[doc(hidden)]
     pub login_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
 }
 impl RdsLoginAttemptAction {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_deployment_model: ::std::option::Option<crate::types::FirewallDeploymentModel>,
 }
 impl ThirdPartyFirewallPolicy {

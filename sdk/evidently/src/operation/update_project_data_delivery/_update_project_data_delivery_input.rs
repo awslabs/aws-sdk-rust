@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryInput {
     /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3DestinationConfig>,
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
 }
 impl UpdateProjectDataDeliveryInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingUpdate {
     /// <p>The target maximum number of workers allocated to the connector.</p>
-    #[doc(hidden)]
     pub max_worker_count: i32,
     /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
-    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The target minimum number of workers allocated to the connector.</p>
-    #[doc(hidden)]
     pub min_worker_count: i32,
     /// <p>The target sacle-in policy for the connector.</p>
-    #[doc(hidden)]
     pub scale_in_policy: ::std::option::Option<crate::types::ScaleInPolicyUpdate>,
     /// <p>The target sacle-out policy for the connector.</p>
-    #[doc(hidden)]
     pub scale_out_policy: ::std::option::Option<crate::types::ScaleOutPolicyUpdate>,
 }
 impl AutoScalingUpdate {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
-    #[doc(hidden)]
     pub channel_target_info: ::std::option::Option<crate::types::ChannelTargetInfo>,
     /// <p>Information about the contact that Incident Manager is engaging.</p>
-    #[doc(hidden)]
     pub contact_target_info: ::std::option::Option<crate::types::ContactTargetInfo>,
 }
 impl Target {

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnssecSigningAttributes {
     /// <p> Algorithm which was used to generate the digest from the public key. </p>
-    #[doc(hidden)]
     pub algorithm: ::std::option::Option<i32>,
     /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
-    #[doc(hidden)]
     pub flags: ::std::option::Option<i32>,
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
 }
 impl DnssecSigningAttributes {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkteamsOutput {
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    #[doc(hidden)]
     pub workteams: ::std::option::Option<::std::vec::Vec<crate::types::Workteam>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

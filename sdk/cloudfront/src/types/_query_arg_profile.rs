@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    #[doc(hidden)]
     pub query_arg: ::std::option::Option<::std::string::String>,
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl QueryArgProfile {

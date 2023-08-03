@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetShardIteratorInput {
     /// <p>The name of the Amazon Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-    #[doc(hidden)]
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
@@ -19,16 +17,12 @@ pub struct GetShardIteratorInput {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub shard_iterator_type: ::std::option::Option<crate::types::ShardIteratorType>,
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    #[doc(hidden)]
     pub starting_sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetShardIteratorInput {

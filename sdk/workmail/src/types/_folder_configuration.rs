@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FolderConfiguration {
     /// <p>The folder name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FolderName>,
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RetentionAction>,
     /// <p>The number of days for which the folder-configuration action applies.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
 }
 impl FolderConfiguration {

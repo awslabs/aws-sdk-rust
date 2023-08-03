@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultRow {
     /// <p>The ID for a particular row.</p>
-    #[doc(hidden)]
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>List of all the data cells in a row.</p>
-    #[doc(hidden)]
     pub data_items: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>,
 }
 impl ResultRow {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
-    #[doc(hidden)]
     pub release_after_minutes: ::std::option::Option<i32>,
     /// <p>Whether require check in is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl CreateRequireCheckIn {

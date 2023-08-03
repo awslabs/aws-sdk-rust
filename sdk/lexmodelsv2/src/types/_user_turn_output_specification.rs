@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnOutputSpecification {
     /// <p>Contains information about the intent.</p>
-    #[doc(hidden)]
     pub intent: ::std::option::Option<crate::types::UserTurnIntentOutput>,
     /// <p>The contexts that are active in the turn.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     /// <p>The transcript that is output for the user turn by the test execution.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<::std::string::String>,
 }
 impl UserTurnOutputSpecification {

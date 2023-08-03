@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsOutput {
     /// <p>The identifier for a list of query suggestions for an index.</p>
-    #[doc(hidden)]
     pub query_suggestions_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of query suggestions for an index.</p>
-    #[doc(hidden)]
     pub suggestions: ::std::option::Option<::std::vec::Vec<crate::types::Suggestion>>,
     _request_id: Option<String>,
 }

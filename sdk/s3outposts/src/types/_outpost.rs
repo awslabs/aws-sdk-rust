@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Outpost {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the unique identifier for the outpost.</p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
-    #[doc(hidden)]
     pub capacity_in_bytes: i64,
 }
 impl Outpost {

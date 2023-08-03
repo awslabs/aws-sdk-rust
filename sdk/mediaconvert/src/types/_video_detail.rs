@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoDetail {
     /// Height in pixels for the output
-    #[doc(hidden)]
     pub height_in_px: ::std::option::Option<i32>,
     /// Width in pixels for the output
-    #[doc(hidden)]
     pub width_in_px: ::std::option::Option<i32>,
 }
 impl VideoDetail {

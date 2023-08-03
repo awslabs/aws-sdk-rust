@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQualificationRequestsOutput {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
-    #[doc(hidden)]
     pub num_results: ::std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    #[doc(hidden)]
     pub qualification_requests: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
     _request_id: Option<String>,
 }

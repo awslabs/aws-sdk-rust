@@ -4,40 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateScheduledQueryInput {
     /// <p>Name of the scheduled query.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query string to run. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. The named Parameter <code>@scheduled_runtime</code> is reserved and can be used in the query to get the time at which the query is scheduled to run.</p>
     /// <p>The timestamp calculated according to the ScheduleConfiguration parameter, will be the value of <code>@scheduled_runtime</code> paramater for each query run. For example, consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this instance, the <code>@scheduled_runtime</code> parameter is initialized to the timestamp 2021-12-01 00:00:00 when invoking the query.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration for the query.</p>
-    #[doc(hidden)]
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>Configuration used for writing the result of a query.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
     /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
     /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
-    #[doc(hidden)]
     pub scheduled_query_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the scheduled query.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
-    #[doc(hidden)]
     pub error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
 }
 impl CreateScheduledQueryInput {

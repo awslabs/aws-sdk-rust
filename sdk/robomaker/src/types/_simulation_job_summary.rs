@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the simulation job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the simulation job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationJobStatus>,
     /// <p>A list of simulation job simulation application names.</p>
-    #[doc(hidden)]
     pub simulation_application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of simulation job robot application names.</p>
-    #[doc(hidden)]
     pub robot_application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the data sources.</p>
-    #[doc(hidden)]
     pub data_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The compute type for the simulation job summary.</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
 }
 impl SimulationJobSummary {

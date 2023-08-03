@@ -7,7 +7,6 @@ pub struct InstanceMetadataOptionsResponse {
     /// <p>The state of the metadata option changes.</p>
     /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
     /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceMetadataOptionsState>,
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
@@ -15,22 +14,17 @@ pub struct InstanceMetadataOptionsResponse {
     /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
     /// </ul>
     /// <p>Default: <code>optional</code> </p>
-    #[doc(hidden)]
     pub http_tokens: ::std::option::Option<crate::types::HttpTokensState>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
-    #[doc(hidden)]
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
-    #[doc(hidden)]
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
-    #[doc(hidden)]
     pub http_protocol_ipv6: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,
     /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    #[doc(hidden)]
     pub instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
 }
 impl InstanceMetadataOptionsResponse {

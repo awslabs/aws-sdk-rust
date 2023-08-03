@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The unique identifier of the application you want to update.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the application to update.</p>
-    #[doc(hidden)]
     pub current_application_version: ::std::option::Option<i32>,
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::Definition>,
 }
 impl UpdateApplicationInput {

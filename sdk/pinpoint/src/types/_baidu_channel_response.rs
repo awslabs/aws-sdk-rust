@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaiduChannelResponse {
     /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Baidu channel was enabled.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
-    #[doc(hidden)]
     pub credential: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Baidu channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub has_credential: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the Baidu channel. This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Baidu channel is archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>The user who last modified the Baidu channel.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Baidu channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The type of messaging or notification platform for the channel. For the Baidu channel, this value is BAIDU.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the Baidu channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl BaiduChannelResponse {

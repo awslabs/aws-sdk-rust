@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::VaultAccessPolicy>,
     _request_id: Option<String>,
 }

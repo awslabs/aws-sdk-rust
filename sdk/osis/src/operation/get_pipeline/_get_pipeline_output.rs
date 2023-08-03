@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineOutput {
     /// <p>Detailed information about the requested pipeline.</p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,
 }

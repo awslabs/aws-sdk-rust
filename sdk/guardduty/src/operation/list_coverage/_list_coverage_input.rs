@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCoverageInput {
     /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Represents the criteria used to filter the coverage details.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     /// <p>Represents the criteria used to sort the coverage details.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<crate::types::CoverageSortCriteria>,
 }
 impl ListCoverageInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableStorageOptimizersOutput {
     /// <p>A list of the storage optimizers associated with a table.</p>
-    #[doc(hidden)]
     pub storage_optimizer_list: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

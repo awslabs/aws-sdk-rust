@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlayerSession {
     /// <p>A unique identifier for a player session.</p>
-    #[doc(hidden)]
     pub player_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player that is associated with this player session.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the game session that the player session is connected to.</p>
-    #[doc(hidden)]
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on. </p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
@@ -35,10 +28,8 @@ pub struct PlayerSession {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PlayerSessionStatus>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -55,13 +46,10 @@ pub struct PlayerSession {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
-    #[doc(hidden)]
     pub player_data: ::std::option::Option<::std::string::String>,
 }
 impl PlayerSession {

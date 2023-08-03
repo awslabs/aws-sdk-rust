@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The directory identifier.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot identifier.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SnapshotType>,
     /// <p>The descriptive name of the snapshot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SnapshotStatus>,
     /// <p>The date and time that the snapshot was taken.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Snapshot {

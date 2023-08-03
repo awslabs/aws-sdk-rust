@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSuiteDefinitionOutput {
     /// <p>The UUID of the test suite created.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
-    #[doc(hidden)]
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the test suite was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-    #[doc(hidden)]
     pub default_prefix: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl HttpGatewayRoutePrefixRewrite {

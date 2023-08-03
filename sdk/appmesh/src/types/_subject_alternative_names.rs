@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>,
 }
 impl SubjectAlternativeNames {

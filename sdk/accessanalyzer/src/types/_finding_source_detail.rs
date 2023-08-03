@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    #[doc(hidden)]
     pub access_point_account: ::std::option::Option<::std::string::String>,
 }
 impl FindingSourceDetail {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time in days to retain data. Data type: number.</p>
-    #[doc(hidden)]
     pub app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
 }
 impl PutAppInstanceRetentionSettingsInput {

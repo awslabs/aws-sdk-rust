@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseAction {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The delivery stream name.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
-    #[doc(hidden)]
     pub separator: ::std::option::Option<::std::string::String>,
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
-    #[doc(hidden)]
     pub batch_mode: ::std::option::Option<bool>,
 }
 impl FirehoseAction {

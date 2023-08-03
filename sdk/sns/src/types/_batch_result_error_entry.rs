@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An error code representing why the action failed on this entry.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining why the action failed on this entry.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
-    #[doc(hidden)]
     pub sender_fault: bool,
 }
 impl BatchResultErrorEntry {

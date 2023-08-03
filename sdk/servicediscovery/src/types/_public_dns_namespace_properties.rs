@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicDnsNamespaceProperties {
     /// <p>DNS properties for the public DNS namespace.</p>
-    #[doc(hidden)]
     pub dns_properties: ::std::option::Option<crate::types::PublicDnsPropertiesMutable>,
 }
 impl PublicDnsNamespaceProperties {

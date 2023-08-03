@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentLaunchConfig {
     /// <p>The package name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    #[doc(hidden)]
     pub pre_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The launch file name.</p>
-    #[doc(hidden)]
     pub launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    #[doc(hidden)]
     pub post_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeploymentLaunchConfig {

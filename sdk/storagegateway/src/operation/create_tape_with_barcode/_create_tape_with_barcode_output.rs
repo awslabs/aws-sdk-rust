@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTapeWithBarcodeOutput {
     /// <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

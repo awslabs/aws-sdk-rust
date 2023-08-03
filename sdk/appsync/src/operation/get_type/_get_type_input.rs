@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTypeInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl GetTypeInput {

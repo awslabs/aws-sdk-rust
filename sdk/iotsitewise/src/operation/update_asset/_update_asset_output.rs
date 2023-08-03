@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetOutput {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    #[doc(hidden)]
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }

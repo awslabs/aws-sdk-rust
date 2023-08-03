@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResendConfirmationCodeInput {
     /// <p>The ID of the client associated with the user pool.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    #[doc(hidden)]
     pub secret_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    #[doc(hidden)]
     pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -29,7 +24,6 @@ pub struct ResendConfirmationCodeInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResendConfirmationCodeInput {

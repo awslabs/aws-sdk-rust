@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
-    #[doc(hidden)]
     pub uid: ::std::option::Option<i64>,
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
-    #[doc(hidden)]
     pub gid: ::std::option::Option<i64>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    #[doc(hidden)]
     pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixUser {

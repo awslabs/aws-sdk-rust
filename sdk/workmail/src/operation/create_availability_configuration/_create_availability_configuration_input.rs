@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAvailabilityConfigurationInput {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain to which the provider applies.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    #[doc(hidden)]
     pub ews_provider: ::std::option::Option<crate::types::EwsAvailabilityProvider>,
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    #[doc(hidden)]
     pub lambda_provider: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
 }
 impl CreateAvailabilityConfigurationInput {

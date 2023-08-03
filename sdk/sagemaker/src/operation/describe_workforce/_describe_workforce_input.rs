@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkforceInput {
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
-    #[doc(hidden)]
     pub workforce_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkforceInput {

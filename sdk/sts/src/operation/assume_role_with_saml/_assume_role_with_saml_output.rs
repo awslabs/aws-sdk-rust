@@ -7,26 +7,19 @@ pub struct AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The identifiers for the temporary security credentials that the operation returns.</p>
-    #[doc(hidden)]
     pub assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
-    #[doc(hidden)]
     pub packed_policy_size: ::std::option::Option<i32>,
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p> The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>. </p>
     /// <p> If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
-    #[doc(hidden)]
     pub subject_type: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p> The value of the <code>Recipient</code> attribute of the <code>SubjectConfirmationData</code> element of the SAML assertion. </p>
-    #[doc(hidden)]
     pub audience: ::std::option::Option<::std::string::String>,
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
@@ -37,12 +30,10 @@ pub struct AssumeRoleWithSamlOutput {
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
-    #[doc(hidden)]
     pub name_qualifier: ::std::option::Option<::std::string::String>,
     /// <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
     /// <p>You can require users to set a source identity value when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the role are associated with that user. After the source identity is set, the value cannot be changed. It is present in the request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
-    #[doc(hidden)]
     pub source_identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

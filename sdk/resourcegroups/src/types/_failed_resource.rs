@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedResource {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message text associated with the failure.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the failure.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl FailedResource {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetBlueprintsInput {
     /// <p>A list of blueprint names.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
-    #[doc(hidden)]
     pub include_blueprint: ::std::option::Option<bool>,
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
-    #[doc(hidden)]
     pub include_parameter_spec: ::std::option::Option<bool>,
 }
 impl BatchGetBlueprintsInput {

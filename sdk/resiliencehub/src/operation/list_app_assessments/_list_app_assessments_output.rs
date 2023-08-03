@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppAssessmentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-    #[doc(hidden)]
     pub assessment_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppAssessmentSummary>>,
     _request_id: Option<String>,
 }

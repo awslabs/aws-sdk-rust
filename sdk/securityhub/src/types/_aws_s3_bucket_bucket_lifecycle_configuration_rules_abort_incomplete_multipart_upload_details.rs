@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
-    #[doc(hidden)]
     pub days_after_initiation: i32,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetVariableOutput {
     /// <p>The returned variables.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
     /// <p>The errors from the request.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetVariableError>>,
     _request_id: Option<String>,
 }

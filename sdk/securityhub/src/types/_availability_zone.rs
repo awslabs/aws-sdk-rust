@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
-    #[doc(hidden)]
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {

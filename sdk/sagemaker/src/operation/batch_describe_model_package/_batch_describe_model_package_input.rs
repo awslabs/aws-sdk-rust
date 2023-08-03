@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageInput {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    #[doc(hidden)]
     pub model_package_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDescribeModelPackageInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRuntimeManagementConfigOutput {
     /// <p>The current runtime update mode of the function.</p>
-    #[doc(hidden)]
     pub update_runtime_on: ::std::option::Option<crate::types::UpdateRuntimeOn>,
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
-    #[doc(hidden)]
     pub runtime_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

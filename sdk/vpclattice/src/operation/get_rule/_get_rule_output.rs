@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is the default rule.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The rule match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The priority level for the specified rule.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The action for the default rule.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

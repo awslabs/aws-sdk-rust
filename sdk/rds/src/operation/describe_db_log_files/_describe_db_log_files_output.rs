@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
-    #[doc(hidden)]
     pub describe_db_log_files: ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

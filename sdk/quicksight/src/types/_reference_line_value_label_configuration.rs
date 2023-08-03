@@ -9,10 +9,8 @@ pub struct ReferenceLineValueLabelConfiguration {
     /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
     /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relative_position: ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
     /// <p>The format configuration of the value label.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl ReferenceLineValueLabelConfiguration {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging level.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LoggingLevel>,
     /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    #[doc(hidden)]
     pub detector_debug_options: ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
 }
 impl LoggingOptions {

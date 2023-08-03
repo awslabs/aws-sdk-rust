@@ -4,56 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutObjectAclInput {
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-    #[doc(hidden)]
     pub access_control_policy: ::std::option::Option<crate::types::AccessControlPolicy>,
     /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    #[doc(hidden)]
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub grant_full_control: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub grant_read: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-    #[doc(hidden)]
     pub grant_write: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
     /// <p>Key for which the PUT action was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
     /// <p>VersionId used to reference a specific version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl PutObjectAclInput {

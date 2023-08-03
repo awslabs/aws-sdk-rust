@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestOutputItem {
     /// <p>DASH manifest configuration parameters.</p>
-    #[doc(hidden)]
     pub dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     /// <p>HLS playlist configuration parameters.</p>
-    #[doc(hidden)]
     pub hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
-    #[doc(hidden)]
     pub source_group: ::std::option::Option<::std::string::String>,
 }
 impl RequestOutputItem {

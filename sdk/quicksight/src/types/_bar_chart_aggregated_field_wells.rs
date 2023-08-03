@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartAggregatedFieldWells {
     /// <p>The category (y-axis) field well of a bar chart.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a bar chart. Values are aggregated by category.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The color (group/color) field well of a bar chart.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The small multiples field well of a bar chart.</p>
-    #[doc(hidden)]
     pub small_multiples: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl BarChartAggregatedFieldWells {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalogInputDefinition {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in the Data Catalog.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
-    #[doc(hidden)]
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
 }
 impl DataCatalogInputDefinition {

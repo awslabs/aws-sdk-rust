@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiProgressBarConditionalFormatting {
     /// <p>The conditional formatting of the progress bar's foreground color.</p>
-    #[doc(hidden)]
     pub foreground_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl KpiProgressBarConditionalFormatting {

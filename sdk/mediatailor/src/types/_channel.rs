@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Channel {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the state whether the channel is running or not.</p>
-    #[doc(hidden)]
     pub channel_state: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the channel was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
-    #[doc(hidden)]
     pub filler_slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
     /// <p>The type of playback mode for this channel.</p>
     /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
-    #[doc(hidden)]
     pub playback_mode: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>The log configuration.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
 }
 impl Channel {

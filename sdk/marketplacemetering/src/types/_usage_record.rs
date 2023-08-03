@@ -7,19 +7,14 @@
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    #[doc(hidden)]
     pub customer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
-    #[doc(hidden)]
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
-    #[doc(hidden)]
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
 }
 impl UsageRecord {

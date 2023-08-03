@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetLabelDescription {
     /// <p> The name of the label. </p>
-    #[doc(hidden)]
     pub label_name: ::std::option::Option<::std::string::String>,
     /// <p> Statistics about the label. </p>
-    #[doc(hidden)]
     pub label_stats: ::std::option::Option<crate::types::DatasetLabelStats>,
 }
 impl DatasetLabelDescription {

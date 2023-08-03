@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme alias.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the theme.</p>
-    #[doc(hidden)]
     pub theme_version_number: ::std::option::Option<i64>,
 }
 impl CreateThemeAliasInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
-    #[doc(hidden)]
     pub is_sandbox_environment: bool,
     /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
     /// <p>Set either of the following values:</p>
@@ -41,7 +39,6 @@ pub struct SalesforceConnectorProfileProperties {
     /// </ul>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub use_private_link_for_metadata_and_authorization: bool,
 }
 impl SalesforceConnectorProfileProperties {

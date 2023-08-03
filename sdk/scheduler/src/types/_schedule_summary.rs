@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleSummary {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule group associated with this schedule.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduleState>,
     /// <p>The time at which the schedule was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the schedule was last modified.</p>
-    #[doc(hidden)]
     pub last_modification_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The schedule's target details.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TargetSummary>,
 }
 impl ScheduleSummary {

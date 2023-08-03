@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StagingArea {
     /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExtensionStatus>,
     /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
-    #[doc(hidden)]
     pub staging_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Arn of the staging source server if this source server is extended</p>
-    #[doc(hidden)]
     pub staging_source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl StagingArea {

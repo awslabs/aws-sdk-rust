@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
 }
 impl LambdaEventSource {

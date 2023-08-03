@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
-    #[doc(hidden)]
     pub instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,
 }

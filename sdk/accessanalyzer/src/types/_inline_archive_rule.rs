@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InlineArchiveRule {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The condition and values for a criterion.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
 }
 impl InlineArchiveRule {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
-    #[doc(hidden)]
     pub interconnect_name: ::std::option::Option<::std::string::String>,
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The location of the interconnect.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the interconnect.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateInterconnectInput {

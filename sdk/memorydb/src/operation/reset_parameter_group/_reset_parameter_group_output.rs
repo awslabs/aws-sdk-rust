@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetParameterGroupOutput {
     /// <p>The parameter group being reset.</p>
-    #[doc(hidden)]
     pub parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
 }

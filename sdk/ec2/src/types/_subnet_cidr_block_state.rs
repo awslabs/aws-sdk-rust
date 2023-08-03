@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetCidrBlockState {
     /// <p>The state of a CIDR block.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SubnetCidrBlockStateCode>,
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl SubnetCidrBlockState {

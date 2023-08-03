@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePartnerEventSourceInput {
     /// <p>The name of the event source to delete.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
 }
 impl DeletePartnerEventSourceInput {

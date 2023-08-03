@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanCondition {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    #[doc(hidden)]
     pub map_equals: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
 }
 impl ScanCondition {

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUsersOutput {
     /// <p>The users.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     /// <p>The total number of users included in the results.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub total_number_of_users: ::std::option::Option<i64>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

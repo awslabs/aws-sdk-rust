@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-    #[doc(hidden)]
     pub agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
 }
 impl UpdateProfilingGroupInput {

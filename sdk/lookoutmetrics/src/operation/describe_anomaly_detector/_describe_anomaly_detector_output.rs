@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the detector's configuration.</p>
-    #[doc(hidden)]
     pub anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfigSummary>,
     /// <p>The time at which the detector was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
     /// <p>The reason that the detector failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The process that caused the detector to fail.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<crate::types::AnomalyDetectorFailureType>,
     _request_id: Option<String>,
 }

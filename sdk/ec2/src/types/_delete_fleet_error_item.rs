@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetErrorItem {
     /// <p>The error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::DeleteFleetError>,
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetErrorItem {

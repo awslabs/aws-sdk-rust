@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Os {
     /// <p>OS full string.</p>
-    #[doc(hidden)]
     pub full_string: ::std::option::Option<::std::string::String>,
 }
 impl Os {

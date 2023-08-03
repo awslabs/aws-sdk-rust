@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
-    #[doc(hidden)]
     pub customer_managed_policy_references: ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

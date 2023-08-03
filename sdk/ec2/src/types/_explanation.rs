@@ -5,167 +5,114 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Explanation {
     /// <p>The network ACL.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The network ACL rule.</p>
-    #[doc(hidden)]
     pub acl_rule: ::std::option::Option<crate::types::AnalysisAclRule>,
     /// <p>The IPv4 address, in CIDR notation.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 addresses, in CIDR notation.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource to which the component is attached.</p>
-    #[doc(hidden)]
     pub attached_to: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Availability Zones.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The CIDR ranges.</p>
-    #[doc(hidden)]
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The component.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The customer gateway.</p>
-    #[doc(hidden)]
     pub customer_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The destination VPC.</p>
-    #[doc(hidden)]
     pub destination_vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>egress</p> </li>
     /// <li> <p>ingress</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<::std::string::String>,
     /// <p>The explanation code.</p>
-    #[doc(hidden)]
     pub explanation_code: ::std::option::Option<::std::string::String>,
     /// <p>The route table.</p>
-    #[doc(hidden)]
     pub ingress_route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The internet gateway.</p>
-    #[doc(hidden)]
     pub internet_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The listener for a Classic Load Balancer.</p>
-    #[doc(hidden)]
     pub classic_load_balancer_listener: ::std::option::Option<crate::types::AnalysisLoadBalancerListener>,
     /// <p>The listener port of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_listener_port: ::std::option::Option<i32>,
     /// <p>The target.</p>
-    #[doc(hidden)]
     pub load_balancer_target: ::std::option::Option<crate::types::AnalysisLoadBalancerTarget>,
     /// <p>The target group.</p>
-    #[doc(hidden)]
     pub load_balancer_target_group: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The target groups.</p>
-    #[doc(hidden)]
     pub load_balancer_target_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisComponent>>,
     /// <p>The target port.</p>
-    #[doc(hidden)]
     pub load_balancer_target_port: ::std::option::Option<i32>,
     /// <p>The load balancer listener.</p>
-    #[doc(hidden)]
     pub elastic_load_balancer_listener: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The missing component.</p>
-    #[doc(hidden)]
     pub missing_component: ::std::option::Option<::std::string::String>,
     /// <p>The NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The network interface.</p>
-    #[doc(hidden)]
     pub network_interface: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The packet field.</p>
-    #[doc(hidden)]
     pub packet_field: ::std::option::Option<::std::string::String>,
     /// <p>The VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The port.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The port ranges.</p>
-    #[doc(hidden)]
     pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The protocols.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The route table route.</p>
-    #[doc(hidden)]
     pub route_table_route: ::std::option::Option<crate::types::AnalysisRouteTableRoute>,
     /// <p>The route table.</p>
-    #[doc(hidden)]
     pub route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The security group.</p>
-    #[doc(hidden)]
     pub security_group: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The security group rule.</p>
-    #[doc(hidden)]
     pub security_group_rule: ::std::option::Option<crate::types::AnalysisSecurityGroupRule>,
     /// <p>The security groups.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisComponent>>,
     /// <p>The source VPC.</p>
-    #[doc(hidden)]
     pub source_vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The subnet.</p>
-    #[doc(hidden)]
     pub subnet: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The route table for the subnet.</p>
-    #[doc(hidden)]
     pub subnet_route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The component VPC.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The VPN gateway.</p>
-    #[doc(hidden)]
     pub vpn_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The transit gateway route table route.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
     /// <p>The transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Amazon Web Services account for the component.</p>
-    #[doc(hidden)]
     pub component_account: ::std::option::Option<::std::string::String>,
     /// <p>The Region for the component.</p>
-    #[doc(hidden)]
     pub component_region: ::std::option::Option<::std::string::String>,
     /// <p>The Network Firewall stateless rule.</p>
-    #[doc(hidden)]
     pub firewall_stateless_rule: ::std::option::Option<crate::types::FirewallStatelessRule>,
     /// <p>The Network Firewall stateful rule.</p>
-    #[doc(hidden)]
     pub firewall_stateful_rule: ::std::option::Option<crate::types::FirewallStatefulRule>,
 }
 impl Explanation {

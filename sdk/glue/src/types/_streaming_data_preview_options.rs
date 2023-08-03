@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingDataPreviewOptions {
     /// <p>The polling time in milliseconds.</p>
-    #[doc(hidden)]
     pub polling_time: ::std::option::Option<i64>,
     /// <p>The limit to the number of records polled.</p>
-    #[doc(hidden)]
     pub record_polling_limit: ::std::option::Option<i64>,
 }
 impl StreamingDataPreviewOptions {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
-    #[doc(hidden)]
     pub file_header_info: ::std::option::Option<crate::types::FileHeaderInfo>,
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
-    #[doc(hidden)]
     pub comments: ::std::option::Option<::std::string::String>,
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    #[doc(hidden)]
     pub quote_escape_character: ::std::option::Option<::std::string::String>,
     /// <p>A value used to separate individual records from each other.</p>
-    #[doc(hidden)]
     pub record_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    #[doc(hidden)]
     pub field_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    #[doc(hidden)]
     pub quote_character: ::std::option::Option<::std::string::String>,
 }
 impl CsvInput {

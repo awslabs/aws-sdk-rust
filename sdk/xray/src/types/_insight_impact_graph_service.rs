@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightImpactGraphService {
     /// <p>Identifier for the service. Unique within the service map.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<i32>,
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
@@ -14,19 +13,14 @@ pub struct InsightImpactGraphService {
     /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
     /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The canonical name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names for the service, including the canonical name.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Connections to downstream services.</p>
-    #[doc(hidden)]
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
 }
 impl InsightImpactGraphService {

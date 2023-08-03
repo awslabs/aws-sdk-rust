@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationDetails {
     /// <p>The lifecycle rules.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetails {

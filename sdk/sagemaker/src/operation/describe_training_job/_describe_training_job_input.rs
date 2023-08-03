@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrainingJobInput {
     /// <p>The name of the training job.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrainingJobInput {

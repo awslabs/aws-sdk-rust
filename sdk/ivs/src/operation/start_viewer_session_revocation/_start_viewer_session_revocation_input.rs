@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartViewerSessionRevocationInput {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
-    #[doc(hidden)]
     pub viewer_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
-    #[doc(hidden)]
     pub viewer_session_versions_less_than_or_equal_to: i32,
 }
 impl StartViewerSessionRevocationInput {

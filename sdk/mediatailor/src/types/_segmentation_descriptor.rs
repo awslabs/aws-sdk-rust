@@ -7,28 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentationDescriptor {
     /// <p>The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.</p>
-    #[doc(hidden)]
     pub segmentation_event_id: ::std::option::Option<i32>,
     /// <p>The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.</p>
-    #[doc(hidden)]
     pub segmentation_upid_type: ::std::option::Option<i32>,
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
-    #[doc(hidden)]
     pub segmentation_upid: ::std::option::Option<::std::string::String>,
     /// <p>The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.</p>
-    #[doc(hidden)]
     pub segmentation_type_id: ::std::option::Option<i32>,
     /// <p>The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    #[doc(hidden)]
     pub segment_num: ::std::option::Option<i32>,
     /// <p>The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    #[doc(hidden)]
     pub segments_expected: ::std::option::Option<i32>,
     /// <p>The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.</p>
-    #[doc(hidden)]
     pub sub_segment_num: ::std::option::Option<i32>,
     /// <p>The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.</p>
-    #[doc(hidden)]
     pub sub_segments_expected: ::std::option::Option<i32>,
 }
 impl SegmentationDescriptor {

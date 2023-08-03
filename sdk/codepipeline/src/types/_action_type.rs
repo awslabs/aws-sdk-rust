@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionType {
     /// <p>Represents information about an action type.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The settings for the action type.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::ActionTypeSettings>,
     /// <p>The configuration properties for the action type.</p>
-    #[doc(hidden)]
     pub action_configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    #[doc(hidden)]
     pub input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    #[doc(hidden)]
     pub output_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
 }
 impl ActionType {

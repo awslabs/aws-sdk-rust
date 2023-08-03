@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionOutput {
     /// <p>A list of all labels deleted from the parameter.</p>
-    #[doc(hidden)]
     pub removed_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    #[doc(hidden)]
     pub invalid_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

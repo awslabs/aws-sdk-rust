@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentEnaSrdSpecification {
     /// <p>Indicates whether ENA Express is enabled for the network interface that's attached to the instance.</p>
-    #[doc(hidden)]
     pub ena_srd_enabled: ::std::option::Option<bool>,
     /// <p>ENA Express configuration for UDP network traffic.</p>
-    #[doc(hidden)]
     pub ena_srd_udp_specification: ::std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
 }
 impl AttachmentEnaSrdSpecification {

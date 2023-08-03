@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTransitGatewayMulticastGroupMembersOutput {
     /// <p>Information about the deregistered members.</p>
-    #[doc(hidden)]
     pub deregistered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers>,
     _request_id: Option<String>,
 }

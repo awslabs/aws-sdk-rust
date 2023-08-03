@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartUserAccessTasksOutput {
     /// <p>Contains a list of user access task information.</p>
-    #[doc(hidden)]
     pub user_access_tasks_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowInfo {
     /// <p>The number of rows that were ingested.</p>
-    #[doc(hidden)]
     pub rows_ingested: ::std::option::Option<i64>,
     /// <p>The number of rows that were not ingested.</p>
-    #[doc(hidden)]
     pub rows_dropped: ::std::option::Option<i64>,
     /// <p>The total number of rows in the dataset.</p>
-    #[doc(hidden)]
     pub total_rows_in_dataset: ::std::option::Option<i64>,
 }
 impl RowInfo {

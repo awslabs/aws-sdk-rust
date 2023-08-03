@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskStartedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl TaskStartedEventDetails {

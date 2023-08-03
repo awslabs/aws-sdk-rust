@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    #[doc(hidden)]
     pub phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,
 }

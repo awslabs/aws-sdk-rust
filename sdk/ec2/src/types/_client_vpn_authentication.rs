@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnAuthentication {
     /// <p>The authentication type used.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ClientVpnAuthenticationType>,
     /// <p>Information about the Active Directory, if applicable.</p>
-    #[doc(hidden)]
     pub active_directory: ::std::option::Option<crate::types::DirectoryServiceAuthentication>,
     /// <p>Information about the authentication certificates, if applicable.</p>
-    #[doc(hidden)]
     pub mutual_authentication: ::std::option::Option<crate::types::CertificateAuthentication>,
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    #[doc(hidden)]
     pub federated_authentication: ::std::option::Option<crate::types::FederatedAuthentication>,
 }
 impl ClientVpnAuthentication {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentGroupOutput {
     /// <p>A unique deployment group ID.</p>
-    #[doc(hidden)]
     pub deployment_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -19,10 +19,8 @@ pub struct ExpenseCurrency {
     /// <li> <p>SEK</p> </li>
     /// <li> <p>HKD</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Percentage confideence in the detected currency.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl ExpenseCurrency {

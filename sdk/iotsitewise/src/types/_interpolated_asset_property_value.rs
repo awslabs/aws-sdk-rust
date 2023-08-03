@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::TimeInNanos>,
     /// <p>Contains an asset property value (of a single type only).</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::Variant>,
 }
 impl InterpolatedAssetPropertyValue {

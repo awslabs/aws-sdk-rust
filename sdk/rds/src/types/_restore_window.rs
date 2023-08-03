@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreWindow {
     /// <p>The earliest time you can restore an instance to.</p>
-    #[doc(hidden)]
     pub earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest time you can restore an instance to.</p>
-    #[doc(hidden)]
     pub latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RestoreWindow {

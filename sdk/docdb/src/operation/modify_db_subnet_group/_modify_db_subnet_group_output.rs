@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDefaultRetentionPolicyInput {

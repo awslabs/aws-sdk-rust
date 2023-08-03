@@ -14,13 +14,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafEntityMigrationException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub migration_error_type: ::std::option::Option<crate::types::MigrationErrorType>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub migration_error_reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

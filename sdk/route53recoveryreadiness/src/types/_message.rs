@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The text of a readiness check message.</p>
-    #[doc(hidden)]
     pub message_text: ::std::option::Option<::std::string::String>,
 }
 impl Message {

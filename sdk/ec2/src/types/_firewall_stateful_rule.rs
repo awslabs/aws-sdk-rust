@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallStatefulRule {
     /// <p>The ARN of the stateful rule group.</p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source IP addresses, in CIDR notation.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source ports.</p>
-    #[doc(hidden)]
     pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The destination ports.</p>
-    #[doc(hidden)]
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<::std::string::String>,
     /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<::std::string::String>,
 }
 impl FirewallStatefulRule {

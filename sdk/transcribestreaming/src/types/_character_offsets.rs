@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
-    #[doc(hidden)]
     pub begin: ::std::option::Option<i32>,
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<i32>,
 }
 impl CharacterOffsets {

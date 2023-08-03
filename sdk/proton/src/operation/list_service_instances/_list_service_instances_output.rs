@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceInstancesOutput {
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service instances with summary data.</p>
-    #[doc(hidden)]
     pub service_instances: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
     _request_id: Option<String>,
 }

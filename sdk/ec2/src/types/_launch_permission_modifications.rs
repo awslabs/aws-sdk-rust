@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchPermissionModifications {
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
-    #[doc(hidden)]
     pub add: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
-    #[doc(hidden)]
     pub remove: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
 }
 impl LaunchPermissionModifications {

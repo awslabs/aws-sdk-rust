@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBatchJobDefinitionsOutput {
     /// <p>The list of batch job definitions.</p>
-    #[doc(hidden)]
     pub batch_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

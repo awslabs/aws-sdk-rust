@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
-    #[doc(hidden)]
     pub dedicated_master_count: i32,
     /// <p>Whether to use a dedicated master node for the Elasticsearch domain. A dedicated master node performs cluster management tasks, but doesn't hold data or respond to data upload requests.</p>
-    #[doc(hidden)]
     pub dedicated_master_enabled: bool,
     /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dedicated_master_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of data nodes to use in the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub zone_awareness_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
     /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, OpenSearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
-    #[doc(hidden)]
     pub zone_awareness_enabled: bool,
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {

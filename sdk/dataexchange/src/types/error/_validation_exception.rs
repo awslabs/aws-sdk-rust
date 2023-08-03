@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The message that informs you about what was invalid about the request.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the resource that couldn't be found.</p>
-    #[doc(hidden)]
     pub exception_cause: ::std::option::Option<crate::types::ExceptionCause>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

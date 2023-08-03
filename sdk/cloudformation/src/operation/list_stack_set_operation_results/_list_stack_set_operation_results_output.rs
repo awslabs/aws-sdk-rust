@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackSetOperationResultsOutput {
     /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
-    #[doc(hidden)]
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationResultSummary>>,
     /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

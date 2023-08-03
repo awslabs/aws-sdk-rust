@@ -8,13 +8,10 @@ pub struct DeleteProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The plan identifier.</p>
-    #[doc(hidden)]
     pub plan_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    #[doc(hidden)]
     pub ignore_errors: ::std::option::Option<bool>,
 }
 impl DeleteProvisionedProductPlanInput {

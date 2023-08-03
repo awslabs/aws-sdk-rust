@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallPolicy {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
-    #[doc(hidden)]
     pub firewall_deployment_model: ::std::option::Option<crate::types::FirewallDeploymentModel>,
 }
 impl NetworkFirewallPolicy {

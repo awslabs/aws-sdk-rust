@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the entity.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the entity.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated with the unique identifier for the entity.</p>
-    #[doc(hidden)]
     pub entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<::std::string::String>,
 }
 impl EntitySummary {

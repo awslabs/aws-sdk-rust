@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline reprocessing.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReprocessingStatus>,
     /// <p>The time the pipeline reprocessing was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReprocessingSummary {

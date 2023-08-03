@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisParameters {

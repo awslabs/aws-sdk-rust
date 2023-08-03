@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamKeyOutput {
     /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
-    #[doc(hidden)]
     pub stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableAggregatedFieldWells {
     /// <p>The group by field well for a pivot table. Values are grouped by group by fields.</p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values field well for a pivot table. Values are aggregated based on group by fields.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl TableAggregatedFieldWells {

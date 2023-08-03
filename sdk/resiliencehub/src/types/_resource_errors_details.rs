@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
-    #[doc(hidden)]
     pub resource_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
-    #[doc(hidden)]
     pub has_more_errors: ::std::option::Option<bool>,
 }
 impl ResourceErrorsDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceMatch {
     /// <p>Confidence in the match of this face with the input face.</p>
-    #[doc(hidden)]
     pub similarity: ::std::option::Option<f32>,
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::Face>,
 }
 impl FaceMatch {

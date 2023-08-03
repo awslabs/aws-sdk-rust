@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl CreateResourceInput {

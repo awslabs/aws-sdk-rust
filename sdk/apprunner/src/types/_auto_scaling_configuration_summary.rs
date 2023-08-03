@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_revision: i32,
 }
 impl AutoScalingConfigurationSummary {

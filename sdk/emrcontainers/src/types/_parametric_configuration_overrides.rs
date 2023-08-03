@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParametricConfigurationOverrides {
     /// <p> The configurations for the application running by the job run.</p>
-    #[doc(hidden)]
     pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p> The configurations for monitoring. </p>
-    #[doc(hidden)]
     pub monitoring_configuration: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
 }
 impl ParametricConfigurationOverrides {

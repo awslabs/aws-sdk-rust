@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The type of name to filter by.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more values for the name to filter by.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator for filtering results.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl Filter {

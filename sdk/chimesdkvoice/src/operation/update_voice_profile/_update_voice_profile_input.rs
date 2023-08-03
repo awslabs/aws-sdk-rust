@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVoiceProfileInput {
     /// <p>The profile ID.</p>
-    #[doc(hidden)]
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the speaker search task.</p>
-    #[doc(hidden)]
     pub speaker_search_task_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVoiceProfileInput {

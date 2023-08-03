@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrokClassifier {
     /// <p>The name of the classifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
-    #[doc(hidden)]
     pub grok_pattern: ::std::option::Option<::std::string::String>,
     /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
-    #[doc(hidden)]
     pub custom_patterns: ::std::option::Option<::std::string::String>,
 }
 impl GrokClassifier {

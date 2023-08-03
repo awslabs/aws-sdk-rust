@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventOrchestration {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-    #[doc(hidden)]
     pub event_bridge_enabled: ::std::option::Option<bool>,
 }
 impl EventOrchestration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationStep {
     /// <p>Information about the step and its status.</p>
-    #[doc(hidden)]
     pub step_info: ::std::option::Option<crate::types::ClusterOperationStepInfo>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
 }
 impl ClusterOperationStep {

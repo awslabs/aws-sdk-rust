@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyFilter {
     /// <p>The property name associated with this property filter.</p>
-    #[doc(hidden)]
     pub property_name: ::std::option::Option<::std::string::String>,
     /// <p>The operator associated with this property filter.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with this property filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyFilter {

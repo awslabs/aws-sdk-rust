@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInferenceSchedulerInput {

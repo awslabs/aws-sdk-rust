@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataInput {
     /// <p>The identifier for the bot for which you want to retrieve utterance analytics.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance analytics.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance analytics.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object specifying the measure and method by which to sort the utterance analytics data.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::UtteranceDataSortBy>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUtteranceAnalyticsDataInput {

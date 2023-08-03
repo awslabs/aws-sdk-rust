@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentInput {
     /// <p>Network service descriptor file.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>Network package content type.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::PackageContentType>,
     /// <p>Network package file.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ValidateSolNetworkPackageContentInput {

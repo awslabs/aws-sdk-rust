@@ -6,13 +6,10 @@
 pub struct UpdateUserPoolDomainInput {
     /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. One example might be <code>auth.example.com</code>. </p>
     /// <p>This string can include only lowercase letters, numbers, and hyphens. Don't use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user pool that is associated with the custom domain whose certificate you're updating.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    #[doc(hidden)]
     pub custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
 }
 impl UpdateUserPoolDomainInput {

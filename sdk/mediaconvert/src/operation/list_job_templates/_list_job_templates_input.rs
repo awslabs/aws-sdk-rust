@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobTemplatesInput {
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-    #[doc(hidden)]
     pub list_by: ::std::option::Option<crate::types::JobTemplateListBy>,
     /// Optional. Number of job templates, up to twenty, that will be returned at one time.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
 }
 impl ListJobTemplatesInput {

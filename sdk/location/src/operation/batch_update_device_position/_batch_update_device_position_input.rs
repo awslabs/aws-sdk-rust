@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
 }
 impl BatchUpdateDevicePositionInput {

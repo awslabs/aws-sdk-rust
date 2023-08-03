@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct App {
     /// <p>The application's name.</p>
-    #[doc(hidden)]
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The application's port number, for example <code>80</code>.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i64>,
 }
 impl App {

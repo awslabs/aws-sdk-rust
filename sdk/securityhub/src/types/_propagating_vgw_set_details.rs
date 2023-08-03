@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropagatingVgwSetDetails {
     /// <p> The ID of the virtual private gateway. </p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl PropagatingVgwSetDetails {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The conditions.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     /// <p>The actions.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
 }
 impl ModifyRuleInput {

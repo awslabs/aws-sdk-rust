@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationErrorItem {
     /// <p>The error description.</p>
-    #[doc(hidden)]
     pub error_description: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationErrorItem {

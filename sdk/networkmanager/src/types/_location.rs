@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The physical address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The latitude.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<::std::string::String>,
     /// <p>The longitude.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<::std::string::String>,
 }
 impl Location {

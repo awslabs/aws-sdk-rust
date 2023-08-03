@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The error message that indicates why the batch item failed. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedBatchItem {

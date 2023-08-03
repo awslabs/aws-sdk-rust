@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsManifestCreateOrUpdateParameters {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
-    #[doc(hidden)]
     pub ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    #[doc(hidden)]
     pub ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    #[doc(hidden)]
     pub ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// When enabled, an I-Frame only stream will be included in the output.
-    #[doc(hidden)]
     pub include_iframe_only_stream: ::std::option::Option<bool>,
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
-    #[doc(hidden)]
     pub playlist_type: ::std::option::Option<crate::types::PlaylistType>,
     /// Time window (in seconds) contained in each parent manifest.
-    #[doc(hidden)]
     pub playlist_window_seconds: ::std::option::Option<i32>,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-    #[doc(hidden)]
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
 }
 impl HlsManifestCreateOrUpdateParameters {

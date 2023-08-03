@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceOutput {
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    #[doc(hidden)]
     pub token_balances: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
     _request_id: Option<String>,
 }

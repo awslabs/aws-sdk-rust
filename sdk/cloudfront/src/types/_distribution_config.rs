@@ -7,10 +7,8 @@ pub struct DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root object avoids exposing the contents of your distribution.</p>
     /// <p>Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -18,19 +16,14 @@ pub struct DistributionConfig {
     /// <p>To delete the default root object from an existing distribution, update the distribution configuration and include an empty <code>DefaultRootObject</code> element.</p>
     /// <p>To replace the default root object, update the distribution configuration and specify the new object.</p>
     /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub default_root_object: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about origins for this distribution.</p>
-    #[doc(hidden)]
     pub origins: ::std::option::Option<crate::types::Origins>,
     /// <p>A complex type that contains information about origin groups for this distribution.</p>
-    #[doc(hidden)]
     pub origin_groups: ::std::option::Option<crate::types::OriginGroups>,
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::DefaultCacheBehavior>,
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<crate::types::CacheBehaviors>,
     /// <p>A complex type that controls the following:</p>
     /// <ul>
@@ -38,37 +31,28 @@ pub struct DistributionConfig {
     /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your objects from all CloudFront edge locations.</p>
     /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your objects from the CloudFront edge location that has the lowest latency among the edge locations in your price class. Viewers who are in or near regions that are excluded from your specified price class may encounter slower performance.</p>
     /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.</p>
-    #[doc(hidden)]
     pub price_class: ::std::option::Option<crate::types::PriceClass>,
     /// <p>From this field, you can enable or disable the selected distribution.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
-    #[doc(hidden)]
     pub viewer_certificate: ::std::option::Option<crate::types::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::Restrictions>,
     /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
     /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
     /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
     /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
-    #[doc(hidden)]
     pub http_version: ::std::option::Option<crate::types::HttpVersion>,
     /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second request, for an IPv4 address for your distribution.</p>
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -79,13 +63,10 @@ pub struct DistributionConfig {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
-    #[doc(hidden)]
     pub is_ipv6_enabled: ::std::option::Option<bool>,
     /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
-    #[doc(hidden)]
     pub staging: ::std::option::Option<bool>,
 }
 impl DistributionConfig {

@@ -5,10 +5,8 @@
 pub struct ListCidrLocationsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the list of CIDR locations.</p>
-    #[doc(hidden)]
     pub cidr_locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationSummary>>,
     _request_id: Option<String>,
 }

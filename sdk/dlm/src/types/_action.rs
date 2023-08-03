@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>A descriptive name for the action.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    #[doc(hidden)]
     pub cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
 }
 impl Action {

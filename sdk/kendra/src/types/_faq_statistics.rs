@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaqStatistics {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
-    #[doc(hidden)]
     pub indexed_question_answers_count: i32,
 }
 impl FaqStatistics {

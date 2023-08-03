@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyInput {
     /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetDataProtectionPolicyInput {

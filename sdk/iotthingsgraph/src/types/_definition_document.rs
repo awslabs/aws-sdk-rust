@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::DefinitionLanguage>,
     /// <p>The GraphQL text that defines the entity.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DefinitionDocument {

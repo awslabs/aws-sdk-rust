@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedDbInstancesOfferingOutput {
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
-    #[doc(hidden)]
     pub reserved_db_instance: ::std::option::Option<crate::types::ReservedDbInstance>,
     _request_id: Option<String>,
 }

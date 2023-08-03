@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableObjectsInput {
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database containing the governed table.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The governed table for which to retrieve objects.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-    #[doc(hidden)]
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
@@ -24,13 +19,10 @@ pub struct GetTableObjectsInput {
     /// <li> <p>The logical operators supported are: AND</p> </li>
     /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub partition_predicate: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how many values to return in a page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTableObjectsInput {

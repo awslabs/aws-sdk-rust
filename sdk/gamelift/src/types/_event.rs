@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>A unique identifier for a fleet event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of event being logged. </p>
     /// <p> <b>Fleet state transition events:</b> </p>
@@ -65,16 +63,12 @@ pub struct Event {
     /// <li> <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li>
     /// <li> <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_code: ::std::option::Option<crate::types::EventCode>,
     /// <p>Additional information related to the event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
-    #[doc(hidden)]
     pub pre_signed_log_url: ::std::option::Option<::std::string::String>,
 }
 impl Event {

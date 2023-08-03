@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableFastSnapshotRestoreStateErrorItem {
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::DisableFastSnapshotRestoreStateError>,
 }
 impl DisableFastSnapshotRestoreStateErrorItem {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfiguredTableAnalysisRuleInput {
     /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
-    #[doc(hidden)]
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    #[doc(hidden)]
     pub analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
 }
 impl GetConfiguredTableAnalysisRuleInput {

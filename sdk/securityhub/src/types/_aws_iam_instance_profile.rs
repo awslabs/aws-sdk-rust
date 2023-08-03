@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamInstanceProfile {
     /// <p>The ARN of the instance profile.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the instance profile was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the instance profile.</p>
-    #[doc(hidden)]
     pub instance_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance profile.</p>
-    #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the instance profile.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The roles associated with the instance profile.</p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
 }
 impl AwsIamInstanceProfile {

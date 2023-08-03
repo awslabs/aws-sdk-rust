@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceGroupState>,
     /// <p>The status change reason details for the instance group.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::InstanceGroupStateChangeReason>,
     /// <p>The timeline of the instance group status over time.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::InstanceGroupTimeline>,
 }
 impl InstanceGroupStatus {

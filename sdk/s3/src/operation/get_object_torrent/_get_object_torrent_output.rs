@@ -6,7 +6,6 @@ pub struct GetObjectTorrentOutput {
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
     pub body: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

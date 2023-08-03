@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobRateIncreaseCriteria {
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
-    #[doc(hidden)]
     pub number_of_notified_things: ::std::option::Option<i32>,
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
-    #[doc(hidden)]
     pub number_of_succeeded_things: ::std::option::Option<i32>,
 }
 impl IoTJobRateIncreaseCriteria {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobOutput {
     /// <p>Contains details about the specified speaker enrollment job.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::SpeakerEnrollmentJob>,
     _request_id: Option<String>,
 }

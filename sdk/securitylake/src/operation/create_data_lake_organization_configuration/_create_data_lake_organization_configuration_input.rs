@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataLakeOrganizationConfigurationInput {
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    #[doc(hidden)]
     pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
 impl CreateDataLakeOrganizationConfigurationInput {

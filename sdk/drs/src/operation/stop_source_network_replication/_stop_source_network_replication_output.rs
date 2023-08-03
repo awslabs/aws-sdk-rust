@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopSourceNetworkReplicationOutput {
     /// <p>Source Network which was requested to stop replication.</p>
-    #[doc(hidden)]
     pub source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,
 }

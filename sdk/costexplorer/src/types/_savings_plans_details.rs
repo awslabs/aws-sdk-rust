@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansDetails {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A group of instance types that Savings Plans applies to.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansDetails {

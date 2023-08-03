@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the notification rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the event types associated with the notification rule.</p>
-    #[doc(hidden)]
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NotificationRuleStatus>,
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

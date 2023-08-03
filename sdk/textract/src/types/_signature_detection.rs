@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignatureDetection {
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
 }
 impl SignatureDetection {

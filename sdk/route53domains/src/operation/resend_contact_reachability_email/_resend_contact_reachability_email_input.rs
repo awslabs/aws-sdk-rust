@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailInput {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl ResendContactReachabilityEmailInput {

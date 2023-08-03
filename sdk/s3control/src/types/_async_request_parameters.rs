@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncRequestParameters {
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
-    #[doc(hidden)]
     pub create_multi_region_access_point_request: ::std::option::Option<crate::types::CreateMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
-    #[doc(hidden)]
     pub delete_multi_region_access_point_request: ::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
-    #[doc(hidden)]
     pub put_multi_region_access_point_policy_request: ::std::option::Option<crate::types::PutMultiRegionAccessPointPolicyInput>,
 }
 impl AsyncRequestParameters {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculatedField {
     /// <p>The data set that is used in this calculated field.</p>
-    #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the calculated field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the calculated field.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedField {

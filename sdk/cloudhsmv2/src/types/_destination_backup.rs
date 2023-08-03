@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_backup: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_cluster: ::std::option::Option<::std::string::String>,
 }
 impl DestinationBackup {

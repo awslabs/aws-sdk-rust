@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
-    #[doc(hidden)]
     pub verification_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>>,
     _request_id: Option<String>,

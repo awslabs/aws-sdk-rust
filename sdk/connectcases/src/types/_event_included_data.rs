@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventIncludedData {
     /// <p>Details of what case data is published through the case event stream.</p>
-    #[doc(hidden)]
     pub case_data: ::std::option::Option<crate::types::CaseEventIncludedData>,
     /// <p>Details of what related item data is published through the case event stream.</p>
-    #[doc(hidden)]
     pub related_item_data: ::std::option::Option<crate::types::RelatedItemEventIncludedData>,
 }
 impl EventIncludedData {

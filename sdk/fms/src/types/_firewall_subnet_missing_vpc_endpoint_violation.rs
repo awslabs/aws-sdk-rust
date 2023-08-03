@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
-    #[doc(hidden)]
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallSubnetMissingVpcEndpointViolation {

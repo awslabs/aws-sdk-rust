@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The starting time of validity of the public key.</p>
-    #[doc(hidden)]
     pub validity_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending time of validity of the public key.</p>
-    #[doc(hidden)]
     pub validity_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fingerprint of the public key.</p>
-    #[doc(hidden)]
     pub fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl PublicKey {

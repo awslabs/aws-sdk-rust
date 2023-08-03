@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    #[doc(hidden)]
     pub schedule_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

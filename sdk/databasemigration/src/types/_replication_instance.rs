@@ -12,11 +12,9 @@ pub struct ReplicationInstance {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
-    #[doc(hidden)]
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    #[doc(hidden)]
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
@@ -34,79 +32,56 @@ pub struct ReplicationInstance {
     /// <li> <p> <code>"incompatible-network"</code> </p> </li>
     /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The time the replication instance was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The VPC security group for the instance.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The Availability Zone for the instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The subnet group for the replication instance.</p>
-    #[doc(hidden)]
     pub replication_subnet_group: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     /// <p>The maintenance window times for the replication instance. Any pending upgrades to the replication instance are performed during this time.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The pending modification values.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value indicating if minor version upgrades will be automatically applied to the instance.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address of the replication instance.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub replication_instance_public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the replication instance.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub replication_instance_private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>One or more public IP addresses for the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more private IP addresses for the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The Availability Zone of the standby replication instance in a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
-    #[doc(hidden)]
     pub free_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
-    #[doc(hidden)]
     pub dns_name_servers: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationInstance {

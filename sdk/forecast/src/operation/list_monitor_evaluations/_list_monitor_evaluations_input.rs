@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitorEvaluationsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of monitoring results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -21,7 +18,6 @@ pub struct ListMonitorEvaluationsInput {
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListMonitorEvaluationsInput {

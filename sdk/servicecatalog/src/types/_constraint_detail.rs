@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConstraintDetail {
     /// <p>The identifier of the constraint.</p>
-    #[doc(hidden)]
     pub constraint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -14,19 +13,14 @@ pub struct ConstraintDetail {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the constraint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the constraint.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
 }
 impl ConstraintDetail {

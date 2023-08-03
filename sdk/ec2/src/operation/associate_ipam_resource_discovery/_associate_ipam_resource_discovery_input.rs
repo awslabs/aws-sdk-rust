@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIpamResourceDiscoveryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>An IPAM ID.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>A resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>Tag specifications.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIpamResourceDiscoveryInput {

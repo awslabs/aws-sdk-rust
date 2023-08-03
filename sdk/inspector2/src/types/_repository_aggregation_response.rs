@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The number of container images impacted by the findings.</p>
-    #[doc(hidden)]
     pub affected_images: ::std::option::Option<i64>,
 }
 impl RepositoryAggregationResponse {

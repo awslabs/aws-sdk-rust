@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
 }
 impl NotificationDestinationConfig {

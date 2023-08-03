@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenHours {
     /// <p>Specifies the schedule settings for the email channel.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    #[doc(hidden)]
     pub sms: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the push channel.</p>
-    #[doc(hidden)]
     pub push: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    #[doc(hidden)]
     pub voice: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    #[doc(hidden)]
     pub custom: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
 }
 impl OpenHours {

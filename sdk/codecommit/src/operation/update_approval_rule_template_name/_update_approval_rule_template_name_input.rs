@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateNameInput {
     /// <p>The current name of the approval rule template.</p>
-    #[doc(hidden)]
     pub old_approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name you want to apply to the approval rule template.</p>
-    #[doc(hidden)]
     pub new_approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApprovalRuleTemplateNameInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrainingJobInput {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
-    #[doc(hidden)]
     pub profiler_config: ::std::option::Option<crate::types::ProfilerConfigForUpdate>,
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    #[doc(hidden)]
     pub profiler_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::ResourceConfigForUpdate>,
 }
 impl UpdateTrainingJobInput {

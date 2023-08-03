@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Consolidation {
     /// <p>A list of matching criteria.</p>
-    #[doc(hidden)]
     pub matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl Consolidation {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalyResource {
     /// <p> The name of the resource. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The type of the resource. Resource types take the same form that is used by Amazon Web Services CloudFormation resource type identifiers, <code>service-provider::service-name::data-type-name</code>. For example, <code>AWS::RDS::DBCluster</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomalyResource {

@@ -10,11 +10,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Subscriber {
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
-    #[doc(hidden)]
     pub subscription_type: ::std::option::Option<crate::types::SubscriptionType>,
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
 }
 impl Subscriber {

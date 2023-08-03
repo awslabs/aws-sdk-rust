@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    #[doc(hidden)]
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
     /// <p>Access permissions string used for this user.</p>
-    #[doc(hidden)]
     pub access_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUserInput {

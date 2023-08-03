@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VcenterBasedRemoteInfo {
     /// <p>The time when the remote server based on vCenter was last configured.</p>
-    #[doc(hidden)]
     pub vcenter_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     /// <p>The type of the operating system.</p>
-    #[doc(hidden)]
     pub os_type: ::std::option::Option<crate::types::OsType>,
 }
 impl VcenterBasedRemoteInfo {

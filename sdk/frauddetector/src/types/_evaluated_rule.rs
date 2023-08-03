@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EvaluatedRule {
     /// <p> The rule ID. </p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p> The rule version. </p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<::std::string::String>,
     /// <p> The rule expression. </p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p> The rule expression value. </p>
-    #[doc(hidden)]
     pub expression_with_values: ::std::option::Option<::std::string::String>,
     /// <p> The rule outcome. </p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Indicates whether the rule was evaluated. </p>
-    #[doc(hidden)]
     pub evaluated: ::std::option::Option<bool>,
     /// <p> Indicates whether the rule matched. </p>
-    #[doc(hidden)]
     pub matched: ::std::option::Option<bool>,
 }
 impl EvaluatedRule {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDirectoriesOutput {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    #[doc(hidden)]
     pub directories: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

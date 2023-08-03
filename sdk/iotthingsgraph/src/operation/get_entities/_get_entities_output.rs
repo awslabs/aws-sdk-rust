@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEntitiesOutput {
     /// <p>An array of descriptions for the specified entities.</p>
-    #[doc(hidden)]
     pub descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>>,
     _request_id: Option<String>,
 }

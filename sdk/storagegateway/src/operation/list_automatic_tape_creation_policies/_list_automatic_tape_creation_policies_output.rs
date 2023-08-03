@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
-    #[doc(hidden)]
     pub automatic_tape_creation_policy_infos: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
     _request_id: Option<String>,
 }

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateEnvironmentOutput {
     /// <p>The name of this environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of this environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application associated with this environment.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The application version deployed in this environment.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template used to originally launch this environment.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes this environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
-    #[doc(hidden)]
     pub cname: ::std::option::Option<::std::string::String>,
     /// <p>The creation date for this environment.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     /// <ul>
@@ -48,12 +36,10 @@ pub struct TerminateEnvironmentOutput {
     /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
     /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
     /// <p> <code>true:</code> There is an update in progress. </p>
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
-    #[doc(hidden)]
     pub abortable_operation_in_progress: ::std::option::Option<bool>,
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
@@ -63,25 +49,18 @@ pub struct TerminateEnvironmentOutput {
     /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
     /// <p> Default: <code>Grey</code> </p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::EnvironmentResourcesDescription>,
     /// <p>Describes the current tier of this environment.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::EnvironmentTier>,
     /// <p>A list of links to other environments in the same group.</p>
-    #[doc(hidden)]
     pub environment_links: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub operations_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

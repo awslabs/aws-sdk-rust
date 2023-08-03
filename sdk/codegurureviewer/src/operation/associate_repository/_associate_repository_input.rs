@@ -4,24 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRepositoryInput {
     /// <p>The repository to associate.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::Repository>,
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
     /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_details: ::std::option::Option<crate::types::KmsKeyDetails>,
 }
 impl AssociateRepositoryInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelManifestInput {
     /// <p> The name of the vehicle model to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the vehicle model. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the vehicle model.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelManifestInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SymbolicLink {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-    #[doc(hidden)]
     pub absolute_path: ::std::option::Option<::std::string::String>,
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl SymbolicLink {

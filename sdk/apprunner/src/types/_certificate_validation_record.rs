@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateValidationRecord {
     /// <p>The certificate CNAME record name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The record type, always <code>CNAME</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The certificate CNAME record value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateValidationRecordStatus>,
 }
 impl CertificateValidationRecord {

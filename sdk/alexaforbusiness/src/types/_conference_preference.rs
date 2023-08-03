@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
-    #[doc(hidden)]
     pub default_conference_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConferencePreference {

@@ -5,13 +5,10 @@
 pub struct ListResourceRequestsInput {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filter criteria to apply to the requests returned.</p>
-    #[doc(hidden)]
     pub resource_request_status_filter: ::std::option::Option<crate::types::ResourceRequestStatusFilter>,
 }
 impl ListResourceRequestsInput {

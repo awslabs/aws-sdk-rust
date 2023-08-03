@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingAcceleratorOutput {
     /// <p>The accelerator that is created.</p>
-    #[doc(hidden)]
     pub accelerator: ::std::option::Option<crate::types::CustomRoutingAccelerator>,
     _request_id: Option<String>,
 }

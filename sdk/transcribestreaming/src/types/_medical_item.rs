@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalItem {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
-    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time, in milliseconds, of the transcribed item.</p>
-    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ItemType>,
     /// <p>The word or punctuation that was transcribed.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f64>,
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    #[doc(hidden)]
     pub speaker: ::std::option::Option<::std::string::String>,
 }
 impl MedicalItem {

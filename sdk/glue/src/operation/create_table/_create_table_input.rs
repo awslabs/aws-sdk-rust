@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
-    #[doc(hidden)]
     pub table_input: ::std::option::Option<crate::types::TableInput>,
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    #[doc(hidden)]
     pub partition_indexes: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
     /// <p>The ID of the transaction.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    #[doc(hidden)]
     pub open_table_format_input: ::std::option::Option<crate::types::OpenTableFormatInput>,
 }
 impl CreateTableInput {

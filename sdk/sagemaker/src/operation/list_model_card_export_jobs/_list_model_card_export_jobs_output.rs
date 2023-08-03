@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelCardExportJobsOutput {
     /// <p>The summaries of the listed model card export jobs.</p>
-    #[doc(hidden)]
     pub model_card_export_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardExportJobSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

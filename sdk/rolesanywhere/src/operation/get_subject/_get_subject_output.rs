@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubjectOutput {
     /// <p>The state of the subject after a read or write operation.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<crate::types::SubjectDetail>,
     _request_id: Option<String>,
 }

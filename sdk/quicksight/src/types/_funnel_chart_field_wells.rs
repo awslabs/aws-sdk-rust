@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartFieldWells {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    #[doc(hidden)]
     pub funnel_chart_aggregated_field_wells: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
 }
 impl FunnelChartFieldWells {

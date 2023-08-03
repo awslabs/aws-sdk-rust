@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignEmailMessage {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
-    #[doc(hidden)]
     pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, of the email.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
 }
 impl CampaignEmailMessage {

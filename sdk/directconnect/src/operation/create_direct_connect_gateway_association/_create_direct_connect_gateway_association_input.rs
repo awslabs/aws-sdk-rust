@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
     /// <p>This parameter is required when you create an association to a transit gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
-    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateDirectConnectGatewayAssociationInput {

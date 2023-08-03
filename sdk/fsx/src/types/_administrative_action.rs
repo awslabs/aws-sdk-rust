@@ -19,13 +19,10 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
     /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub administrative_action_type: ::std::option::Option<crate::types::AdministrativeActionType>,
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
-    #[doc(hidden)]
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time that the administrative action request was received.</p>
-    #[doc(hidden)]
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the status of the administrative action, as follows:</p>
     /// <ul>
@@ -35,19 +32,14 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
     /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-    #[doc(hidden)]
     pub target_file_system_values: ::std::option::Option<crate::types::FileSystem>,
     /// <p>Provides information about a failed administrative action.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::AdministrativeActionFailureDetails>,
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    #[doc(hidden)]
     pub target_volume_values: ::std::option::Option<crate::types::Volume>,
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
-    #[doc(hidden)]
     pub target_snapshot_values: ::std::option::Option<crate::types::Snapshot>,
 }
 impl AdministrativeAction {

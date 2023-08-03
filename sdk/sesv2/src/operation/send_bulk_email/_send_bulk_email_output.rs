@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-    #[doc(hidden)]
     pub bulk_email_entry_results: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>>,
     _request_id: Option<String>,
 }

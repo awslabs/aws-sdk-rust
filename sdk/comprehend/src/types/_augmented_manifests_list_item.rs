@@ -5,30 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AugmentedManifestsListItem {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
     /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
     /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
-    #[doc(hidden)]
     pub split: ::std::option::Option<crate::types::Split>,
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
-    #[doc(hidden)]
     pub annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
-    #[doc(hidden)]
     pub source_documents_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
     /// <ul>
     /// <li> <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p> </li>
     /// <li> <p> <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
 impl AugmentedManifestsListItem {

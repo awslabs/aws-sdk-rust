@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedFlow {
     /// The Availability Zone that the flow was created in.
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// A description of the flow.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The ARN of the flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the flow.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// The current status of the flow.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// The maintenance setting of a flow
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::Maintenance>,
 }
 impl ListedFlow {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    #[doc(hidden)]
     pub trust_anchor_arn: ::std::option::Option<::std::string::String>,
 }
 impl ImportCrlInput {

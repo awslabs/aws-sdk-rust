@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreBackupInput {

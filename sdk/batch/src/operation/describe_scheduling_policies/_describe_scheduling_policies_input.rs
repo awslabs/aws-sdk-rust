@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSchedulingPoliciesInput {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSchedulingPoliciesInput {

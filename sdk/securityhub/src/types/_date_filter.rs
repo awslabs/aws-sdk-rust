@@ -6,14 +6,11 @@
 pub struct DateFilter {
     /// <p>A timestamp that provides the start date for the date filter.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that provides the end date for the date filter.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
     /// <p>A date range for the date filter.</p>
-    #[doc(hidden)]
     pub date_range: ::std::option::Option<crate::types::DateRange>,
 }
 impl DateFilter {

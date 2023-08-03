@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<bool>,
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
-    #[doc(hidden)]
     pub include_subdomains: ::std::option::Option<bool>,
     /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
-    #[doc(hidden)]
     pub preload: ::std::option::Option<bool>,
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
-    #[doc(hidden)]
     pub access_control_max_age_sec: ::std::option::Option<i32>,
 }
 impl ResponseHeadersPolicyStrictTransportSecurity {

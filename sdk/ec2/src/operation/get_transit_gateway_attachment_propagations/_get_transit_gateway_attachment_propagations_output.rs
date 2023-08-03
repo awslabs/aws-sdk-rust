@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayAttachmentPropagationsOutput {
     /// <p>Information about the propagation route tables.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

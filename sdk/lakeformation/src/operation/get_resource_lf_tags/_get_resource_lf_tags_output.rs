@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceLfTagsOutput {
     /// <p>A list of LF-tags applied to a database resource.</p>
-    #[doc(hidden)]
     pub lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags applied to a table resource.</p>
-    #[doc(hidden)]
     pub lf_tags_on_table: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags applied to a column resource.</p>
-    #[doc(hidden)]
     pub lf_tags_on_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
     _request_id: Option<String>,
 }

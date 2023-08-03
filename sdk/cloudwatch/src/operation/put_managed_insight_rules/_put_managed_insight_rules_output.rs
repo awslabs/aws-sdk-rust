@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesOutput {
     /// <p> An array that lists the rules that could not be enabled. </p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
 }

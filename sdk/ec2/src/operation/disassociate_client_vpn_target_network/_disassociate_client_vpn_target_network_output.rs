@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateClientVpnTargetNetworkOutput {
     /// <p>The ID of the target network association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the target network association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssociationStatus>,
     _request_id: Option<String>,
 }

@@ -4,25 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKeyInput {
     /// <p>The name of the API key resource to update.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the description for the API key resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub expire_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
-    #[doc(hidden)]
     pub no_expiry: ::std::option::Option<bool>,
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
     /// <p> <code>False</code> if force update is not preferred</p>
     /// <p>Default value: <code>False</code> </p>
-    #[doc(hidden)]
     pub force_update: ::std::option::Option<bool>,
     /// <p>Updates the API key restrictions for the API key resource.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
 }
 impl UpdateKeyInput {

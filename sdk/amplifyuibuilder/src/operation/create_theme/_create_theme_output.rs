@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeOutput {
     /// <p>Describes the configuration of the new theme.</p>
-    #[doc(hidden)]
     pub entity: ::std::option::Option<crate::types::Theme>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotJobS3Result {
     /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
-    #[doc(hidden)]
     pub s3_destination_configuration: ::std::option::Option<crate::types::SnapshotS3DestinationConfiguration>,
     /// <p>The Amazon S3 Uri.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of error records that describe any failures that occur while the dashboard snapshot job runs.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultErrorInfo>>,
 }
 impl SnapshotJobS3Result {

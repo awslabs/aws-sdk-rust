@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionProperties {
     /// <p>The duration for which data must be stored in the memory store. </p>
-    #[doc(hidden)]
     pub memory_store_retention_period_in_hours: i64,
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    #[doc(hidden)]
     pub magnetic_store_retention_period_in_days: i64,
 }
 impl RetentionProperties {

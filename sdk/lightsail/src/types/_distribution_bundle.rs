@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionBundle {
     /// <p>The ID of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the distribution bundle.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The monthly price, in US dollars, of the bundle.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f32>,
     /// <p>The monthly network transfer quota of the bundle.</p>
-    #[doc(hidden)]
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
 }
 impl DistributionBundle {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetentionSettingsOutput {
     /// <p>The retention settings.</p>
-    #[doc(hidden)]
     pub retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

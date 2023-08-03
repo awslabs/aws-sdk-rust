@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific version of the application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
 }
 impl GetApplicationVersionInput {

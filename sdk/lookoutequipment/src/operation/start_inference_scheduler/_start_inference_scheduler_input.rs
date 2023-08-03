@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl StartInferenceSchedulerInput {

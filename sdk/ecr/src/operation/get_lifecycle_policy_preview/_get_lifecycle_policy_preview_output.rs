@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON lifecycle policy text.</p>
-    #[doc(hidden)]
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The status of the lifecycle policy preview request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The results of the lifecycle policy preview request.</p>
-    #[doc(hidden)]
     pub preview_results: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
     /// <p>The list of images that is returned as a result of the action.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
     _request_id: Option<String>,
 }

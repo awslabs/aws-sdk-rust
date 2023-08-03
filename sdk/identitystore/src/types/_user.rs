@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    #[doc(hidden)]
     pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     /// <p>An object containing the name of the user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::Name>,
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing an alternate name for the user.</p>
-    #[doc(hidden)]
     pub nick_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing a URL that might be associated with the user.</p>
-    #[doc(hidden)]
     pub profile_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    #[doc(hidden)]
     pub emails: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    #[doc(hidden)]
     pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    #[doc(hidden)]
     pub preferred_language: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the geographical region or location of the user.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the time zone of the user.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
 }
 impl User {

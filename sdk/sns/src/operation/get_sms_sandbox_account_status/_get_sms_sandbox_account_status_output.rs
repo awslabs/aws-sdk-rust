@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
-    #[doc(hidden)]
     pub is_in_sandbox: bool,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PciId {
     /// <p>The ID of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the vendor.</p>
-    #[doc(hidden)]
     pub vendor_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subsystem.</p>
-    #[doc(hidden)]
     pub subsystem_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the vendor for the subsystem.</p>
-    #[doc(hidden)]
     pub subsystem_vendor_id: ::std::option::Option<::std::string::String>,
 }
 impl PciId {

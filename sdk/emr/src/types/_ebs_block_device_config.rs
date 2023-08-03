@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    #[doc(hidden)]
     pub volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
-    #[doc(hidden)]
     pub volumes_per_instance: ::std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfig {

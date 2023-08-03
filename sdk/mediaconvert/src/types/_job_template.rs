@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTemplate {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    #[doc(hidden)]
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// An identifier for this resource that is unique within all of AWS.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// An optional category you create to organize your job templates.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for Job template creation.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description you create for each job template.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// Optional list of hop destinations.
-    #[doc(hidden)]
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The timestamp in epoch seconds when the Job template was last updated.
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A name you create for each job template. Each name must be unique within your account.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Relative priority on the job.
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    #[doc(hidden)]
     pub queue: ::std::option::Option<::std::string::String>,
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::JobTemplateSettings>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    #[doc(hidden)]
     pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl JobTemplate {

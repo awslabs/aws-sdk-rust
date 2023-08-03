@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

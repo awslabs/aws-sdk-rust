@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::Validation>,
 }
 impl UpdateResolverDnssecConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectPeerOutput {
     /// <p>The response to the request.</p>
-    #[doc(hidden)]
     pub connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,
 }

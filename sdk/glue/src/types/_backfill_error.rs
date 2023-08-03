@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackfillError {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::BackfillErrorCode>,
     /// <p>A list of a limited number of partitions in the response.</p>
-    #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BackfillError {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppImageConfigInput {
     /// <p>The name of the AppImageConfig to describe.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppImageConfigInput {

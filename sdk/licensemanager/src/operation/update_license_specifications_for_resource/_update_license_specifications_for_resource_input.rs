@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARNs of the license configurations to add.</p>
-    #[doc(hidden)]
     pub add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
     /// <p>ARNs of the license configurations to remove.</p>
-    #[doc(hidden)]
     pub remove_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
 }
 impl UpdateLicenseSpecificationsForResourceInput {

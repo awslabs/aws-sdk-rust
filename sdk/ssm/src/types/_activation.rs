@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Activation {
     /// <p>The ID created by Systems Manager when you submitted the activation.</p>
-    #[doc(hidden)]
     pub activation_id: ::std::option::Option<::std::string::String>,
     /// <p>A user defined description of the activation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A name for the managed node when it is created.</p>
-    #[doc(hidden)]
     pub default_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (IAM) role to assign to the managed node.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
-    #[doc(hidden)]
     pub registration_limit: i32,
     /// <p>The number of managed nodes already registered with this activation.</p>
-    #[doc(hidden)]
     pub registrations_count: i32,
     /// <p>The date when this activation can no longer be used to register managed nodes.</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the activation is expired.</p>
-    #[doc(hidden)]
     pub expired: bool,
     /// <p>The date the activation was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the activation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Activation {

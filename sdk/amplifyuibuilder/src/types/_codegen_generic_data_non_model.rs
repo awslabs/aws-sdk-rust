@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataNonModel {
     /// <p>The fields in a generic data schema non model.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
 }
 impl CodegenGenericDataNonModel {

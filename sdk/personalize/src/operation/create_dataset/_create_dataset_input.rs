@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
@@ -19,10 +16,8 @@ pub struct CreateDatasetInput {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDatasetInput {

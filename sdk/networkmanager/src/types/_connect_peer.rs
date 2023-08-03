@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectPeer {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment to connect.</p>
-    #[doc(hidden)]
     pub connect_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
     /// <p>The Connect peer Regions where edges are located.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Connect peer.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConnectPeerState>,
     /// <p>The timestamp when the Connect peer was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration of the Connect peer.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ConnectPeerConfiguration>,
     /// <p>The list of key-value tags associated with the Connect peer.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ConnectPeer {

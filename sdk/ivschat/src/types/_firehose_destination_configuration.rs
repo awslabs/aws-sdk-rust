@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl FirehoseDestinationConfiguration {

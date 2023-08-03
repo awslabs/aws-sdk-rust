@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedGateway {
     /// The Amazon Resource Name (ARN) of the gateway.
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub gateway_state: ::std::option::Option<crate::types::GatewayState>,
     /// The name of the gateway.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ListedGateway {

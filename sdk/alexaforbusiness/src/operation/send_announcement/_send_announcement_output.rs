@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendAnnouncementOutput {
     /// <p>The identifier of the announcement.</p>
-    #[doc(hidden)]
     pub announcement_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

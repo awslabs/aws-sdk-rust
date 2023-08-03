@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageRuleType {
     /// <p>The amount of storage allocated, in bytes.</p>
-    #[doc(hidden)]
     pub storage_allocated_in_bytes: ::std::option::Option<i64>,
     /// <p>The type of storage.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl StorageRuleType {

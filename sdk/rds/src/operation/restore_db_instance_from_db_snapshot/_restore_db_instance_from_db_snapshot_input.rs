@@ -12,7 +12,6 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
@@ -22,52 +21,42 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Default: The same port as the original DB instance</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>Example: <code>us-east-1a</code> </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
     /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>License model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Same as source.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The database name for the restored DB instance.</p>
     /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for the new instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -87,43 +76,34 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter isn't specified, the IOPS value is taken from the backup. If this parameter is set to 0, the new instance is converted to a non-PIOPS instance. The conversion takes additional time, though your DB instance is available for connections before the conversion starts.</p>
     /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints: Must be an integer greater than 1000.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The name of the option group to be used for the restored DB instance.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub tde_credential_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
@@ -131,7 +111,6 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
@@ -140,12 +119,10 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_ou: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
-    #[doc(hidden)]
     pub domain_auth_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
@@ -153,33 +130,26 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    #[doc(hidden)]
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
     /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub use_default_processor_features: ::std::option::Option<bool>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
@@ -191,17 +161,14 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -211,12 +178,10 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    #[doc(hidden)]
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[doc(hidden)]
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid values:</p>
@@ -226,11 +191,9 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -243,12 +206,10 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>Can't be the identifier of an Aurora DB cluster snapshot.</p> </li>
     /// <li> <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p> <note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {

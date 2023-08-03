@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointMessageResult {
     /// <p>The endpoint address that the message was delivered to.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The delivery status of the message. Possible values are:</p>
     /// <ul>
@@ -18,19 +17,14 @@ pub struct EndpointMessageResult {
     /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The unique identifier for the message that was sent.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The downstream service status code for delivering the message.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
     /// <p>The status message for delivering the message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    #[doc(hidden)]
     pub updated_token: ::std::option::Option<::std::string::String>,
 }
 impl EndpointMessageResult {

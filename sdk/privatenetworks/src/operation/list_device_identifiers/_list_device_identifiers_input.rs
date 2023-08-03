@@ -10,16 +10,12 @@ pub struct ListDeviceIdentifiersInput {
     /// <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::DeviceIdentifierFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub start_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDeviceIdentifiersInput {

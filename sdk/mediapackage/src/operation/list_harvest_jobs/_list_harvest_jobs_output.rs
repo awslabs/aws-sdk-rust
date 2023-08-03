@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHarvestJobsOutput {
     /// A list of HarvestJob records.
-    #[doc(hidden)]
     pub harvest_jobs: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
     /// A token that can be used to resume pagination from the end of the collection.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UnarchiveWaveOutput {
     /// <p>Wave ID.</p>
-    #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Wave ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Wave name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Wave description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Wave archival status.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Wave aggregated status.</p>
-    #[doc(hidden)]
     pub wave_aggregated_status: ::std::option::Option<crate::types::WaveAggregatedStatus>,
     /// <p>Wave creation dateTime.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave last modified dateTime.</p>
-    #[doc(hidden)]
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

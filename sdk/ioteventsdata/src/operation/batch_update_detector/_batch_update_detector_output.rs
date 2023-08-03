@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorOutput {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    #[doc(hidden)]
     pub batch_update_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
     _request_id: Option<String>,
 }

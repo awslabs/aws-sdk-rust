@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    #[doc(hidden)]
     pub change_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsVpcSecurityGroupViolation {
     /// <p>The security group rule that is being evaluated.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security group that violates the policy.</p>
-    #[doc(hidden)]
     pub violation_target_description: ::std::option::Option<::std::string::String>,
     /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
-    #[doc(hidden)]
     pub partial_matches: ::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>>,
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
-    #[doc(hidden)]
     pub possible_security_group_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
 }
 impl AwsVpcSecurityGroupViolation {

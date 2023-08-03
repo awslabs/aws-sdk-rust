@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoMlJobInput {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
     /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. See <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a> for the default values.</p>
-    #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>A collection of settings used to configure an AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_config: ::std::option::Option<crate::types::AutoMlJobConfig>,
     /// <p>The ARN of the role that is used to access the data.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    #[doc(hidden)]
     pub generate_candidate_definitions_only: ::std::option::Option<bool>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
-    #[doc(hidden)]
     pub model_deploy_config: ::std::option::Option<crate::types::ModelDeployConfig>,
 }
 impl CreateAutoMlJobInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdInput {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcesByExternalIdInput {

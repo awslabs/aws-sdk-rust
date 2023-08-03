@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentRequest {
     /// <p>The description of the component request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
     /// <p>The property groups.</p>
-    #[doc(hidden)]
     pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }
 impl ComponentRequest {

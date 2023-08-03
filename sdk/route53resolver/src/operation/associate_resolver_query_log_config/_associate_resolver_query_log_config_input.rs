@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateResolverQueryLogConfigInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparativeOrder {
     /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
-    #[doc(hidden)]
     pub use_ordering: ::std::option::Option<crate::types::ColumnOrderingType>,
     /// <p>The list of columns to be used in the ordering.</p>
-    #[doc(hidden)]
     pub specifed_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
-    #[doc(hidden)]
     pub treat_undefined_specified_values: ::std::option::Option<crate::types::UndefinedSpecifiedValueType>,
 }
 impl ComparativeOrder {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityMetricsOutput {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    #[doc(hidden)]
     pub anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
     _request_id: Option<String>,
 }

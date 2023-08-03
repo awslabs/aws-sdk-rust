@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperienceEndpoint {
     /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>The endpoint of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ExperienceEndpoint {

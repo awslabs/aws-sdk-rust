@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }

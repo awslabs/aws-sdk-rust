@@ -10,10 +10,8 @@ pub struct TcpFlagField {
     /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
     /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    #[doc(hidden)]
     pub masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
 }
 impl TcpFlagField {

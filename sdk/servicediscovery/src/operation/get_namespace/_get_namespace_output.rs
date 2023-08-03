@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,
 }

@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActionOutput {
     /// <p>The name of the action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
-    #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source of the action.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ActionSource>,
     /// <p>The type of the action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>A list of the action's properties.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When the action was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the action was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiKeysInput {
     /// <p>The current pagination position in the paged result set.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The name of queried API keys.</p>
-    #[doc(hidden)]
     pub name_query: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
-    #[doc(hidden)]
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
-    #[doc(hidden)]
     pub include_values: ::std::option::Option<bool>,
 }
 impl GetApiKeysInput {

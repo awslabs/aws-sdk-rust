@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnerIdentifier {
     /// <p>The contract or wallet address for the owner.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
 }
 impl OwnerIdentifier {

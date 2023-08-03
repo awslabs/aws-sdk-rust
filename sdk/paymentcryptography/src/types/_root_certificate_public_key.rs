@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RootCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
-    #[doc(hidden)]
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Parameter information for root public key certificate import.</p>
-    #[doc(hidden)]
     pub public_key_certificate: ::std::option::Option<::std::string::String>,
 }
 impl RootCertificatePublicKey {

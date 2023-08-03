@@ -8,10 +8,8 @@
 pub struct ScheduleConfig {
     /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl ScheduleConfig {

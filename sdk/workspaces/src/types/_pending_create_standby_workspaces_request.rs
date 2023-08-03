@@ -6,16 +6,12 @@
 pub struct PendingCreateStandbyWorkspacesRequest {
     /// <p>Describes the standby WorkSpace that was created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The operational state of the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceState>,
     /// <p>The identifier of the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl PendingCreateStandbyWorkspacesRequest {

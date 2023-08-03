@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to describe.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNotebookInstanceLifecycleConfigInput {

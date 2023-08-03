@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationStatusDetails {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
-    #[doc(hidden)]
     pub failed_stack_instances_count: i32,
 }
 impl StackSetOperationStatusDetails {

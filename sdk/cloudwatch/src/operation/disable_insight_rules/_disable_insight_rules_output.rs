@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableInsightRulesOutput {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
 }

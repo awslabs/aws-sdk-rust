@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageLimit {
     /// <p>The identifier of the usage limit.</p>
-    #[doc(hidden)]
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
-    #[doc(hidden)]
     pub usage_limit_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Redshift Serverless feature to limit.</p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<crate::types::UsageLimitUsageType>,
     /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<i64>,
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    #[doc(hidden)]
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
 }
 impl UsageLimit {

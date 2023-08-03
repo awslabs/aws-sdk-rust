@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    #[doc(hidden)]
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteByteMatchSetInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    #[doc(hidden)]
     pub metric_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

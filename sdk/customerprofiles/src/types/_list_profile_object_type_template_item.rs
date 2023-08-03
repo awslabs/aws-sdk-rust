@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplateItem {
     /// <p>A unique identifier for the object template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source of the object template.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the object template.</p>
-    #[doc(hidden)]
     pub source_object: ::std::option::Option<::std::string::String>,
 }
 impl ListProfileObjectTypeTemplateItem {

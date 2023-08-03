@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
-    #[doc(hidden)]
     pub allows_public_read_access: ::std::option::Option<bool>,
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
-    #[doc(hidden)]
     pub allows_public_write_access: ::std::option::Option<bool>,
 }
 impl BucketPolicy {

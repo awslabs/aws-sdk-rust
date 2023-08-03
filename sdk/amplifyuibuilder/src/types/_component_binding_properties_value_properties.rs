@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The field to bind the data to.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    #[doc(hidden)]
     pub predicates: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>An authenticated user attribute.</p>
-    #[doc(hidden)]
     pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The storage key for an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The default value to assign to the property.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The name of a component slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBindingPropertiesValueProperties {

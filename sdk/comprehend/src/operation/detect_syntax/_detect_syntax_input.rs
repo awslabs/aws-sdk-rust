@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectSyntaxInput {
     /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::SyntaxLanguageCode>,
 }
 impl DetectSyntaxInput {

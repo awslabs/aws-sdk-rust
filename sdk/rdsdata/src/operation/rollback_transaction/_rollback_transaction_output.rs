@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackTransactionOutput {
     /// <p>The status of the rollback operation.</p>
-    #[doc(hidden)]
     pub transaction_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerDetails {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
-    #[doc(hidden)]
     pub guard_duty_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scan trigger.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl TriggerDetails {

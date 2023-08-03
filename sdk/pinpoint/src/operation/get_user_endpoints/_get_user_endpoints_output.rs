@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    #[doc(hidden)]
     pub endpoints_response: ::std::option::Option<crate::types::EndpointsResponse>,
     _request_id: Option<String>,
 }

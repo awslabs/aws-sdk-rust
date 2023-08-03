@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuspendedProcess {
     /// <p>The name of the suspended process.</p>
-    #[doc(hidden)]
     pub process_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the process was suspended.</p>
-    #[doc(hidden)]
     pub suspension_reason: ::std::option::Option<::std::string::String>,
 }
 impl SuspendedProcess {

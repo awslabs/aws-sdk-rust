@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupCount {
     /// <p>The total number of findings in the group of query results.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
-    #[doc(hidden)]
     pub group_key: ::std::option::Option<::std::string::String>,
 }
 impl GroupCount {

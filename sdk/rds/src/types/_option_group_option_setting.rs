@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionGroupOptionSetting {
     /// <p>The name of the option group option.</p>
-    #[doc(hidden)]
     pub setting_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option group option.</p>
-    #[doc(hidden)]
     pub setting_description: ::std::option::Option<::std::string::String>,
     /// <p>The default value for the option group option.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The DB engine specific parameter type for the option group option.</p>
-    #[doc(hidden)]
     pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the acceptable values for the option group option.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
-    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
-    #[doc(hidden)]
     pub minimum_engine_version_per_allowed_value: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
 }
 impl OptionGroupOptionSetting {

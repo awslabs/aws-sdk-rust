@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceOutput {
     /// The settings for an instance in a gateway.
-    #[doc(hidden)]
     pub gateway_instance: ::std::option::Option<crate::types::GatewayInstance>,
     _request_id: Option<String>,
 }

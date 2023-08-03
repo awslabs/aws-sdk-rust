@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCampaignOutput {
     /// <p>The name of the deleted campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

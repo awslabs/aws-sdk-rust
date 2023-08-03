@@ -5,25 +5,19 @@
 pub struct ListTypeRegistrationsInput {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub registration_status_filter: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTypeRegistrationsInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountAssignmentInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    #[doc(hidden)]
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountAssignmentInput {

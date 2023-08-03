@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
-    #[doc(hidden)]
     pub available_capacity: ::std::option::Option<i32>,
     /// <p>The instance type supported by the Dedicated Host.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
-    #[doc(hidden)]
     pub total_capacity: ::std::option::Option<i32>,
 }
 impl InstanceCapacity {

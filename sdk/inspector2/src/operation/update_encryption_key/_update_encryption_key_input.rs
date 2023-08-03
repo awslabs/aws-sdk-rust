@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEncryptionKeyInput {
     /// <p>A KMS key ID for the encryption key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The scan type for the encryption key.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The resource type for the encryption key.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl UpdateEncryptionKeyInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Use to configure delete on termination of the associated device.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>Use to configure device IOPS.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot that defines the device contents.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Use to override the device's volume size.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Use to override the device's volume type.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::EbsVolumeType>,
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecification {

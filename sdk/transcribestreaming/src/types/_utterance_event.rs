@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceEvent {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
-    #[doc(hidden)]
     pub utterance_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
-    #[doc(hidden)]
     pub is_partial: bool,
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
-    #[doc(hidden)]
     pub end_offset_millis: ::std::option::Option<i64>,
     /// <p>Contains transcribed text.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<::std::string::String>,
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>>,
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>,
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::Sentiment>,
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    #[doc(hidden)]
     pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
 }
 impl UtteranceEvent {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays the provider type that applies to this domain.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::AvailabilityProviderType>,
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    #[doc(hidden)]
     pub ews_provider: ::std::option::Option<crate::types::RedactedEwsAvailabilityProvider>,
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    #[doc(hidden)]
     pub lambda_provider: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
     /// <p>The date and time at which the availability configuration was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the availability configuration was last modified.</p>
-    #[doc(hidden)]
     pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AvailabilityConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDecryptedApiKeyOutput {
     /// <p>The token domains that are defined in this API key. </p>
-    #[doc(hidden)]
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that the key was created. </p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

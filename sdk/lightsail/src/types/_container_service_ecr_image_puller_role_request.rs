@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRoleRequest {
     /// <p>A Boolean value that indicates whether to activate the role.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
 }
 impl ContainerServiceEcrImagePullerRoleRequest {

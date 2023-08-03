@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchRecord {
     /// <p>The properties of a training job.</p>
-    #[doc(hidden)]
     pub training_job: ::std::option::Option<crate::types::TrainingJob>,
     /// <p>The properties of an experiment.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<crate::types::Experiment>,
     /// <p>The properties of a trial.</p>
-    #[doc(hidden)]
     pub trial: ::std::option::Option<crate::types::Trial>,
     /// <p>The properties of a trial component.</p>
-    #[doc(hidden)]
     pub trial_component: ::std::option::Option<crate::types::TrialComponent>,
     /// <p>A hosted endpoint for real-time inference.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>A versioned model that can be deployed for SageMaker inference.</p>
-    #[doc(hidden)]
     pub model_package: ::std::option::Option<crate::types::ModelPackage>,
     /// <p>A group of versioned models in the model registry.</p>
-    #[doc(hidden)]
     pub model_package_group: ::std::option::Option<crate::types::ModelPackageGroup>,
     /// <p>A SageMaker Model Building Pipeline instance.</p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     /// <p>An execution of a pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
-    #[doc(hidden)]
     pub feature_group: ::std::option::Option<crate::types::FeatureGroup>,
     /// <p>The properties of a project.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<crate::types::Project>,
     /// <p>The feature metadata used to search through the features.</p>
-    #[doc(hidden)]
     pub feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
     /// <p>The properties of a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
-    #[doc(hidden)]
     pub model_card: ::std::option::Option<crate::types::ModelCard>,
 }
 impl SearchRecord {

@@ -6,34 +6,25 @@
 pub struct Document {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the document.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
-    #[doc(hidden)]
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    #[doc(hidden)]
     pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
-    #[doc(hidden)]
     pub access_control_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl Document {

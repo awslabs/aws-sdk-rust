@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobResourceIdOverrideConfiguration {
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
-    #[doc(hidden)]
     pub prefix_for_all_resources: bool,
 }
 impl AssetBundleExportJobResourceIdOverrideConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Storage {
     /// <p>An Amazon S3 storage location.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Storage>,
 }
 impl Storage {

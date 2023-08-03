@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Property {
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::PropertyNotification>,
     /// <p>The property data type.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
 }
 impl Property {

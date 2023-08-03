@@ -4,109 +4,82 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RunInstancesInput {
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    #[doc(hidden)]
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
     /// <p>The ID of the kernel.</p> <important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p> <important>
     /// <p>If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
     /// </important>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.</p>
     /// <p>Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
-    #[doc(hidden)]
     pub max_count: ::std::option::Option<i32>,
     /// <p>The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
     /// <p>Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
-    #[doc(hidden)]
     pub min_count: ::std::option::Option<i32>,
     /// <p>Specifies whether detailed monitoring is enabled for the instance.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
     /// <p>The placement for the instance.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the Amazon Web Services Resource Center and search for the kernel ID.</p> <important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run commands on your Windows instance at launch</a>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     /// <p>Constraints: Maximum 64 ASCII characters</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code> </p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub elastic_gpu_specification: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    #[doc(hidden)]
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
@@ -118,48 +91,35 @@ pub struct RunInstancesInput {
     /// <li> <p>Network interfaces</p> </li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The market (purchasing) option for the instances.</p>
     /// <p>For <code>RunInstances</code>, persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.</p>
-    #[doc(hidden)]
     pub instance_market_options: ::std::option::Option<crate::types::InstanceMarketOptionsRequest>,
     /// <p>The credit option for CPU usage of the burstable performance instance. Valid values are <code>standard</code> and <code>unlimited</code>. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html"> ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g instances)</p>
     /// <p>For T3 instances with <code>host</code> tenancy, only <code>standard</code> is supported.</p>
-    #[doc(hidden)]
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecificationRequest>,
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::CpuOptionsRequest>,
     /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    #[doc(hidden)]
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
-    #[doc(hidden)]
     pub hibernation_options: ::std::option::Option<crate::types::HibernationOptionsRequest>,
     /// <p>The license configurations.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>>,
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsRequest>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::EnclaveOptionsRequest>,
     /// <p>The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating a network interface, not attaching an existing one.</p>
-    #[doc(hidden)]
     pub private_dns_name_options: ::std::option::Option<crate::types::PrivateDnsNameOptionsRequest>,
     /// <p>The maintenance and recovery options for the instance.</p>
-    #[doc(hidden)]
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
-    #[doc(hidden)]
     pub disable_api_stop: ::std::option::Option<bool>,
 }
 impl RunInstancesInput {

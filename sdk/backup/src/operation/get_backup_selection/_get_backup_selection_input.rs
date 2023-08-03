@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
-    #[doc(hidden)]
     pub selection_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupSelectionInput {

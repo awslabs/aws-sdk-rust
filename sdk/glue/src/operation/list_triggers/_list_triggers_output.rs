@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTriggersOutput {
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
-    #[doc(hidden)]
     pub trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

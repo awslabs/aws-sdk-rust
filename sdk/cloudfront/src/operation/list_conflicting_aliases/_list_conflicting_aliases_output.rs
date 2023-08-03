@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConflictingAliasesOutput {
     /// <p>A list of conflicting aliases.</p>
-    #[doc(hidden)]
     pub conflicting_aliases_list: ::std::option::Option<crate::types::ConflictingAliasesList>,
     _request_id: Option<String>,
 }

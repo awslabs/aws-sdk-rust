@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTransformJobInput {
     /// <p>The name of the transform job that you want to view details of.</p>
-    #[doc(hidden)]
     pub transform_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTransformJobInput {

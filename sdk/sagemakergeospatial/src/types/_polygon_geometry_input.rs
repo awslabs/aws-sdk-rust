@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    #[doc(hidden)]
     pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl PolygonGeometryInput {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseDestination {
     /// <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon Firehose destination.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestination {

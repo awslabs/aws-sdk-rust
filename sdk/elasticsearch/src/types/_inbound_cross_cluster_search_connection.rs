@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboundCrossClusterSearchConnection {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the connection id for the inbound cross-cluster search connection.</p>
-    #[doc(hidden)]
     pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatus>,
 }
 impl InboundCrossClusterSearchConnection {

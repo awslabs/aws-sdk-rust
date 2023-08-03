@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApiKeyCredential {
     /// <p>An API key for an application.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
 }
 impl ApiKeyCredential {

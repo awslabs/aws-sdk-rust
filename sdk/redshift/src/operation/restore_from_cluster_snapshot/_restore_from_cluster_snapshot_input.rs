@@ -13,50 +13,37 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    #[doc(hidden)]
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
     /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Example: <code>us-east-2a</code> </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>The name of the subnet group where you want to cluster restored.</p>
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
@@ -66,80 +53,60 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
-    #[doc(hidden)]
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type that the restored cluster will be provisioned with.</p>
     /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the snapshot schedule.</p>
-    #[doc(hidden)]
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes specified when provisioning the restored cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
-    #[doc(hidden)]
     pub availability_zone_relocation: ::std::option::Option<bool>,
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    #[doc(hidden)]
     pub aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
-    #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
-    #[doc(hidden)]
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInput {

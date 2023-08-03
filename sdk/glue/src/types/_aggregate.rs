@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aggregate {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the fields to group by.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
-    #[doc(hidden)]
     pub aggs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>,
 }
 impl Aggregate {

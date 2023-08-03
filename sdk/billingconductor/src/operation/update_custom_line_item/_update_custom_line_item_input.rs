@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemInput {
     /// <p> The ARN of the custom line item to be updated. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The new name for the custom line item. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The new line item description of the custom line item. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-    #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl UpdateCustomLineItemInput {

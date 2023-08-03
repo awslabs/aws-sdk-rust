@@ -20,7 +20,6 @@ pub struct UsernameConfigurationType {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub case_sensitive: ::std::option::Option<bool>,
 }
 impl UsernameConfigurationType {

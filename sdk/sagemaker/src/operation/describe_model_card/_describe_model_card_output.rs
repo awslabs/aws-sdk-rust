@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeModelCardOutput {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    #[doc(hidden)]
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model card.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card.</p>
-    #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The content of the model card.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -22,22 +18,16 @@ pub struct DescribeModelCardOutput {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The security configuration used to protect model card content.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     /// <p>The date and time the model card was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The date and time the model card was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
@@ -48,7 +38,6 @@ pub struct DescribeModelCardOutput {
     /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_card_processing_status: ::std::option::Option<crate::types::ModelCardProcessingStatus>,
     _request_id: Option<String>,
 }

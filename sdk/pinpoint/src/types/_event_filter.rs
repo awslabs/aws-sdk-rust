@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::EventDimensions>,
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
-    #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::FilterType>,
 }
 impl EventFilter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThingRuntimeConfigurationOutput {
     /// Runtime configuration for a thing.
-    #[doc(hidden)]
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
-    #[doc(hidden)]
     pub ops_center_enabled: ::std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
-    #[doc(hidden)]
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    #[doc(hidden)]
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
-    #[doc(hidden)]
     pub remove_sns_topic: ::std::option::Option<bool>,
     /// <p> Turns auto-configuration on or off. </p>
-    #[doc(hidden)]
     pub auto_config_enabled: ::std::option::Option<bool>,
 }
 impl UpdateApplicationInput {

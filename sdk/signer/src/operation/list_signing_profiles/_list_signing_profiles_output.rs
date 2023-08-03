@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

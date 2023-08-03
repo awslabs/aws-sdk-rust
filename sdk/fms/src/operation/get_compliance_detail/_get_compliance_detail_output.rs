@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceDetailOutput {
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-    #[doc(hidden)]
     pub policy_compliance_detail: ::std::option::Option<crate::types::PolicyComplianceDetail>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub import_job_response: ::std::option::Option<crate::types::ImportJobResponse>,
     _request_id: Option<String>,
 }

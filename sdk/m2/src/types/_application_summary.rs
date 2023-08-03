@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationLifecycle>,
     /// <p>The type of the target platform for this application.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The timestamp when the application was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the latest version of the application.</p>
-    #[doc(hidden)]
     pub version_status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSummary {

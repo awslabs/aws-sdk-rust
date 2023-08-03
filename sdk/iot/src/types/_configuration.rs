@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configuration {
     /// <p>True to enable the configuration.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Configuration {

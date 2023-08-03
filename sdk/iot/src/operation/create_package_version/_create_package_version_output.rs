@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePackageVersionOutput {
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    #[doc(hidden)]
     pub package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new package version.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The package version description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>Error reason for a package version failure during creation or update.</p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

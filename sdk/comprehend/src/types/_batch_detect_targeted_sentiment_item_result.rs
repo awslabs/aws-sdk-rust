@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentItemResult {
     /// <p>The zero-based index of this result in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>An array of targeted sentiment entities.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
 }
 impl BatchDetectTargetedSentimentItemResult {

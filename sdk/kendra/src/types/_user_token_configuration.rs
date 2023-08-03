@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTokenConfiguration {
     /// <p>Information about the JWT token type configuration.</p>
-    #[doc(hidden)]
     pub jwt_token_type_configuration: ::std::option::Option<crate::types::JwtTokenTypeConfiguration>,
     /// <p>Information about the JSON token type configuration.</p>
-    #[doc(hidden)]
     pub json_token_type_configuration: ::std::option::Option<crate::types::JsonTokenTypeConfiguration>,
 }
 impl UserTokenConfiguration {

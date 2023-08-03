@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateExportInput {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The new password to use to encrypt the export zip archive.</p>
-    #[doc(hidden)]
     pub file_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateExportInput {

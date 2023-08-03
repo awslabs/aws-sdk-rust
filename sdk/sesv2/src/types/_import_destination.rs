@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDestination {
     /// <p>An object that contains the action of the import job towards suppression list.</p>
-    #[doc(hidden)]
     pub suppression_list_destination: ::std::option::Option<crate::types::SuppressionListDestination>,
     /// <p>An object that contains the action of the import job towards a contact list.</p>
-    #[doc(hidden)]
     pub contact_list_destination: ::std::option::Option<crate::types::ContactListDestination>,
 }
 impl ImportDestination {

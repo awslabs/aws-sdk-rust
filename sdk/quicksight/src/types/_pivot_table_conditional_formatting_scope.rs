@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingScope {
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
 }
 impl PivotTableConditionalFormattingScope {

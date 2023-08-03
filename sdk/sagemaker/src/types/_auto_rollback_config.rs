@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
 }
 impl AutoRollbackConfig {

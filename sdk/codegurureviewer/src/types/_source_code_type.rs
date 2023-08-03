@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceCodeType {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
-    #[doc(hidden)]
     pub commit_diff: ::std::option::Option<crate::types::CommitDiffSourceCodeType>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    #[doc(hidden)]
     pub repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
-    #[doc(hidden)]
     pub branch_diff: ::std::option::Option<crate::types::BranchDiffSourceCodeType>,
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
-    #[doc(hidden)]
     pub s3_bucket_repository: ::std::option::Option<crate::types::S3BucketRepository>,
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
-    #[doc(hidden)]
     pub request_metadata: ::std::option::Option<crate::types::RequestMetadata>,
 }
 impl SourceCodeType {

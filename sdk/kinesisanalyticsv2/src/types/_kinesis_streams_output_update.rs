@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
-    #[doc(hidden)]
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsOutputUpdate {

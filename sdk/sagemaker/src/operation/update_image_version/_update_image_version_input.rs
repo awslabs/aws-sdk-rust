@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateImageVersionInput {
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the image version.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The version of the image.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>A list of aliases to add.</p>
-    #[doc(hidden)]
     pub aliases_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of aliases to delete.</p>
-    #[doc(hidden)]
     pub aliases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -25,7 +20,6 @@ pub struct UpdateImageVersionInput {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
@@ -33,26 +27,20 @@ pub struct UpdateImageVersionInput {
     /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
     /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The machine learning framework vended in the image version.</p>
-    #[doc(hidden)]
     pub ml_framework: ::std::option::Option<::std::string::String>,
     /// <p>The supported programming language and its version.</p>
-    #[doc(hidden)]
     pub programming_lang: ::std::option::Option<::std::string::String>,
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
     /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
     /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub processor: ::std::option::Option<crate::types::Processor>,
     /// <p>Indicates Horovod compatibility.</p>
-    #[doc(hidden)]
     pub horovod: ::std::option::Option<bool>,
     /// <p>The maintainer description of the image version.</p>
-    #[doc(hidden)]
     pub release_notes: ::std::option::Option<::std::string::String>,
 }
 impl UpdateImageVersionInput {

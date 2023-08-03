@@ -5,10 +5,8 @@
 pub struct GetRelationalDatabaseBundlesInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
-    #[doc(hidden)]
     pub include_inactive: ::std::option::Option<bool>,
 }
 impl GetRelationalDatabaseBundlesInput {

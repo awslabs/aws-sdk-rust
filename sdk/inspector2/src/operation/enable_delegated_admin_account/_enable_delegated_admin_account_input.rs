@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-    #[doc(hidden)]
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The idempotency token for the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl EnableDelegatedAdminAccountInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version that the OpenSearch Service domain is running.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The possible versions that you can upgrade the domain to.</p>
-    #[doc(hidden)]
     pub target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleVersionsMap {

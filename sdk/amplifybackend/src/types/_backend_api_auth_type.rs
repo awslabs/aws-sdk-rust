@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendApiAuthType {
     /// <p>Describes the authentication mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::Mode>,
     /// <p>Describes settings for the authentication mode.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::BackendApiAppSyncAuthSettings>,
 }
 impl BackendApiAuthType {

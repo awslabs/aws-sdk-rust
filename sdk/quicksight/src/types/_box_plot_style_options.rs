@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotStyleOptions {
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
-    #[doc(hidden)]
     pub fill_style: ::std::option::Option<crate::types::BoxPlotFillStyle>,
 }
 impl BoxPlotStyleOptions {

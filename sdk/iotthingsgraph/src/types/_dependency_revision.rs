@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DependencyRevision {
     /// <p>The ID of the workflow or system.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the workflow or system.</p>
-    #[doc(hidden)]
     pub revision_number: ::std::option::Option<i64>,
 }
 impl DependencyRevision {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsOutput {
     /// <p>Information about the key pairs.</p>
-    #[doc(hidden)]
     pub key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>>,
     _request_id: Option<String>,
 }

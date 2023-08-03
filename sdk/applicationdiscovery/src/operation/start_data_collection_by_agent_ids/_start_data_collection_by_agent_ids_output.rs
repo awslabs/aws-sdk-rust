@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsOutput {
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    #[doc(hidden)]
     pub agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }

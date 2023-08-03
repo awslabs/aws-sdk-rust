@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The hash value returned when this policy was set.</p>
-    #[doc(hidden)]
     pub policy_hash_condition: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {

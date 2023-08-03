@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidStorageOptions {
     /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
-    #[doc(hidden)]
     pub storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
-    #[doc(hidden)]
     pub provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    #[doc(hidden)]
     pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptions {

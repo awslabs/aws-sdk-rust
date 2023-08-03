@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsOutput {
     /// <p> A list of <code>EventDescription</code>. </p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>,
     /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

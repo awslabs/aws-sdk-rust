@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueConfigSummary {
     /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    #[doc(hidden)]
     pub queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the queue.</p>
-    #[doc(hidden)]
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub delay: i32,
     /// <p>The channels this queue supports.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
 }
 impl RoutingProfileQueueConfigSummary {

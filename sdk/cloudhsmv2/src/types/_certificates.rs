@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificates {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
-    #[doc(hidden)]
     pub cluster_csr: ::std::option::Option<::std::string::String>,
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-    #[doc(hidden)]
     pub hsm_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-    #[doc(hidden)]
     pub aws_hardware_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    #[doc(hidden)]
     pub manufacturer_hardware_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-    #[doc(hidden)]
     pub cluster_certificate: ::std::option::Option<::std::string::String>,
 }
 impl Certificates {

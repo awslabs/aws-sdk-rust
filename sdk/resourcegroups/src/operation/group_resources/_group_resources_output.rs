@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupResourcesOutput {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    #[doc(hidden)]
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }

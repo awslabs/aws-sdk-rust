@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageOutput {
     /// <p>The stage that is returned.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::Stage>,
     _request_id: Option<String>,
 }

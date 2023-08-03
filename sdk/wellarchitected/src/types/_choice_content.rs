@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChoiceContent {
     /// <p>The display text for the choice content.</p>
-    #[doc(hidden)]
     pub display_text: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the choice content.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceContent {

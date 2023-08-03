@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the override event.</p>
-    #[doc(hidden)]
     pub override_status: ::std::option::Option<crate::types::OverrideStatus>,
 }
 impl ApprovalRuleOverriddenEventMetadata {

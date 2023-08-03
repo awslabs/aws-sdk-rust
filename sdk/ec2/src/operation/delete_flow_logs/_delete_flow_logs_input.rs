@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlowLogsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    #[doc(hidden)]
     pub flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteFlowLogsInput {

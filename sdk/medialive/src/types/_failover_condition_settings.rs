@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverConditionSettings {
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
-    #[doc(hidden)]
     pub audio_silence_settings: ::std::option::Option<crate::types::AudioSilenceFailoverSettings>,
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
-    #[doc(hidden)]
     pub input_loss_settings: ::std::option::Option<crate::types::InputLossFailoverSettings>,
     /// MediaLive will perform a failover if content is considered black for the specified period.
-    #[doc(hidden)]
     pub video_black_settings: ::std::option::Option<crate::types::VideoBlackFailoverSettings>,
 }
 impl FailoverConditionSettings {

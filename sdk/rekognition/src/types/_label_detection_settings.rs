@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelDetectionSettings {
     /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
-    #[doc(hidden)]
     pub general_labels: ::std::option::Option<crate::types::GeneralLabelsSettings>,
 }
 impl LabelDetectionSettings {

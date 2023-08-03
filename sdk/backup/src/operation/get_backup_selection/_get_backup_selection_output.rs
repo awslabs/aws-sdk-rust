@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupSelectionOutput {
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
-    #[doc(hidden)]
     pub backup_selection: ::std::option::Option<crate::types::BackupSelection>,
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
-    #[doc(hidden)]
     pub selection_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

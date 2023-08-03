@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The Availability Zone of the subnet.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The AZ ID of the subnet.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
-    #[doc(hidden)]
     pub available_ip_address_count: ::std::option::Option<i32>,
     /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
-    #[doc(hidden)]
     pub default_for_az: ::std::option::Option<bool>,
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
-    #[doc(hidden)]
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
-    #[doc(hidden)]
     pub map_public_ip_on_launch: ::std::option::Option<bool>,
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
-    #[doc(hidden)]
     pub map_customer_owned_ip_on_launch: ::std::option::Option<bool>,
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SubnetState>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC the subnet is in.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
-    #[doc(hidden)]
     pub assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
     /// <p>Any tags assigned to the subnet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
-    #[doc(hidden)]
     pub enable_dns64: ::std::option::Option<bool>,
     /// <p>Indicates whether this is an IPv6 only subnet.</p>
-    #[doc(hidden)]
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    #[doc(hidden)]
     pub private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
 }
 impl Subnet {

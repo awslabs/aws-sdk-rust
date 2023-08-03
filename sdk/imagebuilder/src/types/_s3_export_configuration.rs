@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct S3ExportConfiguration {
     /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
     /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3ExportConfiguration {

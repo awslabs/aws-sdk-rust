@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrdersOutput {
     /// <p> Information about the orders. </p>
-    #[doc(hidden)]
     pub orders: ::std::option::Option<::std::vec::Vec<crate::types::OrderSummary>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

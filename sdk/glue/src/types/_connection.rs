@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connection {
     /// <p>The name of the connection definition.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the connection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the connection. Currently, SFTP is not supported.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    #[doc(hidden)]
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection:</p>
     /// <ul>
@@ -57,19 +53,14 @@ pub struct Connection {
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka Configuration</a>.</p> </li>
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
-    #[doc(hidden)]
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     /// <p>The time that this connection definition was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this connection definition was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user, group, or role that last updated this connection definition.</p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
 }
 impl Connection {

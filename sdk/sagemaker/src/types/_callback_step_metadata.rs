@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallbackStepMetadata {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub callback_token: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
-    #[doc(hidden)]
     pub sqs_queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of the output parameters of the callback step.</p>
-    #[doc(hidden)]
     pub output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
 }
 impl CallbackStepMetadata {

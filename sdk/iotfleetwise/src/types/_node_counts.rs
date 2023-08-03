@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeCounts {
     /// <p>The total number of nodes in a vehicle network.</p>
-    #[doc(hidden)]
     pub total_nodes: i32,
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
-    #[doc(hidden)]
     pub total_branches: i32,
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
-    #[doc(hidden)]
     pub total_sensors: i32,
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
-    #[doc(hidden)]
     pub total_attributes: i32,
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
-    #[doc(hidden)]
     pub total_actuators: i32,
 }
 impl NodeCounts {

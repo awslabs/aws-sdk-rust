@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The ID of the environment to change settings.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A replacement name for the environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Any new or replacement description for the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct UpdateEnvironmentInput {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    #[doc(hidden)]
     pub managed_credentials_action: ::std::option::Option<crate::types::ManagedCredentialsAction>,
 }
 impl UpdateEnvironmentInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>A description of the filter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags for the filter.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The reason for creating the filter.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl CreateFilterInput {

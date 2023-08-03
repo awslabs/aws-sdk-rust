@@ -9,13 +9,10 @@ pub struct ChartAxisLabelOptions {
     /// <li> <p> <code>VISIBLE</code>: Shows the axis.</p> </li>
     /// <li> <p> <code>HIDDEN</code>: Hides the axis.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility configuration of the sort icon on a chart's axis label.</p>
-    #[doc(hidden)]
     pub sort_icon_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The label options for a chart axis.</p>
-    #[doc(hidden)]
     pub axis_label_options: ::std::option::Option<::std::vec::Vec<crate::types::AxisLabelOptions>>,
 }
 impl ChartAxisLabelOptions {

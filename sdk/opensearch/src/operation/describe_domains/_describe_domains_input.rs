@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainsInput {
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
-    #[doc(hidden)]
     pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDomainsInput {

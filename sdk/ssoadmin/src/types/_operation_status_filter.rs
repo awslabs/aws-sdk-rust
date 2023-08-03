@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationStatusFilter {
     /// <p>Filters the list operations result based on the status attribute.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusValues>,
 }
 impl OperationStatusFilter {

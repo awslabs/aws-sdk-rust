@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuditFindingInput {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAuditFindingInput {

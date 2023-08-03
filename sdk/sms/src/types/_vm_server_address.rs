@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VmServerAddress {
     /// <p>The ID of the VM manager.</p>
-    #[doc(hidden)]
     pub vm_manager_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VM.</p>
-    #[doc(hidden)]
     pub vm_id: ::std::option::Option<::std::string::String>,
 }
 impl VmServerAddress {

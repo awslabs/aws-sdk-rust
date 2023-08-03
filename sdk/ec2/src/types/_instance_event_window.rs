@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindow {
     /// <p>The ID of the event window.</p>
-    #[doc(hidden)]
     pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more time ranges defined for the event window.</p>
-    #[doc(hidden)]
     pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
     /// <p>The name of the event window.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cron expression defined for the event window.</p>
-    #[doc(hidden)]
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more targets associated with the event window.</p>
-    #[doc(hidden)]
     pub association_target: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
     /// <p>The current state of the event window.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceEventWindowState>,
     /// <p>The instance tags associated with the event window.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceEventWindow {

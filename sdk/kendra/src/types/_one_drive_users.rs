@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OneDriveUsers {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    #[doc(hidden)]
     pub one_drive_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
-    #[doc(hidden)]
     pub one_drive_user_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
 impl OneDriveUsers {

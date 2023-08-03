@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Context regarding the current instance.</p>
-    #[doc(hidden)]
     pub current_instance: ::std::option::Option<crate::types::CurrentInstance>,
     /// <p>A recommendation to either terminate or modify the resource.</p>
-    #[doc(hidden)]
     pub rightsizing_type: ::std::option::Option<crate::types::RightsizingType>,
     /// <p>The details for the modification recommendations. </p>
-    #[doc(hidden)]
     pub modify_recommendation_detail: ::std::option::Option<crate::types::ModifyRecommendationDetail>,
     /// <p>The details for termination recommendations.</p>
-    #[doc(hidden)]
     pub terminate_recommendation_detail: ::std::option::Option<crate::types::TerminateRecommendationDetail>,
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
-    #[doc(hidden)]
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {

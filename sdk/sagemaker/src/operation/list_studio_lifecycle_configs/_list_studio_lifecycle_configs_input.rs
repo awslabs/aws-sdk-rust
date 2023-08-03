@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsInput {
     /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    #[doc(hidden)]
     pub app_type_equals: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-    #[doc(hidden)]
     pub modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-    #[doc(hidden)]
     pub modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is CreationTime.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::StudioLifecycleConfigSortKey>,
     /// <p>The sort order. The default value is Descending.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListStudioLifecycleConfigsInput {

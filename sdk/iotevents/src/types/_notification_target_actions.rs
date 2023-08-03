@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    #[doc(hidden)]
     pub lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
 impl NotificationTargetActions {

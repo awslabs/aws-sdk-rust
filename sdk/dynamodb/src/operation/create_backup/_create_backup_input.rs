@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specified name for the backup.</p>
-    #[doc(hidden)]
     pub backup_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupInput {

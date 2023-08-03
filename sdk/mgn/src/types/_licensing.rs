@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Licensing {
     /// <p>Configure BYOL OS licensing.</p>
-    #[doc(hidden)]
     pub os_byol: ::std::option::Option<bool>,
 }
 impl Licensing {

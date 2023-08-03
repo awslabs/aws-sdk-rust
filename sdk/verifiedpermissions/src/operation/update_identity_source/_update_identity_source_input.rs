@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentitySourceInput {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    #[doc(hidden)]
     pub identity_source_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub update_configuration: ::std::option::Option<crate::types::UpdateConfiguration>,
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    #[doc(hidden)]
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIdentitySourceInput {

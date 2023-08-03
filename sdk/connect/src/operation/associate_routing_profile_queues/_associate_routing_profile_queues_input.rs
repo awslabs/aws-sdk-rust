@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
-    #[doc(hidden)]
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The queues to associate with this routing profile.</p>
-    #[doc(hidden)]
     pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
 }
 impl AssociateRoutingProfileQueuesInput {

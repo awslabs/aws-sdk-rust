@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to remove all permissions.</p>
-    #[doc(hidden)]
     pub remove_all_permissions: bool,
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
-    #[doc(hidden)]
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>,
 }
 impl UpdateLinkAttributesInput {

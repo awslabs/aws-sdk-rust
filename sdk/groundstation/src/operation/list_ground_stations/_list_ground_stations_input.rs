@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroundStationsInput {
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of ground stations returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGroundStationsInput {

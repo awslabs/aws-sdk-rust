@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeofenceInput {
     /// <p>The geofence collection storing the target geofence.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The geofence you're retrieving details for.</p>
-    #[doc(hidden)]
     pub geofence_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGeofenceInput {

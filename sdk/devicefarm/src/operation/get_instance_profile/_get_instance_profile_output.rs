@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceProfileOutput {
     /// <p>An object that contains information about an instance profile.</p>
-    #[doc(hidden)]
     pub instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
     _request_id: Option<String>,
 }

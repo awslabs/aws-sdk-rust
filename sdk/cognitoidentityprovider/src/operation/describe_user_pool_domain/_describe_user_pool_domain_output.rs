@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserPoolDomainOutput {
     /// <p>A domain description object containing information about the domain.</p>
-    #[doc(hidden)]
     pub domain_description: ::std::option::Option<crate::types::DomainDescriptionType>,
     _request_id: Option<String>,
 }

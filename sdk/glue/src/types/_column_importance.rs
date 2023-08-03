@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnImportance {
     /// <p>The name of a column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column importance score for the column, as a decimal.</p>
-    #[doc(hidden)]
     pub importance: ::std::option::Option<f64>,
 }
 impl ColumnImportance {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeCacheSecurityGroupIngressInput {
     /// <p>The name of the cache security group to revoke ingress from.</p>
-    #[doc(hidden)]
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
-    #[doc(hidden)]
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
-    #[doc(hidden)]
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RevokeCacheSecurityGroupIngressInput {

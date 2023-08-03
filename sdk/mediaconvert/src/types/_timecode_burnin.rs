@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimecodeBurnin {
     /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
-    #[doc(hidden)]
     pub font_size: ::std::option::Option<i32>,
     /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
     /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurnin {

@@ -6,10 +6,8 @@
 pub struct TransformParameters {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
-    #[doc(hidden)]
     pub transform_type: ::std::option::Option<crate::types::TransformType>,
     /// <p>The parameters for the find matches algorithm.</p>
-    #[doc(hidden)]
     pub find_matches_parameters: ::std::option::Option<crate::types::FindMatchesParameters>,
 }
 impl TransformParameters {

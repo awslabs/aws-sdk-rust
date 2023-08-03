@@ -4,38 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPointOutput {
     /// <p>The name of the specified access point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket associated with the specified access point.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
-    #[doc(hidden)]
     pub network_origin: ::std::option::Option<crate::types::NetworkOrigin>,
     /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified access point was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name or alias of the access point.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the access point.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The VPC endpoint for the access point.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

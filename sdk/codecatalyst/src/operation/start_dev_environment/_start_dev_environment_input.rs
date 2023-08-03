@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
-    #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
 }
 impl StartDevEnvironmentInput {

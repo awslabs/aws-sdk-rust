@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause>,
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl ScheduleLambdaFunctionFailedEventAttributes {

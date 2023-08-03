@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppsOutput {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
-    #[doc(hidden)]
     pub apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
     _request_id: Option<String>,
 }

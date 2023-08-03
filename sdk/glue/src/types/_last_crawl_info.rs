@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastCrawlInfo {
     /// <p>Status of the last crawl.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LastCrawlStatus>,
     /// <p>If an error occurred, the error information about the last crawl.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The log group for the last crawl.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
     /// <p>The log stream for the last crawl.</p>
-    #[doc(hidden)]
     pub log_stream: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for a message about this crawl.</p>
-    #[doc(hidden)]
     pub message_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the crawl started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LastCrawlInfo {

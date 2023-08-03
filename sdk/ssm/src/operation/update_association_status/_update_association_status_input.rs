@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssociationStatusInput {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The association status.</p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
 }
 impl UpdateAssociationStatusInput {

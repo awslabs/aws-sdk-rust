@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
-    #[doc(hidden)]
     pub user_group_resolution_mode: ::std::option::Option<crate::types::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfiguration {

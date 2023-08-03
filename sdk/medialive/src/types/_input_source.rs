@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
-    #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
     /// This represents the customer's source URL where stream is pulled from.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// The username for the input source.
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl InputSource {

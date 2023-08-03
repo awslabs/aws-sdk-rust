@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    #[doc(hidden)]
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct UpdateByteMatchSetInput {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>,
 }
 impl UpdateByteMatchSetInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteUsersOutput {
     /// <p>The email invitation details.</p>
-    #[doc(hidden)]
     pub invites: ::std::option::Option<::std::vec::Vec<crate::types::Invite>>,
     _request_id: Option<String>,
 }

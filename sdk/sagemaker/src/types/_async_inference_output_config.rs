@@ -6,16 +6,12 @@
 pub struct AsyncInferenceOutputConfig {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location to upload inference responses to.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    #[doc(hidden)]
     pub notification_config: ::std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
     /// <p>The Amazon S3 location to upload failure inference responses to.</p>
-    #[doc(hidden)]
     pub s3_failure_path: ::std::option::Option<::std::string::String>,
 }
 impl AsyncInferenceOutputConfig {

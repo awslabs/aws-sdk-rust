@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageBuilderOutput {
     /// <p>Information about the image builder.</p>
-    #[doc(hidden)]
     pub image_builder: ::std::option::Option<crate::types::ImageBuilder>,
     _request_id: Option<String>,
 }

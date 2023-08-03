@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePositionInput {
     /// <p>Resource identifier of the resource for which position is updated.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for which position is updated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     /// <p>The position information of the resource.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f32>>,
 }
 impl UpdatePositionInput {

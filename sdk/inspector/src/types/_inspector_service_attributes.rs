@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InspectorServiceAttributes {
     /// <p>The schema version of this data type.</p>
-    #[doc(hidden)]
     pub schema_version: i32,
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
-    #[doc(hidden)]
     pub rules_package_arn: ::std::option::Option<::std::string::String>,
 }
 impl InspectorServiceAttributes {

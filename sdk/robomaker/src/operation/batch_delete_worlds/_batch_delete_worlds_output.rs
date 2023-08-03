@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteWorldsOutput {
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
-    #[doc(hidden)]
     pub unprocessed_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

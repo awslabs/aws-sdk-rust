@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    #[doc(hidden)]
     pub source_bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotVersionLocaleDetails {

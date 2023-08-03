@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delete {
     /// <p>The object to delete.</p>
-    #[doc(hidden)]
     pub objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
-    #[doc(hidden)]
     pub quiet: bool,
 }
 impl Delete {

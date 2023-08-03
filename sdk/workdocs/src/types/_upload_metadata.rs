@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UploadMetadata {
     /// <p>The URL of the upload.</p>
-    #[doc(hidden)]
     pub upload_url: ::std::option::Option<::std::string::String>,
     /// <p>The signed headers.</p>
-    #[doc(hidden)]
     pub signed_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UploadMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRouteAnalysisOutput {
     /// <p>The route analysis.</p>
-    #[doc(hidden)]
     pub route_analysis: ::std::option::Option<crate::types::RouteAnalysis>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    #[doc(hidden)]
     pub fully_qualified_name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the branch.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    #[doc(hidden)]
     pub deprecation_message: ::std::option::Option<::std::string::String>,
     /// <p>A comment in addition to the description.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Branch {

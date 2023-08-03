@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClassifierOutput {
     /// <p>The requested classifier.</p>
-    #[doc(hidden)]
     pub classifier: ::std::option::Option<crate::types::Classifier>,
     _request_id: Option<String>,
 }

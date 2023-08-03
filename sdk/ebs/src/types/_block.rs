@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Block {
     /// <p>The block index.</p>
-    #[doc(hidden)]
     pub block_index: ::std::option::Option<i32>,
     /// <p>The block token for the block index.</p>
-    #[doc(hidden)]
     pub block_token: ::std::option::Option<::std::string::String>,
 }
 impl Block {

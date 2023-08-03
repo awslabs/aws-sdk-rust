@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextEntry {
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
-    #[doc(hidden)]
     pub context_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    #[doc(hidden)]
     pub context_key_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
-    #[doc(hidden)]
     pub context_key_type: ::std::option::Option<crate::types::ContextKeyTypeEnum>,
 }
 impl ContextEntry {

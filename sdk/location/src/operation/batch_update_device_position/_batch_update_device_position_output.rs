@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,
 }

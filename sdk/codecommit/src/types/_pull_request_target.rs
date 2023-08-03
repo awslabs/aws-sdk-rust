@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    #[doc(hidden)]
     pub source_reference: ::std::option::Option<::std::string::String>,
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    #[doc(hidden)]
     pub destination_reference: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    #[doc(hidden)]
     pub destination_commit: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-    #[doc(hidden)]
     pub source_commit: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    #[doc(hidden)]
     pub merge_base: ::std::option::Option<::std::string::String>,
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-    #[doc(hidden)]
     pub merge_metadata: ::std::option::Option<crate::types::MergeMetadata>,
 }
 impl PullRequestTarget {

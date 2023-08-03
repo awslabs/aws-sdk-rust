@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsCredentials {
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
 }
 impl AwsCredentials {

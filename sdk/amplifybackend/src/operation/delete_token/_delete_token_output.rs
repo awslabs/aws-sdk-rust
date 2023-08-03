@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
-    #[doc(hidden)]
     pub is_success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

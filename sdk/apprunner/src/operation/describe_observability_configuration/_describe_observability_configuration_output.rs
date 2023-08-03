@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObservabilityConfigurationOutput {
     /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
-    #[doc(hidden)]
     pub observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,
 }

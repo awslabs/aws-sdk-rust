@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch that is to be updated.</p>
-    #[doc(hidden)]
     pub launch: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the launch.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    #[doc(hidden)]
     pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    #[doc(hidden)]
     pub scheduled_splits_config: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
 }
 impl UpdateLaunchInput {

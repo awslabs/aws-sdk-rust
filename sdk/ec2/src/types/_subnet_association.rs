@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetAssociation {
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the subnet association.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
 }
 impl SubnetAssociation {

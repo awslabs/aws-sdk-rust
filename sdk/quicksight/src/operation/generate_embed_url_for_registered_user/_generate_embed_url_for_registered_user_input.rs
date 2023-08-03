@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
-    #[doc(hidden)]
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name for the registered user.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub experience_configuration: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    #[doc(hidden)]
     pub allowed_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GenerateEmbedUrlForRegisteredUserInput {

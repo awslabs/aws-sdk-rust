@@ -6,7 +6,6 @@
 pub struct SlotDefaultValueSpec {
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    #[doc(hidden)]
     pub default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpec {

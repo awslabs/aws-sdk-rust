@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteRecordsOutput {
     /// <p>Information on the records ingested by this request.</p>
-    #[doc(hidden)]
     pub records_ingested: ::std::option::Option<crate::types::RecordsIngested>,
     _request_id: Option<String>,
 }

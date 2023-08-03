@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcesOutput {
     /// <p>The folders in the specified folder.</p>
-    #[doc(hidden)]
     pub folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
     /// <p>The documents in the specified collection.</p>
-    #[doc(hidden)]
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

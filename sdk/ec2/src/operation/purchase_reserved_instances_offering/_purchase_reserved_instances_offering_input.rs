@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstancesOfferingInput {
     /// <p>The number of Reserved Instances to purchase.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    #[doc(hidden)]
     pub reserved_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    #[doc(hidden)]
     pub limit_price: ::std::option::Option<crate::types::ReservedInstanceLimitPrice>,
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub purchase_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PurchaseReservedInstancesOfferingInput {

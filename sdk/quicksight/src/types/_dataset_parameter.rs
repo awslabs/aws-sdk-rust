@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetParameter {
     /// <p>A string parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub string_dataset_parameter: ::std::option::Option<crate::types::StringDatasetParameter>,
     /// <p>A decimal parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub decimal_dataset_parameter: ::std::option::Option<crate::types::DecimalDatasetParameter>,
     /// <p>An integer parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub integer_dataset_parameter: ::std::option::Option<crate::types::IntegerDatasetParameter>,
     /// <p>A date time parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub date_time_dataset_parameter: ::std::option::Option<crate::types::DateTimeDatasetParameter>,
 }
 impl DatasetParameter {

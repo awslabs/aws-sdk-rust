@@ -5,7 +5,6 @@
 pub struct GetContactMethodsInput {
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
 }
 impl GetContactMethodsInput {

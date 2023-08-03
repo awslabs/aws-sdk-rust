@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
 }

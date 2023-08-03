@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to boot from this disk or not.</p>
-    #[doc(hidden)]
     pub is_boot_disk: ::std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    #[doc(hidden)]
     pub staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>The requested number of I/O operations per second (IOPS).</p>
-    #[doc(hidden)]
     pub iops: i64,
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
-    #[doc(hidden)]
     pub throughput: i64,
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
-    #[doc(hidden)]
     pub optimized_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
 }
 impl ReplicationConfigurationReplicatedDisk {

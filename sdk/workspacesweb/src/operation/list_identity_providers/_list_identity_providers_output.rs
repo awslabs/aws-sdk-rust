@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identity providers.</p>
-    #[doc(hidden)]
     pub identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
     _request_id: Option<String>,
 }

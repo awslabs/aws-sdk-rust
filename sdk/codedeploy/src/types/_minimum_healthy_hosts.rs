@@ -13,10 +13,8 @@ pub struct MinimumHealthyHosts {
     /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MinimumHealthyHostsType>,
     /// <p>The minimum healthy instance value.</p>
-    #[doc(hidden)]
     pub value: i32,
 }
 impl MinimumHealthyHosts {

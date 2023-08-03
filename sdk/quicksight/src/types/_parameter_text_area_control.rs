@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterTextAreaControl {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    #[doc(hidden)]
     pub parameter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    #[doc(hidden)]
     pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The delimiter that is used to separate the lines in text.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
 }
 impl ParameterTextAreaControl {

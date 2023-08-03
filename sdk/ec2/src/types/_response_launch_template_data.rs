@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResponseLaunchTemplateData {
     /// <p>The ID of the kernel, if applicable.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. </p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecification>,
     /// <p>The block device mappings.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMapping>>,
     /// <p>The network interfaces.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification>>,
     /// <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI at instance launch.</p>
     /// <p>The value depends on what you specified in the request. The possible values are:</p>
@@ -27,83 +22,57 @@ pub struct ResponseLaunchTemplateData {
     /// <li> <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring for the instance.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::LaunchTemplatesMonitoring>,
     /// <p>The placement of the instance.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::LaunchTemplatePlacement>,
     /// <p>The ID of the RAM disk, if applicable.</p>
-    #[doc(hidden)]
     pub ram_disk_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, indicates that the instance cannot be terminated using the Amazon EC2 console, command line tool, or API.</p>
-    #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<bool>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The user data for the instance. </p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are applied to the resources that are created during instance launch.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecification>>,
     /// <p>The elastic GPU specification.</p>
-    #[doc(hidden)]
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>>,
     /// <p> The elastic inference accelerator for the instance. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>>,
     /// <p>The security group IDs.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The security group names.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The market (purchasing) option for the instances.</p>
-    #[doc(hidden)]
     pub instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptions>,
     /// <p>The credit option for CPU usage of the instance.</p>
-    #[doc(hidden)]
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecification>,
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::LaunchTemplateCpuOptions>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    #[doc(hidden)]
     pub capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationResponse>,
     /// <p>The license configurations.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfiguration>>,
     /// <p>Indicates whether an instance is configured for hibernation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptions>,
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptions>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptions>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.</p>
-    #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
     /// <p>The options for the instance hostname.</p>
-    #[doc(hidden)]
     pub private_dns_name_options: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptions>,
     /// <p>The maintenance options for your instance.</p>
-    #[doc(hidden)]
     pub maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptions>,
     /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub disable_api_stop: ::std::option::Option<bool>,
 }
 impl ResponseLaunchTemplateData {

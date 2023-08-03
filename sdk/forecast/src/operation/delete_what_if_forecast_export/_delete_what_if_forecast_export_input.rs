@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExportInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
-    #[doc(hidden)]
     pub what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWhatIfForecastExportInput {

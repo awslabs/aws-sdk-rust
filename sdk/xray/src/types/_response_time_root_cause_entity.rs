@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseTimeRootCauseEntity {
     /// <p>The name of the entity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type and messages of the exceptions.</p>
-    #[doc(hidden)]
     pub coverage: ::std::option::Option<f64>,
     /// <p>A flag that denotes a remote subsegment.</p>
-    #[doc(hidden)]
     pub remote: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseEntity {

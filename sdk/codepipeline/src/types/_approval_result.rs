@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApprovalStatus>,
 }
 impl ApprovalResult {

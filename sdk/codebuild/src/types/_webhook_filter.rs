@@ -52,14 +52,11 @@ pub struct WebhookFilter {
     /// </note>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WebhookFilterType>,
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
-    #[doc(hidden)]
     pub exclude_matched_pattern: ::std::option::Option<bool>,
 }
 impl WebhookFilter {

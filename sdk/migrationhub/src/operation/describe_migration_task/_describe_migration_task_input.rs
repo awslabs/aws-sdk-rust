@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
-    #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub migration_task_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMigrationTaskInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetLoggingConfigurationInput {

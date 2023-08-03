@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterClusterSettingsDetails {
     /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterClusterSettingsDetails {

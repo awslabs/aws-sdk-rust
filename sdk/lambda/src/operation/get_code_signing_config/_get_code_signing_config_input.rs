@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-    #[doc(hidden)]
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetCodeSigningConfigInput {

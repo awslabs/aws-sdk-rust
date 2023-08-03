@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The data type of the configuration.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::MessagingDataType>,
     /// <p>The ARN of the resource in the configuration. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl StreamingConfiguration {

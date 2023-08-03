@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsOutput {
     /// <p>An object describing the result of your get relational database log events request.</p>
-    #[doc(hidden)]
     pub resource_log_events: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-    #[doc(hidden)]
     pub next_backward_token: ::std::option::Option<::std::string::String>,
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-    #[doc(hidden)]
     pub next_forward_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

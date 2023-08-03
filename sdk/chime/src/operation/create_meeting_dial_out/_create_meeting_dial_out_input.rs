@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMeetingDialOutInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    #[doc(hidden)]
     pub from_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    #[doc(hidden)]
     pub to_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-    #[doc(hidden)]
     pub join_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateMeetingDialOutInput {

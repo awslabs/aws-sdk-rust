@@ -18,7 +18,6 @@ pub struct DescribeEndpointInput {
     /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointInput {

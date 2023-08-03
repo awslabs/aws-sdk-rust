@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureMetadataInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureMetadataInput {

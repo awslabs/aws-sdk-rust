@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryWithBandFilterInput {
     /// <p>The TimeRange Filter used in the search query.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     /// <p>The Area of interest to be used in the search query.</p>
-    #[doc(hidden)]
     pub area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,
     /// <p>The Property Filters used in the search query.</p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<crate::types::PropertyFilters>,
     /// <p>The list of Bands to be displayed in the result for each item.</p>
-    #[doc(hidden)]
     pub band_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RasterDataCollectionQueryWithBandFilterInput {

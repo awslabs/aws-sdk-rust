@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you want to test.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The BGP peers to place in the DOWN state.</p>
-    #[doc(hidden)]
     pub bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
-    #[doc(hidden)]
     pub test_duration_in_minutes: ::std::option::Option<i32>,
 }
 impl StartBgpFailoverTestInput {

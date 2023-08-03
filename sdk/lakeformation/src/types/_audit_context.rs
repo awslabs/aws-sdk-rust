@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-    #[doc(hidden)]
     pub additional_audit_context: ::std::option::Option<::std::string::String>,
 }
 impl AuditContext {

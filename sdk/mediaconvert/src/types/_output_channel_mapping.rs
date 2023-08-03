@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputChannelMapping {
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
-    #[doc(hidden)]
     pub input_channels: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-    #[doc(hidden)]
     pub input_channels_fine_tune: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl OutputChannelMapping {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryExecutionOutput {
     /// <p>Information about the query execution.</p>
-    #[doc(hidden)]
     pub query_execution: ::std::option::Option<crate::types::QueryExecution>,
     _request_id: Option<String>,
 }

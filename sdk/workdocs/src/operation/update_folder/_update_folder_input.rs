@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the folder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent folder.</p>
-    #[doc(hidden)]
     pub parent_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
-    #[doc(hidden)]
     pub resource_state: ::std::option::Option<crate::types::ResourceStateType>,
 }
 impl UpdateFolderInput {

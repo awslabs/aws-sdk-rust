@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    #[doc(hidden)]
     pub db_proxy_targets: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
     _request_id: Option<String>,
 }

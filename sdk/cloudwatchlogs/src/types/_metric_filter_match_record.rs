@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricFilterMatchRecord {
     /// <p>The event number.</p>
-    #[doc(hidden)]
     pub event_number: i64,
     /// <p>The raw event data.</p>
-    #[doc(hidden)]
     pub event_message: ::std::option::Option<::std::string::String>,
     /// <p>The values extracted from the event data by the filter.</p>
-    #[doc(hidden)]
     pub extracted_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MetricFilterMatchRecord {

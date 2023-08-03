@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddressConfiguration {
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
-    #[doc(hidden)]
     pub body_override: ::std::option::Option<::std::string::String>,
     /// <p>The channel to use when sending the message.</p>
-    #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    #[doc(hidden)]
     pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
-    #[doc(hidden)]
     pub title_override: ::std::option::Option<::std::string::String>,
 }
 impl AddressConfiguration {

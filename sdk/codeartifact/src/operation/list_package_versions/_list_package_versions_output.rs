@@ -8,10 +8,8 @@ pub struct ListPackageVersionsOutput {
     /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
     /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub default_display_version: ::std::option::Option<::std::string::String>,
     /// <p> A format of the package. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -19,16 +17,12 @@ pub struct ListPackageVersionsOutput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

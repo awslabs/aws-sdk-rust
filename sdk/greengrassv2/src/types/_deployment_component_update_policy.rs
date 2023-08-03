@@ -7,7 +7,6 @@
 pub struct DeploymentComponentUpdatePolicy {
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code> </p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct DeploymentComponentUpdatePolicy {
     /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>,
 }
 impl DeploymentComponentUpdatePolicy {

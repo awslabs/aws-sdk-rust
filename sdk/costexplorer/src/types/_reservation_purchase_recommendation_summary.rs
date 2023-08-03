@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-    #[doc(hidden)]
     pub total_estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-    #[doc(hidden)]
     pub total_estimated_monthly_savings_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The currency code used for this recommendation.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationSummary {

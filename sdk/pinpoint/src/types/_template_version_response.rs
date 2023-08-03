@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateVersionResponse {
     /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that specifies the default values that are used for message variables in the version of the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
-    #[doc(hidden)]
     pub default_substitutions: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The custom description of the version of the message template.</p>
-    #[doc(hidden)]
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the message template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl TemplateVersionResponse {

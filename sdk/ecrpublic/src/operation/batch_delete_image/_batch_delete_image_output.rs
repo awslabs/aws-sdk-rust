@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteImageOutput {
     /// <p>The image IDs of the deleted images.</p>
-    #[doc(hidden)]
     pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
     _request_id: Option<String>,
 }

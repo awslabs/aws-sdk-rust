@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dataset {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// Date on which the dataset was created.
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Date when the dataset was last modified.
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The device that made the last change to this dataset.
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// Total size in bytes of the records in this dataset.
-    #[doc(hidden)]
     pub data_storage: ::std::option::Option<i64>,
     /// Number of records in this dataset.
-    #[doc(hidden)]
     pub num_records: ::std::option::Option<i64>,
 }
 impl Dataset {

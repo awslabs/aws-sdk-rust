@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hypervisor {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hypervisor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the hypervisor.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::HypervisorState>,
 }
 impl Hypervisor {

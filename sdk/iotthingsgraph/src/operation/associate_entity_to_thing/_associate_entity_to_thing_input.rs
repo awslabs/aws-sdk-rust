@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEntityToThingInput {
     /// <p>The name of the thing to which the entity is to be associated.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
 }
 impl AssociateEntityToThingInput {

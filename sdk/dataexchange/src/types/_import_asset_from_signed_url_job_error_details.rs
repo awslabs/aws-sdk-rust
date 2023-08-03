@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {

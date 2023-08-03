@@ -19,18 +19,14 @@ pub struct AdminInitiateAuthOutput {
     /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    #[doc(hidden)]
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
-    #[doc(hidden)]
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }

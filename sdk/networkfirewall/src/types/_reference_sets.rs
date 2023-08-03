@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceSets {
     /// <p>The list of IP set references.</p>
-    #[doc(hidden)]
     pub ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>>,
 }
 impl ReferenceSets {

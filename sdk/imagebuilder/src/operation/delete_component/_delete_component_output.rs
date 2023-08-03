@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the component build version that this request deleted.</p>
-    #[doc(hidden)]
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

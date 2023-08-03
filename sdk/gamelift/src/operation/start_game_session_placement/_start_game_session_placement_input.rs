@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementInput {
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
-    #[doc(hidden)]
     pub placement_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
-    #[doc(hidden)]
     pub game_session_queue_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    #[doc(hidden)]
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    #[doc(hidden)]
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    #[doc(hidden)]
     pub game_session_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
-    #[doc(hidden)]
     pub player_latencies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>,
     /// <p>Set of information on each player to create a player session for.</p>
-    #[doc(hidden)]
     pub desired_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>>,
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    #[doc(hidden)]
     pub game_session_data: ::std::option::Option<::std::string::String>,
 }
 impl StartGameSessionPlacementInput {

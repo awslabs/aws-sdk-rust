@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The runtime environment for the application.</p>
-    #[doc(hidden)]
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
-    #[doc(hidden)]
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The current timestamp when the application was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current timestamp when the application was last updated.</p>
-    #[doc(hidden)]
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub application_configuration_description: ::std::option::Option<crate::types::ApplicationConfigurationDescription>,
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     /// <p>The details of the maintenance configuration for the application.</p>
-    #[doc(hidden)]
     pub application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
-    #[doc(hidden)]
     pub application_version_updated_from: ::std::option::Option<i64>,
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
-    #[doc(hidden)]
     pub application_version_rolled_back_from: ::std::option::Option<i64>,
     /// <p>A value you use to implement strong concurrency for application updates.</p>
-    #[doc(hidden)]
     pub conditional_token: ::std::option::Option<::std::string::String>,
     /// <p>The version to which you want to roll back the application.</p>
-    #[doc(hidden)]
     pub application_version_rolled_back_to: ::std::option::Option<i64>,
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
-    #[doc(hidden)]
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl ApplicationDetail {

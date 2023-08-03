@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    #[doc(hidden)]
     pub output_url: ::std::option::Option<::std::string::String>,
 }
 impl S3OutputUrl {

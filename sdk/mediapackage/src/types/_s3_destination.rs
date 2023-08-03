@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Destination {
     /// The name of an S3 bucket within which harvested content will be exported
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-    #[doc(hidden)]
     pub manifest_key: ::std::option::Option<::std::string::String>,
     /// The IAM role used to write to the specified S3 bucket
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Destination {

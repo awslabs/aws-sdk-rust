@@ -9,39 +9,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetExportJob {
     /// <p>The name of the export job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    #[doc(hidden)]
     pub dataset_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    #[doc(hidden)]
     pub ingestion_mode: ::std::option::Option<crate::types::IngestionMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    #[doc(hidden)]
     pub job_output: ::std::option::Option<crate::types::DatasetExportJobOutput>,
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, provides the reason why.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl DatasetExportJob {

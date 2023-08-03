@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptions {
     /// <p>True to enable node-to-node encryption.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl NodeToNodeEncryptionOptions {

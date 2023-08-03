@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
-    #[doc(hidden)]
     pub sse_algorithm: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
     /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. If you use a key ID, you can run into a LogDestination undeliverable error when creating a VPC flow log. </p>
@@ -16,7 +15,6 @@ pub struct ServerSideEncryptionByDefault {
     /// </ul> <important>
     /// <p>Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionByDefault {

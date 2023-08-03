@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentItem {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    #[doc(hidden)]
     pub attachment_name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the attachment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ArtifactStatus>,
 }
 impl AttachmentItem {

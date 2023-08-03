@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
@@ -32,13 +26,10 @@ pub struct DescribePlaceIndexOutput {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The specified data storage option for requesting Places.</p>
-    #[doc(hidden)]
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Tags associated with place index resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimFilterOption {
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    #[doc(hidden)]
     pub instance_statuses: ::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>>,
 }
 impl ClaimFilterOption {

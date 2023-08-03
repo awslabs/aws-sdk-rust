@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct DatasetSummary {
     /// <li> <p>Users</p> </li>
     /// <li> <p>Event-Interactions</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -25,13 +22,10 @@ pub struct DatasetSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {

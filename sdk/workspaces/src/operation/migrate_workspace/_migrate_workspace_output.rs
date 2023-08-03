@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrateWorkspaceOutput {
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
-    #[doc(hidden)]
     pub source_workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
-    #[doc(hidden)]
     pub target_workspace_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

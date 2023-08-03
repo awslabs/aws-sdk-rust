@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The data processors.</p>
-    #[doc(hidden)]
     pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ProcessingConfiguration {

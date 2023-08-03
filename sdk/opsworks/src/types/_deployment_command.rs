@@ -23,7 +23,6 @@ pub struct DeploymentCommand {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DeploymentCommandName>,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
@@ -34,7 +33,6 @@ pub struct DeploymentCommand {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommand {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
-    #[doc(hidden)]
     pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     _request_id: Option<String>,
 }

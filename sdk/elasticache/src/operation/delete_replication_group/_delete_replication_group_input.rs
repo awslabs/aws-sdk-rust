@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationGroupInput {
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
-    #[doc(hidden)]
     pub retain_primary_cluster: ::std::option::Option<bool>,
     /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
-    #[doc(hidden)]
     pub final_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationGroupInput {

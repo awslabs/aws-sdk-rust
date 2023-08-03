@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
-    #[doc(hidden)]
     pub subscription_state: ::std::option::Option<crate::types::SubscriptionState>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 pub struct CancelJobInput {
     /// <p>The identifier of the job that you want to cancel.</p>
     /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInput {

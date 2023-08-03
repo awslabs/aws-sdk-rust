@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOriginAccessControlInput {
     /// <p>An origin access control.</p>
-    #[doc(hidden)]
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
     /// <p>The unique identifier of the origin access control that you are updating.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginAccessControlInput {

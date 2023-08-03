@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Voice {
     /// <p>Gender of the voice.</p>
-    #[doc(hidden)]
     pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::VoiceId>,
     /// <p>Language code of the voice.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Human readable name of the language in English.</p>
-    #[doc(hidden)]
     pub language_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    #[doc(hidden)]
     pub additional_language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    #[doc(hidden)]
     pub supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
 }
 impl Voice {

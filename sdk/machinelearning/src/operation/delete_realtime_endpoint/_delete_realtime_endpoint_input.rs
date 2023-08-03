@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRealtimeEndpointInput {

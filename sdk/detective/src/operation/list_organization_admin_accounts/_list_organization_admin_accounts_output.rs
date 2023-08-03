@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>The list of Detective administrator accounts.</p>
-    #[doc(hidden)]
     pub administrators: ::std::option::Option<::std::vec::Vec<crate::types::Administrator>>,
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

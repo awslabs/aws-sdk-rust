@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    #[doc(hidden)]
     pub junction_path: ::std::option::Option<::std::string::String>,
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    #[doc(hidden)]
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Specifies the size of the volume in megabytes.</p>
-    #[doc(hidden)]
     pub size_in_megabytes: ::std::option::Option<i32>,
     /// <p>Default is <code>false</code>. Set to true to enable the deduplication, compression, and compaction storage efficiency features on the volume.</p>
-    #[doc(hidden)]
     pub storage_efficiency_enabled: ::std::option::Option<bool>,
     /// <p>Update the volume's data tiering policy.</p>
-    #[doc(hidden)]
     pub tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -27,13 +22,10 @@ pub struct UpdateOntapVolumeConfiguration {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    #[doc(hidden)]
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
-    #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
 }
 impl UpdateOntapVolumeConfiguration {

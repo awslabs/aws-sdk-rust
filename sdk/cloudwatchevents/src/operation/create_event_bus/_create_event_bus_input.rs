@@ -6,13 +6,10 @@ pub struct CreateEventBusInput {
     /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    #[doc(hidden)]
     pub event_source_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the event bus.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEventBusInput {

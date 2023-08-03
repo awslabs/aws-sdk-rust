@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch profile protocol versions supported by the client.</p>
-    #[doc(hidden)]
     pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The launch purpose.</p>
-    #[doc(hidden)]
     pub launch_purpose: ::std::option::Option<::std::string::String>,
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchProfileInitializationInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EyeDirection {
     /// <p>Value representing eye direction on the yaw axis.</p>
-    #[doc(hidden)]
     pub yaw: ::std::option::Option<f32>,
     /// <p>Value representing eye direction on the pitch axis.</p>
-    #[doc(hidden)]
     pub pitch: ::std::option::Option<f32>,
     /// <p>The confidence that the service has in its predicted eye direction.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl EyeDirection {

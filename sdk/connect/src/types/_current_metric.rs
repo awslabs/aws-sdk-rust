@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentMetric {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::CurrentMetricName>,
     /// <p>The unit for the metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl CurrentMetric {

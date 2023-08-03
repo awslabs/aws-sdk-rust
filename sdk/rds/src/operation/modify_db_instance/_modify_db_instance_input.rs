@@ -9,17 +9,14 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The new compute and memory capacity of the DB instance, for example <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
     /// <p>Default: Uses existing setting</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC. If your DB instance isn't in a VPC, you can also use this parameter to move your DB instance into a VPC. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>
@@ -29,7 +26,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>If supplied, must match existing DB subnet group.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -37,7 +33,6 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>If supplied, must match existing DB security groups.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
@@ -49,11 +44,9 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>If supplied, must match existing VPC security group IDs.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
     /// <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The new password for the master user.</p>
     /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
@@ -78,7 +71,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
     /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to apply to the DB instance.</p>
     /// <p>Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. In this case, the DB instance isn't rebooted automatically, and the parameter changes aren't applied during the next maintenance window. However, if you modify dynamic parameters in the newly associated DB parameter group, these changes are applied immediately without a reboot.</p>
@@ -88,7 +80,6 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Must be in the same DB parameter group family as the DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
@@ -102,7 +93,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -113,7 +103,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter causes a reboot of the DB instance. If you change this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -126,18 +115,15 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>
     /// <p>If you specify only a major version, Amazon RDS updates the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or higher than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -145,7 +131,6 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
@@ -155,7 +140,6 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The license model for the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -167,7 +151,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
     /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.</p>
     /// <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you are migrating from Provisioned IOPS to standard storage, set this value to 0. The DB instance will require a reboot for the change in storage type to take effect.</p>
@@ -177,14 +160,12 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p> </li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Changing this parameter doesn't result in an outage, with one exception. If the parameter change results in an option group that enables OEM, it can cause a brief period, lasting less than a second, during which new connections are rejected but existing connections aren't interrupted.</p>
     /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur during the next maintenance window if you disable <code>ApplyImmediately</code>. This value is stored as a lowercase string.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -195,32 +176,26 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    #[doc(hidden)]
     pub new_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub tde_credential_password: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
@@ -228,7 +203,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
@@ -237,11 +211,9 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_ou: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
-    #[doc(hidden)]
     pub domain_auth_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
@@ -249,18 +221,15 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    #[doc(hidden)]
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags aren't copied.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>ModifyDBCluster</code>.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
     /// <p>Default: <code>0</code> </p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option group for the DB instance.</p>
@@ -280,49 +249,40 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_port_number: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p> <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly accessible.</p>
     /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
-    #[doc(hidden)]
     pub disable_domain: ::std::option::Option<bool>,
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: <code>1</code> </p>
     /// <p>Valid Values: <code>0 - 15</code> </p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -334,28 +294,22 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub use_default_processor_features: ::std::option::Option<bool>,
     /// <p>Specifies whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
     /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
@@ -367,27 +321,22 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub certificate_rotation_restart: ::std::option::Option<bool>,
     /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</p>
-    #[doc(hidden)]
     pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.</p>
     /// <p>Default: <code>60</code> </p>
@@ -396,18 +345,15 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Must be at least 60.</p> </li>
     /// <li> <p>Must be no more than 1,440.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resume_full_automation_mode_minutes: ::std::option::Option<i32>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The storage throughput value for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB instance doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
@@ -417,7 +363,6 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
@@ -426,7 +371,6 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rotate_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
@@ -436,7 +380,6 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
@@ -451,7 +394,6 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p> </li>
     /// <li> <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbInstanceInput {

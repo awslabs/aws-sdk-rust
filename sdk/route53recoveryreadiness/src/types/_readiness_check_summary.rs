@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadinessCheckSummary {
     /// <p>The readiness status of this readiness check.</p>
-    #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>The name of a readiness check.</p>
-    #[doc(hidden)]
     pub readiness_check_name: ::std::option::Option<::std::string::String>,
 }
 impl ReadinessCheckSummary {

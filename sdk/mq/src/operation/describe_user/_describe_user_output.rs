@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserOutput {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    #[doc(hidden)]
     pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<crate::types::UserPendingChanges>,
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether the user is intended for data replication</p>
-    #[doc(hidden)]
     pub replication_user: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

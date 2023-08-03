@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    #[doc(hidden)]
     pub application_source: ::std::option::Option<crate::types::ApplicationSource>,
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    #[doc(hidden)]
     pub scaling_instructions: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
 }
 impl UpdateScalingPlanInput {

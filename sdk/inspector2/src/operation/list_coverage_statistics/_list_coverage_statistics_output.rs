@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCoverageStatisticsOutput {
     /// <p>An array with the number for each group.</p>
-    #[doc(hidden)]
     pub counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>,
     /// <p>The total number for all groups.</p>
-    #[doc(hidden)]
     pub total_counts: ::std::option::Option<i64>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

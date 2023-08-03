@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    #[doc(hidden)]
     pub code_delivery_details_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }

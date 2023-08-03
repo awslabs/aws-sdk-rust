@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
-    #[doc(hidden)]
     pub output_resolution: ::std::option::Option<crate::types::OutputResolutionStackInput>,
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StackConfigInput {

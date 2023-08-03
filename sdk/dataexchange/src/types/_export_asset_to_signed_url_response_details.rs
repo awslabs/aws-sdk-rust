@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportAssetToSignedUrlResponseDetails {
     /// <p>The unique identifier for the asset associated with this export job.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this export response.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The signed URL for the export request.</p>
-    #[doc(hidden)]
     pub signed_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub signed_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExportAssetToSignedUrlResponseDetails {

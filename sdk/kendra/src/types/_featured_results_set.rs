@@ -5,31 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeaturedResultsSet {
     /// <p>The identifier of the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the set of featured results.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    #[doc(hidden)]
     pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    #[doc(hidden)]
     pub featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<i64>,
     /// <p>The Unix timestamp when the set of featured results was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<i64>,
 }
 impl FeaturedResultsSet {

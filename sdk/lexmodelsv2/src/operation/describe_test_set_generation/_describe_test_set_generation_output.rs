@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestSetGenerationOutput {
     /// <p>The unique identifier of the test set generation.</p>
-    #[doc(hidden)]
     pub test_set_generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The status for the test set generation.</p>
-    #[doc(hidden)]
     pub test_set_generation_status: ::std::option::Option<crate::types::TestSetGenerationStatus>,
     /// <p>The reasons the test set generation failed.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifier for the test set created for the generated test set.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set name for the generated test set.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The test set description for the test set generation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The data source of the test set used for the test set generation.</p>
-    #[doc(hidden)]
     pub generation_data_source: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
     /// <p> The roleARN of the test set used for the test set generation.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set generation.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update for the test set generation.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

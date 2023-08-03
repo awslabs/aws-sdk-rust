@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowLogsOutput {
     /// <p>Information about the flow logs.</p>
-    #[doc(hidden)]
     pub flow_logs: ::std::option::Option<::std::vec::Vec<crate::types::FlowLog>>,
     /// <p>The token to request the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

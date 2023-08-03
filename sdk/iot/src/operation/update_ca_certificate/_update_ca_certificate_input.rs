@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated status of the CA certificate.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    #[doc(hidden)]
     pub new_status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
-    #[doc(hidden)]
     pub new_auto_registration_status: ::std::option::Option<crate::types::AutoRegistrationStatus>,
     /// <p>Information about the registration configuration.</p>
-    #[doc(hidden)]
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     /// <p>If true, removes auto registration.</p>
-    #[doc(hidden)]
     pub remove_auto_registration: ::std::option::Option<bool>,
 }
 impl UpdateCaCertificateInput {

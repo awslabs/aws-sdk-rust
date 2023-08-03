@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalendarStateInput {
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    #[doc(hidden)]
     pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
-    #[doc(hidden)]
     pub at_time: ::std::option::Option<::std::string::String>,
 }
 impl GetCalendarStateInput {

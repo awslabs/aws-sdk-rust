@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssumeImpersonationRoleInput {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role ID to assume.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
 }
 impl AssumeImpersonationRoleInput {

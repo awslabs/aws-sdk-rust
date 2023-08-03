@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReceiptRuleSetOutput {
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
     _request_id: Option<String>,
 }

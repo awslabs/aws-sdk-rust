@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionOutput {
     /// <p>The deleted inbound connection.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }

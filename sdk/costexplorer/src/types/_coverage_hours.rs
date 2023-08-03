@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageHours {
     /// <p>The number of instance running hours that On-Demand Instances covered.</p>
-    #[doc(hidden)]
     pub on_demand_hours: ::std::option::Option<::std::string::String>,
     /// <p>The number of instance running hours that reservations covered.</p>
-    #[doc(hidden)]
     pub reserved_hours: ::std::option::Option<::std::string::String>,
     /// <p>The total instance usage, in hours.</p>
-    #[doc(hidden)]
     pub total_running_hours: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of instance hours that a reservation covered.</p>
-    #[doc(hidden)]
     pub coverage_hours_percentage: ::std::option::Option<::std::string::String>,
 }
 impl CoverageHours {

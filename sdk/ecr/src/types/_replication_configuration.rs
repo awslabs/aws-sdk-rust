@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
 }
 impl ReplicationConfiguration {

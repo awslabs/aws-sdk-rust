@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocationInput {
     /// <p>The location name of the custom location to be deleted.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLocationInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    #[doc(hidden)]
     pub firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutFirewallRuleGroupPolicyInput {

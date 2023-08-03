@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectJdbcSource {
     /// <p>The name of the JDBC source connection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The database of the JDBC source connection.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The table of the JDBC source connection.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>The connection name of the JDBC source.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection type of the JDBC source.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::JdbcConnectionType>,
     /// <p>The temp directory of the JDBC Redshift source.</p>
-    #[doc(hidden)]
     pub redshift_tmp_dir: ::std::option::Option<::std::string::String>,
 }
 impl DirectJdbcSource {

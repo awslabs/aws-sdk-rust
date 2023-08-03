@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerStrategiesOutput {
     /// <p> A list of strategy recommendations for the server. </p>
-    #[doc(hidden)]
     pub server_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
     _request_id: Option<String>,
 }

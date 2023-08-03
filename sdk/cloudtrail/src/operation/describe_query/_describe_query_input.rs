@@ -5,13 +5,10 @@
 pub struct DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The query ID.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p> The alias that identifies a query template. </p>
-    #[doc(hidden)]
     pub query_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowDisassociationRequest {
     /// <p>The IDs of the instances to disassociate from the event window.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance tags to disassociate from the event window. Any instances associated with the tags will be disassociated from the event window.</p>
-    #[doc(hidden)]
     pub instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
-    #[doc(hidden)]
     pub dedicated_host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceEventWindowDisassociationRequest {

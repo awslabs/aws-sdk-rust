@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectsOutput {
     /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
-    #[doc(hidden)]
     pub deleted: ::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::Error>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

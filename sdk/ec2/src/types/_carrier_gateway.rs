@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CarrierGateway {
     /// <p>The ID of the carrier gateway.</p>
-    #[doc(hidden)]
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC associated with the carrier gateway.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the carrier gateway.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CarrierGatewayState>,
     /// <p>The Amazon Web Services account ID of the owner of the carrier gateway.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the carrier gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CarrierGateway {

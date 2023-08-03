@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTableAssociation {
     /// <p>Indicates whether this is the main route table.</p>
-    #[doc(hidden)]
     pub main: ::std::option::Option<bool>,
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub route_table_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
 }
 impl RouteTableAssociation {

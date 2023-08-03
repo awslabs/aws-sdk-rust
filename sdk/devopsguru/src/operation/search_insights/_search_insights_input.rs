@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchInsightsInput {
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
-    #[doc(hidden)]
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::SearchInsightsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
 impl SearchInsightsInput {

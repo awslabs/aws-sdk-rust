@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<crate::types::Application>,
     /// <p>The tags of a registered application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressCounters {
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    #[doc(hidden)]
     pub total_steps: i32,
     /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    #[doc(hidden)]
     pub success_steps: i32,
     /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    #[doc(hidden)]
     pub failed_steps: i32,
     /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    #[doc(hidden)]
     pub cancelled_steps: i32,
     /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    #[doc(hidden)]
     pub timed_out_steps: i32,
 }
 impl ProgressCounters {

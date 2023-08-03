@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDynamicThingGroupInput {
     /// <p>The name of the dynamic thing group to delete.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The expected version of the dynamic thing group to delete.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
 }
 impl DeleteDynamicThingGroupInput {

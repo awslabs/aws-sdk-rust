@@ -6,10 +6,8 @@ pub struct DisableUserInput {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DisableUserInput {

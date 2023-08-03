@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InvokeOutput {
     /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
-    #[doc(hidden)]
     pub status_code: i32,
     /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
-    #[doc(hidden)]
     pub function_error: ::std::option::Option<::std::string::String>,
     /// <p>The last 4 KB of the execution log, which is base64-encoded.</p>
-    #[doc(hidden)]
     pub log_result: ::std::option::Option<::std::string::String>,
     /// <p>The response from the function, or an error object.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
-    #[doc(hidden)]
     pub executed_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

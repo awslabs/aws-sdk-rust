@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesOutput {
     /// <p>Information about the Scheduled Instances.</p>
-    #[doc(hidden)]
     pub scheduled_instance_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }

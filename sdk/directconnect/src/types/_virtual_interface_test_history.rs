@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualInterfaceTestHistory {
     /// <p>The ID of the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub test_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the tested virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The owner ID of the tested virtual interface.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
-    #[doc(hidden)]
     pub test_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VirtualInterfaceTestHistory {

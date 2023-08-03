@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableIpamOrganizationAdminAccountOutput {
     /// <p>The result of disabling the IPAM account.</p>
-    #[doc(hidden)]
     pub success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

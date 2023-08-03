@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartnerAccountsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk account credentials.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,
     _request_id: Option<String>,
 }

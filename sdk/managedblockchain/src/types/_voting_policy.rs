@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
-    #[doc(hidden)]
     pub approval_threshold_policy: ::std::option::Option<crate::types::ApprovalThresholdPolicy>,
 }
 impl VotingPolicy {

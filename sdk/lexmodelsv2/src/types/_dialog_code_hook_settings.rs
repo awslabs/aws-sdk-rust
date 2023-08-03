@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl DialogCodeHookSettings {

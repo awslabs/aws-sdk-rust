@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntentPathsInput {
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
@@ -18,10 +15,8 @@ pub struct ListIntentPathsInput {
     /// <li> <p>/BookCar/BookHotel</p> </li>
     /// <li> <p>/BookHotel/BookCar</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub intent_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>,
 }
 impl ListIntentPathsInput {

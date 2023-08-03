@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

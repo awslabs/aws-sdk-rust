@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaUplinkConfig {
     /// <p>Whether or not uplink transmit is disabled.</p>
-    #[doc(hidden)]
     pub transmit_disabled: ::std::option::Option<bool>,
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
-    #[doc(hidden)]
     pub spectrum_config: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
     /// <p>EIRP of the target.</p>
-    #[doc(hidden)]
     pub target_eirp: ::std::option::Option<crate::types::Eirp>,
 }
 impl AntennaUplinkConfig {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timing {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
-    #[doc(hidden)]
     pub submit_time_millis: ::std::option::Option<i64>,
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
-    #[doc(hidden)]
     pub start_time_millis: ::std::option::Option<i64>,
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
-    #[doc(hidden)]
     pub finish_time_millis: ::std::option::Option<i64>,
 }
 impl Timing {

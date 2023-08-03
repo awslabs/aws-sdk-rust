@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostDialogCodeHookInvocationSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub success_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
-    #[doc(hidden)]
     pub success_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-    #[doc(hidden)]
     pub success_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub failure_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub timeout_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
-    #[doc(hidden)]
     pub timeout_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-    #[doc(hidden)]
     pub timeout_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
 }
 impl PostDialogCodeHookInvocationSpecification {

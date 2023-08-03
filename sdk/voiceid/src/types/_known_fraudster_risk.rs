@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KnownFraudsterRisk {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
-    #[doc(hidden)]
     pub risk_score: ::std::option::Option<i32>,
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub generated_fraudster_id: ::std::option::Option<::std::string::String>,
 }
 impl KnownFraudsterRisk {

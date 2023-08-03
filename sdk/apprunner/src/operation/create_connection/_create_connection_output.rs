@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOutput {
     /// <p>A description of the App Runner connection that's created by this request.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }

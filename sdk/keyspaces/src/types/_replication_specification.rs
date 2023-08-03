@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationSpecification {
     /// <p> The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    #[doc(hidden)]
     pub replication_strategy: ::std::option::Option<crate::types::Rs>,
     /// <p> The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in. </p>
-    #[doc(hidden)]
     pub region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplicationSpecification {

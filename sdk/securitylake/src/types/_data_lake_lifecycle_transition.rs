@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleTransition {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<::std::string::String>,
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub days: ::std::option::Option<i32>,
 }
 impl DataLakeLifecycleTransition {

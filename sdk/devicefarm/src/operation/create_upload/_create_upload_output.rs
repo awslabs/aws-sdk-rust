@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUploadOutput {
     /// <p>The newly created upload.</p>
-    #[doc(hidden)]
     pub upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }

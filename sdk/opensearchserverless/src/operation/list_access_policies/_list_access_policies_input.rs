@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of access policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAccessPoliciesInput {

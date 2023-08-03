@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    #[doc(hidden)]
     pub agent_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
     /// <p>Returns a list of models deployed on the the device.</p>
-    #[doc(hidden)]
     pub models: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
     /// <p>Returns the version of the agent.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet that the device belongs to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the result of a deployment on the device.</p>
-    #[doc(hidden)]
     pub deployment_result: ::std::option::Option<crate::types::DeploymentResult>,
 }
 impl SendHeartbeatInput {

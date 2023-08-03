@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateControlMappingSource {
     /// <p> The name of the control mapping data source. </p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the data source that determines where Audit Manager collects evidence from for the control. </p>
-    #[doc(hidden)]
     pub source_description: ::std::option::Option<::std::string::String>,
     /// <p> The setup option for the data source, which reflects if the evidence collection is automated or manual. </p>
-    #[doc(hidden)]
     pub source_set_up_option: ::std::option::Option<crate::types::SourceSetUpOption>,
     /// <p> Specifies one of the five types of data sources for evidence collection. </p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>A keyword that relates to the control data source.</p>
     /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
@@ -26,13 +22,10 @@ pub struct CreateControlMappingSource {
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_keyword: ::std::option::Option<crate::types::SourceKeyword>,
     /// <p>Specifies how often evidence is collected from the control mapping source. </p>
-    #[doc(hidden)]
     pub source_frequency: ::std::option::Option<crate::types::SourceFrequency>,
     /// <p> The instructions for troubleshooting the control. </p>
-    #[doc(hidden)]
     pub troubleshooting_text: ::std::option::Option<::std::string::String>,
 }
 impl CreateControlMappingSource {

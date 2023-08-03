@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SplunkDestinationDescription {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
-    #[doc(hidden)]
     pub hec_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
-    #[doc(hidden)]
     pub hec_endpoint_type: ::std::option::Option<crate::types::HecEndpointType>,
     /// <p>A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
-    #[doc(hidden)]
     pub hec_token: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
-    #[doc(hidden)]
     pub hec_acknowledgment_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::SplunkRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>. </p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::SplunkS3BackupMode>,
     /// <p>The Amazon S3 destination.&gt;</p>
-    #[doc(hidden)]
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl SplunkDestinationDescription {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSpeakerSearchTaskOutput {
     /// <p>The details of the speaker search task.</p>
-    #[doc(hidden)]
     pub speaker_search_task: ::std::option::Option<crate::types::SpeakerSearchTask>,
     _request_id: Option<String>,
 }

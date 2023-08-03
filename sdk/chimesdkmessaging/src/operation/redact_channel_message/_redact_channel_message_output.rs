@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the message being redacted.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SubChannel in the response.</p> <note>
     /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

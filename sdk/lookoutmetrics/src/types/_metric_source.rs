@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
-    #[doc(hidden)]
     pub s3_source_config: ::std::option::Option<crate::types::S3SourceConfig>,
     /// <p>Details about an AppFlow datasource.</p>
-    #[doc(hidden)]
     pub app_flow_config: ::std::option::Option<crate::types::AppFlowConfig>,
     /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
-    #[doc(hidden)]
     pub cloud_watch_config: ::std::option::Option<crate::types::CloudWatchConfig>,
     /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
-    #[doc(hidden)]
     pub rds_source_config: ::std::option::Option<crate::types::RdsSourceConfig>,
     /// <p>Details about an Amazon Redshift database datasource.</p>
-    #[doc(hidden)]
     pub redshift_source_config: ::std::option::Option<crate::types::RedshiftSourceConfig>,
     /// <p>Details about an Amazon Athena datasource.</p>
-    #[doc(hidden)]
     pub athena_source_config: ::std::option::Option<crate::types::AthenaSourceConfig>,
 }
 impl MetricSource {

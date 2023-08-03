@@ -9,13 +9,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WarningsListItem {
     /// <p>Page number in the input document.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>The type of warning.</p>
-    #[doc(hidden)]
     pub warn_code: ::std::option::Option<crate::types::PageBasedWarningCode>,
     /// <p>Text message associated with the warning.</p>
-    #[doc(hidden)]
     pub warn_message: ::std::option::Option<::std::string::String>,
 }
 impl WarningsListItem {

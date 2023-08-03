@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopQueryOutput {
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
-    #[doc(hidden)]
     pub success: bool,
     _request_id: Option<String>,
 }

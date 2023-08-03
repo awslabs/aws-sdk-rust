@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSshPublicKeyInput {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSshPublicKeyInput {

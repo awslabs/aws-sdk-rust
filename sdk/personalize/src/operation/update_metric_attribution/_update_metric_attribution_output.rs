@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMetricAttributionOutput {
     /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
-    #[doc(hidden)]
     pub metric_attribution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

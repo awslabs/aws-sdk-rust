@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    #[doc(hidden)]
     pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

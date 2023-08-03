@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSearchSuggestionsInput {
     /// <p>The name of the SageMaker resource to search for.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Limits the property names that are included in the response.</p>
-    #[doc(hidden)]
     pub suggestion_query: ::std::option::Option<crate::types::SuggestionQuery>,
 }
 impl GetSearchSuggestionsInput {

@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIndexInput {
     /// <p>The identifier of the index you want to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index you want to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the index.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    #[doc(hidden)]
     pub document_metadata_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    #[doc(hidden)]
     pub capacity_units: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
     /// <p>The user token configuration.</p>
-    #[doc(hidden)]
     pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
-    #[doc(hidden)]
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    #[doc(hidden)]
     pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl UpdateIndexInput {

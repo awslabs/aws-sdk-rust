@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Integrations {
     /// <p> The information about the resource group integration.</p>
-    #[doc(hidden)]
     pub resource_group: ::std::option::Option<crate::types::ResourceGroup>,
 }
 impl Integrations {

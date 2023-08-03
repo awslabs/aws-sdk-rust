@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCommentOutput {
     /// <p>The comment that has been created.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationWithSubscribers {
     /// <p>The notification that's associated with a budget.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
 }
 impl NotificationWithSubscribers {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    #[doc(hidden)]
     pub mux_type: ::std::option::Option<crate::types::AudioMuxType>,
 }
 impl AudioArtifactsConfiguration {

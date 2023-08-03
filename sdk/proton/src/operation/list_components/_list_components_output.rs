@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentsOutput {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of components with summary data.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
     _request_id: Option<String>,
 }

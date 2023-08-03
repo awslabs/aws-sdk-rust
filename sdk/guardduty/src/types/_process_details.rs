@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessDetails {
     /// <p>The name of the process.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path of the process executable file.</p>
-    #[doc(hidden)]
     pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
-    #[doc(hidden)]
     pub executable_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the child process.</p>
-    #[doc(hidden)]
     pub namespace_pid: i32,
     /// <p>The present working directory of the process.</p>
-    #[doc(hidden)]
     pub pwd: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the process.</p>
-    #[doc(hidden)]
     pub pid: i32,
     /// <p>The time when the process started. This is in UTC format.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    #[doc(hidden)]
     pub parent_uuid: ::std::option::Option<::std::string::String>,
     /// <p>The user that executed the process.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the user that executed the process.</p>
-    #[doc(hidden)]
     pub user_id: i32,
     /// <p>The effective user ID of the user that executed the process.</p>
-    #[doc(hidden)]
     pub euid: i32,
     /// <p>Information about the process's lineage.</p>
-    #[doc(hidden)]
     pub lineage: ::std::option::Option<::std::vec::Vec<crate::types::LineageObject>>,
 }
 impl ProcessDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
-    #[doc(hidden)]
     pub analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExperimentSchedule {

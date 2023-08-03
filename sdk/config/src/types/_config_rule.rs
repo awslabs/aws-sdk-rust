@@ -10,27 +10,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigRule {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The description that you provide for the Config rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
     /// <p>The scope can be empty. </p>
     /// </note>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
@@ -39,21 +32,17 @@ pub struct ConfigRule {
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     /// <p>Indicates whether the Config rule is active or is currently being deleted by Config. It can also indicate the evaluation status for the Config rule.</p>
     /// <p>Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.</p>
     /// <p>Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.</p>
     /// <p>Config temporarily sets the state of a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes the rule, the rule and all of its evaluations are erased and are no longer available.</p>
-    #[doc(hidden)]
     pub config_rule_state: ::std::option::Option<crate::types::ConfigRuleState>,
     /// <p>Service principal name of the service that created the rule.</p> <note>
     /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
     /// </note>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
-    #[doc(hidden)]
     pub evaluation_modes: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
 }
 impl ConfigRule {

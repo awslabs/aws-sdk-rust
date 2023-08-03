@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Speaker {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The client-provided identifier for the speaker.</p>
-    #[doc(hidden)]
     pub customer_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the speaker.</p>
-    #[doc(hidden)]
     pub generated_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the speaker.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SpeakerStatus>,
     /// <p>A timestamp of when the speaker was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the speaker's last update.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-    #[doc(hidden)]
     pub last_accessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Speaker {

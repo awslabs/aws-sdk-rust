@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNamedQueryOutput {
     /// <p>Information about the query.</p>
-    #[doc(hidden)]
     pub named_query: ::std::option::Option<crate::types::NamedQuery>,
     _request_id: Option<String>,
 }

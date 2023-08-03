@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkEdge {
     /// <p>The Region where a core network edge is located.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The ASN of a core network edge.</p>
-    #[doc(hidden)]
     pub asn: ::std::option::Option<i64>,
     /// <p>The inside IP addresses used for core network edges.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CoreNetworkEdge {

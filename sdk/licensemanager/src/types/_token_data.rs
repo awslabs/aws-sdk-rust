@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TokenData {
     /// <p>Token ID.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
-    #[doc(hidden)]
     pub token_type: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>Data specified by the caller.</p>
-    #[doc(hidden)]
     pub token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    #[doc(hidden)]
     pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl TokenData {

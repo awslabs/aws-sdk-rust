@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
-    #[doc(hidden)]
     pub phrase: ::std::option::Option<::std::string::String>,
 }
 impl RuntimeHintValue {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventActionInput {
     /// <p>What occurs after a certain event.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The unique identifier for the event action.</p>
-    #[doc(hidden)]
     pub event_action_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEventActionInput {

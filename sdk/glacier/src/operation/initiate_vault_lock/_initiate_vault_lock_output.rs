@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
-    #[doc(hidden)]
     pub lock_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

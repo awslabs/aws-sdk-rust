@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogDeliveryStatus {
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogDeliveryStatus {

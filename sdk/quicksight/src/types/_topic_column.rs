@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicColumn {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly name for the column.</p>
-    #[doc(hidden)]
     pub column_friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the column and its contents.</p>
-    #[doc(hidden)]
     pub column_description: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the column.</p>
-    #[doc(hidden)]
     pub column_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The role of the column in the data. Valid values are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
-    #[doc(hidden)]
     pub column_data_role: ::std::option::Option<crate::types::ColumnDataRole>,
     /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::DefaultAggregation>,
     /// <p>A Boolean value that indicates whether the column is included in the query results.</p>
-    #[doc(hidden)]
     pub is_included_in_topic: bool,
     /// <p>A Boolean value that indicates whether the column shows in the autocomplete functionality.</p>
-    #[doc(hidden)]
     pub disable_indexing: ::std::option::Option<bool>,
     /// <p>The order in which data is displayed for the column when it's used in a comparative context.</p>
-    #[doc(hidden)]
     pub comparative_order: ::std::option::Option<crate::types::ComparativeOrder>,
     /// <p>The semantic type of data contained in the column.</p>
-    #[doc(hidden)]
     pub semantic_type: ::std::option::Option<crate::types::SemanticType>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    #[doc(hidden)]
     pub allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    #[doc(hidden)]
     pub not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The default formatting used for values in the column.</p>
-    #[doc(hidden)]
     pub default_formatting: ::std::option::Option<crate::types::DefaultFormatting>,
     /// <p>A Boolean value that indicates whether to aggregate the column data when it's used in a filter context.</p>
-    #[doc(hidden)]
     pub never_aggregate_in_filter: bool,
     /// <p>The other names or aliases for the column cell value.</p>
-    #[doc(hidden)]
     pub cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
 }
 impl TopicColumn {

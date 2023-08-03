@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileCacheOutput {
     /// <p>The ID of the cache that's being deleted.</p>
-    #[doc(hidden)]
     pub file_cache_id: ::std::option::Option<::std::string::String>,
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,
     _request_id: Option<String>,
 }

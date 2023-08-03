@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStatementOutput {
     /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

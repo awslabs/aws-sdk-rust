@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountPreferencesOutput {
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub resource_id_preference: ::std::option::Option<crate::types::ResourceIdPreference>,
     /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditEvent {
     /// <p>The original event ID from the source event.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    #[doc(hidden)]
     pub event_data: ::std::option::Option<::std::string::String>,
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
-    #[doc(hidden)]
     pub event_data_checksum: ::std::option::Option<::std::string::String>,
 }
 impl AuditEvent {

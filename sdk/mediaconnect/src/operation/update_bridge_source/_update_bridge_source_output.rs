@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeSourceOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The bridge's source.
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::BridgeSource>,
     _request_id: Option<String>,
 }

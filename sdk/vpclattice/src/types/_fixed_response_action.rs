@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FixedResponseAction {
     /// <p>The HTTP response code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
 }
 impl FixedResponseAction {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsOutput {
     /// <p>A list of user names.</p>
-    #[doc(hidden)]
     pub usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,39 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOriginEndpointInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
-    #[doc(hidden)]
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
-    #[doc(hidden)]
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    #[doc(hidden)]
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInput {

@@ -5,16 +5,12 @@
 pub struct GetQueryResultsInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query for which you want to get results.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>A token you can use to get the next page of query results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of query results to display on a single page.</p>
-    #[doc(hidden)]
     pub max_query_results: ::std::option::Option<i32>,
 }
 impl GetQueryResultsInput {

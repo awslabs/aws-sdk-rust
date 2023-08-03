@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReportGroupOutput {
     /// <p> Information about the updated report group. </p>
-    #[doc(hidden)]
     pub report_group: ::std::option::Option<crate::types::ReportGroup>,
     _request_id: Option<String>,
 }

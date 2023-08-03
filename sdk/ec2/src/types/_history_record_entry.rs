@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryRecordEntry {
     /// <p>Information about the event.</p>
-    #[doc(hidden)]
     pub event_information: ::std::option::Option<crate::types::EventInformation>,
     /// <p>The event type.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::FleetEventType>,
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HistoryRecordEntry {

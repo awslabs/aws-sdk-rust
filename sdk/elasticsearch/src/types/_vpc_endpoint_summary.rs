@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The creator of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointSummary {

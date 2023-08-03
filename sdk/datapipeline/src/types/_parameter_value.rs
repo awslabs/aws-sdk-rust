@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterValue {
     /// <p>The ID of the parameter value.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The field value, expressed as a String.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterValue {

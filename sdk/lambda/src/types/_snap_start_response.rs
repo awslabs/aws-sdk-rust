@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapStartResponse {
     /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
-    #[doc(hidden)]
     pub apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
     /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-    #[doc(hidden)]
     pub optimization_status: ::std::option::Option<crate::types::SnapStartOptimizationStatus>,
 }
 impl SnapStartResponse {

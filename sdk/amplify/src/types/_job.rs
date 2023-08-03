@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::JobSummary>,
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
 impl Job {

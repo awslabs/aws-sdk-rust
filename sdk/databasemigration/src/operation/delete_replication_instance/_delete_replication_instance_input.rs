@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationInstanceInput {

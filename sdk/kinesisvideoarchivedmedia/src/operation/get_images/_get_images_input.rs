@@ -4,44 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImagesInput {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    #[doc(hidden)]
     pub image_selector_type: ::std::option::Option<crate::types::ImageSelectorType>,
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end timestamp for the range of images to be generated.</p>
-    #[doc(hidden)]
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
     /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
     /// </note>
-    #[doc(hidden)]
     pub sampling_interval: ::std::option::Option<i32>,
     /// <p>The format that will be used to encode the image.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    #[doc(hidden)]
     pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
-    #[doc(hidden)]
     pub width_pixels: ::std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
-    #[doc(hidden)]
     pub height_pixels: ::std::option::Option<i32>,
     /// <p>The maximum number of images to be returned by the API. </p> <note>
     /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
     /// </note>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i64>,
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetImagesInput {

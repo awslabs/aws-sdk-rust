@@ -6,13 +6,10 @@ pub struct CreateBuildOutput {
     /// <p>The newly created build resource, including a unique build IDs and status. </p>
     ///
     /// _Note: This member has been renamed from `build`._
-    #[doc(hidden)]
     pub build_value: ::std::option::Option<crate::types::Build>,
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
-    #[doc(hidden)]
     pub upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }

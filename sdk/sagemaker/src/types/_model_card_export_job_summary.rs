@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelCardExportJobSummary {
     /// <p>The name of the model card export job.</p>
-    #[doc(hidden)]
     pub model_card_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    #[doc(hidden)]
     pub model_card_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The completion status of the model card export job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
     /// <p>The name of the model card that the export job exports.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card that the export job exports.</p>
-    #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The date and time that the model card export job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the model card export job was last modified..</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ModelCardExportJobSummary {

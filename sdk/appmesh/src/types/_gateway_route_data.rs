@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway route.</p>
-    #[doc(hidden)]
     pub gateway_route_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    #[doc(hidden)]
     pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the gateway route.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
     /// <p>An object that represents metadata for a resource.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The status of the gateway route.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GatewayRouteStatus>,
 }
 impl GatewayRouteData {

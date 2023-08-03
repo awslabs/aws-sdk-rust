@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl Partition {

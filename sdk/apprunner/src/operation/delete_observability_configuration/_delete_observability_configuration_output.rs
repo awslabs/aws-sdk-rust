@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
-    #[doc(hidden)]
     pub observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileOutput {
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

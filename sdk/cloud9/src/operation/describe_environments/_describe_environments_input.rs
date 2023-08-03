@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsInput {
     /// <p>The IDs of individual environments to get information about.</p>
-    #[doc(hidden)]
     pub environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeEnvironmentsInput {

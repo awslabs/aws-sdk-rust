@@ -6,24 +6,19 @@
 pub struct RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
     /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
     /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     /// <p>The status of the inferred workload types recommendation preference.</p>
     /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
-    #[doc(hidden)]
     pub inferred_workload_types: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
     /// <p> An object that describes the external metrics recommendation preference. </p>
     /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
-    #[doc(hidden)]
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
 }
 impl RecommendationPreferencesDetail {

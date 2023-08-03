@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
 }
 impl SuggestionHighlight {

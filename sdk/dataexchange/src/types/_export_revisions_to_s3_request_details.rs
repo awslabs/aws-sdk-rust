@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Encryption configuration for the export job.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination for the revision.</p>
-    #[doc(hidden)]
     pub revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
 }
 impl ExportRevisionsToS3RequestDetails {

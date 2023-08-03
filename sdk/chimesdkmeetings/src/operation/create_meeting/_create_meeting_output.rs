@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMeetingOutput {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
-    #[doc(hidden)]
     pub meeting: ::std::option::Option<crate::types::Meeting>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextControlPlaceholderOptions {
     /// <p>The visibility configuration of the placeholder options in a text control.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl TextControlPlaceholderOptions {

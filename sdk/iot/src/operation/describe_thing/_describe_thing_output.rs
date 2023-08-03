@@ -6,30 +6,22 @@
 pub struct DescribeThingOutput {
     /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
     /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
-    #[doc(hidden)]
     pub default_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the thing to describe.</p>
-    #[doc(hidden)]
     pub thing_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to describe.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thing type name.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The name of the billing group the thing belongs to.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

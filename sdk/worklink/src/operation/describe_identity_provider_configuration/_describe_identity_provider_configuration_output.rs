@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigurationOutput {
     /// <p>The type of identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    #[doc(hidden)]
     pub service_provider_saml_metadata: ::std::option::Option<::std::string::String>,
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_saml_metadata: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

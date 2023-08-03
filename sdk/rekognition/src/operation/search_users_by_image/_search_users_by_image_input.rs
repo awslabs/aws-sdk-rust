@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchUsersByImageInput {
     /// <p>The ID of an existing collection containing the UserID.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the input image either as bytes or an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
@@ -13,16 +12,12 @@ pub struct SearchUsersByImageInput {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Specifies the minimum confidence in the UserID match to return. Default value is 80.</p>
-    #[doc(hidden)]
     pub user_match_threshold: ::std::option::Option<f32>,
     /// <p>Maximum number of UserIDs to return.</p>
-    #[doc(hidden)]
     pub max_users: ::std::option::Option<i32>,
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. The default value is NONE.</p>
-    #[doc(hidden)]
     pub quality_filter: ::std::option::Option<crate::types::QualityFilter>,
 }
 impl SearchUsersByImageInput {

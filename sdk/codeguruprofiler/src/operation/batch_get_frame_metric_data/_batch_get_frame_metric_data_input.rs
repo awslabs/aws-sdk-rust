@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<::std::string::String>,
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
@@ -22,10 +18,8 @@ pub struct BatchGetFrameMetricDataInput {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_resolution: ::std::option::Option<crate::types::AggregationPeriod>,
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    #[doc(hidden)]
     pub frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>,
 }
 impl BatchGetFrameMetricDataInput {

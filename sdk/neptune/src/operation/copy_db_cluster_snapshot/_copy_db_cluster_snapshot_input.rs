@@ -10,7 +10,6 @@ pub struct CopyDbClusterSnapshotInput {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    #[doc(hidden)]
     pub source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -20,23 +19,18 @@ pub struct CopyDbClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    #[doc(hidden)]
     pub target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
     /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported.</p>
-    #[doc(hidden)]
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterSnapshotInput {

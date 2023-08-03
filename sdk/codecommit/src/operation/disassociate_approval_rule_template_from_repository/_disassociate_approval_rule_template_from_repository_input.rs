@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryInput {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository you want to disassociate from the template.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryInput {

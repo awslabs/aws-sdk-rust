@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
-    #[doc(hidden)]
     pub retention_policy: ::std::option::Option<crate::types::RetentionPolicy>,
 }
 impl DeleteDomainInput {

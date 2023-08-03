@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyInput {

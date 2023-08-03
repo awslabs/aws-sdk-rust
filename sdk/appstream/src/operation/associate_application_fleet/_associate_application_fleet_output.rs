@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApplicationFleetOutput {
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
-    #[doc(hidden)]
     pub application_fleet_association: ::std::option::Option<crate::types::ApplicationFleetAssociation>,
     _request_id: Option<String>,
 }

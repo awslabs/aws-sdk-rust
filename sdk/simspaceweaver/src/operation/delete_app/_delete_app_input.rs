@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppInput {
     /// <p>The name of the simulation of the app.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppInput {

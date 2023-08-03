@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    #[doc(hidden)]
     pub storage_lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl ListStorageLensConfigurationEntry {

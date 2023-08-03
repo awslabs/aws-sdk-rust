@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The memory maximum in GiB.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
 }
 impl MemoryGiBPerVCpuRequest {

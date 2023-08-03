@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    #[doc(hidden)]
     pub default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,
     /// The ID of the Lambda function definition.
-    #[doc(hidden)]
     pub function_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of Lambda functions in this function definition version.
-    #[doc(hidden)]
     pub functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
 }
 impl CreateFunctionDefinitionVersionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {

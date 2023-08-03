@@ -10,7 +10,6 @@ pub struct NetworkEthereumAttributes {
     /// <li> <p>goerli = <code>5</code> </p> </li>
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub chain_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkEthereumAttributes {

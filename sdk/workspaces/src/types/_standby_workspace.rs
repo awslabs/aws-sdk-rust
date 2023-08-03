@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub primary_workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the standby WorkSpace.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StandbyWorkspace {

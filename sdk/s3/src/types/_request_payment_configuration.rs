@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
-    #[doc(hidden)]
     pub payer: ::std::option::Option<crate::types::Payer>,
 }
 impl RequestPaymentConfiguration {

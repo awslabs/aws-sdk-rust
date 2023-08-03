@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataViewsOutput {
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Dataviews.</p>
-    #[doc(hidden)]
     pub data_views: ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>>,
     _request_id: Option<String>,
 }

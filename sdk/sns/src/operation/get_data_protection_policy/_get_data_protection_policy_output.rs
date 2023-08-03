@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyOutput {
     /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-    #[doc(hidden)]
     pub data_protection_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

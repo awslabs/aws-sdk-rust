@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemasOutput {
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-    #[doc(hidden)]
     pub fleet_advisor_schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

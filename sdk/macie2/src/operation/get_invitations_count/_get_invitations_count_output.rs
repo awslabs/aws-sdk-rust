@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutput {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
-    #[doc(hidden)]
     pub invitations_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

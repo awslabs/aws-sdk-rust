@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncrementalRunConfig {
     /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
-    #[doc(hidden)]
     pub incremental_run_type: ::std::option::Option<crate::types::IncrementalRunType>,
 }
 impl IncrementalRunConfig {

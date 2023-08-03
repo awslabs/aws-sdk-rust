@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLabelsOutput {
     /// <p>An array of labels.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>The next page token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

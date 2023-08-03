@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartFieldWells {
     /// <p>The aggregated field wells of a radar chart visual.</p>
-    #[doc(hidden)]
     pub radar_chart_aggregated_field_wells: ::std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
 }
 impl RadarChartFieldWells {

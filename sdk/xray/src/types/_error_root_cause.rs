@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
-    #[doc(hidden)]
     pub client_impacting: ::std::option::Option<bool>,
 }
 impl ErrorRootCause {

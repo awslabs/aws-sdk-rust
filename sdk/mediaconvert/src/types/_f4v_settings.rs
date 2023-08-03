@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct F4vSettings {
     /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
-    #[doc(hidden)]
     pub moov_placement: ::std::option::Option<crate::types::F4vMoovPlacement>,
 }
 impl F4vSettings {

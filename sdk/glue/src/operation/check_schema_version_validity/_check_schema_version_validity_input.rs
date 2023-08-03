@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityInput {
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>The definition of the schema that has to be validated.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl CheckSchemaVersionValidityInput {

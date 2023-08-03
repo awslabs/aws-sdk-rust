@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
-    #[doc(hidden)]
     pub ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet terminated.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InstanceFleetTimeline {

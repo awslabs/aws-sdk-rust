@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelledSpotInstanceRequest {
     /// <p>The ID of the Spot Instance request.</p>
-    #[doc(hidden)]
     pub spot_instance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Spot Instance request.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CancelSpotInstanceRequestState>,
 }
 impl CancelledSpotInstanceRequest {

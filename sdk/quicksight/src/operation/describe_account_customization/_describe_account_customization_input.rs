@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
-    #[doc(hidden)]
     pub resolved: ::std::option::Option<bool>,
 }
 impl DescribeAccountCustomizationInput {

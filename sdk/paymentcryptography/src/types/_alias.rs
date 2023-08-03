@@ -7,10 +7,8 @@ pub struct Alias {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Alias {

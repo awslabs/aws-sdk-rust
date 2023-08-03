@@ -10,10 +10,8 @@
 pub struct XssMatchSetSummary {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    #[doc(hidden)]
     pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl XssMatchSetSummary {

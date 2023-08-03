@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpamOutput {
     /// <p>Information about the IPAM created.</p>
-    #[doc(hidden)]
     pub ipam: ::std::option::Option<crate::types::Ipam>,
     _request_id: Option<String>,
 }

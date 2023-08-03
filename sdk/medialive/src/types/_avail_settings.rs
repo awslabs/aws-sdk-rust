@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailSettings {
     /// Esam
-    #[doc(hidden)]
     pub esam: ::std::option::Option<crate::types::Esam>,
     /// Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements.
-    #[doc(hidden)]
     pub scte35_splice_insert: ::std::option::Option<crate::types::Scte35SpliceInsert>,
     /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks.
-    #[doc(hidden)]
     pub scte35_time_signal_apos: ::std::option::Option<crate::types::Scte35TimeSignalApos>,
 }
 impl AvailSettings {

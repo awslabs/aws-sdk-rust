@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration by Source Server ID request.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Launch configuration name request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Update Launch configuration launch disposition request.</p>
-    #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Update Launch configuration Target instance right sizing request.</p>
-    #[doc(hidden)]
     pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Update Launch configuration copy Private IP request.</p>
-    #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
     /// <p>Update Launch configuration copy Tags request.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>Update Launch configuration licensing request.</p>
-    #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>Update Launch configuration boot mode request.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    #[doc(hidden)]
     pub post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     /// <p>Enable map auto tagging.</p>
-    #[doc(hidden)]
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Launch configuration map auto tagging MPE ID.</p>
-    #[doc(hidden)]
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Launch configuration Account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationInput {

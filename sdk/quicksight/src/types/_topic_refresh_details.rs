@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshDetails {
     /// <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
-    #[doc(hidden)]
     pub refresh_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the refresh, which occurs as a result of topic creation or topic update.</p>
-    #[doc(hidden)]
     pub refresh_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the refresh job that indicates whether the job is still running, completed successfully, or failed.</p>
-    #[doc(hidden)]
     pub refresh_status: ::std::option::Option<crate::types::TopicRefreshStatus>,
 }
 impl TopicRefreshDetails {

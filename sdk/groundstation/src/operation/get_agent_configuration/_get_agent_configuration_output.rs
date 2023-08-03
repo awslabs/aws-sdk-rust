@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationOutput {
     /// <p>UUID of agent.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>Tasking document for agent.</p>
-    #[doc(hidden)]
     pub tasking_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeviceAuthorizationInput {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
-    #[doc(hidden)]
     pub start_url: ::std::option::Option<::std::string::String>,
 }
 impl StartDeviceAuthorizationInput {

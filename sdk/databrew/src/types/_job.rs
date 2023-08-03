@@ -5,84 +5,60 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p>The ID of the Amazon Web Services account that owns the job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the job was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A dataset that the job is to process.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The unique name of the job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
     /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::JobType>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The modification date and time of the job.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of Amazon CloudWatch logging for the job.</p>
-    #[doc(hidden)]
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
-    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>One or more artifacts that represent output from running the job.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    #[doc(hidden)]
     pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     /// <p>The name of the project that the job is associated with.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of steps that the job runs.</p>
-    #[doc(hidden)]
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
     /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    #[doc(hidden)]
     pub timeout: i32,
     /// <p>Metadata tags that have been applied to the job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-    #[doc(hidden)]
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    #[doc(hidden)]
     pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
 }
 impl Job {

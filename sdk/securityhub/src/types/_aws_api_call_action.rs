@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallAction {
     /// <p>The name of the API method that was issued.</p>
-    #[doc(hidden)]
     pub api: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
-    #[doc(hidden)]
     pub caller_type: ::std::option::Option<::std::string::String>,
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    #[doc(hidden)]
     pub domain_details: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
     /// <p>Identifies the resources that were affected by the API call.</p>
-    #[doc(hidden)]
     pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    #[doc(hidden)]
     pub first_seen: ::std::option::Option<::std::string::String>,
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    #[doc(hidden)]
     pub last_seen: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallAction {

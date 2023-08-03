@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberOutput {
     /// <p>Retrieve information about the subscriber created using the <code>CreateSubscriber</code> API.</p>
-    #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
 }

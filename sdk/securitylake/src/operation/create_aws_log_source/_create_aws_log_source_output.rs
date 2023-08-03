@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceOutput {
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

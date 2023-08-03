@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineDynamicDataConfiguration {
     /// <p>The column that the dynamic data targets.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The aggregation function that is used in the dynamic data.</p>
-    #[doc(hidden)]
     pub measure_aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     /// <p>The calculation that is used in the dynamic data.</p>
-    #[doc(hidden)]
     pub calculation: ::std::option::Option<crate::types::NumericalAggregationFunction>,
 }
 impl ReferenceLineDynamicDataConfiguration {

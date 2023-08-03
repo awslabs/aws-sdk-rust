@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseConfigurationOutput {
     /// <p>Unique ID for the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the license configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the license configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Dimension for which the licenses are counted.</p>
-    #[doc(hidden)]
     pub license_counting_type: ::std::option::Option<crate::types::LicenseCountingType>,
     /// <p>License rules.</p>
-    #[doc(hidden)]
     pub license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Number of available licenses.</p>
-    #[doc(hidden)]
     pub license_count: ::std::option::Option<i64>,
     /// <p>Sets the number of available licenses as a hard limit.</p>
-    #[doc(hidden)]
     pub license_count_hard_limit: ::std::option::Option<bool>,
     /// <p>Number of licenses assigned to resources.</p>
-    #[doc(hidden)]
     pub consumed_licenses: ::std::option::Option<i64>,
     /// <p>License configuration status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Account ID of the owner of the license configuration.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Summaries of the licenses consumed by resources.</p>
-    #[doc(hidden)]
     pub consumed_license_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>>,
     /// <p>Summaries of the managed resources.</p>
-    #[doc(hidden)]
     pub managed_resource_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>,
     /// <p>Tags for the license configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Product information.</p>
-    #[doc(hidden)]
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     /// <p>Automated discovery information.</p>
-    #[doc(hidden)]
     pub automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
-    #[doc(hidden)]
     pub disassociate_when_not_found: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

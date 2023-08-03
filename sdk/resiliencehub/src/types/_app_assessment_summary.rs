@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppAssessmentSummary {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    #[doc(hidden)]
     pub assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p>The entity that invoked the assessment.</p>
-    #[doc(hidden)]
     pub invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
     /// <p>The starting time for the action.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message from the assessment run.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment.</p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The cost for the application.</p>
-    #[doc(hidden)]
     pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>The current resiliency score for the application.</p>
-    #[doc(hidden)]
     pub resiliency_score: f64,
 }
 impl AppAssessmentSummary {

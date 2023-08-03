@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
 }
 impl SseKmsEncryptedObjects {

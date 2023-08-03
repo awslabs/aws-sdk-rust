@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotLocaleOutput {
     /// <p>The identifier of the bot that contained the deleted locale.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contained the deleted locale.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale of the deleted locale.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     _request_id: Option<String>,
 }

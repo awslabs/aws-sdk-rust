@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceAttachmentConfiguration {
     /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
-    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    #[doc(hidden)]
     pub attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
 }
 impl ConfluenceAttachmentConfiguration {

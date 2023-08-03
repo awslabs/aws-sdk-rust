@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaUpdate {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
-    #[doc(hidden)]
     pub create: ::std::option::Option<crate::types::CreateReplicaAction>,
     /// <p>The name of the existing replica to be removed.</p>
-    #[doc(hidden)]
     pub delete: ::std::option::Option<crate::types::DeleteReplicaAction>,
 }
 impl ReplicaUpdate {

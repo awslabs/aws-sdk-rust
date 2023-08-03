@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskInfo {
     /// <p>The disk name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The disk path.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
-    #[doc(hidden)]
     pub is_system_disk: ::std::option::Option<bool>,
 }
 impl DiskInfo {

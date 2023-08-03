@@ -6,13 +6,10 @@
 pub struct TargetHealth {
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
     /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TargetState>,
     /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::TargetHealthReason>,
     /// <p>A description of the health of the RDS Proxy target. If the <code>State</code> is <code>AVAILABLE</code>, a description is not included.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl TargetHealth {

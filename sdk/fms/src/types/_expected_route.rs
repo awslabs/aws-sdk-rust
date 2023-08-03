@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
-    #[doc(hidden)]
     pub ip_v4_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ip_v6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Information about the contributing subnets.</p>
-    #[doc(hidden)]
     pub contributing_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the allowed targets.</p>
-    #[doc(hidden)]
     pub allowed_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the route table ID.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedRoute {

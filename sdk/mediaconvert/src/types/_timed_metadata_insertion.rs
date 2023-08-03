@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    #[doc(hidden)]
     pub id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
 }
 impl TimedMetadataInsertion {

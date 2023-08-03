@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }
 impl GrpcGatewayRouteRewrite {

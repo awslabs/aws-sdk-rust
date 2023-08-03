@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorInput {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the cost anomaly monitor. </p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAnomalyMonitorInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
-    #[doc(hidden)]
     pub job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
 }
 impl JobNodeDetails {

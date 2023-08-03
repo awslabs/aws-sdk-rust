@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was deleted.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the recipe that was deleted.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

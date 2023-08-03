@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
-    #[doc(hidden)]
     pub resource_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

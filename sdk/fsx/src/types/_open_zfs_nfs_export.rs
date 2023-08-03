@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsNfsExport {
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
-    #[doc(hidden)]
     pub client_configurations: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
 }
 impl OpenZfsNfsExport {

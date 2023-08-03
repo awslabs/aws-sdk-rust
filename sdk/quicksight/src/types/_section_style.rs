@@ -6,11 +6,9 @@
 pub struct SectionStyle {
     /// <p>The height of a section.</p>
     /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<::std::string::String>,
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
-    #[doc(hidden)]
     pub padding: ::std::option::Option<crate::types::Spacing>,
 }
 impl SectionStyle {

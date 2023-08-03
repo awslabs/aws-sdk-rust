@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageTotal {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the total usage for an account.</p>
-    #[doc(hidden)]
     pub usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
 }
 impl UsageTotal {

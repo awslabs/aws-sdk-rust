@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>How many different places in the profile graph triggered a match.</p>
-    #[doc(hidden)]
     pub all_matches_count: ::std::option::Option<i32>,
     /// <p>How much of the total sample count is potentially affected.</p>
-    #[doc(hidden)]
     pub all_matches_sum: ::std::option::Option<f64>,
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<crate::types::Pattern>,
     /// <p>List of the matches with most impact. </p>
-    #[doc(hidden)]
     pub top_matches: ::std::option::Option<::std::vec::Vec<crate::types::Match>>,
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Recommendation {

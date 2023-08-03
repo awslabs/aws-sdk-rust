@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub disabled_on_initialization: ::std::option::Option<bool>,
 }
 impl InitializationConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeDeviceMethodInput {
     /// <p>The unique identifier of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device method to invoke.</p>
-    #[doc(hidden)]
     pub device_method: ::std::option::Option<crate::types::DeviceMethod>,
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    #[doc(hidden)]
     pub device_method_parameters: ::std::option::Option<::std::string::String>,
 }
 impl InvokeDeviceMethodInput {

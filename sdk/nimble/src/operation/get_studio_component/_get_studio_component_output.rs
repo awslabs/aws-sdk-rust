@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStudioComponentOutput {
     /// <p>Information about the studio component.</p>
-    #[doc(hidden)]
     pub studio_component: ::std::option::Option<crate::types::StudioComponent>,
     _request_id: Option<String>,
 }

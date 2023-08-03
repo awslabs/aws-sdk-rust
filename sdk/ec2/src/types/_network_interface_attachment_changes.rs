@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAttachmentChanges {
     /// <p>The ID of the network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceAttachmentChanges {

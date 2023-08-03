@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParticipantInput {
     /// <p>Stage ARN.</p>
-    #[doc(hidden)]
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of a session within the stage.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
 }
 impl GetParticipantInput {

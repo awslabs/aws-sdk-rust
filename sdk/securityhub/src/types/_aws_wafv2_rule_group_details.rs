@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2RuleGroupDetails {
     /// <p> The web ACL capacity units (WCUs) required for this rule group. </p>
-    #[doc(hidden)]
     pub capacity: i64,
     /// <p> A description of the rule group that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the rule group. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the rule group. You cannot change the name of a rule group after you create it. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the entity. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
     /// <p> Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    #[doc(hidden)]
     pub visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2RuleGroupDetails {

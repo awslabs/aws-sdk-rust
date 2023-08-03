@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a subnet associated with the network interface.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC associated with the network interface.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a private DNS associated with the network interface.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address associated with the network interface.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIp>>,
     /// <p>The name of a public DNS associated with the network interface.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address from which the network interface is reachable.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
 }
 impl NetworkInterface {

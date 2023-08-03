@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFolderOutput {
     /// <p>The metadata of the folder.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::FolderMetadata>,
     _request_id: Option<String>,
 }

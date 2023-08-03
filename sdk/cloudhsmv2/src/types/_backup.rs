@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Backup {
     /// <p>The identifier (ID) of the backup.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the backup.</p>
-    #[doc(hidden)]
     pub backup_state: ::std::option::Option<crate::types::BackupState>,
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the backup was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    #[doc(hidden)]
     pub copy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
-    #[doc(hidden)]
     pub never_expires: ::std::option::Option<bool>,
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_backup: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    #[doc(hidden)]
     pub source_cluster: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    #[doc(hidden)]
     pub delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of tags for the backup.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Backup {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfiguration {
     /// <p>The max number of steps that can be executed in parallel. </p>
-    #[doc(hidden)]
     pub max_parallel_execution_steps: i32,
 }
 impl ParallelismConfiguration {

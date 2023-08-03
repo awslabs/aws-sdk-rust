@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionSummary {
     /// <p>The name of the solution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
-    #[doc(hidden)]
     pub solution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -16,16 +14,12 @@ pub struct SolutionSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the solution was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl SolutionSummary {

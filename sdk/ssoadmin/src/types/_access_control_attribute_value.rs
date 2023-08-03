@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AccessControlAttributeValue {

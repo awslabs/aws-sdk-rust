@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoSnapshotsInput {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAutoSnapshotsInput {

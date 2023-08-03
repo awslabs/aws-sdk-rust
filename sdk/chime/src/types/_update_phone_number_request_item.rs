@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberRequestItem {
     /// <p>The phone number ID to update.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The product type to update.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The outbound calling name to update.</p>
-    #[doc(hidden)]
     pub calling_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberRequestItem {

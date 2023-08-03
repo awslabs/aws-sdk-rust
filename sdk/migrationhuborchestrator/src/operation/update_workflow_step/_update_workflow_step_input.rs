@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkflowStepInput {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
     pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The custom script to run tests on the source and target environments.</p>
-    #[doc(hidden)]
     pub workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
     pub step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outputs of a step.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StepStatus>,
 }
 impl UpdateWorkflowStepInput {

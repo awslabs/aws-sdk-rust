@@ -7,13 +7,10 @@ pub struct UpdateKeyOutput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API key resource.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

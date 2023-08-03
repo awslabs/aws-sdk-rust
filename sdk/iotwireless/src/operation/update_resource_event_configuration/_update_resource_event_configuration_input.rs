@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    #[doc(hidden)]
     pub identifier_type: ::std::option::Option<crate::types::IdentifierType>,
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
-    #[doc(hidden)]
     pub partner_type: ::std::option::Option<crate::types::EventNotificationPartnerType>,
     /// <p>Event configuration for the device registration state event.</p>
-    #[doc(hidden)]
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
     /// <p>Event configuration for the proximity event.</p>
-    #[doc(hidden)]
     pub proximity: ::std::option::Option<crate::types::ProximityEventConfiguration>,
     /// <p>Event configuration for the join event.</p>
-    #[doc(hidden)]
     pub join: ::std::option::Option<crate::types::JoinEventConfiguration>,
     /// <p>Event configuration for the connection status event.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatusEventConfiguration>,
     /// <p>Event configuration for the message delivery status event.</p>
-    #[doc(hidden)]
     pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration>,
 }
 impl UpdateResourceEventConfigurationInput {

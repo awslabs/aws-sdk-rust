@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccountOutput {
     /// The time when the service role was disassociated from the account.
-    #[doc(hidden)]
     pub disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

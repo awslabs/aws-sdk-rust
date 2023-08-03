@@ -5,42 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageDetail {
     /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to which this image belongs.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags associated with this image.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub image_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
-    #[doc(hidden)]
     pub image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the scan.</p>
-    #[doc(hidden)]
     pub image_scan_status: ::std::option::Option<crate::types::ImageScanStatus>,
     /// <p>A summary of the last completed image scan.</p>
-    #[doc(hidden)]
     pub image_scan_findings_summary: ::std::option::Option<crate::types::ImageScanFindingsSummary>,
     /// <p>The media type of the image manifest.</p>
-    #[doc(hidden)]
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The artifact media type of the image.</p>
-    #[doc(hidden)]
     pub artifact_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_recorded_pull_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImageDetail {

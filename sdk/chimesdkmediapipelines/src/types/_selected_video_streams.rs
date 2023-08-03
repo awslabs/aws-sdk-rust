@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
-    #[doc(hidden)]
     pub attendee_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The external user IDs of the streams selected for a media pipeline.</p>
-    #[doc(hidden)]
     pub external_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SelectedVideoStreams {

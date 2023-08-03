@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {

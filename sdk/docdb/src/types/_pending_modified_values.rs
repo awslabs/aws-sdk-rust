@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the pending port for the instance.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies the pending number of days for which automated backups are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The license model for the instance.</p>
     /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new subnet group for the instance. </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
-    #[doc(hidden)]
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValues {

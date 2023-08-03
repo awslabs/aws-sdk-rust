@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitySummary {
     /// <p>The ID of the entity.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity.</p>
-    #[doc(hidden)]
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the entity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent entity.</p>
-    #[doc(hidden)]
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the entity.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The description of the entity.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
-    #[doc(hidden)]
     pub has_child_entities: ::std::option::Option<bool>,
     /// <p>The date and time when the entity was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time when the entity was updated.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EntitySummary {

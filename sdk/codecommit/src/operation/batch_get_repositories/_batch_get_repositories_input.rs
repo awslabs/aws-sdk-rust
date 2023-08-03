@@ -7,7 +7,6 @@ pub struct BatchGetRepositoriesInput {
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRepositoriesInput {

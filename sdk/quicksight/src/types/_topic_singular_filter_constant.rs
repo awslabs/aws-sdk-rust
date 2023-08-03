@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicSingularFilterConstant {
     /// <p>The type of the singular filter constant. Valid values for this structure are <code>SINGULAR</code>.</p>
-    #[doc(hidden)]
     pub constant_type: ::std::option::Option<crate::types::ConstantType>,
     /// <p>The value of the singular filter constant.</p>
-    #[doc(hidden)]
     pub singular_constant: ::std::option::Option<::std::string::String>,
 }
 impl TopicSingularFilterConstant {

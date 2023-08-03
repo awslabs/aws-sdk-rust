@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountFindingsMetric {
     /// <p>The date from which the finding metrics were retrieved.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of new findings of each severity in account on the specified date.</p>
-    #[doc(hidden)]
     pub new_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
-    #[doc(hidden)]
     pub closed_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
-    #[doc(hidden)]
     pub open_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    #[doc(hidden)]
     pub mean_time_to_close: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
 }
 impl AccountFindingsMetric {

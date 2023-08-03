@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetParameterGroupInput {
     /// <p>The name of the parameter group to reset.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
-    #[doc(hidden)]
     pub all_parameters: ::std::option::Option<bool>,
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
-    #[doc(hidden)]
     pub parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResetParameterGroupInput {

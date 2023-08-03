@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightOutput {
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    #[doc(hidden)]
     pub proactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    #[doc(hidden)]
     pub reactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTraceGraphInput {
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
-    #[doc(hidden)]
     pub trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTraceGraphInput {

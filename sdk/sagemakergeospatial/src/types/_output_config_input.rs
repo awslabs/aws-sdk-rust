@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputConfigInput {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
-    #[doc(hidden)]
     pub s3_data: ::std::option::Option<crate::types::ExportS3DataInput>,
 }
 impl OutputConfigInput {

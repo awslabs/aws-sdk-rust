@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointOutputConfiguration {
     /// <p>The name of the endpoint made during a recommendation job.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
-    #[doc(hidden)]
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The number of instances recommended to launch initially.</p>
-    #[doc(hidden)]
     pub initial_instance_count: ::std::option::Option<i32>,
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
-    #[doc(hidden)]
     pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointOutputConfiguration {

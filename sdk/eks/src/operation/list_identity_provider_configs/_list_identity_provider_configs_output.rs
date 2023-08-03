@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
-    #[doc(hidden)]
     pub identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

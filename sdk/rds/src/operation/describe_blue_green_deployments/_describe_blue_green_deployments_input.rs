@@ -8,7 +8,6 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
@@ -18,10 +17,8 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
     /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -30,7 +27,6 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// <li> <p>Must be a minimum of 20.</p> </li>
     /// <li> <p>Can't exceed 100.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeBlueGreenDeploymentsInput {

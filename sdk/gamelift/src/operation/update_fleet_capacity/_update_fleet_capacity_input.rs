@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFleetCapacityInput {
     /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
-    #[doc(hidden)]
     pub desired_instances: ::std::option::Option<i32>,
     /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
-    #[doc(hidden)]
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<i32>,
     /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFleetCapacityInput {

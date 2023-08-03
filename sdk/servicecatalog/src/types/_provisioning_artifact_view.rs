@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactView {
     /// <p>Summary information about a product view.</p>
-    #[doc(hidden)]
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
-    #[doc(hidden)]
     pub provisioning_artifact: ::std::option::Option<crate::types::ProvisioningArtifact>,
 }
 impl ProvisioningArtifactView {

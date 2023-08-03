@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProcessingJobsOutput {
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-    #[doc(hidden)]
     pub processing_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

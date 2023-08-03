@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaxAgeRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Specify the number of days to retain an application versions.</p>
-    #[doc(hidden)]
     pub max_age_in_days: ::std::option::Option<i32>,
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
-    #[doc(hidden)]
     pub delete_source_from_s3: ::std::option::Option<bool>,
 }
 impl MaxAgeRule {

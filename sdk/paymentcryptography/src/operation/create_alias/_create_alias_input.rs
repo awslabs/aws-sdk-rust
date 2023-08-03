@@ -6,10 +6,8 @@ pub struct CreateAliasInput {
     /// <p>A friendly name that you can use to refer a key. An alias must begin with <code>alias/</code> followed by a name, for example <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).</p> <important>
     /// <p>Don't include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KeyARN</code> of the key to associate with the alias.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAliasInput {

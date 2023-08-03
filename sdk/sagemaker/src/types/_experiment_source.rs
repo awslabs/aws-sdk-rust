@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentSource {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentSource {

@@ -6,17 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequiredActivatedType {
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-    #[doc(hidden)]
     pub type_name_alias: ::std::option::Option<::std::string::String>,
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub original_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The publisher ID of the extension publisher.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    #[doc(hidden)]
     pub supported_major_versions: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl RequiredActivatedType {

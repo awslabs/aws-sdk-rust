@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplySchemaInput {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub published_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplySchemaInput {

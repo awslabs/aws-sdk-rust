@@ -6,164 +6,111 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Provides the name of the database engine to be used for this DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this database.</p>
-    #[doc(hidden)]
     pub db_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The database name.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the connection endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>Provides the date and time the DB instance was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    #[doc(hidden)]
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    #[doc(hidden)]
     pub db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>>,
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that minor version patches are applied automatically.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
-    #[doc(hidden)]
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    #[doc(hidden)]
     pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    #[doc(hidden)]
     pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>License model information for this DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
-    #[doc(hidden)]
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    #[doc(hidden)]
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>Specifies the storage type associated with DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    #[doc(hidden)]
     pub db_instance_port: i32,
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported</p>
-    #[doc(hidden)]
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: bool,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl DbInstance {

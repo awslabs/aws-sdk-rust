@@ -8,22 +8,16 @@ pub struct IntegrationResponse {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    #[doc(hidden)]
     pub content_handling_strategy: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     /// <p>The integration response ID.</p>
-    #[doc(hidden)]
     pub integration_response_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration response key.</p>
-    #[doc(hidden)]
     pub integration_response_key: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
-    #[doc(hidden)]
     pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    #[doc(hidden)]
     pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The template selection expressions for the integration response.</p>
-    #[doc(hidden)]
     pub template_selection_expression: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationResponse {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuperuserParameters {
     /// <p>The email address of the superuser.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the superuser.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the superuser.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
 }
 impl SuperuserParameters {

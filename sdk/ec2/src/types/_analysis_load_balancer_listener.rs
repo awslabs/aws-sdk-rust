@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisLoadBalancerListener {
     /// <p>The port on which the load balancer is listening.</p>
-    #[doc(hidden)]
     pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>[Classic Load Balancers] The back-end port for the listener.</p>
-    #[doc(hidden)]
     pub instance_port: ::std::option::Option<i32>,
 }
 impl AnalysisLoadBalancerListener {

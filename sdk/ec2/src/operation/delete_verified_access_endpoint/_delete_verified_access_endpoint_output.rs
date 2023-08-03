@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessEndpointOutput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,
 }

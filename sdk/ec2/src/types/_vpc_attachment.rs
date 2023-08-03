@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcAttachment {
     /// <p>The current state of the attachment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcAttachment {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
-    #[doc(hidden)]
     pub vcenter_client_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVcenterClientInput {

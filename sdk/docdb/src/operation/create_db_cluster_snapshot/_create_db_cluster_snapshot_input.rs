@@ -12,7 +12,6 @@ pub struct CreateDbClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
@@ -20,10 +19,8 @@ pub struct CreateDbClusterSnapshotInput {
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInput {

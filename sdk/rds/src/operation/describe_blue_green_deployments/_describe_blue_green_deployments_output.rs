@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsOutput {
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub blue_green_deployments: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceDetails {
     /// <p>The network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Security groups for the network interface.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
-    #[doc(hidden)]
     pub source_dest_check: bool,
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>>,
     /// <p>The public DNS name of the network interface.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The address of the Elastic IP address bound to the network interface.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceDetails {

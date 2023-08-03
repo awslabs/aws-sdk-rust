@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct State {
     /// <p>The name of the state.</p>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<::std::string::String>,
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
-    #[doc(hidden)]
     pub on_input: ::std::option::Option<crate::types::OnInputLifecycle>,
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
-    #[doc(hidden)]
     pub on_enter: ::std::option::Option<crate::types::OnEnterLifecycle>,
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub on_exit: ::std::option::Option<crate::types::OnExitLifecycle>,
 }
 impl State {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterfaceGroup {
     /// <p>The ID of the virtual interface group.</p>
-    #[doc(hidden)]
     pub local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the virtual interfaces.</p>
-    #[doc(hidden)]
     pub local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual interface group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterfaceGroup {

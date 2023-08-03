@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
-    #[doc(hidden)]
     pub clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     _request_id: Option<String>,
 }

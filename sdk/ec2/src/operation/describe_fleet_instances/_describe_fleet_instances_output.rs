@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetInstancesOutput {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    #[doc(hidden)]
     pub active_instances: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

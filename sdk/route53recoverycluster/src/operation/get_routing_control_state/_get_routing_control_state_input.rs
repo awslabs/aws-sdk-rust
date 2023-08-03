@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRoutingControlStateInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProviderDescription {
     /// <p>The IdP name.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The IdP type.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
     /// <p>The date the provider was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the provider was added to the user pool.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProviderDescription {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
-    #[doc(hidden)]
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

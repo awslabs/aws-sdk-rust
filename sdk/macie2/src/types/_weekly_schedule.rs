@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
 impl WeeklySchedule {

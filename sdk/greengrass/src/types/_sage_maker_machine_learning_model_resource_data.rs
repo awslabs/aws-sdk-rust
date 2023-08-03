@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SageMakerMachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
     /// The owner setting for downloaded machine learning resources.
-    #[doc(hidden)]
     pub owner_setting: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>,
     /// The ARN of the Amazon SageMaker training job that represents the source model.
-    #[doc(hidden)]
     pub sage_maker_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl SageMakerMachineLearningModelResourceData {

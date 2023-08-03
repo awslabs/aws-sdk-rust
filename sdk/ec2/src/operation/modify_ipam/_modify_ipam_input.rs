@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM you want to modify.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IPAM you want to modify.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>The operating Regions to remove.</p>
-    #[doc(hidden)]
     pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
 }
 impl ModifyIpamInput {

@@ -5,13 +5,10 @@
 pub struct GenerateMacOutput {
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
     /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
-    #[doc(hidden)]
     pub mac: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
-    #[doc(hidden)]
     pub mac_algorithm: ::std::option::Option<crate::types::MacAlgorithmSpec>,
     /// <p>The HMAC KMS key used in the operation.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

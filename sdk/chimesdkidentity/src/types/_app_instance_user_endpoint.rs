@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceUserEndpoint {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_attributes: ::std::option::Option<crate::types::EndpointAttributes>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    #[doc(hidden)]
     pub allow_messages: ::std::option::Option<crate::types::AllowMessages>,
     /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
     /// <ul>
@@ -38,7 +29,6 @@ pub struct AppInstanceUserEndpoint {
     /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
     /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub endpoint_state: ::std::option::Option<crate::types::EndpointState>,
 }
 impl AppInstanceUserEndpoint {

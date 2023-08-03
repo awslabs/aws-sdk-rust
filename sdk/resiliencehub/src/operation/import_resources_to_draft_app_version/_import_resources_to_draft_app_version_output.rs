@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
-    #[doc(hidden)]
     pub source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceImportStatusType>,
     /// <p> A list of terraform file s3 URLs you have imported. </p>
-    #[doc(hidden)]
     pub terraform_sources: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
-    #[doc(hidden)]
     pub eks_sources: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>,
     _request_id: Option<String>,
 }

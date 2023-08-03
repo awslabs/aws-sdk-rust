@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachVpnGatewayOutput {
     /// <p>Information about the attachment.</p>
-    #[doc(hidden)]
     pub vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
 }

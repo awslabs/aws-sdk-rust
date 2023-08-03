@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImport {
     /// <p>The ID of the batch import job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch import job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AsyncJobStatus>,
     /// <p>The reason batch import job failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the batch import job started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when batch import job completed.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of your data file for batch import.</p>
-    #[doc(hidden)]
     pub input_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of your output file.</p>
-    #[doc(hidden)]
     pub output_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the batch import job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of records processed by batch import job.</p>
-    #[doc(hidden)]
     pub processed_records_count: ::std::option::Option<i32>,
     /// <p>The number of records that failed to import. </p>
-    #[doc(hidden)]
     pub failed_records_count: ::std::option::Option<i32>,
     /// <p>The total number of records in the batch import job.</p>
-    #[doc(hidden)]
     pub total_records_count: ::std::option::Option<i32>,
 }
 impl BatchImport {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    #[doc(hidden)]
     pub signing_profile_version_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AllowedPublishers {

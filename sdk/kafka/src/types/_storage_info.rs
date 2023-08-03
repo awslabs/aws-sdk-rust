@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageInfo {
     /// <p>EBS volume information.</p>
-    #[doc(hidden)]
     pub ebs_storage_info: ::std::option::Option<crate::types::EbsStorageInfo>,
 }
 impl StorageInfo {

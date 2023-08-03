@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NfsFileShareDefaults {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-    #[doc(hidden)]
     pub directory_mode: ::std::option::Option<::std::string::String>,
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<i64>,
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<i64>,
 }
 impl NfsFileShareDefaults {

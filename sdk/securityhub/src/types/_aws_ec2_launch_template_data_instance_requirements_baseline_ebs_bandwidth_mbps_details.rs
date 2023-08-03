@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails {
     /// <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted, there's no maximum limit. </p>
-    #[doc(hidden)]
     pub max: i32,
     /// <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted, there's no minimum limit. </p>
-    #[doc(hidden)]
     pub min: i32,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails {

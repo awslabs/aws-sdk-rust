@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchGroupConfig {
     /// <p>A name for this launch group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the launch group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature that this launch is using.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p>The feature variation to use for this launch group.</p>
-    #[doc(hidden)]
     pub variation: ::std::option::Option<::std::string::String>,
 }
 impl LaunchGroupConfig {

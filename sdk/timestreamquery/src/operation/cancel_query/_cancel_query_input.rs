@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryInput {
     /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInput {

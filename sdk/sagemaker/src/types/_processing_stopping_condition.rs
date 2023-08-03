@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingStoppingCondition {
     /// <p>Specifies the maximum runtime in seconds.</p>
-    #[doc(hidden)]
     pub max_runtime_in_seconds: i32,
 }
 impl ProcessingStoppingCondition {

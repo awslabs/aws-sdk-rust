@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<crate::types::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The container for the filter of lifecycle rule.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExpirationStatus>,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
     /// <p>The noncurrent version expiration of the lifecycle rule.</p>
-    #[doc(hidden)]
     pub noncurrent_version_expiration: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub abort_incomplete_multipart_upload: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRule {

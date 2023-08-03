@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// The ID of the multiplex that the programs belong to.
-    #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The token to retrieve the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMultiplexProgramsInput {

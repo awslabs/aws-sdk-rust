@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsKinesisStreamStreamEncryptionDetails {
     /// <p>The encryption type to use. </p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsKinesisStreamStreamEncryptionDetails {

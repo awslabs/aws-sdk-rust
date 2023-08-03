@@ -4,27 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDynamicThingGroupInput {
     /// <p>The dynamic thing group name to create.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group properties.</p>
-    #[doc(hidden)]
     pub thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
     /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group query version.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDynamicThingGroupInput {

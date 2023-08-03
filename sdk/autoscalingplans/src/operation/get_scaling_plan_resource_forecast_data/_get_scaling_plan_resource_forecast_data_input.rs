@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The type of forecast data to get.</p>
     /// <ul>
@@ -25,14 +20,11 @@ pub struct GetScalingPlanResourceForecastDataInput {
     /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
     /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub forecast_data_type: ::std::option::Option<crate::types::ForecastDataType>,
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetScalingPlanResourceForecastDataInput {

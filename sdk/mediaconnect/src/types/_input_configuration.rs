@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
-    #[doc(hidden)]
     pub input_ip: ::std::option::Option<::std::string::String>,
     /// The port that the flow listens on for an incoming media stream.
-    #[doc(hidden)]
     pub input_port: ::std::option::Option<i32>,
     /// The VPC interface where the media stream comes in from.
-    #[doc(hidden)]
     pub interface: ::std::option::Option<crate::types::Interface>,
 }
 impl InputConfiguration {

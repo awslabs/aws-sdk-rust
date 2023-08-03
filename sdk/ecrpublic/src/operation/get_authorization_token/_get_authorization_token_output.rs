@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutput {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
-    #[doc(hidden)]
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }

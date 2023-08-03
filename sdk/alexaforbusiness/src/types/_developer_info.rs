@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeveloperInfo {
     /// <p>The name of the developer.</p>
-    #[doc(hidden)]
     pub developer_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the privacy policy.</p>
-    #[doc(hidden)]
     pub privacy_policy: ::std::option::Option<::std::string::String>,
     /// <p>The email of the developer.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The website of the developer.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl DeveloperInfo {

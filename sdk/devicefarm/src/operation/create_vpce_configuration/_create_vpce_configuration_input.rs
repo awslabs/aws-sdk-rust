@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpceConfigurationInput {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
-    #[doc(hidden)]
     pub vpce_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    #[doc(hidden)]
     pub vpce_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
-    #[doc(hidden)]
     pub service_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    #[doc(hidden)]
     pub vpce_configuration_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpceConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepStateChangeReason {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::StepStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl StepStateChangeReason {

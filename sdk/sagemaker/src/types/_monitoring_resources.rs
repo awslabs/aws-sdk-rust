@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringResources {
     /// <p>The configuration for the cluster resources used to run the processing job.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::MonitoringClusterConfig>,
 }
 impl MonitoringResources {

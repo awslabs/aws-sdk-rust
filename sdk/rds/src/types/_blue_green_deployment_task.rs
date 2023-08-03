@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueGreenDeploymentTask {
     /// <p>The name of the blue/green deployment task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
@@ -16,7 +15,6 @@ pub struct BlueGreenDeploymentTask {
     /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
     /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl BlueGreenDeploymentTask {

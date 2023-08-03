@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityOutput {
     /// <p>Information about compatible devices.</p>
-    #[doc(hidden)]
     pub compatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     /// <p>Information about incompatible devices.</p>
-    #[doc(hidden)]
     pub incompatible_devices: ::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     _request_id: Option<String>,
 }

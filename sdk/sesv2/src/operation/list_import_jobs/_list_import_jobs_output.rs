@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportJobsOutput {
     /// <p>A list of the import job summaries.</p>
-    #[doc(hidden)]
     pub import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>,
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

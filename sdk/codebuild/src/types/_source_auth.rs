@@ -9,10 +9,8 @@ pub struct SourceAuth {
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceAuthType>,
     /// <p>The resource value that applies to the specified authorization type.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl SourceAuth {

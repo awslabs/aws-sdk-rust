@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServerOutput {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::DescribedServer>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePhoneNumberOutput {
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
-    #[doc(hidden)]
     pub claimed_phone_number_summary: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>,
     _request_id: Option<String>,
 }

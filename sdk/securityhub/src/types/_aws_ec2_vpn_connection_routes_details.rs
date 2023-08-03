@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionRoutesDetails {
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the static route.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionRoutesDetails {

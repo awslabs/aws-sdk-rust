@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightOutput {
     /// <p>The summary information of an insight.</p>
-    #[doc(hidden)]
     pub insight: ::std::option::Option<crate::types::Insight>,
     _request_id: Option<String>,
 }

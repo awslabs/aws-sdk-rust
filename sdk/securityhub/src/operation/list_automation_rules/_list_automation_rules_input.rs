@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAutomationRulesInput {
     /// <p> A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of rules to return in the response. This currently ranges from 1 to 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAutomationRulesInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
-    #[doc(hidden)]
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined name of the event to send to clients.</p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SendEventInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlsOutput {
     /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
-    #[doc(hidden)]
     pub control_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

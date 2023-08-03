@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpAccessSettings {
     /// <p>The ARN of the IP access settings resource.</p>
-    #[doc(hidden)]
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP rules of the IP access settings.</p>
-    #[doc(hidden)]
     pub ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
     /// <p> The display name of the IP access settings.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP access settings.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation date timestamp of the IP access settings.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpAccessSettings {

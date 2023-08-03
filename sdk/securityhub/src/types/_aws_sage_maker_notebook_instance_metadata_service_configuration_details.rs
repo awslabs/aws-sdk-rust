@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-    #[doc(hidden)]
     pub minimum_instance_metadata_service_version: ::std::option::Option<::std::string::String>,
 }
 impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {

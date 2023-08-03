@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemOutput {
     /// <p> The custom line item ARN for which the resource associations are listed. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-    #[doc(hidden)]
     pub associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
-    #[doc(hidden)]
     pub environment_info: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,
 }

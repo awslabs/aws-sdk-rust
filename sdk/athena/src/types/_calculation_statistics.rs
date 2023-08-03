@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationStatistics {
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
-    #[doc(hidden)]
     pub dpu_execution_in_millis: ::std::option::Option<i64>,
     /// <p>The progress of the calculation.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
 }
 impl CalculationStatistics {

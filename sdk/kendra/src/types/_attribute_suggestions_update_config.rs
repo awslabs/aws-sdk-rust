@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeSuggestionsUpdateConfig {
     /// <p>The list of fields/attributes that you want to set as suggestible for query suggestions.</p>
-    #[doc(hidden)]
     pub suggestable_config_list: ::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>>,
     /// <p>You can set the mode to <code>ACTIVE</code> or <code>INACTIVE</code>. You must also set <code>SuggestionTypes</code> as either <code>QUERY</code> or <code>DOCUMENT_ATTRIBUTES</code> and then call <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>. If <code>Mode</code> to use query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
-    #[doc(hidden)]
     pub attribute_suggestions_mode: ::std::option::Option<crate::types::AttributeSuggestionsMode>,
 }
 impl AttributeSuggestionsUpdateConfig {

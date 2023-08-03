@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MentionSentiment {
     /// <p>The sentiment of the mention. </p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::SentimentType>,
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
-    #[doc(hidden)]
     pub sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
 }
 impl MentionSentiment {

@@ -6,31 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLastAccessed {
     /// <p>The name of the service in which access was attempted.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub last_authenticated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub last_authenticated_entity: ::std::option::Option<::std::string::String>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub last_authenticated_region: ::std::option::Option<::std::string::String>,
     /// <p>The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access the service.</p>
     /// <p>This field is null if no principals attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub total_authenticated_entities: ::std::option::Option<i32>,
     /// <p>An object that contains details about the most recent attempt to access a tracked action within the service.</p>
     /// <p>This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>. This field is also null if the report was generated at the service level and not the action level. For more information, see the <code>Granularity</code> field in <code>GenerateServiceLastAccessedDetails</code>.</p>
-    #[doc(hidden)]
     pub tracked_actions_last_accessed: ::std::option::Option<::std::vec::Vec<crate::types::TrackedActionLastAccessed>>,
 }
 impl ServiceLastAccessed {

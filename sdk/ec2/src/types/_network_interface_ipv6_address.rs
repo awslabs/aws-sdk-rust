@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceIpv6Address {
     /// <p>The IPv6 address.</p>
-    #[doc(hidden)]
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfaceIpv6Address {

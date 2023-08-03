@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route analysis.</p>
-    #[doc(hidden)]
     pub route_analysis_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRouteAnalysisInput {

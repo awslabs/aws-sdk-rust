@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngressInput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
-    #[doc(hidden)]
     pub target_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
-    #[doc(hidden)]
     pub access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not specified.</p>
-    #[doc(hidden)]
     pub authorize_all_groups: ::std::option::Option<bool>,
     /// <p>A brief description of the authorization rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl AuthorizeClientVpnIngressInput {

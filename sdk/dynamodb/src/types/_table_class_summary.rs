@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableClassSummary {
     /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    #[doc(hidden)]
     pub table_class: ::std::option::Option<crate::types::TableClass>,
     /// <p>The date and time at which the table class was last updated.</p>
-    #[doc(hidden)]
     pub last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TableClassSummary {

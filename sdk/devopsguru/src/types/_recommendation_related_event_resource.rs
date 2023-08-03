@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedEventResource {
     /// <p> The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedEventResource {

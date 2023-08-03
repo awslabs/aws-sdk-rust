@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchedLogStream {
     /// <p>The name of the log stream.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether all the events in this log stream were searched.</p>
-    #[doc(hidden)]
     pub searched_completely: ::std::option::Option<bool>,
 }
 impl SearchedLogStream {

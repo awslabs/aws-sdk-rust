@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    #[doc(hidden)]
     pub signing_configuration: ::std::option::Option<crate::types::SigningConfigurationOverrides>,
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
-    #[doc(hidden)]
     pub signing_image_format: ::std::option::Option<crate::types::ImageFormat>,
 }
 impl SigningPlatformOverrides {

@@ -6,7 +6,6 @@
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
-    #[doc(hidden)]
     pub minutes: i32,
 }
 impl ReplicationTimeValue {

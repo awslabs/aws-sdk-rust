@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsInput {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcEndpointsInput {

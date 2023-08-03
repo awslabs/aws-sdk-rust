@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventNotificationItemConfigurations {
     /// <p>Device registration state event configuration for an event configuration item.</p>
-    #[doc(hidden)]
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
     /// <p>Proximity event configuration for an event configuration item.</p>
-    #[doc(hidden)]
     pub proximity: ::std::option::Option<crate::types::ProximityEventConfiguration>,
     /// <p>Join event configuration for an event configuration item.</p>
-    #[doc(hidden)]
     pub join: ::std::option::Option<crate::types::JoinEventConfiguration>,
     /// <p>Connection status event configuration for an event configuration item.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatusEventConfiguration>,
     /// <p>Message delivery status event configuration for an event configuration item.</p>
-    #[doc(hidden)]
     pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration>,
 }
 impl EventNotificationItemConfigurations {

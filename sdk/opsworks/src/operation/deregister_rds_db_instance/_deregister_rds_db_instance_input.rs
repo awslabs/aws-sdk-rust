@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
-    #[doc(hidden)]
     pub rds_db_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterRdsDbInstanceInput {

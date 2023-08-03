@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>Additional information about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
-    #[doc(hidden)]
     pub retryable: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

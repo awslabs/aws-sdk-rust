@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateIncreaseCriteria {
     /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
-    #[doc(hidden)]
     pub number_of_notified_things: ::std::option::Option<i32>,
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
-    #[doc(hidden)]
     pub number_of_succeeded_things: ::std::option::Option<i32>,
 }
 impl RateIncreaseCriteria {

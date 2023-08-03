@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringAlertHistorySummary {
     /// <p>The name of a monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring alert.</p>
-    #[doc(hidden)]
     pub monitoring_alert_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current alert status of an alert.</p>
-    #[doc(hidden)]
     pub alert_status: ::std::option::Option<crate::types::MonitoringAlertStatus>,
 }
 impl MonitoringAlertHistorySummary {

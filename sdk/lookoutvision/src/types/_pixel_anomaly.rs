@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PixelAnomaly {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
-    #[doc(hidden)]
     pub total_percentage_area: ::std::option::Option<f32>,
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
 }
 impl PixelAnomaly {

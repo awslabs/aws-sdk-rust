@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChangeSetsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given date time parameter.</p>
-    #[doc(hidden)]
     pub static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl DateTimeDatasetParameterDefaultValues {

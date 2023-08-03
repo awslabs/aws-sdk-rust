@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
-    #[doc(hidden)]
     pub hd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    #[doc(hidden)]
     pub input_device_id: ::std::option::Option<::std::string::String>,
     /// The name that you assigned to this input device (not the unique ID).
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The settings that you want to apply to the UHD input device.
-    #[doc(hidden)]
     pub uhd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
 }
 impl UpdateInputDeviceInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsInput {
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    #[doc(hidden)]
     pub deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentsInput {

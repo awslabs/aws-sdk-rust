@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportOutput {
     /// <p>The name given to the import job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource imported.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The identifier for the specific import job.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p>A string that describes why an import job failed to complete.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A timestamp for the date and time that the import job was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

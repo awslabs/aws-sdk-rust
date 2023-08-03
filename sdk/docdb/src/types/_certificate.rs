@@ -6,26 +6,20 @@
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
     /// <p>Example: <code>rds-ca-2019</code> </p>
-    #[doc(hidden)]
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the certificate.</p>
     /// <p>Example: <code>CA</code> </p>
-    #[doc(hidden)]
     pub certificate_type: ::std::option::Option<::std::string::String>,
     /// <p>The thumbprint of the certificate.</p>
-    #[doc(hidden)]
     pub thumbprint: ::std::option::Option<::std::string::String>,
     /// <p>The starting date-time from which the certificate is valid.</p>
     /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
-    #[doc(hidden)]
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date-time after which the certificate is no longer valid.</p>
     /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
-    #[doc(hidden)]
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {

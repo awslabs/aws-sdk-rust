@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
-    #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImagePolicyInput {

@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A representation of the charge details of a custom line item. </p>
-    #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
     /// <p>The charge value currency of the custom line item.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The description of the custom line item.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The product code that’s associated with the custom line item.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the custom line item version was created.</p>
-    #[doc(hidden)]
     pub creation_time: i64,
     /// <p>The most recent time that the custom line item version was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>The number of resources that are associated with the custom line item.</p>
-    #[doc(hidden)]
     pub association_size: i64,
     /// <p>The start billing period of the custom line item version.</p>
-    #[doc(hidden)]
     pub start_billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The end billing period of the custom line item version.</p>
-    #[doc(hidden)]
     pub end_billing_period: ::std::option::Option<::std::string::String>,
     /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The inclusive start time. </p>
-    #[doc(hidden)]
     pub start_time: i64,
 }
 impl CustomLineItemVersionListElement {

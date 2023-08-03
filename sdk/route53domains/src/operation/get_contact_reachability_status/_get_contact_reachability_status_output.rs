@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactReachabilityStatusOutput {
     /// <p>The domain name for which you requested the reachability status.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the registrant contact has responded. Values include the following:</p>
     /// <dl>
@@ -27,7 +26,6 @@ pub struct GetContactReachabilityStatusOutput {
     /// <p>The time limit expired before the registrant contact responded.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReachabilityStatus>,
     _request_id: Option<String>,
 }

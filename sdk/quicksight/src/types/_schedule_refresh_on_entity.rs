@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRefreshOnEntity {
     /// <p>The day of the week that you want to schedule a refresh on.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>The day of the month that you want to schedule refresh on.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleRefreshOnEntity {

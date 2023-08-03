@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    #[doc(hidden)]
     pub attendee_id: ::std::option::Option<::std::string::String>,
     /// <p>The tag key-value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagAttendeeInput {

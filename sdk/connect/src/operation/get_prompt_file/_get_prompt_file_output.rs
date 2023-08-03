@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPromptFileOutput {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
-    #[doc(hidden)]
     pub prompt_presigned_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

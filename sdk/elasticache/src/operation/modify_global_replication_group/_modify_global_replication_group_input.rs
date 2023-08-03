@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
-    #[doc(hidden)]
     pub automatic_failover_enabled: ::std::option::Option<bool>,
 }
 impl ModifyGlobalReplicationGroupInput {

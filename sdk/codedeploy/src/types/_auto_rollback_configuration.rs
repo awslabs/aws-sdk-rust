@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoRollbackConfiguration {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The event type or types that trigger a rollback.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,
 }
 impl AutoRollbackConfiguration {

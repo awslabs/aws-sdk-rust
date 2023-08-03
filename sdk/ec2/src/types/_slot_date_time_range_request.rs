@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotDateTimeRangeRequest {
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
-    #[doc(hidden)]
     pub earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
-    #[doc(hidden)]
     pub latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SlotDateTimeRangeRequest {

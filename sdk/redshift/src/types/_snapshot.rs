@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
     /// <ul>
@@ -19,100 +16,69 @@ pub struct Snapshot {
     /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
     /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the cluster is listening on.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The Availability Zone in which the cluster was created.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The admin user name for the cluster.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    #[doc(hidden)]
     pub engine_full_version: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type of the nodes in the cluster.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The name of the database that was created when the cluster was created.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
-    #[doc(hidden)]
     pub encrypted_with_hsm: bool,
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    #[doc(hidden)]
     pub accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
-    #[doc(hidden)]
     pub total_backup_size_in_mega_bytes: f64,
     /// <p>The size of the incremental backup.</p>
-    #[doc(hidden)]
     pub actual_incremental_backup_size_in_mega_bytes: f64,
     /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
-    #[doc(hidden)]
     pub backup_progress_in_mega_bytes: f64,
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-    #[doc(hidden)]
     pub current_backup_rate_in_mega_bytes_per_second: f64,
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
-    #[doc(hidden)]
     pub estimated_seconds_to_completion: i64,
     /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: i64,
     /// <p>The source region from which the snapshot was copied.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the cluster snapshot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    #[doc(hidden)]
     pub restorable_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>The name of the maintenance track for the snapshot.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The number of days until a manual snapshot will pass its retention period.</p>
-    #[doc(hidden)]
     pub manual_snapshot_remaining_days: ::std::option::Option<i32>,
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_retention_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Snapshot {

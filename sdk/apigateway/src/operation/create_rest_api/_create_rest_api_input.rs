@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the RestApi.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A version identifier for the API.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the RestApi that you want to clone from.</p>
-    #[doc(hidden)]
     pub clone_from: ::std::option::Option<::std::string::String>,
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    #[doc(hidden)]
     pub binary_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-    #[doc(hidden)]
     pub minimum_compression_size: ::std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    #[doc(hidden)]
     pub api_key_source: ::std::option::Option<crate::types::ApiKeySourceType>,
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
-    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
 }
 impl CreateRestApiInput {

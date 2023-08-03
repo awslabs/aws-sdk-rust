@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialWindowOptions {
     /// <p>The bounds options (north, south, west, east) of the geospatial window options.</p>
-    #[doc(hidden)]
     pub bounds: ::std::option::Option<crate::types::GeospatialCoordinateBounds>,
     /// <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
-    #[doc(hidden)]
     pub map_zoom_mode: ::std::option::Option<crate::types::MapZoomMode>,
 }
 impl GeospatialWindowOptions {

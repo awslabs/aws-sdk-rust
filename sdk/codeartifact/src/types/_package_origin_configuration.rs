@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::PackageOriginRestrictions>,
 }
 impl PackageOriginConfiguration {

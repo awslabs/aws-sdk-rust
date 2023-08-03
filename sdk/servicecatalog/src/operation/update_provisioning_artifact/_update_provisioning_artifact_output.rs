@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the current request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

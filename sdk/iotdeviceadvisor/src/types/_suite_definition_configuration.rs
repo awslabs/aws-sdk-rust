@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuiteDefinitionConfiguration {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    #[doc(hidden)]
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Gets the devices configured.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     /// <p>Gets the tests intended for qualification in a suite.</p>
-    #[doc(hidden)]
     pub intended_for_qualification: bool,
     /// <p>Verifies if the test suite is a long duration test.</p>
-    #[doc(hidden)]
     pub is_long_duration_test: bool,
     /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
     /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
-    #[doc(hidden)]
     pub root_group: ::std::option::Option<::std::string::String>,
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    #[doc(hidden)]
     pub device_permission_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl SuiteDefinitionConfiguration {

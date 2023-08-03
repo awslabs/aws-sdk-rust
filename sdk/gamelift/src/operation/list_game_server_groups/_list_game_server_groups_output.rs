@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGameServerGroupsOutput {
     /// <p>The game server groups' game server groups.</p>
-    #[doc(hidden)]
     pub game_server_groups: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

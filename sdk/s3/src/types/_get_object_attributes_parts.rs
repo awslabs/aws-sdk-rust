@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectAttributesParts {
     /// <p>The total number of parts.</p>
-    #[doc(hidden)]
     pub total_parts_count: i32,
     /// <p>The marker for the current part.</p>
-    #[doc(hidden)]
     pub part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of parts allowed in the response.</p>
-    #[doc(hidden)]
     pub max_parts: i32,
     /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>>,
 }
 impl GetObjectAttributesParts {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoundTripTime {
     /// <p>RTT at the 50th percentile (p50).</p>
-    #[doc(hidden)]
     pub p50: ::std::option::Option<f64>,
     /// <p>RTT at the 90th percentile (p90). </p>
-    #[doc(hidden)]
     pub p90: ::std::option::Option<f64>,
     /// <p>RTT at the 95th percentile (p95). </p>
-    #[doc(hidden)]
     pub p95: ::std::option::Option<f64>,
 }
 impl RoundTripTime {

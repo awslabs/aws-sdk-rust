@@ -7,16 +7,12 @@ pub struct ImportKeyPairOutput {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The key pair name that you provided.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resulting key pair.</p>
-    #[doc(hidden)]
     pub key_pair_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the imported key pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

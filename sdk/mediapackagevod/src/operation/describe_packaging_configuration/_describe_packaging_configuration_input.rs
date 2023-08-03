@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagingConfigurationInput {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackagingConfigurationInput {

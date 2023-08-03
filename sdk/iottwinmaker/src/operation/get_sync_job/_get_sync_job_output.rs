@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSyncJobOutput {
     /// <p>The sync job ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace that contains the sync job.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync soucre.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>The sync IAM role.</p>
-    #[doc(hidden)]
     pub sync_role: ::std::option::Option<::std::string::String>,
     /// <p>The SyncJob response status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SyncJobStatus>,
     /// <p>The creation date and time.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The update date and time.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

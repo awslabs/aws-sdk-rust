@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeExclusion {
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    #[doc(hidden)]
     pub bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl S3ClassificationScopeExclusion {

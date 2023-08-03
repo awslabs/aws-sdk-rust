@@ -24,7 +24,6 @@ pub struct Options {
     /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub activation_override_behavior: ::std::option::Option<crate::types::ActivationOverrideBehavior>,
 }
 impl Options {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsOutput {
     /// <p>The bootstrap actions associated with the cluster.</p>
-    #[doc(hidden)]
     pub bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

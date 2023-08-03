@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PercentileAggregation {
     /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
-    #[doc(hidden)]
     pub percentile_value: ::std::option::Option<f64>,
 }
 impl PercentileAggregation {

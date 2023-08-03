@@ -7,11 +7,9 @@
 pub struct PlacementGroupConfig {
     /// <p>Role of the instance in the cluster.</p>
     /// <p>Starting with Amazon EMR release 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-    #[doc(hidden)]
     pub instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
     /// <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
     /// <p>Starting with Amazon EMR release 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-    #[doc(hidden)]
     pub placement_strategy: ::std::option::Option<crate::types::PlacementGroupStrategy>,
 }
 impl PlacementGroupConfig {

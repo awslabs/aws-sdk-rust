@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageStateChangeReason {
     /// <p>The state change reason code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ImageStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ImageStateChangeReason {

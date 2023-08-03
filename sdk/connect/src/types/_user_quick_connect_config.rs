@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
-    #[doc(hidden)]
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
 }
 impl UserQuickConnectConfig {

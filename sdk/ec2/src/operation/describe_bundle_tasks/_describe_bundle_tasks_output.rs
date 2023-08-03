@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBundleTasksOutput {
     /// <p>Information about the bundle tasks.</p>
-    #[doc(hidden)]
     pub bundle_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
     _request_id: Option<String>,
 }

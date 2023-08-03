@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricInput {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    #[doc(hidden)]
     pub extended_statistic: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The period, in seconds, over which the statistic is applied.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The unit for the metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::StandardUnit>,
 }
 impl DescribeAlarmsForMetricInput {

@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the service instance was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service was last attempted.</p>
-    #[doc(hidden)]
     pub last_deployment_attempted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the service was last deployed successfully.</p>
-    #[doc(hidden)]
     pub last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the service that the service instance belongs to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The service instance template major version.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The service instance template minor version.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The service instance deployment status.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>A service instance deployment status message.</p>
-    #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last attempted deployment of this service instance.</p>
-    #[doc(hidden)]
     pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last successful deployment of this service instance.</p>
-    #[doc(hidden)]
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceSummary {

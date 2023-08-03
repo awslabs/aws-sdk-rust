@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
     /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    #[doc(hidden)]
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPrefetchSchedulesInput {

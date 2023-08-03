@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFilter {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
-    #[doc(hidden)]
     pub gte: f64,
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
-    #[doc(hidden)]
     pub lte: f64,
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub eq: f64,
 }
 impl NumberFilter {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventRiskType {
     /// <p>The risk decision.</p>
-    #[doc(hidden)]
     pub risk_decision: ::std::option::Option<crate::types::RiskDecisionType>,
     /// <p>The risk level.</p>
-    #[doc(hidden)]
     pub risk_level: ::std::option::Option<crate::types::RiskLevelType>,
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
-    #[doc(hidden)]
     pub compromised_credentials_detected: ::std::option::Option<bool>,
 }
 impl EventRiskType {

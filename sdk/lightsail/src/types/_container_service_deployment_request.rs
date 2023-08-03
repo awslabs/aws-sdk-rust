@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceDeploymentRequest {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     /// <p>An object that describes the endpoint of the deployment.</p>
-    #[doc(hidden)]
     pub public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
 }
 impl ContainerServiceDeploymentRequest {

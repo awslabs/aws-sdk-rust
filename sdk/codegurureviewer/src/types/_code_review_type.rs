@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeReviewType {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
-    #[doc(hidden)]
     pub repository_analysis: ::std::option::Option<crate::types::RepositoryAnalysis>,
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    #[doc(hidden)]
     pub analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
 }
 impl CodeReviewType {

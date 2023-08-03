@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncrementalPullConfig {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
-    #[doc(hidden)]
     pub datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }
 impl IncrementalPullConfig {

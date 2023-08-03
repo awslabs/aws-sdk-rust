@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTaskFromMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the task should be removed from.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the task to remove from the maintenance window.</p>
-    #[doc(hidden)]
     pub window_task_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTaskFromMaintenanceWindowInput {

@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
     /// <p>The number of accepted routes.</p>
-    #[doc(hidden)]
     pub accepted_route_count: i32,
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_status_change: ::std::option::Option<::std::string::String>,
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    #[doc(hidden)]
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurs, a description of the error.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionVgwTelemetryDetails {

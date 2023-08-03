@@ -6,21 +6,16 @@
 pub struct UpdateThingInput {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
-    #[doc(hidden)]
     pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
-    #[doc(hidden)]
     pub remove_thing_type: ::std::option::Option<bool>,
 }
 impl UpdateThingInput {

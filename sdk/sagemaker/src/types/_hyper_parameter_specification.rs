@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterSpecification {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the hyperparameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The allowed range for this hyperparameter.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::ParameterRange>,
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub is_tunable: bool,
     /// <p>Indicates whether this hyperparameter is required.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl HyperParameterSpecification {

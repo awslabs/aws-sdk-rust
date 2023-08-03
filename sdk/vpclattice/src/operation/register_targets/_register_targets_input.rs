@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The targets.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl RegisterTargetsInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    #[doc(hidden)]
     pub list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the applications list.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the applications list.</p>
-    #[doc(hidden)]
     pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-    #[doc(hidden)]
     pub apps_list: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
 }
 impl AppsListDataSummary {

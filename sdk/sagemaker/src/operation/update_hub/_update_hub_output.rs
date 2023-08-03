@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHubOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
-    #[doc(hidden)]
     pub hub_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

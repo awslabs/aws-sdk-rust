@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProfileCredentials {
     /// <p> The connector-specific credentials required when using Amplitude. </p>
-    #[doc(hidden)]
     pub amplitude: ::std::option::Option<crate::types::AmplitudeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Datadog. </p>
-    #[doc(hidden)]
     pub datadog: ::std::option::Option<crate::types::DatadogConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Dynatrace. </p>
-    #[doc(hidden)]
     pub dynatrace: ::std::option::Option<crate::types::DynatraceConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Google Analytics. </p>
-    #[doc(hidden)]
     pub google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
-    #[doc(hidden)]
     pub honeycode: ::std::option::Option<crate::types::HoneycodeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Infor Nexus. </p>
-    #[doc(hidden)]
     pub infor_nexus: ::std::option::Option<crate::types::InforNexusConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Marketo. </p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Amazon Redshift. </p>
-    #[doc(hidden)]
     pub redshift: ::std::option::Option<crate::types::RedshiftConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Salesforce. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using ServiceNow. </p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Singular. </p>
-    #[doc(hidden)]
     pub singular: ::std::option::Option<crate::types::SingularConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Slack. </p>
-    #[doc(hidden)]
     pub slack: ::std::option::Option<crate::types::SlackConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Snowflake. </p>
-    #[doc(hidden)]
     pub snowflake: ::std::option::Option<crate::types::SnowflakeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Trend Micro. </p>
-    #[doc(hidden)]
     pub trendmicro: ::std::option::Option<crate::types::TrendmicroConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Veeva. </p>
-    #[doc(hidden)]
     pub veeva: ::std::option::Option<crate::types::VeevaConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Zendesk. </p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskConnectorProfileCredentials>,
     /// <p> The connector-specific profile credentials required when using SAPOData. </p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataConnectorProfileCredentials>,
     /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
-    #[doc(hidden)]
     pub custom_connector: ::std::option::Option<crate::types::CustomConnectorProfileCredentials>,
     /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
-    #[doc(hidden)]
     pub pardot: ::std::option::Option<crate::types::PardotConnectorProfileCredentials>,
 }
 impl ConnectorProfileCredentials {

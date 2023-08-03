@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountOutput {
     /// <p>The Amazon Chime account details.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<crate::types::Account>,
     _request_id: Option<String>,
 }

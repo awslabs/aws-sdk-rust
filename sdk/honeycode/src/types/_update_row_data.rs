@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
-    #[doc(hidden)]
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    #[doc(hidden)]
     pub cells_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl UpdateRowData {

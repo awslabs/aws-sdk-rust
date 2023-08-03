@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDestinationsInput {
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    #[doc(hidden)]
     pub destination_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeDestinationsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the environment account connection being deleted.</p>
-    #[doc(hidden)]
     pub environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }

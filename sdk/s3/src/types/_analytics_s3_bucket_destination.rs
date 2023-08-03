@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsS3BucketDestination {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>,
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
-    #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsS3BucketDestination {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The certificate to use with this build project.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>A set of environment variables to make available to builds for the build project.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
-    #[doc(hidden)]
     pub privileged_mode: bool,
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
@@ -20,17 +17,14 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
-    #[doc(hidden)]
     pub image_pull_credentials_type: ::std::option::Option<::std::string::String>,
     /// <p>The credentials for access to a private registry.</p>
-    #[doc(hidden)]
     pub registry_credential: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
     /// <p>The type of build environment to use for related builds.</p>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironment {

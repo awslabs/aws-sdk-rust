@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    #[doc(hidden)]
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
 }
 impl FeatureDefinition {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionStatusDetails {
     /// <p>The job execution status.</p>
-    #[doc(hidden)]
     pub details_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobExecutionStatusDetails {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceFleetReportOutput {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    #[doc(hidden)]
     pub device_fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>Description of the fleet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the report was generated.</p>
-    #[doc(hidden)]
     pub report_generated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of devices.</p>
-    #[doc(hidden)]
     pub device_stats: ::std::option::Option<crate::types::DeviceStats>,
     /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
-    #[doc(hidden)]
     pub agent_versions: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     /// <p>Status of model on device.</p>
-    #[doc(hidden)]
     pub model_stats: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>>,
     _request_id: Option<String>,
 }

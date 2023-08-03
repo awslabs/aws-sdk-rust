@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityControlDefinition {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3). </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The title of a security control. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p> The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    #[doc(hidden)]
     pub remediation_url: ::std::option::Option<::std::string::String>,
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
-    #[doc(hidden)]
     pub current_region_availability: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
 }
 impl SecurityControlDefinition {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDropDownControl {
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub parameter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>ParameterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source parameter name of the <code>ParameterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     /// <p>The type parameter name of the <code>ParameterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
-    #[doc(hidden)]
     pub selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
-    #[doc(hidden)]
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
 impl ParameterDropDownControl {

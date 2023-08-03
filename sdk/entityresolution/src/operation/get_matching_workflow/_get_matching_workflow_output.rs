@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMatchingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
-    #[doc(hidden)]
     pub workflow_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    #[doc(hidden)]
     pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    #[doc(hidden)]
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
-    #[doc(hidden)]
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>The timestamp of when the workflow was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the workflow was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    #[doc(hidden)]
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to access resources on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

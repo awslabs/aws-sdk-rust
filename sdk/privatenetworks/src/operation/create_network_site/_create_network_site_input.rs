@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateNetworkSiteInput {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    #[doc(hidden)]
     pub network_site_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the site.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the pending plan for this site.</p>
-    #[doc(hidden)]
     pub pending_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p> The tags to apply to the network site. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkSiteInput {

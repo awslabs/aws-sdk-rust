@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskIopsConfiguration {
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i64>,
 }
 impl DiskIopsConfiguration {

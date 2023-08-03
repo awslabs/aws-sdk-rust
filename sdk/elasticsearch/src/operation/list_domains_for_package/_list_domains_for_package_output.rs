@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
-    #[doc(hidden)]
     pub domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotebookMetadataOutput {
     /// <p>The metadata that is returned for the specified notebook ID.</p>
-    #[doc(hidden)]
     pub notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     _request_id: Option<String>,
 }

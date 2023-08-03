@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub max_group_prepared_capacity: ::std::option::Option<i32>,
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
-    #[doc(hidden)]
     pub min_size: ::std::option::Option<i32>,
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
-    #[doc(hidden)]
     pub pool_state: ::std::option::Option<crate::types::WarmPoolState>,
     /// <p>The status of a warm pool that is marked for deletion.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WarmPoolStatus>,
     /// <p>The instance reuse policy.</p>
-    #[doc(hidden)]
     pub instance_reuse_policy: ::std::option::Option<crate::types::InstanceReusePolicy>,
 }
 impl WarmPoolConfiguration {

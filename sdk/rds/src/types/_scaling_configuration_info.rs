@@ -6,25 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingConfigurationInfo {
     /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
-    #[doc(hidden)]
     pub auto_pause: ::std::option::Option<bool>,
     /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code> mode is paused. A DB cluster can be paused only when it's idle (it has no connections).</p>
-    #[doc(hidden)]
     pub seconds_until_auto_pause: ::std::option::Option<i32>,
     /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    #[doc(hidden)]
     pub timeout_action: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds before scaling times out. What happens when an attempted scaling action times out is determined by the <code>TimeoutAction</code> setting.</p>
-    #[doc(hidden)]
     pub seconds_before_timeout: ::std::option::Option<i32>,
 }
 impl ScalingConfigurationInfo {

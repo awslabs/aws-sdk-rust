@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
 }
 impl Service {

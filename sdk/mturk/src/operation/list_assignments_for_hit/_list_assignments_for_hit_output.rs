@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssignmentsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
-    #[doc(hidden)]
     pub num_results: ::std::option::Option<i32>,
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    #[doc(hidden)]
     pub assignments: ::std::option::Option<::std::vec::Vec<crate::types::Assignment>>,
     _request_id: Option<String>,
 }

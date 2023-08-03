@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ami: ::std::option::Option<::std::string::String>,
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the instance.</p>
-    #[doc(hidden)]
     pub instance_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub network_findings: ::std::option::Option<i64>,
 }
 impl Ec2InstanceAggregationResponse {

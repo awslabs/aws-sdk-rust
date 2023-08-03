@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
-    #[doc(hidden)]
     pub target_violation_reason: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallMissingFirewallViolation {

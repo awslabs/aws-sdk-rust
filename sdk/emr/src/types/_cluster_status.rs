@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterStatus {
     /// <p>The current state of the cluster.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>The reason for the cluster status change.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::ClusterStateChangeReason>,
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::ClusterTimeline>,
     /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl ClusterStatus {

@@ -5,58 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    #[doc(hidden)]
     pub additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    #[doc(hidden)]
     pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>A custom description of the campaign.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
-    #[doc(hidden)]
     pub holdout_percent: ::std::option::Option<i32>,
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
-    #[doc(hidden)]
     pub hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
-    #[doc(hidden)]
     pub is_paused: ::std::option::Option<bool>,
     /// <p>The messaging limits for the campaign.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The message configuration settings for the campaign.</p>
-    #[doc(hidden)]
     pub message_configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>A custom name for the campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule settings for the campaign.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The unique identifier for the segment to associate with the campaign.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the segment to associate with the campaign.</p>
-    #[doc(hidden)]
     pub segment_version: ::std::option::Option<i32>,
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message template to use for the campaign.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>A custom description of the default treatment for the campaign.</p>
-    #[doc(hidden)]
     pub treatment_description: ::std::option::Option<::std::string::String>,
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    #[doc(hidden)]
     pub treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl WriteCampaignRequest {

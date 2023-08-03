@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectionInput {

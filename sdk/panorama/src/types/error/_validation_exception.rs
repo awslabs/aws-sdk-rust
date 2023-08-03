@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason that validation failed.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// <p>A unique ID for the error.</p>
-    #[doc(hidden)]
     pub error_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
-    #[doc(hidden)]
     pub error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>,
     /// <p>A list of request parameters that failed validation.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

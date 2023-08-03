@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportsOutput {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was exported.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    #[doc(hidden)]
     pub export_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The locale specified in the request.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnTag {
     /// <p>A geospatial role for a column.</p>
-    #[doc(hidden)]
     pub column_geographic_role: ::std::option::Option<crate::types::GeoSpatialDataRole>,
     /// <p>A description for a column.</p>
-    #[doc(hidden)]
     pub column_description: ::std::option::Option<crate::types::ColumnDescription>,
 }
 impl ColumnTag {

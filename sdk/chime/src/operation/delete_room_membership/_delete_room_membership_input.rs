@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The room ID.</p>
-    #[doc(hidden)]
     pub room_id: ::std::option::Option<::std::string::String>,
     /// <p>The member ID (user ID or bot ID).</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRoomMembershipInput {

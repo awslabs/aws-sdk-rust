@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordPatch {
     /// An operation, either replace or remove.
-    #[doc(hidden)]
     pub op: ::std::option::Option<crate::types::Operation>,
     /// The key associated with the record patch.
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// The value associated with the record patch.
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// Last known server sync count for this record. Set to 0 if unknown.
-    #[doc(hidden)]
     pub sync_count: ::std::option::Option<i64>,
     /// The last modified date of the client device.
-    #[doc(hidden)]
     pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecordPatch {

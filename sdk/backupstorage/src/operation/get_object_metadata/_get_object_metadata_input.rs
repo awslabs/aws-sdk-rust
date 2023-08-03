@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectMetadataInput {
     /// Backup job id for the in-progress backup.
-    #[doc(hidden)]
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Object token.
-    #[doc(hidden)]
     pub object_token: ::std::option::Option<::std::string::String>,
 }
 impl GetObjectMetadataInput {

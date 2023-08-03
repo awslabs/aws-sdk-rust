@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePoolOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the pool.</p>
     /// <ul>
@@ -15,34 +13,24 @@ pub struct CreatePoolOutput {
     /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
     /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PoolStatus>,
     /// <p>The type of message for the pool to use.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
-    #[doc(hidden)]
     pub shared_routes_enabled: bool,
     /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

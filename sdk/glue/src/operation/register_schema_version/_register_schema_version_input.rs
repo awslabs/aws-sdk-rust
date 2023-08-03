@@ -8,10 +8,8 @@ pub struct RegisterSchemaVersionInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl RegisterSchemaVersionInput {

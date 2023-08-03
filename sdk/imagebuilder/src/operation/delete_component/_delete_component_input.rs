@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    #[doc(hidden)]
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteComponentInput {

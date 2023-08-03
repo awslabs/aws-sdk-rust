@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLockConfiguration {
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
-    #[doc(hidden)]
     pub object_lock_enabled: ::std::option::Option<crate::types::ObjectLockEnabled>,
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::ObjectLockRule>,
 }
 impl ObjectLockConfiguration {

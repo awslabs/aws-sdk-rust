@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    #[doc(hidden)]
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCoreDeviceInput {

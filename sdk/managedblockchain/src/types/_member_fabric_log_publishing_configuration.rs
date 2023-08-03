@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
-    #[doc(hidden)]
     pub ca_logs: ::std::option::Option<crate::types::LogConfigurations>,
 }
 impl MemberFabricLogPublishingConfiguration {

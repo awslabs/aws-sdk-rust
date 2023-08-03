@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
-    #[doc(hidden)]
     pub s3_input_configuration: ::std::option::Option<crate::types::LabelsS3InputConfiguration>,
     /// <p> The name of the label group to be used for label data. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LabelsInputConfiguration {

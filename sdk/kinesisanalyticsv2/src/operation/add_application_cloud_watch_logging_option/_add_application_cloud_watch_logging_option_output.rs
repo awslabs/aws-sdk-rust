@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldOptions {
     /// <p>The selected field options for the table field options.</p>
-    #[doc(hidden)]
     pub selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>,
     /// <p>The order of field IDs of the field options for a table visual.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TableFieldOptions {

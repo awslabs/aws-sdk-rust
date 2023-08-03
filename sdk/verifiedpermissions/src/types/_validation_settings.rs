@@ -13,7 +13,6 @@ pub struct ValidationSettings {
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against. </p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ValidationMode>,
 }
 impl ValidationSettings {

@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateOutput {
     /// <p>The ARN of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when the provisioning template was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the provisioning template was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The default fleet template version ID.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<i32>,
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>True if the provisioning template is enabled, otherwise false.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    #[doc(hidden)]
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
-    #[doc(hidden)]
     pub pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
     _request_id: Option<String>,
 }

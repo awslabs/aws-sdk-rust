@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    #[doc(hidden)]
     pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
-    #[doc(hidden)]
     pub gt: ::std::option::Option<i64>,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
-    #[doc(hidden)]
     pub gte: ::std::option::Option<i64>,
     /// <p>The value for the property is less than the specified value.</p>
-    #[doc(hidden)]
     pub lt: ::std::option::Option<i64>,
     /// <p>The value for the property is less than or equal to the specified value.</p>
-    #[doc(hidden)]
     pub lte: ::std::option::Option<i64>,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    #[doc(hidden)]
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the bucket begins with the specified value.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl BucketCriteriaAdditionalProperties {

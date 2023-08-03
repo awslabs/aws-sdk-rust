@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMediaInsightsPipelineConfigurationInput {
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetMediaInsightsPipelineConfigurationInput {

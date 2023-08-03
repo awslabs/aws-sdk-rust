@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatistics {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
-    #[doc(hidden)]
     pub inbox_raw_count: ::std::option::Option<i64>,
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
-    #[doc(hidden)]
     pub spam_raw_count: ::std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
-    #[doc(hidden)]
     pub projected_inbox: ::std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
-    #[doc(hidden)]
     pub projected_spam: ::std::option::Option<i64>,
 }
 impl VolumeStatistics {

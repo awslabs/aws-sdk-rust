@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
-    #[doc(hidden)]
     pub coordinates: ::std::option::Option<crate::types::GpsCoordinates>,
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
-    #[doc(hidden)]
     pub range_in_kilometers: ::std::option::Option<f64>,
 }
 impl GpsPointDimension {

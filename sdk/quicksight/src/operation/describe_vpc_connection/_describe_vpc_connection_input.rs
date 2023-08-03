@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectionInput {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want described.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVpcConnectionInput {

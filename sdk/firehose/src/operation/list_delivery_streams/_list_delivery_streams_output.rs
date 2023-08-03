@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsOutput {
     /// <p>The names of the delivery streams.</p>
-    #[doc(hidden)]
     pub delivery_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether there are more delivery streams available to list.</p>
-    #[doc(hidden)]
     pub has_more_delivery_streams: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemEndpoints {
     /// <p>An endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems.</p>
-    #[doc(hidden)]
     pub intercluster: ::std::option::Option<crate::types::FileSystemEndpoint>,
     /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API.</p>
-    #[doc(hidden)]
     pub management: ::std::option::Option<crate::types::FileSystemEndpoint>,
 }
 impl FileSystemEndpoints {

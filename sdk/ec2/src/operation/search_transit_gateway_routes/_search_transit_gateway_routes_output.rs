@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
     /// <p>Indicates whether there are additional routes available.</p>
-    #[doc(hidden)]
     pub additional_routes_available: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

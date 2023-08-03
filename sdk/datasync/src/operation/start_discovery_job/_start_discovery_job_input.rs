@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
-    #[doc(hidden)]
     pub collection_duration_minutes: ::std::option::Option<i32>,
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl StartDiscoveryJobInput {

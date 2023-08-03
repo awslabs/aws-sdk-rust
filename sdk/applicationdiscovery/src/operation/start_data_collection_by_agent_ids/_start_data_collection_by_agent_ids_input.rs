@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsInput {
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartDataCollectionByAgentIdsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInvalidationInput {
     /// <p>The distribution's id.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The batch information for the invalidation.</p>
-    #[doc(hidden)]
     pub invalidation_batch: ::std::option::Option<crate::types::InvalidationBatch>,
 }
 impl CreateInvalidationInput {

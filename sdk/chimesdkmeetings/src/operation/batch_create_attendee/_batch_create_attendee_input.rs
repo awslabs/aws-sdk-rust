@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    #[doc(hidden)]
     pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
 }
 impl BatchCreateAttendeeInput {

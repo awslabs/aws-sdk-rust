@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositeModelProperty {
     /// <p>The name of the property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the composite model that defines this property.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Contains asset property information.</p>
-    #[doc(hidden)]
     pub asset_property: ::std::option::Option<crate::types::Property>,
     /// <p> The ID of the composite model that contains the property. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl CompositeModelProperty {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>Contains the policy document to set, in JSON format.</p>
-    #[doc(hidden)]
     pub policy_in_json: ::std::option::Option<::std::string::String>,
     /// <p>Do not use. For internal use only.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    #[doc(hidden)]
     pub policy_hash_condition: ::std::option::Option<::std::string::String>,
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    #[doc(hidden)]
     pub policy_exists_condition: ::std::option::Option<crate::types::ExistCondition>,
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
@@ -21,7 +17,6 @@ pub struct PutResourcePolicyInput {
     /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-    #[doc(hidden)]
     pub enable_hybrid: ::std::option::Option<crate::types::EnableHybridValues>,
 }
 impl PutResourcePolicyInput {

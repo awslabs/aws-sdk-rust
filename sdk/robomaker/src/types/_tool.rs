@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tool {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
-    #[doc(hidden)]
     pub stream_ui: ::std::option::Option<bool>,
     /// <p>The name of the tool.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::string::String>,
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
-    #[doc(hidden)]
     pub stream_output_to_cloud_watch: ::std::option::Option<bool>,
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-    #[doc(hidden)]
     pub exit_behavior: ::std::option::Option<crate::types::ExitBehavior>,
 }
 impl Tool {

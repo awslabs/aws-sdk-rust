@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveSource {
     /// <p>The ARN for the live source.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates when the live source was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the live source.</p>
-    #[doc(hidden)]
     pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name that's used to refer to a live source.</p>
-    #[doc(hidden)]
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LiveSource {

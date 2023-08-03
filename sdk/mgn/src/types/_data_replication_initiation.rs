@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInitiation {
     /// <p>Request to query data initiation start date and time.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query next data initiation date and time.</p>
-    #[doc(hidden)]
     pub next_attempt_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query data initiation steps.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiation {

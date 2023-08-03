@@ -7,35 +7,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Actuator {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
-    #[doc(hidden)]
     pub fully_qualified_name: ::std::option::Option<::std::string::String>,
     /// <p>The specified data type of the actuator. </p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::NodeDataType>,
     /// <p>A brief description of the actuator.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The scientific unit for the actuator.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values an actuator can take.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The specified possible minimum value of an actuator.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The specified possible maximum value of an actuator.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
     /// <p>A specified value for the actuator.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    #[doc(hidden)]
     pub assigned_value: ::std::option::Option<::std::string::String>,
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    #[doc(hidden)]
     pub deprecation_message: ::std::option::Option<::std::string::String>,
     /// <p>A comment in addition to the description.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Actuator {

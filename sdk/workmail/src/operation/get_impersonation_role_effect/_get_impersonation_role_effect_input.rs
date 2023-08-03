@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImpersonationRoleEffectInput {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role ID to test.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct GetImpersonationRoleEffectInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_user: ::std::option::Option<::std::string::String>,
 }
 impl GetImpersonationRoleEffectInput {

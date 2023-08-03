@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobConfiguration {
     /// <p>The file format of the data in Amazon S3.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl JobConfiguration {

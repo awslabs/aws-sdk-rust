@@ -5,69 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInformation {
     /// <p>The managed node ID. </p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Connection status of SSM Agent. </p> <note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
-    #[doc(hidden)]
     pub ping_status: ::std::option::Option<crate::types::PingStatus>,
     /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
-    #[doc(hidden)]
     pub last_ping_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of SSM Agent running on your Linux managed node. </p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This field doesn't indicate whether or not the latest version is installed on Windows managed nodes, because some older versions of Windows Server use the EC2Config service to process Systems Manager requests.</p>
-    #[doc(hidden)]
     pub is_latest_version: ::std::option::Option<bool>,
     /// <p>The operating system platform type. </p>
-    #[doc(hidden)]
     pub platform_type: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The name of the operating system platform running on your managed node. </p>
-    #[doc(hidden)]
     pub platform_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the OS platform running on your managed node. </p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
-    #[doc(hidden)]
     pub activation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
-    #[doc(hidden)]
     pub registration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code> property using the <code>CreateActivation</code> command. It is applied to the managed node by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the managed node.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified host name of the managed node.</p>
-    #[doc(hidden)]
     pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association.</p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<::std::string::String>,
     /// <p>The date the association was last run.</p>
-    #[doc(hidden)]
     pub last_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date the association was successfully run.</p>
-    #[doc(hidden)]
     pub last_successful_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
 }
 impl InstanceInformation {

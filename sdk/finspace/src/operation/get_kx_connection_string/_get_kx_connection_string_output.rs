@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetKxConnectionStringOutput {
     /// <p>The signed connection string that you can use to connect to clusters.</p>
-    #[doc(hidden)]
     pub signed_connection_string: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

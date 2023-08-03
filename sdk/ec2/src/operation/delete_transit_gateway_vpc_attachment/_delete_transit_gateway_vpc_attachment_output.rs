@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the deleted VPC attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_vpc_attachment: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }

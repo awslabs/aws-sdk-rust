@@ -5,18 +5,14 @@
 pub struct CreateLabelGroupInput {
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLabelGroupInput {

@@ -4,25 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLinkInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The upload and download speed in Mbps. </p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<crate::types::Bandwidth>,
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLinkInput {

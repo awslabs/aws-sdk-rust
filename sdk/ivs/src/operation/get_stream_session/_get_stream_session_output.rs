@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamSessionOutput {
     /// <p>List of stream details.</p>
-    #[doc(hidden)]
     pub stream_session: ::std::option::Option<crate::types::StreamSession>,
     _request_id: Option<String>,
 }

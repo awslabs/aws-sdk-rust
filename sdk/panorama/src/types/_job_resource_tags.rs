@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobResourceTags {
     /// <p>The job's type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::JobResourceType>,
     /// <p>The job's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobResourceTags {

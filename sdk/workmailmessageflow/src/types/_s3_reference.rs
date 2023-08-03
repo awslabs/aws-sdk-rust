@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Reference {
     /// <p>The S3 bucket name.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key object name.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
-    #[doc(hidden)]
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Reference {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevEndpointsOutput {
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
-    #[doc(hidden)]
     pub dev_endpoint_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

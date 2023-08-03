@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvOutput>,
 }
 impl OutputSerialization {

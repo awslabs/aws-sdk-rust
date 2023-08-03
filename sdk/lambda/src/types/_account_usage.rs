@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountUsage {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
-    #[doc(hidden)]
     pub total_code_size: i64,
     /// <p>The number of Lambda functions.</p>
-    #[doc(hidden)]
     pub function_count: i64,
 }
 impl AccountUsage {

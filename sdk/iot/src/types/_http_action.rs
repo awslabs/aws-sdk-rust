@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
-    #[doc(hidden)]
     pub confirmation_url: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP headers to send with the message data.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>>,
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
-    #[doc(hidden)]
     pub auth: ::std::option::Option<crate::types::HttpAuthorization>,
 }
 impl HttpAction {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresetInput {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the preset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<::std::string::String>,
     /// <p>A section of the request body that specifies the video parameters.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::VideoParameters>,
     /// <p>A section of the request body that specifies the audio parameters.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioParameters>,
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-    #[doc(hidden)]
     pub thumbnails: ::std::option::Option<crate::types::Thumbnails>,
 }
 impl CreatePresetInput {

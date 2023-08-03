@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The type of validation script.</p>
-    #[doc(hidden)]
     pub script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl UserDataValidationParameters {

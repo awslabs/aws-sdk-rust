@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HsmConfiguration {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A text description of the HSM configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    #[doc(hidden)]
     pub hsm_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    #[doc(hidden)]
     pub hsm_partition_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the HSM configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HsmConfiguration {

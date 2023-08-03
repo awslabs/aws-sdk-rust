@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectSyntaxInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
-    #[doc(hidden)]
     pub text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::SyntaxLanguageCode>,
 }
 impl BatchDetectSyntaxInput {

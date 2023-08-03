@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputProcessingConfiguration {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
-    #[doc(hidden)]
     pub input_lambda_processor: ::std::option::Option<crate::types::InputLambdaProcessor>,
 }
 impl InputProcessingConfiguration {

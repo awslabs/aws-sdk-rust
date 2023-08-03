@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-    #[doc(hidden)]
     pub data_source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDataSourceInput {

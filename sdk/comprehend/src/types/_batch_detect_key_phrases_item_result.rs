@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    #[doc(hidden)]
     pub key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
 }
 impl BatchDetectKeyPhrasesItemResult {

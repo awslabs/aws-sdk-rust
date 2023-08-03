@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMonitoringSubscriptionInput {

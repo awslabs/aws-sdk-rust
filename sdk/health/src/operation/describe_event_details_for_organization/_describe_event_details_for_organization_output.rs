@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationOutput {
     /// <p>Information about the events that could be retrieved.</p>
-    #[doc(hidden)]
     pub successful_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEventDetails>>,
     /// <p>Error messages for any events that could not be retrieved.</p>
-    #[doc(hidden)]
     pub failed_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 pub struct AwsCertificateManagerCertificateOptions {
     /// <p>Whether to add the certificate to a transparency log.</p>
     /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
-    #[doc(hidden)]
     pub certificate_transparency_logging_preference: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateOptions {

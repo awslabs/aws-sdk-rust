@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p> The name of the Amazon Web Service. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The display name of the Amazon Web Service. </p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the Amazon Web Service. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
 }
 impl ServiceMetadata {

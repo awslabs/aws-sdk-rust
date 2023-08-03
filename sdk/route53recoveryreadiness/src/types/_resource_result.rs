@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceResult {
     /// <p>The component id of the resource.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The readiness of a resource.</p>
-    #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceResult {

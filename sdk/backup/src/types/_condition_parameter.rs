@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionParameter {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    #[doc(hidden)]
     pub condition_key: ::std::option::Option<::std::string::String>,
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    #[doc(hidden)]
     pub condition_value: ::std::option::Option<::std::string::String>,
 }
 impl ConditionParameter {

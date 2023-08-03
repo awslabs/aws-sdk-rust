@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// The entitlements that you want to grant on a flow.
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    #[doc(hidden)]
     pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
     /// The name of the flow.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The outputs that you want to add to this flow.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
     /// The settings for the source of the flow.
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::SetSourceRequest>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
     /// The VPC interfaces you want on the flow.
-    #[doc(hidden)]
     pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
     /// Create maintenance setting for a flow
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::AddMaintenance>,
 }
 impl CreateFlowInput {

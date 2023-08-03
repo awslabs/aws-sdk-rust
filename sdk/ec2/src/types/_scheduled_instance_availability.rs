@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstanceAvailability {
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of available instances.</p>
-    #[doc(hidden)]
     pub available_instance_count: ::std::option::Option<i32>,
     /// <p>The time period for the first schedule to start.</p>
-    #[doc(hidden)]
     pub first_slot_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The hourly price for a single instance.</p>
-    #[doc(hidden)]
     pub hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum term. The only possible value is 365 days.</p>
-    #[doc(hidden)]
     pub max_term_duration_in_days: ::std::option::Option<i32>,
     /// <p>The minimum term. The only possible value is 365 days.</p>
-    #[doc(hidden)]
     pub min_term_duration_in_days: ::std::option::Option<i32>,
     /// <p>The network platform.</p>
-    #[doc(hidden)]
     pub network_platform: ::std::option::Option<::std::string::String>,
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The purchase token. This token expires in two hours.</p>
-    #[doc(hidden)]
     pub purchase_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedule recurrence.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::ScheduledInstanceRecurrence>,
     /// <p>The number of hours in the schedule.</p>
-    #[doc(hidden)]
     pub slot_duration_in_hours: ::std::option::Option<i32>,
     /// <p>The total number of hours for a single instance for the entire term.</p>
-    #[doc(hidden)]
     pub total_scheduled_instance_hours: ::std::option::Option<i32>,
 }
 impl ScheduledInstanceAvailability {

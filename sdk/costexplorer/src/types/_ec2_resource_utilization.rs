@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2ResourceUtilization {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-    #[doc(hidden)]
     pub max_cpu_utilization_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
-    #[doc(hidden)]
     pub max_memory_utilization_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-    #[doc(hidden)]
     pub max_storage_utilization_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-    #[doc(hidden)]
     pub ebs_resource_utilization: ::std::option::Option<crate::types::EbsResourceUtilization>,
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-    #[doc(hidden)]
     pub disk_resource_utilization: ::std::option::Option<crate::types::DiskResourceUtilization>,
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-    #[doc(hidden)]
     pub network_resource_utilization: ::std::option::Option<crate::types::NetworkResourceUtilization>,
 }
 impl Ec2ResourceUtilization {

@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileInput {
     /// <p>The name of the security profile you want to update.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    #[doc(hidden)]
     pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    #[doc(hidden)]
     pub alert_targets: ::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
     /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    #[doc(hidden)]
     pub additional_metrics_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    #[doc(hidden)]
     pub additional_metrics_to_retain_v2: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
-    #[doc(hidden)]
     pub delete_behaviors: ::std::option::Option<bool>,
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
-    #[doc(hidden)]
     pub delete_alert_targets: ::std::option::Option<bool>,
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
-    #[doc(hidden)]
     pub delete_additional_metrics_to_retain: ::std::option::Option<bool>,
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
 }
 impl UpdateSecurityProfileInput {

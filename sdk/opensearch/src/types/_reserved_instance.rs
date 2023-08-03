@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstance {
     /// <p>The customer-specified identifier to track this reservation.</p>
-    #[doc(hidden)]
     pub reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the reservation.</p>
-    #[doc(hidden)]
     pub reserved_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the billing subscription.</p>
-    #[doc(hidden)]
     pub billing_subscription_id: ::std::option::Option<i64>,
     /// <p>The unique identifier of the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The OpenSearch instance type offered by theReserved Instance offering.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>The date and time when the reservation was purchased.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration, in seconds, for which the OpenSearch instance is reserved.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of OpenSearch instances that have been reserved.</p>
-    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>The state of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The payment option as defined in the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::ReservedInstancePaymentOption>,
     /// <p>The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedInstance {

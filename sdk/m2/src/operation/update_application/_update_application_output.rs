@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
     /// <p>The new version of the application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

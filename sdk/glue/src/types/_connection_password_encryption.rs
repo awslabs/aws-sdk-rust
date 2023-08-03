@@ -7,12 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
-    #[doc(hidden)]
     pub return_connection_password_encrypted: bool,
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
-    #[doc(hidden)]
     pub aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPasswordEncryption {

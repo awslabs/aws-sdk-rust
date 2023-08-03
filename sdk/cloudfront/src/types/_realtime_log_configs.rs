@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeLogConfigs {
     /// <p>The maximum number of real-time log configurations requested.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>Contains the list of real-time log configurations.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>,
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
-    #[doc(hidden)]
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off. </p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
 }
 impl RealtimeLogConfigs {

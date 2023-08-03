@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnLevelPermissionRule {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of column names.</p>
-    #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnLevelPermissionRule {

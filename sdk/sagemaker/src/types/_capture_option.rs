@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptureOption {
     /// <p>Specify the boundary of data to capture.</p>
-    #[doc(hidden)]
     pub capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
 impl CaptureOption {

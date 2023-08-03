@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status for this instance:</p>
     /// <ul>
@@ -20,20 +18,16 @@ pub struct InstanceSummary {
     /// <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li>
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of lifecycle events for this instance.</p>
-    #[doc(hidden)]
     pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
     /// <li> <p>BLUE: The instance is part of the original environment.</p> </li>
     /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
 }
 impl InstanceSummary {

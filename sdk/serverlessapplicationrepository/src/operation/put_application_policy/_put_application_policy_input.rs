@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of policy statements applied to the application.</p>
-    #[doc(hidden)]
     pub statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetNotificationSettingsInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    #[doc(hidden)]
     pub notification_setting_keys: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
 }
 impl ResetNotificationSettingsInput {

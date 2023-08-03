@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserProfilesOutput {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-    #[doc(hidden)]
     pub user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
-    #[doc(hidden)]
     pub external_connection_name: ::std::option::Option<::std::string::String>,
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct RepositoryExternalConnectionInfo {
     /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub package_format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExternalConnectionStatus>,
 }
 impl RepositoryExternalConnectionInfo {

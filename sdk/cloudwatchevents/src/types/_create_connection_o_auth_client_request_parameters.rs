@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionOAuthClientRequestParameters {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictInput {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    #[doc(hidden)]
     pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub predict_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl PredictInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamDiscoveredResourceCidr {
     /// <p>The resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource Region.</p>
-    #[doc(hidden)]
     pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource owner ID.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource CIDR.</p>
-    #[doc(hidden)]
     pub resource_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The resource tags.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -31,13 +24,10 @@ pub struct IpamDiscoveredResourceCidr {
     /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
     /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ip_usage: ::std::option::Option<f64>,
     /// <p>The VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The last successful resource discovery time.</p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpamDiscoveredResourceCidr {

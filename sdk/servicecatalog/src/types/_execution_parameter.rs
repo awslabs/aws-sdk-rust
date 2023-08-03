@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionParameter {
     /// <p>The name of the execution parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The execution parameter type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The default values for the execution parameter.</p>
-    #[doc(hidden)]
     pub default_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExecutionParameter {

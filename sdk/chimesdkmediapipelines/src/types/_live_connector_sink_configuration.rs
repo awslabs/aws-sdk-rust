@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
-    #[doc(hidden)]
     pub sink_type: ::std::option::Option<crate::types::LiveConnectorSinkType>,
     /// <p>The sink configuration's RTMP configuration settings.</p>
-    #[doc(hidden)]
     pub rtmp_configuration: ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
 }
 impl LiveConnectorSinkConfiguration {

@@ -10,13 +10,10 @@ pub struct DescribePatchBaselinesInput {
     /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patch baselines to return (per page).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePatchBaselinesInput {

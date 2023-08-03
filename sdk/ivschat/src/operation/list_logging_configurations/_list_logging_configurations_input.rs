@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsInput {
     /// <p>The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of logging configurations to return. Default: 50.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListLoggingConfigurationsInput {

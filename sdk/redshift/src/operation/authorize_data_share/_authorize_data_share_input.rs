@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
-    #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
-    #[doc(hidden)]
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizeDataShareInput {

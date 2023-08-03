@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReportSchedule {
     /// <p>The ARN of the business report schedule.</p>
-    #[doc(hidden)]
     pub schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name identifier of the schedule.</p>
-    #[doc(hidden)]
     pub schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket name of the output reports.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
-    #[doc(hidden)]
     pub content_range: ::std::option::Option<crate::types::BusinessReportContentRange>,
     /// <p>The recurrence of the reports.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::BusinessReportRecurrence>,
     /// <p>The details of the last business report delivery for a specified time interval.</p>
-    #[doc(hidden)]
     pub last_business_report: ::std::option::Option<crate::types::BusinessReport>,
 }
 impl BusinessReportSchedule {

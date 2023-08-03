@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Source {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    #[doc(hidden)]
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the format for the S3 source file or files.</p>
-    #[doc(hidden)]
     pub upload_settings: ::std::option::Option<crate::types::UploadSettings>,
     /// <p>A physical table type for an S3 data source.</p> <note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
-    #[doc(hidden)]
     pub input_columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
 }
 impl S3Source {

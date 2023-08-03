@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetGenerationDataSource {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    #[doc(hidden)]
     pub conversation_logs_data_source: ::std::option::Option<crate::types::ConversationLogsDataSource>,
 }
 impl TestSetGenerationDataSource {

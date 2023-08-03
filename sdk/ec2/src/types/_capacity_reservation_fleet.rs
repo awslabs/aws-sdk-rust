@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationFleet {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
     /// <ul>
@@ -22,39 +20,29 @@ pub struct CapacityReservationFleet {
     /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The capacity units that have been fulfilled.</p>
-    #[doc(hidden)]
     pub total_fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
     /// <ul>
     /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    #[doc(hidden)]
     pub instance_match_criteria: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    #[doc(hidden)]
     pub instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleet {

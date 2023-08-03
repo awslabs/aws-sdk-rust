@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAutoScalingPolicyOutput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    #[doc(hidden)]
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The automatic scaling policy definition.</p>
-    #[doc(hidden)]
     pub auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicyDescription>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

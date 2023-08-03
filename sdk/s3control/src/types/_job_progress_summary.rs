@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobProgressSummary {
     /// <p></p>
-    #[doc(hidden)]
     pub total_number_of_tasks: ::std::option::Option<i64>,
     /// <p></p>
-    #[doc(hidden)]
     pub number_of_tasks_succeeded: ::std::option::Option<i64>,
     /// <p></p>
-    #[doc(hidden)]
     pub number_of_tasks_failed: ::std::option::Option<i64>,
     /// <p>The JobTimers attribute of a job's progress summary.</p>
-    #[doc(hidden)]
     pub timers: ::std::option::Option<crate::types::JobTimers>,
 }
 impl JobProgressSummary {

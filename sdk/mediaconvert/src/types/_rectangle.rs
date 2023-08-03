@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rectangle {
     /// Height of rectangle in pixels. Specify only even numbers.
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// Width of rectangle in pixels. Specify only even numbers.
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
-    #[doc(hidden)]
     pub x: ::std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
-    #[doc(hidden)]
     pub y: ::std::option::Option<i32>,
 }
 impl Rectangle {

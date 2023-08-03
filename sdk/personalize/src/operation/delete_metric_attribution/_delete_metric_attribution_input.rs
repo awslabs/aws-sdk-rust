@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMetricAttributionInput {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub metric_attribution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMetricAttributionInput {

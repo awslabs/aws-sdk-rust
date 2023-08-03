@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProactiveInsightSummary {
     /// <p>The ID of the proactive insight. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the proactive insight. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::InsightSeverity>,
     /// <p>The status of the proactive insight. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    #[doc(hidden)]
     pub insight_time_range: ::std::option::Option<crate::types::InsightTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    #[doc(hidden)]
     pub prediction_time_range: ::std::option::Option<crate::types::PredictionTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
-    #[doc(hidden)]
     pub associated_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProactiveInsightSummary {

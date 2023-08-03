@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChoiceUpdate {
     /// <p>The status of a choice.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChoiceStatus>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ChoiceReason>,
     /// <p>The notes associated with a choice.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceUpdate {

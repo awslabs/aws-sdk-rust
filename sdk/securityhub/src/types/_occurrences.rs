@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Occurrences {
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    #[doc(hidden)]
     pub line_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>Occurrences of sensitive data detected in a binary text file.</p>
-    #[doc(hidden)]
     pub offset_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
     /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
 }
 impl Occurrences {

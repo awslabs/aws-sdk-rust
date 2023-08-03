@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-    #[doc(hidden)]
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
 impl GetLinkAttributesInput {

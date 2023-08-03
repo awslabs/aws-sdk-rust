@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecommenderOutput {
     /// <p>The properties of the recommender.</p>
-    #[doc(hidden)]
     pub recommender: ::std::option::Option<crate::types::Recommender>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>The name of a stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stream.</p>
-    #[doc(hidden)]
     pub stream_status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    #[doc(hidden)]
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>The timestamp at which the stream was created.</p>
-    #[doc(hidden)]
     pub stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StreamSummary {

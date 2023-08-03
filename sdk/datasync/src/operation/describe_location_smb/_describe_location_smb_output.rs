@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the source SMB location that was described.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

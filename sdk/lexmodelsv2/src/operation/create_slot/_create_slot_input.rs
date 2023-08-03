@@ -4,39 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSlotInput {
     /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
-    #[doc(hidden)]
     pub value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
-    #[doc(hidden)]
     pub obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     /// <p>The identifier of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the intent that contains the slot.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub multiple_values_setting: ::std::option::Option<crate::types::MultipleValuesSetting>,
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    #[doc(hidden)]
     pub sub_slot_setting: ::std::option::Option<crate::types::SubSlotSetting>,
 }
 impl CreateSlotInput {

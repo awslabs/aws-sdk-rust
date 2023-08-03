@@ -23,12 +23,10 @@ pub struct ContainerServiceStateDetail {
     /// <li> <p> <code>UNKNOWN_ERROR</code> - An error was experienced when your container service was being created.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ContainerServiceStateDetailCode>,
     /// <p>A message that provides more information for the state code.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ContainerServiceStateDetail {

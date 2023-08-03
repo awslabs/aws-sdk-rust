@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaSourceConfig {
     /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    #[doc(hidden)]
     pub media_uri_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
-    #[doc(hidden)]
     pub media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
 }
 impl MediaSourceConfig {

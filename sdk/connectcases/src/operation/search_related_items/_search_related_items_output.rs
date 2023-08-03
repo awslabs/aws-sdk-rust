@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchRelatedItemsOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of items related to a case. </p>
-    #[doc(hidden)]
     pub related_items: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
     _request_id: Option<String>,
 }

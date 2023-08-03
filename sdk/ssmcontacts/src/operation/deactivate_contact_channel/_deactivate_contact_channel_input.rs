@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DeactivateContactChannelInput {

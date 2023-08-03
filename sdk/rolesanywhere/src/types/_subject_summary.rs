@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubjectSummary {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub subject_arn: ::std::option::Option<::std::string::String>,
     /// <p>The id of the resource.</p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled status of the subject. </p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    #[doc(hidden)]
     pub x509_subject: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    #[doc(hidden)]
     pub last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SubjectSummary {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointAccess {
     /// <p>The name of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup associated with the endpoint.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the endpoint was created.</p>
-    #[doc(hidden)]
     pub endpoint_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The DNS address of the endpoint.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The security groups associated with the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl EndpointAccess {

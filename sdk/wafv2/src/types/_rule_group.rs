@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub capacity: i64,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the rule group that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    #[doc(hidden)]
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
@@ -38,18 +31,14 @@ pub struct RuleGroup {
     /// </account></code> </p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub label_namespace: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    #[doc(hidden)]
     pub consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
 }
 impl RuleGroup {

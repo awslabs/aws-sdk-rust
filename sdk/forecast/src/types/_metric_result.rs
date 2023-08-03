@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricResult {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the metric.</p>
-    #[doc(hidden)]
     pub metric_value: ::std::option::Option<f64>,
 }
 impl MetricResult {

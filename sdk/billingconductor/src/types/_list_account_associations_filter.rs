@@ -10,13 +10,10 @@ pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID to filter on.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListAccountAssociationsFilter {

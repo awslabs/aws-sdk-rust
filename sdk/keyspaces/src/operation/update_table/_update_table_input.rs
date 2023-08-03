@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>For each column to be added to the specified table:</p>
     /// <ul>
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub add_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
@@ -23,7 +20,6 @@ pub struct UpdateTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -32,7 +28,6 @@ pub struct UpdateTableInput {
     /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
     /// <ul>
@@ -41,7 +36,6 @@ pub struct UpdateTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
     /// <ul>
@@ -50,18 +44,15 @@ pub struct UpdateTableInput {
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<crate::types::TimeToLive>,
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub default_time_to_live: ::std::option::Option<i32>,
     /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    #[doc(hidden)]
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
 }
 impl UpdateTableInput {

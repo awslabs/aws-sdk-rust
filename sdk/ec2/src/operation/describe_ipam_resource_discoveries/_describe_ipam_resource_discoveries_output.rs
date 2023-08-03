@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIpamResourceDiscoveriesOutput {
     /// <p>The resource discoveries.</p>
-    #[doc(hidden)]
     pub ipam_resource_discoveries: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

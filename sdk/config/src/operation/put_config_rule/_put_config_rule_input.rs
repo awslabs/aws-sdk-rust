@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigRuleInput {
     /// <p>The rule that you want to add to your account.</p>
-    #[doc(hidden)]
     pub config_rule: ::std::option::Option<crate::types::ConfigRule>,
     /// <p>An array of tag object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConfigRuleInput {

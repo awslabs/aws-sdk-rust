@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsInput {
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMaintenanceWindowsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScoreAttributes {
     /// <p>A relative ranking for how relevant the response is to the query.</p>
-    #[doc(hidden)]
     pub score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }
 impl ScoreAttributes {

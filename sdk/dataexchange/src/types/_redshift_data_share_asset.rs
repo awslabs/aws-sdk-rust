@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDataShareAsset {

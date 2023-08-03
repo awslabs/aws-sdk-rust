@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    #[doc(hidden)]
     pub report_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    #[doc(hidden)]
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDeliverabilityTestReportInput {

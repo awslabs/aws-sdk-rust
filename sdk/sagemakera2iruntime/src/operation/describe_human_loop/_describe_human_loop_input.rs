@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
-    #[doc(hidden)]
     pub human_loop_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHumanLoopInput {

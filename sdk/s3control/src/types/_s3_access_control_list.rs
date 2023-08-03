@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3AccessControlList {
     /// <p></p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::S3ObjectOwner>,
     /// <p></p>
-    #[doc(hidden)]
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,
 }
 impl S3AccessControlList {

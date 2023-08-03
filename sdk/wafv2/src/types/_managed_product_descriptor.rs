@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedProductDescriptor {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
-    #[doc(hidden)]
     pub managed_rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon Web Services Marketplace managed rule groups only, the link to the rule group product page. </p>
-    #[doc(hidden)]
     pub product_link: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
-    #[doc(hidden)]
     pub product_title: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the managed rule group.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule group is versioned. </p>
-    #[doc(hidden)]
     pub is_versioning_supported: bool,
     /// <p>Indicates whether the rule group provides an advanced set of protections, such as the the Amazon Web Services Managed Rules rule groups that are used for WAF intelligent threat mitigation. </p>
-    #[doc(hidden)]
     pub is_advanced_managed_rule_set: bool,
 }
 impl ManagedProductDescriptor {

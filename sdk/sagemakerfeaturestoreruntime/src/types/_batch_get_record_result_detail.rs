@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the record identifier in string format.</p>
-    #[doc(hidden)]
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Record</code> retrieved.</p>
-    #[doc(hidden)]
     pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetRecordResultDetail {

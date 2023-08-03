@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
 }
 impl ServerSideEncryptionConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FindingSourceType>,
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<crate::types::FindingSourceDetail>,
 }
 impl FindingSource {

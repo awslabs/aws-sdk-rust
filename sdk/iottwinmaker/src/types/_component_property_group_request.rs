@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentPropertyGroupRequest {
     /// <p>The group type.</p>
-    #[doc(hidden)]
     pub group_type: ::std::option::Option<crate::types::GroupType>,
     /// <p>The property names.</p>
-    #[doc(hidden)]
     pub property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The update type.</p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::PropertyGroupUpdateType>,
 }
 impl ComponentPropertyGroupRequest {

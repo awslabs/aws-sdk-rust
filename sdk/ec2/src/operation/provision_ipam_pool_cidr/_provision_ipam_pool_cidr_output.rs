@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionIpamPoolCidrOutput {
     /// <p>Information about the provisioned CIDR.</p>
-    #[doc(hidden)]
     pub ipam_pool_cidr: ::std::option::Option<crate::types::IpamPoolCidr>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddressOutput {
     /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
     _request_id: Option<String>,
 }

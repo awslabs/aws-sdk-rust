@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateListenerOutput {
     /// <p>Information for the updated listener.</p>
-    #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,
 }

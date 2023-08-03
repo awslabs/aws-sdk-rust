@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionTaskInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMaintenanceWindowExecutionTaskInput {

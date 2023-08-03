@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopProcessingJobInput {
     /// <p>The name of the processing job to stop.</p>
-    #[doc(hidden)]
     pub processing_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopProcessingJobInput {

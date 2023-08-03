@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
-    #[doc(hidden)]
     pub pillar_differences: ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>,
 }
 impl VersionDifferences {

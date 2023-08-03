@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognitionConfig {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
 }
 impl EntityRecognitionConfig {

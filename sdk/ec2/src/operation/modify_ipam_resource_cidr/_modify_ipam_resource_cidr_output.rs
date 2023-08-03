@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrOutput {
     /// <p>The CIDR of the resource.</p>
-    #[doc(hidden)]
     pub ipam_resource_cidr: ::std::option::Option<crate::types::IpamResourceCidr>,
     _request_id: Option<String>,
 }

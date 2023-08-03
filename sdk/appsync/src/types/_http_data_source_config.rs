@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    #[doc(hidden)]
     pub authorization_config: ::std::option::Option<crate::types::AuthorizationConfig>,
 }
 impl HttpDataSourceConfig {

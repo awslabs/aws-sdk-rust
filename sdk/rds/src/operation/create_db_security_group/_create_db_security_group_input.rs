@@ -13,13 +13,10 @@ pub struct CreateDbSecurityGroupInput {
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the DB security group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSecurityGroupInput {

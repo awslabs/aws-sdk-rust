@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the vulnerable package.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The source layer hash of the vulnerable package.</p>
-    #[doc(hidden)]
     pub source_layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
-    #[doc(hidden)]
     pub epoch: i32,
     /// <p>The release of the vulnerable package.</p>
-    #[doc(hidden)]
     pub release: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the vulnerable package.</p>
-    #[doc(hidden)]
     pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The package manager of the vulnerable package.</p>
-    #[doc(hidden)]
     pub package_manager: ::std::option::Option<crate::types::PackageManager>,
     /// <p>The file path of the vulnerable package.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    #[doc(hidden)]
     pub fixed_in_version: ::std::option::Option<::std::string::String>,
     /// <p>The code to run in your environment to update packages with a fix available.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
-    #[doc(hidden)]
     pub source_lambda_layer_arn: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {

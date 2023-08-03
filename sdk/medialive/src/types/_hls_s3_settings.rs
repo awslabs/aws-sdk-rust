@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-    #[doc(hidden)]
     pub canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }
 impl HlsS3Settings {

@@ -5,13 +5,10 @@
 pub struct GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    #[doc(hidden)]
     pub search_string: ::std::option::Option<::std::string::String>,
     /// <p>The time period of the request. </p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The unique name of the Cost Category.</p>
-    #[doc(hidden)]
     pub cost_category_name: ::std::option::Option<::std::string::String>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -50,7 +47,6 @@ pub struct GetCostCategoriesInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The value that you sort the data by.</p>
     /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
@@ -65,15 +61,12 @@ pub struct GetCostCategoriesInput {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCostCategoriesInput {

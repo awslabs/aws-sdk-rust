@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>Entitlement name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
-    #[doc(hidden)]
     pub max_count: ::std::option::Option<i64>,
     /// <p>Indicates whether overages are allowed.</p>
-    #[doc(hidden)]
     pub overage: ::std::option::Option<bool>,
     /// <p>Entitlement unit.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::EntitlementUnit>,
     /// <p>Indicates whether check-ins are allowed.</p>
-    #[doc(hidden)]
     pub allow_check_in: ::std::option::Option<bool>,
 }
 impl Entitlement {

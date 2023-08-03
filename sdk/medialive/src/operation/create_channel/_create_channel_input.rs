@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// Specification of CDI inputs for this channel
-    #[doc(hidden)]
     pub cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    #[doc(hidden)]
     pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// Placeholder documentation for __listOfOutputDestination
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     /// Encoder Settings
-    #[doc(hidden)]
     pub encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     /// List of input attachments for channel.
-    #[doc(hidden)]
     pub input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
     /// Specification of network and file inputs for this channel
-    #[doc(hidden)]
     pub input_specification: ::std::option::Option<crate::types::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     /// Maintenance settings for this channel.
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::MaintenanceCreateSettings>,
     /// Name of channel.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// Deprecated field that's only usable by whitelisted customers.
     #[deprecated]
-    #[doc(hidden)]
     pub reserved: ::std::option::Option<::std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for the VPC outputs
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettings>,
 }
 impl CreateChannelInput {

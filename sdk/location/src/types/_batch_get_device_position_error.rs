@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains details related to the error code.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchGetDevicePositionError {

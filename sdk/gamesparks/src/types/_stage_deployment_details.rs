@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageDeploymentDetails {
     /// <p>The identifier of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of action of the stage deployment.</p>
-    #[doc(hidden)]
     pub deployment_action: ::std::option::Option<crate::types::DeploymentAction>,
     /// <p>The state of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>The timestamp of when the stage deployment was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The result of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_result: ::std::option::Option<crate::types::DeploymentResult>,
 }
 impl StageDeploymentDetails {

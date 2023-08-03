@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionOpenCounts {
     /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
-    #[doc(hidden)]
     pub open_activity_tasks: i32,
     /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
-    #[doc(hidden)]
     pub open_decision_tasks: i32,
     /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
-    #[doc(hidden)]
     pub open_timers: i32,
     /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
-    #[doc(hidden)]
     pub open_child_workflow_executions: i32,
     /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
-    #[doc(hidden)]
     pub open_lambda_functions: i32,
 }
 impl WorkflowExecutionOpenCounts {

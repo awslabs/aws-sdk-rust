@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppBundleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppBundleInput {

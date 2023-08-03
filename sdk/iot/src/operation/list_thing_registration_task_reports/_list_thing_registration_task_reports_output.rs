@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsOutput {
     /// <p>Links to the task resources.</p>
-    #[doc(hidden)]
     pub resource_links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of task report.</p>
-    #[doc(hidden)]
     pub report_type: ::std::option::Option<crate::types::ReportType>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

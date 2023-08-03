@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    #[doc(hidden)]
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The Id of the API key associated with the resultant usage data.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl GetUsageInput {

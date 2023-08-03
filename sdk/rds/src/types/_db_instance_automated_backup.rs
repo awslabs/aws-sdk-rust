@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
-    #[doc(hidden)]
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Earliest and latest time an instance can be restored to.</p>
-    #[doc(hidden)]
     pub restore_window: ::std::option::Option<crate::types::RestoreWindow>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
@@ -28,73 +22,51 @@ pub struct DbInstanceAutomatedBackup {
     /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
     /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VPC ID associated with the DB instance.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the date and time that the DB instance was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The license model of an automated backup.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine for this automated backup.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine for the automated backup.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>License model information for the automated backup.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the automated backup is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>Specifies the storage type associated with the automated backup.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>The retention period for the automated backups.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput for the automated backup.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
 }
 impl DbInstanceAutomatedBackup {

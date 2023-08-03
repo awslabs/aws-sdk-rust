@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FecOutputSettings {
     /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
-    #[doc(hidden)]
     pub column_depth: ::std::option::Option<i32>,
     /// Enables column only or column and row based FEC
-    #[doc(hidden)]
     pub include_fec: ::std::option::Option<crate::types::FecOutputIncludeFec>,
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
-    #[doc(hidden)]
     pub row_length: ::std::option::Option<i32>,
 }
 impl FecOutputSettings {

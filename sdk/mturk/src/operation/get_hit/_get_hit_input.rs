@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHitInput {
     /// <p>The ID of the HIT to be retrieved.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHitInput {

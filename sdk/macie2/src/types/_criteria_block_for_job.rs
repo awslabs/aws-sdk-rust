@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CriteriaBlockForJob {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<::std::vec::Vec<crate::types::CriteriaForJob>>,
 }
 impl CriteriaBlockForJob {

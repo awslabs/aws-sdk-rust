@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-    #[doc(hidden)]
     pub enable: bool,
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    #[doc(hidden)]
     pub rollback: bool,
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {

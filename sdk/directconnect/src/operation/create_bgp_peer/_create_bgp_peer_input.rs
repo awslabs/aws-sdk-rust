@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the BGP peer.</p>
-    #[doc(hidden)]
     pub new_bgp_peer: ::std::option::Option<crate::types::NewBgpPeer>,
 }
 impl CreateBgpPeerInput {

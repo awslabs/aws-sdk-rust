@@ -5,21 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomFilterConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    #[doc(hidden)]
     pub match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
-    #[doc(hidden)]
     pub category_value: ::std::option::Option<::std::string::String>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub select_all_options: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>CategoryValue</code>.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -27,7 +23,6 @@ pub struct CustomFilterConfiguration {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
 impl CustomFilterConfiguration {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
-    #[doc(hidden)]
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     /// <p>Includes all client authentication information.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
-    #[doc(hidden)]
     pub configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     /// <p>Includes all encryption-related information.</p>
-    #[doc(hidden)]
     pub encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
-    #[doc(hidden)]
     pub open_monitoring: ::std::option::Option<crate::types::OpenMonitoringInfo>,
     /// <p>The Apache Kafka version that you want for the cluster.</p>
-    #[doc(hidden)]
     pub kafka_version: ::std::option::Option<::std::string::String>,
     /// <p>Log delivery information for the cluster.</p>
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_broker_nodes: ::std::option::Option<i32>,
     /// <p>This controls storage mode for supported storage tiers.</p>
-    #[doc(hidden)]
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
 }
 impl ProvisionedRequest {

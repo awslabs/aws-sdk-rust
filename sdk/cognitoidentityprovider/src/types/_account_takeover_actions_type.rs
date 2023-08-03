@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountTakeoverActionsType {
     /// <p>Action to take for a low risk.</p>
-    #[doc(hidden)]
     pub low_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
     /// <p>Action to take for a medium risk.</p>
-    #[doc(hidden)]
     pub medium_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
     /// <p>Action to take for a high risk.</p>
-    #[doc(hidden)]
     pub high_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
 }
 impl AccountTakeoverActionsType {

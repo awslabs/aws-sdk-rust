@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metrics {
     /// <p>Specifies whether replication metrics are enabled. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MetricsStatus>,
     /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub event_threshold: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl Metrics {

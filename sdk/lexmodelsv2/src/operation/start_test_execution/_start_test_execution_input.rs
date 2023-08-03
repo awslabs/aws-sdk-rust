@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTestExecutionInput {
     /// <p>The test set Id for the test set execution.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set execution.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestExecutionTarget>,
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    #[doc(hidden)]
     pub api_mode: ::std::option::Option<crate::types::TestExecutionApiMode>,
     /// <p>Indicates whether audio or text is used.</p>
-    #[doc(hidden)]
     pub test_execution_modality: ::std::option::Option<crate::types::TestExecutionModality>,
 }
 impl StartTestExecutionInput {

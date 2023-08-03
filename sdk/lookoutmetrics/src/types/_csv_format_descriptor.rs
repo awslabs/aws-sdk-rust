@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    #[doc(hidden)]
     pub file_compression: ::std::option::Option<crate::types::CsvFileCompression>,
     /// <p>The character set in which the source CSV file is written.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the source CSV file contains a header.</p>
-    #[doc(hidden)]
     pub contains_header: ::std::option::Option<bool>,
     /// <p>The character used to delimit the source CSV file.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A list of the source CSV file's headers, if any.</p>
-    #[doc(hidden)]
     pub header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The character used as a quote character.</p>
-    #[doc(hidden)]
     pub quote_symbol: ::std::option::Option<::std::string::String>,
 }
 impl CsvFormatDescriptor {

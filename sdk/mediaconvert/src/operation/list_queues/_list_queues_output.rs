@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueuesOutput {
     /// Use this string to request the next batch of queues.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of queues.
-    #[doc(hidden)]
     pub queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
     _request_id: Option<String>,
 }

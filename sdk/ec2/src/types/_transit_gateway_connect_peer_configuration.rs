@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectPeerConfiguration {
     /// <p>The Connect peer IP address on the transit gateway side of the tunnel.</p>
-    #[doc(hidden)]
     pub transit_gateway_address: ::std::option::Option<::std::string::String>,
     /// <p>The Connect peer IP address on the appliance side of the tunnel.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The range of interior BGP peer IP addresses.</p>
-    #[doc(hidden)]
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tunnel protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ProtocolValue>,
     /// <p>The BGP configuration details.</p>
-    #[doc(hidden)]
     pub bgp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentBgpConfiguration>>,
 }
 impl TransitGatewayConnectPeerConfiguration {

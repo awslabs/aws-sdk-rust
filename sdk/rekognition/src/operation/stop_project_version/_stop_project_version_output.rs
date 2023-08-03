@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopProjectVersionOutput {
     /// <p>The current status of the stop operation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,
 }

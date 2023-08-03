@@ -10,7 +10,6 @@ pub struct LoggingConfig {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    #[doc(hidden)]
     pub record_all_ros_topics: ::std::option::Option<bool>,
 }
 impl LoggingConfig {

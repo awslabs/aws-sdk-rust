@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRunTasksInput {
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Filter the list by status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub starting_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of run tasks to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRunTasksInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccountInput {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelDomainTransferToAnotherAwsAccountInput {

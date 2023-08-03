@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the new policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecurityPolicyInput {

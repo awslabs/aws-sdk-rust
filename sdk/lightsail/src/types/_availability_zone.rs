@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    #[doc(hidden)]
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Availability Zone.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {

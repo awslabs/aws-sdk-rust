@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksOutput {
     /// <p>A description of a specific Amazon FSx file system.</p>
-    #[doc(hidden)]
     pub file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
-    #[doc(hidden)]
     pub profile: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content encoding of the profile.</p>
-    #[doc(hidden)]
     pub content_encoding: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

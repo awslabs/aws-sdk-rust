@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDetails {
     /// <p> Name of the project. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Unique project identifier. </p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p> Synchronization state for a project. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ProjectState>,
     /// <p> Date the project was created. </p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Date of the last modification of the project. </p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
-    #[doc(hidden)]
     pub console_url: ::std::option::Option<::std::string::String>,
     /// <p> List of AWS resources associated with a project. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ProjectDetails {

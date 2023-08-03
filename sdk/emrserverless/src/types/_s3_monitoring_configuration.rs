@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3MonitoringConfiguration {
     /// <p>The Amazon S3 destination URI for log publishing.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3MonitoringConfiguration {

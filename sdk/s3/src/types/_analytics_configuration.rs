@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::AnalyticsFilter>,
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    #[doc(hidden)]
     pub storage_class_analysis: ::std::option::Option<crate::types::StorageClassAnalysis>,
 }
 impl AnalyticsConfiguration {

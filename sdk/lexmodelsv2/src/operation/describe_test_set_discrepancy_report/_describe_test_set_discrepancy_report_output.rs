@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestSetDiscrepancyReportOutput {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
-    #[doc(hidden)]
     pub test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set Id for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date of creation for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The target bot location for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
     /// <p>The status for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_discrepancy_report_status: ::std::option::Option<crate::types::TestSetDiscrepancyReportStatus>,
     /// <p>The date and time of the last update for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub last_updated_data_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The top 200 error results from the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_discrepancy_top_errors: ::std::option::Option<crate::types::TestSetDiscrepancyErrors>,
     /// <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_discrepancy_raw_output_url: ::std::option::Option<::std::string::String>,
     /// <p>The failure report for the test set discrepancy report generation action.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

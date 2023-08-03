@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOrderInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    #[doc(hidden)]
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The line items that make up the order.</p>
-    #[doc(hidden)]
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
     /// <p>The payment option.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The payment terms.</p>
-    #[doc(hidden)]
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
 }
 impl CreateOrderInput {

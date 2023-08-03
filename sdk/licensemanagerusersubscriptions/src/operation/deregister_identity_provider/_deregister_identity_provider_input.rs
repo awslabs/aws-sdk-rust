@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterIdentityProviderInput {

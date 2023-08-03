@@ -5,47 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resolver {
     /// <p>The resolver type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The resolver field name.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The resolver data source name.</p>
-    #[doc(hidden)]
     pub data_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The resolver Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resolver_arn: ::std::option::Option<::std::string::String>,
     /// <p>The request mapping template.</p>
-    #[doc(hidden)]
     pub request_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The response mapping template.</p>
-    #[doc(hidden)]
     pub response_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kind: ::std::option::Option<crate::types::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
-    #[doc(hidden)]
     pub pipeline_config: ::std::option::Option<crate::types::PipelineConfig>,
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    #[doc(hidden)]
     pub sync_config: ::std::option::Option<crate::types::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
-    #[doc(hidden)]
     pub caching_config: ::std::option::Option<crate::types::CachingConfig>,
     /// <p>The maximum batching size for a resolver.</p>
-    #[doc(hidden)]
     pub max_batch_size: i32,
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl Resolver {

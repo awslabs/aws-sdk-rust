@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Failure {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the failure.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details of the failure.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
 }
 impl Failure {

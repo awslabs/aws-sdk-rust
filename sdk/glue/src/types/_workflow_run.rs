@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowRun {
     /// <p>Name of the workflow that was run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of this workflow run.</p>
-    #[doc(hidden)]
     pub workflow_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the previous workflow run.</p>
-    #[doc(hidden)]
     pub previous_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The workflow run properties which were set during the run.</p>
-    #[doc(hidden)]
     pub workflow_run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time when the workflow run was started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the workflow run completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the workflow run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowRunStatus>,
     /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The statistics of the run.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::WorkflowRunStatistics>,
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
-    #[doc(hidden)]
     pub graph: ::std::option::Option<crate::types::WorkflowGraph>,
     /// <p>The batch condition that started the workflow run.</p>
-    #[doc(hidden)]
     pub starting_event_batch_condition: ::std::option::Option<crate::types::StartingEventBatchCondition>,
 }
 impl WorkflowRun {

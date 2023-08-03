@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchUsersOutput {
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
-    #[doc(hidden)]
     pub user_matches: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>,
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
-    #[doc(hidden)]
     pub searched_face: ::std::option::Option<crate::types::SearchedFace>,
     /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
-    #[doc(hidden)]
     pub searched_user: ::std::option::Option<crate::types::SearchedUser>,
     _request_id: Option<String>,
 }

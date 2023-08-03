@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// <p>The s3 bucket name.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The s3 object key.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
-    #[doc(hidden)]
     pub etag: ::std::option::Option<::std::string::String>,
     /// <p>The taget processor architecture for the application.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
 }
 impl Source {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAppCatalogInput {
     /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportAppCatalogInput {

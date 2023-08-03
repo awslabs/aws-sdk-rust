@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagCondition {
     /// <p>The tag key in the tag condition.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value in the tag condition.</p>
-    #[doc(hidden)]
     pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl TagCondition {

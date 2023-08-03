@@ -5,41 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableFastSnapshotRestoreSuccessItem {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The state of fast snapshot restores for the snapshot.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>,
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p> </li>
     /// <li> <p> <code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
-    #[doc(hidden)]
     pub owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The time at which fast snapshot restores entered the <code>enabling</code> state.</p>
-    #[doc(hidden)]
     pub enabling_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which fast snapshot restores entered the <code>optimizing</code> state.</p>
-    #[doc(hidden)]
     pub optimizing_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which fast snapshot restores entered the <code>enabled</code> state.</p>
-    #[doc(hidden)]
     pub enabled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which fast snapshot restores entered the <code>disabling</code> state.</p>
-    #[doc(hidden)]
     pub disabling_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which fast snapshot restores entered the <code>disabled</code> state.</p>
-    #[doc(hidden)]
     pub disabled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DisableFastSnapshotRestoreSuccessItem {

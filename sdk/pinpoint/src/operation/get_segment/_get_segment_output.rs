@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    #[doc(hidden)]
     pub segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,
 }

@@ -16,13 +16,10 @@ pub struct InstanceFleetStatus {
     /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
     /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceFleetState>,
     /// <p>Provides status change reason details for the instance fleet.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::InstanceFleetStateChangeReason>,
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::InstanceFleetTimeline>,
 }
 impl InstanceFleetStatus {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleCloudFormationOverridePropertyConfiguration {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>,
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemeOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    #[doc(hidden)]
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
 }
 impl AssetBundleCloudFormationOverridePropertyConfiguration {

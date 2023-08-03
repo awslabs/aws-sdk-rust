@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {

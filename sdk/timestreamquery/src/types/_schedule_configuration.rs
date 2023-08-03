@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleConfiguration {
     /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntentsOutput {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    #[doc(hidden)]
     pub intents: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
     /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

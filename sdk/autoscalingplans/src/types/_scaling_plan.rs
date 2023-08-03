@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPlan {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
-    #[doc(hidden)]
     pub application_source: ::std::option::Option<crate::types::ApplicationSource>,
     /// <p>The scaling instructions.</p>
-    #[doc(hidden)]
     pub scaling_instructions: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
     /// <p>The status of the scaling plan.</p>
     /// <ul>
@@ -27,16 +23,12 @@ pub struct ScalingPlan {
     /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
     /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ScalingPlanStatusCode>,
     /// <p>A simple message about the current status of the scaling plan.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    #[doc(hidden)]
     pub status_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScalingPlan {

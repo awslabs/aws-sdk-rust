@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsCluster {
     /// <p>The cluster's ARN.</p>
-    #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cluster name.</p>
-    #[doc(hidden)]
     pub ecs_cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date that the cluster was registered with the stack.</p>
-    #[doc(hidden)]
     pub registered_at: ::std::option::Option<::std::string::String>,
 }
 impl EcsCluster {

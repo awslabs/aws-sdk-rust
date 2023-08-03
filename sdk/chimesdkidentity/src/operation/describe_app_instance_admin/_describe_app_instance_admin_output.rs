@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    #[doc(hidden)]
     pub app_instance_admin: ::std::option::Option<crate::types::AppInstanceAdmin>,
     _request_id: Option<String>,
 }

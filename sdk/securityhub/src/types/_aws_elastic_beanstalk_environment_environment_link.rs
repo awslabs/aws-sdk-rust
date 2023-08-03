@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentEnvironmentLink {
     /// <p>The name of the linked environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment link.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLink {

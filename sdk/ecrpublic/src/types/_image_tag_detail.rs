@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageTagDetail {
     /// <p>The tag that's associated with the image.</p>
-    #[doc(hidden)]
     pub image_tag: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp that indicates when the image tag was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the details of an image.</p>
-    #[doc(hidden)]
     pub image_detail: ::std::option::Option<crate::types::ReferencedImageDetail>,
 }
 impl ImageTagDetail {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCollectionDetails {
     /// <p> The status of the assessment. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p> The total number of servers in the assessment. </p>
-    #[doc(hidden)]
     pub servers: ::std::option::Option<i32>,
     /// <p> The number of failed servers in the assessment. </p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<i32>,
     /// <p> The number of successful servers in the assessment. </p>
-    #[doc(hidden)]
     pub success: ::std::option::Option<i32>,
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
-    #[doc(hidden)]
     pub in_progress: ::std::option::Option<i32>,
     /// <p> The start time of assessment. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the assessment completes. </p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message of the assessment.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl DataCollectionDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
-    #[doc(hidden)]
     pub expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
-    #[doc(hidden)]
     pub timestream_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database table.</p>
-    #[doc(hidden)]
     pub timestream_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
-    #[doc(hidden)]
     pub timestream_database_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Timestream database table.</p>
-    #[doc(hidden)]
     pub timestream_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    #[doc(hidden)]
     pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>A message associated with a registration error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamRegistrationResponse {

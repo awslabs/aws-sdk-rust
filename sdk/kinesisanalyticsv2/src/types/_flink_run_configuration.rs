@@ -7,7 +7,6 @@ pub struct FlinkRunConfiguration {
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p> <note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub allow_non_restored_state: ::std::option::Option<bool>,
 }
 impl FlinkRunConfiguration {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetedAndActualAmounts {
     /// <p>The amount of cost or usage that you created the budget for.</p>
-    #[doc(hidden)]
     pub budgeted_amount: ::std::option::Option<crate::types::Spend>,
     /// <p>Your actual costs or usage for a budget period.</p>
-    #[doc(hidden)]
     pub actual_amount: ::std::option::Option<crate::types::Spend>,
     /// <p>The time period that's covered by this budget comparison.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl BudgetedAndActualAmounts {

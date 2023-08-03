@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceComparisonValues {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
-    #[doc(hidden)]
     pub reference_scalar: ::std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
     /// <p>A metric that DevOps Guru compares to actual metric values. This reference metric is used to determine if an actual metric should be considered anomalous.</p>
-    #[doc(hidden)]
     pub reference_metric: ::std::option::Option<crate::types::PerformanceInsightsReferenceMetric>,
 }
 impl PerformanceInsightsReferenceComparisonValues {

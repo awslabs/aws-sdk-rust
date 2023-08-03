@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p> List of projects. </p>
-    #[doc(hidden)]
     pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

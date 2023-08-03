@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNfsFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
-    #[doc(hidden)]
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub kms_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The default values for the file share. Optional.</p>
-    #[doc(hidden)]
     pub nfs_file_share_defaults: ::std::option::Option<crate::types::NfsFileShareDefaults>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    #[doc(hidden)]
     pub default_storage_class: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    #[doc(hidden)]
     pub object_acl: ::std::option::Option<crate::types::ObjectAcl>,
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    #[doc(hidden)]
     pub client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -34,29 +27,23 @@ pub struct UpdateNfsFileShareInput {
     /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
     /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub squash: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub guess_mime_type_enabled: ::std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub requester_pays: ::std::option::Option<bool>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
-    #[doc(hidden)]
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -65,10 +52,8 @@ pub struct UpdateNfsFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    #[doc(hidden)]
     pub notification_policy: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    #[doc(hidden)]
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNfsFileShareInput {

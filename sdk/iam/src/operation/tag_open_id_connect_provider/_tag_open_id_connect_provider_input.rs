@@ -5,10 +5,8 @@
 pub struct TagOpenIdConnectProviderInput {
     /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM. Each tag consists of a key name and an associated value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagOpenIdConnectProviderInput {

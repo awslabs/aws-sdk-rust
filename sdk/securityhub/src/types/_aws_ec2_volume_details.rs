@@ -6,19 +6,14 @@
 pub struct AwsEc2VolumeDetails {
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>The device name for the volume that is attached to the instance. </p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the volume is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>The size of the volume, in GiBs.</p>
-    #[doc(hidden)]
     pub size: i32,
     /// <p>The snapshot from which the volume was created.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
@@ -29,22 +24,16 @@ pub struct AwsEc2VolumeDetails {
     /// <li> <p> <code>error</code> </p> </li>
     /// <li> <p> <code>in-use</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume attachments.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
     /// <p>The ID of the volume. </p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume type. </p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the volume was scanned or skipped. </p>
-    #[doc(hidden)]
     pub volume_scan_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VolumeDetails {

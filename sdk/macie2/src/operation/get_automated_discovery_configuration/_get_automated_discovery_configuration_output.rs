@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutomatedDiscoveryConfigurationOutput {
     /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
-    #[doc(hidden)]
     pub classification_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
-    #[doc(hidden)]
     pub disabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
-    #[doc(hidden)]
     pub first_enabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-    #[doc(hidden)]
     pub sensitivity_inspection_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>,
     _request_id: Option<String>,
 }

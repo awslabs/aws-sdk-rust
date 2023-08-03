@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the package.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>A format that specifies the type of the package to be updated.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -22,14 +18,11 @@ pub struct PutPackageOriginConfigurationInput {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package to be updated.</p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::PackageOriginRestrictions>,
 }
 impl PutPackageOriginConfigurationInput {

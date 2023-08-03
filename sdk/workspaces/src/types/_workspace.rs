@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Workspace {
     /// <p>The identifier of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The user for the WorkSpace.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The operational state of the WorkSpace.</p> <note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceState>,
     /// <p>The identifier of the bundle used to create the WorkSpace.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subnet for the WorkSpace.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
-    #[doc(hidden)]
     pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    #[doc(hidden)]
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
-    #[doc(hidden)]
     pub user_volume_encryption_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
-    #[doc(hidden)]
     pub root_volume_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The properties of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The modification states of the WorkSpace.</p>
-    #[doc(hidden)]
     pub modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
-    #[doc(hidden)]
     pub related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
 }
 impl Workspace {

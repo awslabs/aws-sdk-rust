@@ -7,13 +7,10 @@ pub struct BatchGetTokenBalanceInputItem {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
     /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     /// <p>The container for the identifier of the owner.</p>
-    #[doc(hidden)]
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The container for time.</p>
-    #[doc(hidden)]
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
 }
 impl BatchGetTokenBalanceInputItem {

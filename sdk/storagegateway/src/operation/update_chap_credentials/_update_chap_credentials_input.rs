@@ -11,21 +11,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    #[doc(hidden)]
     pub secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
-    #[doc(hidden)]
     pub initiator_name: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    #[doc(hidden)]
     pub secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChapCredentialsInput {

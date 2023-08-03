@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
-    #[doc(hidden)]
     pub resource_record_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    #[doc(hidden)]
     pub next_record_name: ::std::option::Option<::std::string::String>,
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    #[doc(hidden)]
     pub next_record_type: ::std::option::Option<crate::types::RrType>,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub next_record_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records you requested.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

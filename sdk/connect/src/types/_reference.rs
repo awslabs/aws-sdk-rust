@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReferenceType>,
 }
 impl Reference {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_windows: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_osx: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
-    #[doc(hidden)]
     pub device_type_web: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_ios: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_android: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_chrome_os: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
-    #[doc(hidden)]
     pub device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
 }
 impl WorkspaceAccessProperties {

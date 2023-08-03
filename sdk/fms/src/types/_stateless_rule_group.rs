@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessRuleGroup {
     /// <p>The name of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the rule group.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
-    #[doc(hidden)]
     pub priority: i32,
 }
 impl StatelessRuleGroup {

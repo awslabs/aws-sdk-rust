@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileTemplateOutput {
     /// <p>The profile template.</p>
-    #[doc(hidden)]
     pub profile_template: ::std::option::Option<crate::types::ProfileTemplate>,
     _request_id: Option<String>,
 }

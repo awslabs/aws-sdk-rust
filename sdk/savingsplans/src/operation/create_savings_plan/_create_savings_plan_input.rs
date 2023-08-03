@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub savings_plan_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
-    #[doc(hidden)]
     pub commitment: ::std::option::Option<::std::string::String>,
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    #[doc(hidden)]
     pub upfront_payment_amount: ::std::option::Option<::std::string::String>,
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-    #[doc(hidden)]
     pub purchase_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSavingsPlanInput {

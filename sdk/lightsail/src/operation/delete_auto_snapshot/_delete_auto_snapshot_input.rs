@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAutoSnapshotInput {
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAutoSnapshotInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of this RequestValidator</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
-    #[doc(hidden)]
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
-    #[doc(hidden)]
     pub validate_request_parameters: bool,
     _request_id: Option<String>,
 }

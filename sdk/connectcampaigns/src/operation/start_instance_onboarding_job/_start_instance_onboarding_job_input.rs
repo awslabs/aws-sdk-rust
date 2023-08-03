@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl StartInstanceOnboardingJobInput {

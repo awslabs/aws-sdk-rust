@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The name of the user or group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of principal.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>Whether to allow or deny document access to the principal.</p>
-    #[doc(hidden)]
     pub access: ::std::option::Option<crate::types::ReadAccessType>,
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl Principal {

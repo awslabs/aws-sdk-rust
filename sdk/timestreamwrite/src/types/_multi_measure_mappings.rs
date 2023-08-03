@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureMappings {
     /// <p></p>
-    #[doc(hidden)]
     pub target_multi_measure_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MultiMeasureMappings {

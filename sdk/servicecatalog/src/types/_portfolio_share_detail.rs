@@ -9,19 +9,14 @@ pub struct PortfolioShareDetail {
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the portfolio share.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DescribePortfolioShareType>,
     /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
-    #[doc(hidden)]
     pub accepted: bool,
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
-    #[doc(hidden)]
     pub share_tag_options: bool,
     /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
-    #[doc(hidden)]
     pub share_principals: bool,
 }
 impl PortfolioShareDetail {

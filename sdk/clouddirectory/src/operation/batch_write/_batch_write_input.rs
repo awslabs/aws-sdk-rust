@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
 }
 impl BatchWriteInput {

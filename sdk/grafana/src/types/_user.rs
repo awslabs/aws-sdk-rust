@@ -6,10 +6,8 @@
 pub struct User {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is a single user or a group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserType>,
 }
 impl User {

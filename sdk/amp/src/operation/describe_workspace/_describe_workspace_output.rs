@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
-    #[doc(hidden)]
     pub workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
 }

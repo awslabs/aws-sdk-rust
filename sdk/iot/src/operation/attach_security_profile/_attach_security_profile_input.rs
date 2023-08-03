@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachSecurityProfileInput {
     /// <p>The security profile that is attached.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    #[doc(hidden)]
     pub security_profile_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachSecurityProfileInput {

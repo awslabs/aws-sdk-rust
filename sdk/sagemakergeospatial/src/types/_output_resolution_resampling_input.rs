@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputResolutionResamplingInput {
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
-    #[doc(hidden)]
     pub user_defined: ::std::option::Option<crate::types::UserDefined>,
 }
 impl OutputResolutionResamplingInput {

@@ -19,7 +19,6 @@ pub struct BuildStatusConfig {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -36,7 +35,6 @@ pub struct BuildStatusConfig {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub target_url: ::std::option::Option<::std::string::String>,
 }
 impl BuildStatusConfig {

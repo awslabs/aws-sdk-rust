@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    #[doc(hidden)]
     pub table_catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A database in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A table in the database.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name given by the user to the data filter cell.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A PartiQL predicate.</p>
-    #[doc(hidden)]
     pub row_filter: ::std::option::Option<crate::types::RowFilter>,
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
-    #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A wildcard with exclusions.</p>
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-    #[doc(hidden)]
     pub column_wildcard: ::std::option::Option<crate::types::ColumnWildcard>,
     /// <p>The ID of the data cells filter version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl DataCellsFilter {

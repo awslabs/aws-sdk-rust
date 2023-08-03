@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaConcatenationPipelineInput {
     /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
     /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
-    #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the media concatenation pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaConcatenationPipelineInput {

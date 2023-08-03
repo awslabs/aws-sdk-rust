@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceTransitGatewayRouteOutput {
     /// <p>Information about the modified route.</p>
-    #[doc(hidden)]
     pub route: ::std::option::Option<crate::types::TransitGatewayRoute>,
     _request_id: Option<String>,
 }

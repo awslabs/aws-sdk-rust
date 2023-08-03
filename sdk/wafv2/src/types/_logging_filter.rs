@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingFilter {
     /// <p>The filters that you want to apply to the logs. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
-    #[doc(hidden)]
     pub default_behavior: ::std::option::Option<crate::types::FilterBehavior>,
 }
 impl LoggingFilter {

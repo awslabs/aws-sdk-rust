@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobCompiledOutputConfig {
     /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
-    #[doc(hidden)]
     pub s3_output_uri: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobCompiledOutputConfig {

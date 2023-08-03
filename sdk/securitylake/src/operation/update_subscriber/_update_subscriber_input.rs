@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriberInput {
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
-    #[doc(hidden)]
     pub subscriber_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS identity used to access your data.</p>
-    #[doc(hidden)]
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of the Security Lake account subscriber.</p>
-    #[doc(hidden)]
     pub subscriber_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Security Lake account subscriber.</p>
-    #[doc(hidden)]
     pub subscriber_description: ::std::option::Option<::std::string::String>,
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
 }
 impl UpdateSubscriberInput {

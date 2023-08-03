@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the destination.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-    #[doc(hidden)]
     pub access_policy: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of this destination.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<i64>,
 }
 impl Destination {

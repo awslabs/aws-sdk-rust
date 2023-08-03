@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following values:</p>
     /// <ul>
@@ -19,10 +16,8 @@ pub struct Dataset {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the associated schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -30,16 +25,12 @@ pub struct Dataset {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the latest update to the dataset.</p>
-    #[doc(hidden)]
     pub latest_dataset_update: ::std::option::Option<crate::types::DatasetUpdateSummary>,
 }
 impl Dataset {

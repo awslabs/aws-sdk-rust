@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The input value associated with the parameter.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
-    #[doc(hidden)]
     pub use_previous_value: ::std::option::Option<bool>,
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
-    #[doc(hidden)]
     pub resolved_value: ::std::option::Option<::std::string::String>,
 }
 impl Parameter {

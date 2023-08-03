@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PitPolicyRule {
     /// <p>The ID of the rule.</p>
-    #[doc(hidden)]
     pub rule_id: i64,
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    #[doc(hidden)]
     pub units: ::std::option::Option<crate::types::PitPolicyRuleUnits>,
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
-    #[doc(hidden)]
     pub retention_duration: i32,
     /// <p>Whether this rule is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl PitPolicyRule {

@@ -4,41 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSourceInput {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name for the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon DynamoDB settings.</p>
-    #[doc(hidden)]
     pub dynamodb_config: ::std::option::Option<crate::types::DynamodbDataSourceConfig>,
     /// <p>Lambda settings.</p>
-    #[doc(hidden)]
     pub lambda_config: ::std::option::Option<crate::types::LambdaDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
-    #[doc(hidden)]
     pub elasticsearch_config: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
-    #[doc(hidden)]
     pub open_search_service_config: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
-    #[doc(hidden)]
     pub http_config: ::std::option::Option<crate::types::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
-    #[doc(hidden)]
     pub relational_database_config: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     /// <p>Amazon EventBridge settings.</p>
-    #[doc(hidden)]
     pub event_bridge_config: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
 }
 impl CreateDataSourceInput {

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryOutput {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    #[doc(hidden)]
     pub aggregate_conformance_pack_compliance_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub group_by_key: ::std::option::Option<::std::string::String>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

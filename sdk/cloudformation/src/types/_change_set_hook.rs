@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetHook {
     /// <p>Specifies the points in provisioning logic where a hook is invoked.</p>
-    #[doc(hidden)]
     pub invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
     /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
     /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
     /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
@@ -26,16 +24,12 @@ pub struct ChangeSetHook {
     /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the type specified.</p>
-    #[doc(hidden)]
     pub type_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the type configuration.</p>
-    #[doc(hidden)]
     pub type_configuration_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about the target that the hook will run against.</p>
-    #[doc(hidden)]
     pub target_details: ::std::option::Option<crate::types::ChangeSetHookTargetDetails>,
 }
 impl ChangeSetHook {

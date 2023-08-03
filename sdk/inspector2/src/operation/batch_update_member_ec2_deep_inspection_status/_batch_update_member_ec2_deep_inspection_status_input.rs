@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateMemberEc2DeepInspectionStatusInput {
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>,
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusInput {

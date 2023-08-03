@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogS3DestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The bucket name.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The bucket prefix.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogS3DestinationOptions {

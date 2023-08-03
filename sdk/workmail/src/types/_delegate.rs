@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delegate {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the delegate: user or group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MemberType>,
 }
 impl Delegate {

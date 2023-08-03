@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-    #[doc(hidden)]
     pub key_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-    #[doc(hidden)]
     pub seconds_to_live: ::std::option::Option<i32>,
     /// <p>The ID of the workspace to create an API key.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceApiKeyInput {

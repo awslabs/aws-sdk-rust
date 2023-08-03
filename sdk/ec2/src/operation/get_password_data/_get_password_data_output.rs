@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    #[doc(hidden)]
     pub password_data: ::std::option::Option<::std::string::String>,
     /// <p>The time the data was last updated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

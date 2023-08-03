@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfigurationsResult {
     /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
-    #[doc(hidden)]
     pub cloud_trail: ::std::option::Option<crate::types::CloudTrailConfigurationResult>,
     /// <p>An object that contains information on the status of DNS logs as a data source.</p>
-    #[doc(hidden)]
     pub dns_logs: ::std::option::Option<crate::types::DnsLogsConfigurationResult>,
     /// <p>An object that contains information on the status of VPC flow logs as a data source.</p>
-    #[doc(hidden)]
     pub flow_logs: ::std::option::Option<crate::types::FlowLogsConfigurationResult>,
     /// <p>An object that contains information on the status of S3 Data event logs as a data source.</p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::S3LogsConfigurationResult>,
     /// <p>An object that contains information on the status of all Kubernetes data sources.</p>
-    #[doc(hidden)]
     pub kubernetes: ::std::option::Option<crate::types::KubernetesConfigurationResult>,
     /// <p>Describes the configuration of Malware Protection data sources.</p>
-    #[doc(hidden)]
     pub malware_protection: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl DataSourceConfigurationsResult {

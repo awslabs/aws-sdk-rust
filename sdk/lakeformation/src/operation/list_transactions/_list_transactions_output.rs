@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionsOutput {
     /// <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
-    #[doc(hidden)]
     pub transactions: ::std::option::Option<::std::vec::Vec<crate::types::TransactionDescription>>,
     /// <p>A continuation token indicating whether additional data is available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

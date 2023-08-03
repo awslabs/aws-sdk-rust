@@ -8,40 +8,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>Name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status of the application.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>Time stamp when the application version was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time stamp when the application was last updated.</p>
-    #[doc(hidden)]
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
-    #[doc(hidden)]
     pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    #[doc(hidden)]
     pub output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
     /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
-    #[doc(hidden)]
     pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
     /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
-    #[doc(hidden)]
     pub application_code: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
 }
 impl ApplicationDetail {

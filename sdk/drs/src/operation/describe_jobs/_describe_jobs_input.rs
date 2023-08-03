@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsInput {
     /// <p>A set of filters by which to return Jobs.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeJobsRequestFilters>,
     /// <p>Maximum number of Jobs to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Job to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsInput {

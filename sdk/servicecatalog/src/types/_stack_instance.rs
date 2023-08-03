@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackInstance {
     /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct StackInstance {
     /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_instance_status: ::std::option::Option<crate::types::StackInstanceStatus>,
 }
 impl StackInstance {

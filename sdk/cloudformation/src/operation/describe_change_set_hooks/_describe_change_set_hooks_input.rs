@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetHooksInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChangeSetHooksInput {

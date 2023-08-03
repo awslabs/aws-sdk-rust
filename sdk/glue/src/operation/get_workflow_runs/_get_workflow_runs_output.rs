@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowRunsOutput {
     /// <p>A list of workflow run metadata objects.</p>
-    #[doc(hidden)]
     pub runs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRun>>,
     /// <p>A continuation token, if not all requested workflow runs have been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

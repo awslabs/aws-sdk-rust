@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The artifact ID of the Maven reference.</p>
-    #[doc(hidden)]
     pub artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Maven reference.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl MavenReference {

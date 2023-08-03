@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInfo {
     /// <p>Request to query data replication lag duration.</p>
-    #[doc(hidden)]
     pub lag_duration: ::std::option::Option<::std::string::String>,
     /// <p>Request to query the time when data replication will be complete.</p>
-    #[doc(hidden)]
     pub eta_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query disks replicated.</p>
-    #[doc(hidden)]
     pub replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>>,
     /// <p>Request to query the data replication state.</p>
-    #[doc(hidden)]
     pub data_replication_state: ::std::option::Option<crate::types::DataReplicationState>,
     /// <p>Request to query whether data replication has been initiated.</p>
-    #[doc(hidden)]
     pub data_replication_initiation: ::std::option::Option<crate::types::DataReplicationInitiation>,
     /// <p>Error in obtaining data replication info.</p>
-    #[doc(hidden)]
     pub data_replication_error: ::std::option::Option<crate::types::DataReplicationError>,
     /// <p>Request to query data replication last snapshot time.</p>
-    #[doc(hidden)]
     pub last_snapshot_date_time: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationInfo {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlowOutput {
     /// The ARN of the flow that was deleted.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The status of the flow when the DeleteFlow process begins.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDestinationOutput {
     /// Destination ARN.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Filters access by the destination's identifier
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was last updated.
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// State of the destination.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DestinationState>,
     /// JSON document containing additional fixed properties regarding the destination
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

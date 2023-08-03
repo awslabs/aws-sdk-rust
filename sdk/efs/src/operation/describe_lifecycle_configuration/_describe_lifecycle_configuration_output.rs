@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    #[doc(hidden)]
     pub lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
     _request_id: Option<String>,
 }

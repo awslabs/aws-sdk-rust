@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
-    #[doc(hidden)]
     pub eligible_for_replication: ::std::option::Option<bool>,
     /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    #[doc(hidden)]
     pub object_replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
 }
 impl JobManifestGeneratorFilter {

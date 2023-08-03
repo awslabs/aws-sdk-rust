@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    #[doc(hidden)]
     pub attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachToIndexResponse {

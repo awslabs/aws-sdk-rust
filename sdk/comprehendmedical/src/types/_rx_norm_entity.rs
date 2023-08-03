@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RxNormEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The segment of input text extracted from which the entity was detected.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::RxNormEntityCategory>,
     /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RxNormEntityType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>>,
     /// <p>Contextual information for the entity.</p>
-    #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
     /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    #[doc(hidden)]
     pub rx_norm_concepts: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,
 }
 impl RxNormEntity {

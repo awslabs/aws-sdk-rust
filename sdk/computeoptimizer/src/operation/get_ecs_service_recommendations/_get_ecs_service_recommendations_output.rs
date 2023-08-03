@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationsOutput {
     /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub ecs_service_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
     /// <p> An array of objects that describe errors of the request. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }

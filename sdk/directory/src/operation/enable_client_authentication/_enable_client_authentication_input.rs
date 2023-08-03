@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
 impl EnableClientAuthenticationInput {

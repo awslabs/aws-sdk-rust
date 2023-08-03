@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterVolumeInput {
     /// <p>The Amazon EBS volume ID.</p>
-    #[doc(hidden)]
     pub ec2_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterVolumeInput {

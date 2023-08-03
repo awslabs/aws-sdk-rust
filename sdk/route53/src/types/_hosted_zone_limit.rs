@@ -9,10 +9,8 @@ pub struct HostedZoneLimit {
     /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
     /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HostedZoneLimitType>,
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
-    #[doc(hidden)]
     pub value: i64,
 }
 impl HostedZoneLimit {

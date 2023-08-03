@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    #[doc(hidden)]
     pub fleet_instance_id: ::std::option::Option<::std::string::String>,
     /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
@@ -22,7 +20,6 @@ pub struct ConfigureAgentInput {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
 }
 impl ConfigureAgentInput {

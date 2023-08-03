@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateCustomRoutingAcceleratorInput {

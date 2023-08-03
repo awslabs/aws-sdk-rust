@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScriptOutput {
     /// <p>The Python script generated from the DAG.</p>
-    #[doc(hidden)]
     pub python_script: ::std::option::Option<::std::string::String>,
     /// <p>The Scala code generated from the DAG.</p>
-    #[doc(hidden)]
     pub scala_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

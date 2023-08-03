@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    #[doc(hidden)]
     pub origin_endpoint_id: ::std::option::Option<::std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     /// The start of the time-window which will be harvested
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
 }
 impl CreateHarvestJobInput {

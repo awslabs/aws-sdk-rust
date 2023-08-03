@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicTransform {
     /// <p>Specifies the name of the dynamic transform.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
-    #[doc(hidden)]
     pub transform_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
     /// <p>Specifies the name of the function of the dynamic transform.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>This field is not used and will be deprecated in future release.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl DynamicTransform {

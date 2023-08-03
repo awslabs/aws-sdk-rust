@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobShipmentStateInput {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    #[doc(hidden)]
     pub shipment_state: ::std::option::Option<crate::types::ShipmentState>,
 }
 impl UpdateJobShipmentStateInput {

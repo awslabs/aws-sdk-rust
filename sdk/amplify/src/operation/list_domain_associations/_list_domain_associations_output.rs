@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
-    #[doc(hidden)]
     pub domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

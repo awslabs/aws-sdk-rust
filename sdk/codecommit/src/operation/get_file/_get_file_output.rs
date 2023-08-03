@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The blob ID of the object that represents the file content.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The size of the contents of the file, in bytes.</p>
-    #[doc(hidden)]
     pub file_size: i64,
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
-    #[doc(hidden)]
     pub file_content: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

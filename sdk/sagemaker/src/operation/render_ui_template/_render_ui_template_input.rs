@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenderUiTemplateInput {
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-    #[doc(hidden)]
     pub ui_template: ::std::option::Option<crate::types::UiTemplate>,
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<crate::types::RenderableTask>,
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
-    #[doc(hidden)]
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
 impl RenderUiTemplateInput {

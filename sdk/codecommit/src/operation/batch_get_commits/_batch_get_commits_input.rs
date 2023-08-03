@@ -6,10 +6,8 @@ pub struct BatchGetCommitsInput {
     /// <p>The full commit IDs of the commits to get information about.</p> <note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    #[doc(hidden)]
     pub commit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the repository that contains the commits.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsInput {

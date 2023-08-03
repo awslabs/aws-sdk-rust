@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of assistant.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AssistantType>,
     /// <p>The status of the assistant.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssistantStatus>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The configuration information for the Wisdom assistant integration.</p>
-    #[doc(hidden)]
     pub integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
 }
 impl AssistantData {

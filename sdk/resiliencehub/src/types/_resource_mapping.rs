@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-    #[doc(hidden)]
     pub logical_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application this resource is mapped to.</p>
-    #[doc(hidden)]
     pub app_registry_app_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group this resource is mapped to.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
@@ -43,18 +39,14 @@ pub struct ResourceMapping {
     /// <p>The resource is mapped to Resource Groups. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub mapping_type: ::std::option::Option<crate::types::ResourceMappingType>,
     /// <p>The identifier of this resource.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p> The short name of the Terraform source. </p>
-    #[doc(hidden)]
     pub terraform_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    #[doc(hidden)]
     pub eks_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMapping {

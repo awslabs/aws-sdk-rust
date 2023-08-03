@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryDetails {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    #[doc(hidden)]
     pub creation_info: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryDetails {

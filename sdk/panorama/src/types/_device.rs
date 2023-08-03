@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>When the device was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device's provisioning status.</p>
-    #[doc(hidden)]
     pub provisioning_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>When the device was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device's lease expiration time.</p>
-    #[doc(hidden)]
     pub lease_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device's maker.</p>
-    #[doc(hidden)]
     pub brand: ::std::option::Option<crate::types::DeviceBrand>,
     /// <p>A device's current software.</p>
-    #[doc(hidden)]
     pub current_software: ::std::option::Option<::std::string::String>,
     /// <p>A description for the device.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The device's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
-    #[doc(hidden)]
     pub latest_device_job: ::std::option::Option<crate::types::LatestDeviceJob>,
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
-    #[doc(hidden)]
     pub device_aggregated_status: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
 }
 impl Device {

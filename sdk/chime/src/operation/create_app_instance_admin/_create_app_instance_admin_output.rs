@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppInstanceAdminOutput {
     /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_admin: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

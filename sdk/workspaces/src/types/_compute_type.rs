@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeType {
     /// <p>The compute type.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::Compute>,
 }
 impl ComputeType {

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudMapInstanceAttribute {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudMapInstanceAttribute {

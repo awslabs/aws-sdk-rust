@@ -10,17 +10,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobAbortCriteria {
     /// <p>The type of job deployment failure that can cancel a job.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
     /// <p>The action to perform when the criteria are met.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::IoTJobAbortAction>,
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
-    #[doc(hidden)]
     pub threshold_percentage: f64,
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
-    #[doc(hidden)]
     pub min_number_of_executed_things: i32,
 }
 impl IoTJobAbortCriteria {

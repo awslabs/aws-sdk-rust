@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSecretVerifierConfigType {
     /// <p>The password verifier.</p>
-    #[doc(hidden)]
     pub password_verifier: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
-    #[doc(hidden)]
     pub salt: ::std::option::Option<::std::string::String>,
 }
 impl DeviceSecretVerifierConfigType {

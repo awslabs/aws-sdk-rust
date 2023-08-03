@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeExchangeStatusOutput {
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
-    #[doc(hidden)]
     pub reserved_node_exchange_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

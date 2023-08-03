@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
-    #[doc(hidden)]
     pub lac: ::std::option::Option<i32>,
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-    #[doc(hidden)]
     pub geran_cid: ::std::option::Option<i32>,
 }
 impl GlobalIdentity {

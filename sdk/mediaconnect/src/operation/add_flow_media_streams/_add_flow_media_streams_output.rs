@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that you added to the flow.
-    #[doc(hidden)]
     pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
     _request_id: Option<String>,
 }

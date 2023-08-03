@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationInput {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    #[doc(hidden)]
     pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
-    #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The licensing configuration to be used for this launch configuration.</p>
-    #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
 }
 impl UpdateLaunchConfigurationInput {

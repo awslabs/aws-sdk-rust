@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The method that's used to define how to split your source costs across your targets. </p>
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    #[doc(hidden)]
     pub method: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRule {

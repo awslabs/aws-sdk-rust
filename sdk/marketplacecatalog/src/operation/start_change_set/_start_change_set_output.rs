@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChangeSetOutput {
     /// <p>Unique identifier generated for the request.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
-    #[doc(hidden)]
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

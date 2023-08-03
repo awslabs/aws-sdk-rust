@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatasetOutput {
     /// <p>The unique identifier for a Dataset.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the Dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>Display title for a Dataset.</p>
-    #[doc(hidden)]
     pub dataset_title: ::std::option::Option<::std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kind: ::std::option::Option<crate::types::DatasetKind>,
     /// <p>A description of the Dataset.</p>
-    #[doc(hidden)]
     pub dataset_description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<crate::types::SchemaUnion>,
     /// <p>The unique resource identifier for a Dataset.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
@@ -42,7 +33,6 @@ pub struct GetDatasetOutput {
     /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
     /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     _request_id: Option<String>,
 }

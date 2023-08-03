@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the resource was associated with the application.</p>
-    #[doc(hidden)]
     pub association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The service integration information about the resource. </p>
-    #[doc(hidden)]
     pub integrations: ::std::option::Option<crate::types::ResourceIntegrations>,
 }
 impl Resource {

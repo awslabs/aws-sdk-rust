@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamRecord {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
-    #[doc(hidden)]
     pub approximate_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
-    #[doc(hidden)]
     pub new_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
-    #[doc(hidden)]
     pub old_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The sequence number of the stream record.</p>
-    #[doc(hidden)]
     pub sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The size of the stream record, in bytes.</p>
-    #[doc(hidden)]
     pub size_bytes: ::std::option::Option<i64>,
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
@@ -29,7 +23,6 @@ pub struct StreamRecord {
     /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
 impl StreamRecord {

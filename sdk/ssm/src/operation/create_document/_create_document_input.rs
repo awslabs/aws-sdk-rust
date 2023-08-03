@@ -10,13 +10,10 @@ pub struct CreateDocumentInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    #[doc(hidden)]
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
@@ -26,24 +23,18 @@ pub struct CreateDocumentInput {
     /// <li> <p> <code>amzn</code> </p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of document to create.</p> <note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
-    #[doc(hidden)]
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -52,7 +43,6 @@ pub struct CreateDocumentInput {
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDocumentInput {

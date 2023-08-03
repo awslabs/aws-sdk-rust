@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceDataSyncInput {
     /// <p>A name for the configuration.</p>
-    #[doc(hidden)]
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<::std::string::String>,
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<crate::types::ResourceDataSyncSource>,
 }
 impl CreateResourceDataSyncInput {

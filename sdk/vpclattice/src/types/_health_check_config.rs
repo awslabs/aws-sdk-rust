@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheckConfig {
     /// <p>Indicates whether health checking is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
-    #[doc(hidden)]
     pub protocol_version: ::std::option::Option<crate::types::HealthCheckProtocolVersion>,
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
-    #[doc(hidden)]
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait before reporting a target as unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
-    #[doc(hidden)]
     pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive successful health checks required before considering an unhealthy target healthy. The range is 2–10. The default is 5.</p>
-    #[doc(hidden)]
     pub healthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The number of consecutive failed health checks required before considering a target unhealthy. The range is 2–10. The default is 2.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
-    #[doc(hidden)]
     pub matcher: ::std::option::Option<crate::types::Matcher>,
 }
 impl HealthCheckConfig {

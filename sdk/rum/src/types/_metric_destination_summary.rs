@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDestinationSummary {
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricDestinationSummary {

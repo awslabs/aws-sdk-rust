@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the source that you want to remove.
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveFlowSourceInput {

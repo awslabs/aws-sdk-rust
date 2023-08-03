@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScope {
     /// <p>The S3 buckets that are excluded.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }
 impl S3ClassificationScope {

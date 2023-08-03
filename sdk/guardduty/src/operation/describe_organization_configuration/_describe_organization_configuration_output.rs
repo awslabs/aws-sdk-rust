@@ -6,20 +6,15 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
-    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
-    #[doc(hidden)]
     pub member_account_limit_reached: bool,
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
     /// <p>A list of features that are configured for this organization.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
     /// <ul>
@@ -27,7 +22,6 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
     /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
     _request_id: Option<String>,
 }

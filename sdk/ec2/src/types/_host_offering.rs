@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostOffering {
     /// <p>The currency of the offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The duration of the offering (in seconds).</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The hourly price of the offering.</p>
-    #[doc(hidden)]
     pub hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The instance family of the offering.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The available payment option.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The upfront price of the offering. Does not apply to No Upfront offerings.</p>
-    #[doc(hidden)]
     pub upfront_price: ::std::option::Option<::std::string::String>,
 }
 impl HostOffering {

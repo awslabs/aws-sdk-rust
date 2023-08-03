@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CryptogramVerificationArpcMethod1 {
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub auth_response_code: ::std::option::Option<::std::string::String>,
 }
 impl CryptogramVerificationArpcMethod1 {

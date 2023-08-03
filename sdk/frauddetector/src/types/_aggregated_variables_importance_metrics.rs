@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImportanceMetrics {
     /// <p> List of variables' metrics. </p>
-    #[doc(hidden)]
     pub log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
 }
 impl AggregatedVariablesImportanceMetrics {

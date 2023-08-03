@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePartnerEventSourceInput {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
 }
 impl CreatePartnerEventSourceInput {

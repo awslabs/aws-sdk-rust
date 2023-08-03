@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterSecurityGroupOutput {
     /// <p>Describes a security group.</p>
-    #[doc(hidden)]
     pub cluster_security_group: ::std::option::Option<crate::types::ClusterSecurityGroup>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    #[doc(hidden)]
     pub home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

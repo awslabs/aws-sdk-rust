@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingStatusOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
-    #[doc(hidden)]
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The last time that logs were delivered.</p>
-    #[doc(hidden)]
     pub last_successful_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
-    #[doc(hidden)]
     pub last_failure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
-    #[doc(hidden)]
     pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    #[doc(hidden)]
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    #[doc(hidden)]
     pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

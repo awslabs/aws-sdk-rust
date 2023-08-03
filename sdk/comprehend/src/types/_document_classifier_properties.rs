@@ -5,70 +5,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocumentClassifierProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    #[doc(hidden)]
     pub document_classifier_arn: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the language of the documents that the classifier was trained on.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
     /// <p> If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>Additional information about the status of the classifier.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the document classifier was submitted for training.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that training the document classifier completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training starts on documentation classifiers. You are billed for the time interval between this time and the value of TrainingEndTime. </p>
-    #[doc(hidden)]
     pub training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that training of the document classifier was completed. Indicates the time when the training completes on documentation classifiers. You are billed for the time interval between this time and the value of TrainingStartTime.</p>
-    #[doc(hidden)]
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the document classifier for training.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
     /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
-    #[doc(hidden)]
     pub classifier_metadata: ::std::option::Option<crate::types::ClassifierMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the format of input documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot be changed once the classifier is trained.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The version name that you assigned to the document classifier.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub source_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
 }
 impl DocumentClassifierProperties {

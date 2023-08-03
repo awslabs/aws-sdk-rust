@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application to delete the route from.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route to delete.</p>
-    #[doc(hidden)]
     pub route_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteInput {

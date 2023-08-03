@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     /// <p>The key-signing key (KSK) that the request creates.</p>
-    #[doc(hidden)]
     pub key_signing_key: ::std::option::Option<crate::types::KeySigningKey>,
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

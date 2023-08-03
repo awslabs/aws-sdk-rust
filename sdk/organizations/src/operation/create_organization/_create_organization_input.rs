@@ -8,7 +8,6 @@ pub struct CreateOrganizationInput {
     /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>
     /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_set: ::std::option::Option<crate::types::OrganizationFeatureSet>,
 }
 impl CreateOrganizationInput {

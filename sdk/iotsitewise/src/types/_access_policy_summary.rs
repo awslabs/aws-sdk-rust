@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AccessPolicySummary {

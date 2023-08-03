@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>The event ID to upload.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type name of the event.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    #[doc(hidden)]
     pub event_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
-    #[doc(hidden)]
     pub assigned_label: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
-    #[doc(hidden)]
     pub label_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>An array of entities.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl SendEventInput {

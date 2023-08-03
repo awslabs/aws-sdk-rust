@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostCommentForComparedCommitOutput {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
-    #[doc(hidden)]
     pub before_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
-    #[doc(hidden)]
     pub after_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the comment in the comparison between the two commits.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The content of the comment you posted.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,
 }

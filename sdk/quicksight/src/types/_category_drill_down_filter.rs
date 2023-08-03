@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    #[doc(hidden)]
     pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CategoryDrillDownFilter {

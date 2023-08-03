@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDestination {
     /// User-specified id. This is used in an output group or an output.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    #[doc(hidden)]
     pub media_package_settings: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
     /// Destination settings for a Multiplex output; one destination for both encoders.
-    #[doc(hidden)]
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    #[doc(hidden)]
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
 }
 impl OutputDestination {

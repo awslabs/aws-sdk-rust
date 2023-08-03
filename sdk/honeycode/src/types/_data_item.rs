@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataItem {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-    #[doc(hidden)]
     pub override_format: ::std::option::Option<crate::types::Format>,
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    #[doc(hidden)]
     pub raw_value: ::std::option::Option<::std::string::String>,
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    #[doc(hidden)]
     pub formatted_value: ::std::option::Option<::std::string::String>,
 }
 impl DataItem {

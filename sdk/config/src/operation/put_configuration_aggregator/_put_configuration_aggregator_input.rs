@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of AccountAggregationSource object. </p>
-    #[doc(hidden)]
     pub account_aggregation_sources: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,
     /// <p>An OrganizationAggregationSource object.</p>
-    #[doc(hidden)]
     pub organization_aggregation_source: ::std::option::Option<crate::types::OrganizationAggregationSource>,
     /// <p>An array of tag object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConfigurationAggregatorInput {

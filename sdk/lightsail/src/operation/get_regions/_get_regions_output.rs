@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     _request_id: Option<String>,
 }

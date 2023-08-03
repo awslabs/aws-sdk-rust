@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicy {
     /// <p>The identifier of the continuous deployment policy.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the continuous deployment policy was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
 }
 impl ContinuousDeploymentPolicy {

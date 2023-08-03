@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateMappingTemplateInput {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateMappingTemplateInput {

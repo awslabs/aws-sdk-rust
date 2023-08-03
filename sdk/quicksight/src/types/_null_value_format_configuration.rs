@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NullValueFormatConfiguration {
     /// <p>Determines the null string of null values.</p>
-    #[doc(hidden)]
     pub null_string: ::std::option::Option<::std::string::String>,
 }
 impl NullValueFormatConfiguration {

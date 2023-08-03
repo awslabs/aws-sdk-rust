@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayOutput {
     /// The settings for a gateway, including its networks.
-    #[doc(hidden)]
     pub gateway: ::std::option::Option<crate::types::Gateway>,
     _request_id: Option<String>,
 }

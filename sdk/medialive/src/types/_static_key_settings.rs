@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticKeySettings {
     /// The URL of the license server used for protecting content.
-    #[doc(hidden)]
     pub key_provider_server: ::std::option::Option<crate::types::InputLocation>,
     /// Static key value as a 32 character hexadecimal string.
-    #[doc(hidden)]
     pub static_key_value: ::std::option::Option<::std::string::String>,
 }
 impl StaticKeySettings {

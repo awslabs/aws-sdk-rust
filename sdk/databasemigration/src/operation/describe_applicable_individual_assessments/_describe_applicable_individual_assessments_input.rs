@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsInput {
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-    #[doc(hidden)]
     pub source_engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-    #[doc(hidden)]
     pub target_engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
-    #[doc(hidden)]
     pub migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicableIndividualAssessmentsInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceProperty {
     /// <p>The name of this property of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    #[doc(hidden)]
     pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceProperty {

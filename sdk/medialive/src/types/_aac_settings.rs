@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AacSettings {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<f64>,
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
-    #[doc(hidden)]
     pub input_type: ::std::option::Option<crate::types::AacInputType>,
     /// AAC Profile.
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::AacProfile>,
     /// Rate Control Mode.
-    #[doc(hidden)]
     pub rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     /// Sets LATM / LOAS AAC output for raw containers.
-    #[doc(hidden)]
     pub raw_format: ::std::option::Option<crate::types::AacRawFormat>,
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<f64>,
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::AacSpec>,
     /// VBR Quality Level - Only used if rateControlMode is VBR.
-    #[doc(hidden)]
     pub vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
 impl AacSettings {

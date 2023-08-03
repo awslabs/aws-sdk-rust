@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsEntity {
     /// <p>The query ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data returned by the query.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>,
 }
 impl OpsEntity {

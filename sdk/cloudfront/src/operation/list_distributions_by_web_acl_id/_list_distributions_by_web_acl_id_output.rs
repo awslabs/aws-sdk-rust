@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type.</p>
-    #[doc(hidden)]
     pub distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }

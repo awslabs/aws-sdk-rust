@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachLoadBalancersInput {

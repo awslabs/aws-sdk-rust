@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkResourceCountsOutput {
     /// <p>The count of resources.</p>
-    #[doc(hidden)]
     pub network_resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

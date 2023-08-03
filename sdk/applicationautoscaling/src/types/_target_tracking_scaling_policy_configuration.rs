@@ -8,22 +8,16 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    #[doc(hidden)]
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
-    #[doc(hidden)]
     pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingScalingPolicyConfiguration {

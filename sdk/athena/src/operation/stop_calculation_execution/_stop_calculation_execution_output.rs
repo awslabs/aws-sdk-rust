@@ -11,7 +11,6 @@ pub struct StopCalculationExecutionOutput {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,
 }

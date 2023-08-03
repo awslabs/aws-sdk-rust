@@ -6,7 +6,6 @@
 pub struct AwsApiGatewayEndpointConfiguration {
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsApiGatewayEndpointConfiguration {

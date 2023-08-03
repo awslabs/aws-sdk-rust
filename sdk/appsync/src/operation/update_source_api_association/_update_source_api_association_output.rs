@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSourceApiAssociationOutput {
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    #[doc(hidden)]
     pub source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,
 }

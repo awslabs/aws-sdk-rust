@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEvent {
     /// <p>Describes the type of change event. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>The action taken for the change event.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    #[doc(hidden)]
     pub identifier_path: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for an event change in status.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the core network change event.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeStatus>,
     /// <p>Details of the change event.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<crate::types::CoreNetworkChangeEventValues>,
 }
 impl CoreNetworkChangeEvent {

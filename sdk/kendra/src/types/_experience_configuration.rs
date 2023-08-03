@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperienceConfiguration {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub content_source_configuration: ::std::option::Option<crate::types::ContentSourceConfiguration>,
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
-    #[doc(hidden)]
     pub user_identity_configuration: ::std::option::Option<crate::types::UserIdentityConfiguration>,
 }
 impl ExperienceConfiguration {

@@ -10,10 +10,8 @@ pub struct ComparisonConfiguration {
     /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
     /// <li> <p> <code>PERCENT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
     /// <p>The format of the comparison.</p>
-    #[doc(hidden)]
     pub comparison_format: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
 }
 impl ComparisonConfiguration {

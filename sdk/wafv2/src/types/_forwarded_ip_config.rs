@@ -11,7 +11,6 @@ pub struct ForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    #[doc(hidden)]
     pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -21,7 +20,6 @@ pub struct ForwardedIpConfig {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
 }
 impl ForwardedIpConfig {

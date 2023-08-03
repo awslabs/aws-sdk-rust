@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentsOutput {
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
-    #[doc(hidden)]
     pub assessment_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

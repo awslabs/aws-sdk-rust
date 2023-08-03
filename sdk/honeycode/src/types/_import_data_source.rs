@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
-    #[doc(hidden)]
     pub data_source_config: ::std::option::Option<crate::types::ImportDataSourceConfig>,
 }
 impl ImportDataSource {

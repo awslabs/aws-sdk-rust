@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsertRedshiftTargetOptions {
     /// <p>The physical location of the Redshift table.</p>
-    #[doc(hidden)]
     pub table_location: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to use to write to Redshift.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The keys used to determine whether to perform an update or insert.</p>
-    #[doc(hidden)]
     pub upsert_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpsertRedshiftTargetOptions {

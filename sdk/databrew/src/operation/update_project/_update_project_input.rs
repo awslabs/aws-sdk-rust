@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
-    #[doc(hidden)]
     pub sample: ::std::option::Option<crate::types::Sample>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project to be updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {

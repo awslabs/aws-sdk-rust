@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthResourceConfig {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
-    #[doc(hidden)]
     pub auth_resources: ::std::option::Option<crate::types::AuthResources>,
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    #[doc(hidden)]
     pub identity_pool_configs: ::std::option::Option<crate::types::CreateBackendAuthIdentityPoolConfig>,
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>Describes authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    #[doc(hidden)]
     pub user_pool_configs: ::std::option::Option<crate::types::CreateBackendAuthUserPoolConfig>,
 }
 impl CreateBackendAuthResourceConfig {

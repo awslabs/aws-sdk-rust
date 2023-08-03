@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
-    #[doc(hidden)]
     pub managed_action_history_items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

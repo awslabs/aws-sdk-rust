@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiDestinationInput {
     /// <p>The name for the API destination to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the API destination to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
-    #[doc(hidden)]
     pub invocation_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
-    #[doc(hidden)]
     pub invocation_rate_limit_per_second: ::std::option::Option<i32>,
 }
 impl CreateApiDestinationInput {

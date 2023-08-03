@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainPackageDetails {
     /// <p>Internal ID of the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>User-specified name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of package.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>Timestamp of the most recent update to the package association status.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Name of the domain that the package is associated with.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>State of the association.</p>
-    #[doc(hidden)]
     pub domain_package_status: ::std::option::Option<crate::types::DomainPackageStatus>,
     /// <p>The current version of the package.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
-    #[doc(hidden)]
     pub reference_path: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl DomainPackageDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
-    #[doc(hidden)]
     pub timer_name: ::std::option::Option<::std::string::String>,
 }
 impl ClearTimerAction {

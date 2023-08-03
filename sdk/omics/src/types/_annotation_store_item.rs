@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnnotationStoreItem {
     /// <p>The store's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The store's genome reference.</p>
-    #[doc(hidden)]
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The store's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StoreStatus>,
     /// <p>The store's ARN.</p>
-    #[doc(hidden)]
     pub store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The store's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's file format.</p>
-    #[doc(hidden)]
     pub store_format: ::std::option::Option<crate::types::StoreFormat>,
     /// <p>The store's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    #[doc(hidden)]
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>The store's creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the store was updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The store's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The store's size in bytes.</p>
-    #[doc(hidden)]
     pub store_size_bytes: ::std::option::Option<i64>,
 }
 impl AnnotationStoreItem {

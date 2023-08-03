@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
     /// <p>If you don't want Elastic Transcoder to create thumbnails, specify "".</p>
@@ -18,16 +17,12 @@ pub struct CreateJobOutput {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    #[doc(hidden)]
     pub thumbnail_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
-    #[doc(hidden)]
     pub thumbnail_encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p> The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following values: <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code> generally works only if the file that you're transcoding contains rotation metadata. </p>
-    #[doc(hidden)]
     pub rotate: ::std::option::Option<::std::string::String>,
     /// <p> The <code>Id</code> of the preset to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses for transcoding. </p>
-    #[doc(hidden)]
     pub preset_id: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -35,17 +30,13 @@ pub struct CreateJobOutput {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    #[doc(hidden)]
     pub segment_duration: ::std::option::Option<::std::string::String>,
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    #[doc(hidden)]
     pub watermarks: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
-    #[doc(hidden)]
     pub album_art: ::std::option::Option<crate::types::JobAlbumArt>,
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub composition: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -57,10 +48,8 @@ pub struct CreateJobOutput {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    #[doc(hidden)]
     pub captions: ::std::option::Option<crate::types::Captions>,
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl CreateJobOutput {

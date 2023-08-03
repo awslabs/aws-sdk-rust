@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsService {
     /// <p> The name of the target Amazon ECS service. </p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
 }
 impl EcsService {

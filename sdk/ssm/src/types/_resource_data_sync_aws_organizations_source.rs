@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    #[doc(hidden)]
     pub organization_source_type: ::std::option::Option<::std::string::String>,
     /// <p>The Organizations organization units included in the sync.</p>
-    #[doc(hidden)]
     pub organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSource {

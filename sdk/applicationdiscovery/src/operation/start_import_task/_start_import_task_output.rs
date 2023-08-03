@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportTaskOutput {
     /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }

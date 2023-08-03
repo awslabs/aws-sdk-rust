@@ -11,7 +11,6 @@ pub struct AnalyticsUtteranceMetric {
     /// <li> <p> <code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p> </li>
     /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
@@ -19,10 +18,8 @@ pub struct AnalyticsUtteranceMetric {
     /// <li> <p> <code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl AnalyticsUtteranceMetric {

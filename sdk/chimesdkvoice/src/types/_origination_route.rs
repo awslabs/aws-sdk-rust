@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginationRoute {
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The designated origination route port. Defaults to 5060.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime SDK Voice Connectors use TCP protocol by default.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::OriginationRouteProtocol>,
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The weight assigned to an origination route. When hosts have equal priority, calls are distributed between them based on their relative weights.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<i32>,
 }
 impl OriginationRoute {

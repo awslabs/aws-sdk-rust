@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingMetricsValuePerSeverity {
     /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<f64>,
     /// <p>The severity of the finding is low and does require action on its own.</p>
-    #[doc(hidden)]
     pub low: ::std::option::Option<f64>,
     /// <p>The severity of the finding is medium and should be addressed as a mid-term priority.</p>
-    #[doc(hidden)]
     pub medium: ::std::option::Option<f64>,
     /// <p>The severity of the finding is high and should be addressed as a near-term priority.</p>
-    #[doc(hidden)]
     pub high: ::std::option::Option<f64>,
     /// <p>The severity of the finding is critical and should be addressed immediately.</p>
-    #[doc(hidden)]
     pub critical: ::std::option::Option<f64>,
 }
 impl FindingMetricsValuePerSeverity {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsExecutionsInput {
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    #[doc(hidden)]
     pub action_status: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAuditMitigationActionsExecutionsInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
-    #[doc(hidden)]
     pub monitored_resource_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of resource being monitored. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> The permission status of a resource. </p>
-    #[doc(hidden)]
     pub resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
     /// <p> The time at which DevOps Guru last updated this resource. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
 }
 impl MonitoredResourceIdentifier {

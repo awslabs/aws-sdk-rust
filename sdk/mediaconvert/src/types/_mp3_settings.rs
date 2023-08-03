@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mp3Settings {
     /// Specify the average bitrate in bits per second.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
-    #[doc(hidden)]
     pub channels: ::std::option::Option<i32>,
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
-    #[doc(hidden)]
     pub rate_control_mode: ::std::option::Option<crate::types::Mp3RateControlMode>,
     /// Sample rate in hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i32>,
     /// Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
-    #[doc(hidden)]
     pub vbr_quality: ::std::option::Option<i32>,
 }
 impl Mp3Settings {

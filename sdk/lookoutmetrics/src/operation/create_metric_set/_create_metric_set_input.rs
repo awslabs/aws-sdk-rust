@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMetricSetInput {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub metric_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the dataset you are creating.</p>
-    #[doc(hidden)]
     pub metric_set_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of metrics that the dataset will contain.</p>
-    #[doc(hidden)]
     pub metric_list: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<i32>,
     /// <p>Contains information about the column used for tracking time in your source data.</p>
-    #[doc(hidden)]
     pub timestamp_column: ::std::option::Option<crate::types::TimestampColumn>,
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    #[doc(hidden)]
     pub dimension_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-    #[doc(hidden)]
     pub metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Contains information about how the source data should be interpreted.</p>
-    #[doc(hidden)]
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>The time zone in which your source data was recorded.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    #[doc(hidden)]
     pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl CreateMetricSetInput {

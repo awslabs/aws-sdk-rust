@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The API version that the destination connector uses.</p>
-    #[doc(hidden)]
     pub api_version: ::std::option::Option<::std::string::String>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> This stores the information that is required to query a particular connector. </p>
-    #[doc(hidden)]
     pub destination_connector_properties: ::std::option::Option<crate::types::DestinationConnectorProperties>,
 }
 impl DestinationFlowConfig {

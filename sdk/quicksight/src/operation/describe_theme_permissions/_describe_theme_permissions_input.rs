@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme that you want to describe permissions for.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThemePermissionsInput {

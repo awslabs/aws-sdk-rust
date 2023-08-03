@@ -4,28 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenOutput {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute resource you are requesting the authentication token for.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code> </p>
-    #[doc(hidden)]
     pub compute_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token that your game server uses to authenticate with Amazon GameLift.</p>
-    #[doc(hidden)]
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time until the authentication token is no longer valid. To continue using the compute resource for game server hosting, renew the authentication token by using this operation again.</p>
-    #[doc(hidden)]
     pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

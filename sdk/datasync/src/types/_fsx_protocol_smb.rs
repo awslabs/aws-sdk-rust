@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
     /// <p>If you provide a user in your Active Directory, note the following:</p>
@@ -24,7 +21,6 @@ pub struct FsxProtocolSmb {
     /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
     /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
 }
 impl FsxProtocolSmb {

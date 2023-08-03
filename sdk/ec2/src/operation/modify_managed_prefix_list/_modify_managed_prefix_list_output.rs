@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,
 }

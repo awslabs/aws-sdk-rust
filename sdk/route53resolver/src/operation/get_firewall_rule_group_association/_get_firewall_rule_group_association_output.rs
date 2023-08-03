@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationOutput {
     /// <p>The association that you requested. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }

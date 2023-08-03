@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
-    #[doc(hidden)]
     pub ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateIpRestrictionInput {

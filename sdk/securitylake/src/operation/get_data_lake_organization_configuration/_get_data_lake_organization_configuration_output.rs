@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataLakeOrganizationConfigurationOutput {
     /// <p>The configuration for new accounts.</p>
-    #[doc(hidden)]
     pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     _request_id: Option<String>,
 }

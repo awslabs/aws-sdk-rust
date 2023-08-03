@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolClientOutput {
     /// <p>The user pool client that was just created.</p>
-    #[doc(hidden)]
     pub user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
 }

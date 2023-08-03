@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicCardVerificationValue {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    #[doc(hidden)]
     pub pan_sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The expiry date of a payment card.</p>
-    #[doc(hidden)]
     pub card_expiry_date: ::std::option::Option<::std::string::String>,
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The transaction counter value that comes from the terminal.</p>
-    #[doc(hidden)]
     pub application_transaction_counter: ::std::option::Option<::std::string::String>,
 }
 impl DynamicCardVerificationValue {

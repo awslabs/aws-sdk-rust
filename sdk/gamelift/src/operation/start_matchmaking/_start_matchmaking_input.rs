@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
-    #[doc(hidden)]
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
-    #[doc(hidden)]
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    #[doc(hidden)]
     pub players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
 }
 impl StartMatchmakingInput {

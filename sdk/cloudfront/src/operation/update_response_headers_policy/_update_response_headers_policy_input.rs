@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyInput {
     /// <p>A response headers policy configuration.</p>
-    #[doc(hidden)]
     pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
     /// <p>The identifier for the response headers policy that you are updating.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the response headers policy that you are updating.</p>
     /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResponseHeadersPolicyInput {

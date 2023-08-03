@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The events to configure</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SetCognitoEventsInput {

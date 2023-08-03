@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchExecution {
     /// <p>The date and time that the launch started.</p>
-    #[doc(hidden)]
     pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the launch ended.</p>
-    #[doc(hidden)]
     pub ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LaunchExecution {

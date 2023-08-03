@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShortFormatText {
     /// <p>Plain text format.</p>
-    #[doc(hidden)]
     pub plain_text: ::std::option::Option<::std::string::String>,
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
-    #[doc(hidden)]
     pub rich_text: ::std::option::Option<::std::string::String>,
 }
 impl ShortFormatText {

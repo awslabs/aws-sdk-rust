@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromRecoveryPointInput {
     /// <p>The unique identifier of the recovery point to restore from.</p>
-    #[doc(hidden)]
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace to restore data into.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup used to restore data.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromRecoveryPointInput {

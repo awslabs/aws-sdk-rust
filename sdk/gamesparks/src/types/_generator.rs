@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Generator {
     /// <p>The platform that will be used to run the generated code.</p>
-    #[doc(hidden)]
     pub target_platform: ::std::option::Option<::std::string::String>,
     /// <p>The programming language for the generated code.</p>
     /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The target version of the GameSparks Game SDK.</p>
-    #[doc(hidden)]
     pub game_sdk_version: ::std::option::Option<::std::string::String>,
 }
 impl Generator {

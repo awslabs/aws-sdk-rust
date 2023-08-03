@@ -5,41 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    #[doc(hidden)]
     pub result_location_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    #[doc(hidden)]
     pub result_location_folder: ::std::option::Option<::std::string::String>,
     /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
     /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
     /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result_encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-    #[doc(hidden)]
     pub result_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique name to identify the assessment run.</p>
-    #[doc(hidden)]
     pub assessment_run_name: ::std::option::Option<::std::string::String>,
     /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub include_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartReplicationTaskAssessmentRunInput {

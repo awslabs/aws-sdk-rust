@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountOutput {
     /// <p> The status of the account registration request. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,
 }

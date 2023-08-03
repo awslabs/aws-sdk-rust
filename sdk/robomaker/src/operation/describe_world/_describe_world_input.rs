@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-    #[doc(hidden)]
     pub world: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorldInput {

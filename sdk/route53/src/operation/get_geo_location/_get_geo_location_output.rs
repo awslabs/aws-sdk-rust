@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeoLocationOutput {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
-    #[doc(hidden)]
     pub geo_location_details: ::std::option::Option<crate::types::GeoLocationDetails>,
     _request_id: Option<String>,
 }

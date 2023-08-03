@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionAuthRequestParameters {
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub basic_auth_parameters: ::std::option::Option<crate::types::CreateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub o_auth_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthRequestParameters>,
     /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub api_key_auth_parameters: ::std::option::Option<crate::types::CreateConnectionApiKeyAuthRequestParameters>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
-    #[doc(hidden)]
     pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl CreateConnectionAuthRequestParameters {

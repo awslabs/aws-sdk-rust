@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    #[doc(hidden)]
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     _request_id: Option<String>,
 }

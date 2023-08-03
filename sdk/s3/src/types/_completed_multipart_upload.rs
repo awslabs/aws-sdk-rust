@@ -6,7 +6,6 @@
 pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
     /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::CompletedPart>>,
 }
 impl CompletedMultipartUpload {

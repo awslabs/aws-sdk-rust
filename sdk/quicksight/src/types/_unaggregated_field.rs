@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnaggregatedField {
     /// <p>The custom field ID.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The format configuration of the field.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,
 }
 impl UnaggregatedField {

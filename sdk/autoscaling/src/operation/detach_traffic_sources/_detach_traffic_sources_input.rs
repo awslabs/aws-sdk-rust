@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    #[doc(hidden)]
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl DetachTrafficSourcesInput {

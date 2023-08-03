@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdOutput {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    #[doc(hidden)]
     pub groups_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

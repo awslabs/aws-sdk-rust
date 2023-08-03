@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingTypeOutput {
     /// <p>The name of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thing type ID.</p>
-    #[doc(hidden)]
     pub thing_type_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

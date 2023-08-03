@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelingJobOutput {
     /// <p>The processing status of the labeling job. </p>
-    #[doc(hidden)]
     pub labeling_job_status: ::std::option::Option<crate::types::LabelingJobStatus>,
     /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
-    #[doc(hidden)]
     pub label_counters: ::std::option::Option<crate::types::LabelCounters>,
     /// <p>If the job failed, the reason that it failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the labeling job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the labeling job was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique identifier for work done as part of a labeling job.</p>
-    #[doc(hidden)]
     pub job_reference_code: ::std::option::Option<::std::string::String>,
     /// <p>The name assigned to the labeling job when it was created.</p>
-    #[doc(hidden)]
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
-    #[doc(hidden)]
     pub labeling_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attribute used as the label in the output manifest file.</p>
-    #[doc(hidden)]
     pub label_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>Input configuration information for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::LabelingJobInputConfig>,
     /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::LabelingJobOutputConfig>,
     /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
@@ -60,22 +48,16 @@ pub struct DescribeLabelingJobOutput {
     /// <p> <code> }</code> </p>
     /// <p> <code> ]</code> </p>
     /// <p> <code>}</code> </p>
-    #[doc(hidden)]
     pub label_category_config_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
-    #[doc(hidden)]
     pub stopping_conditions: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
     /// <p>Configuration information for automated data labeling.</p>
-    #[doc(hidden)]
     pub labeling_job_algorithms_config: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
     /// <p>Configuration information required for human workers to complete a labeling task.</p>
-    #[doc(hidden)]
     pub human_task_config: ::std::option::Option<crate::types::HumanTaskConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The location of the output produced by the labeling job.</p>
-    #[doc(hidden)]
     pub labeling_job_output: ::std::option::Option<crate::types::LabelingJobOutput>,
     _request_id: Option<String>,
 }

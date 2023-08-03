@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    #[doc(hidden)]
     pub oldest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the latest start or close date and time to return.</p>
-    #[doc(hidden)]
     pub latest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilter {

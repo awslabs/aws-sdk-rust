@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationOutput {
     /// <p>The updated termination setting details.</p>
-    #[doc(hidden)]
     pub termination: ::std::option::Option<crate::types::Termination>,
     _request_id: Option<String>,
 }

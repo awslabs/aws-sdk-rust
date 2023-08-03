@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventDataStoreInput {
     /// <p>The name of the event data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
     /// <p> For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
-    #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
-    #[doc(hidden)]
     pub organization_enabled: ::std::option::Option<bool>,
     /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
-    #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>A list of tags.</p>
-    #[doc(hidden)]
     pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -38,10 +31,8 @@ pub struct CreateEventDataStoreInput {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
-    #[doc(hidden)]
     pub start_ingestion: ::std::option::Option<bool>,
 }
 impl CreateEventDataStoreInput {

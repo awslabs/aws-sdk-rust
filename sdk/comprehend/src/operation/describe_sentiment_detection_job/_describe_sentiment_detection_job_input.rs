@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSentimentDetectionJobInput {

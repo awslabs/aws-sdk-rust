@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobSummary {
     /// <p>The current status of the import job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::AssetBundleImportJobStatus>,
     /// <p>The ARN of the import job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the import job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The failure action for the import job.</p>
-    #[doc(hidden)]
     pub failure_action: ::std::option::Option<crate::types::AssetBundleImportFailureAction>,
 }
 impl AssetBundleImportJobSummary {

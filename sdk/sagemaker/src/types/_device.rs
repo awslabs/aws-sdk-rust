@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the device.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
-    #[doc(hidden)]
     pub iot_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl Device {

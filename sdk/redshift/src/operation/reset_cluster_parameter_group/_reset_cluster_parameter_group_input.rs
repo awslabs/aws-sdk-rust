@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group to be reset.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetClusterParameterGroupInput {

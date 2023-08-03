@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the permission was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account that assigned the permission.</p>
-    #[doc(hidden)]
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
     /// <p>The name of the policy that is associated with the permission.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl Permission {

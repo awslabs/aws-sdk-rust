@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewBgpPeer {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    #[doc(hidden)]
     pub auth_key: ::std::option::Option<::std::string::String>,
     /// <p>The address family for the BGP peer.</p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
     /// <p>The IP address assigned to the Amazon interface.</p>
-    #[doc(hidden)]
     pub amazon_address: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
-    #[doc(hidden)]
     pub customer_address: ::std::option::Option<::std::string::String>,
 }
 impl NewBgpPeer {

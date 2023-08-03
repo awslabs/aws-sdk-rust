@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
-    #[doc(hidden)]
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the ad will start playing.</p>
-    #[doc(hidden)]
     pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VOD source used for the ad break.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleAdBreak {

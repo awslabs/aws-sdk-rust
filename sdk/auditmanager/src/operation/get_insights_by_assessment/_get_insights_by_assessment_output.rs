@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightsByAssessmentOutput {
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub insights: ::std::option::Option<crate::types::InsightsByAssessment>,
     _request_id: Option<String>,
 }

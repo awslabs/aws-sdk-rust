@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCodeReviewOutput {
     /// <p>Information about the code review.</p>
-    #[doc(hidden)]
     pub code_review: ::std::option::Option<crate::types::CodeReview>,
     _request_id: Option<String>,
 }

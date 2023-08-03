@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecutionTarget {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The association version.</p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
     /// <p>The execution ID.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type, for example, EC2.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The association execution status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the execution status.</p>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>The date of the last execution.</p>
-    #[doc(hidden)]
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The location where the association details are saved.</p>
-    #[doc(hidden)]
     pub output_source: ::std::option::Option<crate::types::OutputSource>,
 }
 impl AssociationExecutionTarget {

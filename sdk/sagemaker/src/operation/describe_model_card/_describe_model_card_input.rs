@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelCardInput {
     /// <p>The name of the model card to describe.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
-    #[doc(hidden)]
     pub model_card_version: ::std::option::Option<i32>,
 }
 impl DescribeModelCardInput {

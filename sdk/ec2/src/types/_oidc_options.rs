@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OidcOptions {
     /// <p>The OIDC issuer.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC authorization endpoint.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC token endpoint.</p>
-    #[doc(hidden)]
     pub token_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC user info endpoint.</p>
-    #[doc(hidden)]
     pub user_info_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The client identifier.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>The OpenID Connect (OIDC) scope specified.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
 }
 impl OidcOptions {

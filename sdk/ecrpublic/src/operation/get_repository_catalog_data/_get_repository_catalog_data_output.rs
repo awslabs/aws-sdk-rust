@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryCatalogDataOutput {
     /// <p>The catalog metadata for the repository.</p>
-    #[doc(hidden)]
     pub catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
     _request_id: Option<String>,
 }

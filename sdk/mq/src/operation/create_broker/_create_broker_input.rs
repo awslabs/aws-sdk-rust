@@ -5,73 +5,52 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
     /// </important>
-    #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about the configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ConfigurationId>,
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p> <note>
     /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
     /// </note>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. The broker's deployment mode.</p>
-    #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     /// <p>Encryption options for the broker.</p>
-    #[doc(hidden)]
     pub encryption_options: ::std::option::Option<crate::types::EncryptionOptions>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Required. The broker's instance type.</p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    #[doc(hidden)]
     pub ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataInput>,
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-    #[doc(hidden)]
     pub logs: ::std::option::Option<crate::types::Logs>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    #[doc(hidden)]
     pub maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The broker's storage type.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Create tags when creating the broker.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
-    #[doc(hidden)]
     pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
-    #[doc(hidden)]
     pub data_replication_primary_broker_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBrokerInput {

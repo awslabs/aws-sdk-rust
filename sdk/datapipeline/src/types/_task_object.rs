@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline that provided the task.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
-    #[doc(hidden)]
     pub attempt_id: ::std::option::Option<::std::string::String>,
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    #[doc(hidden)]
     pub objects: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
 }
 impl TaskObject {

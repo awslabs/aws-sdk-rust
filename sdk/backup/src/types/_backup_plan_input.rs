@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPlanInput {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub backup_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>,
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    #[doc(hidden)]
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlanInput {

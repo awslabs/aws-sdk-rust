@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssetBundleImportJobOutput {
     /// <p>The Amazon Resource Name (ARN) for the import job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services response ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the response.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

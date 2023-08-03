@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetadataFilter {
     /// <p>The name of the of the model to filter by.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ModelMetadataFilterType>,
     /// <p>The value to filter the model metadata.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ModelMetadataFilter {

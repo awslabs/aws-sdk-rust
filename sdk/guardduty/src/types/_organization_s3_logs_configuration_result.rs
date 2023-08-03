@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationS3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationS3LogsConfigurationResult {

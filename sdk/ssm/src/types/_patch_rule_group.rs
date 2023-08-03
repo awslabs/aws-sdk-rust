@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
-    #[doc(hidden)]
     pub patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
 }
 impl PatchRuleGroup {

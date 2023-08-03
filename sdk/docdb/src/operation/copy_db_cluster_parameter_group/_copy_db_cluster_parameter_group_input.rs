@@ -11,7 +11,6 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <li> <p>If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
     /// <li> <p>If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -22,13 +21,10 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
-    #[doc(hidden)]
     pub target_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the copied cluster parameter group.</p>
-    #[doc(hidden)]
     pub target_db_cluster_parameter_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are to be assigned to the parameter group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterParameterGroupInput {

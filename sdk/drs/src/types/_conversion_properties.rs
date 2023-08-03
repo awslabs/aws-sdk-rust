@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    #[doc(hidden)]
     pub volume_to_conversion_map: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The root volume name of a conversion job</p>
-    #[doc(hidden)]
     pub root_volume_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the volume being converted uses UEFI or not</p>
-    #[doc(hidden)]
     pub force_uefi: ::std::option::Option<bool>,
     /// <p>The timestamp of when the snapshot being converted was taken</p>
-    #[doc(hidden)]
     pub data_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A mapping between the volumes and their sizes</p>
-    #[doc(hidden)]
     pub volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl ConversionProperties {

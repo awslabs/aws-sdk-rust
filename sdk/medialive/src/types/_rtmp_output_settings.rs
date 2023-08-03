@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RtmpOutputSettings {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
-    #[doc(hidden)]
     pub certificate_mode: ::std::option::Option<crate::types::RtmpOutputCertificateMode>,
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
-    #[doc(hidden)]
     pub connection_retry_interval: ::std::option::Option<i32>,
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
     /// Number of retry attempts.
-    #[doc(hidden)]
     pub num_retries: ::std::option::Option<i32>,
 }
 impl RtmpOutputSettings {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingOutput {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
     _request_id: Option<String>,
 }

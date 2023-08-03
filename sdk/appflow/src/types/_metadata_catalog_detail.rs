@@ -13,16 +13,12 @@ pub struct MetadataCatalogDetail {
     /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub catalog_type: ::std::option::Option<crate::types::CatalogType>,
     /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
-    #[doc(hidden)]
     pub table_registration_output: ::std::option::Option<crate::types::RegistrationOutput>,
     /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
-    #[doc(hidden)]
     pub partition_registration_output: ::std::option::Option<crate::types::RegistrationOutput>,
 }
 impl MetadataCatalogDetail {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl JoinEventConfiguration {

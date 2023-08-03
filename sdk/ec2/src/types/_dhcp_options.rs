@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DhcpOptions {
     /// <p>The DHCP options in the set.</p>
-    #[doc(hidden)]
     pub dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
     /// <p>The ID of the set of DHCP options.</p>
-    #[doc(hidden)]
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the DHCP options set.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DhcpOptions {

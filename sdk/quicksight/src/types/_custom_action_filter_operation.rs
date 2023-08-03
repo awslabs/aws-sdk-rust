@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionFilterOperation {
     /// <p>The configuration that chooses the fields to be filtered.</p>
-    #[doc(hidden)]
     pub selected_fields_configuration: ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
-    #[doc(hidden)]
     pub target_visuals_configuration: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
 }
 impl CustomActionFilterOperation {

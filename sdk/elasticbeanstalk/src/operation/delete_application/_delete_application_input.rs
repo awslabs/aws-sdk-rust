@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, running environments will be terminated before deleting the application.</p>
-    #[doc(hidden)]
     pub terminate_env_by_force: ::std::option::Option<bool>,
 }
 impl DeleteApplicationInput {

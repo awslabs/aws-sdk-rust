@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LandsatCloudCoverLandInput {
     /// <p>The minimum value for Land Cloud Cover property filter. This will filter items having Land Cloud Cover greater than or equal to this value.</p>
-    #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
     /// <p>The maximum value for Land Cloud Cover property filter. This will filter items having Land Cloud Cover less than or equal to this value.</p>
-    #[doc(hidden)]
     pub upper_bound: ::std::option::Option<f32>,
 }
 impl LandsatCloudCoverLandInput {

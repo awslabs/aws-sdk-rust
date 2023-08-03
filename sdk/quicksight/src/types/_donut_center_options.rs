@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DonutCenterOptions {
     /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
-    #[doc(hidden)]
     pub label_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DonutCenterOptions {

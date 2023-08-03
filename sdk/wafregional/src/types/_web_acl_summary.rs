@@ -10,10 +10,8 @@
 pub struct WebAclSummary {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl WebAclSummary {

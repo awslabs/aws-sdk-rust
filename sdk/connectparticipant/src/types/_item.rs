@@ -6,40 +6,28 @@
 pub struct Item {
     /// <p>The time when the message or event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub absolute_time: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message or event.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of content of the item.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the item.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Type of the item: message or event. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChatItemType>,
     /// <p>The ID of the sender in the session.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The chat display name of the sender.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Provides information about the attachments.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>>,
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
-    #[doc(hidden)]
     pub message_metadata: ::std::option::Option<crate::types::MessageMetadata>,
     /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
-    #[doc(hidden)]
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl Item {

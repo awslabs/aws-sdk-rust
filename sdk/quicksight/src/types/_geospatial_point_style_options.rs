@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialPointStyleOptions {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    #[doc(hidden)]
     pub selected_point_style: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    #[doc(hidden)]
     pub cluster_marker_configuration: ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
     /// <p>The heatmap configuration of the geospatial point style.</p>
-    #[doc(hidden)]
     pub heatmap_configuration: ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>,
 }
 impl GeospatialPointStyleOptions {

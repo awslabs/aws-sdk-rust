@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2RulesActionDetails {
     /// <p> Instructs WAF to allow the web request. </p>
-    #[doc(hidden)]
     pub allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     /// <p> Instructs WAF to block the web request. </p>
-    #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
     /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
-    #[doc(hidden)]
     pub captcha: ::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails>,
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails>,
 }
 impl AwsWafv2RulesActionDetails {

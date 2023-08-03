@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEntry {
     /// <p>The ID of the domain recordset entry.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer, Lightsail container service, Lightsail content delivery network (CDN) distribution, or another Amazon Web Services resource. You can include an alias (A type) record in your request, which points to the DNS name of a load balancer, container service, CDN distribution, or other Amazon Web Services resource and routes traffic to that resource.</p>
-    #[doc(hidden)]
     pub is_alias: ::std::option::Option<bool>,
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
@@ -29,13 +25,11 @@ pub struct DomainEntry {
     /// <li> <p> <code>SRV</code> </p> </li>
     /// <li> <p> <code>TXT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) The options for the domain entry.</p> <note>
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DomainEntry {

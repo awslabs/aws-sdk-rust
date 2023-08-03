@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingDetection {
     /// <p>The text extracted for a detected value in a lending document.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
-    #[doc(hidden)]
     pub selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl LendingDetection {

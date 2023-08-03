@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInsightRulesInput {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    #[doc(hidden)]
     pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteInsightRulesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to use Base64 encoding.</p>
-    #[doc(hidden)]
     pub use_base64: ::std::option::Option<bool>,
 }
 impl SqsAction {

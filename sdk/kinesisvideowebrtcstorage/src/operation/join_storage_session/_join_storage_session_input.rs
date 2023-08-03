@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinStorageSessionInput {
     /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
 }
 impl JoinStorageSessionInput {

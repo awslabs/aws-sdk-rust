@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePolicyTemplateInput {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to delete.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy template that you want to delete.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePolicyTemplateInput {

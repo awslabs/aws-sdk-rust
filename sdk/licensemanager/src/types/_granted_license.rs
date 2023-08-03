@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>License name.</p>
-    #[doc(hidden)]
     pub license_name: ::std::option::Option<::std::string::String>,
     /// <p>Product name.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>Product SKU.</p>
-    #[doc(hidden)]
     pub product_sku: ::std::option::Option<::std::string::String>,
     /// <p>Granted license issuer.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<crate::types::IssuerDetails>,
     /// <p>Home Region of the granted license.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Granted license status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LicenseStatus>,
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
-    #[doc(hidden)]
     pub validity: ::std::option::Option<crate::types::DatetimeRange>,
     /// <p>Granted license beneficiary.</p>
-    #[doc(hidden)]
     pub beneficiary: ::std::option::Option<::std::string::String>,
     /// <p>License entitlements.</p>
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     /// <p>Configuration for consumption of the license.</p>
-    #[doc(hidden)]
     pub consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     /// <p>Granted license metadata.</p>
-    #[doc(hidden)]
     pub license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     /// <p>Creation time of the granted license.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>Version of the granted license.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Granted license received metadata.</p>
-    #[doc(hidden)]
     pub received_metadata: ::std::option::Option<crate::types::ReceivedMetadata>,
 }
 impl GrantedLicense {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
     /// <ul>
@@ -17,7 +16,6 @@ pub struct JoinDomainOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
     _request_id: Option<String>,
 }

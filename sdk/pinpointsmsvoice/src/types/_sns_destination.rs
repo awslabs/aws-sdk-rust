@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsDestination {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl SnsDestination {

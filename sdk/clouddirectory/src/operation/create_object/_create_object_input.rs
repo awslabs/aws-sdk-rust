@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    #[doc(hidden)]
     pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    #[doc(hidden)]
     pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of link that is used to attach this object to a parent.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateObjectInput {

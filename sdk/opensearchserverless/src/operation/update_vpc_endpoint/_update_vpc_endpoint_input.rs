@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointInput {
     /// <p>The unique identifier of the interface endpoint to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    #[doc(hidden)]
     pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    #[doc(hidden)]
     pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    #[doc(hidden)]
     pub add_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    #[doc(hidden)]
     pub remove_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVpcEndpointInput {

@@ -5,53 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Asn1Subject {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
-    #[doc(hidden)]
     pub organization: ::std::option::Option<::std::string::String>,
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
-    #[doc(hidden)]
     pub organizational_unit: ::std::option::Option<::std::string::String>,
     /// <p>Disambiguating information for the certificate subject.</p>
-    #[doc(hidden)]
     pub distinguished_name_qualifier: ::std::option::Option<::std::string::String>,
     /// <p>State in which the subject of the certificate is located.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
-    #[doc(hidden)]
     pub common_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate serial number.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
-    #[doc(hidden)]
     pub locality: ::std::option::Option<::std::string::String>,
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
-    #[doc(hidden)]
     pub surname: ::std::option::Option<::std::string::String>,
     /// <p>First name.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
-    #[doc(hidden)]
     pub initials: ::std::option::Option<::std::string::String>,
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
-    #[doc(hidden)]
     pub pseudonym: ::std::option::Option<::std::string::String>,
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
-    #[doc(hidden)]
     pub generation_qualifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    #[doc(hidden)]
     pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
 }
 impl Asn1Subject {

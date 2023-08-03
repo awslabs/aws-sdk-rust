@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_arn: ::std::option::Option<::std::string::String>,
 }
 impl Alarm {

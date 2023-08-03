@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsTimeline {
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
-    #[doc(hidden)]
     pub query_queue_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
-    #[doc(hidden)]
     pub query_planning_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that the query took to execute.</p>
-    #[doc(hidden)]
     pub engine_execution_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
-    #[doc(hidden)]
     pub service_processing_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to run the query.</p>
-    #[doc(hidden)]
     pub total_execution_time_in_millis: ::std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsTimeline {

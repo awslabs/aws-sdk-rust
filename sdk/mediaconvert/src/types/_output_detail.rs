@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDetail {
     /// Duration in milliseconds
-    #[doc(hidden)]
     pub duration_in_ms: ::std::option::Option<i32>,
     /// Contains details about the output's video stream
-    #[doc(hidden)]
     pub video_details: ::std::option::Option<crate::types::VideoDetail>,
 }
 impl OutputDetail {

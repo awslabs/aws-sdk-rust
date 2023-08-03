@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
-    #[doc(hidden)]
     pub detached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchDetachObjectResponse {

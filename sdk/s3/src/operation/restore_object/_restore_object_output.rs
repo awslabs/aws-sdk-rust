@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreObjectOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
-    #[doc(hidden)]
     pub restore_output_path: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

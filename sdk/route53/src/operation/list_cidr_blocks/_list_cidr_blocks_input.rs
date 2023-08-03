@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCidrBlocksInput {
     /// <p>The UUID of the CIDR collection.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CIDR collection location.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results you want returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCidrBlocksInput {

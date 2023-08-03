@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCommentContentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCommentContentInput {

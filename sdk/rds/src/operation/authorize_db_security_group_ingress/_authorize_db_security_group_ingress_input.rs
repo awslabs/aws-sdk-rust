@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeDbSecurityGroupIngressInput {
     /// <p>The name of the DB security group to add authorization to.</p>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP range to authorize.</p>
-    #[doc(hidden)]
     pub cidrip: ::std::option::Option<::std::string::String>,
     /// <p>Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    #[doc(hidden)]
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizeDbSecurityGroupIngressInput {

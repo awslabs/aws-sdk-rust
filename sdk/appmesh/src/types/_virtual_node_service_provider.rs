@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    #[doc(hidden)]
     pub virtual_node_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualNodeServiceProvider {

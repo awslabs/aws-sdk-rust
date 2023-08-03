@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
-    #[doc(hidden)]
     pub price: f64,
     /// <p>The currency specifier.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<::std::string::String>,
 }
 impl PriceWithCurrency {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPathColor {
     /// <p>The element that the color needs to be applied to.</p>
-    #[doc(hidden)]
     pub element: ::std::option::Option<crate::types::DataPathValue>,
     /// <p>The color that needs to be applied to the element.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
 impl DataPathColor {

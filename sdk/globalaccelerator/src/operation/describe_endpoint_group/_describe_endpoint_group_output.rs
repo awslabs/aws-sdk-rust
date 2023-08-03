@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointGroupOutput {
     /// <p>The description of an endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,
 }

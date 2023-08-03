@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceChange {
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
     /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
-    #[doc(hidden)]
     pub replacement: ::std::option::Option<crate::types::Replacement>,
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>,
     /// <p>The change set ID of the nested change set.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    #[doc(hidden)]
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl ResourceChange {

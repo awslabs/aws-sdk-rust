@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelMessageMoveTaskOutput {
     /// <p>The approximate number of messages already moved to the destination queue.</p>
-    #[doc(hidden)]
     pub approximate_number_of_messages_moved: i64,
     _request_id: Option<String>,
 }

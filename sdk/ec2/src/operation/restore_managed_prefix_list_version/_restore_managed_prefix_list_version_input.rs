@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreManagedPrefixListVersionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The version to restore.</p>
-    #[doc(hidden)]
     pub previous_version: ::std::option::Option<i64>,
     /// <p>The current version number for the prefix list.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<i64>,
 }
 impl RestoreManagedPrefixListVersionInput {

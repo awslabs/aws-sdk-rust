@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskStatus {
     /// <p>The status code of the export task.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ExportTaskStatusCode>,
     /// <p>The status message related to the status code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ExportTaskStatus {

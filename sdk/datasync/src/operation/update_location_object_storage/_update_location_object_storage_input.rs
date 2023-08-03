@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateLocationObjectStorageInput {
     /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    #[doc(hidden)]
     pub server_port: ::std::option::Option<i32>,
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    #[doc(hidden)]
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
     pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
-    #[doc(hidden)]
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateLocationObjectStorageInput {

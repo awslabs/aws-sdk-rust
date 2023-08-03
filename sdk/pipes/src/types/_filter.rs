@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The event pattern.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
 }
 impl Filter {

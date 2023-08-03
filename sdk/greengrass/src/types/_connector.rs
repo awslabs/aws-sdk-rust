@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connector {
     /// The ARN of the connector.
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The parameters or configuration that the connector uses.
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Connector {

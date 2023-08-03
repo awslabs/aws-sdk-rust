@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketCorsOutput {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    #[doc(hidden)]
     pub cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

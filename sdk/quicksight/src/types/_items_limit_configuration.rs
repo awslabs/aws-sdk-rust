@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemsLimitConfiguration {
     /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
-    #[doc(hidden)]
     pub items_limit: ::std::option::Option<i64>,
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>INCLUDE</code> </p> </li>
     /// <li> <p> <code>EXCLUDE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub other_categories: ::std::option::Option<crate::types::OtherCategories>,
 }
 impl ItemsLimitConfiguration {

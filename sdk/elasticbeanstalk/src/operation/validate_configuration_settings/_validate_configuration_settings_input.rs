@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsInput {
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the options and desired values to evaluate.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
 }
 impl ValidateConfigurationSettingsInput {

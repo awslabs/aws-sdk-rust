@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<crate::types::SyncType>,
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRepositorySyncDefinitionsInput {

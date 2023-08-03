@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedGateway {
     /// <p>The ID of the associated gateway.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of associated gateway.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the associated gateway is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedGateway {

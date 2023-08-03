@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateLinkOutput {
     /// <p>The link association.</p>
-    #[doc(hidden)]
     pub link_association: ::std::option::Option<crate::types::LinkAssociation>,
     _request_id: Option<String>,
 }

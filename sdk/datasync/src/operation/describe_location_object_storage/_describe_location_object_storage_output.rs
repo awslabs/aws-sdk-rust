@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the object storage system location.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
-    #[doc(hidden)]
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    #[doc(hidden)]
     pub server_port: ::std::option::Option<i32>,
     /// <p>The protocol that your object storage system uses to communicate.</p>
-    #[doc(hidden)]
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-    #[doc(hidden)]
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

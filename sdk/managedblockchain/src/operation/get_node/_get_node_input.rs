@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the node.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl GetNodeInput {

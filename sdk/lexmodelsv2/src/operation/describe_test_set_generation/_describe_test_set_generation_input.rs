@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestSetGenerationInput {
     /// <p>The unique identifier of the test set generation.</p>
-    #[doc(hidden)]
     pub test_set_generation_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTestSetGenerationInput {

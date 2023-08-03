@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFunctionsOutput {
     /// <p>A list of CloudFront functions.</p>
-    #[doc(hidden)]
     pub function_list: ::std::option::Option<crate::types::FunctionList>,
     _request_id: Option<String>,
 }

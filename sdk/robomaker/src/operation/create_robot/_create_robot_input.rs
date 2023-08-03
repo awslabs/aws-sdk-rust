@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRobotInput {
     /// <p>The name for the robot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The target architecture of the robot.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The Greengrass group id.</p>
-    #[doc(hidden)]
     pub greengrass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRobotInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectParentsOutput {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    #[doc(hidden)]
     pub parents: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    #[doc(hidden)]
     pub parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     _request_id: Option<String>,
 }

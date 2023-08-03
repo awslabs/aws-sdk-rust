@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceStatus {
     /// The currently selected maintenance day.
-    #[doc(hidden)]
     pub maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
-    #[doc(hidden)]
     pub maintenance_deadline: ::std::option::Option<::std::string::String>,
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
-    #[doc(hidden)]
     pub maintenance_scheduled_date: ::std::option::Option<::std::string::String>,
     /// The currently selected maintenance start time. Time is in UTC.
-    #[doc(hidden)]
     pub maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceStatus {

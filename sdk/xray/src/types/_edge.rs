@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<i32>,
     /// <p>The start time of the first segment on the edge.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment on the edge.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Response statistics for segments on the edge.</p>
-    #[doc(hidden)]
     pub summary_statistics: ::std::option::Option<crate::types::EdgeStatistics>,
     /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
-    #[doc(hidden)]
     pub response_time_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
     /// <p>Aliases for the edge.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
-    #[doc(hidden)]
     pub edge_type: ::std::option::Option<::std::string::String>,
     /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
-    #[doc(hidden)]
     pub received_event_age_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
 }
 impl Edge {

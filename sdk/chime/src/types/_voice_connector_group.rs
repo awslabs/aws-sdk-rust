@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnectorGroup {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
-    #[doc(hidden)]
     pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
-    #[doc(hidden)]
     pub voice_connector_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnectorGroup {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that is used to track the request operation progress.</p>
-    #[doc(hidden)]
     pub account_assignment_deletion_request_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccountAssignmentDeletionStatusInput {

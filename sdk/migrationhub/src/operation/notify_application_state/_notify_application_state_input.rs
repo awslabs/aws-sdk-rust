@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>The timestamp when the application state changed.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl NotifyApplicationStateInput {

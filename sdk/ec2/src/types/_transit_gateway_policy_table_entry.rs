@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyTableEntry {
     /// <p>The rule number for the transit gateway policy table entry.</p>
-    #[doc(hidden)]
     pub policy_rule_number: ::std::option::Option<::std::string::String>,
     /// <p>The policy rule associated with the transit gateway policy table.</p>
-    #[doc(hidden)]
     pub policy_rule: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,
     /// <p>The ID of the target route table.</p>
-    #[doc(hidden)]
     pub target_route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayPolicyTableEntry {

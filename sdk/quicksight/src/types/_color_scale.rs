@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColorScale {
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
     /// <p>Determines the color fill type.</p>
-    #[doc(hidden)]
     pub color_fill_type: ::std::option::Option<crate::types::ColorFillType>,
     /// <p>Determines the color that is applied to null values.</p>
-    #[doc(hidden)]
     pub null_value_color: ::std::option::Option<crate::types::DataColor>,
 }
 impl ColorScale {

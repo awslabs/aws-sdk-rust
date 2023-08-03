@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    #[doc(hidden)]
     pub generation_job: ::std::option::Option<::std::string::String>,
 }
 impl GetWorldTemplateBodyInput {

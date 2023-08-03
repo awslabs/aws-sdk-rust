@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSetSummary {
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the resource set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the resource set was changed.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_set_status: ::std::option::Option<crate::types::ResourceSetStatus>,
 }
 impl ResourceSetSummary {

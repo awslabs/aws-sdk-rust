@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
-    #[doc(hidden)]
     pub installed_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software being installed on the device.</p>
-    #[doc(hidden)]
     pub installing_version: ::std::option::Option<::std::string::String>,
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
-    #[doc(hidden)]
     pub install_state: ::std::option::Option<::std::string::String>,
 }
 impl SoftwareInformation {

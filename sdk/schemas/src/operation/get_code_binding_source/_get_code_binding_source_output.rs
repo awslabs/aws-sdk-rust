@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCodeBindingSourceOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

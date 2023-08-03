@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -20,7 +18,6 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -32,7 +29,6 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationInput {

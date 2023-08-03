@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWirelessDeviceImportTasksOutput {
     /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
-    #[doc(hidden)]
     pub wireless_device_import_task_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
     _request_id: Option<String>,
 }

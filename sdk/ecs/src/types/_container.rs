@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Container {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    #[doc(hidden)]
     pub container_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The image used for the container.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The container image manifest digest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Docker container.</p>
-    #[doc(hidden)]
     pub runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>The last known status of the container.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<::std::string::String>,
     /// <p>The exit code returned from the container.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The network bindings associated with the container.</p>
-    #[doc(hidden)]
     pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
     /// <p>The network interfaces associated with the container.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The health status of the container. If health checks aren't configured for this container in its task definition, then it reports the health status as <code>UNKNOWN</code>.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-    #[doc(hidden)]
     pub managed_agents: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>>,
     /// <p>The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the container definition when the task definition was registered.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The hard limit (in MiB) of memory set for the container.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit (in MiB) of memory set for the container.</p>
-    #[doc(hidden)]
     pub memory_reservation: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of each GPU assigned to the container.</p>
-    #[doc(hidden)]
     pub gpu_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Container {

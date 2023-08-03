@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogsDataSourceFilterBy {
     /// <p>The start time for the conversation log.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the conversation log.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The selection to filter by input mode for the conversation logs. </p>
-    #[doc(hidden)]
     pub input_mode: ::std::option::Option<crate::types::ConversationLogsInputModeFilter>,
 }
 impl ConversationLogsDataSourceFilterBy {

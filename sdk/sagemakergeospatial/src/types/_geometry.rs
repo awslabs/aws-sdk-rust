@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Geometry {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The coordinates of the GeoJson Geometry.</p>
-    #[doc(hidden)]
     pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl Geometry {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub accelerator_type_name: ::std::option::Option<::std::string::String>,
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub memory_info: ::std::option::Option<crate::types::MemoryInfo>,
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub throughput_info: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl AcceleratorType {

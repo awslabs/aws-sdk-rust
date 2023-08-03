@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceDetails {
     /// <p>The type of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The image ID of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ip_v4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub iam_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnet ID of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Amazon EC2 instance was launched at.</p>
-    #[doc(hidden)]
     pub launched_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The platform of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceDetails {

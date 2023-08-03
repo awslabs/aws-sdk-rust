@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    #[doc(hidden)]
     pub destination_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The body of the text message.</p>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    #[doc(hidden)]
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
-    #[doc(hidden)]
     pub time_to_live: ::std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    #[doc(hidden)]
     pub destination_country_parameters:
         ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl SendTextMessageInput {

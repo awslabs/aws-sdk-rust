@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCodeReviewsOutput {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
-    #[doc(hidden)]
     pub code_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

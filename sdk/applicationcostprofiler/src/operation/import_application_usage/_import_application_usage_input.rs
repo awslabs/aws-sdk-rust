@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
-    #[doc(hidden)]
     pub source_s3_location: ::std::option::Option<crate::types::SourceS3Location>,
 }
 impl ImportApplicationUsageInput {

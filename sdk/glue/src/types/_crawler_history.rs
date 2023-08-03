@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlerHistory {
     /// <p>A UUID identifier for each crawl.</p>
-    #[doc(hidden)]
     pub crawl_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the crawl.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CrawlerHistoryState>,
     /// <p>The date and time on which the crawl started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time on which the crawl ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The log group associated with the crawl.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
     /// <p>The log stream associated with the crawl.</p>
-    #[doc(hidden)]
     pub log_stream: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    #[doc(hidden)]
     pub message_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
-    #[doc(hidden)]
     pub dpu_hour: f64,
 }
 impl CrawlerHistory {

@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::OwnerOverride>,
 }
 impl AccessControlTranslation {

@@ -6,10 +6,8 @@ pub struct AddTagsToCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToCertificateInput {

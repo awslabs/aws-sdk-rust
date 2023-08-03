@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated display name of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayInformationInput {

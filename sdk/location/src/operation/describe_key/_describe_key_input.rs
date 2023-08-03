@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyInput {
     /// <p>The name of the API key resource.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeKeyInput {

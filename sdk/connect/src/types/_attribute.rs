@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The type of attribute.</p>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {

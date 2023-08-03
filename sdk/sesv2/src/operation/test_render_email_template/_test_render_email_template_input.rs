@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRenderEmailTemplateInput {
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    #[doc(hidden)]
     pub template_data: ::std::option::Option<::std::string::String>,
 }
 impl TestRenderEmailTemplateInput {

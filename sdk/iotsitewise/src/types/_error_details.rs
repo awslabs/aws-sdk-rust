@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p> A list of detailed errors. </p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>,
 }
 impl ErrorDetails {

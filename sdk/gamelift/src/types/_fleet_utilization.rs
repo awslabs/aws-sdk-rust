@@ -6,28 +6,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetUtilization {
     /// <p>A unique identifier for the fleet associated with the location.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in the fleet location. </p>
-    #[doc(hidden)]
     pub active_server_process_count: ::std::option::Option<i32>,
     /// <p>The number of active game sessions that are currently being hosted across all instances in the fleet location.</p>
-    #[doc(hidden)]
     pub active_game_session_count: ::std::option::Option<i32>,
     /// <p>The number of active player sessions that are currently being hosted across all instances in the fleet location.</p>
-    #[doc(hidden)]
     pub current_player_session_count: ::std::option::Option<i32>,
     /// <p>The maximum number of players allowed across all game sessions that are currently being hosted across all instances in the fleet location.</p>
-    #[doc(hidden)]
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl FleetUtilization {

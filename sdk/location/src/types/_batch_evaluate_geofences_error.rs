@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details associated to the batch error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchEvaluateGeofencesError {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    #[doc(hidden)]
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }

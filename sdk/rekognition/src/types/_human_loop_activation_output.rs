@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopActivationOutput {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-    #[doc(hidden)]
     pub human_loop_arn: ::std::option::Option<::std::string::String>,
     /// <p>Shows if and why human review was needed.</p>
-    #[doc(hidden)]
     pub human_loop_activation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
-    #[doc(hidden)]
     pub human_loop_activation_conditions_evaluation_results: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopActivationOutput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRouteTableOutput {
     /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
     _request_id: Option<String>,
 }

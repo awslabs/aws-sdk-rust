@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncItem {
     /// <p>The name of the resource data sync.</p>
-    #[doc(hidden)]
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from multiple Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source where the data was synchronized. </p>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<crate::types::ResourceDataSyncSourceWithState>,
     /// <p>Configuration information for the target S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
     /// <p>The last time the configuration attempted to sync (UTC).</p>
-    #[doc(hidden)]
     pub last_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>
-    #[doc(hidden)]
     pub last_successful_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource data sync was changed. </p>
-    #[doc(hidden)]
     pub sync_last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status reported by the last sync.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<crate::types::LastResourceDataSyncStatus>,
     /// <p>The date and time the configuration was created (UTC).</p>
-    #[doc(hidden)]
     pub sync_created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message details reported by the last sync.</p>
-    #[doc(hidden)]
     pub last_sync_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncItem {

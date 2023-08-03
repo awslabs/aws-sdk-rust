@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveCustomerOutput {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
-    #[doc(hidden)]
     pub customer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
-    #[doc(hidden)]
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

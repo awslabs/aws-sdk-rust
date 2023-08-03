@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationInput {

@@ -6,10 +6,8 @@
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::std::string::String>,
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
@@ -19,7 +17,6 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
     /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {

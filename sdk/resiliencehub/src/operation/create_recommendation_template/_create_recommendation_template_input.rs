@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateRecommendationTemplateInput {
     /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
-    #[doc(hidden)]
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The format for the recommendation template.</p>
     /// <dl>
@@ -21,7 +20,6 @@ pub struct CreateRecommendationTemplateInput {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TemplateFormat>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
@@ -44,22 +42,16 @@ pub struct CreateRecommendationTemplateInput {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the recommendation template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateRecommendationTemplateInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the repository.</p>
-    #[doc(hidden)]
     pub repository_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository's name.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment or description about the repository.</p>
-    #[doc(hidden)]
     pub repository_description: ::std::option::Option<::std::string::String>,
     /// <p>The repository's default branch name.</p>
-    #[doc(hidden)]
     pub default_branch: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    #[doc(hidden)]
     pub clone_url_http: ::std::option::Option<::std::string::String>,
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    #[doc(hidden)]
     pub clone_url_ssh: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadata {

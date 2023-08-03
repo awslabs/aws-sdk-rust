@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateOutput {
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the template was last created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>,
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    #[doc(hidden)]
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     /// <p>The status of the template.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
     /// <p>The time at which the template was last created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

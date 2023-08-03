@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeneratePinDataInput {
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
-    #[doc(hidden)]
     pub generation_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
-    #[doc(hidden)]
     pub encryption_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and values to use for PIN, PVV, or PIN Offset generation.</p>
-    #[doc(hidden)]
     pub generation_attributes: ::std::option::Option<crate::types::PinGenerationAttributes>,
     /// <p>The length of PIN under generation.</p>
-    #[doc(hidden)]
     pub pin_data_length: ::std::option::Option<i32>,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    #[doc(hidden)]
     pub primary_account_number: ::std::option::Option<::std::string::String>,
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    #[doc(hidden)]
     pub pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
 }
 impl GeneratePinDataInput {

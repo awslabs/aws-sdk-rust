@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageFailure {
     /// <p>The image ID associated with the failure.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The code associated with the failure.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::ImageFailureCode>,
     /// <p>The reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ImageFailure {

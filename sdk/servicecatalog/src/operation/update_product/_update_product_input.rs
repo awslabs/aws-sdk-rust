@@ -8,44 +8,32 @@ pub struct UpdateProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The updated product name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated owner of the product.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the product.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated distributor of the product.</p>
-    #[doc(hidden)]
     pub distributor: ::std::option::Option<::std::string::String>,
     /// <p>The updated support description for the product.</p>
-    #[doc(hidden)]
     pub support_description: ::std::option::Option<::std::string::String>,
     /// <p>The updated support email for the product.</p>
-    #[doc(hidden)]
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The updated support URL for the product.</p>
-    #[doc(hidden)]
     pub support_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the product.</p>
-    #[doc(hidden)]
     pub add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The tags to remove from the product.</p>
-    #[doc(hidden)]
     pub remove_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
     /// <li> <p> <code>Type</code> </p> </li>
     /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
 impl UpdateProductInput {

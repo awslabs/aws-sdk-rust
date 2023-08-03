@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogsConfig {
     /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
     /// <p> Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. </p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::S3LogsConfig>,
 }
 impl LogsConfig {

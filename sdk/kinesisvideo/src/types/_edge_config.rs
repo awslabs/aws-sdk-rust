@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-    #[doc(hidden)]
     pub hub_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
-    #[doc(hidden)]
     pub recorder_config: ::std::option::Option<crate::types::RecorderConfig>,
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
-    #[doc(hidden)]
     pub uploader_config: ::std::option::Option<crate::types::UploaderConfig>,
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
-    #[doc(hidden)]
     pub deletion_config: ::std::option::Option<crate::types::DeletionConfig>,
 }
 impl EdgeConfig {

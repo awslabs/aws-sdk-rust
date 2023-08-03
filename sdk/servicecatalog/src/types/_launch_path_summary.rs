@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchPathSummary {
     /// <p>The identifier of the product path.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The constraints on the portfolio-product relationship.</p>
-    #[doc(hidden)]
     pub constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
     /// <p>The tags associated with this product path.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the portfolio that contains the product. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl LaunchPathSummary {

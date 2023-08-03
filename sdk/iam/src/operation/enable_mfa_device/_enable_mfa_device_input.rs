@@ -5,23 +5,19 @@
 pub struct EnableMfaDeviceInput {
     /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>An authentication code emitted by the device. </p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub authentication_code1: ::std::option::Option<::std::string::String>,
     /// <p>A subsequent authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub authentication_code2: ::std::option::Option<::std::string::String>,
 }
 impl EnableMfaDeviceInput {

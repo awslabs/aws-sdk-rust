@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-    #[doc(hidden)]
     pub positive: ::std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-    #[doc(hidden)]
     pub negative: ::std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-    #[doc(hidden)]
     pub neutral: ::std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-    #[doc(hidden)]
     pub mixed: ::std::option::Option<f32>,
 }
 impl SentimentScore {

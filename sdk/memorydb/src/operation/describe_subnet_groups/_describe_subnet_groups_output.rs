@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
-    #[doc(hidden)]
     pub subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
     _request_id: Option<String>,
 }

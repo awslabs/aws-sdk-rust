@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogItem {
     /// <p> The ID of the catalog item. </p>
-    #[doc(hidden)]
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of a catalog item. </p>
-    #[doc(hidden)]
     pub item_status: ::std::option::Option<crate::types::CatalogItemStatus>,
     /// <p> Information about the EC2 capacity of an item. </p>
-    #[doc(hidden)]
     pub ec2_capacities: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>>,
     /// <p> Information about the power draw of an item. </p>
-    #[doc(hidden)]
     pub power_kva: ::std::option::Option<f32>,
     /// <p> The weight of the item in pounds. </p>
-    #[doc(hidden)]
     pub weight_lbs: ::std::option::Option<i32>,
     /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
-    #[doc(hidden)]
     pub supported_uplink_gbps: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p> The supported storage options for the catalog item. </p>
-    #[doc(hidden)]
     pub supported_storage: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
 }
 impl CatalogItem {

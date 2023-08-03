@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobTaggingOutput {
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     _request_id: Option<String>,
 }

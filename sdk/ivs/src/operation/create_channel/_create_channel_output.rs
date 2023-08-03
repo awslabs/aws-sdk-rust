@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p></p>
-    #[doc(hidden)]
     pub stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,
 }

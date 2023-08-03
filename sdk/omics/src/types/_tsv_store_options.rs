@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TsvStoreOptions {
     /// <p>The store's annotation type.</p>
-    #[doc(hidden)]
     pub annotation_type: ::std::option::Option<crate::types::AnnotationType>,
     /// <p>The store's header key to column name mapping.</p>
-    #[doc(hidden)]
     pub format_to_header: ::std::option::Option<::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>>,
     /// <p>The store's schema.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>>>,
 }
 impl TsvStoreOptions {

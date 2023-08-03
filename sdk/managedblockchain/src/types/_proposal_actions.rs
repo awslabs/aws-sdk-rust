@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
-    #[doc(hidden)]
     pub invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
-    #[doc(hidden)]
     pub removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
 }
 impl ProposalActions {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectorModelOutput {
     /// <p>Information about the detector model.</p>
-    #[doc(hidden)]
     pub detector_model: ::std::option::Option<crate::types::DetectorModel>,
     _request_id: Option<String>,
 }

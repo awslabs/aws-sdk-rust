@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricsConfiguration {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
-    #[doc(hidden)]
     pub cloud_metric_enabled: bool,
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    #[doc(hidden)]
     pub metric_rule_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricsConfiguration {

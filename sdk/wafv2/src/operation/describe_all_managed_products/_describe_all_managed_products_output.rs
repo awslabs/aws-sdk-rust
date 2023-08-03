@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAllManagedProductsOutput {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
-    #[doc(hidden)]
     pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }

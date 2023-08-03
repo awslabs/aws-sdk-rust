@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageConfigurationOutput {
     /// <p>The version that is associated to a specific job.</p>
-    #[doc(hidden)]
     pub version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     _request_id: Option<String>,
 }

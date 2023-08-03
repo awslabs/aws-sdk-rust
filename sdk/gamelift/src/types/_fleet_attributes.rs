@@ -6,31 +6,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetAttributes {
     /// <p>A unique identifier for the fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
-    #[doc(hidden)]
     pub fleet_type: ::std::option::Option<crate::types::FleetType>,
     /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>A human-readable description of the fleet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
@@ -41,60 +33,43 @@ pub struct FleetAttributes {
     /// <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
     /// <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>A unique identifier for the build resource that is deployed on instances in this fleet.</p>
-    #[doc(hidden)]
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.</p>
-    #[doc(hidden)]
     pub build_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the Realtime script resource that is deployed on instances in this fleet.</p>
-    #[doc(hidden)]
     pub script_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.</p>
-    #[doc(hidden)]
     pub script_arn: ::std::option::Option<::std::string::String>,
     /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
-    #[doc(hidden)]
     pub server_launch_path: ::std::option::Option<::std::string::String>,
     /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
-    #[doc(hidden)]
     pub server_launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p> <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-    #[doc(hidden)]
     pub log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    #[doc(hidden)]
     pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
-    #[doc(hidden)]
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
-    #[doc(hidden)]
     pub stopped_actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
-    #[doc(hidden)]
     pub instance_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-    #[doc(hidden)]
     pub certificate_configuration: ::std::option::Option<crate::types::CertificateConfiguration>,
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
-    #[doc(hidden)]
     pub anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
 }
 impl FleetAttributes {

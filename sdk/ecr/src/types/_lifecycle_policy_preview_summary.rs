@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyPreviewSummary {
     /// <p>The number of expiring images.</p>
-    #[doc(hidden)]
     pub expiring_image_total_count: ::std::option::Option<i32>,
 }
 impl LifecyclePolicyPreviewSummary {

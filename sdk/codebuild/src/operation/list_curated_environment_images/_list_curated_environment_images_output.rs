@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCuratedEnvironmentImagesOutput {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    #[doc(hidden)]
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
     _request_id: Option<String>,
 }

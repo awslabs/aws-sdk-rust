@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsParameters {
     /// <p>Instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
 }
 impl RdsParameters {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameters {
     /// <p>The parameters that have a data type of string.</p>
-    #[doc(hidden)]
     pub string_parameters: ::std::option::Option<::std::vec::Vec<crate::types::StringParameter>>,
     /// <p>The parameters that have a data type of integer.</p>
-    #[doc(hidden)]
     pub integer_parameters: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>>,
     /// <p>The parameters that have a data type of decimal.</p>
-    #[doc(hidden)]
     pub decimal_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DecimalParameter>>,
     /// <p>The parameters that have a data type of date-time.</p>
-    #[doc(hidden)]
     pub date_time_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeParameter>>,
 }
 impl Parameters {

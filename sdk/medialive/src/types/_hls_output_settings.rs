@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
-    #[doc(hidden)]
     pub h265_packaging_type: ::std::option::Option<crate::types::HlsH265PackagingType>,
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
-    #[doc(hidden)]
     pub hls_settings: ::std::option::Option<crate::types::HlsSettings>,
     /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
-    #[doc(hidden)]
     pub name_modifier: ::std::option::Option<::std::string::String>,
     /// String concatenated to end of segment filenames.
-    #[doc(hidden)]
     pub segment_modifier: ::std::option::Option<::std::string::String>,
 }
 impl HlsOutputSettings {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
-    #[doc(hidden)]
     pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
     /// <p>A continuation token, if there are more security configurations to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

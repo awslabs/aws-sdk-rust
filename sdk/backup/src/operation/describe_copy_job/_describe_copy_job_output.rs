@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCopyJobOutput {
     /// <p>Contains detailed information about a copy job.</p>
-    #[doc(hidden)]
     pub copy_job: ::std::option::Option<crate::types::CopyJob>,
     _request_id: Option<String>,
 }

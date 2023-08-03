@@ -5,79 +5,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct App {
     /// <p> The unique ID of the Amplify app. </p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name for the Amplify app. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The tag for the Amplify app. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The description for the Amplify app. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Git repository for the Amplify app. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p> Creates a date and time for the Amplify app. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Updates the date and time for the Amplify app. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
-    #[doc(hidden)]
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The environment variables for the Amplify app. </p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The default domain for the Amplify app. </p>
-    #[doc(hidden)]
     pub default_domain: ::std::option::Option<::std::string::String>,
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
-    #[doc(hidden)]
     pub enable_branch_auto_build: ::std::option::Option<bool>,
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
-    #[doc(hidden)]
     pub enable_branch_auto_deletion: ::std::option::Option<bool>,
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
-    #[doc(hidden)]
     pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
-    #[doc(hidden)]
     pub custom_rules: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
     /// <p> Describes the information about a production branch of the Amplify app. </p>
-    #[doc(hidden)]
     pub production_branch: ::std::option::Option<crate::types::ProductionBranch>,
     /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
-    #[doc(hidden)]
     pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
-    #[doc(hidden)]
     pub custom_headers: ::std::option::Option<::std::string::String>,
     /// <p> Enables automated branch creation for the Amplify app. </p>
-    #[doc(hidden)]
     pub enable_auto_branch_creation: ::std::option::Option<bool>,
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
-    #[doc(hidden)]
     pub auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
-    #[doc(hidden)]
     pub auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     /// <note>
     /// <p>This is for internal use.</p>
     /// </note>
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
-    #[doc(hidden)]
     pub repository_clone_method: ::std::option::Option<crate::types::RepositoryCloneMethod>,
 }
 impl App {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobOutput {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
-    #[doc(hidden)]
     pub output_dataset_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
-    #[doc(hidden)]
     pub final_active_learning_model_arn: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobOutput {

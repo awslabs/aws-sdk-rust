@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of all existing Data Prepper pipelines.</p>
-    #[doc(hidden)]
     pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
     _request_id: Option<String>,
 }

@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecryptOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
-    #[doc(hidden)]
     pub plaintext: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
-    #[doc(hidden)]
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

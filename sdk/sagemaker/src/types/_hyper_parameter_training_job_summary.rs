@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTrainingJobSummary {
     /// <p>The training job definition name.</p>
-    #[doc(hidden)]
     pub training_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the training job.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    #[doc(hidden)]
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The HyperParameter tuning job that launched the training job.</p>
-    #[doc(hidden)]
     pub tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the training job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the training job started.</p>
-    #[doc(hidden)]
     pub training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    #[doc(hidden)]
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the training job.</p>
-    #[doc(hidden)]
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    #[doc(hidden)]
     pub tuned_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The reason that the training job failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    #[doc(hidden)]
     pub final_hyper_parameter_tuning_job_objective_metric: ::std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
@@ -47,7 +36,6 @@ pub struct HyperParameterTrainingJobSummary {
     /// <ul>
     /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub objective_status: ::std::option::Option<crate::types::ObjectiveStatus>,
 }
 impl HyperParameterTrainingJobSummary {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsInput {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    #[doc(hidden)]
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
-    #[doc(hidden)]
     pub search_order: ::std::option::Option<crate::types::SearchOrder>,
     /// <p>A list of filter objects.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
-    #[doc(hidden)]
     pub next_index: ::std::option::Option<i32>,
 }
 impl SearchAssociatedTranscriptsInput {

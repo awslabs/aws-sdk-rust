@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableIoTLoggingParams {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-    #[doc(hidden)]
     pub role_arn_for_logging: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of information to be logged.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl EnableIoTLoggingParams {

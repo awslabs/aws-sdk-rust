@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobDocumentOutput {
     /// <p>The job document content.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

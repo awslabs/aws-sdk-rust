@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeCommitOutput {
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the merge base.</p>
-    #[doc(hidden)]
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
-    #[doc(hidden)]
     pub merged_commit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

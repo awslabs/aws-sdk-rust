@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    #[doc(hidden)]
     pub secret_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {

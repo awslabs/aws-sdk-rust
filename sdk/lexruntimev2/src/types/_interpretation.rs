@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Interpretation {
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-    #[doc(hidden)]
     pub nlu_confidence: ::std::option::Option<crate::types::ConfidenceScore>,
     /// <p>The sentiment expressed in an utterance. </p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    #[doc(hidden)]
     pub sentiment_response: ::std::option::Option<crate::types::SentimentResponse>,
     /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
-    #[doc(hidden)]
     pub intent: ::std::option::Option<crate::types::Intent>,
 }
 impl Interpretation {

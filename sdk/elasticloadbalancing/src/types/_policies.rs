@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    #[doc(hidden)]
     pub app_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    #[doc(hidden)]
     pub lb_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
-    #[doc(hidden)]
     pub other_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Policies {

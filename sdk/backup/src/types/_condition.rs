@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
-    #[doc(hidden)]
     pub condition_type: ::std::option::Option<crate::types::ConditionType>,
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    #[doc(hidden)]
     pub condition_key: ::std::option::Option<::std::string::String>,
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    #[doc(hidden)]
     pub condition_value: ::std::option::Option<::std::string::String>,
 }
 impl Condition {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskSetsOutput {
     /// <p>The list of task sets described.</p>
-    #[doc(hidden)]
     pub task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

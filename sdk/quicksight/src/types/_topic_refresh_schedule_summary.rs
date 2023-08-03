@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshScheduleSummary {
     /// <p>The ID of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a refresh schedule.</p>
-    #[doc(hidden)]
     pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
 impl TopicRefreshScheduleSummary {

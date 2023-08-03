@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveOutputSettings {
     /// Settings specific to the container type of the file.
-    #[doc(hidden)]
     pub container_settings: ::std::option::Option<crate::types::ArchiveContainerSettings>,
     /// Output file extension. If excluded, this will be auto-selected from the container type.
-    #[doc(hidden)]
     pub extension: ::std::option::Option<::std::string::String>,
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    #[doc(hidden)]
     pub name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveOutputSettings {

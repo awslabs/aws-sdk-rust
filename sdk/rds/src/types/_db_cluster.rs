@@ -9,223 +9,157 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>If present, specifies the name of the character set that this cluster is associated with.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the initial database that was specified for the DB cluster when it was created, if one was provided. This same name is returned for the life of the DB cluster.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied identifier for the DB cluster. This identifier is the unique key that identifies a DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     /// <p>Information about the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this DB cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    #[doc(hidden)]
     pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The progress of the operation as a percentage.</p>
-    #[doc(hidden)]
     pub percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub earliest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The connection endpoint for the primary instance of the DB cluster.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    #[doc(hidden)]
     pub reader_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The custom endpoints associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub custom_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the DB cluster has instances in multiple Availability Zones.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The database engine used for this DB cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The latest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The port that the database engine is listening on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The master username for the DB cluster.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The list of option group memberships for this DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source DB cluster if this DB cluster is a read replica.</p>
-    #[doc(hidden)]
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the read replicas associated with this DB cluster.</p>
-    #[doc(hidden)]
     pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of DB instances that make up the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     /// <p>The list of VPC security groups that the DB cluster belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
-    #[doc(hidden)]
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon Web Services on your behalf.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     /// <p>Indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the clone group with which the DB cluster is associated.</p>
-    #[doc(hidden)]
     pub clone_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The earliest time to which a DB cluster can be backtracked.</p>
-    #[doc(hidden)]
     pub earliest_backtrack_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The target backtrack window, in seconds. If this value is set to <code>0</code>, backtracking is disabled for the DB cluster. Otherwise, backtracking is enabled.</p>
-    #[doc(hidden)]
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The number of change records stored for Backtrack.</p>
-    #[doc(hidden)]
     pub backtrack_consumed_change_records: ::std::option::Option<i64>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <code>0</code> (zero) when the cluster is paused.</p>
     /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<i32>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
-    #[doc(hidden)]
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>The scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub scaling_configuration_info: ::std::option::Option<crate::types::ScalingConfigurationInfo>,
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub http_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
-    #[doc(hidden)]
     pub activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>The status of the database activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub activity_stream_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_kinesis_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub cross_account_clone: ::std::option::Option<bool>,
     /// <p>The Active Directory Domain membership records associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
-    #[doc(hidden)]
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
-    #[doc(hidden)]
     pub global_write_forwarding_requested: ::std::option::Option<bool>,
     /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     /// <p>The name of the compute and memory capacity class of the DB instance.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The storage type associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Indicates whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
@@ -236,29 +170,23 @@ pub struct DbCluster {
     /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    #[doc(hidden)]
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    #[doc(hidden)]
     pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DbCluster {

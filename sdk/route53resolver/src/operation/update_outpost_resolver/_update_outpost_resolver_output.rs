@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOutpostResolverOutput {
     /// <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
-    #[doc(hidden)]
     pub outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,
 }

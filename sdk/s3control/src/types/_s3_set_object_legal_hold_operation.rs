@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    #[doc(hidden)]
     pub legal_hold: ::std::option::Option<crate::types::S3ObjectLockLegalHold>,
 }
 impl S3SetObjectLegalHoldOperation {

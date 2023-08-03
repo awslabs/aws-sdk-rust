@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeLogsOutput {
     /// <p>The list of user activity for the control. </p>
-    #[doc(hidden)]
     pub change_logs: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

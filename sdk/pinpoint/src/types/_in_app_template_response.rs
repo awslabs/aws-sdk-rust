@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppTemplateResponse {
     /// <p>The resource arn of the template.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>The creation date of the template.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Custom config to be sent to client.</p>
-    #[doc(hidden)]
     pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The last modified date of the template.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The layout of the message.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::Layout>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The description of the template.</p>
-    #[doc(hidden)]
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the template.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The version id of the template.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl InAppTemplateResponse {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSourceNetworkCfnTemplateInput {
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportSourceNetworkCfnTemplateInput {

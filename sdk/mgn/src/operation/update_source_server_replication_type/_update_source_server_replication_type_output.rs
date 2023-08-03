@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateSourceServerReplicationTypeOutput {
     /// <p>Source server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Source server archived status.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Source server Tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Source server launched instance.</p>
-    #[doc(hidden)]
     pub launched_instance: ::std::option::Option<crate::types::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
-    #[doc(hidden)]
     pub data_replication_info: ::std::option::Option<crate::types::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
-    #[doc(hidden)]
     pub life_cycle: ::std::option::Option<crate::types::LifeCycle>,
     /// <p>Source server properties.</p>
-    #[doc(hidden)]
     pub source_properties: ::std::option::Option<crate::types::SourceProperties>,
     /// <p>Source server replication type.</p>
-    #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
-    #[doc(hidden)]
     pub vcenter_client_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server user provided ID.</p>
-    #[doc(hidden)]
     pub user_provided_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server fqdn for action framework.</p>
-    #[doc(hidden)]
     pub fqdn_for_action_framework: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

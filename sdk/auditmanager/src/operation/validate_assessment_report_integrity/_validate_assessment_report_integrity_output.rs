@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateAssessmentReportIntegrityOutput {
     /// <p> Specifies whether the signature key is valid. </p>
-    #[doc(hidden)]
     pub signature_valid: ::std::option::Option<bool>,
     /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
-    #[doc(hidden)]
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
     /// <p> The date and time signature that specifies when the assessment report was created. </p>
-    #[doc(hidden)]
     pub signature_date_time: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the validation signature key. </p>
-    #[doc(hidden)]
     pub signature_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Represents any errors that occurred when validating the assessment report. </p>
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

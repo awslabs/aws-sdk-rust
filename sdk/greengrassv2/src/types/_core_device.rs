@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreDevice {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    #[doc(hidden)]
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
     /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoreDevice {

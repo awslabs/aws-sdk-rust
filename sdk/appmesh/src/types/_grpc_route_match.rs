@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
-    #[doc(hidden)]
     pub method_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the data to match from the request.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>,
     /// <p>The port number to match on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl GrpcRouteMatch {

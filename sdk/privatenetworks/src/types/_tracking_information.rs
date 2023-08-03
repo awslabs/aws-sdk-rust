@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
-    #[doc(hidden)]
     pub tracking_number: ::std::option::Option<::std::string::String>,
 }
 impl TrackingInformation {

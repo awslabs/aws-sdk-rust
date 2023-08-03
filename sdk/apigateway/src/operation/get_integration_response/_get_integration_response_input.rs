@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's resource identifier.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's HTTP method.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationResponseInput {

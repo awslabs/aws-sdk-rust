@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartLineStyleSettings {
     /// <p>Configuration option that determines whether to show the line for the series.</p>
-    #[doc(hidden)]
     pub line_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Interpolation style for line series.</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct LineChartLineStyleSettings {
     /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
     /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub line_interpolation: ::std::option::Option<crate::types::LineInterpolation>,
     /// <p>Line style for line series.</p>
     /// <ul>
@@ -21,10 +19,8 @@ pub struct LineChartLineStyleSettings {
     /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
     /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub line_style: ::std::option::Option<crate::types::LineChartLineStyle>,
     /// <p>Width that determines the line thickness.</p>
-    #[doc(hidden)]
     pub line_width: ::std::option::Option<::std::string::String>,
 }
 impl LineChartLineStyleSettings {

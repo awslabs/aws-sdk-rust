@@ -18,7 +18,6 @@ pub struct DescribeTrustedAdvisorChecksInput {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrustedAdvisorChecksInput {

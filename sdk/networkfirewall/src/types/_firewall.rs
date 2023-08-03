@@ -6,41 +6,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    #[doc(hidden)]
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls. </p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the VPC where the firewall is in use. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone. </p>
-    #[doc(hidden)]
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub delete_protection: bool,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub subnet_change_protection: bool,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub firewall_policy_change_protection: bool,
     /// <p>A description of the firewall.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the firewall. </p>
-    #[doc(hidden)]
     pub firewall_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl Firewall {

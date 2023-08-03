@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A system-generated identifier for the session.</p>
-    #[doc(hidden)]
     pub client_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

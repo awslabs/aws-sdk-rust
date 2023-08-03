@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLogsPendingDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    #[doc(hidden)]
     pub audit: bool,
     /// <p> Activates general logging. </p>
-    #[doc(hidden)]
     pub general: bool,
 }
 impl AwsAmazonMqBrokerLogsPendingDetails {

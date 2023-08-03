@@ -4,22 +4,16 @@
 #[derive(::std::fmt::Debug)]
 pub struct StartCallAnalyticsStreamTranscriptionOutput {
     /// <p>Provides the identifier for your Call Analytics streaming request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the language code that you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
     /// <p>Provides the sample rate that you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Provides the media encoding you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the identifier for your Call Analytics transcription session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your Call Analytics streaming session.</p>
     pub call_analytics_transcript_result_stream: ::aws_smithy_http::event_stream::Receiver<
@@ -27,28 +21,20 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
         crate::types::error::CallAnalyticsTranscriptResultStreamError,
     >,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub language_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
-    #[doc(hidden)]
     pub enable_partial_results_stabilization: bool,
     /// <p>Provides the stabilization level used for your transcription.</p>
-    #[doc(hidden)]
     pub partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-    #[doc(hidden)]
     pub content_redaction_type: ::std::option::Option<crate::types::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub pii_entity_types: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

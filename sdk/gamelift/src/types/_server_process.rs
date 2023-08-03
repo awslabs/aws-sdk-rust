@@ -9,13 +9,10 @@ pub struct ServerProcess {
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
-    #[doc(hidden)]
     pub concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcess {

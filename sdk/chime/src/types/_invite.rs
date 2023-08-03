@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Invite {
     /// <p>The invite ID.</p>
-    #[doc(hidden)]
     pub invite_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the invite.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InviteStatus>,
     /// <p>The email address to which the invite is sent.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The status of the invite email.</p>
-    #[doc(hidden)]
     pub email_status: ::std::option::Option<crate::types::EmailStatus>,
 }
 impl Invite {

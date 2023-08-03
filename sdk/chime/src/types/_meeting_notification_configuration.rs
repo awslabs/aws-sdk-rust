@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MeetingNotificationConfiguration {
     /// <p>The SNS topic ARN.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SQS queue ARN.</p>
-    #[doc(hidden)]
     pub sqs_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl MeetingNotificationConfiguration {

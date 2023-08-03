@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    #[doc(hidden)]
     pub mount_target_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMountTargetSecurityGroupsInput {

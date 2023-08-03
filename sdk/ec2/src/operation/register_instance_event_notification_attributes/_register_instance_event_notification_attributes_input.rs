@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstanceEventNotificationAttributesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Information about the tag keys to register.</p>
-    #[doc(hidden)]
     pub instance_tag_attribute: ::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
 }
 impl RegisterInstanceEventNotificationAttributesInput {

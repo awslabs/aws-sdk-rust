@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityResult {
     /// <p>A unique result ID for the data quality result.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f64>,
     /// <p>The table associated with the data quality result, if any.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The name of the ruleset associated with the data quality result.</p>
-    #[doc(hidden)]
     pub ruleset_name: ::std::option::Option<::std::string::String>,
     /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this data quality run started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when this data quality run completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job name associated with the data quality result, if any.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job run ID associated with the data quality result, if any.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
-    #[doc(hidden)]
     pub ruleset_evaluation_run_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
-    #[doc(hidden)]
     pub rule_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>>,
 }
 impl DataQualityResult {

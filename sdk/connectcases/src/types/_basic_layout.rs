@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BasicLayout {
     /// <p>This represents sections in a panel of the page layout.</p>
-    #[doc(hidden)]
     pub top_panel: ::std::option::Option<crate::types::LayoutSections>,
     /// <p>This represents sections in a tab of the page layout.</p>
-    #[doc(hidden)]
     pub more_info: ::std::option::Option<crate::types::LayoutSections>,
 }
 impl BasicLayout {

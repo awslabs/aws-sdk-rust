@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A reason why the account hasn't been processed.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedAccount {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     _request_id: Option<String>,
 }

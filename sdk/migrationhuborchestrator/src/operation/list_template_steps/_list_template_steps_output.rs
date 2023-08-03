@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateStepsOutput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of summaries of steps in a template.</p>
-    #[doc(hidden)]
     pub template_step_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
     _request_id: Option<String>,
 }

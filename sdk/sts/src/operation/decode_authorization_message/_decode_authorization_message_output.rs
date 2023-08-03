@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
-    #[doc(hidden)]
     pub decoded_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

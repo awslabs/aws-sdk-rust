@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetHookResourceTargetDetails {
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action of the resource.</p>
-    #[doc(hidden)]
     pub resource_action: ::std::option::Option<crate::types::ChangeAction>,
 }
 impl ChangeSetHookResourceTargetDetails {

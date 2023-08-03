@@ -5,10 +5,8 @@
 pub struct ListResourceProfileArtifactsOutput {
     /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
     /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
-    #[doc(hidden)]
     pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

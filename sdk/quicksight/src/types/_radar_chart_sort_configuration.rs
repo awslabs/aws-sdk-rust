@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartSortConfiguration {
     /// <p>The category sort options of a radar chart.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The category items limit for a radar chart.</p>
-    #[doc(hidden)]
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The color sort configuration of a radar chart.</p>
-    #[doc(hidden)]
     pub color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The color items limit of a radar chart.</p>
-    #[doc(hidden)]
     pub color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl RadarChartSortConfiguration {

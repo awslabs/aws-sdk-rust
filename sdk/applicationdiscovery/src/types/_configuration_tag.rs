@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
-    #[doc(hidden)]
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub time_of_creation: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationTag {

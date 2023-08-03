@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryRecord {
     /// <p></p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p></p>
-    #[doc(hidden)]
     pub segments_received_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub segments_sent_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub segments_spillover_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub segments_rejected_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub backend_connection_errors: ::std::option::Option<crate::types::BackendConnectionErrors>,
 }
 impl TelemetryRecord {

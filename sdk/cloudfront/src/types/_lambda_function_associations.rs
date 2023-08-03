@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociations {

@@ -5,41 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesDetails {
     /// <p>How Amazon S3 responds when a multipart upload is incomplete. Specifically, provides a number of days before Amazon S3 cancels the entire upload.</p>
-    #[doc(hidden)]
     pub abort_incomplete_multipart_upload:
         ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
     /// <p>The date when objects are moved or deleted.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::std::string::String>,
     /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
-    #[doc(hidden)]
     pub expiration_in_days: i32,
     /// <p>Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set to <code>true</code>, the delete marker is expired. If set to <code>false</code>, the policy takes no action.</p>
     /// <p>If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code> or <code>ExpirationDate</code>.</p>
-    #[doc(hidden)]
     pub expired_object_delete_marker: bool,
     /// <p>Identifies the objects that a rule applies to.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails>,
     /// <p>The unique identifier of the rule.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    #[doc(hidden)]
     pub noncurrent_version_expiration_in_days: i32,
     /// <p>Transition rules that describe when noncurrent objects transition to a specified storage class.</p>
-    #[doc(hidden)]
     pub noncurrent_version_transitions:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>>,
     /// <p>A prefix that identifies one or more objects that the rule applies to.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the rule. Indicates whether the rule is currently being applied.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Transition rules that indicate when objects transition to a specified storage class.</p>
-    #[doc(hidden)]
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {

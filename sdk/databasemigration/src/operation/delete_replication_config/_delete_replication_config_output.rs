@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigOutput {
     /// <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
 }

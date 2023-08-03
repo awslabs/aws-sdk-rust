@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ModelOutputDataFormat>,
     /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
-    #[doc(hidden)]
     pub json_key_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
-    #[doc(hidden)]
     pub csv_index_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelOutputConfiguration {

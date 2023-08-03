@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSourcesConfig {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
-    #[doc(hidden)]
     pub amazon_code_guru_profiler: ::std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
 }
 impl EventSourcesConfig {

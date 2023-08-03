@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOriginAccessControlOutput {
     /// <p>The origin access control after it has been updated.</p>
-    #[doc(hidden)]
     pub origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     /// <p>The new version of the origin access control after it has been updated.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

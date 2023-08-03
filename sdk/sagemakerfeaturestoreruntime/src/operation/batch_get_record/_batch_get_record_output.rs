@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordOutput {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
     /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordError>>,
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
-    #[doc(hidden)]
     pub unprocessed_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     _request_id: Option<String>,
 }

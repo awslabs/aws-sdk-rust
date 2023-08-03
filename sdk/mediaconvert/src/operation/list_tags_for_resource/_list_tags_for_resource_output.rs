@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<crate::types::ResourceTags>,
     _request_id: Option<String>,
 }

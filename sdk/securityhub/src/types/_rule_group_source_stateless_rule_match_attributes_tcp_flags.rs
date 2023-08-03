@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
-    #[doc(hidden)]
     pub flags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
-    #[doc(hidden)]
     pub masks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {

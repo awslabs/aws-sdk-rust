@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that the snapshot is of.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
@@ -26,16 +21,12 @@ pub struct Snapshot {
     /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting the snapshot.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - The snapshot is fully available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
     /// <p>Describes why a resource lifecycle state changed.</p>
-    #[doc(hidden)]
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    #[doc(hidden)]
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
 }
 impl Snapshot {

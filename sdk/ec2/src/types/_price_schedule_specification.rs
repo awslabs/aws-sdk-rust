@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PriceScheduleSpecification {
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The fixed price for the term.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f64>,
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
-    #[doc(hidden)]
     pub term: ::std::option::Option<i64>,
 }
 impl PriceScheduleSpecification {

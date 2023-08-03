@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelMatchStatement {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::LabelMatchScope>,
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct LabelMatchStatement {
     /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl LabelMatchStatement {

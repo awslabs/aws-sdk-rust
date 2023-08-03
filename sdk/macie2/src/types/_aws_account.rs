@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAccount {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the entity that performed the action.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsAccount {

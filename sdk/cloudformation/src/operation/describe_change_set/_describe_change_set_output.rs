@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetOutput {
     /// <p>The name of the change set.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack that's associated with the change set.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the change set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>The start time when the change set was created, in UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    #[doc(hidden)]
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeSetStatus>,
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    #[doc(hidden)]
     pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    #[doc(hidden)]
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-    #[doc(hidden)]
     pub changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
-    #[doc(hidden)]
     pub include_nested_stacks: ::std::option::Option<bool>,
     /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
-    #[doc(hidden)]
     pub parent_change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
-    #[doc(hidden)]
     pub root_change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
     /// <ul>
@@ -67,7 +48,6 @@ pub struct DescribeChangeSetOutput {
     /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
     /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     _request_id: Option<String>,
 }

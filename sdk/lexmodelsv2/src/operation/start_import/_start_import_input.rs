@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartImportInput {
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    #[doc(hidden)]
     pub file_password: ::std::option::Option<::std::string::String>,
 }
 impl StartImportInput {

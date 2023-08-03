@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportClientVpnClientConfigurationOutput {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
-    #[doc(hidden)]
     pub client_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

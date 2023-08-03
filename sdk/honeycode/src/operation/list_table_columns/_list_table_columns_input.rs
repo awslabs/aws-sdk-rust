@@ -5,15 +5,12 @@
 pub struct ListTableColumnsInput {
     /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the table whose columns are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTableColumnsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
-    #[doc(hidden)]
     pub cache_policy_list: ::std::option::Option<crate::types::CachePolicyList>,
     _request_id: Option<String>,
 }

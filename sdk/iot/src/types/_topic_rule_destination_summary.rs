@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRuleDestinationSummary {
     /// <p>The topic rule destination ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
@@ -34,22 +33,16 @@ pub struct TopicRuleDestinationSummary {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
     /// <p>The date and time when the topic rule destination was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the topic rule destination was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason the topic rule destination is in the current status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the HTTP URL.</p>
-    #[doc(hidden)]
     pub http_url_summary: ::std::option::Option<crate::types::HttpUrlDestinationSummary>,
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
-    #[doc(hidden)]
     pub vpc_destination_summary: ::std::option::Option<crate::types::VpcDestinationSummary>,
 }
 impl TopicRuleDestinationSummary {

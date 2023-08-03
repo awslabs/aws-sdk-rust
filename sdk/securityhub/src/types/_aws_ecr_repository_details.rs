@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryDetails {
     /// <p>The ARN of the repository.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The image scanning configuration for a repository.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::AwsEcrRepositoryImageScanningConfigurationDetails>,
     /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
-    #[doc(hidden)]
     pub image_tag_mutability: ::std::option::Option<::std::string::String>,
     /// <p>Information about the lifecycle policy for the repository.</p>
-    #[doc(hidden)]
     pub lifecycle_policy: ::std::option::Option<crate::types::AwsEcrRepositoryLifecyclePolicyDetails>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The text of the repository policy.</p>
-    #[doc(hidden)]
     pub repository_policy_text: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryDetails {

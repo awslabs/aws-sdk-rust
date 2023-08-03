@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
-    #[doc(hidden)]
     pub start_timestamp_millis: i64,
     /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
-    #[doc(hidden)]
     pub end_timestamp_millis: i64,
     /// <p>The duration of the detected segment in milliseconds. </p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    #[doc(hidden)]
     pub start_timecode_smpte: ::std::option::Option<::std::string::String>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    #[doc(hidden)]
     pub end_timecode_smpte: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    #[doc(hidden)]
     pub duration_smpte: ::std::option::Option<::std::string::String>,
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    #[doc(hidden)]
     pub technical_cue_segment: ::std::option::Option<crate::types::TechnicalCueSegment>,
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
-    #[doc(hidden)]
     pub shot_segment: ::std::option::Option<crate::types::ShotSegment>,
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
-    #[doc(hidden)]
     pub start_frame_number: ::std::option::Option<i64>,
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
-    #[doc(hidden)]
     pub end_frame_number: ::std::option::Option<i64>,
     /// <p> The duration of a video segment, expressed in frames. </p>
-    #[doc(hidden)]
     pub duration_frames: ::std::option::Option<i64>,
 }
 impl SegmentDetection {

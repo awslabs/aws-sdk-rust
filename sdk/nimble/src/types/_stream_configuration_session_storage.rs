@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamConfigurationSessionStorage {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
-    #[doc(hidden)]
     pub root: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
 }
 impl StreamConfigurationSessionStorage {

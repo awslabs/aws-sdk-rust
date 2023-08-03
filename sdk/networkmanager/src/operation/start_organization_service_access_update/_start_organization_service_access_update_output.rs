@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartOrganizationServiceAccessUpdateOutput {
     /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
-    #[doc(hidden)]
     pub organization_status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,
 }

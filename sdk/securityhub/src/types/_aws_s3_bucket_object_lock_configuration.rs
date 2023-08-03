@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfiguration {
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
-    #[doc(hidden)]
     pub object_lock_enabled: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
 }
 impl AwsS3BucketObjectLockConfiguration {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The name for the connection to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the connection to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of authorization to use for the connection.</p>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    #[doc(hidden)]
     pub auth_parameters: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
 }
 impl CreateConnectionInput {

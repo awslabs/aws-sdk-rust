@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentHyperParameterTuningJob {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ParentHyperParameterTuningJob {

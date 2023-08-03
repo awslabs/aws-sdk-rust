@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHapgInput {
     /// <p>The ARN of the high-availability partition group to delete.</p>
-    #[doc(hidden)]
     pub hapg_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHapgInput {

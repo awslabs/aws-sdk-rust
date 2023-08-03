@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotStatement {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
 }
 impl NotStatement {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumeStatusOutput {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the volumes.</p>
-    #[doc(hidden)]
     pub volume_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
     _request_id: Option<String>,
 }

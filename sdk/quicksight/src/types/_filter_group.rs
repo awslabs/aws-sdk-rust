@@ -6,24 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterGroup {
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    #[doc(hidden)]
     pub filter_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters that are present in a <code>FilterGroup</code>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    #[doc(hidden)]
     pub scope_configuration: ::std::option::Option<crate::types::FilterScopeConfiguration>,
     /// <p>The status of the <code>FilterGroup</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
     /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cross_dataset: ::std::option::Option<crate::types::CrossDatasetTypes>,
 }
 impl FilterGroup {

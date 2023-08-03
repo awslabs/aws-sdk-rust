@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSource {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    #[doc(hidden)]
     pub output_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
-    #[doc(hidden)]
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
-    #[doc(hidden)]
     pub apply_normalization: ::std::option::Option<bool>,
 }
 impl OutputSource {

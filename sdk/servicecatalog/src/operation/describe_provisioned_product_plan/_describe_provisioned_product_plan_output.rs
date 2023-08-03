@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductPlanOutput {
     /// <p>Information about the plan.</p>
-    #[doc(hidden)]
     pub provisioned_product_plan_details: ::std::option::Option<crate::types::ProvisionedProductPlanDetails>,
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-    #[doc(hidden)]
     pub resource_changes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChange>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

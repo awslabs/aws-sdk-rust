@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSyncBlockerSummaryOutput {
     /// <p>The detailed data of the requested service sync blocker summary.</p>
-    #[doc(hidden)]
     pub service_sync_blocker_summary: ::std::option::Option<crate::types::ServiceSyncBlockerSummary>,
     _request_id: Option<String>,
 }

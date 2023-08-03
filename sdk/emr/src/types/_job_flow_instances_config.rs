@@ -5,60 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobFlowInstancesConfig {
     /// <p>The Amazon EC2 instance type of the master node.</p>
-    #[doc(hidden)]
     pub master_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type of the core and task nodes.</p>
-    #[doc(hidden)]
     pub slave_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 instances in the cluster.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Configuration for the instance groups in a cluster.</p>
-    #[doc(hidden)]
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
     /// <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
-    #[doc(hidden)]
     pub instance_fleets: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleetConfig>>,
     /// <p>The name of the Amazon EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
-    #[doc(hidden)]
     pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the cluster runs.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub keep_job_flow_alive_when_no_steps: bool,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
-    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
-    #[doc(hidden)]
     pub hadoop_version: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    #[doc(hidden)]
     pub ec2_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
-    #[doc(hidden)]
     pub ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
-    #[doc(hidden)]
     pub emr_managed_master_security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
-    #[doc(hidden)]
     pub emr_managed_slave_security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    #[doc(hidden)]
     pub service_access_security_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    #[doc(hidden)]
     pub additional_master_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    #[doc(hidden)]
     pub additional_slave_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobFlowInstancesConfig {

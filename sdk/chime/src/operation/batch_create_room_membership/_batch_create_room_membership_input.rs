@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The room ID.</p>
-    #[doc(hidden)]
     pub room_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of membership items.</p>
-    #[doc(hidden)]
     pub membership_item_list: ::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>>,
 }
 impl BatchCreateRoomMembershipInput {

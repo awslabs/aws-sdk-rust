@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedWorkspaceProperties {
     /// <p>The identifier of the related WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region of the related WorkSpace.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the state of the WorkSpace.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceState>,
     /// <p>Indicates the type of WorkSpace.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
 }
 impl RelatedWorkspaceProperties {

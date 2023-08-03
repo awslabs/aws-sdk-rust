@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

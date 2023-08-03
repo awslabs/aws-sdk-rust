@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerEncryptionOptionsDetails {
     /// <p> The KMS key that’s used to encrypt your data at rest. If not provided, Amazon MQ will use a default KMS key to encrypt your data. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies that an KMS key should be used for at-rest encryption. Set to <code>true</code> by default if no value is provided (for example, for RabbitMQ brokers). </p>
-    #[doc(hidden)]
     pub use_aws_owned_key: bool,
 }
 impl AwsAmazonMqBrokerEncryptionOptionsDetails {

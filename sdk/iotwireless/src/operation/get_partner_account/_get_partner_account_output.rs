@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
     /// <p>Whether the partner account is linked to the AWS account.</p>
-    #[doc(hidden)]
     pub account_linked: bool,
     _request_id: Option<String>,
 }

@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCaseInput {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
     /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
-    #[doc(hidden)]
     pub severity_code: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    #[doc(hidden)]
     pub category_code: ::std::option::Option<::std::string::String>,
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    #[doc(hidden)]
     pub communication_body: ::std::option::Option<::std::string::String>,
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    #[doc(hidden)]
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
-    #[doc(hidden)]
     pub issue_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
-    #[doc(hidden)]
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCaseInput {

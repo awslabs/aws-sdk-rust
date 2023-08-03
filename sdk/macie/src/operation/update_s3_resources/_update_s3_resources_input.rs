@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    #[doc(hidden)]
     pub s3_resources_update: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>>,
 }
 impl UpdateS3ResourcesInput {

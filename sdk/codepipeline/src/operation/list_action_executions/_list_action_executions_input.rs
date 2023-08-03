@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActionExecutionsInput {
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>Input information used to filter action execution history.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ActionExecutionFilter>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
     /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListActionExecutionsInput {

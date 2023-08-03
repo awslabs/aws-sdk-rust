@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilePath {
     /// <p>The name of the file.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the resource with the security vulnerability.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
-    #[doc(hidden)]
     pub start_line: ::std::option::Option<i32>,
     /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
-    #[doc(hidden)]
     pub end_line: ::std::option::Option<i32>,
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    #[doc(hidden)]
     pub code_snippet: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
 }
 impl FilePath {

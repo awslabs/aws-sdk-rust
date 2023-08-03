@@ -7,7 +7,6 @@ pub struct AutoMlJobChannel {
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p> <note>
     /// <p>The type of channel defaults to <code>training</code> for the time-series forecasting problem type.</p>
     /// </note>
-    #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     /// <p>The content type of the data from the input source. The following are the allowed content types for different problems:</p>
     /// <ul>
@@ -16,13 +15,10 @@ pub struct AutoMlJobChannel {
     /// <li> <p>For text classification: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The allowed compression types depend on the input format and problem type. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs on tabular data only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
-    #[doc(hidden)]
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>The data source for an AutoML channel (Required).</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
 }
 impl AutoMlJobChannel {

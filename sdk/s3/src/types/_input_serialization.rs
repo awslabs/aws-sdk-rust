@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvInput>,
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
-    #[doc(hidden)]
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>Specifies JSON as object's input serialization format.</p>
-    #[doc(hidden)]
     pub json: ::std::option::Option<crate::types::JsonInput>,
     /// <p>Specifies Parquet as object's input serialization format.</p>
-    #[doc(hidden)]
     pub parquet: ::std::option::Option<crate::types::ParquetInput>,
 }
 impl InputSerialization {

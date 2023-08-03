@@ -59,13 +59,10 @@ pub struct SecondaryStatusTransition {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A detailed description of the progress within a secondary status. </p>
     /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
@@ -100,7 +97,6 @@ pub struct SecondaryStatusTransition {
     /// <li> <p> <code>SecondaryStatus</code> - Training</p> </li>
     /// <li> <p> <code>StatusMessage</code> - Downloading the training image</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryStatusTransition {

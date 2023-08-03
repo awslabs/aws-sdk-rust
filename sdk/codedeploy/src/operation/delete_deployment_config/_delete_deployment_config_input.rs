@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationOutput {
     /// <p>Returns the Alexa Skill configuration.</p>
-    #[doc(hidden)]
     pub sip_media_application_alexa_skill_configuration: ::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
     _request_id: Option<String>,
 }

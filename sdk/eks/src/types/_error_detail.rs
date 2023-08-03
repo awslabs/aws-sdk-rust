@@ -14,13 +14,10 @@ pub struct ErrorDetail {
     /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
     /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A more complete description of the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ErrorDetail {

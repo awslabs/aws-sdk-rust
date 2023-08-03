@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharePrincipal {
     /// <p>The ID of the recipient.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the recipient.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The role of the recipient.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::RoleType>,
 }
 impl SharePrincipal {

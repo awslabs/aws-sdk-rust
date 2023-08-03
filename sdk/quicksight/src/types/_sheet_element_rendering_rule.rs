@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRule {

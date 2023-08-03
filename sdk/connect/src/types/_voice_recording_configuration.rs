@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
-    #[doc(hidden)]
     pub voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
 }
 impl VoiceRecordingConfiguration {

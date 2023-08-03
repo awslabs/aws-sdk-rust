@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEmailLambdaVersionConfigType {
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
-    #[doc(hidden)]
     pub lambda_version: ::std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomEmailLambdaVersionConfigType {

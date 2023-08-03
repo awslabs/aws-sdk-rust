@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP permissions for the security group rule. You must specify either the IP permissions or the description.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The description for the egress security group rules. You must specify either the description or the IP permissions.</p>
-    #[doc(hidden)]
     pub security_group_rule_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
 }
 impl UpdateSecurityGroupRuleDescriptionsEgressInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    #[doc(hidden)]
     pub pool_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListTapePoolsInput {

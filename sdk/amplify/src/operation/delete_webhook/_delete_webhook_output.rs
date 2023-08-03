@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
-    #[doc(hidden)]
     pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }

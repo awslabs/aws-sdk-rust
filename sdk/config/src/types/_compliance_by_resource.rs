@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceByResource {
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<crate::types::Compliance>,
 }
 impl ComplianceByResource {

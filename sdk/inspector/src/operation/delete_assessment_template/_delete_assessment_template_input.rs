@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    #[doc(hidden)]
     pub assessment_template_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentTemplateInput {

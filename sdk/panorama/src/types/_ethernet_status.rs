@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EthernetStatus {
     /// <p>The device's IP address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The device's connection status.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
     /// <p>The device's physical address.</p>
-    #[doc(hidden)]
     pub hw_address: ::std::option::Option<::std::string::String>,
 }
 impl EthernetStatus {

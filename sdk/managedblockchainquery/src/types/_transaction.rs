@@ -9,61 +9,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transaction {
     /// <p>The blockchain network where the transaction occured.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
-    #[doc(hidden)]
     pub block_hash: ::std::option::Option<::std::string::String>,
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The block number in which the transaction is recorded.</p>
-    #[doc(hidden)]
     pub block_number: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Timestamp</code> of the transaction. </p>
-    #[doc(hidden)]
     pub transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The index of the transaction within a blockchain.</p>
-    #[doc(hidden)]
     pub transaction_index: ::std::option::Option<i64>,
     /// <p>The number of transactions in the block.</p>
-    #[doc(hidden)]
     pub number_of_transactions: ::std::option::Option<i64>,
     /// <p>The status of the transaction.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueryTransactionStatus>,
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<::std::string::String>,
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain address for the contract.</p>
-    #[doc(hidden)]
     pub contract_address: ::std::option::Option<::std::string::String>,
     /// <p>The amount of gas used for the transaction.</p>
-    #[doc(hidden)]
     pub gas_used: ::std::option::Option<::std::string::String>,
     /// <p>The amount of gas used up to the specified point in the block.</p>
-    #[doc(hidden)]
     pub cumulative_gas_used: ::std::option::Option<::std::string::String>,
     /// <p>The effective gas price.</p>
-    #[doc(hidden)]
     pub effective_gas_price: ::std::option::Option<::std::string::String>,
     /// <p>The signature of the transaction. The Z coordinate of a point V.</p>
-    #[doc(hidden)]
     pub signature_v: ::std::option::Option<i32>,
     /// <p>The signature of the transaction. The X coordinate of a point R.</p>
-    #[doc(hidden)]
     pub signature_r: ::std::option::Option<::std::string::String>,
     /// <p>The signature of the transaction. The Y coordinate of a point S.</p>
-    #[doc(hidden)]
     pub signature_s: ::std::option::Option<::std::string::String>,
     /// <p>The transaction fee.</p>
-    #[doc(hidden)]
     pub transaction_fee: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl Transaction {

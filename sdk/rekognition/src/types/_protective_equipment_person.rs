@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    #[doc(hidden)]
     pub body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     /// <p>A bounding box around the detected person.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
 }
 impl ProtectiveEquipmentPerson {

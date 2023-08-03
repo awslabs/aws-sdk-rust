@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    #[doc(hidden)]
     pub batch_item_id: ::std::option::Option<::std::string::String>,
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    #[doc(hidden)]
     pub cells_to_create: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl CreateRowData {

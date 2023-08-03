@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIntegrationAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    #[doc(hidden)]
     pub data_integration_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    #[doc(hidden)]
     pub data_integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl DataIntegrationAssociationSummary {

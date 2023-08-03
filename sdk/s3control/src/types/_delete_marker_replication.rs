@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplication {

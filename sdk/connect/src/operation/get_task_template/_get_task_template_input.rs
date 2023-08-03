@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the task template.</p>
-    #[doc(hidden)]
     pub task_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    #[doc(hidden)]
     pub snapshot_version: ::std::option::Option<::std::string::String>,
 }
 impl GetTaskTemplateInput {

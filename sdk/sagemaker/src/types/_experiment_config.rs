@@ -10,16 +10,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentConfig {
     /// <p>The name of an existing experiment to associate with the trial component.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing trial to associate the trial component with. If not specified, a new trial is created.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
-    #[doc(hidden)]
     pub trial_component_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment run to associate with the trial component.</p>
-    #[doc(hidden)]
     pub run_name: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentConfig {

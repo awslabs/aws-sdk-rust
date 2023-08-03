@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeConfig {
     /// <p>The Availability Zone where the DMS Serverless replication using this configuration will run. The default value is a random, system-chosen Availability Zone in the configuration's Amazon Web Services Region, for example, <code>"us-west-2"</code>. You can't set this parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A list of custom DNS name servers supported for the DMS Serverless replication to access your source or target database. This list overrides the default name servers supported by the DMS Serverless replication. You can specify a comma-separated list of internet addresses for up to four DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
-    #[doc(hidden)]
     pub dns_name_servers: ::std::option::Option<::std::string::String>,
     /// <p>An Key Management Service (KMS) key Amazon Resource Name (ARN) that is used to encrypt the data during DMS Serverless replication.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the maximum value that you can specify for DMS Serverless is 384. The <code>MaxCapacityUnits</code> parameter is the only DCU parameter you are required to specify.</p>
-    #[doc(hidden)]
     pub max_capacity_units: ::std::option::Option<i32>,
     /// <p>Specifies the minimum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the minimum DCU value that you can specify for DMS Serverless is 2. You don't have to specify a value for the <code>MinCapacityUnits</code> parameter. If you don't set this value, DMS scans the current activity of available source tables to identify an optimum setting for this parameter. If there is no current source activity or DMS can't otherwise identify a more appropriate value, it sets this parameter to the minimum DCU value allowed, 2.</p>
-    #[doc(hidden)]
     pub min_capacity_units: ::std::option::Option<i32>,
     /// <p>Specifies whether the DMS Serverless replication is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The weekly time range during which system maintenance can occur for the DMS Serverless replication, in Universal Coordinated Time (UTC). The format is <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region. This maintenance occurs on a random day of the week. Valid values for days of the week include <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thu</code>, <code>Fri</code>, <code>Sat</code>, and <code>Sun</code>.</p>
     /// <p>Constraints include a minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a subnet group identifier to associate with the DMS Serverless replication.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the virtual private cloud (VPC) security group to use with the DMS Serverless replication. The VPC security group must work with the VPC containing the replication.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ComputeConfig {

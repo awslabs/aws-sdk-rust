@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyInput {
     /// <p>The type of policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the policy being updated.</p>
-    #[doc(hidden)]
     pub policy_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessPolicyInput {

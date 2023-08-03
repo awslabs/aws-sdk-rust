@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuditMitigationActionsTaskOutput {
     /// <p>The current status of the task.</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
     /// <p>The date and time when the task was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the task was completed or canceled.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
-    #[doc(hidden)]
     pub task_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>>,
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
-    #[doc(hidden)]
     pub audit_check_to_actions_mapping:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
-    #[doc(hidden)]
     pub actions_definition: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
     _request_id: Option<String>,
 }

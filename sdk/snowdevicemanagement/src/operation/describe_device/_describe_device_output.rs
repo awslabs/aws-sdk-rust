@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutput {
     /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
-    #[doc(hidden)]
     pub last_reached_out_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the device that you checked the information for.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    #[doc(hidden)]
     pub managed_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services Snow Family device.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job used when ordering the device.</p>
-    #[doc(hidden)]
     pub associated_with_job: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the device.</p>
-    #[doc(hidden)]
     pub device_state: ::std::option::Option<crate::types::UnlockState>,
     /// <p>The network interfaces available on the device.</p>
-    #[doc(hidden)]
     pub physical_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalNetworkInterface>>,
     /// <p>The hardware specifications of the device. </p>
-    #[doc(hidden)]
     pub device_capacities: ::std::option::Option<::std::vec::Vec<crate::types::Capacity>>,
     /// <p>The software installed on the device.</p>
-    #[doc(hidden)]
     pub software: ::std::option::Option<crate::types::SoftwareInformation>,
     _request_id: Option<String>,
 }

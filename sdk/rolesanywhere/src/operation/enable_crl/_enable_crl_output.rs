@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    #[doc(hidden)]
     pub crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,
 }

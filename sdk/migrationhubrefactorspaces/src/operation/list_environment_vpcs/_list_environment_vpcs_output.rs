@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentVpcsOutput {
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-    #[doc(hidden)]
     pub environment_vpc_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

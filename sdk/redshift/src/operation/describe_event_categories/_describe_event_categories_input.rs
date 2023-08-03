@@ -6,7 +6,6 @@
 pub struct DescribeEventCategoriesInput {
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventCategoriesInput {

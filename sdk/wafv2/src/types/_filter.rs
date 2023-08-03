@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    #[doc(hidden)]
     pub behavior: ::std::option::Option<crate::types::FilterBehavior>,
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    #[doc(hidden)]
     pub requirement: ::std::option::Option<crate::types::FilterRequirement>,
     /// <p>Match conditions for the filter.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl Filter {

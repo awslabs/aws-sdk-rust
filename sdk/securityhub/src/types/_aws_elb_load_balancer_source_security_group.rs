@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerSourceSecurityGroup {
     /// <p>The name of the security group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the security group.</p>
-    #[doc(hidden)]
     pub owner_alias: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerSourceSecurityGroup {

@@ -6,7 +6,6 @@
 pub struct RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
 }
 impl RulesConfigurationType {

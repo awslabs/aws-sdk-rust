@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    #[doc(hidden)]
     pub alarm_actions: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
 }
 impl AlarmEventActions {

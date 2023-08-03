@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentStrategy {
     /// <p> Strategy recommendation for the application component. </p>
-    #[doc(hidden)]
     pub recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The recommendation status of a strategy for an application component. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StrategyRecommendation>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    #[doc(hidden)]
     pub is_preferred: ::std::option::Option<bool>,
 }
 impl ApplicationComponentStrategy {

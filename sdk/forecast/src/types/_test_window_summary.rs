@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestWindowSummary {
     /// <p>The time at which the test began.</p>
-    #[doc(hidden)]
     pub test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the test ended.</p>
-    #[doc(hidden)]
     pub test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
@@ -16,10 +14,8 @@ pub struct TestWindowSummary {
     /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the test failed, the reason why it failed.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl TestWindowSummary {

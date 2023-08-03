@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncOperation {
     /// <p>The time that the request was sent to the service.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The specific operation for the asynchronous request.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::AsyncOperationName>,
     /// <p>The request token associated with the request.</p>
-    #[doc(hidden)]
     pub request_token_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameters associated with the request.</p>
-    #[doc(hidden)]
     pub request_parameters: ::std::option::Option<crate::types::AsyncRequestParameters>,
     /// <p>The current status of the request.</p>
-    #[doc(hidden)]
     pub request_status: ::std::option::Option<::std::string::String>,
     /// <p>The details of the response.</p>
-    #[doc(hidden)]
     pub response_details: ::std::option::Option<crate::types::AsyncResponseDetails>,
 }
 impl AsyncOperation {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
-    #[doc(hidden)]
     pub hard_limit: i32,
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
@@ -25,10 +24,8 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <li> <p> <code>sigpending</code> </p> </li>
     /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit for the ulimit type.</p>
-    #[doc(hidden)]
     pub soft_limit: i32,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineInput {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDefaultPatchBaselineInput {

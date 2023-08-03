@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentResponse {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Error messages for environment variables that couldn't be applied.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::EnvironmentError>,
 }
 impl EnvironmentResponse {

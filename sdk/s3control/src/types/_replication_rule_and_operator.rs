@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRuleAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags that contain key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
 impl ReplicationRuleAndOperator {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteLayerUploadInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to associate with the image layer.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    #[doc(hidden)]
     pub layer_digests: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompleteLayerUploadInput {

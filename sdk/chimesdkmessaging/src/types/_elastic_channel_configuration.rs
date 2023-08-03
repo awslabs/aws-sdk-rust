@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticChannelConfiguration {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
-    #[doc(hidden)]
     pub maximum_sub_channels: ::std::option::Option<i32>,
     /// <p>The maximum number of members allowed in a SubChannel.</p>
-    #[doc(hidden)]
     pub target_memberships_per_sub_channel: ::std::option::Option<i32>,
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
-    #[doc(hidden)]
     pub minimum_membership_percentage: ::std::option::Option<i32>,
 }
 impl ElasticChannelConfiguration {

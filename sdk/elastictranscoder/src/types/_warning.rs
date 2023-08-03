@@ -6,12 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Warning {
     /// <p>The code of the cross-regional warning.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl Warning {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContinuousDeploymentPolicyInput {
     /// <p>The continuous deployment policy configuration.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContinuousDeploymentPolicyInput {

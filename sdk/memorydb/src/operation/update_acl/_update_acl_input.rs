@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAclInput {
     /// <p>The name of the Access Control List</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of users to add to the Access Control List</p>
-    #[doc(hidden)]
     pub user_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of users to remove from the Access Control List</p>
-    #[doc(hidden)]
     pub user_names_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateAclInput {

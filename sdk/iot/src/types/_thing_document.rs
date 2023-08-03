@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingDocument {
     /// <p>The thing name.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing ID.</p>
-    #[doc(hidden)]
     pub thing_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing type name.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Thing group names.</p>
-    #[doc(hidden)]
     pub thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
-    #[doc(hidden)]
     pub shadow: ::std::option::Option<::std::string::String>,
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
-    #[doc(hidden)]
     pub device_defender: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
-    #[doc(hidden)]
     pub connectivity: ::std::option::Option<crate::types::ThingConnectivity>,
 }
 impl ThingDocument {

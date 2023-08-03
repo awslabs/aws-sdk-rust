@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DolbyVisionLevel6Metadata {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
-    #[doc(hidden)]
     pub max_cll: ::std::option::Option<i32>,
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
-    #[doc(hidden)]
     pub max_fall: ::std::option::Option<i32>,
 }
 impl DolbyVisionLevel6Metadata {

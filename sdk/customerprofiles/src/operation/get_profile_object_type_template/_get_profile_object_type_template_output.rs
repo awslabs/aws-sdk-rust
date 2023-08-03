@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateOutput {
     /// <p>A unique identifier for the object template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source of the object template.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the object template.</p>
-    #[doc(hidden)]
     pub source_object: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
-    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    #[doc(hidden)]
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     _request_id: Option<String>,
 }

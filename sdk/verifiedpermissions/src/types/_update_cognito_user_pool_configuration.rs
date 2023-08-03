@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCognitoUserPoolConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
-    #[doc(hidden)]
     pub user_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCognitoUserPoolConfiguration {

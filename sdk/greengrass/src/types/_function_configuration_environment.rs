@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
-    #[doc(hidden)]
     pub access_sysfs: ::std::option::Option<bool>,
     /// Configuration related to executing the Lambda function
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::FunctionExecutionConfig>,
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    #[doc(hidden)]
     pub resource_access_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>>,
     /// Environment variables for the Lambda function's configuration.
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FunctionConfigurationEnvironment {

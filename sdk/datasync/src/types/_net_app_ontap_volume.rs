@@ -5,50 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetAppOntapVolume {
     /// <p>The name of the volume.</p>
-    #[doc(hidden)]
     pub volume_name: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the volume.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of CIFS shares in the volume.</p>
-    #[doc(hidden)]
     pub cifs_share_count: ::std::option::Option<i64>,
     /// <p>The volume's security style (such as Unix or NTFS).</p>
-    #[doc(hidden)]
     pub security_style: ::std::option::Option<::std::string::String>,
     /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
-    #[doc(hidden)]
     pub svm_uuid: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SVM associated with the volume.</p>
-    #[doc(hidden)]
     pub svm_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage space that's being used in the volume.</p>
-    #[doc(hidden)]
     pub capacity_used: ::std::option::Option<i64>,
     /// <p>The total storage space that's available in the volume.</p>
-    #[doc(hidden)]
     pub capacity_provisioned: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in the volume without accounting for compression or deduplication.</p>
-    #[doc(hidden)]
     pub logical_capacity_used: ::std::option::Option<i64>,
     /// <p>The number of NFS volumes in the volume.</p>
-    #[doc(hidden)]
     pub nfs_exported: bool,
     /// <p>The amount of storage in the volume that's being used for snapshots.</p>
-    #[doc(hidden)]
     pub snapshot_capacity_used: ::std::option::Option<i64>,
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
-    #[doc(hidden)]
     pub max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
-    #[doc(hidden)]
     pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapVolume {

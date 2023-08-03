@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesFeedback {
     /// <p>The ID of the metric.</p>
-    #[doc(hidden)]
     pub time_series_id: ::std::option::Option<::std::string::String>,
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
-    #[doc(hidden)]
     pub is_anomaly: ::std::option::Option<bool>,
 }
 impl TimeSeriesFeedback {

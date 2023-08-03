@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRecommendationOption {
     /// <p>The instance type of the instance recommendation.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
@@ -22,23 +20,18 @@ pub struct InstanceRecommendationOption {
     /// <li> <p> <b> <code>VirtualizationType</code> </b> — The recommended instance type uses the hardware virtual machine (HVM) virtualization type and the current instance uses the paravirtual (PV) virtualization type. For more information about the differences between these virtualization types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Windows</i>.</p> </li>
     /// <li> <p> <b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
-    #[doc(hidden)]
     pub performance_risk: f64,
     /// <p>The rank of the instance recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    #[doc(hidden)]
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    #[doc(hidden)]
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    #[doc(hidden)]
     pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
 }
 impl InstanceRecommendationOption {

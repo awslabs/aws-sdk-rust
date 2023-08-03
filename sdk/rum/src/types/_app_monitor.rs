@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppMonitor {
     /// <p>The name of the app monitor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of this app monitor.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that this app monitor was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The current state of the app monitor.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StateEnum>,
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    #[doc(hidden)]
     pub app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub data_storage: ::std::option::Option<crate::types::DataStorage>,
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
-    #[doc(hidden)]
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
 }
 impl AppMonitor {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAllowListsOutput {
     /// <p>An array of objects, one for each allow list.</p>
-    #[doc(hidden)]
     pub allow_lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkRoute {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The destinations.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RouteState>,
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RouteType>,
 }
 impl NetworkRoute {

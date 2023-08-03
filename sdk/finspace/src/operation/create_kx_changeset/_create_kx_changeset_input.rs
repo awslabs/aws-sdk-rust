@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxChangesetInput {
     /// <p>A unique identifier of the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of change request objects that are run in order. A change request object consists of changeType , s3Path, and a dbPath. A changeType can has the following values: </p>
     /// <ul>
@@ -18,10 +16,8 @@ pub struct CreateKxChangesetInput {
     /// <p>Here is an example of how you can use the change request object:</p>
     /// <p> <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}, { "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}, { "changeType": "DELETE", "dbPath": "/2020.01.01/"} ]</code> </p>
     /// <p>In this example, the first request with <i>PUT</i> change type allows you to add files in the given s3Path under the <i>2020.01.02</i> partition of the database. The second request with <i>PUT</i> change type allows you to add a single sym file at database root location. The last request with <i>DELETE</i> change type allows you to delete the files under the <i>2020.01.01</i> partition of the database. </p>
-    #[doc(hidden)]
     pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxChangesetInput {

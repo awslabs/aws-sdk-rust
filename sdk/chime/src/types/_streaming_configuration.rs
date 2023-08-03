@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-    #[doc(hidden)]
     pub data_retention_in_hours: ::std::option::Option<i32>,
     /// <p>When true, media streaming to Amazon Kinesis is turned off.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The streaming notification targets.</p>
-    #[doc(hidden)]
     pub streaming_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
 }
 impl StreamingConfiguration {

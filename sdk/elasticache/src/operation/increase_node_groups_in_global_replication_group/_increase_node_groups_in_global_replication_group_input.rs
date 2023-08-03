@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups you wish to add</p>
-    #[doc(hidden)]
     pub node_group_count: i32,
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
-    #[doc(hidden)]
     pub regional_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInput {

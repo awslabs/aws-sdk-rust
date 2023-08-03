@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVariantConfigSummary {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variant.</p>
-    #[doc(hidden)]
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
-    #[doc(hidden)]
     pub infrastructure_config: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
     /// <p>The status of deployment for the model variant on the hosted inference endpoint.</p>
     /// <ul>
@@ -21,7 +18,6 @@ pub struct ModelVariantConfigSummary {
     /// <li> <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted inference endpoint. </p> </li>
     /// <li> <p> <code>Deleted</code> - The model variant has been deleted on the hosted inference endpoint. This can only happen after stopping the experiment. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelVariantStatus>,
 }
 impl ModelVariantConfigSummary {

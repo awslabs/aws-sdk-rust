@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReplicationConfigurationInput {
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationConfigurationInput {

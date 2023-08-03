@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionInput {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    #[doc(hidden)]
     pub step_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowStepExecutionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Controls how the Lambda function is invoked.</p>
-    #[doc(hidden)]
     pub invocation_type: ::std::option::Option<crate::types::InvocationType>,
 }
 impl LambdaConfiguration {

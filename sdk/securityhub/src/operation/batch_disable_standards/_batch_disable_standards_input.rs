@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisableStandardsInput {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    #[doc(hidden)]
     pub standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDisableStandardsInput {

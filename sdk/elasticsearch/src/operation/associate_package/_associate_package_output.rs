@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
-    #[doc(hidden)]
     pub domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,
 }

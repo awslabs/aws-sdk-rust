@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BatchReadExceptionType>,
     /// <p>An exception message that is associated with the failure.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchReadException {

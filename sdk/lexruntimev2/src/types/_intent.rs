@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
     /// <p>Contains fulfillment information for the intent. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IntentState>,
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
-    #[doc(hidden)]
     pub confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
 }
 impl Intent {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOptions {
     /// <p>Whether logs should be published.</p>
-    #[doc(hidden)]
     pub is_logging_enabled: ::std::option::Option<bool>,
     /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_destination: ::std::option::Option<crate::types::CloudWatchLogDestination>,
 }
 impl LogPublishingOptions {

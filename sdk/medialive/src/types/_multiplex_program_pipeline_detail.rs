@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramPipelineDetail {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
-    #[doc(hidden)]
     pub active_channel_pipeline: ::std::option::Option<::std::string::String>,
     /// Identifies a specific pipeline in the multiplex.
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramPipelineDetail {

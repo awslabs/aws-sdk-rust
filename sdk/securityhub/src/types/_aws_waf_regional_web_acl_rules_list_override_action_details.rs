@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {

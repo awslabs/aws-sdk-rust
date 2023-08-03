@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCellInput {
     /// <p>The name of the cell.</p>
-    #[doc(hidden)]
     pub cell_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCellInput {

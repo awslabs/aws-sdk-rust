@@ -11,13 +11,10 @@ pub struct KmsServerSideEncryptionIntegrationConfig {
     /// <p>Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
     /// <p>Alias name: alias/ExampleAlias</p>
     /// <p>Alias ARN: arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies if DevOps Guru is enabled for KMS integration. </p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
     /// <p> The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ServerSideEncryptionType>,
 }
 impl KmsServerSideEncryptionIntegrationConfig {

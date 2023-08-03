@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>A hexadecimal identifier for the certificate.</p>
-    #[doc(hidden)]
     pub thumbprint: ::std::option::Option<::std::string::String>,
     /// <p>The entity the certificate belongs to.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The entity that issued the certificate.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The certificate is not valid before this date.</p>
-    #[doc(hidden)]
     pub not_valid_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
-    #[doc(hidden)]
     pub not_valid_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateSummary {

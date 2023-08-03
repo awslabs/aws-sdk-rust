@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
-    #[doc(hidden)]
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
     /// <p>The ARN must be in one of the following formats:</p>
@@ -16,7 +15,6 @@ pub struct AssociateWebAclInput {
     /// <li> <p>For an App Runner service: <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code> </p> </li>
     /// <li> <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateWebAclInput {

@@ -9,7 +9,6 @@ pub struct UserSearchFilter {
     /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
     /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }
 impl UserSearchFilter {

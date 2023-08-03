@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramSummary {
     /// The MediaLive Channel associated with the program.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// The name of the multiplex program.
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramSummary {

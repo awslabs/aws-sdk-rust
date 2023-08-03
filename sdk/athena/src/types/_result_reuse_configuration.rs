@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultReuseConfiguration {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
-    #[doc(hidden)]
     pub result_reuse_by_age_configuration: ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
 }
 impl ResultReuseConfiguration {

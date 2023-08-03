@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBranchesOutput {
     /// <p>The list of branch names.</p>
-    #[doc(hidden)]
     pub branches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An enumeration token that returns the batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

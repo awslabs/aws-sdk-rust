@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldSummary {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    #[doc(hidden)]
     pub generation_job: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl WorldSummary {

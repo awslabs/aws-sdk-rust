@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticateOidcActionConfig {
     /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    #[doc(hidden)]
     pub token_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
-    #[doc(hidden)]
     pub user_info_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth 2.0 client identifier.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    #[doc(hidden)]
     pub session_cookie_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
-    #[doc(hidden)]
     pub session_timeout: ::std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
-    #[doc(hidden)]
     pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
@@ -41,10 +31,8 @@ pub struct AuthenticateOidcActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum>,
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
-    #[doc(hidden)]
     pub use_existing_client_secret: ::std::option::Option<bool>,
 }
 impl AuthenticateOidcActionConfig {

@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputOrigin {
     /// <p>The name of the origin resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region name of the origin resource.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<crate::types::RegionName>,
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    #[doc(hidden)]
     pub protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
 }
 impl InputOrigin {

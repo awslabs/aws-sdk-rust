@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB cluster parameter groups.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
     _request_id: Option<String>,
 }

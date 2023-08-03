@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupReference {
     /// <p>The ID of your security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC with the referencing security group.</p>
-    #[doc(hidden)]
     pub referencing_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupReference {

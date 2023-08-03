@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
     /// <p>A description that can help diagnose the cause of the fault.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl StartLambdaFunctionFailedEventAttributes {

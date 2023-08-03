@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDetail {
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<crate::types::EventSource>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
@@ -15,13 +14,11 @@ pub struct SourceDetail {
     /// <li> <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation when Config delivers a configuration snapshot.</p> </li>
     /// </ul>
     /// <p>If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and one for <code>OversizedConfigurationItemChangeNotification</code>.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The frequency at which you want Config to run evaluations for a custom rule with a periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// <p>Based on the valid value you choose, Config runs evaluations once for each valid value. For example, if you choose <code>Three_Hours</code>, Config runs evaluations once every three hours. In this case, <code>Three_Hours</code> is the frequency of this rule. </p>
     /// </note>
-    #[doc(hidden)]
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
 impl SourceDetail {

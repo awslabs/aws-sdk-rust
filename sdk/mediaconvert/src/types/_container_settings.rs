@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerSettings {
     /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
-    #[doc(hidden)]
     pub cmfc_settings: ::std::option::Option<crate::types::CmfcSettings>,
     /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerType>,
     /// Settings for F4v container
-    #[doc(hidden)]
     pub f4v_settings: ::std::option::Option<crate::types::F4vSettings>,
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
-    #[doc(hidden)]
     pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
-    #[doc(hidden)]
     pub m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,
     /// These settings relate to your QuickTime MOV output container.
-    #[doc(hidden)]
     pub mov_settings: ::std::option::Option<crate::types::MovSettings>,
     /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
-    #[doc(hidden)]
     pub mp4_settings: ::std::option::Option<crate::types::Mp4Settings>,
     /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
-    #[doc(hidden)]
     pub mpd_settings: ::std::option::Option<crate::types::MpdSettings>,
     /// These settings relate to your MXF output container.
-    #[doc(hidden)]
     pub mxf_settings: ::std::option::Option<crate::types::MxfSettings>,
 }
 impl ContainerSettings {

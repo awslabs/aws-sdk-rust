@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsTaskSet {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
-    #[doc(hidden)]
     pub identifer: ::std::option::Option<::std::string::String>,
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
-    #[doc(hidden)]
     pub desired_count: i64,
     /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code> state. </p>
-    #[doc(hidden)]
     pub pending_count: i64,
     /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and ready for use. </p>
-    #[doc(hidden)]
     pub running_count: i64,
     /// <p> The status of the task set. There are three valid task set statuses: </p>
     /// <ul>
@@ -22,16 +18,12 @@ pub struct EcsTaskSet {
     /// <li> <p> <code>ACTIVE</code>: Indicates the task set is not serving production traffic. </p> </li>
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of traffic served by this task set. </p>
-    #[doc(hidden)]
     pub traffic_weight: f64,
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
-    #[doc(hidden)]
     pub target_group: ::std::option::Option<crate::types::TargetGroupInfo>,
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
-    #[doc(hidden)]
     pub task_set_label: ::std::option::Option<crate::types::TargetLabel>,
 }
 impl EcsTaskSet {

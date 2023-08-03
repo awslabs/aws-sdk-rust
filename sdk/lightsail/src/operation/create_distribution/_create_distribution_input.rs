@@ -4,34 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDistributionInput {
     /// <p>The name for the distribution.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::InputOrigin>,
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    #[doc(hidden)]
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDistributionInput {

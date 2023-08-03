@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryConfiguration {
     /// <p>Contains information about where to publish the inventory results.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::InventoryDestination>,
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::InventoryFilter>,
     /// <p>The ID used to identify the inventory configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
-    #[doc(hidden)]
     pub included_object_versions: ::std::option::Option<crate::types::InventoryIncludedObjectVersions>,
     /// <p>Contains the optional fields that are included in the inventory results.</p>
-    #[doc(hidden)]
     pub optional_fields: ::std::option::Option<::std::vec::Vec<crate::types::InventoryOptionalField>>,
     /// <p>Specifies the schedule for generating inventory results.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InventorySchedule>,
 }
 impl InventoryConfiguration {

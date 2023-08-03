@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRouteTableOutput {
     /// <p>Information about the route table.</p>
-    #[doc(hidden)]
     pub route_table: ::std::option::Option<crate::types::RouteTable>,
     _request_id: Option<String>,
 }

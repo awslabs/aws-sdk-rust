@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastCutoverReverted {

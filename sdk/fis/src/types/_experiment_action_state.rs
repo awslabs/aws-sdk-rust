@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentActionState {
     /// <p>The state of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExperimentActionStatus>,
     /// <p>The reason for the state.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentActionState {

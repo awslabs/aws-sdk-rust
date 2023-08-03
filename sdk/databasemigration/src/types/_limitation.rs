@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limitation {
     /// <p>The identifier of the source database.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target engine that Fleet Advisor should use in the target engine recommendation. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the limitation. Describes unsupported database features, migration action items, and other limitations.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the limitation. Provides additional information about the limitation, and includes recommended actions that you can take to address or avoid this limitation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The impact of the limitation. You can use this parameter to prioritize limitations that you want to address. Valid values include <code>"Blocker"</code>, <code>"High"</code>, <code>"Medium"</code>, and <code>"Low"</code>.</p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<::std::string::String>,
     /// <p>The type of the limitation, such as action required, upgrade required, and limited feature.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Limitation {

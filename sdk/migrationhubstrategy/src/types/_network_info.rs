@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    #[doc(hidden)]
     pub interface_name: ::std::option::Option<::std::string::String>,
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    #[doc(hidden)]
     pub net_mask: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInfo {

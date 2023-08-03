@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigV4Authorization {
     /// <p>The signing region.</p>
-    #[doc(hidden)]
     pub signing_region: ::std::option::Option<::std::string::String>,
     /// <p>The service name to use while signing with Sig V4.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signing role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl SigV4Authorization {

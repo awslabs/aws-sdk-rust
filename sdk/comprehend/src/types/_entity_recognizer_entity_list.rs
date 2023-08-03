@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerEntityList {

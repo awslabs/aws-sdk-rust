@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationInput {
     /// <p>The ID of the source file system in the replication configuration.</p>
-    #[doc(hidden)]
     pub source_file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationConfigurationInput {

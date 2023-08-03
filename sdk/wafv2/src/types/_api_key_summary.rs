@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiKeySummary {
     /// <p>The token domains that are defined in this API key. </p>
-    #[doc(hidden)]
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the key was created. </p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Internal value used by WAF to manage the key. </p>
-    #[doc(hidden)]
     pub version: i32,
 }
 impl ApiKeySummary {

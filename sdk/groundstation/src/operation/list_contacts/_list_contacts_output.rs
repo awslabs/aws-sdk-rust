@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsOutput {
     /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of contacts.</p>
-    #[doc(hidden)]
     pub contact_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>,
     _request_id: Option<String>,
 }

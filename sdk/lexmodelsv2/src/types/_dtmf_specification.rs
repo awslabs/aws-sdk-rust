@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DtmfSpecification {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
-    #[doc(hidden)]
     pub max_length: ::std::option::Option<i32>,
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
-    #[doc(hidden)]
     pub end_timeout_ms: ::std::option::Option<i32>,
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    #[doc(hidden)]
     pub deletion_character: ::std::option::Option<::std::string::String>,
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    #[doc(hidden)]
     pub end_character: ::std::option::Option<::std::string::String>,
 }
 impl DtmfSpecification {

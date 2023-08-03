@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>,
     _request_id: Option<String>,
 }

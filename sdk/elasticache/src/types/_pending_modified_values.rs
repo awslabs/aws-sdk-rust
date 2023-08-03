@@ -6,28 +6,20 @@
 pub struct PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
-    #[doc(hidden)]
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
-    #[doc(hidden)]
     pub cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The new cache engine version that the cluster runs.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The cache node type that this cluster or replication group is scaled to.</p>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The auth token status</p>
-    #[doc(hidden)]
     pub auth_token_status: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    #[doc(hidden)]
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
 }
 impl PendingModifiedValues {

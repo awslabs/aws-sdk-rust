@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
-    #[doc(hidden)]
     pub canceled: bool,
     _request_id: Option<String>,
 }

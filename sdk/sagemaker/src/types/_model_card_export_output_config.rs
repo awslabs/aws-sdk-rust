@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelCardExportOutputConfig {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl ModelCardExportOutputConfig {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BillingGroupStatus>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    #[doc(hidden)]
     pub computation_preference: ::std::option::Option<crate::types::ComputationPreference>,
     /// <p>A description of the billing group. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    #[doc(hidden)]
     pub account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
 }
 impl UpdateBillingGroupInput {

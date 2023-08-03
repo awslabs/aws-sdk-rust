@@ -8,25 +8,18 @@ pub struct RecipientDsnFields {
     /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
     /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub final_recipient: ::std::option::Option<::std::string::String>,
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::DsnAction>,
     /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
-    #[doc(hidden)]
     pub remote_mta: ::std::option::Option<::std::string::String>,
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
-    #[doc(hidden)]
     pub diagnostic_code: ::std::option::Option<::std::string::String>,
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    #[doc(hidden)]
     pub last_attempt_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
-    #[doc(hidden)]
     pub extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl RecipientDsnFields {

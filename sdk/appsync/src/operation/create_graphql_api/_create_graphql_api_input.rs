@@ -4,44 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon CloudWatch Logs configuration.</p>
-    #[doc(hidden)]
     pub log_config: ::std::option::Option<crate::types::LogConfig>,
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The Amazon Cognito user pool configuration.</p>
-    #[doc(hidden)]
     pub user_pool_config: ::std::option::Option<crate::types::UserPoolConfig>,
     /// <p>The OIDC configuration.</p>
-    #[doc(hidden)]
     pub open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>A <code>TagMap</code> object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    #[doc(hidden)]
     pub additional_authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    #[doc(hidden)]
     pub xray_enabled: ::std::option::Option<bool>,
     /// <p>Configuration for Lambda function authorization.</p>
-    #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
-    #[doc(hidden)]
     pub api_type: ::std::option::Option<crate::types::GraphQlApiType>,
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
-    #[doc(hidden)]
     pub merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
-    #[doc(hidden)]
     pub owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl CreateGraphqlApiInput {

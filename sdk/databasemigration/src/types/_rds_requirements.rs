@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsRequirements {
     /// <p>The required target Amazon RDS engine edition.</p>
-    #[doc(hidden)]
     pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
-    #[doc(hidden)]
     pub instance_vcpu: ::std::option::Option<f64>,
     /// <p>The required memory on the Amazon RDS DB instance.</p>
-    #[doc(hidden)]
     pub instance_memory: ::std::option::Option<f64>,
     /// <p>The required Amazon RDS DB instance storage size.</p>
-    #[doc(hidden)]
     pub storage_size: ::std::option::Option<i32>,
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
-    #[doc(hidden)]
     pub storage_iops: ::std::option::Option<i32>,
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    #[doc(hidden)]
     pub deployment_option: ::std::option::Option<::std::string::String>,
     /// <p>The required target Amazon RDS engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsRequirements {

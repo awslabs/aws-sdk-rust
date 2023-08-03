@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    #[doc(hidden)]
     pub data_source_s3_configuration: ::std::option::Option<crate::types::DataSourceS3Configuration>,
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
-    #[doc(hidden)]
     pub csv_configuration: ::std::option::Option<crate::types::CsvConfiguration>,
     /// <p>This is currently CSV.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::BatchLoadDataFormat>,
 }
 impl DataSourceConfiguration {

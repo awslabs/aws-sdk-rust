@@ -5,44 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone ID of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
     /// <p>The Availability Zone in which the capacity is reserved.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
     /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub total_instance_count: ::std::option::Option<i32>,
     /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub available_instance_count: ::std::option::Option<i32>,
     /// <p>Indicates whether the Capacity Reservation supports EBS-optimized instances. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS- optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p> <i>Deprecated.</i> </p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<bool>,
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
@@ -52,45 +40,34 @@ pub struct CapacityReservation {
     /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>The date and time at which the Capacity Reservation was started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
     /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it.</p> </li>
     /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub end_date_type: ::std::option::Option<crate::types::EndDateType>,
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
     /// <li> <p> <code>open</code> - The Capacity Reservation accepts all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes launch into the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
     /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any tags assigned to the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which the Capacity Reservation was created. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub placement_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about instance capacity usage.</p>
-    #[doc(hidden)]
     pub capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
 }
 impl CapacityReservation {

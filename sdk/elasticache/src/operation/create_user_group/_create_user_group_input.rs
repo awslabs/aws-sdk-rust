@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserGroupInput {
     /// <p>The ID of the user group.</p>
-    #[doc(hidden)]
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUserGroupInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigInput {
     /// <p>The type of security configuration.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     /// <p>The name of the security configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
-    #[doc(hidden)]
     pub saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecurityConfigInput {

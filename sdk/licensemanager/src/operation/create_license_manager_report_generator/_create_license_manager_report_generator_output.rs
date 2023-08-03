@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorOutput {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-    #[doc(hidden)]
     pub license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

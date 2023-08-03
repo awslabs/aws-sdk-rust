@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-    #[doc(hidden)]
     pub engine_transcribe_settings: ::std::option::Option<crate::types::EngineTranscribeSettings>,
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
-    #[doc(hidden)]
     pub engine_transcribe_medical_settings: ::std::option::Option<crate::types::EngineTranscribeMedicalSettings>,
 }
 impl TranscriptionConfiguration {

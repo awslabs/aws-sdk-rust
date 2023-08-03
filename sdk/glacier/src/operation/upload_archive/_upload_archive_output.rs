@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadArchiveOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    #[doc(hidden)]
     pub archive_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

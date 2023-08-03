@@ -9,13 +9,10 @@ pub struct ListOnPremisesInstancesInput {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    #[doc(hidden)]
     pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOnPremisesInstancesInput {

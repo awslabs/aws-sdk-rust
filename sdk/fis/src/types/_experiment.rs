@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The ID of the experiment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the experiment template.</p>
-    #[doc(hidden)]
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the experiment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExperimentState>,
     /// <p>The targets for the experiment.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentTarget>>,
     /// <p>The actions for the experiment.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentAction>>,
     /// <p>The stop conditions for the experiment.</p>
-    #[doc(hidden)]
     pub stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentStopCondition>>,
     /// <p>The time that the experiment was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the experiment started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the experiment ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::ExperimentLogConfiguration>,
 }
 impl Experiment {

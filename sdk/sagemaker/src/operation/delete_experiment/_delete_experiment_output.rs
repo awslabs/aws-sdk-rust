@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
-    #[doc(hidden)]
     pub experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

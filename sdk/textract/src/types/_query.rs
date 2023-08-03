@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Query {
     /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Alias attached to the query, for ease of location.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct Query {
     /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
     /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Query {

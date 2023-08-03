@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnIntentOutput {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The slots associated with the intent.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnIntentOutput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesOutput {
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>,
     /// <p>The token of the next Launch Configuration Template to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

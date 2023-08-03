@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTokenOutput {
     /// <p>Token ID.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<::std::string::String>,
     /// <p>Token type.</p>
-    #[doc(hidden)]
     pub token_type: ::std::option::Option<crate::types::TokenType>,
     /// <p>Refresh token, encoded as a JWT token.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

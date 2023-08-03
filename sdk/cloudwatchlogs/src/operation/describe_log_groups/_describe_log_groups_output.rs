@@ -5,10 +5,8 @@
 pub struct DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    #[doc(hidden)]
     pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

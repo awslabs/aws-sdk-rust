@@ -14,7 +14,6 @@ pub struct AnalyticsSessionMetric {
     /// <li> <p> <code>TurnsPerSession</code> – The number of turns in the sessions.</p> </li>
     /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsSessionMetricName>,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
@@ -22,10 +21,8 @@ pub struct AnalyticsSessionMetric {
     /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl AnalyticsSessionMetric {

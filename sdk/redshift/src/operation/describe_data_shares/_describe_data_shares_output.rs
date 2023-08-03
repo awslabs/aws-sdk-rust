@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSharesOutput {
     /// <p>The results returned from describing datashares.</p>
-    #[doc(hidden)]
     pub data_shares: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

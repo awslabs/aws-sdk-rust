@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomVocabularyMetadataOutput {
     /// <p>The identifier of the bot that contains the custom vocabulary.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale that contains the custom vocabulary to describe.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_status: ::std::option::Option<crate::types::CustomVocabularyStatus>,
     /// <p>The date and time that the custom vocabulary was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the custom vocabulary was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub flow_logs_enabled: ::std::option::Option<bool>,
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
-    #[doc(hidden)]
     pub flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
-    #[doc(hidden)]
     pub flow_logs_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCustomRoutingAcceleratorAttributesInput {

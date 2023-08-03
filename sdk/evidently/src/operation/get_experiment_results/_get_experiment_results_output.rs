@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentResultsOutput {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    #[doc(hidden)]
     pub results_data: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
     /// <p>An array of structures that include the reports that you requested.</p>
-    #[doc(hidden)]
     pub reports: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>,
     /// <p>The timestamps of each result returned.</p>
-    #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

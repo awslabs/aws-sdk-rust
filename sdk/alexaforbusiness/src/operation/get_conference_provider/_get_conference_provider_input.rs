@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConferenceProviderInput {
     /// <p>The ARN of the newly created conference provider.</p>
-    #[doc(hidden)]
     pub conference_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetConferenceProviderInput {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkflowInput {
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters required to create a migration workflow.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to add on a migration workflow.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkflowInput {

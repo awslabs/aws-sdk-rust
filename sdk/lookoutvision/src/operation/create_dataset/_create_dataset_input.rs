@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the project in which you want to create a dataset.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>
     /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation synchronously returns. Later, you can add JSON Lines by calling <code>UpdateDatasetEntries</code>. </p>
     /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous and might take a while to complete. To find out the current status, Check the value of <code>Status</code> returned in a call to <code>DescribeDataset</code>.</p>
-    #[doc(hidden)]
     pub dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateDataset</code>. In this case, safely retry your call to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency token is active for 8 hours. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDatasetInput {

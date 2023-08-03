@@ -5,76 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentGroupInfo {
     /// <p>The application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment group ID.</p>
-    #[doc(hidden)]
     pub deployment_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment group name.</p>
-    #[doc(hidden)]
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment configuration name.</p>
-    #[doc(hidden)]
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags.</p>
-    #[doc(hidden)]
     pub ec2_tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>,
     /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags.</p>
-    #[doc(hidden)]
     pub on_premises_instance_tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     /// <p>A list of associated Auto Scaling groups.</p>
-    #[doc(hidden)]
     pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the deployment group's target revision, including type and location.</p>
-    #[doc(hidden)]
     pub target_revision: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>Information about triggers associated with the deployment group.</p>
-    #[doc(hidden)]
     pub trigger_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>>,
     /// <p>A list of alarms associated with the deployment group.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>Information about the automatic rollback configuration associated with the deployment group.</p>
-    #[doc(hidden)]
     pub auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
-    #[doc(hidden)]
     pub deployment_style: ::std::option::Option<crate::types::DeploymentStyle>,
     /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
-    #[doc(hidden)]
     pub outdated_instances_strategy: ::std::option::Option<crate::types::OutdatedInstancesStrategy>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
-    #[doc(hidden)]
     pub blue_green_deployment_configuration: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer to use in a deployment.</p>
-    #[doc(hidden)]
     pub load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     /// <p>Information about the most recent successful deployment to the deployment group.</p>
-    #[doc(hidden)]
     pub last_successful_deployment: ::std::option::Option<crate::types::LastDeploymentInfo>,
     /// <p>Information about the most recent attempted deployment to the deployment group.</p>
-    #[doc(hidden)]
     pub last_attempted_deployment: ::std::option::Option<crate::types::LastDeploymentInfo>,
     /// <p>Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
-    #[doc(hidden)]
     pub ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
     /// <p>Information about groups of tags applied to an on-premises instance. The deployment group includes only on-premises instances identified by all the tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
-    #[doc(hidden)]
     pub on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    #[doc(hidden)]
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
 }
 impl DeploymentGroupInfo {

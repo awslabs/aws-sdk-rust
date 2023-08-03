@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateArtifactInput {
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID, ID type, and URI of the source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ArtifactSource>,
     /// <p>The artifact type.</p>
-    #[doc(hidden)]
     pub artifact_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties to add to the artifact.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>A list of tags to apply to the artifact.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateArtifactInput {

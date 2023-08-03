@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsSourceConfig {
     /// <p>A string identifying the database instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The host name of the database.</p>
-    #[doc(hidden)]
     pub database_host: ::std::option::Option<::std::string::String>,
     /// <p>The port number where the database can be accessed.</p>
-    #[doc(hidden)]
     pub database_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    #[doc(hidden)]
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the RDS database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl RdsSourceConfig {

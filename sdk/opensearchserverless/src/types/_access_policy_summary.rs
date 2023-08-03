@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicySummary {
     /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the policy.</p>
-    #[doc(hidden)]
     pub policy_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the access policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Epoch time when the access policy was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl AccessPolicySummary {

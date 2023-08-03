@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageState {
     /// <p>The status of the image.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImageStatus>,
     /// <p>The reason for the status of the image.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ImageState {

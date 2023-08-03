@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityControl {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    #[doc(hidden)]
     pub security_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The title of a security control. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p> The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    #[doc(hidden)]
     pub remediation_url: ::std::option::Option<::std::string::String>,
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p> The enablement status of a security control in a specific standard. </p>
-    #[doc(hidden)]
     pub security_control_status: ::std::option::Option<crate::types::ControlStatus>,
 }
 impl SecurityControl {

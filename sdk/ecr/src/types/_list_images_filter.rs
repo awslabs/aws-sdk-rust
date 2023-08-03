@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagesFilter {
     /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
-    #[doc(hidden)]
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
 impl ListImagesFilter {

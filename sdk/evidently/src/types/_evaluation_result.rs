@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variation that was served to the user session.</p>
-    #[doc(hidden)]
     pub variation: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::VariableValue>,
     /// <p>An internal ID that represents a unique user session of the application.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationResult {

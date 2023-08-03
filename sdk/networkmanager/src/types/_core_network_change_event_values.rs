@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The segment name if the change event is associated with a segment.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkChangeEventValues {

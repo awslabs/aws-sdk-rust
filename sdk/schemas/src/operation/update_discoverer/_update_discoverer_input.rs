@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the discoverer.</p>
-    #[doc(hidden)]
     pub discoverer_id: ::std::option::Option<::std::string::String>,
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
-    #[doc(hidden)]
     pub cross_account: ::std::option::Option<bool>,
 }
 impl UpdateDiscovererInput {

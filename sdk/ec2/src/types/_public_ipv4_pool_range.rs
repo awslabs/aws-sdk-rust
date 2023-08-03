@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicIpv4PoolRange {
     /// <p>The first IP address in the range.</p>
-    #[doc(hidden)]
     pub first_address: ::std::option::Option<::std::string::String>,
     /// <p>The last IP address in the range.</p>
-    #[doc(hidden)]
     pub last_address: ::std::option::Option<::std::string::String>,
     /// <p>The number of addresses in the range.</p>
-    #[doc(hidden)]
     pub address_count: ::std::option::Option<i32>,
     /// <p>The number of available addresses in the range.</p>
-    #[doc(hidden)]
     pub available_address_count: ::std::option::Option<i32>,
 }
 impl PublicIpv4PoolRange {

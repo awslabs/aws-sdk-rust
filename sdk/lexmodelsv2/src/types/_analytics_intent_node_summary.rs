@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentNodeSummary {
     /// <p>The name of the intent at the end of the requested path.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The path.</p>
-    #[doc(hidden)]
     pub intent_path: ::std::option::Option<::std::string::String>,
     /// <p>The total number of sessions that follow the given path to the given intent.</p>
-    #[doc(hidden)]
     pub intent_count: ::std::option::Option<i32>,
     /// <p>The number of intents up to and including the requested path.</p>
-    #[doc(hidden)]
     pub intent_level: ::std::option::Option<i32>,
     /// <p>Specifies whether the node is the end of a path (<code>Exit</code>) or not (<code>Inner</code>).</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<crate::types::AnalyticsNodeType>,
 }
 impl AnalyticsIntentNodeSummary {

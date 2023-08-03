@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMapTileInput {
     /// <p>The map resource to retrieve the map tiles from.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The zoom value for the map tile.</p>
-    #[doc(hidden)]
     pub z: ::std::option::Option<::std::string::String>,
     /// <p>The X axis value for the map tile.</p>
-    #[doc(hidden)]
     pub x: ::std::option::Option<::std::string::String>,
     /// <p>The Y axis value for the map tile. </p>
-    #[doc(hidden)]
     pub y: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapTileInput {

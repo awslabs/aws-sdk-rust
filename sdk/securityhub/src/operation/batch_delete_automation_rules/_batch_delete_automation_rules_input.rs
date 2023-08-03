@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesInput {
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    #[doc(hidden)]
     pub automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteAutomationRulesInput {

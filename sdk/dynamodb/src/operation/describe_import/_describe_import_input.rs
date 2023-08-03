@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImportInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
-    #[doc(hidden)]
     pub import_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImportInput {

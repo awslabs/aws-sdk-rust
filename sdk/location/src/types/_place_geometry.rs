@@ -9,7 +9,6 @@ pub struct PlaceGeometry {
     /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub point: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl PlaceGeometry {

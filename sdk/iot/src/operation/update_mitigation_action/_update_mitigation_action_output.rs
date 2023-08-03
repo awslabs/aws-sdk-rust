@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMitigationActionOutput {
     /// <p>The ARN for the new mitigation action.</p>
-    #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the mitigation action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

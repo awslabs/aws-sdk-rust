@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainController {
     /// <p>Identifier of the directory where the domain controller resides.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a specific domain controller in the directory.</p>
-    #[doc(hidden)]
     pub domain_controller_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the domain controller.</p>
-    #[doc(hidden)]
     pub dns_ip_addr: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that contains the domain controller.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where the domain controller is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain controller.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainControllerStatus>,
     /// <p>A description of the domain controller state.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Specifies when the domain controller was created.</p>
-    #[doc(hidden)]
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the status was last updated.</p>
-    #[doc(hidden)]
     pub status_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DomainController {

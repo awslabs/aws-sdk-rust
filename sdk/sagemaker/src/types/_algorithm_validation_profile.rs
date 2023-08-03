@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmValidationProfile {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
-    #[doc(hidden)]
     pub training_job_definition: ::std::option::Option<crate::types::TrainingJobDefinition>,
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
-    #[doc(hidden)]
     pub transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
 impl AlgorithmValidationProfile {

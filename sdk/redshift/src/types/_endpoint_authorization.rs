@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointAuthorization {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    #[doc(hidden)]
     pub grantor: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    #[doc(hidden)]
     pub grantee: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
-    #[doc(hidden)]
     pub authorize_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of the authorization action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    #[doc(hidden)]
     pub allowed_all_vp_cs: bool,
     /// <p>The VPCs allowed access to the cluster.</p>
-    #[doc(hidden)]
     pub allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
-    #[doc(hidden)]
     pub endpoint_count: i32,
 }
 impl EndpointAuthorization {

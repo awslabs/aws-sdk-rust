@@ -9,10 +9,8 @@ pub struct DescribeCreateCaseOptionsOutput {
     /// <li> <p> best_effort </p> </li>
     /// <li> <p> unavailable </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub language_availability: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
-    #[doc(hidden)]
     pub communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchProfileDetailsOutput {
     /// <p>The launch profile.</p>
-    #[doc(hidden)]
     pub launch_profile: ::std::option::Option<crate::types::LaunchProfile>,
     /// <p>A collection of streaming images.</p>
-    #[doc(hidden)]
     pub streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
     /// <p>A collection of studio component summaries.</p>
-    #[doc(hidden)]
     pub studio_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentSummary>>,
     _request_id: Option<String>,
 }

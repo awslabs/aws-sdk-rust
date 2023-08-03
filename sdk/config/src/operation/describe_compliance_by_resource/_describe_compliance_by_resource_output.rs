@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComplianceByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
-    #[doc(hidden)]
     pub compliance_by_resources: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceByResource>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

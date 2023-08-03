@@ -10,14 +10,11 @@ pub struct DeleteNodeInput {
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
     /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the node.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNodeInput {

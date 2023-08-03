@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchedUser {
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user matched to a provided FaceID.</p>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
 }
 impl MatchedUser {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was ready to run steps.</p>
-    #[doc(hidden)]
     pub ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was terminated.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClusterTimeline {

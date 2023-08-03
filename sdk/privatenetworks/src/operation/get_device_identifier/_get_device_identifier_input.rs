@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    #[doc(hidden)]
     pub device_identifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceIdentifierInput {

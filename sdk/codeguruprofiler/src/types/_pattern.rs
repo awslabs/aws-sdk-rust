@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pattern {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name for this pattern.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
-    #[doc(hidden)]
     pub resolution_steps: ::std::option::Option<::std::string::String>,
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    #[doc(hidden)]
     pub target_frames: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
-    #[doc(hidden)]
     pub threshold_percent: f64,
     /// <p> A list of the different counters used to determine if there is a match. </p>
-    #[doc(hidden)]
     pub counters_to_aggregate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Pattern {

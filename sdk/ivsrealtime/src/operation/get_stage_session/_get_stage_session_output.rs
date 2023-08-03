@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageSessionOutput {
     /// <p>The stage session that is returned.</p>
-    #[doc(hidden)]
     pub stage_session: ::std::option::Option<crate::types::StageSession>,
     _request_id: Option<String>,
 }

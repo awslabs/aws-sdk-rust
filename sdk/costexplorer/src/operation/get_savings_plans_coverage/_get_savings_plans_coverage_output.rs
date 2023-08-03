@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    #[doc(hidden)]
     pub savings_plans_coverages: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansCoverage>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

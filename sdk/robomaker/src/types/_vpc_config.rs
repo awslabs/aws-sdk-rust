@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean indicating whether to assign a public IP address.</p>
-    #[doc(hidden)]
     pub assign_public_ip: bool,
 }
 impl VpcConfig {

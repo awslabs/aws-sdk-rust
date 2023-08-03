@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduledActionInput {
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub target_action: ::std::option::Option<crate::types::ScheduledActionType>,
     /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scheduled action. </p>
-    #[doc(hidden)]
     pub scheduled_action_description: ::std::option::Option<::std::string::String>,
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
-    #[doc(hidden)]
     pub enable: ::std::option::Option<bool>,
 }
 impl CreateScheduledActionInput {

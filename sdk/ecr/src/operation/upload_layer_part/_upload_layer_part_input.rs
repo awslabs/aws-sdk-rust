@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadLayerPartInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to which you are uploading layer parts.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
-    #[doc(hidden)]
     pub part_first_byte: ::std::option::Option<i64>,
     /// <p>The position of the last byte of the layer part within the overall image layer.</p>
-    #[doc(hidden)]
     pub part_last_byte: ::std::option::Option<i64>,
     /// <p>The base64-encoded layer part payload.</p>
-    #[doc(hidden)]
     pub layer_part_blob: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UploadLayerPartInput {

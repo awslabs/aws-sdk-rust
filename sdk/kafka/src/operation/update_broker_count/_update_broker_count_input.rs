@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBrokerCountInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
-    #[doc(hidden)]
     pub target_number_of_broker_nodes: ::std::option::Option<i32>,
 }
 impl UpdateBrokerCountInput {

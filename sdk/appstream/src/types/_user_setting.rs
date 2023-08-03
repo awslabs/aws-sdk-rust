@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSetting {
     /// <p>The action that is enabled or disabled.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>Indicates whether the action is enabled or disabled.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::Permission>,
 }
 impl UserSetting {

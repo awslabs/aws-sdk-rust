@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentStatusSummary {
     /// <p>The status of database analysis.</p>
-    #[doc(hidden)]
     pub src_code_or_db_analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentStatusSummary {

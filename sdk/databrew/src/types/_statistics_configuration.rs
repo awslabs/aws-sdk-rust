@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatisticsConfiguration {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-    #[doc(hidden)]
     pub included_statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of overrides for evaluations.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::StatisticOverride>>,
 }
 impl StatisticsConfiguration {

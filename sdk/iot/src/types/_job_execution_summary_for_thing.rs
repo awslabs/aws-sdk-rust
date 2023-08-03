@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionSummaryForThing {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains a subset of information about a job execution.</p>
-    #[doc(hidden)]
     pub job_execution_summary: ::std::option::Option<crate::types::JobExecutionSummary>,
 }
 impl JobExecutionSummaryForThing {

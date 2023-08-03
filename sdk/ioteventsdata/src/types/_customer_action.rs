@@ -13,22 +13,16 @@ pub struct CustomerAction {
     /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<crate::types::CustomerActionName>,
     /// <p>Contains the configuration information of a snooze action.</p>
-    #[doc(hidden)]
     pub snooze_action_configuration: ::std::option::Option<crate::types::SnoozeActionConfiguration>,
     /// <p>Contains the configuration information of an enable action.</p>
-    #[doc(hidden)]
     pub enable_action_configuration: ::std::option::Option<crate::types::EnableActionConfiguration>,
     /// <p>Contains the configuration information of a disable action.</p>
-    #[doc(hidden)]
     pub disable_action_configuration: ::std::option::Option<crate::types::DisableActionConfiguration>,
     /// <p>Contains the configuration information of an acknowledge action.</p>
-    #[doc(hidden)]
     pub acknowledge_action_configuration: ::std::option::Option<crate::types::AcknowledgeActionConfiguration>,
     /// <p>Contains the configuration information of a reset action.</p>
-    #[doc(hidden)]
     pub reset_action_configuration: ::std::option::Option<crate::types::ResetActionConfiguration>,
 }
 impl CustomerAction {

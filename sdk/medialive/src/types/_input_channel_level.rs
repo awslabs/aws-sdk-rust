@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputChannelLevel {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
-    #[doc(hidden)]
     pub gain: ::std::option::Option<i32>,
     /// The index of the input channel used as a source.
-    #[doc(hidden)]
     pub input_channel: ::std::option::Option<i32>,
 }
 impl InputChannelLevel {

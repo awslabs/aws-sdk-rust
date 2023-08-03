@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletionTaskFailureReasonType {
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    #[doc(hidden)]
     pub role_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,
 }
 impl DeletionTaskFailureReasonType {

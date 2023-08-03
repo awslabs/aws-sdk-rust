@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitmentConfiguration {
     /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
-    #[doc(hidden)]
     pub commitment_length: ::std::option::Option<crate::types::CommitmentLength>,
     /// <p>Determines whether the commitment period for a radio unit is set to automatically renew for an additional 1 year after your current commitment period expires.</p>
     /// <p>Set to <code>True</code>, if you want your commitment period to automatically renew. Set to <code>False</code> if you do not want your commitment to automatically renew.</p>
@@ -17,7 +16,6 @@ pub struct CommitmentConfiguration {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.</p> </li>
     /// </ul>
     /// <p>You cannot use the automatic-renewal option for a 60-day commitment.</p>
-    #[doc(hidden)]
     pub automatic_renewal: ::std::option::Option<bool>,
 }
 impl CommitmentConfiguration {

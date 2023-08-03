@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartListElement {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
-    #[doc(hidden)]
     pub range_in_bytes: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
-    #[doc(hidden)]
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
 }
 impl PartListElement {

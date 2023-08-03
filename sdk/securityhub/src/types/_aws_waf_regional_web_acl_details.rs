@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclDetails {
     /// <p>The action to perform if none of the rules contained in the web ACL match. </p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<::std::string::String>,
     /// <p>A name for the metrics for this web ACL. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the web ACL. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
-    #[doc(hidden)]
     pub rules_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
     /// <p>The ID of the web ACL. </p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclDetails {

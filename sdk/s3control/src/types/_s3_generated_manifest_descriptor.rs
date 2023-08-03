@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3GeneratedManifestDescriptor {
     /// <p>The format of the generated manifest.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::GeneratedManifestFormat>,
     /// <p>Contains the information required to locate a manifest object.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::JobManifestLocation>,
 }
 impl S3GeneratedManifestDescriptor {

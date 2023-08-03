@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Row {
     /// <p>The data in a row of query results.</p>
-    #[doc(hidden)]
     pub row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
 }
 impl Row {

@@ -5,7 +5,6 @@
 pub struct AcceptInvitationInput {
     /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInvitationInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLogSourceResource {
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The details of the log provider for a third-party custom source.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::CustomLogSourceProvider>,
     /// <p>The attributes of a third-party custom source.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::CustomLogSourceAttributes>,
 }
 impl CustomLogSourceResource {

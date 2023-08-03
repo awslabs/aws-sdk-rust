@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowInput {
     /// <p>The workflow's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The export format for the workflow.</p>
-    #[doc(hidden)]
     pub export: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>>,
 }
 impl GetWorkflowInput {

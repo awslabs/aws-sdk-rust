@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketsOutput {
     /// <p>The list of buckets owned by the requester.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     /// <p>The owner of the buckets listed.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

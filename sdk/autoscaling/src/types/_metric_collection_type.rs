@@ -27,7 +27,6 @@ pub struct MetricCollectionType {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
 }
 impl MetricCollectionType {

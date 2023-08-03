@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFormOutput {
     /// <p>Represents the configuration settings for the form.</p>
-    #[doc(hidden)]
     pub form: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,
 }

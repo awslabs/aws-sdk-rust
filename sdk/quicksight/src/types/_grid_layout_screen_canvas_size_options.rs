@@ -9,10 +9,8 @@ pub struct GridLayoutScreenCanvasSizeOptions {
     /// <li> <p> <code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p> </li>
     /// <li> <p> <code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resize_option: ::std::option::Option<crate::types::ResizeOption>,
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    #[doc(hidden)]
     pub optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }
 impl GridLayoutScreenCanvasSizeOptions {

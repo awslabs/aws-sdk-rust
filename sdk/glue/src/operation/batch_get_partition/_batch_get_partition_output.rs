@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetPartitionOutput {
     /// <p>A list of the requested partitions.</p>
-    #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    #[doc(hidden)]
     pub unprocessed_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
     _request_id: Option<String>,
 }

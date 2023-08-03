@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskOutput {
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    #[doc(hidden)]
     pub wireless_gateway_task_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WirelessGatewayTaskStatus>,
     _request_id: Option<String>,
 }

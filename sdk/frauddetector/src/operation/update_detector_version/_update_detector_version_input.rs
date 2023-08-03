@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionInput {
     /// <p>The parent detector ID for the detector version you want to update.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
-    #[doc(hidden)]
     pub external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rules to include in the detector version.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The detector version description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The model versions to include in the detector version.</p>
-    #[doc(hidden)]
     pub model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     /// <p>The rule execution mode to add to the detector.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    #[doc(hidden)]
     pub rule_execution_mode: ::std::option::Option<crate::types::RuleExecutionMode>,
 }
 impl UpdateDetectorVersionInput {

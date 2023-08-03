@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    #[doc(hidden)]
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The optional configuration for the server that serves segments.</p>
-    #[doc(hidden)]
     pub default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
     /// <p>The source's HTTP package configurations.</p>
-    #[doc(hidden)]
     pub http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    #[doc(hidden)]
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name associated with the source location.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSourceLocationInput {

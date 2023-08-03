@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverConfig {
     /// <p>The main Region of the endpoint.</p>
-    #[doc(hidden)]
     pub primary: ::std::option::Option<crate::types::Primary>,
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
-    #[doc(hidden)]
     pub secondary: ::std::option::Option<crate::types::Secondary>,
 }
 impl FailoverConfig {

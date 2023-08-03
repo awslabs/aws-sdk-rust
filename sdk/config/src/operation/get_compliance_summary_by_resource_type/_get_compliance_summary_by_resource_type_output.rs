@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceTypeOutput {
     /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
-    #[doc(hidden)]
     pub compliance_summaries_by_resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
     _request_id: Option<String>,
 }

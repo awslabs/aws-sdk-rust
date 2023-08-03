@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact was connected to the agent.</p>
-    #[doc(hidden)]
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AgentInfo {

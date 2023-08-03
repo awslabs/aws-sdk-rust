@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionGroupOption {
     /// <p>The name of the option.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the engine that this option can be applied to.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the major engine version that the option is available for.</p>
-    #[doc(hidden)]
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The minimum required engine version for the option to be applied.</p>
-    #[doc(hidden)]
     pub minimum_required_minor_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the option requires a port.</p>
-    #[doc(hidden)]
     pub port_required: bool,
     /// <p>If the option requires a port, specifies the default port for the option.</p>
-    #[doc(hidden)]
     pub default_port: ::std::option::Option<i32>,
     /// <p>The options that are prerequisites for this option.</p>
-    #[doc(hidden)]
     pub options_depended_on: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The options that conflict with this option.</p>
-    #[doc(hidden)]
     pub options_conflicts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
-    #[doc(hidden)]
     pub persistent: bool,
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
-    #[doc(hidden)]
     pub permanent: bool,
     /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
-    #[doc(hidden)]
     pub requires_auto_minor_engine_version_upgrade: bool,
     /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc_only: bool,
     /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
-    #[doc(hidden)]
     pub supports_option_version_downgrade: ::std::option::Option<bool>,
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
-    #[doc(hidden)]
     pub option_group_option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
     /// <p>The versions that are available for the option.</p>
-    #[doc(hidden)]
     pub option_group_option_versions: ::std::option::Option<::std::vec::Vec<crate::types::OptionVersion>>,
     /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
-    #[doc(hidden)]
     pub copyable_cross_account: ::std::option::Option<bool>,
 }
 impl OptionGroupOption {

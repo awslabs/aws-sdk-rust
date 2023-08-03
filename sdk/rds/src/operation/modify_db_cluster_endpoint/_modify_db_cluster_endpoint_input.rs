@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterEndpointInput {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    #[doc(hidden)]
     pub static_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    #[doc(hidden)]
     pub excluded_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyDbClusterEndpointInput {

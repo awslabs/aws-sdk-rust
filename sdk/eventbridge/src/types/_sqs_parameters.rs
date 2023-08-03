@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    #[doc(hidden)]
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SqsParameters {

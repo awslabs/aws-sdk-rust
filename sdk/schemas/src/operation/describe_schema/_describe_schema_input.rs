@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSchemaInput {
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSchemaInput {

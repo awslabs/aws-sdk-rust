@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FPorts {
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub fuota: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub multicast: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub clock_sync: ::std::option::Option<i32>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::Positioning>,
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl FPorts {

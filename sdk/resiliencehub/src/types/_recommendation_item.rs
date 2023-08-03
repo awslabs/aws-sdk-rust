@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationItem {
     /// <p>The resource identifier.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The target account identifier.</p>
-    #[doc(hidden)]
     pub target_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The target region.</p>
-    #[doc(hidden)]
     pub target_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the recommendation has already been implemented.</p>
-    #[doc(hidden)]
     pub already_implemented: ::std::option::Option<bool>,
 }
 impl RecommendationItem {

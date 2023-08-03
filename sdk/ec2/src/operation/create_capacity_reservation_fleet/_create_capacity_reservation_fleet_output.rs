@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetOutput {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
-    #[doc(hidden)]
     pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The requested capacity units that have been successfully reserved.</p>
-    #[doc(hidden)]
     pub total_fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub instance_match_criteria: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub fleet_capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

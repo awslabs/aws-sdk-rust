@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSkillsOutput {
     /// <p>The list of enabled skills requested. Required.</p>
-    #[doc(hidden)]
     pub skill_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>>,
     /// <p>The token returned to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

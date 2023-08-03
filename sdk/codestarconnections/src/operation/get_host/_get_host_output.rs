@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostOutput {
     /// <p>The name of the requested host.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the requested host.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
-    #[doc(hidden)]
     pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration of the requested host.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     _request_id: Option<String>,
 }

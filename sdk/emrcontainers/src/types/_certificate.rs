@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
-    #[doc(hidden)]
     pub certificate_data: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {

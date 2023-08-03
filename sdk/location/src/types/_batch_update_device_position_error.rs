@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details related to the error code such as the error code and error message.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchUpdateDevicePositionError {

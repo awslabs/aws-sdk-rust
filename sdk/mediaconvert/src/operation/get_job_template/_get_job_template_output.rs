@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    #[doc(hidden)]
     pub job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
 }

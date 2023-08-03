@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
 }
 impl GetBucketVersioningInput {

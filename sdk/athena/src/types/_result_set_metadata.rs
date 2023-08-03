@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
-    #[doc(hidden)]
     pub column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl ResultSetMetadata {

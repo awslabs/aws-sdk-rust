@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
-    #[doc(hidden)]
     pub notebook_executions: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

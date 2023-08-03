@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAttributeGroupOutput {
     /// <p>Information about the deleted attribute group.</p>
-    #[doc(hidden)]
     pub attribute_group: ::std::option::Option<crate::types::AttributeGroupSummary>,
     _request_id: Option<String>,
 }

@@ -8,13 +8,10 @@ pub struct ListOriginRequestPoliciesInput {
     /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of origin request policies that you want in the response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListOriginRequestPoliciesInput {

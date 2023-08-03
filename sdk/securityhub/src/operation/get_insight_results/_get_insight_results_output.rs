@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightResultsOutput {
     /// <p>The insight results returned by the operation.</p>
-    #[doc(hidden)]
     pub insight_results: ::std::option::Option<crate::types::InsightResults>,
     _request_id: Option<String>,
 }

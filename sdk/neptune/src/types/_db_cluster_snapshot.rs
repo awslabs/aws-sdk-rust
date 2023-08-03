@@ -6,66 +6,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterSnapshot {
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.</p>
     /// <p>After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not changed.</p>
     /// <p>However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and the original DB cluster is deleted. If you specify a property that is different from the previous snapshot restore property, the DB cluster is restored from the snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>Specifies the status of this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Provides the license model information for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Provides the type of the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
-    #[doc(hidden)]
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
 }
 impl DbClusterSnapshot {

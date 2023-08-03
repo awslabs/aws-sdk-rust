@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationStatus {
     /// <p>The date when the status changed.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AssociationStatusName>,
     /// <p>The reason for the status.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined string.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
 }
 impl AssociationStatus {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
-    #[doc(hidden)]
     pub target_location_max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
-    #[doc(hidden)]
     pub target_location_max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
-    #[doc(hidden)]
     pub execution_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    #[doc(hidden)]
     pub target_location_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl TargetLocation {

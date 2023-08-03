@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretDetails {
     /// <p>Defines the rotation schedule for the secret.</p>
-    #[doc(hidden)]
     pub rotation_rules: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
-    #[doc(hidden)]
     pub rotation_occurred_within_frequency: bool,
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether rotation is enabled.</p>
-    #[doc(hidden)]
     pub rotation_enabled: bool,
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
-    #[doc(hidden)]
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the secret is deleted.</p>
-    #[doc(hidden)]
     pub deleted: bool,
     /// <p>The name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided description of the secret.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AwsSecretsManagerSecretDetails {

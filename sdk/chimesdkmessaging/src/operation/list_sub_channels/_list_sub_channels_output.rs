@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListSubChannelsOutput {
     /// <p>The ARN of elastic channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information about each sub-channel.</p>
-    #[doc(hidden)]
     pub sub_channels: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAvailabilityConfigurationInput {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain to which the provider applies the availability configuration.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
-    #[doc(hidden)]
     pub ews_provider: ::std::option::Option<crate::types::EwsAvailabilityProvider>,
     /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
-    #[doc(hidden)]
     pub lambda_provider: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
 }
 impl UpdateAvailabilityConfigurationInput {

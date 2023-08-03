@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
@@ -23,17 +21,13 @@ pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbInstanceAutomatedBackupsInput {

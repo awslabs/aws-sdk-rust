@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hdr10Metadata {
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub blue_primary_x: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub blue_primary_y: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub green_primary_x: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub green_primary_y: ::std::option::Option<i32>,
     /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
-    #[doc(hidden)]
     pub max_content_light_level: ::std::option::Option<i32>,
     /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
-    #[doc(hidden)]
     pub max_frame_average_light_level: ::std::option::Option<i32>,
     /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
-    #[doc(hidden)]
     pub max_luminance: ::std::option::Option<i32>,
     /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
-    #[doc(hidden)]
     pub min_luminance: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub red_primary_x: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub red_primary_y: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub white_point_x: ::std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    #[doc(hidden)]
     pub white_point_y: ::std::option::Option<i32>,
 }
 impl Hdr10Metadata {

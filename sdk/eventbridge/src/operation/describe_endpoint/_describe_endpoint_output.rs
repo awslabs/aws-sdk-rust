@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutput {
     /// <p>The name of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub routing_config: ::std::option::Option<crate::types::RoutingConfig>,
     /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     /// <p>The event buses being used by the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
     /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the endpoint you asked for information about.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EndpointState>,
     /// <p>The reason the endpoint you asked for information about is in its current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time the endpoint you asked for information about was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the endpoint you asked for information about was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

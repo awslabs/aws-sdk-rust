@@ -5,14 +5,11 @@
 pub struct UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInput {

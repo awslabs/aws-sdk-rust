@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the policy version.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<i32>,
 }
 impl ExecuteCoreNetworkChangeSetInput {

@@ -15,7 +15,6 @@ pub struct Body {
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit. </p>
     /// <p>Default: <code>CONTINUE</code> </p>
-    #[doc(hidden)]
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl Body {

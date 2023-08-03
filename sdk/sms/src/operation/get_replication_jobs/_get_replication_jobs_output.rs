@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReplicationJobsOutput {
     /// <p>Information about the replication jobs.</p>
-    #[doc(hidden)]
     pub replication_job_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

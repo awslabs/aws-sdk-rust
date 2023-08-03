@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorModelVersionSummary {
     /// <p>The name of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the detector model version.</p>
-    #[doc(hidden)]
     pub detector_model_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector model version.</p>
-    #[doc(hidden)]
     pub detector_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the detector model version was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the detector model version was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector model version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    #[doc(hidden)]
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelVersionSummary {

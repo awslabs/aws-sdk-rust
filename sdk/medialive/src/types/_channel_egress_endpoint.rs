@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
-    #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
 }
 impl ChannelEgressEndpoint {

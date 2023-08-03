@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the share request. </p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    #[doc(hidden)]
     pub request_type: ::std::option::Option<crate::types::ShareRequestType>,
     /// <p>Specifies the update action for the share request.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ShareRequestAction>,
 }
 impl UpdateAssessmentFrameworkShareInput {

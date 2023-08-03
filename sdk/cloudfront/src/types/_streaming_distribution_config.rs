@@ -7,28 +7,20 @@ pub struct StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
-    #[doc(hidden)]
     pub s3_origin: ::std::option::Option<crate::types::S3Origin>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>Any comments you want to include about the streaming distribution.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::StreamingLoggingConfig>,
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub trusted_signers: ::std::option::Option<crate::types::TrustedSigners>,
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    #[doc(hidden)]
     pub price_class: ::std::option::Option<crate::types::PriceClass>,
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl StreamingDistributionConfig {

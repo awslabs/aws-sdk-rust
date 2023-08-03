@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
     /// <p> Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary. </p>
-    #[doc(hidden)]
     pub primary: bool,
     /// <p> The private IPv4 address. </p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {

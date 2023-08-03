@@ -9,7 +9,6 @@ pub struct SheetElementConfigurationOverrides {
     /// <li> <p> <code>VISIBLE</code> </p> </li>
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl SheetElementConfigurationOverrides {

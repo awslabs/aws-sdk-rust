@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationResourceDetailedStatusFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
@@ -20,7 +19,6 @@ pub struct OrganizationResourceDetailedStatusFilters {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
 }
 impl OrganizationResourceDetailedStatusFilters {

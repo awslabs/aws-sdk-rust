@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

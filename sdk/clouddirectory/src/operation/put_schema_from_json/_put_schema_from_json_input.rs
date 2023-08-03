@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSchemaFromJsonInput {
     /// <p>The ARN of the schema to update.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The replacement JSON schema.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
 }
 impl PutSchemaFromJsonInput {

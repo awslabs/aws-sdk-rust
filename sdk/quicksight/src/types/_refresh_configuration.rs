@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshConfiguration {
     /// <p>The incremental refresh for the dataset.</p>
-    #[doc(hidden)]
     pub incremental_refresh: ::std::option::Option<crate::types::IncrementalRefresh>,
 }
 impl RefreshConfiguration {

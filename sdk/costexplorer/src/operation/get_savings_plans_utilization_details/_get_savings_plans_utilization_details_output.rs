@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    #[doc(hidden)]
     pub savings_plans_utilization_details: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
     /// <p>The time period of the request. </p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

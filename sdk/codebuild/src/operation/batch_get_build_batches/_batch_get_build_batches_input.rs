@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetBuildBatchesInput {

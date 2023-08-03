@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    #[doc(hidden)]
     pub agent_versions: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     _request_id: Option<String>,
 }

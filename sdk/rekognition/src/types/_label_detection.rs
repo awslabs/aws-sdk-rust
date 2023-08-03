@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelDetection {
     /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about the detected label.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<crate::types::Label>,
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
-    #[doc(hidden)]
     pub start_timestamp_millis: ::std::option::Option<i64>,
     /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
-    #[doc(hidden)]
     pub end_timestamp_millis: ::std::option::Option<i64>,
     /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
 }
 impl LabelDetection {

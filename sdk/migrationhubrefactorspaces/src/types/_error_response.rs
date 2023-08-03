@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorResponse {
     /// <p>The error code associated with the error. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The message associated with the error. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource. </p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ErrorResourceType>,
     /// <p>Additional details about the error. </p>
-    #[doc(hidden)]
     pub additional_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ErrorResponse {

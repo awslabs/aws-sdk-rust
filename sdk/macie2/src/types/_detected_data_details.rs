@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedDataDetails {
     /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl DetectedDataDetails {

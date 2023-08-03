@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceContributorCount {
     /// <p>The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item.</p>
-    #[doc(hidden)]
     pub capped_count: i32,
     /// <p>Indicates whether the maximum count is reached.</p>
-    #[doc(hidden)]
     pub cap_exceeded: bool,
 }
 impl ComplianceContributorCount {

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
 }
 impl SyncDeploymentJobInput {

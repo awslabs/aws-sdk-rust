@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
@@ -25,10 +23,8 @@ pub struct CreateTableInput {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
     /// <p>This parameter allows to enter a description of the table.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
@@ -37,7 +33,6 @@ pub struct CreateTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -46,7 +41,6 @@ pub struct CreateTableInput {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
@@ -55,7 +49,6 @@ pub struct CreateTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
@@ -64,22 +57,18 @@ pub struct CreateTableInput {
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<crate::types::TimeToLive>,
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub default_time_to_live: ::std::option::Option<i32>,
     /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    #[doc(hidden)]
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
 }
 impl CreateTableInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartObjectInput {
     /// Backup job Id for the in-progress backup
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// Name for the object.
-    #[doc(hidden)]
     pub object_name: ::std::option::Option<::std::string::String>,
     /// Throw an exception if Object name is already exist.
-    #[doc(hidden)]
     pub throw_on_duplicate: bool,
 }
 impl StartObjectInput {

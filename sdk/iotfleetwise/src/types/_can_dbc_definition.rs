@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
-    #[doc(hidden)]
     pub network_interface: ::std::option::Option<::std::string::String>,
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    #[doc(hidden)]
     pub can_dbc_files: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-    #[doc(hidden)]
     pub signals_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CanDbcDefinition {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFargateProfilesOutput {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    #[doc(hidden)]
     pub fargate_profile_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

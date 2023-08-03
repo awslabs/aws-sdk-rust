@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSite {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    #[doc(hidden)]
     pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network site.</p>
-    #[doc(hidden)]
     pub network_site_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network site.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the network site.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkSiteStatus>,
     /// <p>The status reason of the network site.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The pending plan of the network site.</p>
-    #[doc(hidden)]
     pub pending_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>The current plan of the network site.</p>
-    #[doc(hidden)]
     pub current_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>The creation time of the network site.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The parent Availability Zone for the network site. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p> The parent Availability Zone ID for the network site. </p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkSite {

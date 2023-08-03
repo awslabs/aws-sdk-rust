@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelBanSummary {

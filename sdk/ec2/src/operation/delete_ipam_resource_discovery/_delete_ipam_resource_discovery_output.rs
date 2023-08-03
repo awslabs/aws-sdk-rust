@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIpamResourceDiscoveryOutput {
     /// <p>The IPAM resource discovery.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery: ::std::option::Option<crate::types::IpamResourceDiscovery>,
     _request_id: Option<String>,
 }

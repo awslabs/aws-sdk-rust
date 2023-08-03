@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

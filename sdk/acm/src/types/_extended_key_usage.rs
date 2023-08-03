@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>The name of an Extended Key Usage value.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct ExtendedKeyUsage {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub oid: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsage {

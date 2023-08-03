@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    #[doc(hidden)]
     pub iot_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-    #[doc(hidden)]
     pub lo_ra_wan_network_server_certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

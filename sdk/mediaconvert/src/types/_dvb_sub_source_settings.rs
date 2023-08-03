@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbSubSourceSettings {
     /// When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    #[doc(hidden)]
     pub pid: ::std::option::Option<i32>,
 }
 impl DvbSubSourceSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationDetails {
     /// <p>Contains the run command configuration for the cluster.</p>
-    #[doc(hidden)]
     pub execute_command_configuration: ::std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
 }
 impl AwsEcsClusterConfigurationDetails {

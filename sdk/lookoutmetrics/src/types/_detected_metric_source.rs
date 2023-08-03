@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
-    #[doc(hidden)]
     pub s3_source_config: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
 }
 impl DetectedMetricSource {

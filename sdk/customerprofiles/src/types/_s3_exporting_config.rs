@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ExportingConfig {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
-    #[doc(hidden)]
     pub s3_key_name: ::std::option::Option<::std::string::String>,
 }
 impl S3ExportingConfig {

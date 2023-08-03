@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClientCertificateInput {

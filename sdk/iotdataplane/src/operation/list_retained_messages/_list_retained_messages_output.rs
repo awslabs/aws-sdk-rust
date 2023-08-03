@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    #[doc(hidden)]
     pub retained_topics: ::std::option::Option<::std::vec::Vec<crate::types::RetainedMessageSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

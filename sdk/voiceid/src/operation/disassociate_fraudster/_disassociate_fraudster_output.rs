@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFraudsterOutput {
     /// <p>Contains all the information about a fraudster.</p>
-    #[doc(hidden)]
     pub fraudster: ::std::option::Option<crate::types::Fraudster>,
     _request_id: Option<String>,
 }

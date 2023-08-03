@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    #[doc(hidden)]
     pub directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl DomainJoinInfo {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>Describes event subscriptions.</p>
-    #[doc(hidden)]
     pub event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
 }

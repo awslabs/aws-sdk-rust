@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyTypeScope {
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    #[doc(hidden)]
     pub policy_types: ::std::option::Option<::std::vec::Vec<crate::types::SecurityServiceType>>,
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>
-    #[doc(hidden)]
     pub all_policy_types_enabled: bool,
 }
 impl PolicyTypeScope {

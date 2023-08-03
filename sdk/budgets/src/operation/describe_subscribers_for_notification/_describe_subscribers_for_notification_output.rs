@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

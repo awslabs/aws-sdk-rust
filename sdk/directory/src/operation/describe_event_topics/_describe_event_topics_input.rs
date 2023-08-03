@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsInput {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    #[doc(hidden)]
     pub topic_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeEventTopicsInput {

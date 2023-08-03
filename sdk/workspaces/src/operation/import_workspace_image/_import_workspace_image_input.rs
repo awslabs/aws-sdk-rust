@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
-    #[doc(hidden)]
     pub ec2_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub ingestion_process: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the WorkSpace image.</p>
-    #[doc(hidden)]
     pub image_description: ::std::option::Option<::std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <ul>
@@ -27,7 +22,6 @@ pub struct ImportWorkspaceImageInput {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
 }
 impl ImportWorkspaceImageInput {

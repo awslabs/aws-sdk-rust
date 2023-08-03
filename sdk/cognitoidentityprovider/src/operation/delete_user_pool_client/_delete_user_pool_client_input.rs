@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to delete the client.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID of the app associated with the user pool.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserPoolClientInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
-    #[doc(hidden)]
     pub sses3: ::std::option::Option<crate::types::Sses3>,
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
-    #[doc(hidden)]
     pub ssekms: ::std::option::Option<crate::types::Ssekms>,
 }
 impl InventoryEncryption {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskError {
     /// <p>Export task error datetime.</p>
-    #[doc(hidden)]
     pub error_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Export task error data.</p>
-    #[doc(hidden)]
     pub error_data: ::std::option::Option<crate::types::ExportErrorData>,
 }
 impl ExportTaskError {

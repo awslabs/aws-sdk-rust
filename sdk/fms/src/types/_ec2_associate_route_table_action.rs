@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2AssociateRouteTableAction {
     /// <p>A description of the EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>The ID of the subnet for the EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>The ID of the gateway to be used with the EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2AssociateRouteTableAction {

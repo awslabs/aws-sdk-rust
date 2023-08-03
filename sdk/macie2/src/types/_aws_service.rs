@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
-    #[doc(hidden)]
     pub invoked_by: ::std::option::Option<::std::string::String>,
 }
 impl AwsService {

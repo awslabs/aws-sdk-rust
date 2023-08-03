@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsMetadata {
     /// <p>The database details required to connect to an Amazon RDS.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::RdsDatabase>,
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
-    #[doc(hidden)]
     pub database_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
-    #[doc(hidden)]
     pub select_sql_query: ::std::option::Option<::std::string::String>,
     /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    #[doc(hidden)]
     pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
-    #[doc(hidden)]
     pub data_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl RdsMetadata {

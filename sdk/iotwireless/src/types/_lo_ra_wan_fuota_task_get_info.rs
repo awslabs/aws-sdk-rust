@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
-    #[doc(hidden)]
     pub rf_region: ::std::option::Option<::std::string::String>,
     /// <p>Start time of a FUOTA task.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LoRaWanFuotaTaskGetInfo {

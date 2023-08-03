@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapSortConfiguration {
     /// <p>The field sort configuration of the rows fields.</p>
-    #[doc(hidden)]
     pub heat_map_row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
-    #[doc(hidden)]
     pub heat_map_column_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
-    #[doc(hidden)]
     pub heat_map_row_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The limit on the number of columns that are displayed in a heat map.</p>
-    #[doc(hidden)]
     pub heat_map_column_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl HeatMapSortConfiguration {

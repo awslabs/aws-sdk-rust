@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesInput {
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
-    #[doc(hidden)]
     pub owner_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    #[doc(hidden)]
     pub shared_directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of shared directories to return in the response object.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeSharedDirectoriesInput {

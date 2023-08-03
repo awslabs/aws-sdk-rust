@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseAccountInput {
     /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CloseAccountInput {

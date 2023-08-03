@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusOutput {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
-    #[doc(hidden)]
     pub lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

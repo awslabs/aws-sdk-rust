@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
-    #[doc(hidden)]
     pub timestamp_metric_value_pair_list: ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>,
 }
 impl CloudWatchMetricsDataSummary {

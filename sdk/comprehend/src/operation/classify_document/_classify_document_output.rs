@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    #[doc(hidden)]
     pub classes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>,
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>,
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
     /// <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>
     /// <p>The field is empty if the system generated no warnings.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>>,
     _request_id: Option<String>,
 }

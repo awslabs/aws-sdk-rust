@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    #[doc(hidden)]
     pub enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesInput {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityNotificationAttributesInput {

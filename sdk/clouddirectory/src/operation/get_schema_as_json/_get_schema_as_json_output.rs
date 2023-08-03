@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaAsJsonOutput {
     /// <p>The name of the retrieved schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON representation of the schema document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

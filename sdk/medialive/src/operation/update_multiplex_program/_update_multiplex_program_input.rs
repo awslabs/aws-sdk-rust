@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
-    #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The new settings for a multiplex program.
-    #[doc(hidden)]
     pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// The name of the program to update.
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexProgramInput {

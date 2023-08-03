@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
     /// <p>The response headers policy.</p>
-    #[doc(hidden)]
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
 }
 impl ResponseHeadersPolicySummary {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WavSettings {
     /// Bits per sample.
-    #[doc(hidden)]
     pub bit_depth: ::std::option::Option<f64>,
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::WavCodingMode>,
     /// Sample rate in Hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<f64>,
 }
 impl WavSettings {

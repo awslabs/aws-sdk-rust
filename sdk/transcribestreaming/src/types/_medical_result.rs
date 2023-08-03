@@ -6,23 +6,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalResult {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub end_time: f64,
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
-    #[doc(hidden)]
     pub is_partial: bool,
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    #[doc(hidden)]
     pub alternatives: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MedicalResult {

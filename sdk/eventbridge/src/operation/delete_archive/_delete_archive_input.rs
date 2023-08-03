@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteArchiveInput {
     /// <p>The name of the archive to delete.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteArchiveInput {

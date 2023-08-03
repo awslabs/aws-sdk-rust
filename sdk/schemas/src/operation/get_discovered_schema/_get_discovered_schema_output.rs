@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiscoveredSchemaOutput {
     /// <p>The source of the schema definition.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

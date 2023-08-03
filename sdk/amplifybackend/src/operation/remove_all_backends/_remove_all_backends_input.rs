@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsInput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-    #[doc(hidden)]
     pub clean_amplify_app: ::std::option::Option<bool>,
 }
 impl RemoveAllBackendsInput {

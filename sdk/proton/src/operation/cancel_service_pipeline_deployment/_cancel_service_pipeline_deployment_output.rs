@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentOutput {
     /// <p>The service pipeline detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::ServicePipeline>,
     _request_id: Option<String>,
 }

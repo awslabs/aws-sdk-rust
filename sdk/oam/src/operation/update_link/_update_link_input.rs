@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLinkInput {
     /// <p>The ARN of the link that you want to update.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
 }
 impl UpdateLinkInput {

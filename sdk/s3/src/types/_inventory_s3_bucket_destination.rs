@@ -7,19 +7,14 @@ pub struct InventoryS3BucketDestination {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the output format of the inventory results.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::InventoryFormat>,
     /// <p>The prefix that is prepended to all inventory results.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::InventoryEncryption>,
 }
 impl InventoryS3BucketDestination {

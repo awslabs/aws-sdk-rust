@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
-    #[doc(hidden)]
     pub primary_source: ::std::option::Option<::std::string::String>,
 }
 impl SourcePriority {

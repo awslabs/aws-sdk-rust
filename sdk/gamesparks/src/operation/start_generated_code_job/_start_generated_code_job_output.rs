@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartGeneratedCodeJobOutput {
     /// <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
-    #[doc(hidden)]
     pub generated_code_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
-    #[doc(hidden)]
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     /// <p>The version identifier for the current version of the response headers policy.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

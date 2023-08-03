@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExtensionAssociationsInput {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the extension defined in the association.</p>
-    #[doc(hidden)]
     pub extension_version_number: ::std::option::Option<i32>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExtensionAssociationsInput {

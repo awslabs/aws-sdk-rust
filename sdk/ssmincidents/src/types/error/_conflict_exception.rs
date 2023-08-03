@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// The identifier of the requested resource
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// The resource type
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// If present in the output, the operation can be retried after this time
-    #[doc(hidden)]
     pub retry_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

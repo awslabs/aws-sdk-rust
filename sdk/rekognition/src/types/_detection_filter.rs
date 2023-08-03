@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectionFilter {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
-    #[doc(hidden)]
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
-    #[doc(hidden)]
     pub min_bounding_box_height: ::std::option::Option<f32>,
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
-    #[doc(hidden)]
     pub min_bounding_box_width: ::std::option::Option<f32>,
 }
 impl DetectionFilter {

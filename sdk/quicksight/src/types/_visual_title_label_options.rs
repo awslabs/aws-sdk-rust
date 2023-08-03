@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualTitleLabelOptions {
     /// <p>The visibility of the title label.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The short text format of the title label, such as plain text or rich text.</p>
-    #[doc(hidden)]
     pub format_text: ::std::option::Option<crate::types::ShortFormatText>,
 }
 impl VisualTitleLabelOptions {

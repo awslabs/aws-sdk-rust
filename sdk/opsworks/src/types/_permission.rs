@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>A stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user can use SSH.</p>
-    #[doc(hidden)]
     pub allow_ssh: ::std::option::Option<bool>,
     /// <p>Whether the user can use <b>sudo</b>.</p>
-    #[doc(hidden)]
     pub allow_sudo: ::std::option::Option<bool>,
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
@@ -25,7 +21,6 @@ pub struct Permission {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<::std::string::String>,
 }
 impl Permission {

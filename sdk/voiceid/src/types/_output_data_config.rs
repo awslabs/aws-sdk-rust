@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment job/fraudster registration job. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl OutputDataConfig {

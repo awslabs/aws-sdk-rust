@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
-    #[doc(hidden)]
     pub audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl AudioEvent {

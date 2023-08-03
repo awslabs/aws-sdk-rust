@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
     /// <p> Indicates whether the EBS volume is deleted on instance termination. </p>
-    #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p> Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you're creating a volume from a snapshot, you can't specify an encryption value. </p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p> The number of I/O operations per second (IOPS). </p>
-    #[doc(hidden)]
     pub iops: i32,
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the EBS snapshot. </p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
-    #[doc(hidden)]
     pub throughput: i32,
     /// <p> The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. </p>
-    #[doc(hidden)]
     pub volume_size: i32,
     /// <p> The volume type. </p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {

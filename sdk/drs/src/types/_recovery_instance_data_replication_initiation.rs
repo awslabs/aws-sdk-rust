@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>,
 }
 impl RecoveryInstanceDataReplicationInitiation {

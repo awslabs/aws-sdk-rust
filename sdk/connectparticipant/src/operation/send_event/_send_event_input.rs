@@ -10,17 +10,13 @@ pub struct SendEventInput {
     /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
     /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
     /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
-    #[doc(hidden)]
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
 impl SendEventInput {

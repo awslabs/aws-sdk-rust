@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentResponse {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the component type.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The name of the property definition set in the request.</p>
-    #[doc(hidden)]
     pub defined_in: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>>,
     /// <p>The property groups.</p>
-    #[doc(hidden)]
     pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
 }
 impl ComponentResponse {

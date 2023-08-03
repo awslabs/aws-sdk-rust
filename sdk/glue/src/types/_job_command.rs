@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobCommand {
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
-    #[doc(hidden)]
     pub script_location: ::std::option::Option<::std::string::String>,
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
-    #[doc(hidden)]
     pub python_version: ::std::option::Option<::std::string::String>,
     /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
 }
 impl JobCommand {

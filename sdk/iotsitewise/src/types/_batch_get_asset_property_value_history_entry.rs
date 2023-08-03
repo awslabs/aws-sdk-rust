@@ -10,29 +10,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The quality by which to filter asset data.</p>
-    #[doc(hidden)]
     pub qualities: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
-    #[doc(hidden)]
     pub time_ordering: ::std::option::Option<crate::types::TimeOrdering>,
 }
 impl BatchGetAssetPropertyValueHistoryEntry {

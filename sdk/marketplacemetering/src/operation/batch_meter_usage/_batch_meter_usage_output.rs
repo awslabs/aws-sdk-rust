@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
-    #[doc(hidden)]
     pub unprocessed_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     _request_id: Option<String>,
 }

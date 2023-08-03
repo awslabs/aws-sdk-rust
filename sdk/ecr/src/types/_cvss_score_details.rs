@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScoreDetails {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    #[doc(hidden)]
     pub adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
     /// <p>The CVSS score.</p>
-    #[doc(hidden)]
     pub score: f64,
     /// <p>The source for the CVSS score.</p>
-    #[doc(hidden)]
     pub score_source: ::std::option::Option<::std::string::String>,
     /// <p>The vector for the CVSS score.</p>
-    #[doc(hidden)]
     pub scoring_vector: ::std::option::Option<::std::string::String>,
     /// <p>The CVSS version used in scoring.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl CvssScoreDetails {

@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PasswordPolicyType {
     /// <p>The minimum length of the password in the policy that you have set. This value can't be less than 6.</p>
-    #[doc(hidden)]
     pub minimum_length: i32,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</p>
-    #[doc(hidden)]
     pub require_uppercase: bool,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.</p>
-    #[doc(hidden)]
     pub require_lowercase: bool,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one number in their password.</p>
-    #[doc(hidden)]
     pub require_numbers: bool,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.</p>
-    #[doc(hidden)]
     pub require_symbols: bool,
     /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
     /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
     /// </note>
-    #[doc(hidden)]
     pub temporary_password_validity_days: i32,
 }
 impl PasswordPolicyType {

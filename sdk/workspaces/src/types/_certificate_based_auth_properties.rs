@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateBasedAuthProperties {
     /// <p>The status of the certificate-based authentication properties.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBasedAuthProperties {

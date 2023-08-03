@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-    #[doc(hidden)]
     pub import_job_properties: ::std::option::Option<crate::types::ImportJobProperties>,
     _request_id: Option<String>,
 }

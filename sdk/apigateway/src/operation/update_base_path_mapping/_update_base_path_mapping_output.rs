@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    #[doc(hidden)]
     pub base_path: ::std::option::Option<::std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated stage.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

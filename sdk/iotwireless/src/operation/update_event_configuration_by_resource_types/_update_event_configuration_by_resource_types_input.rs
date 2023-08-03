@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    #[doc(hidden)]
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    #[doc(hidden)]
     pub proximity: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
-    #[doc(hidden)]
     pub join: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
-    #[doc(hidden)]
     pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
 impl UpdateEventConfigurationByResourceTypesInput {

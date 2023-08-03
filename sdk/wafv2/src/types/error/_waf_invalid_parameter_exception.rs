@@ -11,16 +11,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The settings where the invalid parameter was found. </p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::ParameterExceptionField>,
     /// <p>The invalid parameter that resulted in the exception. </p>
-    #[doc(hidden)]
     pub parameter: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the exception.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

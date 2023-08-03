@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceDeviceMemoryInfo {
     /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
-    #[doc(hidden)]
     pub size_in_mi_b: ::std::option::Option<i32>,
 }
 impl InferenceDeviceMemoryInfo {

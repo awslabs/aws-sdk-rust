@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RequestUploadCredentialsOutput {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
-    #[doc(hidden)]
     pub upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }

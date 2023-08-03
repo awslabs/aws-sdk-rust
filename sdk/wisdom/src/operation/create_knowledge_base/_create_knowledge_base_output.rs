@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKnowledgeBaseOutput {
     /// <p>The knowledge base.</p>
-    #[doc(hidden)]
     pub knowledge_base: ::std::option::Option<crate::types::KnowledgeBaseData>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PieChartAggregatedFieldWells {
     /// <p>The category (group/color) field wells of a pie chart.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a pie chart. Values are aggregated based on categories.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The small multiples field well of a pie chart.</p>
-    #[doc(hidden)]
     pub small_multiples: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl PieChartAggregatedFieldWells {

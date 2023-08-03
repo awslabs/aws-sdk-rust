@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiskSnapshotOutput {
     /// <p>An object containing information about the disk snapshot.</p>
-    #[doc(hidden)]
     pub disk_snapshot: ::std::option::Option<crate::types::DiskSnapshot>,
     _request_id: Option<String>,
 }

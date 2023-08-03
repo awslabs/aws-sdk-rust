@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultConditionalBranch {
     /// <p>The next step in the conversation.</p>
-    #[doc(hidden)]
     pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl DefaultConditionalBranch {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunStatementOutput {
     /// <p>Returns the Id of the statement that was run.</p>
-    #[doc(hidden)]
     pub id: i32,
     _request_id: Option<String>,
 }

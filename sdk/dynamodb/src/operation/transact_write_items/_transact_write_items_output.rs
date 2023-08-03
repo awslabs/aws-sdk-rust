@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactWriteItemsOutput {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-    #[doc(hidden)]
     pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
-    #[doc(hidden)]
     pub item_collection_metrics:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>>,
     _request_id: Option<String>,

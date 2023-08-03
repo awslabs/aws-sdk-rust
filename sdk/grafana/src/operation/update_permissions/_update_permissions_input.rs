@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    #[doc(hidden)]
     pub update_instruction_batch: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
     /// <p>The ID of the workspace to update.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePermissionsInput {

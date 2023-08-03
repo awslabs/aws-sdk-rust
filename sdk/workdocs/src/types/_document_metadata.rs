@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>The ID of the document.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the creator.</p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent folder.</p>
-    #[doc(hidden)]
     pub parent_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the document was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the document was updated.</p>
-    #[doc(hidden)]
     pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest version of the document.</p>
-    #[doc(hidden)]
     pub latest_version_metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
     /// <p>The resource state.</p>
-    #[doc(hidden)]
     pub resource_state: ::std::option::Option<crate::types::ResourceStateType>,
     /// <p>List of labels on the document.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DocumentMetadata {

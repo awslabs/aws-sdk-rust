@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>>,
     /// <p>The display name for a collaboration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The abilities granted to the collaboration creator.</p>
-    #[doc(hidden)]
     pub creator_member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     /// <p>The display name of the collaboration creator.</p>
-    #[doc(hidden)]
     pub creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-    #[doc(hidden)]
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    #[doc(hidden)]
     pub query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCollaborationInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogs {
     /// <p>Amazon S3 logging options.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
     /// <p>CloudWatch Logs logging destination.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
     /// <p>Kinesis logging destination.</p>
-    #[doc(hidden)]
     pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
     /// <p> Describes current setting for the logging version. </p>
-    #[doc(hidden)]
     pub log_version: ::std::option::Option<::std::string::String>,
     /// <p> Describes current setting for including trust data into the logs. </p>
-    #[doc(hidden)]
     pub include_trust_context: ::std::option::Option<bool>,
 }
 impl VerifiedAccessLogs {

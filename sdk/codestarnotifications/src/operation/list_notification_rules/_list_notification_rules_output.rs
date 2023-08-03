@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    #[doc(hidden)]
     pub notification_rules: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
     _request_id: Option<String>,
 }

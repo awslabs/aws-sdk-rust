@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
-    #[doc(hidden)]
     pub user_defined_functions: ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBootstrapBrokersOutput {
     /// <p>A string containing one or more hostname:port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_tls: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_sasl_scram: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_sasl_iam: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_public_tls: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_public_sasl_scram: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_public_sasl_iam: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_vpc_connectivity_tls: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_vpc_connectivity_sasl_scram: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
-    #[doc(hidden)]
     pub bootstrap_broker_string_vpc_connectivity_sasl_iam: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

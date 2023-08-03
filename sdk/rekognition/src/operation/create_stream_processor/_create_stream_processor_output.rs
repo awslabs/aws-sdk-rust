@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamProcessorOutput {
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
-    #[doc(hidden)]
     pub stream_processor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

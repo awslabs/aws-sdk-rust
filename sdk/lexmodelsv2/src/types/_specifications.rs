@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    #[doc(hidden)]
     pub value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl Specifications {

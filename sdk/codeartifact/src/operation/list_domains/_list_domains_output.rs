@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

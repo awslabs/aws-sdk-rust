@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingOutput {
     /// <p>Represents the auto scaling properties of the table.</p>
-    #[doc(hidden)]
     pub table_auto_scaling_description: ::std::option::Option<crate::types::TableAutoScalingDescription>,
     _request_id: Option<String>,
 }

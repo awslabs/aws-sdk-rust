@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the dataset was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique name of the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
-    #[doc(hidden)]
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
     /// <p>The last modification date and time of the dataset.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    #[doc(hidden)]
     pub path_options: ::std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags that have been applied to the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl Dataset {

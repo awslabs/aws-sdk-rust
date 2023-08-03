@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct CreateContactChannelInput {
     /// <li> <p> <code>VOICE</code> </p> </li>
     /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -23,13 +20,10 @@ pub struct CreateContactChannelInput {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
-    #[doc(hidden)]
     pub defer_activation: ::std::option::Option<bool>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateContactChannelInput {

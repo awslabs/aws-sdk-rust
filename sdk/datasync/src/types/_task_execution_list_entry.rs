@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskExecutionListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
-    #[doc(hidden)]
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a task execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskExecutionStatus>,
 }
 impl TaskExecutionListEntry {

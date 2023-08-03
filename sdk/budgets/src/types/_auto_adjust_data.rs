@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoAdjustData {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
-    #[doc(hidden)]
     pub auto_adjust_type: ::std::option::Option<crate::types::AutoAdjustType>,
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
-    #[doc(hidden)]
     pub historical_options: ::std::option::Option<crate::types::HistoricalOptions>,
     /// <p>The last time that your budget was auto-adjusted.</p>
-    #[doc(hidden)]
     pub last_auto_adjust_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AutoAdjustData {

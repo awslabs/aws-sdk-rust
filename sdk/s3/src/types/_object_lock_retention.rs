@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
     /// <p>The date on which this Object Lock Retention will expire.</p>
-    #[doc(hidden)]
     pub retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ObjectLockRetention {

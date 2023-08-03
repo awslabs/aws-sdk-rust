@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultPaginatedLayoutConfiguration {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
-    #[doc(hidden)]
     pub section_based: ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
 }
 impl DefaultPaginatedLayoutConfiguration {

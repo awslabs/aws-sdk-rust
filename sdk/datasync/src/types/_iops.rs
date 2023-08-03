@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Iops {
     /// <p>Peak IOPS related to read operations.</p>
-    #[doc(hidden)]
     pub read: ::std::option::Option<f64>,
     /// <p>Peak IOPS related to write operations.</p>
-    #[doc(hidden)]
     pub write: ::std::option::Option<f64>,
     /// <p>Peak IOPS unrelated to read and write operations.</p>
-    #[doc(hidden)]
     pub other: ::std::option::Option<f64>,
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
 }
 impl Iops {

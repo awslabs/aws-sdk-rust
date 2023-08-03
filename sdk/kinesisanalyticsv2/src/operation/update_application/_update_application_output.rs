@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
-    #[doc(hidden)]
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }

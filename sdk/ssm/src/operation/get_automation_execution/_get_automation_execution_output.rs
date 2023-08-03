@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
-    #[doc(hidden)]
     pub automation_execution: ::std::option::Option<crate::types::AutomationExecution>,
     _request_id: Option<String>,
 }

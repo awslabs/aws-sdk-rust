@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
-    #[doc(hidden)]
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl CreateOriginRequestPolicyInput {

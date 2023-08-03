@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExecutionStep {
     /// <p>The name of the step that is executed.</p>
-    #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the step.</p>
-    #[doc(hidden)]
     pub step_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
     pub step_description: ::std::option::Option<::std::string::String>,
     /// <p>The time that the step started executing.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the step stopped executing.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the step execution.</p>
-    #[doc(hidden)]
     pub step_status: ::std::option::Option<crate::types::StepStatus>,
     /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
-    #[doc(hidden)]
     pub cache_hit_result: ::std::option::Option<crate::types::CacheHitResult>,
     /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
-    #[doc(hidden)]
     pub attempt_count: i32,
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to run the pipeline step.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
-    #[doc(hidden)]
     pub selective_execution_result: ::std::option::Option<crate::types::SelectiveExecutionResult>,
 }
 impl PipelineExecutionStep {

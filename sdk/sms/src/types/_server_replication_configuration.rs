@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The parameters for replicating the server.</p>
-    #[doc(hidden)]
     pub server_replication_parameters: ::std::option::Option<crate::types::ServerReplicationParameters>,
 }
 impl ServerReplicationConfiguration {

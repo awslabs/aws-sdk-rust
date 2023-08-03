@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
-    #[doc(hidden)]
     pub total_code_size: i64,
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
-    #[doc(hidden)]
     pub code_size_unzipped: i64,
     /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
-    #[doc(hidden)]
     pub code_size_zipped: i64,
     /// <p>The maximum number of simultaneous function executions.</p>
-    #[doc(hidden)]
     pub concurrent_executions: i32,
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
-    #[doc(hidden)]
     pub unreserved_concurrent_executions: ::std::option::Option<i32>,
 }
 impl AccountLimit {

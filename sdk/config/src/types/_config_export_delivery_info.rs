@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigExportDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The error code from the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message from the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_attempt_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the last successful delivery.</p>
-    #[doc(hidden)]
     pub last_successful_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the next delivery occurs.</p>
-    #[doc(hidden)]
     pub next_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigExportDeliveryInfo {

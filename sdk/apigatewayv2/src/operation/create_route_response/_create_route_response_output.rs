@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRouteResponseOutput {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub model_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Represents the response models of a route response.</p>
-    #[doc(hidden)]
     pub response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the response parameters of a route response.</p>
-    #[doc(hidden)]
     pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
     /// <p>Represents the identifier of a route response.</p>
-    #[doc(hidden)]
     pub route_response_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the route response key of a route response.</p>
-    #[doc(hidden)]
     pub route_response_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

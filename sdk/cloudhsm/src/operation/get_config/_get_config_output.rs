@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigOutput {
     /// <p>The type of credentials.</p>
-    #[doc(hidden)]
     pub config_type: ::std::option::Option<::std::string::String>,
     /// <p>The chrystoki.conf configuration file.</p>
-    #[doc(hidden)]
     pub config_file: ::std::option::Option<::std::string::String>,
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
-    #[doc(hidden)]
     pub config_cred: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

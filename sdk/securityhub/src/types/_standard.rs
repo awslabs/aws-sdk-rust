@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Standard {
     /// <p>The ARN of a standard.</p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the standard.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the standard.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
-    #[doc(hidden)]
     pub enabled_by_default: bool,
     /// <p>Provides details about the management of a standard. </p>
-    #[doc(hidden)]
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
 impl Standard {

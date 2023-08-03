@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
-    #[doc(hidden)]
     pub crawler_metrics_list: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

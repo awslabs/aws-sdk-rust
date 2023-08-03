@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioFeatures>,
 }
 impl MeetingFeaturesConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeletePhoneNumberInput {
     /// <p>The phone number ID.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePhoneNumberInput {

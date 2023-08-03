@@ -5,17 +5,13 @@
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
-    #[doc(hidden)]
     pub pipeline_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
-    #[doc(hidden)]
     pub pipeline_provisioning_repository: ::std::option::Option<crate::types::RepositoryBranchInput>,
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
-    #[doc(hidden)]
     pub delete_pipeline_provisioning_repository: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    #[doc(hidden)]
     pub pipeline_codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccountSettingsInput {

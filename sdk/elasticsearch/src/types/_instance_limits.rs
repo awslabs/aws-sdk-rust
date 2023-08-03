@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceLimits {
     /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
-    #[doc(hidden)]
     pub instance_count_limits: ::std::option::Option<crate::types::InstanceCountLimits>,
 }
 impl InstanceLimits {

@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpellCorrectionConfiguration {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
-    #[doc(hidden)]
     pub include_query_spell_check_suggestions: bool,
 }
 impl SpellCorrectionConfiguration {

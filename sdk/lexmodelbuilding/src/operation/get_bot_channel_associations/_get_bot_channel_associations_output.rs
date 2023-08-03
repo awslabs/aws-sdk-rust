@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    #[doc(hidden)]
     pub bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

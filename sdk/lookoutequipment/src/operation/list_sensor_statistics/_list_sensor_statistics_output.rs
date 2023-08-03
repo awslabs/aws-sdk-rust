@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    #[doc(hidden)]
     pub sensor_statistics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,82 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     /// <p>The network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Any security groups for the network interface.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The type of network interface.</p>
-    #[doc(hidden)]
     pub interface_type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfaceIpv6Address>>,
     /// <p>The MAC address.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS name.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePrivateIpAddress>>,
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecification>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecification>>,
     /// <p>The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
-    #[doc(hidden)]
     pub requester_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is being managed by Amazon Web Services.</p>
-    #[doc(hidden)]
     pub requester_managed: ::std::option::Option<bool>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<bool>,
     /// <p>The status of the network interface.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkInterfaceStatus>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the network interface.</p>
-    #[doc(hidden)]
     pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a network interface with an IPv6 address is unreachable from the public internet. If the value is <code>true</code>, inbound traffic from the internet is dropped and you cannot assign an elastic IP address to the network interface. The network interface is reachable from peered VPCs and resources connected through a transit gateway, including on-premises networks.</p>
-    #[doc(hidden)]
     pub deny_all_igw_traffic: ::std::option::Option<bool>,
     /// <p>Indicates whether this is an IPv6 only network interface.</p>
-    #[doc(hidden)]
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The IPv6 globally unique address associated with the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {

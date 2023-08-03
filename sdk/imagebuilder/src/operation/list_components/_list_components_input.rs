@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -15,16 +14,12 @@ pub struct ListComponentsInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Returns the list of components for the specified name.</p>
-    #[doc(hidden)]
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum items to return in a request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketInventoryConfigurationOutput {
     /// <p>Specifies the inventory configuration.</p>
-    #[doc(hidden)]
     pub inventory_configuration: ::std::option::Option<crate::types::InventoryConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

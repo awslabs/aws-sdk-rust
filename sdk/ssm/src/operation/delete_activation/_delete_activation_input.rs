@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActivationInput {
     /// <p>The ID of the activation that you want to delete.</p>
-    #[doc(hidden)]
     pub activation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActivationInput {

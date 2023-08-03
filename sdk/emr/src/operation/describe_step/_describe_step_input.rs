@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStepInput {
     /// <p>The identifier of the cluster with steps to describe.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the step to describe.</p>
-    #[doc(hidden)]
     pub step_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStepInput {

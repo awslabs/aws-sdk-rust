@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateEnvironmentOperationsRoleInput {

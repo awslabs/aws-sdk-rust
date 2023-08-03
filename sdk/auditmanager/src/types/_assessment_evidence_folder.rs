@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentEvidenceFolder {
     /// <p> The name of the evidence folder. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The date when the first evidence was added to the evidence folder. </p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control. </p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Service that the evidence was collected from. </p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p> The name of the user who created the evidence folder. </p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p> The total amount of evidence in the evidence folder. </p>
-    #[doc(hidden)]
     pub total_evidence: i32,
     /// <p> The total count of evidence that's included in the assessment report. </p>
-    #[doc(hidden)]
     pub assessment_report_selection_count: i32,
     /// <p> The name of the control. </p>
-    #[doc(hidden)]
     pub control_name: ::std::option::Option<::std::string::String>,
     /// <p> The amount of evidence that's included in the evidence folder. </p>
-    #[doc(hidden)]
     pub evidence_resources_included_count: i32,
     /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM. </p>
-    #[doc(hidden)]
     pub evidence_by_type_configuration_data_count: i32,
     /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
-    #[doc(hidden)]
     pub evidence_by_type_manual_count: i32,
     /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
-    #[doc(hidden)]
     pub evidence_by_type_compliance_check_count: i32,
     /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
-    #[doc(hidden)]
     pub evidence_by_type_compliance_check_issues_count: i32,
     /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
-    #[doc(hidden)]
     pub evidence_by_type_user_activity_count: i32,
     /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
-    #[doc(hidden)]
     pub evidence_aws_service_source_count: i32,
 }
 impl AssessmentEvidenceFolder {

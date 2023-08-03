@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSnapshotScheduleInput {

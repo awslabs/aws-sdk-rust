@@ -5,61 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The name of the DAX cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of nodes in the cluster.</p>
-    #[doc(hidden)]
     pub total_nodes: ::std::option::Option<i32>,
     /// <p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>
-    #[doc(hidden)]
     pub active_nodes: ::std::option::Option<i32>,
     /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use the URL to configure the DAX client to find their cluster.</p>
-    #[doc(hidden)]
     pub cluster_discovery_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>A list of nodes to be removed from the cluster.</p>
-    #[doc(hidden)]
     pub node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of nodes that are currently in the cluster.</p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>The subnet group where the DAX cluster is running.</p>
-    #[doc(hidden)]
     pub subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameter group being used by nodes in the cluster.</p>
-    #[doc(hidden)]
     pub parameter_group: ::std::option::Option<crate::types::ParameterGroupStatus>,
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
-    #[doc(hidden)]
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
 impl Cluster {

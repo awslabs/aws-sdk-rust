@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegexMatchSetOutput {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
-    #[doc(hidden)]
     pub regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

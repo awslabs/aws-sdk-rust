@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
-    #[doc(hidden)]
     pub trail_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    #[doc(hidden)]
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
 }
 impl PutInsightSelectorsInput {

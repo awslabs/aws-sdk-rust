@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template post launch actions.</p>
-    #[doc(hidden)]
     pub post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     /// <p>Enable map auto tagging.</p>
-    #[doc(hidden)]
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    #[doc(hidden)]
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Launch disposition.</p>
-    #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
-    #[doc(hidden)]
     pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private Ip.</p>
-    #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
     /// <p>Associate public Ip address.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Copy tags.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>Configure Licensing.</p>
-    #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>Launch configuration template boot mode.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Small volume maximum size.</p>
-    #[doc(hidden)]
     pub small_volume_max_size: i64,
     /// <p>Small volume config.</p>
-    #[doc(hidden)]
     pub small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     /// <p>Large volume config.</p>
-    #[doc(hidden)]
     pub large_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
 }
 impl CreateLaunchConfigurationTemplateInput {

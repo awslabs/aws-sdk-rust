@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialSummary {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    #[doc(hidden)]
     pub trial_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the trial.</p>
-    #[doc(hidden)]
     pub trial_source: ::std::option::Option<crate::types::TrialSource>,
     /// <p>When the trial was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the trial was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TrialSummary {

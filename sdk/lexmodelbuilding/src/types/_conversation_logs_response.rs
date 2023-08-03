@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogsResponse {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    #[doc(hidden)]
     pub log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConversationLogsResponse {

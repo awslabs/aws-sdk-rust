@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailurePolicy {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
-    #[doc(hidden)]
     pub rto_in_secs: i32,
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
-    #[doc(hidden)]
     pub rpo_in_secs: i32,
 }
 impl FailurePolicy {

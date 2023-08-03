@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of game configuration sections to be described.</p>
-    #[doc(hidden)]
     pub sections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetSnapshotInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTextTranslationJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job. Possible values include:</p>
     /// <ul>
@@ -16,7 +15,6 @@ pub struct StartTextTranslationJobOutput {
     /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
     /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }

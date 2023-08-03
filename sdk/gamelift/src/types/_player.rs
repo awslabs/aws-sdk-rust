@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Player {
     /// <p>A unique identifier for a player</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
-    #[doc(hidden)]
     pub player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
-    #[doc(hidden)]
     pub team: ::std::option::Option<::std::string::String>,
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
-    #[doc(hidden)]
     pub latency_in_ms: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Player {

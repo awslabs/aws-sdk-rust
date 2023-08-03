@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The time that the session invoked the action.</p>
-    #[doc(hidden)]
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>HTTP method that the browser used to make the request.</p>
-    #[doc(hidden)]
     pub request_method: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionAction {

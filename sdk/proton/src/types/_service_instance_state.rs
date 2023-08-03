@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceInstanceState {
     /// <p>The service spec that was used to create the service instance.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template that was used to create the service instance.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    #[doc(hidden)]
     pub last_successful_component_deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
-    #[doc(hidden)]
     pub last_successful_environment_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
-    #[doc(hidden)]
     pub last_successful_service_pipeline_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceState {

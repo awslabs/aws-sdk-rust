@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
-    #[doc(hidden)]
     pub audit: ::std::option::Option<bool>,
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    #[doc(hidden)]
     pub audit_log_group: ::std::option::Option<::std::string::String>,
     /// <p>Enables general logging.</p>
-    #[doc(hidden)]
     pub general: ::std::option::Option<bool>,
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    #[doc(hidden)]
     pub general_log_group: ::std::option::Option<::std::string::String>,
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<crate::types::PendingLogs>,
 }
 impl LogsSummary {

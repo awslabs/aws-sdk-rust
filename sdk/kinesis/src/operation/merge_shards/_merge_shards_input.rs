@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeShardsInput {
     /// <p>The name of the stream for the merge.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-    #[doc(hidden)]
     pub shard_to_merge: ::std::option::Option<::std::string::String>,
     /// <p>The shard ID of the adjacent shard for the merge.</p>
-    #[doc(hidden)]
     pub adjacent_shard_to_merge: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl MergeShardsInput {

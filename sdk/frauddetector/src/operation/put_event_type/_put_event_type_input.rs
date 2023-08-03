@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventTypeInput {
     /// <p>The name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the event type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The event type variables.</p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The event type labels.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies if ingestion is enabled or disabled.</p>
-    #[doc(hidden)]
     pub event_ingestion: ::std::option::Option<crate::types::EventIngestion>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
-    #[doc(hidden)]
     pub event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl PutEventTypeInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmallMultiplesAxisProperties {
     /// <p>Determines whether scale of the axes are shared or independent. The default value is <code>SHARED</code>.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<crate::types::SmallMultiplesAxisScale>,
     /// <p>Defines the placement of the axis. By default, axes are rendered <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are rendered <code>INSIDE</code> the panels.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::SmallMultiplesAxisPlacement>,
 }
 impl SmallMultiplesAxisProperties {

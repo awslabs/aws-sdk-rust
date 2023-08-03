@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeDefinition {
     /// <p>A name for the attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct AttributeDefinition {
     /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
     /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<crate::types::ScalarAttributeType>,
 }
 impl AttributeDefinition {

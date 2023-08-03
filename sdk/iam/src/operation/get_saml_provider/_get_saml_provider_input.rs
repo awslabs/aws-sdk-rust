@@ -5,7 +5,6 @@
 pub struct GetSamlProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSamlProviderInput {

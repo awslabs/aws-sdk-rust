@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardInvalidInputError {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

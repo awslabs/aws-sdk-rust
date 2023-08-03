@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>,
 }
 impl ListStudioComponentsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesInput {
     /// <p>The ID of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
@@ -19,13 +18,10 @@ pub struct SearchTransitGatewayRoutesInput {
     /// <li> <p> <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of routes to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl SearchTransitGatewayRoutesInput {

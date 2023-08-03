@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordsIngested {
     /// <p>Total count of successfully ingested records.</p>
-    #[doc(hidden)]
     pub total: i32,
     /// <p>Count of records ingested into the memory store.</p>
-    #[doc(hidden)]
     pub memory_store: i32,
     /// <p>Count of records ingested into the magnetic store.</p>
-    #[doc(hidden)]
     pub magnetic_store: i32,
 }
 impl RecordsIngested {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessorOutput {
     /// <p>The properties of the accessor.</p>
-    #[doc(hidden)]
     pub accessor: ::std::option::Option<crate::types::Accessor>,
     _request_id: Option<String>,
 }

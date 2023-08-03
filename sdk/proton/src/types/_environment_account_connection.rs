@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    #[doc(hidden)]
     pub management_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment account that's connected to the environment account connection.</p>
-    #[doc(hidden)]
     pub environment_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM service role that's associated with the environment account connection.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment that's associated with the environment account connection.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the environment account connection request was made.</p>
-    #[doc(hidden)]
     pub requested_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the environment account connection was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentAccountConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub component_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    #[doc(hidden)]
     pub codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentAccountConnection {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    #[doc(hidden)]
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     _request_id: Option<String>,
 }

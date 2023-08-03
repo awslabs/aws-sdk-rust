@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsOutput {
     /// <p>The IDs of the findings that you're listing.</p>
-    #[doc(hidden)]
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

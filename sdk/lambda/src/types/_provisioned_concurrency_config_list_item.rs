@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of provisioned concurrency requested.</p>
-    #[doc(hidden)]
     pub requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency available.</p>
-    #[doc(hidden)]
     pub available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-    #[doc(hidden)]
     pub allocated_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The status of the allocation process.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedConcurrencyConfigListItem {

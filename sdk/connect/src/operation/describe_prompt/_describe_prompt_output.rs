@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePromptOutput {
     /// <p>Information about the prompt.</p>
-    #[doc(hidden)]
     pub prompt: ::std::option::Option<crate::types::Prompt>,
     _request_id: Option<String>,
 }

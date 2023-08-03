@@ -4,45 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecretOutput {
     /// <p>The ARN of the secret.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the secret.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
-    #[doc(hidden)]
     pub rotation_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
-    #[doc(hidden)]
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
-    #[doc(hidden)]
     pub rotation_rules: ::std::option::Option<crate::types::RotationRulesType>,
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    #[doc(hidden)]
     pub last_rotated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
-    #[doc(hidden)]
     pub last_changed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    #[doc(hidden)]
     pub last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
-    #[doc(hidden)]
     pub deleted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    #[doc(hidden)]
     pub next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
     /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
@@ -52,16 +39,12 @@ pub struct DescribeSecretOutput {
     /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-    #[doc(hidden)]
     pub version_ids_to_stages: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
-    #[doc(hidden)]
     pub owning_service: ::std::option::Option<::std::string::String>,
     /// <p>The date the secret was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
-    #[doc(hidden)]
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of the replicas of this secret and their status: </p>
     /// <ul>
@@ -69,7 +52,6 @@ pub struct DescribeSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }

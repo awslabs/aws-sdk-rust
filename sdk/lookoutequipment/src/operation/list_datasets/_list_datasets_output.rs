@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-    #[doc(hidden)]
     pub dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     _request_id: Option<String>,
 }

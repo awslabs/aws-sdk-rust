@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    #[doc(hidden)]
     pub realtime_metrics_subscription_status: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
 }
 impl RealtimeMetricsSubscriptionConfig {

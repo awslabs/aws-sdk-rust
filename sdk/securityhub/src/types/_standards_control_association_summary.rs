@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationSummary {
     /// <p> The Amazon Resource Name (ARN) of a standard. </p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p> A unique standard-agnostic identifier for a control. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. This field doesn't reference a specific standard. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a control, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    #[doc(hidden)]
     pub security_control_arn: ::std::option::Option<::std::string::String>,
     /// <p> The enablement status of a control in a specific standard. </p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p> The requirement that underlies this control in the compliance framework related to the standard. </p>
-    #[doc(hidden)]
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The reason for updating the control's enablement status in a specified standard. </p>
-    #[doc(hidden)]
     pub updated_reason: ::std::option::Option<::std::string::String>,
     /// <p> The title of a control. </p>
-    #[doc(hidden)]
     pub standards_control_title: ::std::option::Option<::std::string::String>,
     /// <p> The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard. </p>
-    #[doc(hidden)]
     pub standards_control_description: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationSummary {

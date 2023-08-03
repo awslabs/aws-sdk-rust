@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceOutput {
     /// <p>The name of the instance.</p>
-    #[doc(hidden)]
     pub instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,
 }

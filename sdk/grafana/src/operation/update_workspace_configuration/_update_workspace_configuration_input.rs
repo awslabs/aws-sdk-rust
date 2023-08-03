@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationInput {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace to update.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-    #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceConfigurationInput {

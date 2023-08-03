@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateSubnetCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_association: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

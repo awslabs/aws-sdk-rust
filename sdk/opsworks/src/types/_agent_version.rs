@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentVersion {
     /// <p>The agent version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration manager.</p>
-    #[doc(hidden)]
     pub configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
 impl AgentVersion {

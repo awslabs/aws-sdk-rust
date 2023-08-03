@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    #[doc(hidden)]
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,
 }

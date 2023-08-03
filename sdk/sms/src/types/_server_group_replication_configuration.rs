@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    #[doc(hidden)]
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
-    #[doc(hidden)]
     pub server_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfiguration {

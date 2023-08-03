@@ -13,17 +13,13 @@ pub struct Diagnostics {
     /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
     /// <p>The name of the script.</p>
-    #[doc(hidden)]
     pub script_name: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-    #[doc(hidden)]
     pub log_tail: ::std::option::Option<::std::string::String>,
 }
 impl Diagnostics {

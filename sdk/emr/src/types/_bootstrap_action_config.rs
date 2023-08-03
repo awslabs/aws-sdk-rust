@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BootstrapActionConfig {
     /// <p>The name of the bootstrap action.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The script run by the bootstrap action.</p>
-    #[doc(hidden)]
     pub script_bootstrap_action: ::std::option::Option<crate::types::ScriptBootstrapActionConfig>,
 }
 impl BootstrapActionConfig {

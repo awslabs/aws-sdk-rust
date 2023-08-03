@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaInfo {
     /// <p>Describes the FPGAs for the instance type.</p>
-    #[doc(hidden)]
     pub fpgas: ::std::option::Option<::std::vec::Vec<crate::types::FpgaDeviceInfo>>,
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
-    #[doc(hidden)]
     pub total_fpga_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl FpgaInfo {

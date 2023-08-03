@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The keyword to delete.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeywordInput {

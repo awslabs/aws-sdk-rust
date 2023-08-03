@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLinkOutput {
     /// <p>Information about the link.</p>
-    #[doc(hidden)]
     pub link: ::std::option::Option<crate::types::Link>,
     _request_id: Option<String>,
 }

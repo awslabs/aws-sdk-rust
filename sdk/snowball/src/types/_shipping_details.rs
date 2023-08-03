@@ -11,13 +11,10 @@ pub struct ShippingDetails {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
-    #[doc(hidden)]
     pub inbound_shipment: ::std::option::Option<crate::types::Shipment>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
-    #[doc(hidden)]
     pub outbound_shipment: ::std::option::Option<crate::types::Shipment>,
 }
 impl ShippingDetails {

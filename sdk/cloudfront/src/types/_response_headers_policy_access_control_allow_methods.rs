@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
@@ -20,7 +19,6 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {

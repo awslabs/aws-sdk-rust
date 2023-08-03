@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::InventoryFrequency>,
 }
 impl InventorySchedule {

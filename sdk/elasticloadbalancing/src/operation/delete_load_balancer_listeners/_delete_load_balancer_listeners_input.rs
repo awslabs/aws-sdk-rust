@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The client port numbers of the listeners.</p>
-    #[doc(hidden)]
     pub load_balancer_ports: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl DeleteLoadBalancerListenersInput {

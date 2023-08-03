@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyScore {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
-    #[doc(hidden)]
     pub max_score: f64,
     /// <p>The last observed score. </p>
-    #[doc(hidden)]
     pub current_score: f64,
 }
 impl AnomalyScore {

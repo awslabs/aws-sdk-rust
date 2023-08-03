@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

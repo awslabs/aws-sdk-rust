@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
-    #[doc(hidden)]
     pub initial_audio_gain: ::std::option::Option<i32>,
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
-    #[doc(hidden)]
     pub input_end_action: ::std::option::Option<crate::types::GlobalConfigurationInputEndAction>,
     /// Settings for system actions when input is lost.
-    #[doc(hidden)]
     pub input_loss_behavior: ::std::option::Option<crate::types::InputLossBehavior>,
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
-    #[doc(hidden)]
     pub output_locking_mode: ::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode>,
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
-    #[doc(hidden)]
     pub output_timing_source: ::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource>,
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
-    #[doc(hidden)]
     pub support_low_framerate_inputs: ::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs>,
 }
 impl GlobalConfiguration {

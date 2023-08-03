@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePlacementInput {
     /// <p>The name of the placement to update.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project containing the placement to be updated.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdatePlacementInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfservicePermissions {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
-    #[doc(hidden)]
     pub restart_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
-    #[doc(hidden)]
     pub increase_volume_size: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
-    #[doc(hidden)]
     pub change_compute_type: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
-    #[doc(hidden)]
     pub switch_running_mode: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
-    #[doc(hidden)]
     pub rebuild_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
 }
 impl SelfservicePermissions {

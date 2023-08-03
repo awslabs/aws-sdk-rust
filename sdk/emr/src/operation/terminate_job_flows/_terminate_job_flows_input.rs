@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
-    #[doc(hidden)]
     pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateJobFlowsInput {

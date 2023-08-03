@@ -7,7 +7,6 @@
 pub struct SeedUrlConfiguration {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    #[doc(hidden)]
     pub seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
@@ -16,7 +15,6 @@ pub struct SeedUrlConfiguration {
     /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
-    #[doc(hidden)]
     pub web_crawler_mode: ::std::option::Option<crate::types::WebCrawlerMode>,
 }
 impl SeedUrlConfiguration {

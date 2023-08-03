@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    #[doc(hidden)]
     pub editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    #[doc(hidden)]
     pub admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoleValues {

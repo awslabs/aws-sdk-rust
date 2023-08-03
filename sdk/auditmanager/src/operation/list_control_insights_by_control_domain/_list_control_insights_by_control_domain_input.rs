@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
-    #[doc(hidden)]
     pub control_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListControlInsightsByControlDomainInput {

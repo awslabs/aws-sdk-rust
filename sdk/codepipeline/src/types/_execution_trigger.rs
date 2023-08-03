@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionTrigger {
     /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
-    #[doc(hidden)]
     pub trigger_type: ::std::option::Option<crate::types::TriggerType>,
     /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-    #[doc(hidden)]
     pub trigger_detail: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionTrigger {

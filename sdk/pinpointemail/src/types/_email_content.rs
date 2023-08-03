@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
-    #[doc(hidden)]
     pub simple: ::std::option::Option<crate::types::Message>,
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -17,10 +16,8 @@ pub struct EmailContent {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub raw: ::std::option::Option<crate::types::RawMessage>,
     /// <p>The template to use for the email message.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<crate::types::Template>,
 }
 impl EmailContent {

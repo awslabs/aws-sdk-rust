@@ -12,7 +12,6 @@ pub struct LustreLogCreateConfiguration {
     /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
@@ -23,7 +22,6 @@ pub struct LustreLogCreateConfiguration {
     /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
     /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl LustreLogCreateConfiguration {

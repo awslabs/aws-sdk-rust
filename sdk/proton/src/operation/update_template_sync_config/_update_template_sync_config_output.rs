@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,
 }

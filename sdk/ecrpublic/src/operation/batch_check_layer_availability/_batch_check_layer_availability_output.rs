@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityOutput {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsOutput {
     /// <p> A summary of information about each campaign. </p>
-    #[doc(hidden)]
     pub campaign_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

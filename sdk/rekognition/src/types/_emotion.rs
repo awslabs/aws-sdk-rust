@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Emotion {
     /// <p>Type of emotion detected.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EmotionName>,
     /// <p>Level of confidence in the determination.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl Emotion {

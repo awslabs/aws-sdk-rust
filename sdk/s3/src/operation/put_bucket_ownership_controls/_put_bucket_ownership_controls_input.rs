@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    #[doc(hidden)]
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
 }
 impl PutBucketOwnershipControlsInput {

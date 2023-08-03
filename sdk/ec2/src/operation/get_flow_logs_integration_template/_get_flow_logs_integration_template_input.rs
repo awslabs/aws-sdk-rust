@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFlowLogsIntegrationTemplateInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the flow log.</p>
-    #[doc(hidden)]
     pub flow_log_id: ::std::option::Option<::std::string::String>,
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
-    #[doc(hidden)]
     pub config_delivery_s3_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the service integration.</p>
-    #[doc(hidden)]
     pub integrate_services: ::std::option::Option<crate::types::IntegrateServices>,
 }
 impl GetFlowLogsIntegrationTemplateInput {

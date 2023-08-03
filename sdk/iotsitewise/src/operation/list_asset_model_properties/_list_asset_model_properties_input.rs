@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetModelPropertiesInput {
     /// <p>The ID of the asset model.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct ListAssetModelPropertiesInput {
     /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
 }
 impl ListAssetModelPropertiesInput {

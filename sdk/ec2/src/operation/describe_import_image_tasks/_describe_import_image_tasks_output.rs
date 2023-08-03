@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImportImageTasksOutput {
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    #[doc(hidden)]
     pub import_image_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>>,
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

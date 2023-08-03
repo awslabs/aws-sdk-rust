@@ -5,10 +5,8 @@
 pub struct TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourcesInput {

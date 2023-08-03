@@ -6,7 +6,6 @@
 pub struct AlarmIdentifier {
     /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
     /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<crate::types::CloudWatchRegion>,
     /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
     /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
@@ -15,7 +14,6 @@ pub struct AlarmIdentifier {
     /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AlarmIdentifier {

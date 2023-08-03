@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// The date/time at which the last bulk publish was initiated.
-    #[doc(hidden)]
     pub bulk_publish_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    #[doc(hidden)]
     pub bulk_publish_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    #[doc(hidden)]
     pub bulk_publish_status: ::std::option::Option<crate::types::BulkPublishStatus>,
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

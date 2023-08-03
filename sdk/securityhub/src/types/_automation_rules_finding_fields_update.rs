@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationRulesFindingFieldsUpdate {
     /// <p>The updated note.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<crate::types::NoteUpdate>,
     /// <p>Updates to the severity information for a finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::SeverityUpdate>,
     /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
-    #[doc(hidden)]
     pub confidence: i32,
     /// <p> The rule action updates the <code>Criticality</code> field of a finding. </p>
-    #[doc(hidden)]
     pub criticality: i32,
     /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
-    #[doc(hidden)]
     pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to update information about the investigation into the finding.</p>
-    #[doc(hidden)]
     pub workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
     /// <p> The rule action updates the <code>RelatedFindings</code> field of a finding. </p>
-    #[doc(hidden)]
     pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
 }
 impl AutomationRulesFindingFieldsUpdate {

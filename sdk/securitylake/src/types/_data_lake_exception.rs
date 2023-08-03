@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeException {
     /// <p>The Amazon Web Services Regions where the exception occurred.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The underlying exception of a Security Lake exception.</p>
-    #[doc(hidden)]
     pub exception: ::std::option::Option<::std::string::String>,
     /// <p>List of all remediation steps for a Security Lake exception.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<::std::string::String>,
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataLakeException {

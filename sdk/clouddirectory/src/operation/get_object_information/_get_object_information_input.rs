@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectInformationInput {
     /// <p>The ARN of the directory being retrieved.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the object.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The consistency level at which to retrieve the object information.</p>
-    #[doc(hidden)]
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
 impl GetObjectInformationInput {

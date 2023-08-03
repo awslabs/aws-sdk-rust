@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataClassificationDetails {
     /// <p>The path to the folder or file that contains the sensitive data.</p>
-    #[doc(hidden)]
     pub detailed_results_location: ::std::option::Option<::std::string::String>,
     /// <p>The details about the sensitive data that was detected on the resource.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ClassificationResult>,
 }
 impl DataClassificationDetails {

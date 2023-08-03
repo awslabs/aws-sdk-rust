@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirImportJobsInput {
     /// <p> This parameter limits the response to the import job with the specified data store ID. </p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> This parameter limits the response to the import job with the specified job name. </p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p> This parameter limits the response to the import job with the specified job status. </p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
-    #[doc(hidden)]
     pub submitted_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
-    #[doc(hidden)]
     pub submitted_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListFhirImportJobsInput {

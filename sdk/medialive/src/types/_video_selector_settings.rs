@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorSettings {
     /// Video Selector Pid
-    #[doc(hidden)]
     pub video_selector_pid: ::std::option::Option<crate::types::VideoSelectorPid>,
     /// Video Selector Program Id
-    #[doc(hidden)]
     pub video_selector_program_id: ::std::option::Option<crate::types::VideoSelectorProgramId>,
 }
 impl VideoSelectorSettings {

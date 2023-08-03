@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    #[doc(hidden)]
     pub data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }

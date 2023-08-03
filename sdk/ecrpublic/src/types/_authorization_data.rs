@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it's presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
-    #[doc(hidden)]
     pub authorization_token: ::std::option::Option<::std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AuthorizationData {

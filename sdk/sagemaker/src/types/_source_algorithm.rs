@@ -7,10 +7,8 @@ pub struct SourceAlgorithm {
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
-    #[doc(hidden)]
     pub model_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceAlgorithm {

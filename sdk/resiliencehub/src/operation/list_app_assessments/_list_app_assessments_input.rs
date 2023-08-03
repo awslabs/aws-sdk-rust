@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppAssessmentsInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the assessment.</p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    #[doc(hidden)]
     pub assessment_status: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
     /// <p>The current status of compliance for the resiliency policy.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
-    #[doc(hidden)]
     pub invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
-    #[doc(hidden)]
     pub reverse_order: ::std::option::Option<bool>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAppAssessmentsInput {

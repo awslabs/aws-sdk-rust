@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BridgeFlowSource {
     /// The ARN of the cloud flow used as a source of this bridge.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface attachment to use for this source.
-    #[doc(hidden)]
     pub flow_vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     /// The name of the flow source.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Number (ARN) of the output.
-    #[doc(hidden)]
     pub output_arn: ::std::option::Option<::std::string::String>,
 }
 impl BridgeFlowSource {

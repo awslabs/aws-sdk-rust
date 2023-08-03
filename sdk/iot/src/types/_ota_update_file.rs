@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaUpdateFile {
     /// <p>The name of the file.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
-    #[doc(hidden)]
     pub file_type: ::std::option::Option<i32>,
     /// <p>The file version.</p>
-    #[doc(hidden)]
     pub file_version: ::std::option::Option<::std::string::String>,
     /// <p>The location of the updated firmware.</p>
-    #[doc(hidden)]
     pub file_location: ::std::option::Option<crate::types::FileLocation>,
     /// <p>The code signing method of the file.</p>
-    #[doc(hidden)]
     pub code_signing: ::std::option::Option<crate::types::CodeSigning>,
     /// <p>A list of name/attribute pairs.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateFile {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamProcessorsOutput {
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of stream processors that you have created.</p>
-    #[doc(hidden)]
     pub stream_processors: ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>>,
     _request_id: Option<String>,
 }

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctAttribute {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,
     /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
-    #[doc(hidden)]
     pub relationship_score: ::std::option::Option<f32>,
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
-    #[doc(hidden)]
     pub relationship_type: ::std::option::Option<crate::types::SnomedctRelationshipType>,
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute. </p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
-    #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
-    #[doc(hidden)]
     pub snomedct_concepts: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctAttribute {

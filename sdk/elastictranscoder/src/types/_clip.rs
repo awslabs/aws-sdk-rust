@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
-    #[doc(hidden)]
     pub time_span: ::std::option::Option<crate::types::TimeSpan>,
 }
 impl Clip {

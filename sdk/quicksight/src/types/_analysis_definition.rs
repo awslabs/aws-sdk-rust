@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisDefinition {
     /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
-    #[doc(hidden)]
     pub data_set_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
     /// <p>An array of sheet definitions for an analysis. Each <code>SheetDefinition</code> provides detailed information about a sheet within this analysis.</p>
-    #[doc(hidden)]
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of calculated field definitions for the analysis.</p>
-    #[doc(hidden)]
     pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
     /// <p>An array of parameter declarations for an analysis.</p>
     /// <p>Parameters are named variables that can transfer a value for use by an action or an object.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub parameter_declarations: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>,
     /// <p>Filter definitions for an analysis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
-    #[doc(hidden)]
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
-    #[doc(hidden)]
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
 }
 impl AnalysisDefinition {

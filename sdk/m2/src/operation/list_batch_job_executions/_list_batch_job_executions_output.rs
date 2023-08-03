@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsOutput {
     /// <p>Returns a list of batch job executions for an application.</p>
-    #[doc(hidden)]
     pub batch_job_executions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSettingsOutput {
     /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
-    #[doc(hidden)]
     pub linux_subscriptions_discovery: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
     /// <p>Lists the settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    #[doc(hidden)]
     pub linux_subscriptions_discovery_settings: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
     /// <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>A message which details the Linux subscriptions service settings current status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    #[doc(hidden)]
     pub home_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

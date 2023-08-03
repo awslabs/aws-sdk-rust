@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
@@ -14,71 +13,50 @@ pub struct OpsItem {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The OpsItem description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    #[doc(hidden)]
     pub related_ops_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub operational_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub actual_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub actual_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub planned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub planned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ops_item_arn: ::std::option::Option<::std::string::String>,
 }
 impl OpsItem {

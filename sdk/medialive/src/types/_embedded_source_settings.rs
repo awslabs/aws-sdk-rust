@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmbeddedSourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    #[doc(hidden)]
     pub convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-    #[doc(hidden)]
     pub scte20_detection: ::std::option::Option<crate::types::EmbeddedScte20Detection>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    #[doc(hidden)]
     pub source608_channel_number: ::std::option::Option<i32>,
     /// This field is unused and deprecated.
-    #[doc(hidden)]
     pub source608_track_number: ::std::option::Option<i32>,
 }
 impl EmbeddedSourceSettings {

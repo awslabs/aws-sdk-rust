@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentInput {
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>An array of PPE types that you want to summarize.</p>
-    #[doc(hidden)]
     pub summarization_attributes: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,
 }
 impl DetectProtectiveEquipmentInput {

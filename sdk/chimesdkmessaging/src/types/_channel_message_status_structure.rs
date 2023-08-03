@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMessageStatusStructure {
     /// <p>The message status value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::ChannelMessageStatus>,
     /// <p>Contains more details about the message status.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
 }
 impl ChannelMessageStatusStructure {

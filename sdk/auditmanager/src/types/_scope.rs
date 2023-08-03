@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
-    #[doc(hidden)]
     pub aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
     /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
-    #[doc(hidden)]
     pub aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
 }
 impl Scope {

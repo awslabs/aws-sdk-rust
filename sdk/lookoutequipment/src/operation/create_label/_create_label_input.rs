@@ -5,31 +5,23 @@
 pub struct CreateLabelInput {
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the labeled event. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the labeled event. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    #[doc(hidden)]
     pub rating: ::std::option::Option<crate::types::LabelRating>,
     /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]
     pub fault_code: ::std::option::Option<::std::string::String>,
     /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub equipment: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateLabelInput {

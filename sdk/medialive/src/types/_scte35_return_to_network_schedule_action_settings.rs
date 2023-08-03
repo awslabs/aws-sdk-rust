@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35ReturnToNetworkScheduleActionSettings {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-    #[doc(hidden)]
     pub splice_event_id: ::std::option::Option<i64>,
 }
 impl Scte35ReturnToNetworkScheduleActionSettings {

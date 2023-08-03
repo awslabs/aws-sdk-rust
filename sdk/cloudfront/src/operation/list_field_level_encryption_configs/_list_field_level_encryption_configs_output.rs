@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    #[doc(hidden)]
     pub field_level_encryption_list: ::std::option::Option<crate::types::FieldLevelEncryptionList>,
     _request_id: Option<String>,
 }

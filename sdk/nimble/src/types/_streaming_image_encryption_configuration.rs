@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
 }
 impl StreamingImageEncryptionConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    #[doc(hidden)]
     pub condition_expression: ::std::option::Option<::std::string::String>,
 }
 impl FilterOperation {

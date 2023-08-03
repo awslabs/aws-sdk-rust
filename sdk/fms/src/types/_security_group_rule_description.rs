@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleDescription {
     /// <p>The IPv4 ranges for the security group rule.</p>
-    #[doc(hidden)]
     pub ipv4_range: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 ranges for the security group rule.</p>
-    #[doc(hidden)]
     pub ipv6_range: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list for the security group rule.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i64>,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i64>,
 }
 impl SecurityGroupRuleDescription {

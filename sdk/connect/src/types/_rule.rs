@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event source to trigger the rule.</p>
-    #[doc(hidden)]
     pub trigger_event_source: ::std::option::Option<crate::types::RuleTriggerEventSource>,
     /// <p>The conditions of the rule.</p>
-    #[doc(hidden)]
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
     /// <p>The publish status of the rule.</p>
-    #[doc(hidden)]
     pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
     /// <p>The timestamp for when the rule was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for the when the rule was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Rule {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobRunOutput {
     /// <p>The requested job-run metadata.</p>
-    #[doc(hidden)]
     pub job_run: ::std::option::Option<crate::types::JobRun>,
     _request_id: Option<String>,
 }

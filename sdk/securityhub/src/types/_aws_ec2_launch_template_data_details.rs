@@ -5,96 +5,66 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataDetails {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
-    #[doc(hidden)]
     pub block_device_mapping_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
-    #[doc(hidden)]
     pub capacity_reservation_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails>,
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>,
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
-    #[doc(hidden)]
     pub credit_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub disable_api_stop: bool,
     /// <p> If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. If set to <code>true</code>, you can. </p>
-    #[doc(hidden)]
     pub disable_api_termination: bool,
     /// <p> Indicates whether the instance is optimized for Amazon EBS I/O. </p>
-    #[doc(hidden)]
     pub ebs_optimized: bool,
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
-    #[doc(hidden)]
     pub elastic_gpu_specification_set:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_set:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>>,
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
-    #[doc(hidden)]
     pub hibernation_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>,
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>,
     /// <p> The ID of the Amazon Machine Image (AMI). </p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p> Provides the options for specifying the instance initiated shutdown behavior. </p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the market (purchasing) option for an instance. </p>
-    #[doc(hidden)]
     pub instance_market_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
-    #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
     /// <p> The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the kernel. </p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the key pair that allows users to connect to the instance. </p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies a license configuration for an instance. </p>
-    #[doc(hidden)]
     pub license_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>>,
     /// <p> The maintenance options of your instance. </p>
-    #[doc(hidden)]
     pub maintenance_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>,
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
     /// <p> The monitoring for the instance. </p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>,
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
-    #[doc(hidden)]
     pub network_interface_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
     /// <p> Specifies the placement of an instance. </p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>,
     /// <p> The options for the instance hostname. </p>
-    #[doc(hidden)]
     pub private_dns_name_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
     /// <p> The ID of the RAM disk. </p>
-    #[doc(hidden)]
     pub ram_disk_id: ::std::option::Option<::std::string::String>,
     /// <p> One or more security group IDs. </p>
-    #[doc(hidden)]
     pub security_group_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request. </p>
-    #[doc(hidden)]
     pub security_group_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The user data to make available to the instance. </p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataDetails {

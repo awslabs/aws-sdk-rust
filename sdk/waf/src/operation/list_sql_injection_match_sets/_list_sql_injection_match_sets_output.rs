@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    #[doc(hidden)]
     pub sql_injection_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     _request_id: Option<String>,
 }

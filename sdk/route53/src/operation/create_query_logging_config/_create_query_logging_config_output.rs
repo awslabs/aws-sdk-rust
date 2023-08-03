@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueryLoggingConfigOutput {
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
-    #[doc(hidden)]
     pub query_logging_config: ::std::option::Option<crate::types::QueryLoggingConfig>,
     /// <p>The unique URL representing the new query logging configuration.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

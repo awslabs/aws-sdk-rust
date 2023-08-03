@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaOutput {
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of schema if specified when created</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>The compatibility mode of the schema.</p>
-    #[doc(hidden)]
     pub compatibility: ::std::option::Option<crate::types::Compatibility>,
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    #[doc(hidden)]
     pub schema_checkpoint: i64,
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
-    #[doc(hidden)]
     pub latest_schema_version: i64,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
-    #[doc(hidden)]
     pub next_schema_version: i64,
     /// <p>The status of the schema.</p>
-    #[doc(hidden)]
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The date and time the schema was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the schema was updated.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

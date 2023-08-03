@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsManagedBy {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-    #[doc(hidden)]
     pub company: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
 }
 impl StandardsManagedBy {

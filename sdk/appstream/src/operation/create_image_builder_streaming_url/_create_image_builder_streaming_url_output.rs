@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
-    #[doc(hidden)]
     pub streaming_url: ::std::option::Option<::std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

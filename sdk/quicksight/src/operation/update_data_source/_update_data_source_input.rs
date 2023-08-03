@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    #[doc(hidden)]
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::DataSourceCredentials>,
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    #[doc(hidden)]
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    #[doc(hidden)]
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
 }
 impl UpdateDataSourceInput {

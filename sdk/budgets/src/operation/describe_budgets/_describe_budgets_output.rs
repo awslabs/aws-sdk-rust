@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
-    #[doc(hidden)]
     pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

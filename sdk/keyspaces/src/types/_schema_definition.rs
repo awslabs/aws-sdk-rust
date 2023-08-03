@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>The regular columns of the table.</p>
-    #[doc(hidden)]
     pub all_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
     /// <p>The columns that are part of the partition key of the table .</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
     /// <p>The columns that are part of the clustering key of the table.</p>
-    #[doc(hidden)]
     pub clustering_keys: ::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>>,
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    #[doc(hidden)]
     pub static_columns: ::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>>,
 }
 impl SchemaDefinition {

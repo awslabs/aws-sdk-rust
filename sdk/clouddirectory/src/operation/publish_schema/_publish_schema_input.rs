@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishSchemaInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub development_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl PublishSchemaInput {

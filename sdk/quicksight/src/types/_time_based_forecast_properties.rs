@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedForecastProperties {
     /// <p>The periods forward setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub periods_forward: ::std::option::Option<i32>,
     /// <p>The periods backward setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub periods_backward: ::std::option::Option<i32>,
     /// <p>The upper boundary setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub upper_boundary: ::std::option::Option<f64>,
     /// <p>The lower boundary setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub lower_boundary: ::std::option::Option<f64>,
     /// <p>The prediction interval setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub prediction_interval: ::std::option::Option<i32>,
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
     /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub seasonality: ::std::option::Option<i32>,
 }
 impl TimeBasedForecastProperties {

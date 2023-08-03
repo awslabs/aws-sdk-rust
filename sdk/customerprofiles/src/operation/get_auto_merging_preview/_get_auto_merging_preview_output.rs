@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoMergingPreviewOutput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
-    #[doc(hidden)]
     pub number_of_matches_in_sample: i64,
     /// <p>The number of profiles found in this preview dry run.</p>
-    #[doc(hidden)]
     pub number_of_profiles_in_sample: i64,
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
-    #[doc(hidden)]
     pub number_of_profiles_will_be_merged: i64,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCollectionOutput {
     /// <p>Details of the deleted collection.</p>
-    #[doc(hidden)]
     pub delete_collection_detail: ::std::option::Option<crate::types::DeleteCollectionDetail>,
     _request_id: Option<String>,
 }

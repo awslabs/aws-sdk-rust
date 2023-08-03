@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
-    #[doc(hidden)]
     pub stream_enabled: bool,
     /// <p>Determines the information that is written to the table.</p>
-    #[doc(hidden)]
     pub stream_view_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableStreamSpecification {

@@ -5,33 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The destination bucket owner's account ID. </p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access point for the destination bucket where you want S3 on Outposts to store the replication results.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub replication_time: ::std::option::Option<crate::types::ReplicationTime>,
     /// <p>Specify this property only in a cross-account scenario (where the source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this property is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub access_control_translation: ::std::option::Option<crate::types::AccessControlTranslation>,
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p> A container that specifies replication metrics-related settings. </p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::Metrics>,
     /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
     /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
     /// </note>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::ReplicationStorageClass>,
 }
 impl Destination {

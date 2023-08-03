@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceDelegatesOutput {
     /// <p>One page of the resource's delegates.</p>
-    #[doc(hidden)]
     pub delegates: ::std::option::Option<::std::vec::Vec<crate::types::Delegate>>,
     /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

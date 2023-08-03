@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesInput {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    #[doc(hidden)]
     pub database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteFleetAdvisorDatabasesInput {

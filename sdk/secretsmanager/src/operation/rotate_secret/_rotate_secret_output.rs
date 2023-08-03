@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotateSecretOutput {
     /// <p>The ARN of the secret.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new version of the secret.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExportTr34KeyBlock {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    #[doc(hidden)]
     pub certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    #[doc(hidden)]
     pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
-    #[doc(hidden)]
     pub export_token: ::std::option::Option<::std::string::String>,
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
-    #[doc(hidden)]
     pub key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
-    #[doc(hidden)]
     pub random_nonce: ::std::option::Option<::std::string::String>,
 }
 impl ExportTr34KeyBlock {

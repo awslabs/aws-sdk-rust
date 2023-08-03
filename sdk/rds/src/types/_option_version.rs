@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionVersion {
     /// <p>The version of the option.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
-    #[doc(hidden)]
     pub is_default: bool,
 }
 impl OptionVersion {

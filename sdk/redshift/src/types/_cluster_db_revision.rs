@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterDbRevision {
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the current cluster version.</p>
-    #[doc(hidden)]
     pub current_database_revision: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the database revision was released.</p>
-    #[doc(hidden)]
     pub database_revision_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    #[doc(hidden)]
     pub revision_targets: ::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>>,
 }
 impl ClusterDbRevision {

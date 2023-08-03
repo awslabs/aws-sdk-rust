@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
-    #[doc(hidden)]
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }

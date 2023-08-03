@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    #[doc(hidden)]
     pub source_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    #[doc(hidden)]
     pub source_file_system_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    #[doc(hidden)]
     pub source_file_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    #[doc(hidden)]
     pub original_source_file_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes when the replication configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
 }
 impl ReplicationConfigurationDescription {

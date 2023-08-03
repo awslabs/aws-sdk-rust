@@ -6,10 +6,8 @@
 pub struct DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>Lists the receipt handles for the messages to be deleted.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
 }
 impl DeleteMessageBatchInput {

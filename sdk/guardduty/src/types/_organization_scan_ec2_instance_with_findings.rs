@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindings {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    #[doc(hidden)]
     pub ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
 }
 impl OrganizationScanEc2InstanceWithFindings {

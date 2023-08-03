@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Positioning {
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub clock_sync: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub stream: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub gnss: ::std::option::Option<i32>,
 }
 impl Positioning {

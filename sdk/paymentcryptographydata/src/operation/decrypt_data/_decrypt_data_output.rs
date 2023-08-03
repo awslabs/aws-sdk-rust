@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    #[doc(hidden)]
     pub key_check_value: ::std::option::Option<::std::string::String>,
     /// <p>The decrypted plaintext data.</p>
-    #[doc(hidden)]
     pub plain_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

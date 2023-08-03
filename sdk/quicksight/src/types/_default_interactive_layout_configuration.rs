@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultInteractiveLayoutConfiguration {
     /// <p>The options that determine the default settings for a grid layout configuration.</p>
-    #[doc(hidden)]
     pub grid: ::std::option::Option<crate::types::DefaultGridLayoutConfiguration>,
     /// <p>The options that determine the default settings of a free-form layout configuration.</p>
-    #[doc(hidden)]
     pub free_form: ::std::option::Option<crate::types::DefaultFreeFormLayoutConfiguration>,
 }
 impl DefaultInteractiveLayoutConfiguration {

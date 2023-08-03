@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>A message indicating create request was received.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

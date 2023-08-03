@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableAggregatedFieldWells {
     /// <p>The rows field well for a pivot table. Values are grouped by rows fields.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The columns field well for a pivot table. Values are grouped by columns fields.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values field well for a pivot table. Values are aggregated based on rows and columns fields.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl PivotTableAggregatedFieldWells {

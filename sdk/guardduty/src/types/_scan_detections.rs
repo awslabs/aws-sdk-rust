@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanDetections {
     /// <p>Total number of scanned files.</p>
-    #[doc(hidden)]
     pub scanned_item_count: ::std::option::Option<crate::types::ScannedItemCount>,
     /// <p>Total number of infected files.</p>
-    #[doc(hidden)]
     pub threats_detected_item_count: ::std::option::Option<crate::types::ThreatsDetectedItemCount>,
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
-    #[doc(hidden)]
     pub highest_severity_threat_details: ::std::option::Option<crate::types::HighestSeverityThreatDetails>,
     /// <p>Contains details about identified threats organized by threat name.</p>
-    #[doc(hidden)]
     pub threat_detected_by_name: ::std::option::Option<crate::types::ThreatDetectedByName>,
 }
 impl ScanDetections {

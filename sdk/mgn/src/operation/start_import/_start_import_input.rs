@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportInput {
     /// <p>Start import request client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Start import request s3 bucket source.</p>
-    #[doc(hidden)]
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
 }
 impl StartImportInput {

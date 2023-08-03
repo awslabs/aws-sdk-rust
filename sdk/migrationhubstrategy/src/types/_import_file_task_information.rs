@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFileTaskInformation {
     /// <p> The ID of the import file task. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Status of import file task. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImportFileTaskStatus>,
     /// <p> Start time of the import task. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The S3 bucket where the import file is located. </p>
-    #[doc(hidden)]
     pub input_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
-    #[doc(hidden)]
     pub input_s3_key: ::std::option::Option<::std::string::String>,
     /// <p> The S3 bucket name for status report of import task. </p>
-    #[doc(hidden)]
     pub status_report_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not. </p>
-    #[doc(hidden)]
     pub status_report_s3_key: ::std::option::Option<::std::string::String>,
     /// <p> The time that the import task completes. </p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The number of records successfully imported. </p>
-    #[doc(hidden)]
     pub number_of_records_success: ::std::option::Option<i32>,
     /// <p> The number of records that failed to be imported. </p>
-    #[doc(hidden)]
     pub number_of_records_failed: ::std::option::Option<i32>,
     /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
-    #[doc(hidden)]
     pub import_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportFileTaskInformation {

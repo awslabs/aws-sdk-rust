@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactParameter {
     /// <p>The parameter key.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The parameter type.</p>
-    #[doc(hidden)]
     pub parameter_type: ::std::option::Option<::std::string::String>,
     /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
-    #[doc(hidden)]
     pub is_no_echo: bool,
     /// <p>The description of the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Constraints that the administrator has put on a parameter.</p>
-    #[doc(hidden)]
     pub parameter_constraints: ::std::option::Option<crate::types::ParameterConstraints>,
 }
 impl ProvisioningArtifactParameter {

@@ -4,43 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
     /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
     /// </note>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about each object returned.</p>
-    #[doc(hidden)]
     pub contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
     /// <p>The bucket name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Keys that begin with the indicated prefix.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of keys returned in the response body.</p>
-    #[doc(hidden)]
     pub max_keys: i32,
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
     /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
-    #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

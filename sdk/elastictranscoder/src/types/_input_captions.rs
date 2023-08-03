@@ -11,10 +11,8 @@ pub struct InputCaptions {
     /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
-    #[doc(hidden)]
     pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    #[doc(hidden)]
     pub caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
 }
 impl InputCaptions {

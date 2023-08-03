@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotInput {
     /// <p>The name of the bot. The name is case sensitive. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version or alias of the bot.</p>
-    #[doc(hidden)]
     pub version_or_alias: ::std::option::Option<::std::string::String>,
 }
 impl GetBotInput {

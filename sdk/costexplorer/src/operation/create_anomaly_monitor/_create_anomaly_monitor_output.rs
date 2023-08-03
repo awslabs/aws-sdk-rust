@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

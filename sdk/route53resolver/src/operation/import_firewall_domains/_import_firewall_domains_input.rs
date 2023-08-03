@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFirewallDomainsInput {
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
-    #[doc(hidden)]
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::FirewallDomainImportOperation>,
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
-    #[doc(hidden)]
     pub domain_file_url: ::std::option::Option<::std::string::String>,
 }
 impl ImportFirewallDomainsInput {

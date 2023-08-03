@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    #[doc(hidden)]
     pub acm_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDomainInput {

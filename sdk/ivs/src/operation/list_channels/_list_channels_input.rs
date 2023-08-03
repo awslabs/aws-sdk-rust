@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
-    #[doc(hidden)]
     pub filter_by_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    #[doc(hidden)]
     pub filter_by_recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of channels to return. Default: 100.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListChannelsInput {

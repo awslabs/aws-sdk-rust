@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineInput {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl GetPipelineInput {

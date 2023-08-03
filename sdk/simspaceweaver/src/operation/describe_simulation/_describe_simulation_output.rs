@@ -4,50 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationOutput {
     /// <p>The name of the simulation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the simulation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current lifecycle state of the simulation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationStatus>,
     /// <p>The desired lifecycle state of the simulation.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::SimulationTargetStatus>,
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    #[doc(hidden)]
     pub schema_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
     #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
-    #[doc(hidden)]
     pub schema_error: ::std::option::Option<::std::string::String>,
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    #[doc(hidden)]
     pub live_simulation_state: ::std::option::Option<crate::types::LiveSimulationState>,
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    #[doc(hidden)]
     pub maximum_duration: ::std::option::Option<::std::string::String>,
     /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    #[doc(hidden)]
     pub snapshot_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
-    #[doc(hidden)]
     pub start_error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

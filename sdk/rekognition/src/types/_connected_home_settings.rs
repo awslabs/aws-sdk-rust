@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum confidence required to label an object in the video. </p>
-    #[doc(hidden)]
     pub min_confidence: ::std::option::Option<f32>,
 }
 impl ConnectedHomeSettings {

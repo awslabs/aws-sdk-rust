@@ -12,19 +12,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastSync {
     /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
-    #[doc(hidden)]
     pub last_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
-    #[doc(hidden)]
     pub last_sync_status: ::std::option::Option<crate::types::LastSyncStatus>,
     /// <p>The sync's status message. </p>
-    #[doc(hidden)]
     pub last_sync_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
-    #[doc(hidden)]
     pub last_successful_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
-    #[doc(hidden)]
     pub last_successful_sync_provisioning_artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl LastSync {

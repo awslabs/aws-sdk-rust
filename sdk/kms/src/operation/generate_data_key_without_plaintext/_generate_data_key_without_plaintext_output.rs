@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintextOutput {
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    #[doc(hidden)]
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

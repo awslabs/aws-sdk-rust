@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingJobSummary {
     /// <p>The name of the training job that you want a summary for.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    #[doc(hidden)]
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the training job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
-    #[doc(hidden)]
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Timestamp when the training job was last modified. </p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the training job.</p>
-    #[doc(hidden)]
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>The status of the warm pool associated with the training job.</p>
-    #[doc(hidden)]
     pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
 }
 impl TrainingJobSummary {

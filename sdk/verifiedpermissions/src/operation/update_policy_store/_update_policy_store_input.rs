@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicyStoreInput {
     /// <p>Specifies the ID of the policy store that you want to update</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
-    #[doc(hidden)]
     pub validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
 }
 impl UpdatePolicyStoreInput {

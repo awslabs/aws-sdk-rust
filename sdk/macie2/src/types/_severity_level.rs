@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeverityLevel {
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
-    #[doc(hidden)]
     pub occurrences_threshold: ::std::option::Option<i64>,
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::DataIdentifierSeverity>,
 }
 impl SeverityLevel {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state the pipe should be in.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
     /// <p>The state the pipe is in.</p>
-    #[doc(hidden)]
     pub current_state: ::std::option::Option<crate::types::PipeState>,
     /// <p>The time the pipe was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

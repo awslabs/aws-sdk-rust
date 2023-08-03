@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriterion {
     /// <p>The finding attribute used to sort findings.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The order used to sort findings.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortCriterion {

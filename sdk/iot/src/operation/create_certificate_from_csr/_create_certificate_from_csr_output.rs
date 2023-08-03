@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCertificateFromCsrOutput {
     /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

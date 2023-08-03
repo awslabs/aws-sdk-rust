@@ -5,72 +5,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance. </p>
-    #[doc(hidden)]
     pub accelerator_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers. </p>
-    #[doc(hidden)]
     pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The accelerators that must be on the instance type. </p>
-    #[doc(hidden)]
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    #[doc(hidden)]
     pub accelerator_total_memory_mi_b:
         ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
     /// <p>The accelerator types that must be on the instance type. </p>
-    #[doc(hidden)]
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required. </p>
-    #[doc(hidden)]
     pub bare_metal: ::std::option::Option<::std::string::String>,
     /// <p> The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub baseline_ebs_bandwidth_mbps: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails>,
     /// <p> Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub burstable_performance: ::std::option::Option<::std::string::String>,
     /// <p> The CPU manufacturers to include. </p>
-    #[doc(hidden)]
     pub cpu_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The instance types to exclude. </p>
-    #[doc(hidden)]
     pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Indicates whether current or previous generation instance types are included. </p>
-    #[doc(hidden)]
     pub instance_generations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub local_storage: ::std::option::Option<::std::string::String>,
     /// <p> The type of local storage that is required. </p>
-    #[doc(hidden)]
     pub local_storage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    #[doc(hidden)]
     pub memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    #[doc(hidden)]
     pub memory_mi_b: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
     /// <p> The minimum and maximum number of network interfaces. </p>
-    #[doc(hidden)]
     pub network_interface_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>,
     /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    #[doc(hidden)]
     pub on_demand_max_price_percentage_over_lowest_price: i32,
     /// <p> Indicates whether instance types must support hibernation for On-Demand Instances. </p>
-    #[doc(hidden)]
     pub require_hibernate_support: bool,
     /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    #[doc(hidden)]
     pub spot_max_price_percentage_over_lowest_price: i32,
     /// <p> The minimum and maximum amount of total local storage, in GB. </p>
-    #[doc(hidden)]
     pub total_local_storage_gb: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails>,
     /// <p> The minimum and maximum number of vCPUs. </p>
-    #[doc(hidden)]
     pub v_cpu_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {

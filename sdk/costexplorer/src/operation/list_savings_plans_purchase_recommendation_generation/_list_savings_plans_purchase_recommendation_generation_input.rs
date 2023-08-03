@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationInput {
     /// <p>The status of the recommendation generation.</p>
-    #[doc(hidden)]
     pub generation_status: ::std::option::Option<crate::types::GenerationStatus>,
     /// <p>The IDs for each specific recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationInput {

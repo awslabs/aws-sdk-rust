@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    #[doc(hidden)]
     pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of one or more subnets to remove.</p>
-    #[doc(hidden)]
     pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The new VPC attachment options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTransitGatewayVpcAttachmentInput {

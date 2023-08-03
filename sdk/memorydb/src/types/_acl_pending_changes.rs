@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AclPendingChanges {
     /// <p>A list of user names being removed from the ACL</p>
-    #[doc(hidden)]
     pub user_names_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of users being added to the ACL</p>
-    #[doc(hidden)]
     pub user_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AclPendingChanges {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Regex {
     /// <p>The string representing the regular expression.</p>
-    #[doc(hidden)]
     pub regex_string: ::std::option::Option<::std::string::String>,
 }
 impl Regex {

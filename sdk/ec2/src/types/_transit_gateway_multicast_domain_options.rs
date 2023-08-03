@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDomainOptions {
     /// <p>Indicates whether Internet Group Management Protocol (IGMP) version 2 is turned on for the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub igmpv2_support: ::std::option::Option<crate::types::Igmpv2SupportValue>,
     /// <p>Indicates whether support for statically configuring transit gateway multicast group sources is turned on.</p>
-    #[doc(hidden)]
     pub static_sources_support: ::std::option::Option<crate::types::StaticSourcesSupportValue>,
     /// <p>Indicates whether to automatically cross-account subnet associations that are associated with the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub auto_accept_shared_associations: ::std::option::Option<crate::types::AutoAcceptSharedAssociationsValue>,
 }
 impl TransitGatewayMulticastDomainOptions {

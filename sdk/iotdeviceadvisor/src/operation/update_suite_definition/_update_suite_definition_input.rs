@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be updated.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
-    #[doc(hidden)]
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
 }
 impl UpdateSuiteDefinitionInput {

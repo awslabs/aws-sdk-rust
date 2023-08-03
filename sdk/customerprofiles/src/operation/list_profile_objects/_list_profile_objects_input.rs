@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileObjectsInput {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile object type.</p>
-    #[doc(hidden)]
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
-    #[doc(hidden)]
     pub object_filter: ::std::option::Option<crate::types::ObjectFilter>,
 }
 impl ListProfileObjectsInput {

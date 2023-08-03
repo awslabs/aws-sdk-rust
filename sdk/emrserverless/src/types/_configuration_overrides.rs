@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
-    #[doc(hidden)]
     pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The override configurations for monitoring.</p>
-    #[doc(hidden)]
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ConfigurationOverrides {

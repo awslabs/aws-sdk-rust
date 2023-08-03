@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlOperation {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<crate::types::ControlOperationType>,
     /// <p>The time that the operation began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the operation finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ControlOperationStatus>,
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ControlOperation {

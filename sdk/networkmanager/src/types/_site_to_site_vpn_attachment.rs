@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SiteToSiteVpnAttachment {
     /// <p>Provides details about a site-to-site VPN attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The ARN of the site-to-site VPN attachment. </p>
-    #[doc(hidden)]
     pub vpn_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl SiteToSiteVpnAttachment {

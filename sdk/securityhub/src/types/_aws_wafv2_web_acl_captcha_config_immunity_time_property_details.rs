@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
-    #[doc(hidden)]
     pub immunity_time: i64,
 }
 impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The principal to be granted a permission.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The resource to which the principal is to be granted a permission.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions to be granted.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    #[doc(hidden)]
     pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl BatchPermissionsRequestEntry {

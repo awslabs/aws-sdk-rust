@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    #[doc(hidden)]
     pub token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetAccessTokenInput {

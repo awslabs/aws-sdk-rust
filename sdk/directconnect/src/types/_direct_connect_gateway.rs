@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectConnectGateway {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
-    #[doc(hidden)]
     pub amazon_side_asn: ::std::option::Option<i64>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
@@ -23,10 +19,8 @@ pub struct DirectConnectGateway {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
-    #[doc(hidden)]
     pub state_change_error: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGateway {

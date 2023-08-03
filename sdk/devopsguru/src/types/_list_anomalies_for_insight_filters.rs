@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightFilters {
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
 }
 impl ListAnomaliesForInsightFilters {

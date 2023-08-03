@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeAlertConfiguration {
     /// <p>Turns off real-time alerts.</p>
-    #[doc(hidden)]
     pub disabled: bool,
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>>,
 }
 impl RealTimeAlertConfiguration {

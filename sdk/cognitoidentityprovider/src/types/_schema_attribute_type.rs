@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaAttributeType {
     /// <p>A schema attribute of the name type.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute data type.</p>
-    #[doc(hidden)]
     pub attribute_data_type: ::std::option::Option<crate::types::AttributeDataType>,
     /// <note>
     /// <p>You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can be mutated for new use cases instead of using <code>DeveloperOnlyAttribute</code>.</p>
     /// </note>
     /// <p>Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator. Users won't be able to modify this attribute using their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
-    #[doc(hidden)]
     pub developer_only_attribute: ::std::option::Option<bool>,
     /// <p>Specifies whether the value of the attribute can be changed.</p>
     /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
-    #[doc(hidden)]
     pub mutable: ::std::option::Option<bool>,
     /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    #[doc(hidden)]
     pub number_attribute_constraints: ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    #[doc(hidden)]
     pub string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
 impl SchemaAttributeType {

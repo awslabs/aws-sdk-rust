@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedDbInstance {
     /// <p>The unique identifier for the reservation.</p>
-    #[doc(hidden)]
     pub reserved_db_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class for the reserved DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The time the reservation started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this reserved DB instance.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this reserved DB instance.</p>
-    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The currency code for the reserved DB instance.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved DB instances.</p>
-    #[doc(hidden)]
     pub db_instance_count: i32,
     /// <p>The description of the reserved DB instance.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type of this reserved DB instance.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The state of the reserved DB instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
-    #[doc(hidden)]
     pub reserved_db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
-    #[doc(hidden)]
     pub lease_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedDbInstance {

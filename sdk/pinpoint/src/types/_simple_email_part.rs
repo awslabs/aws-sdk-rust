@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleEmailPart {
     /// <p>The applicable character set for the message content.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<::std::string::String>,
     /// <p>The textual data of the message content.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl SimpleEmailPart {

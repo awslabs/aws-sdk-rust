@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewaysOutput {
     /// <p>The gateways in the list.</p>
-    #[doc(hidden)]
     pub gateways: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

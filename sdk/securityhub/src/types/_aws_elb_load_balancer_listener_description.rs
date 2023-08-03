@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListenerDescription {
     /// <p>Information about the listener.</p>
-    #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
     /// <p>The policies enabled for the listener.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsElbLoadBalancerListenerDescription {

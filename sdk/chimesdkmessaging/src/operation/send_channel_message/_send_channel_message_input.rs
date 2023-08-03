@@ -4,42 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the channel message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
     /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    #[doc(hidden)]
     pub persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     /// <p>The optional metadata for each message.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
     /// <p>The push notification configuration of the message.</p>
-    #[doc(hidden)]
     pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel in the request.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the channel message.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl SendChannelMessageInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimDeviceInput {
     /// The id of the device you want to claim.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ClaimDeviceInput {

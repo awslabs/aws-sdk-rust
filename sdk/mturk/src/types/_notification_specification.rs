@@ -10,16 +10,12 @@ pub struct NotificationSpecification {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
-    #[doc(hidden)]
     pub transport: ::std::option::Option<crate::types::NotificationTransport>,
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    #[doc(hidden)]
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl NotificationSpecification {

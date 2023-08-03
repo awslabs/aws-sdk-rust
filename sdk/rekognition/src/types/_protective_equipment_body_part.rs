@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentBodyPart {
     /// <p>The detected body part.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::BodyPart>,
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    #[doc(hidden)]
     pub equipment_detections: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
 }
 impl ProtectiveEquipmentBodyPart {

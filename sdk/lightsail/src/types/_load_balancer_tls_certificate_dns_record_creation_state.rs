@@ -11,10 +11,8 @@ pub struct LoadBalancerTlsCertificateDnsRecordCreationState {
     /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
     /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerTlsCertificateDnsRecordCreationState {

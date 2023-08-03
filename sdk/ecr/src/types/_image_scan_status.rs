@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanStatus {
     /// <p>The current state of an image scan.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>The description of the image scan status.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanStatus {

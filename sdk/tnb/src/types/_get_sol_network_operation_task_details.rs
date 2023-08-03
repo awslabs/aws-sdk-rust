@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolNetworkOperationTaskDetails {
     /// <p>Task name.</p>
-    #[doc(hidden)]
     pub task_name: ::std::option::Option<::std::string::String>,
     /// <p>Context for the network operation task.</p>
-    #[doc(hidden)]
     pub task_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Task error details.</p>
-    #[doc(hidden)]
     pub task_error_details: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>Task status.</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>Task start time.</p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Task end time.</p>
-    #[doc(hidden)]
     pub task_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetSolNetworkOperationTaskDetails {

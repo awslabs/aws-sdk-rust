@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    #[doc(hidden)]
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
 }
 impl CreateAnalysisInput {

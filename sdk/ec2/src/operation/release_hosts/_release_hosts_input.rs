@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseHostsInput {
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    #[doc(hidden)]
     pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReleaseHostsInput {

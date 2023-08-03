@@ -10,7 +10,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrRepositoryConfiguration {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-    #[doc(hidden)]
     pub repository_policy: ::std::option::Option<::std::string::String>,
 }
 impl EcrRepositoryConfiguration {

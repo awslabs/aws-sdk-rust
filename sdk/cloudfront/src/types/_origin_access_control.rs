@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The origin access control.</p>
-    #[doc(hidden)]
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl OriginAccessControl {

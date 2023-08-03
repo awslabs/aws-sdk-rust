@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MoveReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    #[doc(hidden)]
     pub target_replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl MoveReplicationTaskInput {

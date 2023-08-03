@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentChild {
     /// <p>The type of the child component. </p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the child component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentChild {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceError {
     /// <p>The error type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NamespaceErrorType>,
     /// <p>The message for the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceError {

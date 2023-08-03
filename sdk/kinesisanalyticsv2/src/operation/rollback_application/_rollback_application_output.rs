@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackApplicationOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    #[doc(hidden)]
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The index of the array belonging to the Map state iteration.</p>
-    #[doc(hidden)]
     pub index: i32,
 }
 impl MapIterationEventDetails {

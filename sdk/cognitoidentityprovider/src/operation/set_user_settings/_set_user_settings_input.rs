@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetUserSettingsInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    #[doc(hidden)]
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl SetUserSettingsInput {

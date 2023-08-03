@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentityProviderSummary {
     /// <p>The ARN of the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider name.</p>
-    #[doc(hidden)]
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider type.</p>
-    #[doc(hidden)]
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
 }
 impl IdentityProviderSummary {

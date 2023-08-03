@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAdditionalConfigurationResult {
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemberAdditionalConfigurationResult {

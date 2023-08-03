@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyGroupInput {
     /// <p>A key group configuration.</p>
-    #[doc(hidden)]
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
 }
 impl CreateKeyGroupInput {

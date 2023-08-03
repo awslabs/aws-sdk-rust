@@ -4,34 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    #[doc(hidden)]
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <ul>
     /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <ul>
     /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    #[doc(hidden)]
     pub active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    #[doc(hidden)]
     pub inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A short description that helps identify the certificate. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {

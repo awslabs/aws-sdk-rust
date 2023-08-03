@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCollaborationOutput {
     /// <p>The entire collaboration for this identifier.</p>
-    #[doc(hidden)]
     pub collaboration: ::std::option::Option<crate::types::Collaboration>,
     _request_id: Option<String>,
 }

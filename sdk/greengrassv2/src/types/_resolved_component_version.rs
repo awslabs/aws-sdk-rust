@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The recipe of the component version.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
@@ -22,10 +18,8 @@ pub struct ResolvedComponentVersion {
     /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ResolvedComponentVersion {

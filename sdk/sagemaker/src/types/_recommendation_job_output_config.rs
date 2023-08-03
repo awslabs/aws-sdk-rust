@@ -31,10 +31,8 @@ pub struct RecommendationJobOutputConfig {
     /// </region></code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the output configuration for the compiled model.</p>
-    #[doc(hidden)]
     pub compiled_output_config: ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
 }
 impl RecommendationJobOutputConfig {

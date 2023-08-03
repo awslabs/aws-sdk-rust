@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
-    #[doc(hidden)]
     pub has_header_row: bool,
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
-    #[doc(hidden)]
     pub ignore_empty_rows: bool,
     /// <p>The encoding of the data in the input file.</p>
-    #[doc(hidden)]
     pub data_character_encoding: ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
 }
 impl DelimitedTextImportOptions {

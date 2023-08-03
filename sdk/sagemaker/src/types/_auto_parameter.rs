@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoParameter {
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
-    #[doc(hidden)]
     pub value_hint: ::std::option::Option<::std::string::String>,
 }
 impl AutoParameter {

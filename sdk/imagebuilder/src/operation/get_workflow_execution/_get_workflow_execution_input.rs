@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionInput {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    #[doc(hidden)]
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowExecutionInput {

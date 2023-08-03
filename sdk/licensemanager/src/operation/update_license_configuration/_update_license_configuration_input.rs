@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>New status of the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_status: ::std::option::Option<crate::types::LicenseConfigurationStatus>,
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    #[doc(hidden)]
     pub license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>New number of licenses managed by the license configuration.</p>
-    #[doc(hidden)]
     pub license_count: ::std::option::Option<i64>,
     /// <p>New hard limit of the number of available licenses.</p>
-    #[doc(hidden)]
     pub license_count_hard_limit: ::std::option::Option<bool>,
     /// <p>New name of the license configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>New description of the license configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>New product information.</p>
-    #[doc(hidden)]
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
-    #[doc(hidden)]
     pub disassociate_when_not_found: ::std::option::Option<bool>,
 }
 impl UpdateLicenseConfigurationInput {

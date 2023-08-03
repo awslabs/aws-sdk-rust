@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The location in S3 of the application icon.</p>
-    #[doc(hidden)]
     pub icon_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The launch path of the application.</p>
-    #[doc(hidden)]
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>The working directory of the application.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The launch parameters of the application.</p>
-    #[doc(hidden)]
     pub launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    #[doc(hidden)]
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    #[doc(hidden)]
     pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The app block ARN to which the application should be associated</p>
-    #[doc(hidden)]
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInput {

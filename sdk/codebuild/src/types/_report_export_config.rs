@@ -9,10 +9,8 @@ pub struct ReportExportConfig {
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
     /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub export_config_type: ::std::option::Option<crate::types::ReportExportConfigType>,
     /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported. </p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3ReportExportConfig>,
 }
 impl ReportExportConfig {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::ChannelActivity>,
     /// <p>Runs a Lambda function to modify the message.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaActivity>,
     /// <p>Specifies where to store the processed message data.</p>
-    #[doc(hidden)]
     pub datastore: ::std::option::Option<crate::types::DatastoreActivity>,
     /// <p>Adds other attributes based on existing attributes in the message.</p>
-    #[doc(hidden)]
     pub add_attributes: ::std::option::Option<crate::types::AddAttributesActivity>,
     /// <p>Removes attributes from a message.</p>
-    #[doc(hidden)]
     pub remove_attributes: ::std::option::Option<crate::types::RemoveAttributesActivity>,
     /// <p>Used to create a new message using only the specified attributes from the original message. </p>
-    #[doc(hidden)]
     pub select_attributes: ::std::option::Option<crate::types::SelectAttributesActivity>,
     /// <p>Filters a message based on its attributes.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::FilterActivity>,
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
-    #[doc(hidden)]
     pub math: ::std::option::Option<crate::types::MathActivity>,
     /// <p>Adds data from the IoT device registry to your message.</p>
-    #[doc(hidden)]
     pub device_registry_enrich: ::std::option::Option<crate::types::DeviceRegistryEnrichActivity>,
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
-    #[doc(hidden)]
     pub device_shadow_enrich: ::std::option::Option<crate::types::DeviceShadowEnrichActivity>,
 }
 impl PipelineActivity {

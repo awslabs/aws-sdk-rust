@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
-    #[doc(hidden)]
     pub log_anomaly_classes: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>>,
 }
 impl LogAnomalyShowcase {

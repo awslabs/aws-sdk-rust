@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMemberInput {
     /// <p>The details of the account to associate with the administrator account.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<crate::types::AccountDetail>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemberInput {

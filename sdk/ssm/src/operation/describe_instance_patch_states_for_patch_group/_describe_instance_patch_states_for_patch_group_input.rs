@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
@@ -12,13 +11,10 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// <li> <p>Values (array containing a single string)</p> </li>
     /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeInstancePatchStatesForPatchGroupInput {

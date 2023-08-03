@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFhirDatastoreInput {
     /// <p>The user generated name for the data store.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
-    #[doc(hidden)]
     pub datastore_type_version: ::std::option::Option<crate::types::FhirVersion>,
     /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
-    #[doc(hidden)]
     pub sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
-    #[doc(hidden)]
     pub preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> Resource tags that are applied to a data store when it is created. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
-    #[doc(hidden)]
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl CreateFhirDatastoreInput {

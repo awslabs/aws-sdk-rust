@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmRecommendation {
     /// <p>The identifier of the alarm recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The reference identifier of the alarm recommendation.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm recommendation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the recommendation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of alarm recommendation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AlarmType>,
     /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of CloudWatch alarm recommendations.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>The prerequisite for the alarm recommendation.</p>
-    #[doc(hidden)]
     pub prerequisite: ::std::option::Option<::std::string::String>,
 }
 impl AlarmRecommendation {

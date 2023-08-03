@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteProvisionedProductPlanOutput {
     /// <p>Information about the result of provisioning the product.</p>
-    #[doc(hidden)]
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
 }

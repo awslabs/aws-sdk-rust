@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
-    #[doc(hidden)]
     pub allows_public_read_access: ::std::option::Option<bool>,
     /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
-    #[doc(hidden)]
     pub allows_public_write_access: ::std::option::Option<bool>,
 }
 impl AccessControlList {

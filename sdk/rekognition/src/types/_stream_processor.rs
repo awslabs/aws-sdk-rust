@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StreamProcessorStatus>,
 }
 impl StreamProcessor {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledQuery {
     /// <p>The Amazon Resource Name.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the scheduled query.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the scheduled query.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>State of scheduled query. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
     /// <p>The last time the scheduled query was run.</p>
-    #[doc(hidden)]
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The next time the scheduled query is to be run.</p>
-    #[doc(hidden)]
     pub next_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration for scheduled query error reporting.</p>
-    #[doc(hidden)]
     pub error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
     /// <p>Target data source where final scheduled query result will be written.</p>
-    #[doc(hidden)]
     pub target_destination: ::std::option::Option<crate::types::TargetDestination>,
     /// <p>Status of the last scheduled query run.</p>
-    #[doc(hidden)]
     pub last_run_status: ::std::option::Option<crate::types::ScheduledQueryRunStatus>,
 }
 impl ScheduledQuery {

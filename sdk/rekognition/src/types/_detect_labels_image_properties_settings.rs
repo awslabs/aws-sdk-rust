@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImagePropertiesSettings {
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_dominant_colors: i32,
 }
 impl DetectLabelsImagePropertiesSettings {

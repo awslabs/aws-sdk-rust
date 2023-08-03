@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalClustersOutput {
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The list of global clusters and instances returned by this request.</p>
-    #[doc(hidden)]
     pub global_clusters: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>,
     _request_id: Option<String>,
 }

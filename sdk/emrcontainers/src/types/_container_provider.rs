@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContainerProviderType>,
     /// <p>The ID of the container cluster.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The information about the container cluster.</p>
-    #[doc(hidden)]
     pub info: ::std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProvider {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexFacesOutput {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
-    #[doc(hidden)]
     pub face_records: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
@@ -13,13 +12,10 @@ pub struct IndexFacesOutput {
     /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
-    #[doc(hidden)]
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    #[doc(hidden)]
     pub unindexed_faces: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>,
     _request_id: Option<String>,
 }

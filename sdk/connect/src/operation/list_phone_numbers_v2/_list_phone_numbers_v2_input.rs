@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersV2Input {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
-    #[doc(hidden)]
     pub phone_number_country_codes: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
     /// <p>The type of phone number.</p>
-    #[doc(hidden)]
     pub phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    #[doc(hidden)]
     pub phone_number_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersV2Input {

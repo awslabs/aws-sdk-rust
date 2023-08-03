@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStepDetails {

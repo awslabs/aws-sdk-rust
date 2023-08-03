@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationContext {
     /// <p>The ID of the validation.</p>
-    #[doc(hidden)]
     pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the validation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ValidationStatus>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl NotificationContext {

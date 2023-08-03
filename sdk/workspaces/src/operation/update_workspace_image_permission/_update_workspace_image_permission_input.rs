@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
-    #[doc(hidden)]
     pub allow_copy_image: ::std::option::Option<bool>,
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceImagePermissionInput {

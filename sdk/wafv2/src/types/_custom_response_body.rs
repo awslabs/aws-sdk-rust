@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ResponseContentType>,
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl CustomResponseBody {

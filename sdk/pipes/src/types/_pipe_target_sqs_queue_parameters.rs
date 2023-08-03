@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetSqsQueueParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    #[doc(hidden)]
     pub message_group_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
-    #[doc(hidden)]
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
 }
 impl PipeTargetSqsQueueParameters {

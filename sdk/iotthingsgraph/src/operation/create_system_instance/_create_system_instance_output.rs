@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSystemInstanceOutput {
     /// <p>The summary object that describes the new system instance.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     _request_id: Option<String>,
 }

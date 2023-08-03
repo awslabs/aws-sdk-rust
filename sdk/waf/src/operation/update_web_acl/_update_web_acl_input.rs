@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
@@ -16,10 +14,8 @@ pub struct UpdateWebAclInput {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>,
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::WafAction>,
 }
 impl UpdateWebAclInput {

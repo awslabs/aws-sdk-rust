@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeAlignmentBoundary {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
-    #[doc(hidden)]
     pub month: ::std::option::Option<crate::types::Month>,
     /// <p>The day of the month to use for time alignment during aggregation.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<i32>,
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>The hour of day to use for time alignment during aggregation.</p>
-    #[doc(hidden)]
     pub hour: ::std::option::Option<i32>,
 }
 impl TimeAlignmentBoundary {

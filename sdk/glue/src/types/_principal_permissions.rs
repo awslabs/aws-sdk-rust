@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The permissions that are granted to the principal.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl PrincipalPermissions {

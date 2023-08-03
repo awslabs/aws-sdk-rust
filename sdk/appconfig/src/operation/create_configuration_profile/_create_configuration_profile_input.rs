@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationProfileInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the configuration profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configuration profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
@@ -29,23 +26,18 @@ pub struct CreateConfigurationProfileInput {
     /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
     /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    #[doc(hidden)]
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
-    #[doc(hidden)]
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl CreateConfigurationProfileInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastStatistics {
     /// <p>The upper limit of fault counts for a service.</p>
-    #[doc(hidden)]
     pub fault_count_high: ::std::option::Option<i64>,
     /// <p>The lower limit of fault counts for a service.</p>
-    #[doc(hidden)]
     pub fault_count_low: ::std::option::Option<i64>,
 }
 impl ForecastStatistics {

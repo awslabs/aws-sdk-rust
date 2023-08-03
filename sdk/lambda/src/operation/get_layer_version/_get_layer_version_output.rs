@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLayerVersionOutput {
     /// <p>Details about the layer version.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::LayerVersionContentOutput>,
     /// <p>The ARN of the layer.</p>
-    #[doc(hidden)]
     pub layer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the layer version.</p>
-    #[doc(hidden)]
     pub layer_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     /// <p>The layer's software license.</p>
-    #[doc(hidden)]
     pub license_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    #[doc(hidden)]
     pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     _request_id: Option<String>,
 }

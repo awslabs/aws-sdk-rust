@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Field {
     /// <p>The field identifier.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The field value, expressed as a String.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>The field value, expressed as the identifier of another object.</p>
-    #[doc(hidden)]
     pub ref_value: ::std::option::Option<::std::string::String>,
 }
 impl Field {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
-    #[doc(hidden)]
     pub model_version_details: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
     /// <p>The next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

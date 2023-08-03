@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreInput {
     /// <p>The genome reference for the store's annotations.</p>
-    #[doc(hidden)]
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>A name for the store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the store.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
-    #[doc(hidden)]
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>The annotation file format of the store.</p>
-    #[doc(hidden)]
     pub store_format: ::std::option::Option<crate::types::StoreFormat>,
     /// <p>File parsing options for the annotation store.</p>
-    #[doc(hidden)]
     pub store_options: ::std::option::Option<crate::types::StoreOptions>,
 }
 impl CreateAnnotationStoreInput {

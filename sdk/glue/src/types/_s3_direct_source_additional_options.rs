@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DirectSourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    #[doc(hidden)]
     pub bounded_size: ::std::option::Option<i64>,
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    #[doc(hidden)]
     pub bounded_files: ::std::option::Option<i64>,
     /// <p>Sets option to enable a sample path.</p>
-    #[doc(hidden)]
     pub enable_sample_path: ::std::option::Option<bool>,
     /// <p>If enabled, specifies the sample path.</p>
-    #[doc(hidden)]
     pub sample_path: ::std::option::Option<::std::string::String>,
 }
 impl S3DirectSourceAdditionalOptions {

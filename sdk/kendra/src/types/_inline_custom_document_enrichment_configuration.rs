@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InlineCustomDocumentEnrichmentConfiguration {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
-    #[doc(hidden)]
     pub document_content_deletion: bool,
 }
 impl InlineCustomDocumentEnrichmentConfiguration {

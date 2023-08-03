@@ -7,32 +7,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Runbook {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
-    #[doc(hidden)]
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    #[doc(hidden)]
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
-    #[doc(hidden)]
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
 }
 impl Runbook {

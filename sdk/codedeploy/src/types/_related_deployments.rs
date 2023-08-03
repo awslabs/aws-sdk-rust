@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedDeployments {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
-    #[doc(hidden)]
     pub auto_update_outdated_instances_root_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
-    #[doc(hidden)]
     pub auto_update_outdated_instances_deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelatedDeployments {

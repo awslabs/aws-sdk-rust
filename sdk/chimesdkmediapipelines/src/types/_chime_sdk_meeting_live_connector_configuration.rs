@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChimeSdkMeetingLiveConnectorConfiguration {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration object's multiplex type.</p>
-    #[doc(hidden)]
     pub mux_type: ::std::option::Option<crate::types::LiveConnectorMuxType>,
     /// <p>The media pipeline's composited video.</p>
-    #[doc(hidden)]
     pub composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
-    #[doc(hidden)]
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
 }
 impl ChimeSdkMeetingLiveConnectorConfiguration {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartConfiguration {
     /// <p>The field well configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::WaterfallChartFieldWells>,
     /// <p>The sort configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::WaterfallChartSortConfiguration>,
     /// <p>The options that determine the presentation of a waterfall visual.</p>
-    #[doc(hidden)]
     pub waterfall_chart_options: ::std::option::Option<crate::types::WaterfallChartOptions>,
     /// <p>The options that determine the presentation of the category axis label.</p>
-    #[doc(hidden)]
     pub category_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options that determine the presentation of the category axis.</p>
-    #[doc(hidden)]
     pub category_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    #[doc(hidden)]
     pub primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options that determine the presentation of the y-axis.</p>
-    #[doc(hidden)]
     pub primary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The legend configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The data label configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The visual palette configuration of a waterfall visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl WaterfallChartConfiguration {

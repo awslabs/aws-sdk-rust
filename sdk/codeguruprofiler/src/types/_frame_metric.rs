@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    #[doc(hidden)]
     pub frame_name: ::std::option::Option<::std::string::String>,
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MetricType>,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    #[doc(hidden)]
     pub thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FrameMetric {

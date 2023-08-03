@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to retrieve.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetArchiveRuleInput {

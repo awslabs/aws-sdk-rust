@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallInstructionsMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl CallInstructionsMessageType {

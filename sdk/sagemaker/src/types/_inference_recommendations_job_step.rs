@@ -6,16 +6,12 @@
 pub struct InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    #[doc(hidden)]
     pub step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     /// <p>The name of the Inference Recommender job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the benchmark.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>The details for a specific benchmark.</p>
-    #[doc(hidden)]
     pub inference_benchmark: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
 }
 impl InferenceRecommendationsJobStep {

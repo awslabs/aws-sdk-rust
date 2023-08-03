@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionInfo {
     /// <p>The data-volume encryption details.</p>
-    #[doc(hidden)]
     pub encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
     /// <p>The details for encryption in transit.</p>
-    #[doc(hidden)]
     pub encryption_in_transit: ::std::option::Option<crate::types::EncryptionInTransit>,
 }
 impl EncryptionInfo {

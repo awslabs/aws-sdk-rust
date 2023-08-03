@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
-    #[doc(hidden)]
     pub ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,
 }
 impl IpSetUpdate {

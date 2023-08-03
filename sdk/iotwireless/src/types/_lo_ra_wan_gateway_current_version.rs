@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
 }
 impl LoRaWanGatewayCurrentVersion {

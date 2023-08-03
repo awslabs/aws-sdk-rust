@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-    #[doc(hidden)]
     pub ruleset_arn: ::std::option::Option<::std::string::String>,
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
-    #[doc(hidden)]
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
 }
 impl ValidationConfiguration {

@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.</p>
-    #[doc(hidden)]
     pub view_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    #[doc(hidden)]
     pub included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::SearchFilter>,
 }
 impl UpdateViewInput {

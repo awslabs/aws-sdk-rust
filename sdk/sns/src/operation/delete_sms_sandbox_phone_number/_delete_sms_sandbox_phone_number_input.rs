@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSmsSandboxPhoneNumberInput {

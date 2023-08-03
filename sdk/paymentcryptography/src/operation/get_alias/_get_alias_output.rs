@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAliasOutput {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::Alias>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDiscovererInput {
     /// <p>The ID of the discoverer.</p>
-    #[doc(hidden)]
     pub discoverer_id: ::std::option::Option<::std::string::String>,
 }
 impl StopDiscovererInput {

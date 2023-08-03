@@ -5,68 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableStatistics {
     /// <p>The schema name.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of insert actions performed on a table.</p>
-    #[doc(hidden)]
     pub inserts: i64,
     /// <p>The number of delete actions performed on a table.</p>
-    #[doc(hidden)]
     pub deletes: i64,
     /// <p>The number of update actions performed on a table.</p>
-    #[doc(hidden)]
     pub updates: i64,
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
-    #[doc(hidden)]
     pub ddls: i64,
     /// <p>The number of insert actions applied on a target table.</p>
-    #[doc(hidden)]
     pub applied_inserts: ::std::option::Option<i64>,
     /// <p>The number of delete actions applied on a target table.</p>
-    #[doc(hidden)]
     pub applied_deletes: ::std::option::Option<i64>,
     /// <p>The number of update actions applied on a target table.</p>
-    #[doc(hidden)]
     pub applied_updates: ::std::option::Option<i64>,
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
-    #[doc(hidden)]
     pub applied_ddls: ::std::option::Option<i64>,
     /// <p>The number of rows added during the full load operation.</p>
-    #[doc(hidden)]
     pub full_load_rows: i64,
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
-    #[doc(hidden)]
     pub full_load_condtnl_chk_failed_rows: i64,
     /// <p>The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target).</p>
-    #[doc(hidden)]
     pub full_load_error_rows: i64,
     /// <p>The time when the full load operation started.</p>
-    #[doc(hidden)]
     pub full_load_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the full load operation completed.</p>
-    #[doc(hidden)]
     pub full_load_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
-    #[doc(hidden)]
     pub full_load_reloaded: ::std::option::Option<bool>,
     /// <p>The last time a table was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
-    #[doc(hidden)]
     pub table_state: ::std::option::Option<::std::string::String>,
     /// <p>The number of records that have yet to be validated.</p>
-    #[doc(hidden)]
     pub validation_pending_records: i64,
     /// <p>The number of records that failed validation.</p>
-    #[doc(hidden)]
     pub validation_failed_records: i64,
     /// <p>The number of records that couldn't be validated.</p>
-    #[doc(hidden)]
     pub validation_suspended_records: i64,
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
@@ -83,10 +62,8 @@ pub struct TableStatistics {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub validation_state: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the state of validation.</p>
-    #[doc(hidden)]
     pub validation_state_details: ::std::option::Option<::std::string::String>,
 }
 impl TableStatistics {

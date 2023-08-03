@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
-    #[doc(hidden)]
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
@@ -15,13 +14,10 @@ pub struct CreateDeploymentConfigInput {
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    #[doc(hidden)]
     pub minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-    #[doc(hidden)]
     pub traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl CreateDeploymentConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIngestionInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
@@ -22,21 +21,16 @@ pub struct CreateIngestionInput {
     /// <li> <p> <code>SMARTSHEET</code> </p> </li>
     /// <li> <p> <code>CISCO</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
     /// <p>The ingestion type.</p>
-    #[doc(hidden)]
     pub ingestion_type: ::std::option::Option<crate::types::IngestionType>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIngestionInput {

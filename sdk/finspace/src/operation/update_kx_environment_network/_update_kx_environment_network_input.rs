@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKxEnvironmentNetworkInput {
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    #[doc(hidden)]
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    #[doc(hidden)]
     pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKxEnvironmentNetworkInput {

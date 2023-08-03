@@ -8,22 +8,17 @@ pub struct GetResourceMetricsInput {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    #[doc(hidden)]
     pub metric_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>,
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
@@ -34,16 +29,12 @@ pub struct GetResourceMetricsInput {
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
-    #[doc(hidden)]
     pub period_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
-    #[doc(hidden)]
     pub period_alignment: ::std::option::Option<crate::types::PeriodAlignment>,
 }
 impl GetResourceMetricsInput {

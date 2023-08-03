@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
-    #[doc(hidden)]
     pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

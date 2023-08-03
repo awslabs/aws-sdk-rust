@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
-    #[doc(hidden)]
     pub input_channel_levels: ::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>>,
     /// The index of the output channel being produced.
-    #[doc(hidden)]
     pub output_channel: ::std::option::Option<i32>,
 }
 impl AudioChannelMapping {

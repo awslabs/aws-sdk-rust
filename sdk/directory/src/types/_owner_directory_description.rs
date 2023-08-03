@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnerDirectoryDescription {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the directory owner account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address of the directory’s domain controllers.</p>
-    #[doc(hidden)]
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the VPC settings for the directory.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    #[doc(hidden)]
     pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
     /// <p>Information about the status of the RADIUS server.</p>
-    #[doc(hidden)]
     pub radius_status: ::std::option::Option<crate::types::RadiusStatus>,
 }
 impl OwnerDirectoryDescription {

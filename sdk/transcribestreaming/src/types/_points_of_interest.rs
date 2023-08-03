@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointsOfInterest {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    #[doc(hidden)]
     pub timestamp_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>>,
 }
 impl PointsOfInterest {

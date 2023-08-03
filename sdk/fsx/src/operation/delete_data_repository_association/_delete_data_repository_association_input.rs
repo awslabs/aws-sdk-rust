@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you want to delete.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
-    #[doc(hidden)]
     pub delete_data_in_file_system: ::std::option::Option<bool>,
 }
 impl DeleteDataRepositoryAssociationInput {

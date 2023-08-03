@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
-    #[doc(hidden)]
     pub domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
 }

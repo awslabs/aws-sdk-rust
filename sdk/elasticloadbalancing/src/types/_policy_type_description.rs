@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
-    #[doc(hidden)]
     pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    #[doc(hidden)]
     pub policy_attribute_type_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescription {

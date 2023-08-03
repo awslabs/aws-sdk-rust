@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUploadUrlOutput {
     /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    #[doc(hidden)]
     pub request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for the uploaded code resource. </p>
-    #[doc(hidden)]
     pub code_artifact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

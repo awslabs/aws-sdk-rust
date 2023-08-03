@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamInstanceProfileRole {
     /// <p>The ARN of the role.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy that grants an entity permission to assume the role.</p>
-    #[doc(hidden)]
     pub assume_role_policy_document: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The path to the role.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the role.</p>
-    #[doc(hidden)]
     pub role_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the role.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamInstanceProfileRole {

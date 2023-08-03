@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
-    #[doc(hidden)]
     pub base_path: ::std::option::Option<::std::string::String>,
 }
 impl S3ContentBaseLocation {

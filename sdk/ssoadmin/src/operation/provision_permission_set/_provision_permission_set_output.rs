@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionPermissionSetOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
-    #[doc(hidden)]
     pub permission_set_provisioning_status: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
     _request_id: Option<String>,
 }

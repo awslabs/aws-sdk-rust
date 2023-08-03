@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputLocationRef {
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub destination_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl OutputLocationRef {

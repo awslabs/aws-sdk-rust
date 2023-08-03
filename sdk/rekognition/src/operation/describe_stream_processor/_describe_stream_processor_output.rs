@@ -4,48 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamProcessorOutput {
     /// <p>Name of the stream processor. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the stream processor.</p>
-    #[doc(hidden)]
     pub stream_processor_arn: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the stream processor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StreamProcessorStatus>,
     /// <p>Detailed status message about the stream processor.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Date and time the stream processor was created</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-    #[doc(hidden)]
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Kinesis video stream that provides the source streaming video.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::StreamProcessorInput>,
     /// <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::StreamProcessorOutput>,
     /// <p>ARN of the IAM role that allows access to the stream processor.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::StreamProcessorSettings>,
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
-    #[doc(hidden)]
     pub notification_channel: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    #[doc(hidden)]
     pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    #[doc(hidden)]
     pub data_sharing_preference: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
     _request_id: Option<String>,
 }

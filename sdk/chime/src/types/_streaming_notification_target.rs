@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingNotificationTarget {
     /// <p>The streaming notification target.</p>
-    #[doc(hidden)]
     pub notification_target: ::std::option::Option<crate::types::NotificationTarget>,
 }
 impl StreamingNotificationTarget {

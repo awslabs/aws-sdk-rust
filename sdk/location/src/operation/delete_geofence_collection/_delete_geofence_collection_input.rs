@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGeofenceCollectionInput {

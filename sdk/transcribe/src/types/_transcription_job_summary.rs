@@ -5,57 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptionJobSummary {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub transcription_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the specified transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time your transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The language code used to create your transcription.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the status of your transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    #[doc(hidden)]
     pub transcription_job_status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Indicates where the specified transcription output is stored.</p>
     /// <p>If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket you specified using the <code>OutputBucketName</code> parameter in your request. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
     /// <p>If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon S3 bucket. To access a transcript stored in a service-managed bucket, use the URI shown in the <code>TranscriptFileUri</code> or <code>RedactedTranscriptFileUri</code> field.</p>
-    #[doc(hidden)]
     pub output_location_type: ::std::option::Option<crate::types::OutputLocationType>,
     /// <p>The content redaction settings of the transcription job.</p>
-    #[doc(hidden)]
     pub content_redaction: ::std::option::Option<crate::types::ContentRedaction>,
     /// <p>Provides the name of the custom language model that was included in the specified transcription job.</p>
     /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
-    #[doc(hidden)]
     pub model_settings: ::std::option::Option<crate::types::ModelSettings>,
     /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
-    #[doc(hidden)]
     pub identify_language: ::std::option::Option<bool>,
     /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
-    #[doc(hidden)]
     pub identify_multiple_languages: ::std::option::Option<bool>,
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
-    #[doc(hidden)]
     pub identified_language_score: ::std::option::Option<f32>,
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification, the singular version of this parameter, <code>LanguageCode</code>, is present.</p>
-    #[doc(hidden)]
     pub language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>>,
     /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
-    #[doc(hidden)]
     pub toxicity_detection: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJobSummary {

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The external meeting ID.</p>
-    #[doc(hidden)]
     pub external_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub meeting_host_id: ::std::option::Option<::std::string::String>,
     /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
-    #[doc(hidden)]
     pub media_region: ::std::option::Option<::std::string::String>,
     /// <p>The tag key-value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    #[doc(hidden)]
     pub notifications_configuration: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
     /// <p>The request containing the attendees to create.</p>
-    #[doc(hidden)]
     pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
 }
 impl CreateMeetingWithAttendeesInput {

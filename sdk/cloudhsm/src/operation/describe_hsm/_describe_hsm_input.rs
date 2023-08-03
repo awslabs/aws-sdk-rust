@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHsmInput {
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
-    #[doc(hidden)]
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
-    #[doc(hidden)]
     pub hsm_serial_number: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHsmInput {

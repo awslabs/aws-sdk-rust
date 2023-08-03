@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExpenseAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The expenses detected by Amazon Textract.</p>
-    #[doc(hidden)]
     pub expense_documents: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The current model version of AnalyzeExpense.</p>
-    #[doc(hidden)]
     pub analyze_expense_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

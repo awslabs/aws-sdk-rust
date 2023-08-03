@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeletextSourceSettings {
     /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<::std::string::String>,
 }
 impl TeletextSourceSettings {

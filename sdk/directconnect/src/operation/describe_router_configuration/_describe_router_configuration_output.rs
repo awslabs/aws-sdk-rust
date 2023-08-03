@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouterConfigurationOutput {
     /// <p>The customer router configuration.</p>
-    #[doc(hidden)]
     pub customer_router_config: ::std::option::Option<::std::string::String>,
     /// <p>The details about the router.</p>
-    #[doc(hidden)]
     pub router: ::std::option::Option<crate::types::RouterType>,
     /// <p>The ID assigned to the virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the details about a virtual interface's router.</p>
-    #[doc(hidden)]
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

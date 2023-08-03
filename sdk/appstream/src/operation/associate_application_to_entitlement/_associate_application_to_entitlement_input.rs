@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApplicationToEntitlementInput {
     /// <p>The name of the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entitlement.</p>
-    #[doc(hidden)]
     pub entitlement_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the application.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApplicationToEntitlementInput {

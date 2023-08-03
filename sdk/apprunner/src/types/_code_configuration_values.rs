@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CodeConfigurationValues {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>The command App Runner runs to build your application.</p>
-    #[doc(hidden)]
     pub build_command: ::std::option::Option<::std::string::String>,
     /// <p>The command App Runner runs to start your application.</p>
-    #[doc(hidden)]
     pub start_command: ::std::option::Option<::std::string::String>,
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    #[doc(hidden)]
     pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
     /// <ul>
@@ -26,7 +21,6 @@ pub struct CodeConfigurationValues {
     /// <li> <p> Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported. </p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CodeConfigurationValues {

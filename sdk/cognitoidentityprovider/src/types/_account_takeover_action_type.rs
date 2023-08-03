@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
-    #[doc(hidden)]
     pub notify: bool,
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct AccountTakeoverActionType {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_action: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
 }
 impl AccountTakeoverActionType {

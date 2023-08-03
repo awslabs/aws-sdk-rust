@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-    #[doc(hidden)]
     pub max_number_of_training_jobs: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-    #[doc(hidden)]
     pub max_parallel_training_jobs: ::std::option::Option<::std::string::String>,
 }
 impl HpoResourceConfig {

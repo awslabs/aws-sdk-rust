@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationAnswerInput {
     /// <p>The value for an answer in a contact evaluation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerInput {

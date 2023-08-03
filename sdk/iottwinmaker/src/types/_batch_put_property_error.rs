@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyError {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    #[doc(hidden)]
     pub entry: ::std::option::Option<crate::types::PropertyValueEntry>,
 }
 impl BatchPutPropertyError {

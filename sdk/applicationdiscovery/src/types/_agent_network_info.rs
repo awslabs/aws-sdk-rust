@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/collector resides.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address for the host where the agent/collector resides.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
 }
 impl AgentNetworkInfo {

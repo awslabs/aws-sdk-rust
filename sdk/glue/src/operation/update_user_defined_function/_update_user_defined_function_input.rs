@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the function to be updated is located.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    #[doc(hidden)]
     pub function_input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
 }
 impl UpdateUserDefinedFunctionInput {

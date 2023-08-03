@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobConfig {
     /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    #[doc(hidden)]
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
-    #[doc(hidden)]
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
-    #[doc(hidden)]
     pub candidate_generation_config: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>,
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
     /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AutoMlMode>,
 }
 impl AutoMlJobConfig {

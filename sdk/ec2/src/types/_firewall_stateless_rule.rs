@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallStatelessRule {
     /// <p>The ARN of the stateless rule group.</p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source IP addresses, in CIDR notation.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source ports.</p>
-    #[doc(hidden)]
     pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The destination ports.</p>
-    #[doc(hidden)]
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The protocols.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<::std::string::String>,
     /// <p>The rule priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl FirewallStatelessRule {

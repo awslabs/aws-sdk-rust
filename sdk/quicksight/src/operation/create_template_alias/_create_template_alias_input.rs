@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the template.</p>
-    #[doc(hidden)]
     pub template_version_number: ::std::option::Option<i64>,
 }
 impl CreateTemplateAliasInput {

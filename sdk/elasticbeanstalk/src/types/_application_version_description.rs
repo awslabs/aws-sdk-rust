@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
-    #[doc(hidden)]
     pub application_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application to which the application version belongs.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the application version.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-    #[doc(hidden)]
     pub source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
-    #[doc(hidden)]
     pub build_arn: ::std::option::Option<::std::string::String>,
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
-    #[doc(hidden)]
     pub source_bundle: ::std::option::Option<crate::types::S3Location>,
     /// <p>The creation date of the application version.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified date of the application version.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
@@ -39,7 +30,6 @@ pub struct ApplicationVersionDescription {
     /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
     /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationVersionStatus>,
 }
 impl ApplicationVersionDescription {

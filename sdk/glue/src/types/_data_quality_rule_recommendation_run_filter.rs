@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRuleRecommendationRunFilter {
     /// <p>Filter based on a specified data source (Glue table).</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Filter based on time for results started before provided time.</p>
-    #[doc(hidden)]
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter based on time for results started after provided time.</p>
-    #[doc(hidden)]
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataQualityRuleRecommendationRunFilter {

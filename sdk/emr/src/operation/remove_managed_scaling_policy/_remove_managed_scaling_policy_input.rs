@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyInput {
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveManagedScalingPolicyInput {

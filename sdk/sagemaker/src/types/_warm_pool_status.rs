@@ -11,14 +11,11 @@ pub struct WarmPoolStatus {
     /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
     /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
     /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
     /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
-    #[doc(hidden)]
     pub resource_retained_billable_time_in_seconds: ::std::option::Option<i32>,
     /// <p>The name of the matching training job that reused the warm pool.</p>
-    #[doc(hidden)]
     pub reused_by_job: ::std::option::Option<::std::string::String>,
 }
 impl WarmPoolStatus {

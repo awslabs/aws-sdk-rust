@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IbmDb2Settings {
     /// <p>Database name for the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint TCP port. The default value is 50000.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Fully qualified domain name of the endpoint.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
-    #[doc(hidden)]
     pub set_data_capture_changes: ::std::option::Option<bool>,
     /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
-    #[doc(hidden)]
     pub current_lsn: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
-    #[doc(hidden)]
     pub max_k_bytes_per_read: ::std::option::Option<i32>,
     /// <p>Endpoint connection user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
 }
 impl IbmDb2Settings {

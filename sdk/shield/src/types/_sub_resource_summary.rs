@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubResourceSummary {
     /// <p>The <code>SubResource</code> type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SubResourceType>,
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The list of attack types and associated counters.</p>
-    #[doc(hidden)]
     pub attack_vectors: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedAttackVector>>,
     /// <p>The counters that describe the details of the attack.</p>
-    #[doc(hidden)]
     pub counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
 }
 impl SubResourceSummary {

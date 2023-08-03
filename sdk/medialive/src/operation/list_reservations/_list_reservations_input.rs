@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReservationsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    #[doc(hidden)]
     pub channel_class: ::std::option::Option<::std::string::String>,
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for MaxResults
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    #[doc(hidden)]
     pub maximum_bitrate: ::std::option::Option<::std::string::String>,
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    #[doc(hidden)]
     pub maximum_framerate: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<::std::string::String>,
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    #[doc(hidden)]
     pub special_feature: ::std::option::Option<::std::string::String>,
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    #[doc(hidden)]
     pub video_quality: ::std::option::Option<::std::string::String>,
 }
 impl ListReservationsInput {

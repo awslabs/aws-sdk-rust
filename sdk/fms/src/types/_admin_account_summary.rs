@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminAccountSummary {
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
-    #[doc(hidden)]
     pub admin_account: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub default_admin: bool,
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct AdminAccountSummary {
     /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
     /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrganizationStatus>,
 }
 impl AdminAccountSummary {

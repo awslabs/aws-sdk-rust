@@ -6,34 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSettings {
     /// <p>The execution role for the user.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies options for sharing SageMaker Studio notebooks.</p>
-    #[doc(hidden)]
     pub sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
     /// <p>The Jupyter server's app settings.</p>
-    #[doc(hidden)]
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The kernel gateway app settings.</p>
-    #[doc(hidden)]
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
     /// <p>The TensorBoard app settings.</p>
-    #[doc(hidden)]
     pub tensor_board_app_settings: ::std::option::Option<crate::types::TensorBoardAppSettings>,
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    #[doc(hidden)]
     pub r_studio_server_pro_app_settings: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
-    #[doc(hidden)]
     pub r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     /// <p>The Canvas app settings.</p>
-    #[doc(hidden)]
     pub canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
 }
 impl UserSettings {

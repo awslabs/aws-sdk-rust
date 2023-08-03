@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLogPatternInput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log pattern set.</p>
-    #[doc(hidden)]
     pub pattern_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log pattern.</p>
-    #[doc(hidden)]
     pub pattern_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLogPatternInput {

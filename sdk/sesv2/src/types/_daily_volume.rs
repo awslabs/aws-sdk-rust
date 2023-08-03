@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
-    #[doc(hidden)]
     pub volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    #[doc(hidden)]
     pub domain_isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
 }
 impl DailyVolume {

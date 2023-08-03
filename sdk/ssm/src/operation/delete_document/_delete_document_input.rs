@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDocumentInput {
     /// <p>The name of the document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteDocumentInput {

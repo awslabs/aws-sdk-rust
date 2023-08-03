@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    #[doc(hidden)]
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch order of servers in the server group.</p>
-    #[doc(hidden)]
     pub launch_order: ::std::option::Option<i32>,
     /// <p>The launch configuration for servers in the server group.</p>
-    #[doc(hidden)]
     pub server_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfiguration {

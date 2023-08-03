@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpressionStatus {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Expression>,
     /// <p>The status of domain configuration option.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ExpressionStatus {

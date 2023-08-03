@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the user. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p> The secret key used to sign requests. </p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p> The encryption keys used to encrypt data. </p>
-    #[doc(hidden)]
     pub datakey: ::std::option::Option<::std::string::String>,
 }
 impl InforNexusConnectorProfileCredentials {

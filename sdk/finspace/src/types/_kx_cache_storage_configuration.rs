@@ -8,10 +8,8 @@ pub struct KxCacheStorageConfiguration {
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The size of cache in Gigabytes.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
 }
 impl KxCacheStorageConfiguration {

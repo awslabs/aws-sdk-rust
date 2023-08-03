@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceHealthCheckConfig {
     /// <p>The number of consecutive health checks successes required before moving the container to the <code>Healthy</code> state. The default value is <code>2</code>.</p>
-    #[doc(hidden)]
     pub healthy_threshold: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before moving the container to the <code>Unhealthy</code> state. The default value is <code>2</code>.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check. You can specify between 2 and 60 seconds. The default value is <code>2</code>.</p>
-    #[doc(hidden)]
     pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>The approximate interval, in seconds, between health checks of an individual container. You can specify between 5 and 300 seconds. The default value is <code>5</code>.</p>
-    #[doc(hidden)]
     pub interval_seconds: ::std::option::Option<i32>,
     /// <p>The path on the container on which to perform the health check. The default value is <code>/</code>.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    #[doc(hidden)]
     pub success_codes: ::std::option::Option<::std::string::String>,
 }
 impl ContainerServiceHealthCheckConfig {

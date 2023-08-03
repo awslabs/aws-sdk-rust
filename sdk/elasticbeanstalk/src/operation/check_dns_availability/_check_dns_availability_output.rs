@@ -9,10 +9,8 @@ pub struct CheckDnsAvailabilityOutput {
     /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub available: ::std::option::Option<bool>,
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    #[doc(hidden)]
     pub fully_qualified_cname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

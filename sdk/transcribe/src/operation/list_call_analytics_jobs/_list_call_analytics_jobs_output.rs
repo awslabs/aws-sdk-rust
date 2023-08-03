@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsJobsOutput {
     /// <p>Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
-    #[doc(hidden)]
     pub call_analytics_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
     _request_id: Option<String>,
 }

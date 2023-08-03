@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntelligentTieringAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IntelligentTieringAndOperator {

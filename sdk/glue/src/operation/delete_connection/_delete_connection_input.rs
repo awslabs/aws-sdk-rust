@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to delete.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectionInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
-    #[doc(hidden)]
     pub step_concurrency_level: ::std::option::Option<i32>,
 }
 impl ModifyClusterInput {

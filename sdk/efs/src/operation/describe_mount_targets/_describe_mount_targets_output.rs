@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    #[doc(hidden)]
     pub mount_targets: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

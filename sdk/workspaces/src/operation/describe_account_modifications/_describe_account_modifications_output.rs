@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountModificationsOutput {
     /// <p>The list of modifications to the configuration of BYOL.</p>
-    #[doc(hidden)]
     pub account_modifications: ::std::option::Option<::std::vec::Vec<crate::types::AccountModification>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

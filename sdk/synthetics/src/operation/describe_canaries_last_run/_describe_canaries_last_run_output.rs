@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    #[doc(hidden)]
     pub canaries_last_run: ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

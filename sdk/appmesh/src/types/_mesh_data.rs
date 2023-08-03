@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The associated specification for the service mesh.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::MeshSpec>,
     /// <p>The associated metadata for the service mesh.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The status of the service mesh.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MeshStatus>,
 }
 impl MeshData {

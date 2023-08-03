@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxClusterNodesOutput {
     /// <p>A list of nodes associated with the cluster.</p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

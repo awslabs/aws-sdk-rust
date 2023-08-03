@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesByNamespaceOutput {
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
-    #[doc(hidden)]
     pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the host key that you are updating.</p>
-    #[doc(hidden)]
     pub host_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An updated description for the host key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateHostKeyInput {

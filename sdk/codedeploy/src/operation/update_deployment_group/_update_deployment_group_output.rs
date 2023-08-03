@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub hooks_not_cleaned_up: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     _request_id: Option<String>,
 }

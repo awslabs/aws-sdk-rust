@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoveredResource {
     /// <p>The type of the covered resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
     /// <p>The ID of the covered resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The status of the scan covering the resource.</p>
-    #[doc(hidden)]
     pub scan_status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>An object that contains details about the metadata.</p>
-    #[doc(hidden)]
     pub resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
     /// <p>The date and time the resource was last checked for vulnerabilities.</p>
-    #[doc(hidden)]
     pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoveredResource {

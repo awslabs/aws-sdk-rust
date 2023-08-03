@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The ARN of the room profile to update. Required.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the room profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The updated timezone for the room profile.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The updated address for the room profile.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The updated distance unit for the room profile.</p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
     /// <p>The updated temperature unit for the room profile.</p>
-    #[doc(hidden)]
     pub temperature_unit: ::std::option::Option<crate::types::TemperatureUnit>,
     /// <p>The updated wake word for the room profile.</p>
-    #[doc(hidden)]
     pub wake_word: ::std::option::Option<crate::types::WakeWord>,
     /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>Whether the setup mode of the profile is enabled.</p>
-    #[doc(hidden)]
     pub setup_mode_disabled: ::std::option::Option<bool>,
     /// <p>The updated maximum volume limit for the room profile.</p>
-    #[doc(hidden)]
     pub max_volume_limit: ::std::option::Option<i32>,
     /// <p>Whether the PSTN setting of the room profile is enabled.</p>
-    #[doc(hidden)]
     pub pstn_enabled: ::std::option::Option<bool>,
     /// <p>Whether data retention of the profile is enabled.</p>
-    #[doc(hidden)]
     pub data_retention_opt_in: ::std::option::Option<bool>,
     /// <p>The updated meeting room settings of a room profile.</p>
-    #[doc(hidden)]
     pub meeting_room_configuration: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
 }
 impl UpdateProfileInput {

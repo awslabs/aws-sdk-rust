@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkforcesInput {
     /// <p>Sort workforces using the workforce name or creation date.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>,
     /// <p>Sort workforces in ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A token to resume pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of workforces returned in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkforcesInput {

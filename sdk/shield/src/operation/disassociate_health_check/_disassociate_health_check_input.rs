@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateHealthCheckInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
-    #[doc(hidden)]
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
-    #[doc(hidden)]
     pub health_check_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateHealthCheckInput {

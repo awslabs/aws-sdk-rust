@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the instance.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the current instance.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the current instance.</p>
-    #[doc(hidden)]
     pub current_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The finding classification of the instance.</p>
     /// <p>Findings for instances include:</p>
@@ -23,7 +19,6 @@ pub struct InstanceRecommendation {
     /// <li> <p> <b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::Finding>,
     /// <p>The reason for the finding classification of the instance.</p>
     /// <p>Finding reason codes for instances include:</p>
@@ -49,28 +44,20 @@ pub struct InstanceRecommendation {
     /// </ul> <note>
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>>,
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
-    #[doc(hidden)]
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
-    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
-    #[doc(hidden)]
     pub recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationOption>>,
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_sources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
-    #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
-    #[doc(hidden)]
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
-    #[doc(hidden)]
     pub effective_recommendation_preferences: ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
@@ -85,16 +72,12 @@ pub struct InstanceRecommendation {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     /// <p> The state of the instance when the recommendation was generated. </p>
-    #[doc(hidden)]
     pub instance_state: ::std::option::Option<crate::types::InstanceState>,
     /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
-    #[doc(hidden)]
     pub external_metric_status: ::std::option::Option<crate::types::ExternalMetricStatus>,
 }
 impl InstanceRecommendation {

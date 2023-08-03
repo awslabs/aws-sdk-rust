@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<i64>,
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InputLogEvent {

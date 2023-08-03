@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStudioInput {
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A detailed description of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    #[doc(hidden)]
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
-    #[doc(hidden)]
     pub user_role: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    #[doc(hidden)]
     pub workspace_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    #[doc(hidden)]
     pub engine_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    #[doc(hidden)]
     pub default_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
-    #[doc(hidden)]
     pub idp_auth_url: ::std::option::Option<::std::string::String>,
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
-    #[doc(hidden)]
     pub idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateStudioInput {

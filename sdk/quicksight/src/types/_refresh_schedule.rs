@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshSchedule {
     /// <p>An identifier for the refresh schedule.</p>
-    #[doc(hidden)]
     pub schedule_id: ::std::option::Option<::std::string::String>,
     /// <p>The frequency for the refresh schedule.</p>
-    #[doc(hidden)]
     pub schedule_frequency: ::std::option::Option<crate::types::RefreshFrequency>,
     /// <p>Time after which the refresh schedule can be started, expressed in <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
-    #[doc(hidden)]
     pub start_after_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
@@ -19,10 +16,8 @@ pub struct RefreshSchedule {
     /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub refresh_type: ::std::option::Option<crate::types::IngestionType>,
     /// <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RefreshSchedule {

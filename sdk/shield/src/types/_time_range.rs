@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
-    #[doc(hidden)]
     pub from_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time, in Unix time in seconds. </p>
-    #[doc(hidden)]
     pub to_exclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimeRange {

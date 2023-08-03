@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplainabilityExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    #[doc(hidden)]
     pub explainability_export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Explainability export</p>
-    #[doc(hidden)]
     pub explainability_export_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
@@ -20,13 +17,10 @@ pub struct ExplainabilityExportSummary {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information about any errors that may have occurred during the Explainability export.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the Explainability was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -36,7 +30,6 @@ pub struct ExplainabilityExportSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExplainabilityExportSummary {

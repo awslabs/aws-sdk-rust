@@ -9,10 +9,8 @@ pub struct DescribeEffectivePolicyInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEffectivePolicyInput {

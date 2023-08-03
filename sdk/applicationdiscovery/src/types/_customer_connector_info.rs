@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerConnectorInfo {
     /// <p>Number of active discovery connectors.</p>
-    #[doc(hidden)]
     pub active_connectors: i32,
     /// <p>Number of healthy discovery connectors.</p>
-    #[doc(hidden)]
     pub healthy_connectors: i32,
     /// <p>Number of blacklisted discovery connectors.</p>
-    #[doc(hidden)]
     pub black_listed_connectors: i32,
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
-    #[doc(hidden)]
     pub shutdown_connectors: i32,
     /// <p>Number of unhealthy discovery connectors.</p>
-    #[doc(hidden)]
     pub unhealthy_connectors: i32,
     /// <p>Total number of discovery connectors.</p>
-    #[doc(hidden)]
     pub total_connectors: i32,
     /// <p>Number of unknown discovery connectors.</p>
-    #[doc(hidden)]
     pub unknown_connectors: i32,
 }
 impl CustomerConnectorInfo {

@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DukptEncryptionAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    #[doc(hidden)]
     pub key_serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size, for example, 128 bits. The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
     /// <p>The default is CBC.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::DukptEncryptionMode>,
     /// <p>The key type encrypted using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
-    #[doc(hidden)]
     pub dukpt_key_derivation_type: ::std::option::Option<crate::types::DukptDerivationType>,
     /// <p>The type of use of DUKPT, which can be incoming data decryption, outgoing data encryption, or both.</p>
-    #[doc(hidden)]
     pub dukpt_key_variant: ::std::option::Option<crate::types::DukptKeyVariant>,
     /// <p>An input to cryptographic primitive used to provide the intial state. Typically the <code>InitializationVector</code> must have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If you don't provide a value, Amazon Web Services Payment Cryptography generates a random value.</p>
-    #[doc(hidden)]
     pub initialization_vector: ::std::option::Option<::std::string::String>,
 }
 impl DukptEncryptionAttributes {

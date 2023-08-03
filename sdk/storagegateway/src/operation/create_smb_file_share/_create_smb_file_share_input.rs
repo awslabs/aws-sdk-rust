@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSmbFileShareInput {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub kms_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
@@ -30,70 +25,53 @@ pub struct CreateSmbFileShareInput {
     /// <p>Access point alias:</p>
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    #[doc(hidden)]
     pub default_storage_class: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    #[doc(hidden)]
     pub object_acl: ::std::option::Option<crate::types::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub guess_mime_type_enabled: ::std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub requester_pays: ::std::option::Option<bool>,
     /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub smbacl_enabled: ::std::option::Option<bool>,
     /// <p>The files and folders on this share will only be visible to users with read access.</p>
-    #[doc(hidden)]
     pub access_based_enumeration: ::std::option::Option<bool>,
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
-    #[doc(hidden)]
     pub admin_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    #[doc(hidden)]
     pub valid_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    #[doc(hidden)]
     pub invalid_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    #[doc(hidden)]
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
-    #[doc(hidden)]
     pub case_sensitivity: ::std::option::Option<crate::types::CaseSensitivity>,
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
-    #[doc(hidden)]
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -102,23 +80,19 @@ pub struct CreateSmbFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    #[doc(hidden)]
     pub notification_policy: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_endpoint_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    #[doc(hidden)]
     pub bucket_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub oplocks_enabled: ::std::option::Option<bool>,
 }
 impl CreateSmbFileShareInput {

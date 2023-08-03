@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizersInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl GetAuthorizersInput {

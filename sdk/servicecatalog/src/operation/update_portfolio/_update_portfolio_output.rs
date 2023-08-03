@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    #[doc(hidden)]
     pub portfolio_detail: ::std::option::Option<crate::types::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

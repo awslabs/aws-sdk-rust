@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompilationJobSummary {
     /// <p>The name of the model compilation job that you want a summary for.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the model compilation job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the model compilation job started.</p>
-    #[doc(hidden)]
     pub compilation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the model compilation job completed.</p>
-    #[doc(hidden)]
     pub compilation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of device that the model will run on after the compilation job has completed.</p>
-    #[doc(hidden)]
     pub compilation_target_device: ::std::option::Option<crate::types::TargetDevice>,
     /// <p>The type of OS that the model will run on after the compilation job has completed.</p>
-    #[doc(hidden)]
     pub compilation_target_platform_os: ::std::option::Option<crate::types::TargetPlatformOs>,
     /// <p>The type of architecture that the model will run on after the compilation job has completed.</p>
-    #[doc(hidden)]
     pub compilation_target_platform_arch: ::std::option::Option<crate::types::TargetPlatformArch>,
     /// <p>The type of accelerator that the model will run on after the compilation job has completed.</p>
-    #[doc(hidden)]
     pub compilation_target_platform_accelerator: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
     /// <p>The time when the model compilation job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the model compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_status: ::std::option::Option<crate::types::CompilationJobStatus>,
 }
 impl CompilationJobSummary {

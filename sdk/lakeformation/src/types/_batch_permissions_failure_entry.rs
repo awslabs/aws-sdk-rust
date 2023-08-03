@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPermissionsFailureEntry {
     /// <p>An identifier for an entry of the batch request.</p>
-    #[doc(hidden)]
     pub request_entry: ::std::option::Option<crate::types::BatchPermissionsRequestEntry>,
     /// <p>An error message that applies to the failure of the entry.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchPermissionsFailureEntry {

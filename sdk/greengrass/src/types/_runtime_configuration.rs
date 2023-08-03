@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
-    #[doc(hidden)]
     pub telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfiguration>,
 }
 impl RuntimeConfiguration {

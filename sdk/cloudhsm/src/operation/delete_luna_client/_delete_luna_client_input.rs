@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLunaClientInput {
     /// <p>The ARN of the client to delete.</p>
-    #[doc(hidden)]
     pub client_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLunaClientInput {

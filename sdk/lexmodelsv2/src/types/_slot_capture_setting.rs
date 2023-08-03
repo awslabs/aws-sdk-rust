@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotCaptureSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub capture_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
-    #[doc(hidden)]
     pub capture_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
-    #[doc(hidden)]
     pub capture_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    #[doc(hidden)]
     pub failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
-    #[doc(hidden)]
     pub failure_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
-    #[doc(hidden)]
     pub failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
-    #[doc(hidden)]
     pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
-    #[doc(hidden)]
     pub elicitation_code_hook: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl SlotCaptureSetting {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataModel {
     /// <p>The fields in the generic data model.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
     /// <p>Specifies whether the generic data model is a join table.</p>
-    #[doc(hidden)]
     pub is_join_table: ::std::option::Option<bool>,
     /// <p>The primary keys of the generic data model.</p>
-    #[doc(hidden)]
     pub primary_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CodegenGenericDataModel {

@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNetworksInput {
     /// <p>The name of the network.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
     /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkStatus>,
     /// <p>The maximum number of networks to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListNetworksInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorState {
     /// <p>The name of the state.</p>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<::std::string::String>,
     /// <p>The current values of the detector's variables.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
     /// <p>The current state of the detector's timers.</p>
-    #[doc(hidden)]
     pub timers: ::std::option::Option<::std::vec::Vec<crate::types::Timer>>,
 }
 impl DetectorState {

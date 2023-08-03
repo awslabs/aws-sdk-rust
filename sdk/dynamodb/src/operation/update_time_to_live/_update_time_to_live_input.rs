@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
-    #[doc(hidden)]
     pub time_to_live_specification: ::std::option::Option<crate::types::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveInput {

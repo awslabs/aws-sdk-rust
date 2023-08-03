@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartOnDemandAuditTaskOutput {
     /// <p>The ID of the on-demand audit you started.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

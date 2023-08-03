@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineDetails {
     /// <p> A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN. </p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p> Used to set CloudWatch Logs options. </p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
     /// <p> The name of the state machine. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN that identifies the state machine. </p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the state machine. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
-    #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
     /// <p> The type of the state machine (STANDARD or EXPRESS). </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsStepFunctionStateMachineDetails {

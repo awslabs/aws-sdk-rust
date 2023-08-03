@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the intent.</p>
-    #[doc(hidden)]
     pub intent_version: ::std::option::Option<::std::string::String>,
 }
 impl Intent {

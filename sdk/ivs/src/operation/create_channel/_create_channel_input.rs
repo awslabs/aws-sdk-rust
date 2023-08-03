@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>Channel name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
-    #[doc(hidden)]
     pub latency_mode: ::std::option::Option<crate::types::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Some types generate multiple qualities (renditions) from the original input; this automatically gives viewers the best experience for their devices and network conditions. Some types provide transcoded video; transcoding allows higher playback quality across a range of download speeds. Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
@@ -21,22 +19,16 @@ pub struct CreateChannelInput {
     /// <li> <p> <i>Constrained bandwidth delivery</i> uses a lower bitrate for each quality level. Use it if you have low download bandwidth and/or simple video content (e.g., talking heads)</p> </li>
     /// <li> <p> <i>Higher bandwidth delivery</i> uses a higher bitrate for each quality level. Use it if you have high download bandwidth and/or complex video content (e.g., flashes and quick scene changes).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
-    #[doc(hidden)]
     pub authorized: bool,
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
-    #[doc(hidden)]
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
-    #[doc(hidden)]
     pub insecure_ingest: bool,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
-    #[doc(hidden)]
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
 }
 impl CreateChannelInput {

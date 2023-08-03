@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskInfo {
     /// <p>The size of the disk in GB.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i64>,
     /// <p>The number of disks with this configuration.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The type of disk.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DiskType>,
 }
 impl DiskInfo {

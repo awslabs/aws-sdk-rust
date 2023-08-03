@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Command {
     /// <p>A unique identifier for this command.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the document requested for execution.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The Systems Manager document (SSM document) version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The managed node IDs against which this command was requested.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The date and time the command was requested.</p>
-    #[doc(hidden)]
     pub requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the command.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CommandStatus>,
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -47,52 +37,36 @@ pub struct Command {
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    #[doc(hidden)]
     pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    #[doc(hidden)]
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    #[doc(hidden)]
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The number of targets for the command.</p>
-    #[doc(hidden)]
     pub target_count: i32,
     /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
-    #[doc(hidden)]
     pub completed_count: i32,
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
-    #[doc(hidden)]
     pub error_count: i32,
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
-    #[doc(hidden)]
     pub delivery_timed_out_count: i32,
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes. </p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes. </p>
-    #[doc(hidden)]
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
-    #[doc(hidden)]
     pub timeout_seconds: i32,
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl Command {

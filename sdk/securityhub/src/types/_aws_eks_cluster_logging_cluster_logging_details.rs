@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <li> <p> <code>controllerManager</code> </p> </li>
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
-    #[doc(hidden)]
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    #[doc(hidden)]
     pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfiguration {

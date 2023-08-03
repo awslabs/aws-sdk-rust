@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
-    #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
     /// <p>The first day the anomaly is detected. </p>
-    #[doc(hidden)]
     pub anomaly_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The last day the anomaly is detected. </p>
-    #[doc(hidden)]
     pub anomaly_end_date: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
-    #[doc(hidden)]
     pub dimension_value: ::std::option::Option<::std::string::String>,
     /// <p>The list of identified root causes for the anomaly. </p>
-    #[doc(hidden)]
     pub root_causes: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>,
     /// <p>The latest and maximum score for the anomaly. </p>
-    #[doc(hidden)]
     pub anomaly_score: ::std::option::Option<crate::types::AnomalyScore>,
     /// <p>The dollar impact for the anomaly. </p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<crate::types::Impact>,
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The feedback value. </p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
 impl Anomaly {

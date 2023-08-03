@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelsOutput {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
-    #[doc(hidden)]
     pub channels_response: ::std::option::Option<crate::types::ChannelsResponse>,
     _request_id: Option<String>,
 }

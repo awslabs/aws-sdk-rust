@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupDetails {
     /// <p> The workgroup name. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The workgroup description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Whether the workgroup is enabled or disabled. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p> The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationDetails>,
 }
 impl AwsAthenaWorkGroupDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatIntelligenceDetail {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    #[doc(hidden)]
     pub threat_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    #[doc(hidden)]
     pub threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThreatIntelligenceDetail {

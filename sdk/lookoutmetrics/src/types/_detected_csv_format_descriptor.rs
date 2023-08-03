@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
-    #[doc(hidden)]
     pub file_compression: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's charset.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<crate::types::DetectedField>,
     /// <p>Whether the format includes a header.</p>
-    #[doc(hidden)]
     pub contains_header: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's delimiter.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's header list.</p>
-    #[doc(hidden)]
     pub header_list: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's quote symbol.</p>
-    #[doc(hidden)]
     pub quote_symbol: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedCsvFormatDescriptor {

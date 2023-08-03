@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-    #[doc(hidden)]
     pub byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

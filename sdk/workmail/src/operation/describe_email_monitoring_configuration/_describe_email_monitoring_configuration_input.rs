@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEmailMonitoringConfigurationInput {

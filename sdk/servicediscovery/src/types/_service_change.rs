@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceChange {
     /// <p>A description for the service.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
-    #[doc(hidden)]
     pub dns_config: ::std::option::Option<crate::types::DnsConfigChange>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    #[doc(hidden)]
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl ServiceChange {

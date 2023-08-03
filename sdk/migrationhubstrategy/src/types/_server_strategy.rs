@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerStrategy {
     /// <p> Strategy recommendation for the server. </p>
-    #[doc(hidden)]
     pub recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The recommendation status of the strategy for the server. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StrategyRecommendation>,
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
-    #[doc(hidden)]
     pub number_of_application_components: ::std::option::Option<i32>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    #[doc(hidden)]
     pub is_preferred: ::std::option::Option<bool>,
 }
 impl ServerStrategy {

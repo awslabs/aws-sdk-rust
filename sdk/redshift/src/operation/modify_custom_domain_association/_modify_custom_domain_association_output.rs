@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCustomDomainAssociationOutput {
     /// <p>The custom domain name associated with the result for the changed custom domain association.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
-    #[doc(hidden)]
     pub custom_domain_cert_expiry_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

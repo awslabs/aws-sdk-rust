@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
-    #[doc(hidden)]
     pub aligned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
-    #[doc(hidden)]
     pub aligned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePartitionKey>>,
     /// <p>The dimension keys that were requested.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDescription>>,
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

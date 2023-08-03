@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineParametersForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of parameters to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPipelineParametersForExecutionInput {

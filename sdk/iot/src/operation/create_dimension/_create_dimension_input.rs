@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DimensionType>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    #[doc(hidden)]
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Metadata that can be used to manage the dimension.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDimensionInput {

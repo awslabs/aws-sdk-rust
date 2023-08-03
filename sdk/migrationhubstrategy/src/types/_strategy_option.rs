@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StrategyOption {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::Strategy>,
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
-    #[doc(hidden)]
     pub tool_name: ::std::option::Option<crate::types::TransformationToolName>,
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
-    #[doc(hidden)]
     pub target_destination: ::std::option::Option<crate::types::TargetDestination>,
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
-    #[doc(hidden)]
     pub is_preferred: ::std::option::Option<bool>,
 }
 impl StrategyOption {

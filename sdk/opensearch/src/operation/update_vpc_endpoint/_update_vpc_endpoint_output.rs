@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointOutput {
     /// <p>The endpoint to be updated.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
 }

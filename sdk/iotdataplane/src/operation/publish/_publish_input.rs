@@ -5,40 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishInput {
     /// <p>The name of the MQTT topic.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    #[doc(hidden)]
     pub qos: ::std::option::Option<i32>,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
-    #[doc(hidden)]
     pub retain: ::std::option::Option<bool>,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    #[doc(hidden)]
     pub user_properties: ::std::option::Option<::std::string::String>,
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    #[doc(hidden)]
     pub payload_format_indicator: ::std::option::Option<crate::types::PayloadFormatIndicator>,
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    #[doc(hidden)]
     pub response_topic: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    #[doc(hidden)]
     pub correlation_data: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    #[doc(hidden)]
     pub message_expiry: ::std::option::Option<i64>,
 }
 impl PublishInput {

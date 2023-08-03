@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInboundDmarcSettingsOutput {
     /// <p>Lists the enforcement setting of the applied policy.</p>
-    #[doc(hidden)]
     pub enforced: bool,
     _request_id: Option<String>,
 }

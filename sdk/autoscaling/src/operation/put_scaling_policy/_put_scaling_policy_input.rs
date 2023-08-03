@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>One of the following policy types: </p>
     /// <ul>
@@ -16,44 +14,35 @@ pub struct PutScalingPolicyInput {
     /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub adjustment_type: ::std::option::Option<::std::string::String>,
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    #[doc(hidden)]
     pub min_adjustment_step: ::std::option::Option<i32>,
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
     /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
     /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
     /// </note>
-    #[doc(hidden)]
     pub min_adjustment_magnitude: ::std::option::Option<i32>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
     /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
-    #[doc(hidden)]
     pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>A cooldown period, in seconds, that applies to a specific simple scaling policy. When a cooldown period is specified here, it overrides the default cooldown.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: None</p>
-    #[doc(hidden)]
     pub cooldown: ::std::option::Option<i32>,
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
     /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-    #[doc(hidden)]
     pub metric_aggregation_type: ::std::option::Option<::std::string::String>,
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
-    #[doc(hidden)]
     pub step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>
     /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>
     /// </note>
-    #[doc(hidden)]
     pub estimated_instance_warmup: ::std::option::Option<i32>,
     /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
     /// <p>The following predefined metrics are available:</p>
@@ -66,16 +55,13 @@ pub struct PutScalingPolicyInput {
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
-    #[doc(hidden)]
     pub target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A predictive scaling policy. Provides support for predefined and custom metrics.</p>
     /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
-    #[doc(hidden)]
     pub predictive_scaling_configuration: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl PutScalingPolicyInput {

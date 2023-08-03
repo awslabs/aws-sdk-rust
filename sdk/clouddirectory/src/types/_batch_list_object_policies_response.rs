@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListObjectPoliciesResponse {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    #[doc(hidden)]
     pub attached_policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectPoliciesResponse {

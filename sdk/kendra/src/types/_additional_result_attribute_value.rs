@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
-    #[doc(hidden)]
     pub text_with_highlights_value: ::std::option::Option<crate::types::TextWithHighlights>,
 }
 impl AdditionalResultAttributeValue {

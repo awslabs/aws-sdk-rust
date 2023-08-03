@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    #[doc(hidden)]
     pub named_shadow_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IndexingFilter {

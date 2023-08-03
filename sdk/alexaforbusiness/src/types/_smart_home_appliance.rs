@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
-    #[doc(hidden)]
     pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the smart home appliance.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    #[doc(hidden)]
     pub manufacturer_name: ::std::option::Option<::std::string::String>,
 }
 impl SmartHomeAppliance {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettingsOutput {
     /// <p> The current list of settings. </p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,
 }

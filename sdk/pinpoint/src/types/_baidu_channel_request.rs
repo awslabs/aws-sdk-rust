@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaiduChannelRequest {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
-    #[doc(hidden)]
     pub secret_key: ::std::option::Option<::std::string::String>,
 }
 impl BaiduChannelRequest {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubnetCidrReservationOutput {
     /// <p>Information about the deleted subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub deleted_subnet_cidr_reservation: ::std::option::Option<crate::types::SubnetCidrReservation>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A JSON document that contains the metadata.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIdentity {

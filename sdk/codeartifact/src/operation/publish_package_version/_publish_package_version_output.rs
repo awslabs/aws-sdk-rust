@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishPackageVersionOutput {
     /// <p>The format of the package version.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package.</p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>The version of the package.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the package version.</p>
-    #[doc(hidden)]
     pub version_revision: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
-    #[doc(hidden)]
     pub asset: ::std::option::Option<crate::types::AssetSummary>,
     _request_id: Option<String>,
 }

@@ -5,73 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepExecution {
     /// <p>The name of this execution step.</p>
-    #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
     /// <p>The action this step performs. The action determines the behavior of the step.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The timeout seconds of the step.</p>
-    #[doc(hidden)]
     pub timeout_seconds: ::std::option::Option<i64>,
     /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
-    #[doc(hidden)]
     pub on_failure: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tries to run the action of the step. The default value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub max_attempts: ::std::option::Option<i32>,
     /// <p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field isn't populated.</p>
-    #[doc(hidden)]
     pub execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded, this field isn't populated.</p>
-    #[doc(hidden)]
     pub execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The execution status for this step.</p>
-    #[doc(hidden)]
     pub step_status: ::std::option::Option<crate::types::AutomationExecutionStatus>,
     /// <p>The response code returned by the execution of the step.</p>
-    #[doc(hidden)]
     pub response_code: ::std::option::Option<::std::string::String>,
     /// <p>Fully-resolved values passed into the step before execution.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Returned values from the execution of the step.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A message associated with the response code for an execution.</p>
-    #[doc(hidden)]
     pub response: ::std::option::Option<::std::string::String>,
     /// <p>If a step failed, this message explains why the execution failed.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Automation failure.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
     /// <p>The unique ID of a step execution.</p>
-    #[doc(hidden)]
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-specified list of parameters to override when running a step.</p>
-    #[doc(hidden)]
     pub overridden_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
-    #[doc(hidden)]
     pub is_end: ::std::option::Option<bool>,
     /// <p>The next step after the step succeeds.</p>
-    #[doc(hidden)]
     pub next_step: ::std::option::Option<::std::string::String>,
     /// <p>The flag which can be used to help decide whether the failure of current step leads to the Automation failure.</p>
-    #[doc(hidden)]
     pub is_critical: ::std::option::Option<bool>,
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
-    #[doc(hidden)]
     pub valid_next_steps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The targets for the step execution.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
-    #[doc(hidden)]
     pub target_location: ::std::option::Option<crate::types::TargetLocation>,
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl StepExecution {

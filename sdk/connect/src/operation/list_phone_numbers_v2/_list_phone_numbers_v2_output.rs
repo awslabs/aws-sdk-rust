@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    #[doc(hidden)]
     pub list_phone_numbers_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
     _request_id: Option<String>,
 }

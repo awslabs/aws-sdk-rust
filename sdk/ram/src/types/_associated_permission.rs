@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedPermission {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the permission currently associated with the resource share.</p>
-    #[doc(hidden)]
     pub permission_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
-    #[doc(hidden)]
     pub default_version: ::std::option::Option<bool>,
     /// <p>The resource type to which this permission applies.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
@@ -23,7 +19,6 @@ pub struct AssociatedPermission {
     /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -31,13 +26,10 @@ pub struct AssociatedPermission {
     /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedPermission {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatastoreOutput {
     /// <p>Information about the data store.</p>
-    #[doc(hidden)]
     pub datastore: ::std::option::Option<crate::types::Datastore>,
     /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::DatastoreStatistics>,
     _request_id: Option<String>,
 }

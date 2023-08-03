@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
     /// <p>The host name to use in the redirect request.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP redirect code to use in the response.</p>
-    #[doc(hidden)]
     pub http_redirect_code: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
-    #[doc(hidden)]
     pub replace_key_prefix_with: ::std::option::Option<::std::string::String>,
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
-    #[doc(hidden)]
     pub replace_key_with: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {

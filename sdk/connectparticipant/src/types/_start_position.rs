@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPosition {
     /// <p>The ID of the message or event where to start. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time in ISO format where to start.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub absolute_time: ::std::option::Option<::std::string::String>,
     /// <p>The start position of the most recent message where you want to start. </p>
-    #[doc(hidden)]
     pub most_recent: i32,
 }
 impl StartPosition {

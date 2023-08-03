@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The amount of time of the specified unit.</p>
-    #[doc(hidden)]
     pub value: i32,
     /// <p>The unit of time.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl Range {

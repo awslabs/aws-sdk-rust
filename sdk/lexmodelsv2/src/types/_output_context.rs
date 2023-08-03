@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputContext {
     /// <p>The name of the output context.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
-    #[doc(hidden)]
     pub time_to_live_in_seconds: ::std::option::Option<i32>,
     /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
-    #[doc(hidden)]
     pub turns_to_live: ::std::option::Option<i32>,
 }
 impl OutputContext {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopLaunchOutput {
     /// <p>The date and time that the launch stopped.</p>
-    #[doc(hidden)]
     pub ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

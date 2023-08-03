@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageMetadata {
     /// <p>The identifier of the message that contains the metadata information. </p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of receipt information for a message for different recipients.</p>
-    #[doc(hidden)]
     pub receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
 }
 impl MessageMetadata {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVolumeInput {
     /// <p>The volume ID.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new mount point.</p>
-    #[doc(hidden)]
     pub mount_point: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVolumeInput {

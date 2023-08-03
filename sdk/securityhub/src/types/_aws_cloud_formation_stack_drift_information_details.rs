@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFormationStackDriftInformationDetails {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
-    #[doc(hidden)]
     pub stack_drift_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFormationStackDriftInformationDetails {

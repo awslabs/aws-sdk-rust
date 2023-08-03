@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupRule {
     /// <p>The ID of the security group rule.</p>
-    #[doc(hidden)]
     pub security_group_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
-    #[doc(hidden)]
     pub group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the security group rule is an outbound rule.</p>
-    #[doc(hidden)]
     pub is_egress: ::std::option::Option<bool>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>The IPv4 CIDR range.</p>
-    #[doc(hidden)]
     pub cidr_ipv4: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR range.</p>
-    #[doc(hidden)]
     pub cidr_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the security group that is referenced in the rule.</p>
-    #[doc(hidden)]
     pub referenced_group_info: ::std::option::Option<crate::types::ReferencedSecurityGroup>,
     /// <p>The security group rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the security group rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl SecurityGroupRule {

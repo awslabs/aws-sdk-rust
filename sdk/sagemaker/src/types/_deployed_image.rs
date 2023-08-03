@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployedImage {
     /// <p>The image path you specified when you created the model.</p>
-    #[doc(hidden)]
     pub specified_image: ::std::option::Option<::std::string::String>,
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
-    #[doc(hidden)]
     pub resolved_image: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code> </p>
-    #[doc(hidden)]
     pub resolution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeployedImage {

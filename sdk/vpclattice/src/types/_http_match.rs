@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpMatch {
     /// <p>The HTTP method type.</p>
-    #[doc(hidden)]
     pub method: ::std::option::Option<::std::string::String>,
     /// <p>The path match.</p>
-    #[doc(hidden)]
     pub path_match: ::std::option::Option<crate::types::PathMatch>,
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    #[doc(hidden)]
     pub header_matches: ::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>>,
 }
 impl HttpMatch {

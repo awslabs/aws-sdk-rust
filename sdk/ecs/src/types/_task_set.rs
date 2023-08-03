@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskSet {
     /// <p>The ID of the task set.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
-    #[doc(hidden)]
     pub task_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The external ID associated with the task set.</p>
     /// <p>If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy deployment ID.</p>
     /// <p>If a task set is created for an external deployment and is associated with a service discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task set. The following describes each state.</p>
     /// <dl>
@@ -45,50 +39,35 @@ pub struct TaskSet {
     /// <p>The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their target group.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The task definition that the task set is using.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>The computed desired count for the task set. This is calculated by multiplying the service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.</p>
-    #[doc(hidden)]
     pub computed_desired_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the <code>STOPPED</code> state.</p>
-    #[doc(hidden)]
     pub pending_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during a deployment. A task in the <code>RUNNING</code> state is running and ready for use.</p>
-    #[doc(hidden)]
     pub running_count: i32,
     /// <p>The Unix timestamp for the time when the task set was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task set was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks in the set are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks in the set must have the same value.</p>
-    #[doc(hidden)]
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for the task set.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>Details on a load balancer that are used with a task set.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    #[doc(hidden)]
     pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<crate::types::Scale>,
     /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
     /// <ul>
@@ -98,10 +77,8 @@ pub struct TaskSet {
     /// <li> <p>All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.</p> </li>
     /// </ul>
     /// <p>If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.</p>
-    #[doc(hidden)]
     pub stability_status: ::std::option::Option<crate::types::StabilityStatus>,
     /// <p>The Unix timestamp for the time when the task set stability status was retrieved.</p>
-    #[doc(hidden)]
     pub stability_status_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -114,7 +91,6 @@ pub struct TaskSet {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TaskSet {

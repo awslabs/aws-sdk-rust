@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
-    #[doc(hidden)]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -11,10 +11,8 @@ pub struct UpdateEnrollmentStatusInput {
     /// </ul> <note>
     /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
-    #[doc(hidden)]
     pub include_member_accounts: ::std::option::Option<bool>,
 }
 impl UpdateEnrollmentStatusInput {

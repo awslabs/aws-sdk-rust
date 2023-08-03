@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
-    #[doc(hidden)]
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The role of the instance group in the cluster.</p>
-    #[doc(hidden)]
     pub instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    #[doc(hidden)]
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Target number of instances for the instance group.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
-    #[doc(hidden)]
     pub ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-    #[doc(hidden)]
     pub auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicy>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupConfig {

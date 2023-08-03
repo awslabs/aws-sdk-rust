@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleBasedMatchingRequest {
     /// <p>The flag that enables the rule-based matching process of duplicate profiles.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
-    #[doc(hidden)]
     pub matching_rules: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
-    #[doc(hidden)]
     pub max_allowed_rule_level_for_merging: ::std::option::Option<i32>,
     /// <p>Indicates the maximum allowed rule level.</p>
-    #[doc(hidden)]
     pub max_allowed_rule_level_for_matching: ::std::option::Option<i32>,
     /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
-    #[doc(hidden)]
     pub attribute_types_selector: ::std::option::Option<crate::types::AttributeTypesSelector>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    #[doc(hidden)]
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
     /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
     /// </note>
-    #[doc(hidden)]
     pub exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
 impl RuleBasedMatchingRequest {

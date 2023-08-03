@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::PackageImportJobType>,
     /// <p>An input config for the package import job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
     /// <p>An output config for the package import job.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::PackageImportJobOutputConfig>,
     /// <p>A client token for the package import job.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the package import job.</p>
-    #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
 }
 impl CreatePackageImportJobInput {

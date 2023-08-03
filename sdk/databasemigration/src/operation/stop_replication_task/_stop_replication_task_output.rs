@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationTaskOutput {
     /// <p>The replication task stopped.</p>
-    #[doc(hidden)]
     pub replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogInput {
     /// <p> The name of the signal catalog to update. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the signal catalog to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    #[doc(hidden)]
     pub nodes_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    #[doc(hidden)]
     pub nodes_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    #[doc(hidden)]
     pub nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateSignalCatalogInput {

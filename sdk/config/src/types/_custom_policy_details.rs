@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    #[doc(hidden)]
     pub policy_runtime: ::std::option::Option<::std::string::String>,
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub enable_debug_log_delivery: bool,
 }
 impl CustomPolicyDetails {

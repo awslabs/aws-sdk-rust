@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the gateway capability.</p>
-    #[doc(hidden)]
     pub capability_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub capability_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,
     _request_id: Option<String>,
 }

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventStreamOutput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the event stream.</p>
-    #[doc(hidden)]
     pub event_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the export was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The operational state of destination stream for export.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EventStreamState>,
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
-    #[doc(hidden)]
     pub stopped_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details regarding the Kinesis stream.</p>
-    #[doc(hidden)]
     pub destination_details: ::std::option::Option<crate::types::EventStreamDestinationDetails>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

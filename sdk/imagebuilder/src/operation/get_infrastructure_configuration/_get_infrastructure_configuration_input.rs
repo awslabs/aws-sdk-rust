@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    #[doc(hidden)]
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetInfrastructureConfigurationInput {

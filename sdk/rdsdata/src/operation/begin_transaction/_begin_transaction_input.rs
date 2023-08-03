@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
 }
 impl BeginTransactionInput {

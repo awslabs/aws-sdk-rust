@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectStackResourceDriftOutput {
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
-    #[doc(hidden)]
     pub stack_resource_drift: ::std::option::Option<crate::types::StackResourceDrift>,
     _request_id: Option<String>,
 }

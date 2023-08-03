@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsOutput {
     /// <p>The name of the private image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permissions for a private image that you own. </p>
-    #[doc(hidden)]
     pub shared_image_permissions_list: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

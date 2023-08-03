@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIpAccessSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IP access settings.</p>
-    #[doc(hidden)]
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIpAccessSettingsInput {

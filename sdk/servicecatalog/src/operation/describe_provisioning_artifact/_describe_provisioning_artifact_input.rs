@@ -8,25 +8,18 @@ pub struct DescribeProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning artifact name.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The product name.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
-    #[doc(hidden)]
     pub verbose: ::std::option::Option<bool>,
     /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
-    #[doc(hidden)]
     pub include_provisioning_artifact_parameters: ::std::option::Option<bool>,
 }
 impl DescribeProvisioningArtifactInput {

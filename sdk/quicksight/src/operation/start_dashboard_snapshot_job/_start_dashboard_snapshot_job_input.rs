@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobInput {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
-    #[doc(hidden)]
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    #[doc(hidden)]
     pub user_configuration: ::std::option::Option<crate::types::SnapshotUserConfiguration>,
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::SnapshotConfiguration>,
 }
 impl StartDashboardSnapshotJobInput {

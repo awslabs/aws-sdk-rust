@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppAuthorizationOutput {
     /// <p>Contains information about an app authorization.</p>
-    #[doc(hidden)]
     pub app_authorization: ::std::option::Option<crate::types::AppAuthorization>,
     _request_id: Option<String>,
 }

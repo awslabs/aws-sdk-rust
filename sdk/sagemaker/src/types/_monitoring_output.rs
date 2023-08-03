@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringOutput {
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
-    #[doc(hidden)]
     pub s3_output: ::std::option::Option<crate::types::MonitoringS3Output>,
 }
 impl MonitoringOutput {

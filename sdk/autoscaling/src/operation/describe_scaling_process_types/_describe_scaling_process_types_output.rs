@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesOutput {
     /// <p>The names of the process types.</p>
-    #[doc(hidden)]
     pub processes: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
     _request_id: Option<String>,
 }

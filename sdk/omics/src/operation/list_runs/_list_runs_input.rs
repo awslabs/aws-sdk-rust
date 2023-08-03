@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRunsInput {
     /// <p>Filter the list by run name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Filter the list by run group ID.</p>
-    #[doc(hidden)]
     pub run_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub starting_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of runs to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The status of a run. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RunStatus>,
 }
 impl ListRunsInput {

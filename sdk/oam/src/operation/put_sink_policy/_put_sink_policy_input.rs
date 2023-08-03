@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSinkPolicyInput {
     /// <p>The ARN of the sink to attach this policy to.</p>
-    #[doc(hidden)]
     pub sink_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutSinkPolicyInput {

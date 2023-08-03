@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Host {
     /// <p>The name of the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the Dedicated Host. </p>
-    #[doc(hidden)]
     pub host_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID of the instance on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The role of the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_role: ::std::option::Option<crate::types::HostRole>,
     /// <p>The version of the operating system.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
 }
 impl Host {

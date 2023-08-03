@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsBinKey {
     /// <p>The criterion by which to bin the results.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     /// <p>The value of the criterion that defines the bin.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i64>,
 }
 impl AnalyticsBinKey {

@@ -7,7 +7,6 @@
 pub struct PutSolNetworkPackageContentMetadata {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    #[doc(hidden)]
     pub nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
 }
 impl PutSolNetworkPackageContentMetadata {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityInput {
     /// <p>Includes all client authentication related information.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Includes all encryption-related information.</p>
-    #[doc(hidden)]
     pub encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
 }
 impl UpdateSecurityInput {

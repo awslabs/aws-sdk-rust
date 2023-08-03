@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputBand {
     /// <p>The name of the band.</p>
-    #[doc(hidden)]
     pub band_name: ::std::option::Option<::std::string::String>,
     /// <p>The datatype of the output band.</p>
-    #[doc(hidden)]
     pub output_data_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl OutputBand {

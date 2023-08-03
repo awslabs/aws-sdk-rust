@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsPipelineConfigurationSummary {
     /// <p>The name of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsPipelineConfigurationSummary {

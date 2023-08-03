@@ -7,13 +7,10 @@ pub struct HttpEndpointConfiguration {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
-    #[doc(hidden)]
     pub access_key: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::LayoutContent>,
 }
 impl CreateLayoutInput {

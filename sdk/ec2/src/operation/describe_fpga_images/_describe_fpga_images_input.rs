@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFpgaImagesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The AFI IDs.</p>
-    #[doc(hidden)]
     pub fpga_image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code> (owner is the sender of the request), or an Amazon Web Services owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code>).</p>
-    #[doc(hidden)]
     pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
@@ -32,13 +29,10 @@ pub struct DescribeFpgaImagesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The token to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeFpgaImagesInput {

@@ -6,26 +6,20 @@
 pub struct FindMatchesMetrics {
     /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
-    #[doc(hidden)]
     pub area_under_pr_curve: ::std::option::Option<f64>,
     /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
-    #[doc(hidden)]
     pub precision: ::std::option::Option<f64>,
     /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
-    #[doc(hidden)]
     pub recall: ::std::option::Option<f64>,
     /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
-    #[doc(hidden)]
     pub f1: ::std::option::Option<f64>,
     /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
-    #[doc(hidden)]
     pub confusion_matrix: ::std::option::Option<crate::types::ConfusionMatrix>,
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    #[doc(hidden)]
     pub column_importances: ::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>>,
 }
 impl FindMatchesMetrics {

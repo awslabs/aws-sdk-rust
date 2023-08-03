@@ -10,7 +10,6 @@ pub struct NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::NamespaceFilterName>,
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
@@ -18,14 +17,12 @@ pub struct NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl NamespaceFilter {

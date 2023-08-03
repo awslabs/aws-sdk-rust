@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReportGroupTrendOutput {
     /// <p>Contains the accumulated trend data.</p>
-    #[doc(hidden)]
     pub stats: ::std::option::Option<crate::types::ReportGroupTrendStats>,
     /// <p>An array that contains the raw data for each report.</p>
-    #[doc(hidden)]
     pub raw_data: ::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>>,
     _request_id: Option<String>,
 }

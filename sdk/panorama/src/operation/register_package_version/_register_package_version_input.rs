@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterPackageVersionInput {
     /// <p>An owner account.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>A package ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>A package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>A patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
-    #[doc(hidden)]
     pub mark_latest: bool,
 }
 impl RegisterPackageVersionInput {

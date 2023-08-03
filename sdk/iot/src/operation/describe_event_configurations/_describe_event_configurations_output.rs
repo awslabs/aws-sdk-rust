@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventConfigurationsOutput {
     /// <p>The event configurations.</p>
-    #[doc(hidden)]
     pub event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     /// <p>The creation date of the event configuration.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the event configurations were last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

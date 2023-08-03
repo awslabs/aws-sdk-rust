@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetActionTypeOutput {
     /// <p>The action type information for the requested action type, such as the action type ID.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
     _request_id: Option<String>,
 }

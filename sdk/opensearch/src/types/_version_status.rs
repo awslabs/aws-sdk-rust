@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionStatus {
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::string::String>,
     /// <p>The status of the version options for the specified domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl VersionStatus {

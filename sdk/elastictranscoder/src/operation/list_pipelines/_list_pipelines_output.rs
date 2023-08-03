@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
-    #[doc(hidden)]
     pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

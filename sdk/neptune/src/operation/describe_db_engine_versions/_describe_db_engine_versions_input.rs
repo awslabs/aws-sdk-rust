@@ -4,38 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsInput {
     /// <p>The database engine to return.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
-    #[doc(hidden)]
     pub default_only: bool,
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
-    #[doc(hidden)]
     pub list_supported_character_sets: ::std::option::Option<bool>,
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
-    #[doc(hidden)]
     pub list_supported_timezones: ::std::option::Option<bool>,
 }
 impl DescribeDbEngineVersionsInput {

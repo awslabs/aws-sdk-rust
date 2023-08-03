@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQuickConnectOutput {
     /// <p>Information about the quick connect.</p>
-    #[doc(hidden)]
     pub quick_connect: ::std::option::Option<crate::types::QuickConnect>,
     _request_id: Option<String>,
 }

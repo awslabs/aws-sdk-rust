@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeadersConfig {
     /// <p>The number of HTTP header names in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP header names.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
 }
 impl ResponseHeadersPolicyRemoveHeadersConfig {

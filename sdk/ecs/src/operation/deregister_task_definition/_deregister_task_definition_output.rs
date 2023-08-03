@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionOutput {
     /// <p>The full description of the deregistered task.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     _request_id: Option<String>,
 }

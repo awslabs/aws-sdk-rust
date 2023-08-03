@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScriptInput {
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
-    #[doc(hidden)]
     pub script_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScriptInput {

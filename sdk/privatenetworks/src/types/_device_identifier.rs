@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeviceIdentifier {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    #[doc(hidden)]
     pub device_identifier_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-    #[doc(hidden)]
     pub traffic_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
-    #[doc(hidden)]
     pub imsi: ::std::option::Option<::std::string::String>,
     /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
-    #[doc(hidden)]
     pub iccid: ::std::option::Option<::std::string::String>,
     /// <p>The vendor of the device identifier.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The status of the device identifier.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeviceIdentifierStatus>,
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
-    #[doc(hidden)]
     pub order_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of this device identifier.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceIdentifier {

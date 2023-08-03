@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentFramework {
     /// <p> The unique identifier for the framework. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::FrameworkMetadata>,
     /// <p> The control sets that are associated with the framework. </p>
-    #[doc(hidden)]
     pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
 }
 impl AssessmentFramework {

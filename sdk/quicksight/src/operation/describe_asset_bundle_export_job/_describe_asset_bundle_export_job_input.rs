@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleExportJobInput {
     /// <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    #[doc(hidden)]
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetBundleExportJobInput {

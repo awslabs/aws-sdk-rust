@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceOutput {
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>,
     _request_id: Option<String>,
 }

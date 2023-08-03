@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl MapRunStartedEventDetails {

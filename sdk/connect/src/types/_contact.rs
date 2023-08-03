@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the contact.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
-    #[doc(hidden)]
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
-    #[doc(hidden)]
     pub previous_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how the contact was initiated.</p>
-    #[doc(hidden)]
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>The name of the contact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the contact.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>How the contact reached your contact center.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>If this contact was queued, this contains information about the queue. </p>
-    #[doc(hidden)]
     pub queue_info: ::std::option::Option<crate::types::QueueInfo>,
     /// <p>Information about the agent who accepted the contact.</p>
-    #[doc(hidden)]
     pub agent_info: ::std::option::Option<crate::types::AgentInfo>,
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
-    #[doc(hidden)]
     pub initiation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
-    #[doc(hidden)]
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when contact was last updated.</p>
-    #[doc(hidden)]
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
-    #[doc(hidden)]
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
-    #[doc(hidden)]
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about Amazon Connect Wisdom.</p>
-    #[doc(hidden)]
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
 }
 impl Contact {

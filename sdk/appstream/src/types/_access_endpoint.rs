@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::AccessEndpointType>,
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-    #[doc(hidden)]
     pub vpce_id: ::std::option::Option<::std::string::String>,
 }
 impl AccessEndpoint {

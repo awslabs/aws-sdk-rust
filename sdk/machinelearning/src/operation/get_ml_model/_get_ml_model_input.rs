@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
-    #[doc(hidden)]
     pub verbose: bool,
 }
 impl GetMlModelInput {

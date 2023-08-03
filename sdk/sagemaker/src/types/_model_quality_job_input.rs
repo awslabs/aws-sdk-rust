@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelQualityJobInput {
     /// <p>Input object for the endpoint</p>
-    #[doc(hidden)]
     pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
-    #[doc(hidden)]
     pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
     /// <p>The ground truth label provided for the model.</p>
-    #[doc(hidden)]
     pub ground_truth_s3_input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
 }
 impl ModelQualityJobInput {

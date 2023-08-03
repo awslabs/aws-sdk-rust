@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceBundle {
     /// <p>The identifier of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bundle.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The description of the bundle.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the image that was used to create the bundle.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the root volume.</p>
-    #[doc(hidden)]
     pub root_storage: ::std::option::Option<crate::types::RootStorage>,
     /// <p>The size of the user volume.</p>
-    #[doc(hidden)]
     pub user_storage: ::std::option::Option<crate::types::UserStorage>,
     /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The last time that the bundle was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the bundle was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the WorkSpace bundle.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceBundleState>,
     /// <p>The type of WorkSpace bundle.</p>
-    #[doc(hidden)]
     pub bundle_type: ::std::option::Option<crate::types::BundleType>,
 }
 impl WorkspaceBundle {

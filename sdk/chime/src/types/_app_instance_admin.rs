@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
-    #[doc(hidden)]
     pub admin: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which an administrator was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppInstanceAdmin {

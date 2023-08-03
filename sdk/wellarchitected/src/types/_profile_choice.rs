@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileChoice {
     /// <p>The ID of a choice.</p>
-    #[doc(hidden)]
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a choice.</p>
-    #[doc(hidden)]
     pub choice_title: ::std::option::Option<::std::string::String>,
     /// <p>The description of a choice.</p>
-    #[doc(hidden)]
     pub choice_description: ::std::option::Option<::std::string::String>,
 }
 impl ProfileChoice {

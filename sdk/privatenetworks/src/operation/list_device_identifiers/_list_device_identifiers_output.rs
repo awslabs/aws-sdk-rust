@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
-    #[doc(hidden)]
     pub device_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -6,10 +6,8 @@
 pub struct ComponentPlatform {
     /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
     /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>architecture</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComponentPlatform {

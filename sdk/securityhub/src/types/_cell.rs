@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cell {
     /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
-    #[doc(hidden)]
     pub column: i64,
     /// <p>The row number of the row that contains the data.</p>
-    #[doc(hidden)]
     pub row: i64,
     /// <p>The name of the column that contains the data.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
-    #[doc(hidden)]
     pub cell_reference: ::std::option::Option<::std::string::String>,
 }
 impl Cell {

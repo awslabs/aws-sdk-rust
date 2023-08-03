@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateAssociation {
     /// <p>The association.</p>
-    #[doc(hidden)]
     pub entry: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
     /// <p>A description of the failure.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The source of the failure.</p>
-    #[doc(hidden)]
     pub fault: ::std::option::Option<crate::types::Fault>,
 }
 impl FailedCreateAssociation {

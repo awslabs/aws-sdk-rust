@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the finding is archived (suppressed).</p>
-    #[doc(hidden)]
     pub archived: ::std::option::Option<bool>,
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::FindingCategory>,
     /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
-    #[doc(hidden)]
     pub classification_details: ::std::option::Option<crate::types::ClassificationDetails>,
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
-    #[doc(hidden)]
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The resources that the finding applies to.</p>
-    #[doc(hidden)]
     pub resources_affected: ::std::option::Option<crate::types::ResourcesAffected>,
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
-    #[doc(hidden)]
     pub sample: ::std::option::Option<bool>,
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The severity level and score for the finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>The brief description of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The type of the finding.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FindingType>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Finding {

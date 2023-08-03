@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalendarStateOutput {
     /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CalendarState>,
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
-    #[doc(hidden)]
     pub at_time: ::std::option::Option<::std::string::String>,
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
-    #[doc(hidden)]
     pub next_transition_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

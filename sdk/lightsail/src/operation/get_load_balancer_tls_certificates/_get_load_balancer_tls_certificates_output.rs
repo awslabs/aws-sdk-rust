@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    #[doc(hidden)]
     pub tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,
 }

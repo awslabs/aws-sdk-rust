@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The time when the finding was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
-    #[doc(hidden)]
     pub generator_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of finding. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the finding. A finding status can be open or closed. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The resource where Amazon CodeGuru Security detected a finding.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>An object that describes the detected security vulnerability.</p>
-    #[doc(hidden)]
     pub vulnerability: ::std::option::Option<crate::types::Vulnerability>,
     /// <p>The severity of the finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<crate::types::Remediation>,
     /// <p>The title of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
-    #[doc(hidden)]
     pub detector_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector that identified the security vulnerability in your code. </p>
-    #[doc(hidden)]
     pub detector_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the rule that generated the finding.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl Finding {

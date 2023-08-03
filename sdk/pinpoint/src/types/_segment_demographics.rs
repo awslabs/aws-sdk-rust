@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentDemographics {
     /// <p>The app version criteria for the segment.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The channel criteria for the segment.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The device type criteria for the segment.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The device make criteria for the segment.</p>
-    #[doc(hidden)]
     pub make: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The device model criteria for the segment.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The device platform criteria for the segment.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::SetDimension>,
 }
 impl SegmentDemographics {

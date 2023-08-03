@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ID of the account in which the finding was generated.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the finding.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score for the finding.</p>
-    #[doc(hidden)]
     pub confidence: f64,
     /// <p>The time and date when the finding was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The partition associated with the finding.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the finding was generated.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The version of the schema used for the finding.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The severity of the finding.</p>
-    #[doc(hidden)]
     pub severity: f64,
     /// <p>The title of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The type of finding.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the finding was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::string::String>,
 }
 impl Finding {

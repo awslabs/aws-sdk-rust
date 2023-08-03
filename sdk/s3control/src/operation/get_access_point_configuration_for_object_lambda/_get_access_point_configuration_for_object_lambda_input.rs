@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPointConfigurationForObjectLambdaInput {

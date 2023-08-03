@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightRuleReportOutput {
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
-    #[doc(hidden)]
     pub key_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
-    #[doc(hidden)]
     pub aggregation_statistic: ::std::option::Option<::std::string::String>,
     /// <p>The sum of the values from all individual contributors that match the rule.</p>
-    #[doc(hidden)]
     pub aggregate_value: ::std::option::Option<f64>,
     /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
-    #[doc(hidden)]
     pub approximate_unique_count: ::std::option::Option<i64>,
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-    #[doc(hidden)]
     pub contributors: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>,
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    #[doc(hidden)]
     pub metric_datapoints: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
     _request_id: Option<String>,
 }

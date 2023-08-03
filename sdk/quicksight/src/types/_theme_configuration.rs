@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
-    #[doc(hidden)]
     pub data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
-    #[doc(hidden)]
     pub ui_color_palette: ::std::option::Option<crate::types::UiColorPalette>,
     /// <p>Display options related to sheets.</p>
-    #[doc(hidden)]
     pub sheet: ::std::option::Option<crate::types::SheetStyle>,
     /// <p>Determines the typography options.</p>
-    #[doc(hidden)]
     pub typography: ::std::option::Option<crate::types::Typography>,
 }
 impl ThemeConfiguration {

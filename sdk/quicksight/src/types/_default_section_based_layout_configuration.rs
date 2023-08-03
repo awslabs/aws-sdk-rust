@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultSectionBasedLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl DefaultSectionBasedLayoutConfiguration {

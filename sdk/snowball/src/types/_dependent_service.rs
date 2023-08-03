@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DependentService {
     /// <p>The name of the dependent service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
     /// <p>The version of the dependent service.</p>
-    #[doc(hidden)]
     pub service_version: ::std::option::Option<crate::types::ServiceVersion>,
 }
 impl DependentService {

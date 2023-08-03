@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKeyGroupInput {
     /// <p>The key group configuration.</p>
-    #[doc(hidden)]
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     /// <p>The identifier of the key group that you are updating.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKeyGroupInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopJobRunOutput {
     /// <p>The ID of the job run that you stopped.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateNodeInput {
     /// <p>The name of the server from which to disassociate the node. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the client node. </p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
     /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
     /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl DisassociateNodeInput {

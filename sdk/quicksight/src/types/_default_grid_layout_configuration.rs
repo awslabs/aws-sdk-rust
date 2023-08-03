@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultGridLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a grid layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl DefaultGridLayoutConfiguration {

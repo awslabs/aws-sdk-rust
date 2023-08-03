@@ -9,18 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotProvisioningSpecification {
     /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
-    #[doc(hidden)]
     pub timeout_duration_minutes: ::std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
-    #[doc(hidden)]
     pub timeout_action: ::std::option::Option<crate::types::SpotProvisioningTimeoutAction>,
     /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
     /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
     /// </note>
-    #[doc(hidden)]
     pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
 impl SpotProvisioningSpecification {

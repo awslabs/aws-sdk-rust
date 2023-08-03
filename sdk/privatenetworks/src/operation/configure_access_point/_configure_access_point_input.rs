@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConfigureAccessPointInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The position of the network resource.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::Position>,
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
-    #[doc(hidden)]
     pub cpi_username: ::std::option::Option<::std::string::String>,
     /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
-    #[doc(hidden)]
     pub cpi_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    #[doc(hidden)]
     pub cpi_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
-    #[doc(hidden)]
     pub cpi_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl ConfigureAccessPointInput {

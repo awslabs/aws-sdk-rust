@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomDataIdentifierOutput {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
-    #[doc(hidden)]
     pub custom_data_identifier_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

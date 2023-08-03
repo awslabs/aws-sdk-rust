@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MitigationActionParams {
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
-    #[doc(hidden)]
     pub update_device_certificate_params: ::std::option::Option<crate::types::UpdateDeviceCertificateParams>,
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
-    #[doc(hidden)]
     pub update_ca_certificate_params: ::std::option::Option<crate::types::UpdateCaCertificateParams>,
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
-    #[doc(hidden)]
     pub add_things_to_thing_group_params: ::std::option::Option<crate::types::AddThingsToThingGroupParams>,
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
-    #[doc(hidden)]
     pub replace_default_policy_version_params: ::std::option::Option<crate::types::ReplaceDefaultPolicyVersionParams>,
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
-    #[doc(hidden)]
     pub enable_io_t_logging_params: ::std::option::Option<crate::types::EnableIoTLoggingParams>,
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
-    #[doc(hidden)]
     pub publish_finding_to_sns_params: ::std::option::Option<crate::types::PublishFindingToSnsParams>,
 }
 impl MitigationActionParams {

@@ -5,11 +5,9 @@
 pub struct DeleteServiceSpecificCredentialInput {
     /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    #[doc(hidden)]
     pub service_specific_credential_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceSpecificCredentialInput {

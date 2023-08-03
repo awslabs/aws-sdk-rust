@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMatchingJobsOutput {
     /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

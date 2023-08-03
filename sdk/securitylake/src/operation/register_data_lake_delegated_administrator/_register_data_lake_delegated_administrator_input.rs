@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDataLakeDelegatedAdministratorInput {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDataLakeDelegatedAdministratorInput {

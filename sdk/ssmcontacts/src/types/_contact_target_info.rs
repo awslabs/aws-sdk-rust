@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
-    #[doc(hidden)]
     pub is_essential: ::std::option::Option<bool>,
 }
 impl ContactTargetInfo {

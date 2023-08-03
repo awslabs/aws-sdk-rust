@@ -5,11 +5,9 @@
 pub struct GetDistributionsInput {
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDistributionsInput {

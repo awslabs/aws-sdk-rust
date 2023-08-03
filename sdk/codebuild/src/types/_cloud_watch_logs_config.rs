@@ -9,13 +9,10 @@ pub struct CloudWatchLogsConfig {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsConfig {

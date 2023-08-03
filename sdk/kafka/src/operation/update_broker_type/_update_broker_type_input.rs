@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
-    #[doc(hidden)]
     pub target_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBrokerTypeInput {

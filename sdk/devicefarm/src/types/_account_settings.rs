@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
-    #[doc(hidden)]
     pub aws_account_number: ::std::option::Option<::std::string::String>,
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-    #[doc(hidden)]
     pub unmetered_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
-    #[doc(hidden)]
     pub unmetered_remote_access_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
-    #[doc(hidden)]
     pub max_job_timeout_minutes: ::std::option::Option<i32>,
     /// <p>Information about an AWS account's usage of free trial device minutes.</p>
-    #[doc(hidden)]
     pub trial_minutes: ::std::option::Option<crate::types::TrialMinutes>,
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
-    #[doc(hidden)]
     pub max_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
-    #[doc(hidden)]
     pub default_job_timeout_minutes: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
-    #[doc(hidden)]
     pub skip_app_resign: ::std::option::Option<bool>,
 }
 impl AccountSettings {

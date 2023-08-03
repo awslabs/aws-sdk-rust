@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageMetadata {
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
     /// <p>The date that the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the resource was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetSolNetworkPackageMetadata {

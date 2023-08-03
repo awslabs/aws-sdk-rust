@@ -9,11 +9,9 @@ pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
     /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
     /// <p>The only valid value is <code>EC2</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {

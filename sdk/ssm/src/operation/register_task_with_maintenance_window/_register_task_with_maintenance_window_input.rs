@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the task should be added to.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -21,10 +20,8 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code> </p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The ARN of the task to run.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
@@ -32,48 +29,37 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of task being registered.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub task_parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    #[doc(hidden)]
     pub task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>An optional name for the task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>User-provided idempotency token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     /// <ul>
@@ -84,10 +70,8 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl RegisterTaskWithMaintenanceWindowInput {

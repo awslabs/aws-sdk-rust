@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachDiskInput {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
-    #[doc(hidden)]
     pub disk_path: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub auto_mounting: ::std::option::Option<bool>,
 }
 impl AttachDiskInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
-    #[doc(hidden)]
     pub ui_customization: ::std::option::Option<crate::types::UiCustomizationType>,
     _request_id: Option<String>,
 }

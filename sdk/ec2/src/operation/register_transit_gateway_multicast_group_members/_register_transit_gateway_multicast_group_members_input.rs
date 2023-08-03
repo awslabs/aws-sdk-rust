@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupMembersInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    #[doc(hidden)]
     pub group_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The group members' network interface IDs to register with the transit gateway multicast group.</p>
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl RegisterTransitGatewayMulticastGroupMembersInput {

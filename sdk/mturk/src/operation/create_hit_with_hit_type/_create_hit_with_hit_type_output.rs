@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
-    #[doc(hidden)]
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationAuthorization {
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
-    #[doc(hidden)]
     pub aggregation_authorization_arn: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    #[doc(hidden)]
     pub authorized_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
-    #[doc(hidden)]
     pub authorized_aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when the aggregation authorization was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AggregationAuthorization {

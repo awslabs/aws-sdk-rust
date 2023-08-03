@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionsRetryConfig {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    #[doc(hidden)]
     pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
 }
 impl JobExecutionsRetryConfig {

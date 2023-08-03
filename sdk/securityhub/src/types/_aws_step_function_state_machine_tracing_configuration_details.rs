@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineTracingConfigurationDetails {
     /// <p> When set to true, X-Ray tracing is enabled. </p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsStepFunctionStateMachineTracingConfigurationDetails {

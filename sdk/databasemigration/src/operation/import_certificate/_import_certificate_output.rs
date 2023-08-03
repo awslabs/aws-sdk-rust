@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportCertificateOutput {
     /// <p>The certificate to be uploaded.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
 }

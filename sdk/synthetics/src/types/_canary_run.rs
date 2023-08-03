@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the canary.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of this run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CanaryRunStatus>,
     /// <p>A structure that contains the start and end times of this run.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::CanaryRunTimeline>,
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
-    #[doc(hidden)]
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
 }
 impl CanaryRun {

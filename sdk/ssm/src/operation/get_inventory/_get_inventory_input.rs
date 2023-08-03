@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInventoryInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    #[doc(hidden)]
     pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
     /// <p>The list of inventory item types to return.</p>
-    #[doc(hidden)]
     pub result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetInventoryInput {

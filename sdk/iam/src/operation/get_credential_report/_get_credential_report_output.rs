@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The format (MIME type) of the credential report.</p>
-    #[doc(hidden)]
     pub report_format: ::std::option::Option<crate::types::ReportFormatType>,
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    #[doc(hidden)]
     pub generated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

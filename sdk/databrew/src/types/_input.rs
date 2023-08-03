@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>The Amazon S3 location where the data is stored.</p>
-    #[doc(hidden)]
     pub s3_input_definition: ::std::option::Option<crate::types::S3Location>,
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    #[doc(hidden)]
     pub data_catalog_input_definition: ::std::option::Option<crate::types::DataCatalogInputDefinition>,
     /// <p>Connection information for dataset input files stored in a database.</p>
-    #[doc(hidden)]
     pub database_input_definition: ::std::option::Option<crate::types::DatabaseInputDefinition>,
     /// <p>Contains additional resource information needed for specific datasets.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl Input {

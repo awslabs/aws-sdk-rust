@@ -6,10 +6,8 @@
 pub struct AddTagsToResourceInput {
     /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
     /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToResourceInput {

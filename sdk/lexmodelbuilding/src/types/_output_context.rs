@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputContext {
     /// <p>The name of the context.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
-    #[doc(hidden)]
     pub time_to_live_in_seconds: ::std::option::Option<i32>,
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
-    #[doc(hidden)]
     pub turns_to_live: ::std::option::Option<i32>,
 }
 impl OutputContext {

@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobRun {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
-    #[doc(hidden)]
     pub attempt: i32,
     /// <p>The date and time when the job completed processing.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the dataset for the job to process.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
-    #[doc(hidden)]
     pub execution_time: i32,
     /// <p>The name of the job being processed during this run.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the job run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the job run entity itself.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobRunState>,
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
-    #[doc(hidden)]
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more output artifacts from a job run.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    #[doc(hidden)]
     pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     /// <p>The set of steps processed by the job.</p>
-    #[doc(hidden)]
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the job run began. </p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-    #[doc(hidden)]
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    #[doc(hidden)]
     pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
 }
 impl JobRun {

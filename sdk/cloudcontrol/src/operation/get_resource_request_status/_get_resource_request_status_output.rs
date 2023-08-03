@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
-    #[doc(hidden)]
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
 }

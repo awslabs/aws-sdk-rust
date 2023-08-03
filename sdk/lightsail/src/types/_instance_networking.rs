@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworking {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
-    #[doc(hidden)]
     pub monthly_transfer: ::std::option::Option<crate::types::MonthlyTransfer>,
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    #[doc(hidden)]
     pub ports: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>>,
 }
 impl InstanceNetworking {

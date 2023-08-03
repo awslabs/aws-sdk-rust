@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvidenceInsights {
     /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
-    #[doc(hidden)]
     pub noncompliant_evidence_count: ::std::option::Option<i32>,
     /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
-    #[doc(hidden)]
     pub compliant_evidence_count: ::std::option::Option<i32>,
     /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i> in the console, it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
     /// </note>
-    #[doc(hidden)]
     pub inconclusive_evidence_count: ::std::option::Option<i32>,
 }
 impl EvidenceInsights {

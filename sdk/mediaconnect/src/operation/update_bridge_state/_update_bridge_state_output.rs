@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The state of the bridge. ACTIVE or STANDBY.
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::DesiredState>,
     _request_id: Option<String>,
 }

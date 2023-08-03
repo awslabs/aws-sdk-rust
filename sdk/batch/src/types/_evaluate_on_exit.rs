@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateOnExit {
     /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    #[doc(hidden)]
     pub on_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    #[doc(hidden)]
     pub on_reason: ::std::option::Option<::std::string::String>,
     /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     /// <p>The string can contain up to 512 characters.</p>
-    #[doc(hidden)]
     pub on_exit_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RetryAction>,
 }
 impl EvaluateOnExit {

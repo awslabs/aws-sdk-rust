@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The detector for which the rule is associated.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule ID.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule version.</p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<::std::string::String>,
 }
 impl Rule {

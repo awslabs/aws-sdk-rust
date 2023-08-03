@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipientInfo {
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-    #[doc(hidden)]
     pub key_encryption_algorithm: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
-    #[doc(hidden)]
     pub attestation_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RecipientInfo {

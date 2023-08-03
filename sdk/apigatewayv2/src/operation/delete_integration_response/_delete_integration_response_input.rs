@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIntegrationResponseInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration ID.</p>
-    #[doc(hidden)]
     pub integration_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration response ID.</p>
-    #[doc(hidden)]
     pub integration_response_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIntegrationResponseInput {

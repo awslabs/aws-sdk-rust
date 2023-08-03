@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    #[doc(hidden)]
     pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessLogSubscriptionInput {

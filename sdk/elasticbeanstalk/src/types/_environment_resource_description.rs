@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentResourceDescription {
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-    #[doc(hidden)]
     pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     /// <p>The Amazon EC2 instances used by this environment.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    #[doc(hidden)]
     pub launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-    #[doc(hidden)]
     pub launch_templates: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
     /// <p>The LoadBalancers in use by this environment.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     /// <p>The queues used by this environment.</p>
-    #[doc(hidden)]
     pub queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
 }
 impl EnvironmentResourceDescription {

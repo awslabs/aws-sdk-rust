@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssistantOutput {
     /// <p>Information about the assistant.</p>
-    #[doc(hidden)]
     pub assistant: ::std::option::Option<crate::types::AssistantData>,
     _request_id: Option<String>,
 }

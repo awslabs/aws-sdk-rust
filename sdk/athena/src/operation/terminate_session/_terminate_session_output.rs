@@ -12,7 +12,6 @@ pub struct TerminateSessionOutput {
     /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }

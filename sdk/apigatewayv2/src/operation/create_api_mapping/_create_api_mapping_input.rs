@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiMappingInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// The API mapping key.
-    #[doc(hidden)]
     pub api_mapping_key: ::std::option::Option<::std::string::String>,
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The API stage.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
 }
 impl CreateApiMappingInput {

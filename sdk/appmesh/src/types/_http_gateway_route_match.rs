@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The path to match on.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<crate::types::HttpPathMatch>,
     /// <p>The query parameter to match on.</p>
-    #[doc(hidden)]
     pub query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
     /// <p>The method to match on.</p>
-    #[doc(hidden)]
     pub method: ::std::option::Option<crate::types::HttpMethod>,
     /// <p>The host name to match on.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
     /// <p>The client request headers to match on.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>>,
     /// <p>The port number to match on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl HttpGatewayRouteMatch {

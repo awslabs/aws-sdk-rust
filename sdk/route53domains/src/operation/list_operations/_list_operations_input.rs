@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOperationsInput {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    #[doc(hidden)]
     pub submitted_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p> The status of the operations. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
     /// <p> An arrays of the domains operation types. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
     /// <p> The sort type for returned values. </p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
     /// <p> The sort order ofr returned values, either ascending or descending. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListOperationsInput {

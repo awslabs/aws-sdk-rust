@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionConfigInput {
     /// <p>The request to create a new field-level encryption configuration.</p>
-    #[doc(hidden)]
     pub field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
 }
 impl CreateFieldLevelEncryptionConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl: ::std::option::Option<crate::types::NetworkAcl>,
     _request_id: Option<String>,
 }

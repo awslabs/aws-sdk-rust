@@ -9,13 +9,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPlaneTagFilter {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
-    #[doc(hidden)]
     pub or_conditions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagCondition>>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
-    #[doc(hidden)]
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
-    #[doc(hidden)]
     pub tag_condition: ::std::option::Option<crate::types::TagCondition>,
 }
 impl ControlPlaneTagFilter {

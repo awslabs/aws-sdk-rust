@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    #[doc(hidden)]
     pub recovery_snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRecoveryRequestSourceServer {

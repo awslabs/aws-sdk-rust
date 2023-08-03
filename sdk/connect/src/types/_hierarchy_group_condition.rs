@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyGroupCondition {
     /// <p>The value in the hierarchy group condition.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of hierarchy group match.</p>
-    #[doc(hidden)]
     pub hierarchy_group_match_type: ::std::option::Option<crate::types::HierarchyGroupMatchType>,
 }
 impl HierarchyGroupCondition {

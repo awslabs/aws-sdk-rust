@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizerConfig {
     /// <p>The name of the authorization service for a domain configuration.</p>
-    #[doc(hidden)]
     pub default_authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
-    #[doc(hidden)]
     pub allow_authorizer_override: ::std::option::Option<bool>,
 }
 impl AuthorizerConfig {

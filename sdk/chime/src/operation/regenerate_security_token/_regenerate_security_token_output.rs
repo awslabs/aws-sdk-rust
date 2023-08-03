@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegenerateSecurityTokenOutput {
     /// <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
-    #[doc(hidden)]
     pub bot: ::std::option::Option<crate::types::Bot>,
     _request_id: Option<String>,
 }

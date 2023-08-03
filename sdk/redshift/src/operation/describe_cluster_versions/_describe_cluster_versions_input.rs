@@ -6,7 +6,6 @@
 pub struct DescribeClusterVersionsInput {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
@@ -15,15 +14,12 @@ pub struct DescribeClusterVersionsInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterVersionsInput {

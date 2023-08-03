@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSoftwareOptions {
     /// <p>The current service software version present on the domain.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The new service software version, if one is available.</p>
-    #[doc(hidden)]
     pub new_version: ::std::option::Option<::std::string::String>,
     /// <p>True if you're able to update your service software version. False if you can't update your service software version.</p>
-    #[doc(hidden)]
     pub update_available: ::std::option::Option<bool>,
     /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
-    #[doc(hidden)]
     pub cancellable: ::std::option::Option<bool>,
     /// <p>The status of your service software update.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>A description of the service software update status.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
-    #[doc(hidden)]
     pub automated_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if a service software is never automatically updated. False if a service software is automatically updated after the automated update date.</p>
-    #[doc(hidden)]
     pub optional_deployment: ::std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {

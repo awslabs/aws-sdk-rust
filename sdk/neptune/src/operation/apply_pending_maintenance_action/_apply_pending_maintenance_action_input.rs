@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code> </p>
-    #[doc(hidden)]
     pub apply_action: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
@@ -17,7 +15,6 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
     /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub opt_in_type: ::std::option::Option<::std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {

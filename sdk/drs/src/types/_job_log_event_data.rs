@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLogEventData {
     /// <p>The ID of a Source Server.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a conversion server.</p>
-    #[doc(hidden)]
     pub conversion_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a Recovery Instance.</p>
-    #[doc(hidden)]
     pub target_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A string representing a job error.</p>
-    #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
     /// <p>Properties of a conversion job</p>
-    #[doc(hidden)]
     pub conversion_properties: ::std::option::Option<crate::types::ConversionProperties>,
     /// <p>Properties of resource related to a job event.</p>
-    #[doc(hidden)]
     pub event_resource_data: ::std::option::Option<crate::types::EventResourceData>,
 }
 impl JobLogEventData {

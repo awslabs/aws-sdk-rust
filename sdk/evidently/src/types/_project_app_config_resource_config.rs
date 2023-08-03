@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectAppConfigResourceConfig {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectAppConfigResourceConfig {

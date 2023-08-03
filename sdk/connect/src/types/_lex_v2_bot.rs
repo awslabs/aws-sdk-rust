@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl LexV2Bot {

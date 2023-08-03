@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateValue {
     /// <p> The OS update related settings. </p>
-    #[doc(hidden)]
     pub os_update_settings: ::std::option::Option<crate::types::OsUpdateSettings>,
 }
 impl UpdateValue {

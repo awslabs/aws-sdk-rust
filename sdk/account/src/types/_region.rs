@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    #[doc(hidden)]
     pub region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,
 }
 impl Region {

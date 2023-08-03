@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContactInput {

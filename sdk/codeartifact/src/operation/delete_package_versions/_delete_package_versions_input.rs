@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository that contains the package versions to delete. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> The format of the package versions to delete. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -22,16 +18,12 @@ pub struct DeletePackageVersionsInput {
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package with the versions to delete. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> An array of strings that specify the versions of the package to delete. </p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The expected status of the package version to delete. </p>
-    #[doc(hidden)]
     pub expected_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl DeletePackageVersionsInput {

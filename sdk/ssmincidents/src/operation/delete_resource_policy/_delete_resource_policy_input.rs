@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource policy you're deleting.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {

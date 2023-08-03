@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
-    #[doc(hidden)]
     pub telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPathComponentDetails {
     /// <p>The IP addresses of the destination.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of port ranges for the destination.</p>
-    #[doc(hidden)]
     pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
 }
 impl NetworkPathComponentDetails {

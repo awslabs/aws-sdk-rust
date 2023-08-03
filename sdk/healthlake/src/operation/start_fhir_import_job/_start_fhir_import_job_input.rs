@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFhirImportJobInput {
     /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    #[doc(hidden)]
     pub job_output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The AWS-generated data store ID.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartFhirImportJobInput {

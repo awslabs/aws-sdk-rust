@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsInput {
     /// <p>The ID of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>One or more filters.</p>
     /// <ul>
@@ -46,10 +43,8 @@ pub struct DescribeCapacityReservationsInput {
     /// </ul> </li>
     /// <li> <p> <code>placement-group-arn</code> - The ARN of the cluster placement group in which the Capacity Reservation was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeCapacityReservationsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The on-premises instance tag filter key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The on-premises instance tag filter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct TagFilter {
     /// <li> <p>VALUE_ONLY: Value only.</p> </li>
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TagFilterType>,
 }
 impl TagFilter {

@@ -5,65 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstancePatchState {
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch group the managed node belongs to.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the patch baseline used to patch the managed node.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub install_override_list: ::std::option::Option<::std::string::String>,
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
-    #[doc(hidden)]
     pub installed_count: i32,
     /// <p>The number of patches not specified in the patch baseline that are installed on the managed node.</p>
-    #[doc(hidden)]
     pub installed_other_count: i32,
     /// <p>The number of patches installed by Patch Manager since the last time the managed node was rebooted.</p>
-    #[doc(hidden)]
     pub installed_pending_reboot_count: ::std::option::Option<i32>,
     /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
-    #[doc(hidden)]
     pub installed_rejected_count: ::std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that are applicable for the managed node but aren't currently installed.</p>
-    #[doc(hidden)]
     pub missing_count: i32,
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</p>
-    #[doc(hidden)]
     pub failed_count: i32,
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-    #[doc(hidden)]
     pub unreported_not_applicable_count: ::std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
-    #[doc(hidden)]
     pub not_applicable_count: i32,
     /// <p>The time the most recent patching operation was started on the managed node.</p>
-    #[doc(hidden)]
     pub operation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the most recent patching operation completed on the managed node.</p>
-    #[doc(hidden)]
     pub operation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
     /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
     /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::PatchOperationType>,
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    #[doc(hidden)]
     pub last_no_reboot_install_operation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
@@ -72,16 +54,12 @@ pub struct InstancePatchState {
     /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
     /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub reboot_option: ::std::option::Option<crate::types::RebootOption>,
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub critical_non_compliant_count: ::std::option::Option<i32>,
     /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub security_non_compliant_count: ::std::option::Option<i32>,
     /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub other_non_compliant_count: ::std::option::Option<i32>,
 }
 impl InstancePatchState {

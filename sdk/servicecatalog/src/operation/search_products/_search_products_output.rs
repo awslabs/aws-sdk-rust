@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchProductsOutput {
     /// <p>Information about the product views.</p>
-    #[doc(hidden)]
     pub product_view_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
     /// <p>The product view aggregations.</p>
-    #[doc(hidden)]
     pub product_view_aggregations:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteAddressOutput {
     /// <p>The ID of the site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the address you receive. </p>
-    #[doc(hidden)]
     pub address_type: ::std::option::Option<crate::types::AddressType>,
     /// <p> Information about the address. </p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
     _request_id: Option<String>,
 }

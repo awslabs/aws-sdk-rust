@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
-    #[doc(hidden)]
     pub extension: ::std::option::Option<::std::string::String>,
     /// <p>The full name (<i>key</i>) of the object, including the object's prefix if applicable.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The full path to the affected object, including the name of the affected bucket and the object's name (key).</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
-    #[doc(hidden)]
     pub public_access: ::std::option::Option<bool>,
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>The total storage size, in bytes, of the object.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
     /// <p>The storage class of the object.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>The tags that are associated with the object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     /// <p>The identifier for the affected version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {

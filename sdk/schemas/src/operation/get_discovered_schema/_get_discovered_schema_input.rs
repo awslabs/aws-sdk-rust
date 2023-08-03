@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of event.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl GetDiscoveredSchemaInput {

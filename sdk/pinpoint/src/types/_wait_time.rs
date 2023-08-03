@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaitTime {
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
-    #[doc(hidden)]
     pub wait_for: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
-    #[doc(hidden)]
     pub wait_until: ::std::option::Option<::std::string::String>,
 }
 impl WaitTime {

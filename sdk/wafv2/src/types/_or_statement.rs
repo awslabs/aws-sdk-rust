@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrStatement {
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
-    #[doc(hidden)]
     pub statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
 }
 impl OrStatement {

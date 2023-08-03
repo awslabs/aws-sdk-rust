@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueOutput {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub property_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A table of property values.</p>
-    #[doc(hidden)]
     pub tabular_property_values:
         ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>>>,
     _request_id: Option<String>,

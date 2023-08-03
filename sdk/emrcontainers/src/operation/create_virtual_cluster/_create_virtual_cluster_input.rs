@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The container provider of the virtual cluster.</p>
-    #[doc(hidden)]
     pub container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     /// <p>The client token of the virtual cluster.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateVirtualClusterInput {

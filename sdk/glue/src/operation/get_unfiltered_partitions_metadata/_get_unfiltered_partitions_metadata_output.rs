@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataOutput {
     /// <p>A list of requested partitions.</p>
-    #[doc(hidden)]
     pub unfiltered_partitions: ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchedulingConfig {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
-    #[doc(hidden)]
     pub end_behavior: ::std::option::Option<crate::types::JobEndBehavior>,
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
-    #[doc(hidden)]
     pub maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl SchedulingConfig {

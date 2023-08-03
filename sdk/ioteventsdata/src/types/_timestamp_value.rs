@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub time_in_millis: ::std::option::Option<i64>,
 }
 impl TimestampValue {

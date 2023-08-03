@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigAssociationOutput {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }

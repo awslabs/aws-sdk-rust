@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisioningParameter {
     /// <p>The parameter key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
-    #[doc(hidden)]
     pub use_previous_value: bool,
 }
 impl UpdateProvisioningParameter {

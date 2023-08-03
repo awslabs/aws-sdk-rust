@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableMacieInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MacieStatus>,
 }
 impl EnableMacieInput {

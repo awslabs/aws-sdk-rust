@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The target Region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
-    #[doc(hidden)]
     pub ami_distribution_configuration: ::std::option::Option<crate::types::AmiDistributionConfiguration>,
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-    #[doc(hidden)]
     pub container_distribution_configuration: ::std::option::Option<crate::types::ContainerDistributionConfiguration>,
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    #[doc(hidden)]
     pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    #[doc(hidden)]
     pub launch_template_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
-    #[doc(hidden)]
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    #[doc(hidden)]
     pub fast_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>,
 }
 impl Distribution {

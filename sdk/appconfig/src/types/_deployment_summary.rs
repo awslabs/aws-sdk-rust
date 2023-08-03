@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_number: i32,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the configuration.</p>
-    #[doc(hidden)]
     pub configuration_version: ::std::option::Option<::std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
-    #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grows over time.</p>
-    #[doc(hidden)]
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    #[doc(hidden)]
     pub growth_factor: f32,
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    #[doc(hidden)]
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>The percentage of targets for which the deployment is available.</p>
-    #[doc(hidden)]
     pub percentage_complete: f32,
     /// <p>Time the deployment started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time the deployment completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentSummary {

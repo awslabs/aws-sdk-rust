@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericRangeFilterValue {
     /// <p>The static value of the numeric range filter.</p>
-    #[doc(hidden)]
     pub static_value: ::std::option::Option<f64>,
     /// <p>The parameter that is used in the numeric range.</p>
-    #[doc(hidden)]
     pub parameter: ::std::option::Option<::std::string::String>,
 }
 impl NumericRangeFilterValue {

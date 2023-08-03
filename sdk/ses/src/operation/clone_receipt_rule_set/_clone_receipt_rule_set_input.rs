@@ -10,10 +10,8 @@ pub struct CloneReceiptRuleSetInput {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule set to clone.</p>
-    #[doc(hidden)]
     pub original_rule_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CloneReceiptRuleSetInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsOutput {
     /// <p>A structure that displays the status of the optional features in the account.</p>
-    #[doc(hidden)]
     pub account_settings: ::std::option::Option<crate::types::AccountSettings>,
     _request_id: Option<String>,
 }

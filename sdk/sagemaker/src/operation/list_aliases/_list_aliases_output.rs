@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesOutput {
     /// <p>A list of SageMaker image version aliases.</p>
-    #[doc(hidden)]
     pub sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

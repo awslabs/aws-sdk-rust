@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesInput {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data source package start for the behavior graph.</p>
-    #[doc(hidden)]
     pub datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInput {

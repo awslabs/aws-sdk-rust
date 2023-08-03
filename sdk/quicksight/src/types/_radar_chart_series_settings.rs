@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartSeriesSettings {
     /// <p>The area style settings of a radar chart.</p>
-    #[doc(hidden)]
     pub area_style_settings: ::std::option::Option<crate::types::RadarChartAreaStyleSettings>,
 }
 impl RadarChartSeriesSettings {

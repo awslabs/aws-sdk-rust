@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationApplicationConfig {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<::std::string::String>,
     /// <p>The launch configuration for the simulation application.</p>
-    #[doc(hidden)]
     pub launch_config: ::std::option::Option<crate::types::LaunchConfig>,
     /// <p>Information about upload configurations for the simulation application.</p>
-    #[doc(hidden)]
     pub upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
     /// <p>A list of world configurations.</p>
-    #[doc(hidden)]
     pub world_configs: ::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
@@ -26,10 +21,8 @@ pub struct SimulationApplicationConfig {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    #[doc(hidden)]
     pub use_default_upload_configurations: ::std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
-    #[doc(hidden)]
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -37,7 +30,6 @@ pub struct SimulationApplicationConfig {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    #[doc(hidden)]
     pub use_default_tools: ::std::option::Option<bool>,
 }
 impl SimulationApplicationConfig {

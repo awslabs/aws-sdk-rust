@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutWebhookOutput {
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
-    #[doc(hidden)]
     pub webhook: ::std::option::Option<crate::types::ListWebhookItem>,
     _request_id: Option<String>,
 }

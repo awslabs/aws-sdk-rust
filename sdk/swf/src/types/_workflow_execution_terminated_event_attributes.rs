@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <p>The reason provided for the termination.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details provided for the termination.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -17,10 +15,8 @@ pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>,
 }
 impl WorkflowExecutionTerminatedEventAttributes {

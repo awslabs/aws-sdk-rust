@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
     /// <p>The name of the namespace to delete.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
-    #[doc(hidden)]
     pub final_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>How long to retain the final snapshot.</p>
-    #[doc(hidden)]
     pub final_snapshot_retention_period: ::std::option::Option<i32>,
 }
 impl DeleteNamespaceInput {

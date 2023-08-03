@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary email address of the user.</p>
-    #[doc(hidden)]
     pub primary_email: ::std::option::Option<::std::string::String>,
     /// <p>The primary phone number associated with the user.</p>
-    #[doc(hidden)]
     pub primary_provisioned_number: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The license type for the user.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::License>,
     /// <p>The user type.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
     /// <p>The user registration status.</p>
-    #[doc(hidden)]
     pub user_registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The user invite status.</p>
-    #[doc(hidden)]
     pub user_invitation_status: ::std::option::Option<crate::types::InviteStatus>,
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub registered_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub invited_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Alexa for Business metadata.</p>
-    #[doc(hidden)]
     pub alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
     /// <p>The user's personal meeting PIN.</p>
-    #[doc(hidden)]
     pub personal_pin: ::std::option::Option<::std::string::String>,
 }
 impl User {

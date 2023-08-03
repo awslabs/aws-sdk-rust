@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesOutput {
     /// <p>A list of scheduled queries.</p>
-    #[doc(hidden)]
     pub scheduled_queries: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

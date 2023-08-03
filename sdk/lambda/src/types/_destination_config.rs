@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
-    #[doc(hidden)]
     pub on_success: ::std::option::Option<crate::types::OnSuccess>,
     /// <p>The destination configuration for failed invocations.</p>
-    #[doc(hidden)]
     pub on_failure: ::std::option::Option<crate::types::OnFailure>,
 }
 impl DestinationConfig {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method that the user uses to sign in.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::EmbeddingIdentityType>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-    #[doc(hidden)]
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
-    #[doc(hidden)]
     pub undo_redo_disabled: ::std::option::Option<bool>,
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
-    #[doc(hidden)]
     pub reset_disabled: ::std::option::Option<bool>,
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
-    #[doc(hidden)]
     pub state_persistence_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
@@ -31,13 +24,10 @@ pub struct GetDashboardEmbedUrlInput {
     /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    #[doc(hidden)]
     pub additional_dashboard_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetDashboardEmbedUrlInput {

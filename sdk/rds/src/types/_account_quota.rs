@@ -27,13 +27,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountQuota {
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
-    #[doc(hidden)]
     pub used: i64,
     /// <p>The maximum allowed value for the quota.</p>
-    #[doc(hidden)]
     pub max: i64,
 }
 impl AccountQuota {

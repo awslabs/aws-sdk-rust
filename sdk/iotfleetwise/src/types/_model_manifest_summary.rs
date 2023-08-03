@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelManifestSummary {
     /// <p>The name of the vehicle model.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the vehicle model.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ModelManifestSummary {

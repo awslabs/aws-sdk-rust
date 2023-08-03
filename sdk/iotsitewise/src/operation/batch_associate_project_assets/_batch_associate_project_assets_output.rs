@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
     _request_id: Option<String>,
 }

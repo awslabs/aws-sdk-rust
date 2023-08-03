@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    #[doc(hidden)]
     pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeSnapshotsInput {

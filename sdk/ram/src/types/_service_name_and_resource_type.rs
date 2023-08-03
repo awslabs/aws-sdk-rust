@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNameAndResourceType {
     /// <p>The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the scope of visibility of resources of this type:</p>
     /// <ul>
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScope>,
 }
 impl ServiceNameAndResourceType {

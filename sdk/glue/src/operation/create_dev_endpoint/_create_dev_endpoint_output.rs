@@ -4,59 +4,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDevEndpointOutput {
     /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the new <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub yarn_endpoint_address: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
-    #[doc(hidden)]
     pub zeppelin_remote_spark_interpreter_port: i32,
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
-    #[doc(hidden)]
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub extra_python_libs_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub extra_jars_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -64,7 +46,6 @@ pub struct CreateDevEndpointOutput {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    #[doc(hidden)]
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

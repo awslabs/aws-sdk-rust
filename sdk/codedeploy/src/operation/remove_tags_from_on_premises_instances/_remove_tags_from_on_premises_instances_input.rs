@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromOnPremisesInstancesInput {

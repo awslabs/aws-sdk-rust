@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationOption {
     /// <p>The fully qualified domain name in the certificate request.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain validation. Valid values are listed below.</p>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
 }
 impl LoadBalancerTlsCertificateDomainValidationOption {

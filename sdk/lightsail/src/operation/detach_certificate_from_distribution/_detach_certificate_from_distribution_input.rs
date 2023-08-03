@@ -5,7 +5,6 @@
 pub struct DetachCertificateFromDistributionInput {
     /// <p>The name of the distribution from which to detach the certificate.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachCertificateFromDistributionInput {

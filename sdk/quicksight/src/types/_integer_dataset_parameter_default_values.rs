@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given integer parameter.</p>
-    #[doc(hidden)]
     pub static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl IntegerDatasetParameterDefaultValues {

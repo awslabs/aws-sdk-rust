@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeHierarchy {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
-    #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
-    #[doc(hidden)]
     pub drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl DateTimeHierarchy {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncResourceStatus {
     /// <p>The sync resource status state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SyncResourceState>,
     /// <p>The status error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SyncResourceStatus {

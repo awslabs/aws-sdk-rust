@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicRelativeDateFilter {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The function to be used in a relative date filter to determine the range of dates to include in the results. Valid values for this structure are <code>BEFORE</code>, <code>AFTER</code>, and <code>BETWEEN</code>.</p>
-    #[doc(hidden)]
     pub relative_date_filter_function: ::std::option::Option<crate::types::TopicRelativeDateFilterFunction>,
     /// <p>The constant used in a relative date filter.</p>
-    #[doc(hidden)]
     pub constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
 }
 impl TopicRelativeDateFilter {

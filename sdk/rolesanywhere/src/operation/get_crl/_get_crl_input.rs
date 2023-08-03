@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub crl_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCrlInput {

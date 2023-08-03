@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoursOfOperationTimeSlice {
     /// <p>The hours.</p>
-    #[doc(hidden)]
     pub hours: ::std::option::Option<i32>,
     /// <p>The minutes.</p>
-    #[doc(hidden)]
     pub minutes: ::std::option::Option<i32>,
 }
 impl HoursOfOperationTimeSlice {

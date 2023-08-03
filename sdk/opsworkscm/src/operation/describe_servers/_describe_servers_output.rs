@@ -10,10 +10,8 @@ pub struct DescribeServersOutput {
     /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
     /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub servers: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

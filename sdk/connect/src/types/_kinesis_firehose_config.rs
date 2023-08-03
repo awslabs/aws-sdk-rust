@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    #[doc(hidden)]
     pub firehose_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseConfig {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionStatusOutput {
     /// <p>Contains information about the calculation execution status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CalculationStatus>,
     /// <p>Contains information about the DPU execution time and progress.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::CalculationStatistics>,
     _request_id: Option<String>,
 }

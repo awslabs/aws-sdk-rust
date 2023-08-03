@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
-    #[doc(hidden)]
     pub autoprovision: bool,
     /// <p>The Docker volume driver to use.</p>
-    #[doc(hidden)]
     pub driver: ::std::option::Option<::std::string::String>,
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    #[doc(hidden)]
     pub driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Custom metadata to add to the Docker volume.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {

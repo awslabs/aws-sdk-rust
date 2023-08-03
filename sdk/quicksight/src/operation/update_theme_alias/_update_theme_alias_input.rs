@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the theme alias that you want to update.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the theme that the alias should reference.</p>
-    #[doc(hidden)]
     pub theme_version_number: ::std::option::Option<i64>,
 }
 impl UpdateThemeAliasInput {

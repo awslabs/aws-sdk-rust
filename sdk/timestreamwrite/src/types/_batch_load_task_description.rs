@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchLoadTaskDescription {
     /// <p>The ID of the batch load task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details about the data source for a batch load task.</p>
-    #[doc(hidden)]
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p></p>
-    #[doc(hidden)]
     pub progress_report: ::std::option::Option<crate::types::BatchLoadProgressReport>,
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    #[doc(hidden)]
     pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
-    #[doc(hidden)]
     pub data_model_configuration: ::std::option::Option<crate::types::DataModelConfiguration>,
     /// <p></p>
-    #[doc(hidden)]
     pub target_database_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub target_table_name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the batch load task.</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::BatchLoadStatus>,
     /// <p></p>
-    #[doc(hidden)]
     pub record_version: i64,
     /// <p>The time when the Timestream batch load task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the Timestream batch load task was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> </p>
-    #[doc(hidden)]
     pub resumable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BatchLoadTaskDescription {

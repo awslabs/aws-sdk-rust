@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The component object associated with the specified ARN.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
 }

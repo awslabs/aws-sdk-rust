@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendProjectSessionActionOutput {
     /// <p>A message indicating the result of performing the action.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project that was affected by the action.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the action that was performed.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

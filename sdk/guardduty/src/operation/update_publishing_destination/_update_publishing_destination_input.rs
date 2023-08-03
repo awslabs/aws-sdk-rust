@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublishingDestinationInput {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the publishing destination to update.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    #[doc(hidden)]
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
 }
 impl UpdatePublishingDestinationInput {

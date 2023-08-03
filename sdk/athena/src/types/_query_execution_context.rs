@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryExecutionContext {
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data catalog used in the query execution.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
 }
 impl QueryExecutionContext {

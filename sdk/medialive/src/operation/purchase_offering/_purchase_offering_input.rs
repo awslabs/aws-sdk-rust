@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// Number of resources
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// Name for the new reservation
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Offering to purchase, e.g. '87654321'
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// Renewal settings for the reservation
-    #[doc(hidden)]
     pub renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PurchaseOfferingInput {

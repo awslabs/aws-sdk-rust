@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
     /// <p>The scoring status of the evaluation form.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
 }
 impl EvaluationFormScoringStrategy {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
-    #[doc(hidden)]
     pub cancelled_spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
     _request_id: Option<String>,
 }

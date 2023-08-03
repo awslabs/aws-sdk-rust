@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFacesOutput {
     /// <p>An array of <code>Face</code> objects. </p>
-    #[doc(hidden)]
     pub faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

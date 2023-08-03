@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableKeySchema {
     /// <p>The name of the key schema attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableKeySchema {

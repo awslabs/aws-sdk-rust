@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    #[doc(hidden)]
     pub stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
-    #[doc(hidden)]
     pub has_more_streams: ::std::option::Option<bool>,
     /// <p></p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub stream_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }

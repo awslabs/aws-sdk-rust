@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    #[doc(hidden)]
     pub entities_detection_job_properties: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }

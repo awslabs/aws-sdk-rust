@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
-    #[doc(hidden)]
     pub exclusive_start_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamsInput {

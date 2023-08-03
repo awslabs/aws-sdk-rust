@@ -4,50 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotebookInstanceInput {
     /// <p>The name of the notebook instance to update.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ML compute instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    #[doc(hidden)]
     pub lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    #[doc(hidden)]
     pub disassociate_lifecycle_config: ::std::option::Option<bool>,
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    #[doc(hidden)]
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    #[doc(hidden)]
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    #[doc(hidden)]
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    #[doc(hidden)]
     pub disassociate_accelerator_types: ::std::option::Option<bool>,
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    #[doc(hidden)]
     pub disassociate_default_code_repository: ::std::option::Option<bool>,
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    #[doc(hidden)]
     pub disassociate_additional_code_repositories: ::std::option::Option<bool>,
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
     /// </note>
-    #[doc(hidden)]
     pub root_access: ::std::option::Option<crate::types::RootAccess>,
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    #[doc(hidden)]
     pub instance_metadata_service_configuration: ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
 }
 impl UpdateNotebookInstanceInput {

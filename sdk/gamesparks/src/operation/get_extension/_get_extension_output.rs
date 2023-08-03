@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExtensionOutput {
     /// <p>Details about the extension.</p>
-    #[doc(hidden)]
     pub extension: ::std::option::Option<crate::types::ExtensionDetails>,
     _request_id: Option<String>,
 }

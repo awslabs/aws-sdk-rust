@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataQualityJobDefinitionInput {

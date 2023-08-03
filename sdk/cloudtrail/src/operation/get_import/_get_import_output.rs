@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportOutput {
     /// <p> The ID of the import. </p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the destination event data store. </p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The source S3 bucket. </p>
-    #[doc(hidden)]
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    #[doc(hidden)]
     pub start_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    #[doc(hidden)]
     pub end_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the import. </p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> The timestamp of the import's creation. </p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp of when the import was updated. </p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
-    #[doc(hidden)]
     pub import_statistics: ::std::option::Option<crate::types::ImportStatistics>,
     _request_id: Option<String>,
 }

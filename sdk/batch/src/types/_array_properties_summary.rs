@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArrayPropertiesSummary {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
 }
 impl ArrayPropertiesSummary {

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The cluster's backup policy.</p>
-    #[doc(hidden)]
     pub backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     /// <p>A policy that defines how the service retains backups.</p>
-    #[doc(hidden)]
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The cluster's identifier (ID).</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about the HSMs in the cluster.</p>
-    #[doc(hidden)]
     pub hsms: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
-    #[doc(hidden)]
     pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-    #[doc(hidden)]
     pub pre_co_password: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster's security group.</p>
-    #[doc(hidden)]
     pub security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-    #[doc(hidden)]
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster's state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>A description of the cluster's state.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
-    #[doc(hidden)]
     pub subnet_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<crate::types::Certificates>,
     /// <p>The list of tags for the cluster.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Cluster {

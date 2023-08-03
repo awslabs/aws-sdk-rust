@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftTarget {
     /// <p>The name of the data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the database to write to.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    #[doc(hidden)]
     pub redshift_tmp_dir: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role with permissions.</p>
-    #[doc(hidden)]
     pub tmp_dir_iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
-    #[doc(hidden)]
     pub upsert_redshift_options: ::std::option::Option<crate::types::UpsertRedshiftTargetOptions>,
 }
 impl RedshiftTarget {

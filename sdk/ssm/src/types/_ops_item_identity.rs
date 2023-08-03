@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl OpsItemIdentity {

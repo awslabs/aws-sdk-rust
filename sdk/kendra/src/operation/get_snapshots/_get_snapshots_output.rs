@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotsOutput {
     /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
-    #[doc(hidden)]
     pub snap_shot_time_filter: ::std::option::Option<crate::types::TimeRange>,
     /// <p>The column headers for the search metrics data.</p>
-    #[doc(hidden)]
     pub snapshots_data_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    #[doc(hidden)]
     pub snapshots_data: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
-    #[doc(hidden)]
     pub log_schema_version: ::std::option::Option<i32>,
 }
 impl UpdateExperimentTemplateLogConfigurationInput {

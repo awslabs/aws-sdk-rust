@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the resource (if available).</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource was deleted.</p>
-    #[doc(hidden)]
     pub resource_deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceIdentifier {

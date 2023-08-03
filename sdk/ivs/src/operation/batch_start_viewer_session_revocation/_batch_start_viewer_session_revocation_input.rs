@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    #[doc(hidden)]
     pub viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }
 impl BatchStartViewerSessionRevocationInput {

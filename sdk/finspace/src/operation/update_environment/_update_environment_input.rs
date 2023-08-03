@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The identifier of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
     /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub federation_mode: ::std::option::Option<crate::types::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    #[doc(hidden)]
     pub federation_parameters: ::std::option::Option<crate::types::FederationParameters>,
 }
 impl UpdateEnvironmentInput {

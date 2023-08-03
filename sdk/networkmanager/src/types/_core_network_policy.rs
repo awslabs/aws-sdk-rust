@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicy {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the policy version.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<i32>,
     /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
     /// <p>The description of a core network policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when a core network policy was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of a core network policy.</p>
-    #[doc(hidden)]
     pub change_set_state: ::std::option::Option<crate::types::ChangeSetState>,
     /// <p>Describes any errors in a core network policy.</p>
-    #[doc(hidden)]
     pub policy_errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
     /// <p>Describes a core network policy.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkPolicy {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::PortProtocol>,
 }
 impl PortMapping {

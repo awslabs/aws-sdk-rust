@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLimitsOutput {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
-    #[doc(hidden)]
     pub account_max_read_capacity_units: ::std::option::Option<i64>,
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
-    #[doc(hidden)]
     pub account_max_write_capacity_units: ::std::option::Option<i64>,
     /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
-    #[doc(hidden)]
     pub table_max_read_capacity_units: ::std::option::Option<i64>,
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
-    #[doc(hidden)]
     pub table_max_write_capacity_units: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

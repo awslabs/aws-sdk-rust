@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricsSummary {
     /// <p>The date from which the metrics summary information was retrieved.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of open findings of each severity in an account.</p>
-    #[doc(hidden)]
     pub open_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    #[doc(hidden)]
     pub categories_with_most_findings: ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    #[doc(hidden)]
     pub scans_with_most_open_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
-    #[doc(hidden)]
     pub scans_with_most_open_critical_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
 }
 impl MetricsSummary {

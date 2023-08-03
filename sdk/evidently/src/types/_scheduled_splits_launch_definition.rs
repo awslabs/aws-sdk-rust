@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchDefinition {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>>,
 }
 impl ScheduledSplitsLaunchDefinition {

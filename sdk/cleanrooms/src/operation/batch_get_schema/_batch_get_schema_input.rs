@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetSchemaInput {

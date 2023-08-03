@@ -8,14 +8,12 @@ pub struct CopySnapshotInput {
     /// <ul>
     /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
     /// <p>Constraints:</p>
@@ -24,7 +22,6 @@ pub struct CopySnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub restore_date: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
     /// <p>Constraints:</p>
@@ -32,13 +29,10 @@ pub struct CopySnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    #[doc(hidden)]
     pub target_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<crate::types::RegionName>,
 }
 impl CopySnapshotInput {

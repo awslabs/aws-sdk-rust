@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeStarParameters {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The specific branch where the artifact resides. </p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    #[doc(hidden)]
     pub artifact_path: ::std::option::Option<::std::string::String>,
 }
 impl CodeStarParameters {

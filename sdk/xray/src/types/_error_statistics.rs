@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorStatistics {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
-    #[doc(hidden)]
     pub throttle_count: ::std::option::Option<i64>,
     /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
-    #[doc(hidden)]
     pub other_count: ::std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
 }
 impl ErrorStatistics {

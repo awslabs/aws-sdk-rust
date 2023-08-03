@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailContent {
     /// <p>The subject of the email.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    #[doc(hidden)]
     pub additional_message: ::std::option::Option<::std::string::String>,
 }
 impl EmailContent {

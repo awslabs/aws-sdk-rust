@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExtensionInput {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i32>,
 }
 impl DeleteExtensionInput {

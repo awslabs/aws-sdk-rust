@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServerInput {
     /// <p>The ID of the server to delete.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServerInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConstraintOutput {
     /// <p>Information about the constraint.</p>
-    #[doc(hidden)]
     pub constraint_detail: ::std::option::Option<crate::types::ConstraintDetail>,
     /// <p>The constraint parameters.</p>
-    #[doc(hidden)]
     pub constraint_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The status of the current request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

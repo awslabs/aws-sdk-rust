@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
-    #[doc(hidden)]
     pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Sheet {

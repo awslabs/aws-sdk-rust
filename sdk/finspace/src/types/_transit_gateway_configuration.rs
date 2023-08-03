@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConfiguration {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
-    #[doc(hidden)]
     pub routable_cidr_space: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentOutput {
     /// <p>A structure containing the configuration details of the experiment that was updated.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,
 }

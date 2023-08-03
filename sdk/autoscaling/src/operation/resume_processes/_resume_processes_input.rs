@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResumeProcessesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more of the following processes:</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct ResumeProcessesInput {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    #[doc(hidden)]
     pub scaling_processes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResumeProcessesInput {

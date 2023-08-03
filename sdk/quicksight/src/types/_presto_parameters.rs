@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrestoParameters {
     /// <p>Host.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Catalog.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
 }
 impl PrestoParameters {

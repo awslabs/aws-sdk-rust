@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvidenceFinderEnablement {
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
-    #[doc(hidden)]
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the evidence finder feature and the related event data store. </p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct EvidenceFinderEnablement {
     /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub enablement_status: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
     /// <p>The current status of the evidence data backfill process. </p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
@@ -23,10 +21,8 @@ pub struct EvidenceFinderEnablement {
     /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backfill_status: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
 }
 impl EvidenceFinderEnablement {

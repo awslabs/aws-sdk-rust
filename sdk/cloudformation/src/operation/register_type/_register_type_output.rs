@@ -5,7 +5,6 @@
 pub struct RegisterTypeOutput {
     /// <p>The identifier for this registration request.</p>
     /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
-    #[doc(hidden)]
     pub registration_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

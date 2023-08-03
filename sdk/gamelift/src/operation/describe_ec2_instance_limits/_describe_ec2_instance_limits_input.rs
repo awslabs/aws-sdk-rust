@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsInput {
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
-    #[doc(hidden)]
     pub ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEc2InstanceLimitsInput {

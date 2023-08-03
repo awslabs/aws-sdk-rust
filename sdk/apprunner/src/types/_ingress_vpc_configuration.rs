@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngressVpcConfiguration {
     /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl IngressVpcConfiguration {

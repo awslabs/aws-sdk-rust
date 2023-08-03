@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
     /// <p>The configuration for the filter.</p>
-    #[doc(hidden)]
     pub predicate: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {

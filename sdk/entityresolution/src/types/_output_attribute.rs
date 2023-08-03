@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputAttribute {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Enables the ability to hash the column values in the output.</p>
-    #[doc(hidden)]
     pub hashed: ::std::option::Option<bool>,
 }
 impl OutputAttribute {

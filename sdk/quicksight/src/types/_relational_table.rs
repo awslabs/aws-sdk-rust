@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalTable {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    #[doc(hidden)]
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The catalog associated with a table.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The schema name. This name applies to certain relational database engines.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The name of the relational table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The column schema of the table.</p>
-    #[doc(hidden)]
     pub input_columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
 }
 impl RelationalTable {

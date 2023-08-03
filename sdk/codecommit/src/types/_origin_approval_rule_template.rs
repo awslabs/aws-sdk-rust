@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template that created the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl OriginApprovalRuleTemplate {

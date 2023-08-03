@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InclusionProtectionFilters {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the protection that you want to retrieve. </p>
-    #[doc(hidden)]
     pub protection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
 }
 impl InclusionProtectionFilters {

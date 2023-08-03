@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to delete.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExperimentInput {

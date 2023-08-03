@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::Tier>,
 }
 impl GlacierJobParameters {

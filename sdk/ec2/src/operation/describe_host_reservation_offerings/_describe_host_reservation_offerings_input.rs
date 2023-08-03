@@ -8,22 +8,16 @@ pub struct DescribeHostReservationOfferingsInput {
     /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
     /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i32>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.</p>
-    #[doc(hidden)]
     pub min_duration: ::std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the reservation offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostReservationOfferingsInput {

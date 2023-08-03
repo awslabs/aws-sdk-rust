@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeysOutput {
     /// <p>The list of keys created within the caller's Amazon Web Services account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>>,
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

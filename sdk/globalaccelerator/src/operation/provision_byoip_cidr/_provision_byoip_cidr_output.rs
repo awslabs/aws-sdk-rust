@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
-    #[doc(hidden)]
     pub byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,
 }

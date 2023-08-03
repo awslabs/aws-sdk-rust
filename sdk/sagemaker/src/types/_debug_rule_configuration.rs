@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DebugRuleConfiguration {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
-    #[doc(hidden)]
     pub rule_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to Amazon S3 storage location for rules.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
-    #[doc(hidden)]
     pub rule_evaluator_image: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to deploy a custom rule for debugging a training job.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: i32,
     /// <p>Runtime configuration for rule container.</p>
-    #[doc(hidden)]
     pub rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DebugRuleConfiguration {

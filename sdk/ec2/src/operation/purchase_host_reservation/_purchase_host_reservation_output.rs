@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseHostReservationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>Describes the details of the purchase.</p>
-    #[doc(hidden)]
     pub purchase: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>,
     /// <p>The total hourly price of the reservation calculated per hour.</p>
-    #[doc(hidden)]
     pub total_hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The total amount charged to your account when you purchase the reservation.</p>
-    #[doc(hidden)]
     pub total_upfront_price: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

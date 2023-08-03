@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateParameterConfiguration {
     /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TemplateParameterDataType>,
     /// <p>The default value for the job template parameter.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl TemplateParameterConfiguration {

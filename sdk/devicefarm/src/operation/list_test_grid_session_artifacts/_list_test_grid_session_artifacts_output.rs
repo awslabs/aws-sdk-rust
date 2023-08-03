@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsOutput {
     /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
-    #[doc(hidden)]
     pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

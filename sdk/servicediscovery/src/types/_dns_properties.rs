@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsProperties {
     /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
-    #[doc(hidden)]
     pub soa: ::std::option::Option<crate::types::Soa>,
 }
 impl DnsProperties {

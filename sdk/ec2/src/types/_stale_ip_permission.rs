@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaleIpPermission {
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of -1 indicates all ICMP types. </p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The IP ranges. Not applicable for stale security group rules.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
-    #[doc(hidden)]
     pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code> indicates all ICMP types. </p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
 }
 impl StaleIpPermission {

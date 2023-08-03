@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuotaSettings {
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
-    #[doc(hidden)]
     pub limit: i32,
     /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
-    #[doc(hidden)]
     pub offset: i32,
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::QuotaPeriodType>,
 }
 impl QuotaSettings {

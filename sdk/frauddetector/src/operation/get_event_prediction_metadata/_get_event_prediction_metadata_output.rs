@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventPredictionMetadataOutput {
     /// <p> The event ID. </p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p> The event type associated with the detector specified for this prediction. </p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p> The entity ID. </p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p> The entity type. </p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
-    #[doc(hidden)]
     pub event_timestamp: ::std::option::Option<::std::string::String>,
     /// <p> The detector ID. </p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p> The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the detector version. </p>
-    #[doc(hidden)]
     pub detector_version_status: ::std::option::Option<::std::string::String>,
     /// <p> A list of event variables that influenced the prediction scores. </p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::vec::Vec<crate::types::EventVariableSummary>>,
     /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatedRule>>,
     /// <p> The execution mode of the rule used for evaluating variable values. </p>
-    #[doc(hidden)]
     pub rule_execution_mode: ::std::option::Option<crate::types::RuleExecutionMode>,
     /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Model versions that were evaluated for generating predictions. </p>
-    #[doc(hidden)]
     pub evaluated_model_versions: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatedModelVersion>>,
     /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
-    #[doc(hidden)]
     pub evaluated_external_models: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatedExternalModel>>,
     /// <p>The timestamp that defines when the prediction was generated. </p>
-    #[doc(hidden)]
     pub prediction_timestamp: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

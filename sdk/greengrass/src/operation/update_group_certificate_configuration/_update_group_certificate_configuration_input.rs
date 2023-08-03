@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationInput {
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGroupCertificateConfigurationInput {

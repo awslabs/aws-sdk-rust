@@ -9,11 +9,9 @@
 pub struct PatchFilter {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::PatchFilterKey>,
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PatchFilter {

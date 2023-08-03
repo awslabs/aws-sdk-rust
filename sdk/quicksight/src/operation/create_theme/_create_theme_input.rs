@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeInput {
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the theme.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
-    #[doc(hidden)]
     pub base_theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The theme configuration, which contains the theme display properties.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ThemeConfiguration>,
     /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThemeInput {

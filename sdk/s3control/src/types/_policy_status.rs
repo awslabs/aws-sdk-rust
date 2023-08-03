@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyStatus {
     /// <p></p>
-    #[doc(hidden)]
     pub is_public: bool,
 }
 impl PolicyStatus {

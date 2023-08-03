@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAttachmentInput {
     /// <p>The ID of a core network for the VPC attachment.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subnet ARN of the VPC attachment.</p>
-    #[doc(hidden)]
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Options for the VPC attachment.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>The key-value tags associated with the request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcAttachmentInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantIntegrationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
-    #[doc(hidden)]
     pub topic_integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssistantIntegrationConfiguration {

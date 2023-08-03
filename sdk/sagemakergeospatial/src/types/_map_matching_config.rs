@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapMatchingConfig {
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
-    #[doc(hidden)]
     pub id_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Y-attribute</p>
-    #[doc(hidden)]
     pub y_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the X-attribute</p>
-    #[doc(hidden)]
     pub x_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the timestamp attribute.</p>
-    #[doc(hidden)]
     pub timestamp_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl MapMatchingConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
-    #[doc(hidden)]
     pub vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,
 }

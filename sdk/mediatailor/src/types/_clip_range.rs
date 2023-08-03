@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClipRange {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
-    #[doc(hidden)]
     pub end_offset_millis: i64,
 }
 impl ClipRange {

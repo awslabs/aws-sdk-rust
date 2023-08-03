@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEntitlementInput {
     /// <p>The name of the entitlement.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEntitlementInput {

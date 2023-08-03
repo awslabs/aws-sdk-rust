@@ -5,10 +5,8 @@
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl TagResourceInput {

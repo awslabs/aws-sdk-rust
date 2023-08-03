@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesInput {
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tables to reload.</p>
-    #[doc(hidden)]
     pub tables_to_reload: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
-    #[doc(hidden)]
     pub reload_option: ::std::option::Option<crate::types::ReloadOptionValue>,
 }
 impl ReloadReplicationTablesInput {

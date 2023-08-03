@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The value that you want to include in the filter.</p>
-    #[doc(hidden)]
     pub dimension_value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply.</p>
-    #[doc(hidden)]
     pub filter_operation: ::std::option::Option<crate::types::FilterOperation>,
 }
 impl Filter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoutingControlOutput {
     /// <p>The routing control that is created.</p>
-    #[doc(hidden)]
     pub routing_control: ::std::option::Option<crate::types::RoutingControl>,
     _request_id: Option<String>,
 }

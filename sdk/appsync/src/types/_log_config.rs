@@ -19,13 +19,10 @@ pub struct LogConfig {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
-    #[doc(hidden)]
     pub exclude_verbose_content: bool,
 }
 impl LogConfig {

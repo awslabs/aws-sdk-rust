@@ -12,7 +12,6 @@ pub struct AutoExportPolicy {
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoExportPolicy {

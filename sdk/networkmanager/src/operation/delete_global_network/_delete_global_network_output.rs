@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalNetworkOutput {
     /// <p>Information about the global network.</p>
-    #[doc(hidden)]
     pub global_network: ::std::option::Option<crate::types::GlobalNetwork>,
     _request_id: Option<String>,
 }

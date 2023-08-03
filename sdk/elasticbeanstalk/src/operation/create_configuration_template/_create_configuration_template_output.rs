@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationTemplateOutput {
     /// <p>The name of the solution stack this configuration set uses.</p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes this configuration set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
@@ -29,16 +23,12 @@ pub struct CreateConfigurationTemplateOutput {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     _request_id: Option<String>,
 }

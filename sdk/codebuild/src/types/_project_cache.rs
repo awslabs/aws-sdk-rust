@@ -10,14 +10,12 @@ pub struct ProjectCache {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CacheType>,
     /// <p>Information about the cache location: </p>
     /// <ul>
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
     /// <p>Possible values are:</p>
@@ -52,7 +50,6 @@ pub struct ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
 }
 impl ProjectCache {

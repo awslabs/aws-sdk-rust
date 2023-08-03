@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
-    #[doc(hidden)]
     pub update_routing_control_state_entries: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRoutingControlStateEntry>>,
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[doc(hidden)]
     pub safety_rules_to_override: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoutingControlStatesInput {

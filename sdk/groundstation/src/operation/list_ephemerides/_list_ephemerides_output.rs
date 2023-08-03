@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEphemeridesOutput {
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of ephemerides.</p>
-    #[doc(hidden)]
     pub ephemerides: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>,
     _request_id: Option<String>,
 }

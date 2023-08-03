@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCanaryOutput {
     /// <p>The full details about the canary you have created.</p>
-    #[doc(hidden)]
     pub canary: ::std::option::Option<crate::types::Canary>,
     _request_id: Option<String>,
 }

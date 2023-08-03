@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageOutput {
     /// <p>Basic information about an OpenSearch Service package.</p>
-    #[doc(hidden)]
     pub package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }

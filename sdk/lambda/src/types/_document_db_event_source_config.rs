@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentDbEventSourceConfig {
     /// <p> The name of the database to consume within the DocumentDB cluster. </p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections. </p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p> Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. </p>
-    #[doc(hidden)]
     pub full_document: ::std::option::Option<crate::types::FullDocument>,
 }
 impl DocumentDbEventSourceConfig {

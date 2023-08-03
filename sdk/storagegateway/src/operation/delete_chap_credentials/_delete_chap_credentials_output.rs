@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
-    #[doc(hidden)]
     pub initiator_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

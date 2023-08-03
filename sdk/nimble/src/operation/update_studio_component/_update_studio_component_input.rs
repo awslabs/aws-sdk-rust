@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    #[doc(hidden)]
     pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
-    #[doc(hidden)]
     pub initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
-    #[doc(hidden)]
     pub script_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     /// <p>The studio component ID.</p>
-    #[doc(hidden)]
     pub studio_component_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
-    #[doc(hidden)]
     pub subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
     /// <p>The type of the studio component.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StudioComponentType>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    #[doc(hidden)]
     pub secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    #[doc(hidden)]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStudioComponentInput {

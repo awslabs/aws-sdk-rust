@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
-    #[doc(hidden)]
     pub database_url: ::std::option::Option<::std::string::String>,
     /// <p> A name for the associated Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
-    #[doc(hidden)]
     pub data_api_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
-    #[doc(hidden)]
     pub is_redshift_serverless: bool,
     /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Amazon Redshift workgroup.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Amazon Redshift database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftConnectorProfileProperties {

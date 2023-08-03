@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousExportDescription {
     /// <p>The unique ID assigned to this export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the export. Can be one of the following values:</p>
     /// <ul>
@@ -17,7 +16,6 @@ pub struct ContinuousExportDescription {
     /// <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li>
     /// <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ContinuousExportStatus>,
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
@@ -38,25 +36,19 @@ pub struct ContinuousExportDescription {
     /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>An object which describes how the data is stored.</p>
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContinuousExportDescription {

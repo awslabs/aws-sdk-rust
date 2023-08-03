@@ -4,41 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSourceServerActionOutput {
     /// <p>Source server post migration custom action ID.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action name.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action document identifier.</p>
-    #[doc(hidden)]
     pub document_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action order.</p>
-    #[doc(hidden)]
     pub order: i32,
     /// <p>Source server post migration custom action document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action active status.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>Source server post migration custom action timeout in seconds.</p>
-    #[doc(hidden)]
     pub timeout_seconds: i32,
     /// <p>Source server post migration custom action must succeed for cutover.</p>
-    #[doc(hidden)]
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Source server post migration custom action parameters.</p>
-    #[doc(hidden)]
     pub parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     /// <p>Source server post migration custom action external parameters.</p>
-    #[doc(hidden)]
     pub external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     /// <p>Source server post migration custom action description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action category.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     _request_id: Option<String>,
 }

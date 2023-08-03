@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsSandboxPhoneNumber {
     /// <p>The destination phone number.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The destination phone number's verification status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>,
 }
 impl SmsSandboxPhoneNumber {

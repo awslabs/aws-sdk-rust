@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryInput {
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
-    #[doc(hidden)]
     pub later_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
-    #[doc(hidden)]
     pub earlier_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
-    #[doc(hidden)]
     pub chronological_order: ::std::option::Option<crate::types::ChronologicalOrder>,
     /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceConfigHistoryInput {

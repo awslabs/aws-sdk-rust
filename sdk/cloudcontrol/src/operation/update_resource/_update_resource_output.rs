@@ -5,7 +5,6 @@
 pub struct UpdateResourceOutput {
     /// <p>Represents the current status of the resource update request.</p>
     /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    #[doc(hidden)]
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
 }

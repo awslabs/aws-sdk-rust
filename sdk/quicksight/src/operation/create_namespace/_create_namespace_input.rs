@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to use to describe the new namespace.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    #[doc(hidden)]
     pub identity_store: ::std::option::Option<crate::types::IdentityStore>,
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNamespaceInput {

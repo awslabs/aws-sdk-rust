@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowStepGroupsOutput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of step groups in a migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_step_groups_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLongTermPricingOutput {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    #[doc(hidden)]
     pub long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

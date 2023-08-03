@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadInput {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the multipart upload. </p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
 }
 impl CompleteMultipartReadSetUploadInput {

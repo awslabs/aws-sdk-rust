@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
-    #[doc(hidden)]
     pub app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
-    #[doc(hidden)]
     pub initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

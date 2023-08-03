@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChangeSetInput {

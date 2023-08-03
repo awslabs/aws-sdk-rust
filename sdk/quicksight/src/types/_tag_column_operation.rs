@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>,
 }
 impl TagColumnOperation {

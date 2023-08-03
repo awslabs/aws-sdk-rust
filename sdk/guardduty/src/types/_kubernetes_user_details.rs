@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    #[doc(hidden)]
     pub uid: ::std::option::Option<::std::string::String>,
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    #[doc(hidden)]
     pub session_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KubernetesUserDetails {

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyInput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    #[doc(hidden)]
     pub ssh_public_key_body: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportSshPublicKeyInput {

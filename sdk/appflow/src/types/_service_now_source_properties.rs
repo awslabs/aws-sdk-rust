@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowSourceProperties {
     /// <p> The object specified in the ServiceNow flow source. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowSourceProperties {

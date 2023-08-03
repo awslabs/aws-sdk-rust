@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>Maximum value supported by the field.</p>
-    #[doc(hidden)]
     pub maximum: f64,
     /// <p>Minimum value supported by the field.</p>
-    #[doc(hidden)]
     pub minimum: f64,
 }
 impl Range {

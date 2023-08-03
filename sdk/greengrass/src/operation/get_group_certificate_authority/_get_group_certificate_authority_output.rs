@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityOutput {
     /// The ARN of the certificate authority for the group.
-    #[doc(hidden)]
     pub group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the certificate authority for the group.
-    #[doc(hidden)]
     pub group_certificate_authority_id: ::std::option::Option<::std::string::String>,
     /// The PEM encoded certificate for the group.
-    #[doc(hidden)]
     pub pem_encoded_certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

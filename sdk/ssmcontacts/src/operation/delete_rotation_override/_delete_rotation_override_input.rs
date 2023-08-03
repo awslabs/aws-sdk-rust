@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
-    #[doc(hidden)]
     pub rotation_override_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRotationOverrideInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> (Optional) The pagination token that's returned by a previous request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
 }
 impl ListResourcesAssociatedToCustomLineItemInput {

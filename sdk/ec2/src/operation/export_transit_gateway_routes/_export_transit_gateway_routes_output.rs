@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesOutput {
     /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

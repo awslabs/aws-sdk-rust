@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    #[doc(hidden)]
     pub stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
     _request_id: Option<String>,
 }

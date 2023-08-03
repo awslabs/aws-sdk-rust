@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolvedAttributes {
     /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>The problem type.</p>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    #[doc(hidden)]
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ResolvedAttributes {

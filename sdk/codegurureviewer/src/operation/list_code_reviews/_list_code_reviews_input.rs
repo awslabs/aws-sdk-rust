@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCodeReviewsInput {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    #[doc(hidden)]
     pub provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
@@ -14,19 +13,14 @@ pub struct ListCodeReviewsInput {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of code reviews to list in the response.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCodeReviewsInput {

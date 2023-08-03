@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
-    #[doc(hidden)]
     pub input_security_group_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
-    #[doc(hidden)]
     pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
 }
 impl UpdateInputSecurityGroupInput {

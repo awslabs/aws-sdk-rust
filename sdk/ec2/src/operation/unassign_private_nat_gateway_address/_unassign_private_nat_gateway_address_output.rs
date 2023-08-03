@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignPrivateNatGatewayAddressOutput {
     /// <p>The ID of the NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the NAT gateway IP addresses.</p>
-    #[doc(hidden)]
     pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     _request_id: Option<String>,
 }

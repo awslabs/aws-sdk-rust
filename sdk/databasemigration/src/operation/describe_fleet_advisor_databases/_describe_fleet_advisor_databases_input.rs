@@ -13,13 +13,10 @@ pub struct DescribeFleetAdvisorDatabasesInput {
     /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetAdvisorDatabasesInput {

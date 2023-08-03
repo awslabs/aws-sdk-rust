@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupSelectionInput {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
-    #[doc(hidden)]
     pub backup_selection: ::std::option::Option<crate::types::BackupSelection>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupSelectionInput {

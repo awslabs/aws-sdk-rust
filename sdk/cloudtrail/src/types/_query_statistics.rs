@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of results returned.</p>
-    #[doc(hidden)]
     pub results_count: ::std::option::Option<i32>,
     /// <p>The total number of results returned by a query.</p>
-    #[doc(hidden)]
     pub total_results_count: ::std::option::Option<i32>,
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    #[doc(hidden)]
     pub bytes_scanned: ::std::option::Option<i64>,
 }
 impl QueryStatistics {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataValue {
     /// <p>A Boolean value.</p>
-    #[doc(hidden)]
     pub boolean_value: ::std::option::Option<bool>,
     /// <p>A double value.</p>
-    #[doc(hidden)]
     pub double_value: ::std::option::Option<f64>,
     /// <p>An integer value.</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
     /// <p>A long value.</p>
-    #[doc(hidden)]
     pub long_value: ::std::option::Option<i64>,
     /// <p>A string value.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of multiple values.</p>
-    #[doc(hidden)]
     pub list_value: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    #[doc(hidden)]
     pub map_value: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>,
     /// <p>A value that relates a component to another component.</p>
-    #[doc(hidden)]
     pub relationship_value: ::std::option::Option<crate::types::RelationshipValue>,
     /// <p>An expression that produces the value.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
 }
 impl DataValue {

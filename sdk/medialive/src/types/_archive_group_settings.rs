@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
-    #[doc(hidden)]
     pub archive_cdn_settings: ::std::option::Option<crate::types::ArchiveCdnSettings>,
     /// A directory and base filename where archive files should be written.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
     /// Number of seconds to write to archive file before closing and starting a new one.
-    #[doc(hidden)]
     pub rollover_interval: ::std::option::Option<i32>,
 }
 impl ArchiveGroupSettings {

@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIntentInput {
     /// <p>The unique identifier of the intent to update.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description of the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>New utterances used to invoke the intent.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::DialogCodeHookSettings>,
     /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
-    #[doc(hidden)]
     pub fulfillment_code_hook: ::std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     /// <p>A new list of slots and their priorities that are contained by the intent.</p>
-    #[doc(hidden)]
     pub slot_priorities: ::std::option::Option<::std::vec::Vec<crate::types::SlotPriority>>,
     /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    #[doc(hidden)]
     pub intent_confirmation_setting: ::std::option::Option<crate::types::IntentConfirmationSetting>,
     /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
-    #[doc(hidden)]
     pub intent_closing_setting: ::std::option::Option<crate::types::IntentClosingSetting>,
     /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>The identifier of the bot that contains the intent.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
-    #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
 }
 impl UpdateIntentInput {

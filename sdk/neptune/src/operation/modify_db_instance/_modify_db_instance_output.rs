@@ -5,7 +5,6 @@
 pub struct ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
-    #[doc(hidden)]
     pub db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSuspendUserOutput {
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    #[doc(hidden)]
     pub user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
     _request_id: Option<String>,
 }

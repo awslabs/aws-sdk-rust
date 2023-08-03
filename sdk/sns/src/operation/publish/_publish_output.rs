@@ -6,11 +6,9 @@
 pub struct PublishOutput {
     /// <p>Unique identifier assigned to the published message.</p>
     /// <p>Length Constraint: Maximum 100 characters</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
-    #[doc(hidden)]
     pub sequence_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

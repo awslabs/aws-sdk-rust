@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorProfileProperties {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
-    #[doc(hidden)]
     pub profile_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,
 }
 impl CustomConnectorProfileProperties {

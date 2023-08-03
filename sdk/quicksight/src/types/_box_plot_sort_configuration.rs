@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotSortConfiguration {
     /// <p>The sort configuration of a group by fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The pagination configuration of a table visual or box plot.</p>
-    #[doc(hidden)]
     pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl BoxPlotSortConfiguration {

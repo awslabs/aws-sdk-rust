@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEc2DeepInspectionConfigurationOutput {
     /// <p>The current Amazon Inspector deep inspection custom paths for your account.</p>
-    #[doc(hidden)]
     pub package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current Amazon Inspector deep inspection custom paths for the organization.</p>
-    #[doc(hidden)]
     pub org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of Amazon Inspector deep inspection in your account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>,
     /// <p>An error message explaining why new Amazon Inspector deep inspection custom paths could not be added.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

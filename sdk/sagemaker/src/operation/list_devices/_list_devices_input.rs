@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to select.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Select fleets where the job was updated after X</p>
-    #[doc(hidden)]
     pub latest_heartbeat_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInput {

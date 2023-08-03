@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapInput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The provider name you want to use for attribute mappings.</p>
-    #[doc(hidden)]
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
-    #[doc(hidden)]
     pub use_defaults: ::std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags.</p>
-    #[doc(hidden)]
     pub principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SetPrincipalTagAttributeMapInput {

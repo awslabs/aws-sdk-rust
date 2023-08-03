@@ -14,7 +14,6 @@ pub struct AwsCodeBuildProjectSource {
     /// <li> <p> <code>NO_SOURCE</code> - The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
@@ -29,13 +28,10 @@ pub struct AwsCodeBuildProjectSource {
     /// <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p> </li>
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Git clone depth for the build project.</p>
-    #[doc(hidden)]
     pub git_clone_depth: i32,
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
-    #[doc(hidden)]
     pub insecure_ssl: bool,
 }
 impl AwsCodeBuildProjectSource {

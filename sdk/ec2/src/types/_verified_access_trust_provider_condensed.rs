@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessTrustProviderCondensed {
     /// <p>The ID of the trust provider.</p>
-    #[doc(hidden)]
     pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of trust provider.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of trust provider (user- or device-based).</p>
-    #[doc(hidden)]
     pub trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     /// <p>The type of user-based trust provider.</p>
-    #[doc(hidden)]
     pub user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,
     /// <p>The type of device-based trust provider.</p>
-    #[doc(hidden)]
     pub device_trust_provider_type: ::std::option::Option<crate::types::DeviceTrustProviderType>,
 }
 impl VerifiedAccessTrustProviderCondensed {

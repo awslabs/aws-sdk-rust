@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
-    #[doc(hidden)]
     pub attached_eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<f64>,
     /// <p>The client subnet to which this broker node belongs.</p>
-    #[doc(hidden)]
     pub client_subnet: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) of the client.</p>
-    #[doc(hidden)]
     pub client_vpc_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
-    #[doc(hidden)]
     pub current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     /// <p>Endpoints for accessing the broker.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BrokerNodeInfo {

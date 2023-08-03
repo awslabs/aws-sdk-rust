@@ -10,13 +10,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    #[doc(hidden)]
     pub years: i32,
 }
 impl DefaultRetention {

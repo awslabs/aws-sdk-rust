@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParallelDataInput {
     /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    #[doc(hidden)]
     pub parallel_data_config: ::std::option::Option<crate::types::ParallelDataConfig>,
     /// <p>The encryption key used to encrypt this object.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateParallelDataInput {

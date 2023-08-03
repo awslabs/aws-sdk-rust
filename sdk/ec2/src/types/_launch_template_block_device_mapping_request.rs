@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateBlockDeviceMappingRequest {
     /// <p>The device name (for example, /dev/sdh or xvdh).</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for ephemeral0 and ephemeral1. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest>,
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateBlockDeviceMappingRequest {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    #[doc(hidden)]
     pub add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Removes a subnet ARN from the attachment.</p>
-    #[doc(hidden)]
     pub remove_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional options for updating the VPC attachment. </p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl UpdateVpcAttachmentInput {

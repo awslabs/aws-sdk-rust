@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
@@ -20,16 +19,12 @@ pub struct OrganizationConformancePackStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrganizationResourceStatus>,
     /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePackStatus {

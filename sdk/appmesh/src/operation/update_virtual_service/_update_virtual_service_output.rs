@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
-    #[doc(hidden)]
     pub virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,
 }

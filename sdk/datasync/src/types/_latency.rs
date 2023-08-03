@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Latency {
     /// <p>Peak latency for read operations.</p>
-    #[doc(hidden)]
     pub read: ::std::option::Option<f64>,
     /// <p>Peak latency for write operations.</p>
-    #[doc(hidden)]
     pub write: ::std::option::Option<f64>,
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
-    #[doc(hidden)]
     pub other: ::std::option::Option<f64>,
 }
 impl Latency {

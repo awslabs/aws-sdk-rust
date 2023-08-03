@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSource {
     /// <p>Location information for the manifest file.</p>
-    #[doc(hidden)]
     pub ground_truth_manifest: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }
 impl DatasetSource {

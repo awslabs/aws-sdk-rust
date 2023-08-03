@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProjectInput {
     /// <p>The name or ARN of the project that you want to see the details of.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
 }
 impl GetProjectInput {

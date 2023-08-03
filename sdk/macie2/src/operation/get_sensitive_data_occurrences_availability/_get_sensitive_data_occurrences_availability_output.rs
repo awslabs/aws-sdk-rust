@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::AvailabilityCode>,
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>>,
     _request_id: Option<String>,
 }

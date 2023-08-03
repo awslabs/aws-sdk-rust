@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeSource {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -42,10 +40,8 @@ pub struct DataLakeSource {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The log status for the Security Lake account.</p>
-    #[doc(hidden)]
     pub source_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
 }
 impl DataLakeSource {

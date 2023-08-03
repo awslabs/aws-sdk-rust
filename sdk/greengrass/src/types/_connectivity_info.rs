@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
-    #[doc(hidden)]
     pub host_address: ::std::option::Option<::std::string::String>,
     /// The ID of the connectivity information.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Metadata for this endpoint.
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// The port of the Greengrass core. Usually 8883.
-    #[doc(hidden)]
     pub port_number: ::std::option::Option<i32>,
 }
 impl ConnectivityInfo {

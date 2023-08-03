@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSessionsInput {
     /// <p>The token for the next set of results, or null if there are no more result. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Tags belonging to the session. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The origin of the request. </p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl ListSessionsInput {

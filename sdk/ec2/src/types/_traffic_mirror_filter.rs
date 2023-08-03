@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficMirrorFilter {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub ingress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub egress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>The description of the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrafficMirrorFilter {

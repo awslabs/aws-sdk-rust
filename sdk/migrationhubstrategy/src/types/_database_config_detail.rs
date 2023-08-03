@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseConfigDetail {
     /// <p> AWS Secrets Manager key that holds the credentials that you use to connect to a database. </p>
-    #[doc(hidden)]
     pub secret_name: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseConfigDetail {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioLifecycleConfigDetails {
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Studio Lifecycle Configuration.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
 }
 impl StudioLifecycleConfigDetails {

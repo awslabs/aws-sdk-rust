@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyNameQuery {
     /// <p>Text that begins a property's name.</p>
-    #[doc(hidden)]
     pub property_name_hint: ::std::option::Option<::std::string::String>,
 }
 impl PropertyNameQuery {

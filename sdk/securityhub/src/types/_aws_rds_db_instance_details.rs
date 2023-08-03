@@ -5,45 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbInstanceDetails {
     /// <p>The IAM roles associated with the DB instance.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceAssociatedRole>>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    #[doc(hidden)]
     pub db_instance_port: i32,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
     /// <p> <b>Oracle</b> </p>
     /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection: bool,
     /// <p>Specifies the connection endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint>,
     /// <p>Provides the name of the database engine to use for this DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
@@ -52,62 +40,44 @@ pub struct AwsRdsDbInstanceDetails {
     /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
     /// <li> <p>Aurora 5.6 or higher</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>Indicates when the DB instance was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::std::string::String>,
     /// <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
     /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>Specifies whether the DB instance is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the DB instance belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The ARN of the CloudWatch Logs log stream that receives the enhanced monitoring metrics data for the DB instance.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The master user name of the DB instance.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to initially allocate for the DB instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which to retain automated backups.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>A list of the DB security groups to assign to the DB instance.</p>
-    #[doc(hidden)]
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the DB parameter groups to assign to the DB instance.</p>
-    #[doc(hidden)]
     pub db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbParameterGroup>>,
     /// <p>The Availability Zone where the DB instance will be created.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Information about the subnet group that is associated with the DB instance.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::AwsRdsDbSubnetGroup>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the format <code>
@@ -119,86 +89,59 @@ pub struct AwsRdsDbInstanceDetails {
     /// </day></code>.</p>
     /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Changes to the DB instance that are currently pending.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::AwsRdsDbPendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>If this DB instance is a read replica, contains the identifier of the source DB instance.</p>
-    #[doc(hidden)]
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>List of identifiers of the read replicas associated with this DB instance.</p>
-    #[doc(hidden)]
     pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica.</p>
-    #[doc(hidden)]
     pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>License model information for this DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the provisioned IOPS (I/O operations per second) for this DB instance.</p>
-    #[doc(hidden)]
     pub iops: i32,
     /// <p>The list of option group memberships for this DB instance.</p>
-    #[doc(hidden)]
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbOptionGroupMembership>>,
     /// <p>The name of the character set that this DB instance is associated with.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>For a DB instance with multi-Availability Zone support, the name of the secondary Availability Zone.</p>
-    #[doc(hidden)]
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The status of a read replica. If the instance isn't a read replica, this is empty.</p>
-    #[doc(hidden)]
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbStatusInfo>>,
     /// <p>The storage type for the DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory domain membership records associated with the DB instance.</p>
-    #[doc(hidden)]
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: bool,
     /// <p>The interval, in seconds, between points when enhanced monitoring metrics are collected for the DB instance.</p>
-    #[doc(hidden)]
     pub monitoring_interval: i32,
     /// <p>The ARN for the IAM role that permits Amazon RDS to send enhanced monitoring metrics to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The order in which to promote an Aurora replica to the primary instance after a failure of the existing primary instance.</p>
-    #[doc(hidden)]
     pub promotion_tier: i32,
     /// <p>The time zone of the DB instance.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
-    #[doc(hidden)]
     pub performance_insights_enabled: bool,
     /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: i32,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     /// <p>Specifies the connection endpoint.</p>
-    #[doc(hidden)]
     pub listener_endpoint: ::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint>,
     /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
-    #[doc(hidden)]
     pub max_allocated_storage: i32,
 }
 impl AwsRdsDbInstanceDetails {

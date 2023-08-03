@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MountPoint {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>.</p>
-    #[doc(hidden)]
     pub source_volume: ::std::option::Option<::std::string::String>,
     /// <p>The path on the container to mount the host volume at.</p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
 }
 impl MountPoint {

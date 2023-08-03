@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceViolation {
     /// <p>The resource ID of the network interface.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub violating_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsEc2NetworkInterfaceViolation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,
 }

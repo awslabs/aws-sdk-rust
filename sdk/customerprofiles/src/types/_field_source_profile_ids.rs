@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldSourceProfileIds {
     /// <p>A unique identifier for the account number field to be merged. </p>
-    #[doc(hidden)]
     pub account_number: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the additional information field to be merged.</p>
-    #[doc(hidden)]
     pub additional_information: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
-    #[doc(hidden)]
     pub party_type: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the business name field to be merged.</p>
-    #[doc(hidden)]
     pub business_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the first name field to be merged.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the middle name field to be merged.</p>
-    #[doc(hidden)]
     pub middle_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the last name field to be merged.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the birthdate field to be merged.</p>
-    #[doc(hidden)]
     pub birth_date: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the gender field to be merged.</p>
-    #[doc(hidden)]
     pub gender: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the phone number field to be merged.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the mobile phone number field to be merged.</p>
-    #[doc(hidden)]
     pub mobile_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the home phone number field to be merged.</p>
-    #[doc(hidden)]
     pub home_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the business phone number field to be merged.</p>
-    #[doc(hidden)]
     pub business_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the email address field to be merged.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the personal email address field to be merged.</p>
-    #[doc(hidden)]
     pub personal_email_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
-    #[doc(hidden)]
     pub business_email_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the shipping address field to be merged.</p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the mailing address field to be merged.</p>
-    #[doc(hidden)]
     pub mailing_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the billing type field to be merged.</p>
-    #[doc(hidden)]
     pub billing_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the attributes field to be merged.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FieldSourceProfileIds {

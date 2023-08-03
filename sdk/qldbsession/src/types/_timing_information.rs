@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimingInformation {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
-    #[doc(hidden)]
     pub processing_time_milliseconds: i64,
 }
 impl TimingInformation {

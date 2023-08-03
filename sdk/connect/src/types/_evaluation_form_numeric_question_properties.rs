@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionProperties {
     /// <p>The minimum answer value.</p>
-    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The maximum answer value.</p>
-    #[doc(hidden)]
     pub max_value: i32,
     /// <p>The scoring options of the numeric question.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
     /// <p>The automation properties of the numeric question.</p>
-    #[doc(hidden)]
     pub automation: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
 }
 impl EvaluationFormNumericQuestionProperties {

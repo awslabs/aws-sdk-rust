@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    #[doc(hidden)]
     pub profile_times: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

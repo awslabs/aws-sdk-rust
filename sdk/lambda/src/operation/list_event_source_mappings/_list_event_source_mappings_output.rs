@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventSourceMappingsOutput {
     /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of event source mappings.</p>
-    #[doc(hidden)]
     pub event_source_mappings: ::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingConfiguration>>,
     _request_id: Option<String>,
 }

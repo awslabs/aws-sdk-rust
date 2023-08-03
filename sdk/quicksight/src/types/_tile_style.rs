@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TileStyle {
     /// <p>The border around a tile.</p>
-    #[doc(hidden)]
     pub border: ::std::option::Option<crate::types::BorderStyle>,
 }
 impl TileStyle {

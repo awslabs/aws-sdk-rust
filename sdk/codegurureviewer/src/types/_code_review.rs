@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeReview {
     /// <p>The name of the code review.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    #[doc(hidden)]
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The valid code review states are:</p>
     /// <ul>
@@ -26,37 +21,26 @@ pub struct CodeReview {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The reason for the state of the code review.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    #[doc(hidden)]
     pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of code review.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The pull request ID for the code review.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source code for the code review.</p>
-    #[doc(hidden)]
     pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    #[doc(hidden)]
     pub association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistics from the code review.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::Metrics>,
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    #[doc(hidden)]
     pub analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
-    #[doc(hidden)]
     pub config_file_state: ::std::option::Option<crate::types::ConfigFileState>,
 }
 impl CodeReview {

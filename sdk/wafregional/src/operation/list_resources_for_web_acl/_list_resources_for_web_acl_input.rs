@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesForWebAclInput {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ListResourcesForWebAclInput {

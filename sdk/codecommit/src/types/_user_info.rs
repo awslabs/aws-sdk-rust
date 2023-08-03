@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserInfo {
     /// <p>The name of the user who made the specified commit.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The email address associated with the user who made the commit, if any.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::std::string::String>,
 }
 impl UserInfo {

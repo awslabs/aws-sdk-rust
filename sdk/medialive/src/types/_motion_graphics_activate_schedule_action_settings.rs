@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionGraphicsActivateScheduleActionSettings {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
     /// Key used to extract the password from EC2 Parameter store
-    #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
     /// URI of the HTML5 content to be rendered into the live stream.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// Documentation update needed
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl MotionGraphicsActivateScheduleActionSettings {

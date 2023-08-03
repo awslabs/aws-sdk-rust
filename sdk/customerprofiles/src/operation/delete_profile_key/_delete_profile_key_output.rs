@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProfileKeyOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

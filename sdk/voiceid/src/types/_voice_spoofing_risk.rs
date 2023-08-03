@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceSpoofingRisk {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
-    #[doc(hidden)]
     pub risk_score: ::std::option::Option<i32>,
 }
 impl VoiceSpoofingRisk {

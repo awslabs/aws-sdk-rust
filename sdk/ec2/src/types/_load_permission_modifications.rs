@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadPermissionModifications {
     /// <p>The load permissions to add.</p>
-    #[doc(hidden)]
     pub add: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
     /// <p>The load permissions to remove.</p>
-    #[doc(hidden)]
     pub remove: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
 }
 impl LoadPermissionModifications {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMemberEc2DeepInspectionStatusOutput {
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts. </p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why. </p>
-    #[doc(hidden)]
     pub failed_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
     _request_id: Option<String>,
 }

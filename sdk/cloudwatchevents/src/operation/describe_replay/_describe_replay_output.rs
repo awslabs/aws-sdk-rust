@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplayOutput {
     /// <p>The name of the replay.</p>
-    #[doc(hidden)]
     pub replay_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replay.</p>
-    #[doc(hidden)]
     pub replay_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replay.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replay.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplayState>,
     /// <p>The reason that the replay is in the current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the archive events were replayed from.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::ReplayDestination>,
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    #[doc(hidden)]
     pub event_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    #[doc(hidden)]
     pub event_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the event was last replayed.</p>
-    #[doc(hidden)]
     pub event_last_replayed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay started.</p>
-    #[doc(hidden)]
     pub replay_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay stopped.</p>
-    #[doc(hidden)]
     pub replay_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

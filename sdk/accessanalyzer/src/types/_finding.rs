@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ID of the finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The external principal that access to a resource within the zone of trust.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource that an external principal has access to.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
-    #[doc(hidden)]
     pub is_public: ::std::option::Option<bool>,
     /// <p>The type of the resource identified in the finding.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time at which the finding was generated.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the resource was analyzed.</p>
-    #[doc(hidden)]
     pub analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the finding.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>An error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
 }
 impl Finding {

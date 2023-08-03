@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestGridSessionInput {
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ID associated with this session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
-    #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTestGridSessionInput {

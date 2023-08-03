@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p>The ID of the project.</p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the portal that the project is in.</p>
-    #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
     /// <p>The project's description.</p>
-    #[doc(hidden)]
     pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>The date the project was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub project_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub project_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

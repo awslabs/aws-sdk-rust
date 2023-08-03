@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    #[doc(hidden)]
     pub source_commit: ::std::option::Option<::std::string::String>,
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    #[doc(hidden)]
     pub destination_commit: ::std::option::Option<::std::string::String>,
     /// <p>The SHA of the merge base of a commit.</p>
-    #[doc(hidden)]
     pub merge_base_commit: ::std::option::Option<::std::string::String>,
 }
 impl CommitDiffSourceCodeType {

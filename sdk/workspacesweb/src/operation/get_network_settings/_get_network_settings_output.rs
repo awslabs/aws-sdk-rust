@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkSettingsOutput {
     /// <p>The network settings.</p>
-    #[doc(hidden)]
     pub network_settings: ::std::option::Option<crate::types::NetworkSettings>,
     _request_id: Option<String>,
 }

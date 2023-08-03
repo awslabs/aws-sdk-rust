@@ -7,10 +7,8 @@ pub struct UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action initiates. </p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -22,7 +20,6 @@ pub struct UpdateUserAttributesInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateUserAttributesInput {

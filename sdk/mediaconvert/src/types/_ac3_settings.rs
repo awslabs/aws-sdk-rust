@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ac3Settings {
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    #[doc(hidden)]
     pub bitstream_mode: ::std::option::Option<crate::types::Ac3BitstreamMode>,
     /// Dolby Digital coding mode. Determines number of channels.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::Ac3CodingMode>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through.
-    #[doc(hidden)]
     pub dialnorm: ::std::option::Option<i32>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    #[doc(hidden)]
     pub dynamic_range_compression_line: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
-    #[doc(hidden)]
     pub dynamic_range_compression_profile: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    #[doc(hidden)]
     pub dynamic_range_compression_rf: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
-    #[doc(hidden)]
     pub lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    #[doc(hidden)]
     pub metadata_control: ::std::option::Option<crate::types::Ac3MetadataControl>,
     /// This value is always 48000. It represents the sample rate in Hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i32>,
 }
 impl Ac3Settings {

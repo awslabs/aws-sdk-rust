@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMlModelInput {

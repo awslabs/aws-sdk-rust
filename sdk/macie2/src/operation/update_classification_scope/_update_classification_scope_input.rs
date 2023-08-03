@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClassificationScopeInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
 }
 impl UpdateClassificationScopeInput {

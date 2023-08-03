@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VCpuCountRequest {
     /// <p>The minimum number of vCPUs.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of vCPUs.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl VCpuCountRequest {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The basic credentials that are required for the authentication of the user.</p>
-    #[doc(hidden)]
     pub basic: ::std::option::Option<crate::types::BasicAuthCredentials>,
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
-    #[doc(hidden)]
     pub oauth2: ::std::option::Option<crate::types::OAuth2Credentials>,
     /// <p>The API keys required for the authentication of the user.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<crate::types::ApiKeyCredentials>,
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
-    #[doc(hidden)]
     pub custom: ::std::option::Option<crate::types::CustomAuthCredentials>,
 }
 impl CustomConnectorProfileCredentials {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The current notification state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PropertyNotificationState>,
 }
 impl PropertyNotification {

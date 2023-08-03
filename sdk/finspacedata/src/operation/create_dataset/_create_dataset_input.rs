@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Display title for a FinSpace Dataset.</p>
-    #[doc(hidden)]
     pub dataset_title: ::std::option::Option<::std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kind: ::std::option::Option<crate::types::DatasetKind>,
     /// <p>Description of a Dataset.</p>
-    #[doc(hidden)]
     pub dataset_description: ::std::option::Option<::std::string::String>,
     /// <p>Contact information for a Dataset owner.</p>
-    #[doc(hidden)]
     pub owner_info: ::std::option::Option<crate::types::DatasetOwnerInfo>,
     /// <p>Permission group parameters for Dataset permissions.</p>
-    #[doc(hidden)]
     pub permission_group_params: ::std::option::Option<crate::types::PermissionGroupParams>,
     /// <p>The unique resource identifier for a Dataset.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<crate::types::SchemaUnion>,
 }
 impl CreateDatasetInput {

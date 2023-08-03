@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentMetadataInput {
     /// <p>The name of the change template for which a version's metadata is to be updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of a change template in which to update approval metadata.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The change template review details to update.</p>
-    #[doc(hidden)]
     pub document_reviews: ::std::option::Option<crate::types::DocumentReviews>,
 }
 impl UpdateDocumentMetadataInput {

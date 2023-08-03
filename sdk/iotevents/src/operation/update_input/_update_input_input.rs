@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputInput {
     /// <p>The name of the input you want to update.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the input.</p>
-    #[doc(hidden)]
     pub input_description: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the input.</p>
-    #[doc(hidden)]
     pub input_definition: ::std::option::Option<crate::types::InputDefinition>,
 }
 impl UpdateInputInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    #[doc(hidden)]
     pub key_phrases_detection_job_properties: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
     _request_id: Option<String>,
 }

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetCacheParameterGroupInput {
     /// <p>The name of the cache parameter group to reset.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    #[doc(hidden)]
     pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl ResetCacheParameterGroupInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReportDefinitionOutput {
     /// <p>Whether the deletion was successful or not.</p>
-    #[doc(hidden)]
     pub response_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

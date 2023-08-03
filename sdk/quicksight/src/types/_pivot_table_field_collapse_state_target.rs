@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldCollapseStateTarget {
     /// <p>The field ID of the pivot table that the collapse state needs to be set to.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The data path of the pivot table's header. Used to set the collapse state.</p>
-    #[doc(hidden)]
     pub field_data_path_values: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
 }
 impl PivotTableFieldCollapseStateTarget {

@@ -6,41 +6,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryResultItem {
     /// <p>The identifier for the query result.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::QueryResultType>,
     /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::QueryResultFormat>,
     /// <p>One or more additional fields/attributes associated with the query result.</p>
-    #[doc(hidden)]
     pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     /// <p>The identifier for the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the document. Contains the text of the title and information for highlighting the relevant terms in the title.</p>
-    #[doc(hidden)]
     pub document_title: ::std::option::Option<crate::types::TextWithHighlights>,
     /// <p>An extract of the text in the document. Contains information about highlighting the relevant terms in the excerpt.</p>
-    #[doc(hidden)]
     pub document_excerpt: ::std::option::Option<crate::types::TextWithHighlights>,
     /// <p>The URI of the original location of the document.</p>
-    #[doc(hidden)]
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    #[doc(hidden)]
     pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
-    #[doc(hidden)]
     pub score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
     /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    #[doc(hidden)]
     pub feedback_token: ::std::option::Option<::std::string::String>,
     /// <p>An excerpt from a table within a document.</p>
-    #[doc(hidden)]
     pub table_excerpt: ::std::option::Option<crate::types::TableExcerpt>,
 }
 impl QueryResultItem {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
     /// <p>The default hash algorithm that is used in a code signing job.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl HashAlgorithmOptions {

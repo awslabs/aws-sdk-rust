@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SnapshotAsset {
     /// <p>The size of the Amazon S3 object that is the object.</p>
-    #[doc(hidden)]
     pub size: f64,
 }
 impl S3SnapshotAsset {

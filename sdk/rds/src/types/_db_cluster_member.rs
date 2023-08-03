@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
-    #[doc(hidden)]
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
 }
 impl DbClusterMember {

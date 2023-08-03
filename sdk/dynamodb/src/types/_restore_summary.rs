@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    #[doc(hidden)]
     pub source_backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    #[doc(hidden)]
     pub source_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Point in time or source backup time.</p>
-    #[doc(hidden)]
     pub restore_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates if a restore is in progress or not.</p>
-    #[doc(hidden)]
     pub restore_in_progress: ::std::option::Option<bool>,
 }
 impl RestoreSummary {

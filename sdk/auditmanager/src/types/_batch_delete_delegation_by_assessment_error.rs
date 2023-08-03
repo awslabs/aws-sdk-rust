@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentError {
     /// <p> The identifier for the delegation. </p>
-    #[doc(hidden)]
     pub delegation_id: ::std::option::Option<::std::string::String>,
     /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDelegationByAssessmentError {

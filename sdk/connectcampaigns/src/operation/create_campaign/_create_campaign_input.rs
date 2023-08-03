@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// The name of an Amazon Connect Campaign name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
     /// The possible types of dialer config parameters
-    #[doc(hidden)]
     pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
     /// The configuration used for outbound calls.
-    #[doc(hidden)]
     pub outbound_call_config: ::std::option::Option<crate::types::OutboundCallConfig>,
     /// Tag map with key and value.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCampaignInput {

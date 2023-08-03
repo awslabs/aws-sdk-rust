@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonIssue {
     /// <p>A code that describes the type of issue.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::AddonIssueCode>,
     /// <p>A message that provides details about the issue and what might cause it.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource IDs of the issue.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddonIssue {

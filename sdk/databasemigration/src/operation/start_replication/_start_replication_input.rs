@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationInput {
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The replication type.</p>
-    #[doc(hidden)]
     pub start_replication_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    #[doc(hidden)]
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
-    #[doc(hidden)]
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    #[doc(hidden)]
     pub cdc_stop_position: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationInput {

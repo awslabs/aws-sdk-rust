@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchJobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the job dependency.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BatchJobDependencyType>,
 }
 impl BatchJobDependency {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>,
     _request_id: Option<String>,
 }

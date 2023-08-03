@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNode {
     /// <p>A customer-specified identifier to track this reservation.</p>
-    #[doc(hidden)]
     pub reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the reserved node offering to purchase.</p>
-    #[doc(hidden)]
     pub reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the reserved nodes.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The time the reservation started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this reserved node.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The number of nodes that have been reserved.</p>
-    #[doc(hidden)]
     pub node_count: i32,
     /// <p>The offering type of this reserved node.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the reserved node.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved node.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ReservedNode {

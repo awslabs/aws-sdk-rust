@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
     pub two_way_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePhoneNumberInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesOutput {
     /// The ARN of the flow that these VPC interfaces were added to.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The details of the newly added VPC interfaces.
-    #[doc(hidden)]
     pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
     _request_id: Option<String>,
 }

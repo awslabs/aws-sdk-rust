@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
-    #[doc(hidden)]
     pub disable_ssl: bool,
 }
 impl SslProperties {

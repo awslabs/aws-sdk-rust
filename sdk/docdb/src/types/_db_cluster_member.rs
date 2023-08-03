@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
-    #[doc(hidden)]
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
 }
 impl DbClusterMember {

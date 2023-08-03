@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hsm {
     /// <p>The Availability Zone that contains the HSM.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
-    #[doc(hidden)]
     pub eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
-    #[doc(hidden)]
     pub eni_ip: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's identifier (ID).</p>
-    #[doc(hidden)]
     pub hsm_id: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::HsmState>,
     /// <p>A description of the HSM's state.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
 }
 impl Hsm {

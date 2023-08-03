@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateS3ResourcesOutput {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
-    #[doc(hidden)]
     pub failed_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }

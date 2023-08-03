@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlayerLatencyPolicy {
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
-    #[doc(hidden)]
     pub maximum_individual_player_latency_milliseconds: ::std::option::Option<i32>,
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
-    #[doc(hidden)]
     pub policy_duration_seconds: ::std::option::Option<i32>,
 }
 impl PlayerLatencyPolicy {

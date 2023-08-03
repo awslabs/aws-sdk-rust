@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationS3KeyFilterRule {
     /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {

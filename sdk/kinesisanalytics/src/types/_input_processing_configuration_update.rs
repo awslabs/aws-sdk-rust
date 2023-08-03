@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-    #[doc(hidden)]
     pub input_lambda_processor_update: ::std::option::Option<crate::types::InputLambdaProcessorUpdate>,
 }
 impl InputProcessingConfigurationUpdate {

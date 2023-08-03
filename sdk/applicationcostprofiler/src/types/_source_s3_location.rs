@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Key of the object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<crate::types::S3BucketRegion>,
 }
 impl SourceS3Location {

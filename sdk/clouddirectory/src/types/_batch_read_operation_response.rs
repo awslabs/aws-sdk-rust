@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has succeeded.</p>
-    #[doc(hidden)]
     pub successful_response: ::std::option::Option<crate::types::BatchReadSuccessfulResponse>,
     /// <p>Identifies which operation in a batch has failed.</p>
-    #[doc(hidden)]
     pub exception_response: ::std::option::Option<crate::types::BatchReadException>,
 }
 impl BatchReadOperationResponse {

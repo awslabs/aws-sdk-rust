@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
     /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

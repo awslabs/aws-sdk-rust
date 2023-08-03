@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAuditEventsOutput {
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>,
     _request_id: Option<String>,
 }

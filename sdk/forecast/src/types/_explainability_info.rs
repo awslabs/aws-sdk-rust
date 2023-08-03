@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    #[doc(hidden)]
     pub explainability_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct ExplainabilityInfo {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ExplainabilityInfo {

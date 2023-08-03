@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The conditions that trigger an automatic scaling activity.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ScalingAction>,
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-    #[doc(hidden)]
     pub trigger: ::std::option::Option<crate::types::ScalingTrigger>,
 }
 impl ScalingRule {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetParameter {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
-    #[doc(hidden)]
     pub datetime_options: ::std::option::Option<crate::types::DatetimeOptions>,
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
-    #[doc(hidden)]
     pub create_column: bool,
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::FilterExpression>,
 }
 impl DatasetParameter {

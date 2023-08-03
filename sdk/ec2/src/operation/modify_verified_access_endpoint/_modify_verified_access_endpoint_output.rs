@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointOutput {
     /// <p>The Verified Access endpoint details.</p>
-    #[doc(hidden)]
     pub verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstanceInput {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
@@ -17,10 +16,8 @@ pub struct RegisterInstanceInput {
     /// </ul> <note>
     /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -93,7 +90,6 @@ pub struct RegisterInstanceInput {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegisterInstanceInput {

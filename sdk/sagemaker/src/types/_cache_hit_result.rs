@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheHitResult {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    #[doc(hidden)]
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheHitResult {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    #[doc(hidden)]
     pub path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    #[doc(hidden)]
     pub header_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    #[doc(hidden)]
     pub query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PipeTargetHttpParameters {

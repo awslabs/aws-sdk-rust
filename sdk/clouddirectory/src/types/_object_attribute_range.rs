@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
-    #[doc(hidden)]
     pub attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     /// <p>The range of attribute values being selected.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl ObjectAttributeRange {

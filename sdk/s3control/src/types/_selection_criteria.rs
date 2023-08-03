@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The max depth of the selection criteria</p>
-    #[doc(hidden)]
     pub max_depth: i32,
     /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub min_storage_bytes_percentage: f64,
 }
 impl SelectionCriteria {

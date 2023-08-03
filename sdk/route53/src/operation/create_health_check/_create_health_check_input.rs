@@ -11,10 +11,8 @@ pub struct CreateHealthCheckInput {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains settings for a new health check.</p>
-    #[doc(hidden)]
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl CreateHealthCheckInput {

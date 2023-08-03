@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComputeEnvironmentInput {
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-    #[doc(hidden)]
     pub compute_environment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteComputeEnvironmentInput {

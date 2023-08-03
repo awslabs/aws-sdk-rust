@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterApplicationOutput {
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<crate::types::Application>,
     /// <p>The ID of the operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

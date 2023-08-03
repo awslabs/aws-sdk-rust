@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceOutput {
     /// <p>The identifier of the described resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the described resource.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The name of the described resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the described resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The booking options for the described resource.</p>
-    #[doc(hidden)]
     pub booking_options: ::std::option::Option<crate::types::BookingOptions>,
     /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

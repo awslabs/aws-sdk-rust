@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    #[doc(hidden)]
     pub assessment_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    #[doc(hidden)]
     pub assessment_run_name: ::std::option::Option<::std::string::String>,
 }
 impl StartAssessmentRunInput {

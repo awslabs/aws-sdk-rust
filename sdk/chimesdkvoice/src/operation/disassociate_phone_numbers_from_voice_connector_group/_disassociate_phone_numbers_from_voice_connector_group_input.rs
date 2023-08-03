@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// <p>The Voice Connector group ID.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of phone numbers, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {

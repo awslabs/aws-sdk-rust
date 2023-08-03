@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceOutput {
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub failed_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
     _request_id: Option<String>,
 }

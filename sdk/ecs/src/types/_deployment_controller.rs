@@ -26,7 +26,6 @@ pub struct DeploymentController {
     /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeploymentControllerType>,
 }
 impl DeploymentController {

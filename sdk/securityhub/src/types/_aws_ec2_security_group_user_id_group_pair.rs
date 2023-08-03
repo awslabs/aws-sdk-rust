@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupUserIdGroupPair {
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
-    #[doc(hidden)]
     pub peering_status: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC peering connection, if applicable.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupUserIdGroupPair {

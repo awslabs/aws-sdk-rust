@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDbClusterInput {
     /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDbClusterInput {

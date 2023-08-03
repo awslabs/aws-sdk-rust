@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyJobDetails {
     /// <p>The identifier used to identify the job details in CodePipeline.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data to be returned by the third party job worker.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::ThirdPartyJobData>,
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
-    #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyJobDetails {

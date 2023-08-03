@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LoggingLevel>,
 }
 impl LoggingOptions {

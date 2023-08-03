@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterSnapshot {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the identifier for the cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in UTC.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of this cluster snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides the master user name for the cluster snapshot.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Provides the version of the database engine for this cluster snapshot.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Provides the type of the cluster snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>Specifies whether the cluster snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
-    #[doc(hidden)]
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterManagedInstanceInput {
     /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterManagedInstanceInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLanguagesOutput {
     /// <p>The list of supported languages.</p>
-    #[doc(hidden)]
     pub languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
     /// <p>The language code passed in with the request.</p>
-    #[doc(hidden)]
     pub display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

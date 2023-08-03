@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessedUpdateAction {
     /// <p>The ID of the replication group</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the cache cluster</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the update action on the Redis cluster</p>
-    #[doc(hidden)]
     pub update_action_status: ::std::option::Option<crate::types::UpdateActionStatus>,
 }
 impl ProcessedUpdateAction {

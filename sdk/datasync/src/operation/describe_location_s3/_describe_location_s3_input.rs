@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationS3Input {

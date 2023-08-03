@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    #[doc(hidden)]
     pub format_version: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token for the next set of retrievable results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

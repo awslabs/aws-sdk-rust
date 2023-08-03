@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObject {
     /// <p>The facet to remove from the object.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>A reference to the object whose facet will be removed.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchRemoveFacetFromObject {

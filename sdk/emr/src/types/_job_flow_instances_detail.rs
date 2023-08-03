@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobFlowInstancesDetail {
     /// <p>The Amazon EC2 master node instance type.</p>
-    #[doc(hidden)]
     pub master_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    #[doc(hidden)]
     pub master_public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance identifier of the master node.</p>
-    #[doc(hidden)]
     pub master_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 core and task node instance type.</p>
-    #[doc(hidden)]
     pub slave_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Details about the instance groups in a cluster.</p>
-    #[doc(hidden)]
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
-    #[doc(hidden)]
     pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.</p>
-    #[doc(hidden)]
     pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
-    #[doc(hidden)]
     pub ec2_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
-    #[doc(hidden)]
     pub keep_job_flow_alive_when_no_steps: bool,
     /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
-    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>The Hadoop version for the cluster.</p>
-    #[doc(hidden)]
     pub hadoop_version: ::std::option::Option<::std::string::String>,
 }
 impl JobFlowInstancesDetail {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::Field>,
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
     /// <ul>
@@ -19,7 +17,6 @@ pub struct SqlParameter {
     /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
     /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub type_hint: ::std::option::Option<crate::types::TypeHint>,
 }
 impl SqlParameter {

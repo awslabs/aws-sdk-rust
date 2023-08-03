@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInferenceExperimentOutput {
     /// <p>The ARN of the inference experiment being described.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference experiment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the inference experiment.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
     /// <p>The duration for which the inference experiment ran or will run.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
     /// <ul>
@@ -26,40 +22,28 @@ pub struct DescribeInferenceExperimentOutput {
     /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
     /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceExperimentStatus>,
     /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the inference experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which you created the inference experiment.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp at which the inference experiment was completed. </p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which you last modified the inference experiment.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
-    #[doc(hidden)]
     pub endpoint_metadata: ::std::option::Option<crate::types::EndpointMetadata>,
     /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
-    #[doc(hidden)]
     pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>,
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    #[doc(hidden)]
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
-    #[doc(hidden)]
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
     /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

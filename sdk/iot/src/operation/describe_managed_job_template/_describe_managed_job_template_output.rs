@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedJobTemplateOutput {
     /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique description of a managed template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version for a managed template.</p>
-    #[doc(hidden)]
     pub template_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DocumentParameter>>,
     /// <p>The document schema for a managed job template.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyRange {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    #[doc(hidden)]
     pub begin_marker: ::std::option::Option<::std::string::String>,
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    #[doc(hidden)]
     pub end_marker: ::std::option::Option<::std::string::String>,
 }
 impl KeyRange {

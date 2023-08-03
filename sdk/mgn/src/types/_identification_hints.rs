@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentificationHints {
     /// <p>FQDN address identification hint.</p>
-    #[doc(hidden)]
     pub fqdn: ::std::option::Option<::std::string::String>,
     /// <p>Hostname identification hint.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>vmWare UUID identification hint.</p>
-    #[doc(hidden)]
     pub vm_ware_uuid: ::std::option::Option<::std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
-    #[doc(hidden)]
     pub aws_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>vCenter VM path identification hint.</p>
-    #[doc(hidden)]
     pub vm_path: ::std::option::Option<::std::string::String>,
 }
 impl IdentificationHints {

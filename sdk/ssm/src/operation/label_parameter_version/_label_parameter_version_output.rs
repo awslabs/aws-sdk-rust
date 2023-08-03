@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelParameterVersionOutput {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub invalid_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the parameter that has been labeled.</p>
-    #[doc(hidden)]
     pub parameter_version: i64,
     _request_id: Option<String>,
 }

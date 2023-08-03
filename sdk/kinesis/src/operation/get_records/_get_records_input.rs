@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsInput {
     /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
-    #[doc(hidden)]
     pub shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRecordsInput {

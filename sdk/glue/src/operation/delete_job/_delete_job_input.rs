@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteJobInput {
     /// <p>The name of the job definition to delete.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteJobInput {

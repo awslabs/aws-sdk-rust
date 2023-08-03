@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsInput {
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StopDataCollectionByAgentIdsInput {

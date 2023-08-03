@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEvents {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomEventsStatus>,
 }
 impl CustomEvents {

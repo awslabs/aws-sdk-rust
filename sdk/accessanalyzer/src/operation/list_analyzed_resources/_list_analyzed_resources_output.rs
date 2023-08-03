@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
-    #[doc(hidden)]
     pub analyzed_resources: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

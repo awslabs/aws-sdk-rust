@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsOutput {
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    #[doc(hidden)]
     pub log_streams: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

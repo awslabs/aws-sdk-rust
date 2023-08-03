@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>Specifies the ARN of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags.</p>
-    #[doc(hidden)]
     pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ResourceTag {

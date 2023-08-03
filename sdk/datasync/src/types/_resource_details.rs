@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
-    #[doc(hidden)]
     pub net_app_ontapsv_ms: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
-    #[doc(hidden)]
     pub net_app_ontap_volumes: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
-    #[doc(hidden)]
     pub net_app_ontap_clusters: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
 }
 impl ResourceDetails {

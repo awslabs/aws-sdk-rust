@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of app.</p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AppStatus>,
     /// <p>The timestamp of the last health check.</p>
-    #[doc(hidden)]
     pub last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    #[doc(hidden)]
     pub last_user_activity_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    #[doc(hidden)]
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

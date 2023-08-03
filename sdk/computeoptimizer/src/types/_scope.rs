@@ -14,7 +14,6 @@ pub struct Scope {
     /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
     /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ScopeName>,
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
@@ -24,7 +23,6 @@ pub struct Scope {
     /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Scope {

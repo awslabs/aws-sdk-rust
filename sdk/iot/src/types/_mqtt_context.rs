@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MqttContext {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl MqttContext {

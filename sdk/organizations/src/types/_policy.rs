@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policy {
     /// <p>A structure that contains additional details about the policy.</p>
-    #[doc(hidden)]
     pub policy_summary: ::std::option::Option<crate::types::PolicySummary>,
     /// <p>The text content of the policy.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl Policy {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsInput {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the initiated multipart upload. </p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The source file for the upload part. </p>
-    #[doc(hidden)]
     pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
     /// <p> The maximum number of read set upload parts returned in a page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ReadSetUploadPartListFilter>,
 }
 impl ListReadSetUploadPartsInput {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMigrationOutput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
-    #[doc(hidden)]
     pub v1_bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale used for the Amazon Lex V1 bot. </p>
-    #[doc(hidden)]
     pub v1_bot_locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
-    #[doc(hidden)]
     pub v2_bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub v2_bot_role: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
-    #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
     /// <p>The strategy used to conduct the migration.</p>
-    #[doc(hidden)]
     pub migration_strategy: ::std::option::Option<crate::types::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
-    #[doc(hidden)]
     pub migration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

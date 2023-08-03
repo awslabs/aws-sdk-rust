@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UiCustomizationType {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the client app.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The logo image for the UI customization.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The CSS values in the UI customization.</p>
-    #[doc(hidden)]
     pub css: ::std::option::Option<::std::string::String>,
     /// <p>The CSS version number.</p>
-    #[doc(hidden)]
     pub css_version: ::std::option::Option<::std::string::String>,
     /// <p>The last-modified date for the UI customization.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation date for the UI customization.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UiCustomizationType {

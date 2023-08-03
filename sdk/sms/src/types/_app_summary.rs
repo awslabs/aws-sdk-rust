@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSummary {
     /// <p>The unique ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub imported_app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AppStatus>,
     /// <p>A message related to the status of the application</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Status of the replication configuration.</p>
-    #[doc(hidden)]
     pub replication_configuration_status: ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
     /// <p>The replication status of the application.</p>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::AppReplicationStatus>,
     /// <p>A message related to the replication status of the application.</p>
-    #[doc(hidden)]
     pub replication_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    #[doc(hidden)]
     pub latest_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of the launch configuration.</p>
-    #[doc(hidden)]
     pub launch_configuration_status: ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
     /// <p>The launch status of the application.</p>
-    #[doc(hidden)]
     pub launch_status: ::std::option::Option<crate::types::AppLaunchStatus>,
     /// <p>A message related to the launch status of the application.</p>
-    #[doc(hidden)]
     pub launch_status_message: ::std::option::Option<::std::string::String>,
     /// <p>Details about the latest launch of the application.</p>
-    #[doc(hidden)]
     pub launch_details: ::std::option::Option<crate::types::LaunchDetails>,
     /// <p>The creation time of the application.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time of the application.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of server groups present in the application.</p>
-    #[doc(hidden)]
     pub total_server_groups: ::std::option::Option<i32>,
     /// <p>The number of servers present in the application.</p>
-    #[doc(hidden)]
     pub total_servers: ::std::option::Option<i32>,
 }
 impl AppSummary {

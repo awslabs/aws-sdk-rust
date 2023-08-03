@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendCommandOutput {
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    #[doc(hidden)]
     pub start_session: ::std::option::Option<crate::types::StartSessionResult>,
     /// <p>Contains the details of the started transaction.</p>
-    #[doc(hidden)]
     pub start_transaction: ::std::option::Option<crate::types::StartTransactionResult>,
     /// <p>Contains the details of the ended session.</p>
-    #[doc(hidden)]
     pub end_session: ::std::option::Option<crate::types::EndSessionResult>,
     /// <p>Contains the details of the committed transaction.</p>
-    #[doc(hidden)]
     pub commit_transaction: ::std::option::Option<crate::types::CommitTransactionResult>,
     /// <p>Contains the details of the aborted transaction.</p>
-    #[doc(hidden)]
     pub abort_transaction: ::std::option::Option<crate::types::AbortTransactionResult>,
     /// <p>Contains the details of the executed statement.</p>
-    #[doc(hidden)]
     pub execute_statement: ::std::option::Option<crate::types::ExecuteStatementResult>,
     /// <p>Contains the details of the fetched page.</p>
-    #[doc(hidden)]
     pub fetch_page: ::std::option::Option<crate::types::FetchPageResult>,
     _request_id: Option<String>,
 }

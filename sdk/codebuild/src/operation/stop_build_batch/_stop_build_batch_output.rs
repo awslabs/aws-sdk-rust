@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
-    #[doc(hidden)]
     pub build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,
 }

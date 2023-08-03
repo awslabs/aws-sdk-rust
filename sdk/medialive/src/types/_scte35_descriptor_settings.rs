@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35DescriptorSettings {
     /// SCTE-35 Segmentation Descriptor.
-    #[doc(hidden)]
     pub segmentation_descriptor_scte35_descriptor_settings: ::std::option::Option<crate::types::Scte35SegmentationDescriptor>,
 }
 impl Scte35DescriptorSettings {

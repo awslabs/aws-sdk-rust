@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDatapoint {
     /// <p>The average.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<f64>,
     /// <p>The maximum.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
     /// <p>The minimum.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The sample count.</p>
-    #[doc(hidden)]
     pub sample_count: ::std::option::Option<f64>,
     /// <p>The sum.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unit. </p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl MetricDatapoint {

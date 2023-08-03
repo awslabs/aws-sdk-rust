@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
-    #[doc(hidden)]
     pub initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
     /// <p>Lifecycle last Test reverted.</p>
-    #[doc(hidden)]
     pub reverted: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
     /// <p>Lifecycle last Test finalized.</p>
-    #[doc(hidden)]
     pub finalized: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>,
 }
 impl LifeCycleLastTest {

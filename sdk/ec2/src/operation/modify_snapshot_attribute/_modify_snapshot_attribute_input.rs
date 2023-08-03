@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySnapshotAttributeInput {
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    #[doc(hidden)]
     pub create_volume_permission: ::std::option::Option<crate::types::CreateVolumePermissionModifications>,
     /// <p>The group to modify for the snapshot.</p>
-    #[doc(hidden)]
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of operation to perform to the attribute.</p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to modify for the snapshot.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifySnapshotAttributeInput {

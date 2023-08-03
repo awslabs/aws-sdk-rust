@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3LocationDescription>,
 }
 impl CustomPluginLocationDescription {

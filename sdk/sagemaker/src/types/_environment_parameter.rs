@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentParameter {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<::std::string::String>,
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentParameter {

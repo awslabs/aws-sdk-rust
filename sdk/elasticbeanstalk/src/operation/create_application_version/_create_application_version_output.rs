@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }

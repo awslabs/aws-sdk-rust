@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-    #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDistributionConfigurationInput {

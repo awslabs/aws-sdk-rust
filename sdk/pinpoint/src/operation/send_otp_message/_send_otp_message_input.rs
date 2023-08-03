@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Send OTP message request parameters.</p>
-    #[doc(hidden)]
     pub send_otp_message_request_parameters: ::std::option::Option<crate::types::SendOtpMessageRequestParameters>,
 }
 impl SendOtpMessageInput {

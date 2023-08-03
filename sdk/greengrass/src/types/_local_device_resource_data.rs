@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalDeviceResourceData {
     /// Group/owner related settings for local resources.
-    #[doc(hidden)]
     pub group_owner_setting: ::std::option::Option<crate::types::GroupOwnerSetting>,
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl LocalDeviceResourceData {

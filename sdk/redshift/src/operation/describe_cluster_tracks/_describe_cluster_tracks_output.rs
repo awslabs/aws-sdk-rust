@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksOutput {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    #[doc(hidden)]
     pub maintenance_tracks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The application maintenance configuration description after the update.</p>
-    #[doc(hidden)]
     pub application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     _request_id: Option<String>,
 }

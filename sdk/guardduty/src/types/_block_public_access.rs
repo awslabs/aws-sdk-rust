@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccess {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
-    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
-    #[doc(hidden)]
     pub restrict_public_buckets: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
-    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
-    #[doc(hidden)]
     pub block_public_policy: bool,
 }
 impl BlockPublicAccess {

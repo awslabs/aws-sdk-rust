@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    #[doc(hidden)]
     pub cache_clusters: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,
     _request_id: Option<String>,
 }

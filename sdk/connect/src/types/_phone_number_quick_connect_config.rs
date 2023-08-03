@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberQuickConnectConfig {

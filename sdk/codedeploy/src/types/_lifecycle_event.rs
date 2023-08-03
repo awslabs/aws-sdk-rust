@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleEvent {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
-    #[doc(hidden)]
     pub lifecycle_event_name: ::std::option::Option<::std::string::String>,
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
-    #[doc(hidden)]
     pub diagnostics: ::std::option::Option<crate::types::Diagnostics>,
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
@@ -25,7 +21,6 @@ pub struct LifecycleEvent {
     /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
     /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl LifecycleEvent {

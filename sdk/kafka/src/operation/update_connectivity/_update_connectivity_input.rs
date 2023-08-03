@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the broker access configuration.</p>
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectivityInput {

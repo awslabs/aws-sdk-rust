@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
-    #[doc(hidden)]
     pub multipart_upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
-    #[doc(hidden)]
     pub vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    #[doc(hidden)]
     pub archive_description: ::std::option::Option<::std::string::String>,
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
-    #[doc(hidden)]
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

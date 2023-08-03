@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformFilterCriteria {
     /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
-    #[doc(hidden)]
     pub transform_type: ::std::option::Option<crate::types::TransformType>,
     /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TransformStatusType>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The time and date before which the transforms were created.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time and date after which the transforms were created.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified before this date.</p>
-    #[doc(hidden)]
     pub last_modified_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified after this date.</p>
-    #[doc(hidden)]
     pub last_modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters on datasets with a specific schema. The <code>Map
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
 }
 impl TransformFilterCriteria {

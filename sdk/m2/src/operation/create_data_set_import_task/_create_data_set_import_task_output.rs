@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSetImportTaskOutput {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

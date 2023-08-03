@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountHealth {
     /// <p>The ID of the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    #[doc(hidden)]
     pub insight: ::std::option::Option<crate::types::AccountInsightHealth>,
 }
 impl AccountHealth {

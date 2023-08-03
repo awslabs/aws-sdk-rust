@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    #[doc(hidden)]
     pub providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
-    #[doc(hidden)]
     pub saml: ::std::option::Option<crate::types::SamlAuthentication>,
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
-    #[doc(hidden)]
     pub aws_sso: ::std::option::Option<crate::types::AwsSsoAuthentication>,
 }
 impl AuthenticationDescription {

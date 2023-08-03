@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Reservation {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
-    #[doc(hidden)]
     pub duration_units: ::std::option::Option<crate::types::DurationUnits>,
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-    #[doc(hidden)]
     pub offering_arn: ::std::option::Option<::std::string::String>,
     /// A description of the offering. MediaConnect defines this value in the offering.
-    #[doc(hidden)]
     pub offering_description: ::std::option::Option<::std::string::String>,
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-    #[doc(hidden)]
     pub price_per_unit: ::std::option::Option<::std::string::String>,
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
-    #[doc(hidden)]
     pub price_units: ::std::option::Option<crate::types::PriceUnits>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-    #[doc(hidden)]
     pub reservation_arn: ::std::option::Option<::std::string::String>,
     /// The name that you assigned to the reservation when you purchased the offering.
-    #[doc(hidden)]
     pub reservation_name: ::std::option::Option<::std::string::String>,
     /// The status of your reservation.
-    #[doc(hidden)]
     pub reservation_state: ::std::option::Option<crate::types::ReservationState>,
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ResourceSpecification>,
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
 }
 impl Reservation {

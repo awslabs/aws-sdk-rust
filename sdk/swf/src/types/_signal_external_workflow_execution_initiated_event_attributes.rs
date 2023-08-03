@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the signal.</p>
-    #[doc(hidden)]
     pub signal_name: ::std::option::Option<::std::string::String>,
     /// <p>The input provided to the signal.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {

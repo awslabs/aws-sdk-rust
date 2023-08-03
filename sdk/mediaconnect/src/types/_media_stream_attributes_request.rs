@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
-    #[doc(hidden)]
     pub fmtp: ::std::option::Option<crate::types::FmtpRequest>,
     /// The audio language, in a format that is recognized by the receiver.
-    #[doc(hidden)]
     pub lang: ::std::option::Option<::std::string::String>,
 }
 impl MediaStreamAttributesRequest {

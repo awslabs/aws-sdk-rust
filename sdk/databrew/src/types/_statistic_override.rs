@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatisticOverride {
     /// <p>The name of an evaluation</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<::std::string::String>,
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StatisticOverride {

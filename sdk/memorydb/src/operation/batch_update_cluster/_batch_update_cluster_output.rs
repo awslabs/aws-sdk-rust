@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateClusterOutput {
     /// <p>The list of clusters that have been updated.</p>
-    #[doc(hidden)]
     pub processed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     /// <p>The list of clusters where updates have not been applied.</p>
-    #[doc(hidden)]
     pub unprocessed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
     _request_id: Option<String>,
 }

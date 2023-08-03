@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionOutput {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    #[doc(hidden)]
     pub failed_scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,
 }

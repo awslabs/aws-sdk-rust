@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the permission set.</p>
-    #[doc(hidden)]
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the <code>PermissionSet</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    #[doc(hidden)]
     pub session_duration: ::std::option::Option<::std::string::String>,
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
-    #[doc(hidden)]
     pub relay_state: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePermissionSetInput {

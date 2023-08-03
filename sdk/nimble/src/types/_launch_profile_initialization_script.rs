@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationScript {
     /// <p>The initialization script.</p>
-    #[doc(hidden)]
     pub script: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a studio component resource.</p>
-    #[doc(hidden)]
     pub studio_component_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the studio component.</p>
-    #[doc(hidden)]
     pub studio_component_name: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    #[doc(hidden)]
     pub secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    #[doc(hidden)]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl LaunchProfileInitializationScript {

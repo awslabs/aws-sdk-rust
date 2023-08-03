@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
-    #[doc(hidden)]
     pub job_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    #[doc(hidden)]
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    #[doc(hidden)]
     pub job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
 }
 impl CreateBulkImportJobInput {

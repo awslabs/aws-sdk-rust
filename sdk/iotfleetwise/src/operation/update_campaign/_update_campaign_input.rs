@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignInput {
     /// <p> The name of the campaign to update. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the campaign.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    #[doc(hidden)]
     pub data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct UpdateCampaignInput {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::UpdateCampaignAction>,
 }
 impl UpdateCampaignInput {

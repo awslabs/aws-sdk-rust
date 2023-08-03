@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub multi_region_access_point_details: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     /// <p>Error details for an asynchronous request.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::AsyncErrorDetails>,
 }
 impl AsyncResponseDetails {

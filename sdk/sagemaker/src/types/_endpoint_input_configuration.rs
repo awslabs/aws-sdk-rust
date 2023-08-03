@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointInputConfiguration {
     /// <p>The instance types to use for the load test.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The inference specification name in the model package version.</p>
-    #[doc(hidden)]
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p> The parameter you want to benchmark against.</p>
-    #[doc(hidden)]
     pub environment_parameter_ranges: ::std::option::Option<crate::types::EnvironmentParameterRanges>,
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
-    #[doc(hidden)]
     pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointInputConfiguration {

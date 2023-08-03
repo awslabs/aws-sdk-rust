@@ -5,7 +5,6 @@
 pub struct GetAccessKeyLastUsedInput {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessKeyLastUsedInput {

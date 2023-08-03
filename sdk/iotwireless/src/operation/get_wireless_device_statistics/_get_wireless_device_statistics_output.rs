@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceStatisticsOutput {
     /// <p>The ID of the wireless device.</p>
-    #[doc(hidden)]
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>Information about the wireless device's operations.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDeviceMetadata>,
     /// <p>MetaData for Sidewalk device.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkDeviceMetadata>,
     _request_id: Option<String>,
 }

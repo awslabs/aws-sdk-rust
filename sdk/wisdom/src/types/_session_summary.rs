@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_arn: ::std::option::Option<::std::string::String>,
 }
 impl SessionSummary {

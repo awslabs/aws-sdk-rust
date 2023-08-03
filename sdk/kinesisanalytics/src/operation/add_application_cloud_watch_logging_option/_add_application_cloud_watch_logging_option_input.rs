@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option: ::std::option::Option<crate::types::CloudWatchLoggingOption>,
 }
 impl AddApplicationCloudWatchLoggingOptionInput {

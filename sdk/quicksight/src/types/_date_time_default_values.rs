@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDefaultValues {
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    #[doc(hidden)]
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    #[doc(hidden)]
     pub static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
-    #[doc(hidden)]
     pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
 }
 impl DateTimeDefaultValues {

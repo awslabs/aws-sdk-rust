@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivityStartedEventDetails {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
-    #[doc(hidden)]
     pub worker_name: ::std::option::Option<::std::string::String>,
 }
 impl ActivityStartedEventDetails {

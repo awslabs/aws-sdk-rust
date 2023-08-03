@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStream {
     /// Attributes that are related to the media stream.
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::MediaStreamAttributes>,
     /// The sample rate for the stream. This value is measured in Hz.
-    #[doc(hidden)]
     pub clock_rate: ::std::option::Option<i32>,
     /// A description that can help you quickly identify what your media stream is used for.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
-    #[doc(hidden)]
     pub fmt: ::std::option::Option<i32>,
     /// A unique identifier for the media stream.
-    #[doc(hidden)]
     pub media_stream_id: ::std::option::Option<i32>,
     /// A name that helps you distinguish one media stream from another.
-    #[doc(hidden)]
     pub media_stream_name: ::std::option::Option<::std::string::String>,
     /// The type of media stream.
-    #[doc(hidden)]
     pub media_stream_type: ::std::option::Option<crate::types::MediaStreamType>,
     /// The resolution of the video.
-    #[doc(hidden)]
     pub video_format: ::std::option::Option<::std::string::String>,
 }
 impl MediaStream {

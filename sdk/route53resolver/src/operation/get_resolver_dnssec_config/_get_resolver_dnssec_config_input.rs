@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResolverDnssecConfigInput {

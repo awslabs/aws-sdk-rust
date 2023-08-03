@@ -4,44 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorOutput {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the monitor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
     /// <p>The time when the monitor was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the monitor was modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The health of the data processing for the monitor.</p>
-    #[doc(hidden)]
     pub processing_status: ::std::option::Option<crate::types::MonitorProcessingStatusCode>,
     /// <p>Additional information about the health of the data processing for the monitor.</p>
-    #[doc(hidden)]
     pub processing_status_info: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been added to monitor.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
-    #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    #[doc(hidden)]
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
     _request_id: Option<String>,
 }

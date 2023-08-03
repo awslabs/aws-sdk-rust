@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::IntelligentTieringFilter>,
     /// <p>Specifies the status of the configuration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IntelligentTieringStatus>,
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-    #[doc(hidden)]
     pub tierings: ::std::option::Option<::std::vec::Vec<crate::types::Tiering>>,
 }
 impl IntelligentTieringConfiguration {

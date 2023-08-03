@@ -5,49 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Feature {
     /// <p>The ARN of the feature.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the project that contains the feature.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the feature.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The date and time that the feature is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the feature was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the feature.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    #[doc(hidden)]
     pub evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::VariationValueType>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    #[doc(hidden)]
     pub variations: ::std::option::Option<::std::vec::Vec<crate::types::Variation>>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-    #[doc(hidden)]
     pub default_variation: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    #[doc(hidden)]
     pub evaluation_rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
     /// <p>The list of tag keys and values associated with this feature.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    #[doc(hidden)]
     pub entity_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Feature {

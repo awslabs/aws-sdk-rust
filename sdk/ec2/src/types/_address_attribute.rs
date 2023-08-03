@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddressAttribute {
     /// <p>The public IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>[EC2-VPC] The allocation ID.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The pointer (PTR) record for the IP address.</p>
-    #[doc(hidden)]
     pub ptr_record: ::std::option::Option<::std::string::String>,
     /// <p>The updated PTR record for the IP address.</p>
-    #[doc(hidden)]
     pub ptr_record_update: ::std::option::Option<crate::types::PtrUpdateStatus>,
 }
 impl AddressAttribute {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
-    #[doc(hidden)]
     pub event_attribution_source: ::std::option::Option<::std::string::String>,
 }
 impl MetricAttribution {

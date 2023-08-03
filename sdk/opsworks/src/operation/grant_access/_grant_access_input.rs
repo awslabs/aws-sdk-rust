@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantAccessInput {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
-    #[doc(hidden)]
     pub valid_for_in_minutes: ::std::option::Option<i32>,
 }
 impl GrantAccessInput {

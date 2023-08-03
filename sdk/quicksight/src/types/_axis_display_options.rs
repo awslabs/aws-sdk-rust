@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisDisplayOptions {
     /// <p>The tick label options of an axis.</p>
-    #[doc(hidden)]
     pub tick_label_options: ::std::option::Option<crate::types::AxisTickLabelOptions>,
     /// <p>Determines whether or not the axis line is visible.</p>
-    #[doc(hidden)]
     pub axis_line_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines whether or not the grid line is visible.</p>
-    #[doc(hidden)]
     pub grid_line_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The data options for an axis.</p>
-    #[doc(hidden)]
     pub data_options: ::std::option::Option<crate::types::AxisDataOptions>,
     /// <p>The scroll bar options for an axis.</p>
-    #[doc(hidden)]
     pub scrollbar_options: ::std::option::Option<crate::types::ScrollBarOptions>,
     /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
-    #[doc(hidden)]
     pub axis_offset: ::std::option::Option<::std::string::String>,
 }
 impl AxisDisplayOptions {

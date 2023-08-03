@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInventoryOutput {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
-    #[doc(hidden)]
     pub deletion_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inventory data type specified in the request.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub deletion_summary: ::std::option::Option<crate::types::InventoryDeletionSummary>,
     _request_id: Option<String>,
 }

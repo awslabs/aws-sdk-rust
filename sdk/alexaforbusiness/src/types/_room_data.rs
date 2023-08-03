@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomData {
     /// <p>The ARN of a room.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a room.</p>
-    #[doc(hidden)]
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a room.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The provider calendar ARN of a room.</p>
-    #[doc(hidden)]
     pub provider_calendar_id: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN of a room.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile name of a room.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
 }
 impl RoomData {

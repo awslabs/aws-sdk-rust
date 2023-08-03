@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetObjectAttributesResponse {

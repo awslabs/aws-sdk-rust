@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
-    #[doc(hidden)]
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    #[doc(hidden)]
     pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
-    #[doc(hidden)]
     pub data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
 impl CustomConnectorSourceProperties {

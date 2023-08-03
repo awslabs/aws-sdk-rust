@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVolumeTaskDetails {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes converted so far.</p>
-    #[doc(hidden)]
     pub bytes_converted: ::std::option::Option<i64>,
     /// <p>The description you provided when starting the import volume task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The image.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::DiskImageDescription>,
     /// <p>The volume.</p>
-    #[doc(hidden)]
     pub volume: ::std::option::Option<crate::types::DiskImageVolumeDescription>,
 }
 impl ImportVolumeTaskDetails {

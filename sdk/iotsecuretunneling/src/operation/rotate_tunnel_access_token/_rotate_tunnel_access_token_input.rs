@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotateTunnelAccessTokenInput {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
-    #[doc(hidden)]
     pub client_mode: ::std::option::Option<crate::types::ClientMode>,
     /// <p>The destination configuration.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
 impl RotateTunnelAccessTokenInput {

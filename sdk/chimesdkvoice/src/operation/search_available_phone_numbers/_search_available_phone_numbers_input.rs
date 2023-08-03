@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInput {
     /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
-    #[doc(hidden)]
     pub area_code: ::std::option::Option<::std::string::String>,
     /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
-    #[doc(hidden)]
     pub toll_free_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
-    #[doc(hidden)]
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token used to return the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchAvailablePhoneNumbersInput {

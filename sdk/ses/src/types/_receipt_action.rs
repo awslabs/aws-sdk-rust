@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
-    #[doc(hidden)]
     pub s3_action: ::std::option::Option<crate::types::S3Action>,
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
-    #[doc(hidden)]
     pub bounce_action: ::std::option::Option<crate::types::BounceAction>,
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
-    #[doc(hidden)]
     pub workmail_action: ::std::option::Option<crate::types::WorkmailAction>,
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
-    #[doc(hidden)]
     pub lambda_action: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
-    #[doc(hidden)]
     pub stop_action: ::std::option::Option<crate::types::StopAction>,
     /// <p>Adds a header to the received email.</p>
-    #[doc(hidden)]
     pub add_header_action: ::std::option::Option<crate::types::AddHeaderAction>,
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
-    #[doc(hidden)]
     pub sns_action: ::std::option::Option<crate::types::SnsAction>,
 }
 impl ReceiptAction {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    #[doc(hidden)]
     pub canaries: ::std::option::Option<::std::vec::Vec<crate::types::Canary>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

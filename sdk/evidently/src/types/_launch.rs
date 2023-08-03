@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Launch {
     /// <p>The ARN of the launch.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the project that contains the launch.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the launch.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LaunchStatus>,
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the launch.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the launch is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the launch was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that contains information about the start and end times of the launch.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::LaunchExecution>,
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>,
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    #[doc(hidden)]
     pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>,
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The type of launch.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    #[doc(hidden)]
     pub scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Launch {

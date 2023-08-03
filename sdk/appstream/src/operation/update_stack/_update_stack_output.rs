@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStackOutput {
     /// <p>Information about the stack.</p>
-    #[doc(hidden)]
     pub stack: ::std::option::Option<crate::types::Stack>,
     _request_id: Option<String>,
 }

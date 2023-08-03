@@ -12,13 +12,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyValue {
     /// <p>The value to send to an asset property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyValue {

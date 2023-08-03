@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallRuleGroupAssociation {
     /// <p>The identifier for the association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall rule group association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the firewall rule group. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the VPC that is associated with the rule group. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the association.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting. </p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    #[doc(hidden)]
     pub mutation_protection: ::std::option::Option<crate::types::MutationProtectionStatus>,
     /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
-    #[doc(hidden)]
     pub managed_owner_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus>,
     /// <p>Additional information about the status of the response, if available.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the association was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRuleGroupAssociation {

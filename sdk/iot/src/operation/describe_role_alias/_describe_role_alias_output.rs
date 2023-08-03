@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRoleAliasOutput {
     /// <p>The role alias description.</p>
-    #[doc(hidden)]
     pub role_alias_description: ::std::option::Option<crate::types::RoleAliasDescription>,
     _request_id: Option<String>,
 }

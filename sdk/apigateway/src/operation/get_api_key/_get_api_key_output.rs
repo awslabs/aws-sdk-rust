@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the API Key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API Key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    #[doc(hidden)]
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the API Key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the API Key can be used by callers.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the API Key was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    #[doc(hidden)]
     pub stage_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

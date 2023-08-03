@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsInput {
     /// <p>The criteria to use to filter the query results.</p>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct GetFindingStatisticsInput {
     /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<crate::types::GroupBy>,
     /// <p>The maximum number of items to include in each page of the response.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The criteria to use to sort the query results.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>,
 }
 impl GetFindingStatisticsInput {

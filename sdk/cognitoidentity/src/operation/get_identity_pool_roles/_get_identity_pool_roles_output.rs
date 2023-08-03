@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityPoolRolesOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
-    #[doc(hidden)]
     pub role_mappings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackInstanceRefreshOutput {
     /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
-    #[doc(hidden)]
     pub instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

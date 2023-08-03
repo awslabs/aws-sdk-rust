@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppValidationConfigurationOutput {
     /// <p>The configuration for application validation.</p>
-    #[doc(hidden)]
     pub app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
     /// <p>The configuration for instance validation.</p>
-    #[doc(hidden)]
     pub server_group_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
     _request_id: Option<String>,
 }

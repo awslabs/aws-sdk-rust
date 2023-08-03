@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMaintenanceWindowInput {
     /// <p>The ID of the maintenance window to delete.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMaintenanceWindowInput {

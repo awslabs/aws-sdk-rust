@@ -4,41 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The comment text for the command.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
-    #[doc(hidden)]
     pub plugin_name: ::std::option::Option<::std::string::String>,
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
-    #[doc(hidden)]
     pub response_code: i32,
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    #[doc(hidden)]
     pub execution_start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
-    #[doc(hidden)]
     pub execution_elapsed_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    #[doc(hidden)]
     pub execution_end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CommandInvocationStatus>,
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
@@ -53,22 +42,16 @@ pub struct GetCommandInvocationOutput {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
-    #[doc(hidden)]
     pub standard_output_content: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
-    #[doc(hidden)]
     pub standard_output_url: ::std::option::Option<::std::string::String>,
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    #[doc(hidden)]
     pub standard_error_content: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    #[doc(hidden)]
     pub standard_error_url: ::std::option::Option<::std::string::String>,
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     _request_id: Option<String>,
 }

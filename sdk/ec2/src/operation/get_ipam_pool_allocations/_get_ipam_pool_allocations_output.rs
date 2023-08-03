@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
-    #[doc(hidden)]
     pub ipam_pool_allocations: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

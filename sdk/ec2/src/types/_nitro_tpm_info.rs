@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NitroTpmInfo {
     /// <p>Indicates the supported NitroTPM versions.</p>
-    #[doc(hidden)]
     pub supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NitroTpmInfo {

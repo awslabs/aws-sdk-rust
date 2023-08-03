@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAcceleratorAttributesOutput {
     /// <p>Updated attributes for the accelerator.</p>
-    #[doc(hidden)]
     pub accelerator_attributes: ::std::option::Option<crate::types::AcceleratorAttributes>,
     _request_id: Option<String>,
 }

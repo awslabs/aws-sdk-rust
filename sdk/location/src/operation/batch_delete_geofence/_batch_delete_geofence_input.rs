@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch of geofences to be deleted.</p>
-    #[doc(hidden)]
     pub geofence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteGeofenceInput {

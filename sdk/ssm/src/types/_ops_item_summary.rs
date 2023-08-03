@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemSummary {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The impacted Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
-    #[doc(hidden)]
     pub operational_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     /// <p>A list of OpsItems by category.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>A list of OpsItems by severity.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
@@ -46,19 +34,14 @@ pub struct OpsItemSummary {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub actual_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub actual_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub planned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    #[doc(hidden)]
     pub planned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OpsItemSummary {

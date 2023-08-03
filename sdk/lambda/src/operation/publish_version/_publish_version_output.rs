@@ -5,110 +5,75 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishVersionOutput {
     /// <p>The name of the function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>The function's execution role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The function that Lambda calls to begin running your function.</p>
-    #[doc(hidden)]
     pub handler: ::std::option::Option<::std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
-    #[doc(hidden)]
     pub code_size: i64,
     /// <p>The function's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The amount of memory available to the function at runtime.</p>
-    #[doc(hidden)]
     pub memory_size: ::std::option::Option<i32>,
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    #[doc(hidden)]
     pub code_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Lambda function.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The function's networking configuration.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
-    #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
-    #[doc(hidden)]
     pub tracing_config: ::std::option::Option<crate::types::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    #[doc(hidden)]
     pub master_arn: ::std::option::Option<::std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>The reason for the function's current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    #[doc(hidden)]
     pub state_reason_code: ::std::option::Option<crate::types::StateReasonCode>,
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    #[doc(hidden)]
     pub last_update_status: ::std::option::Option<crate::types::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
-    #[doc(hidden)]
     pub last_update_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
-    #[doc(hidden)]
     pub last_update_status_reason_code: ::std::option::Option<crate::types::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    #[doc(hidden)]
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>The function's image configuration values.</p>
-    #[doc(hidden)]
     pub image_config_response: ::std::option::Option<crate::types::ImageConfigResponse>,
     /// <p>The ARN of the signing profile version.</p>
-    #[doc(hidden)]
     pub signing_profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signing job.</p>
-    #[doc(hidden)]
     pub signing_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
-    #[doc(hidden)]
     pub snap_start: ::std::option::Option<crate::types::SnapStartResponse>,
     /// <p>The ARN of the runtime and any errors that occured.</p>
-    #[doc(hidden)]
     pub runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     _request_id: Option<String>,
 }

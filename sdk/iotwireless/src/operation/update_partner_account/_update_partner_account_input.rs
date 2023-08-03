@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
     /// <p>The ID of the partner account to update.</p>
-    #[doc(hidden)]
     pub partner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The partner type.</p>
-    #[doc(hidden)]
     pub partner_type: ::std::option::Option<crate::types::PartnerType>,
 }
 impl UpdatePartnerAccountInput {

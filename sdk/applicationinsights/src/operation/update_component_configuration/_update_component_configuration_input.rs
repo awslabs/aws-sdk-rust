@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the application component is monitored.</p>
-    #[doc(hidden)]
     pub monitor: ::std::option::Option<bool>,
     /// <p>The tier of the application component.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    #[doc(hidden)]
     pub component_configuration: ::std::option::Option<::std::string::String>,
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
-    #[doc(hidden)]
     pub auto_config_enabled: ::std::option::Option<bool>,
 }
 impl UpdateComponentConfigurationInput {

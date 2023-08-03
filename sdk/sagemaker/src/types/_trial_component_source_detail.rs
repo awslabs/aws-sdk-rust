@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentSourceDetail {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about a training job that's the source of a trial component.</p>
-    #[doc(hidden)]
     pub training_job: ::std::option::Option<crate::types::TrainingJob>,
     /// <p>Information about a processing job that's the source of a trial component.</p>
-    #[doc(hidden)]
     pub processing_job: ::std::option::Option<crate::types::ProcessingJob>,
     /// <p>Information about a transform job that's the source of a trial component.</p>
-    #[doc(hidden)]
     pub transform_job: ::std::option::Option<crate::types::TransformJob>,
 }
 impl TrialComponentSourceDetail {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportS3Configuration {
     /// <p></p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub encryption_option: ::std::option::Option<crate::types::S3EncryptionOption>,
     /// <p></p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ReportS3Configuration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeTagsInput {

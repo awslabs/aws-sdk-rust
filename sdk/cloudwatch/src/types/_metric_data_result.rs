@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataResult {
     /// <p>The short name you specified to represent this metric.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The human-readable label associated with the data.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StatusCode>,
     /// <p>A list of messages with additional information about the data returned.</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
 }
 impl MetricDataResult {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobMetrics {
     /// <p>The total number of input records.</p>
-    #[doc(hidden)]
     pub input_records: ::std::option::Option<i32>,
     /// <p>The total number of records processed.</p>
-    #[doc(hidden)]
     pub total_records_processed: ::std::option::Option<i32>,
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    #[doc(hidden)]
     pub match_i_ds: ::std::option::Option<i32>,
     /// <p>The total number of records that did not get processed,</p>
-    #[doc(hidden)]
     pub records_not_processed: ::std::option::Option<i32>,
 }
 impl JobMetrics {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the objective metric.</p>
-    #[doc(hidden)]
     pub value: f32,
 }
 impl FinalHyperParameterTuningJobObjectiveMetric {

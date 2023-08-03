@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
-    #[doc(hidden)]
     pub compatible_elasticsearch_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }

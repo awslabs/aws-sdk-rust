@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
-    #[doc(hidden)]
     pub double_value: f64,
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
-    #[doc(hidden)]
     pub long_value: i64,
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
-    #[doc(hidden)]
     pub integer_value: i32,
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    #[doc(hidden)]
     pub string_set_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Resource {

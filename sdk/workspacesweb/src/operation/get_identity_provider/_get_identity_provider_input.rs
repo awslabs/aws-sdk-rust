@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentityProviderInput {

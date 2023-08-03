@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket for which to set the configuration.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    #[doc(hidden)]
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
 }
 impl PutBucketLifecycleConfigurationInput {

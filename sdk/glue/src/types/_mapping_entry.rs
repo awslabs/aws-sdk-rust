@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappingEntry {
     /// <p>The name of the source table.</p>
-    #[doc(hidden)]
     pub source_table: ::std::option::Option<::std::string::String>,
     /// <p>The source path.</p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>The source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The target table.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<::std::string::String>,
     /// <p>The target path.</p>
-    #[doc(hidden)]
     pub target_path: ::std::option::Option<::std::string::String>,
     /// <p>The target type.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
 }
 impl MappingEntry {

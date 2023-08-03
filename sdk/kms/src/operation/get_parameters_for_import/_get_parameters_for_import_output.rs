@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
-    #[doc(hidden)]
     pub import_token: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
-    #[doc(hidden)]
     pub parameters_valid_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

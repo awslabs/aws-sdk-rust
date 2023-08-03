@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TunnelOption {
     /// <p>The external IP address of the VPN tunnel.</p>
-    #[doc(hidden)]
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The range of inside IPv6 addresses for the tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_inside_ipv6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
-    #[doc(hidden)]
     pub pre_shared_key: ::std::option::Option<::std::string::String>,
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
-    #[doc(hidden)]
     pub phase1_lifetime_seconds: ::std::option::Option<i32>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    #[doc(hidden)]
     pub phase2_lifetime_seconds: ::std::option::Option<i32>,
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
-    #[doc(hidden)]
     pub rekey_margin_time_seconds: ::std::option::Option<i32>,
     /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
-    #[doc(hidden)]
     pub rekey_fuzz_percentage: ::std::option::Option<i32>,
     /// <p>The number of packets in an IKE replay window.</p>
-    #[doc(hidden)]
     pub replay_window_size: ::std::option::Option<i32>,
     /// <p>The number of seconds after which a DPD timeout occurs.</p>
-    #[doc(hidden)]
     pub dpd_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The action to take after a DPD timeout occurs.</p>
-    #[doc(hidden)]
     pub dpd_timeout_action: ::std::option::Option<::std::string::String>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsListValue>>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsListValue>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    #[doc(hidden)]
     pub ike_versions: ::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsListValue>>,
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
-    #[doc(hidden)]
     pub startup_action: ::std::option::Option<::std::string::String>,
     /// <p>Options for logging VPN tunnel activity.</p>
-    #[doc(hidden)]
     pub log_options: ::std::option::Option<crate::types::VpnTunnelLogOptions>,
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
-    #[doc(hidden)]
     pub enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
 }
 impl TunnelOption {

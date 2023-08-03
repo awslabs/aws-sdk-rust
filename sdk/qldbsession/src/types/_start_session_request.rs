@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    #[doc(hidden)]
     pub ledger_name: ::std::option::Option<::std::string::String>,
 }
 impl StartSessionRequest {

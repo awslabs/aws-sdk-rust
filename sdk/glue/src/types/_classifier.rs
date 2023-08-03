@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Classifier {
     /// <p>A classifier that uses <code>grok</code>.</p>
-    #[doc(hidden)]
     pub grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
     /// <p>A classifier for XML content.</p>
-    #[doc(hidden)]
     pub xml_classifier: ::std::option::Option<crate::types::XmlClassifier>,
     /// <p>A classifier for JSON content.</p>
-    #[doc(hidden)]
     pub json_classifier: ::std::option::Option<crate::types::JsonClassifier>,
     /// <p>A classifier for comma-separated values (CSV).</p>
-    #[doc(hidden)]
     pub csv_classifier: ::std::option::Option<crate::types::CsvClassifier>,
 }
 impl Classifier {

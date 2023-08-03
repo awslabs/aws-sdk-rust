@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
-    #[doc(hidden)]
     pub numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
     /// <p>The lower bound dollar value that's used in the filter. </p>
-    #[doc(hidden)]
     pub start_value: f64,
     /// <p>The upper bound dollar value that's used in the filter. </p>
-    #[doc(hidden)]
     pub end_value: f64,
 }
 impl TotalImpactFilter {

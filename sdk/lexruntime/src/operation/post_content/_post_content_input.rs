@@ -3,10 +3,8 @@
 #[non_exhaustive]
 pub struct PostContentInput {
     /// <p>Name of the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>Alias of the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
@@ -16,18 +14,15 @@ pub struct PostContentInput {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
     /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
     /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
     /// <p> Indicates the audio format or text. The header value must start with one of the following prefixes: </p>
@@ -47,7 +42,6 @@ pub struct PostContentInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
     /// <p> The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request. </p>
@@ -64,14 +58,12 @@ pub struct PostContentInput {
     /// <li> <p>audio/* (defaults to mpeg)</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept: ::std::option::Option<::std::string::String>,
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
     pub input_stream: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::string::String>,
 }
 impl PostContentInput {

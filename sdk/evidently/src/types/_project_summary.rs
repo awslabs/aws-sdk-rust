@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name or ARN of the project.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the project.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p>The description of the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the project is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the project was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of features currently in the project.</p>
-    #[doc(hidden)]
     pub feature_count: ::std::option::Option<i64>,
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
-    #[doc(hidden)]
     pub launch_count: ::std::option::Option<i64>,
     /// <p>The number of ongoing launches currently in the project.</p>
-    #[doc(hidden)]
     pub active_launch_count: ::std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
-    #[doc(hidden)]
     pub experiment_count: ::std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
-    #[doc(hidden)]
     pub active_experiment_count: ::std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProjectSummary {

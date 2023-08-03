@@ -15,10 +15,8 @@ pub struct AccountLevelBpaSync {
     /// </ul> <note>
     /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccountLevelBpaSyncStatus>,
     /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
-    #[doc(hidden)]
     pub last_synced_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
     /// <p>The following messages are possible:</p>
@@ -28,10 +26,8 @@ pub struct AccountLevelBpaSync {
     /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
     /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message: ::std::option::Option<crate::types::BpaStatusMessage>,
     /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
-    #[doc(hidden)]
     pub bpa_impacts_lightsail: ::std::option::Option<bool>,
 }
 impl AccountLevelBpaSync {

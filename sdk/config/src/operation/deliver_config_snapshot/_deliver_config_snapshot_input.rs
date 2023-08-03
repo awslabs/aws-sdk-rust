@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliverConfigSnapshotInput {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    #[doc(hidden)]
     pub delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DeliverConfigSnapshotInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TtlDuration {
     /// <p> <code>TtlDuration</code> time unit.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::TtlDurationUnit>,
     /// <p> <code>TtlDuration</code> time value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl TtlDuration {

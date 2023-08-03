@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
-    #[doc(hidden)]
     pub user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
 }
 impl BatchAssociateUserStackInput {

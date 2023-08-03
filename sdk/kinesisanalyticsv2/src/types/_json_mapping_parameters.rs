@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonMappingParameters {
     /// <p>The path to the top-level parent that contains the records.</p>
-    #[doc(hidden)]
     pub record_row_path: ::std::option::Option<::std::string::String>,
 }
 impl JsonMappingParameters {

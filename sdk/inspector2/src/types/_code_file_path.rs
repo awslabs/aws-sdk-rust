@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeFilePath {
     /// <p>The name of the file the code vulnerability was found in.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The file path to the code that a vulnerability was found in.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
-    #[doc(hidden)]
     pub start_line: ::std::option::Option<i32>,
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
-    #[doc(hidden)]
     pub end_line: ::std::option::Option<i32>,
 }
 impl CodeFilePath {

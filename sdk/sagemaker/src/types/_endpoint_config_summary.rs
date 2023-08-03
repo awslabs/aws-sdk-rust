@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointConfigSummary {
     /// <p>The name of the endpoint configuration.</p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
-    #[doc(hidden)]
     pub endpoint_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EndpointConfigSummary {

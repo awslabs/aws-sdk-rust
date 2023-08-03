@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
-    #[doc(hidden)]
     pub metric_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-    #[doc(hidden)]
     pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
 }
 impl AlertFilters {

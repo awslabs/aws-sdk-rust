@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Os {
     /// <p>The long name of the Operating System.</p>
-    #[doc(hidden)]
     pub full_string: ::std::option::Option<::std::string::String>,
 }
 impl Os {

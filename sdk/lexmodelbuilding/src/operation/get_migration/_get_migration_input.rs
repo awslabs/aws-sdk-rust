@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMigrationInput {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
-    #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMigrationInput {

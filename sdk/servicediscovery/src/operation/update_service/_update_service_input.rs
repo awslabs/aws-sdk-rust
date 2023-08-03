@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The ID of the service that you want to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains the new settings for the service.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::ServiceChange>,
 }
 impl UpdateServiceInput {

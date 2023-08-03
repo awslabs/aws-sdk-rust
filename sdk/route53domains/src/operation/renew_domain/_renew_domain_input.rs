@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
-    #[doc(hidden)]
     pub current_expiry_year: ::std::option::Option<i32>,
 }
 impl RenewDomainInput {

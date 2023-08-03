@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TechnicalCueType>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl TechnicalCueSegment {

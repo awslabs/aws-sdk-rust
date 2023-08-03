@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointOutput {
     /// <p>Details about the created interface VPC endpoint.</p>
-    #[doc(hidden)]
     pub create_vpc_endpoint_detail: ::std::option::Option<crate::types::CreateVpcEndpointDetail>,
     _request_id: Option<String>,
 }

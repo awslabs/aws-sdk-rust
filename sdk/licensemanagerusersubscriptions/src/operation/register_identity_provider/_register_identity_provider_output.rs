@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    #[doc(hidden)]
     pub identity_provider_summary: ::std::option::Option<crate::types::IdentityProviderSummary>,
     _request_id: Option<String>,
 }

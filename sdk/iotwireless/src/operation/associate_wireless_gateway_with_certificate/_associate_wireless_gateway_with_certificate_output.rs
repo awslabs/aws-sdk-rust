@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    #[doc(hidden)]
     pub iot_certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

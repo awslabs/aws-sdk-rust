@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportHubContentOutput {
     /// <p>The ARN of the hub that the content was imported into.</p>
-    #[doc(hidden)]
     pub hub_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the hub content that was imported.</p>
-    #[doc(hidden)]
     pub hub_content_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

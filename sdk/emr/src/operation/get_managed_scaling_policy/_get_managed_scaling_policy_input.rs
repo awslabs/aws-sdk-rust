@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedScalingPolicyInput {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl GetManagedScalingPolicyInput {

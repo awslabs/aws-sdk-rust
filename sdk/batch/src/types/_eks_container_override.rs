@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerOverride {
     /// <p>The override of the Docker image that's used to start the container.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    #[doc(hidden)]
     pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
 }
 impl EksContainerOverride {

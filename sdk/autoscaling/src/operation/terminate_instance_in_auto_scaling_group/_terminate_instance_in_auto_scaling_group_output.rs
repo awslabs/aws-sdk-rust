@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupOutput {
     /// <p>A scaling activity.</p>
-    #[doc(hidden)]
     pub activity: ::std::option::Option<crate::types::Activity>,
     _request_id: Option<String>,
 }

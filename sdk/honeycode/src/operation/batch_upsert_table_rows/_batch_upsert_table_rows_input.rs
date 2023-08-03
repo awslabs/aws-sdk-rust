@@ -5,19 +5,15 @@
 pub struct BatchUpsertTableRowsInput {
     /// <p>The ID of the workbook where the rows are being upserted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the table where the rows are being upserted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    #[doc(hidden)]
     pub rows_to_upsert: ::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>>,
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpsertTableRowsInput {

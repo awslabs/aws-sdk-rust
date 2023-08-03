@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChange {
     /// <p>The type of change.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>The action to take for a core network.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The resource identifier.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The previous values for a core network.</p>
-    #[doc(hidden)]
     pub previous_values: ::std::option::Option<crate::types::CoreNetworkChangeValues>,
     /// <p>The new value for a core network</p>
-    #[doc(hidden)]
     pub new_values: ::std::option::Option<crate::types::CoreNetworkChangeValues>,
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
-    #[doc(hidden)]
     pub identifier_path: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkChange {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackResource {
     /// <p>The name associated with the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the stack.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Time the status was updated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Current status of the resource.</p>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
-    #[doc(hidden)]
     pub resource_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>User defined description associated with the resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    #[doc(hidden)]
     pub drift_information: ::std::option::Option<crate::types::StackResourceDriftInformation>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    #[doc(hidden)]
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl StackResource {

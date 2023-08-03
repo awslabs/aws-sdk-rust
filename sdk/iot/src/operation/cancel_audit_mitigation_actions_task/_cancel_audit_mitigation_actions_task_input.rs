@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelAuditMitigationActionsTaskInput {
     /// <p>The unique identifier for the task that you want to cancel. </p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelAuditMitigationActionsTaskInput {

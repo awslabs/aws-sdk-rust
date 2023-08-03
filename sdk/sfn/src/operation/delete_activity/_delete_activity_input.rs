@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
-    #[doc(hidden)]
     pub activity_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActivityInput {

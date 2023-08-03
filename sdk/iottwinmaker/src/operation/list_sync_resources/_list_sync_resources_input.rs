@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSyncResourcesInput {
     /// <p>The ID of the workspace that contains the sync job.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
@@ -18,14 +16,11 @@ pub struct ListSyncResourcesInput {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>,
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSyncResourcesInput {

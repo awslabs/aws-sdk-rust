@@ -4,38 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     /// <p>The name of the bucket to create.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information for the bucket.</p>
-    #[doc(hidden)]
     pub create_bucket_configuration: ::std::option::Option<crate::types::CreateBucketConfiguration>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    #[doc(hidden)]
     pub grant_full_control: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
-    #[doc(hidden)]
     pub grant_read: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p>
-    #[doc(hidden)]
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-    #[doc(hidden)]
     pub grant_write: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    #[doc(hidden)]
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    #[doc(hidden)]
     pub object_lock_enabled_for_bucket: ::std::option::Option<bool>,
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
-    #[doc(hidden)]
     pub object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
 }
 impl CreateBucketInput {

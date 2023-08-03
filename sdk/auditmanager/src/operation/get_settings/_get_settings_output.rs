@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSettingsOutput {
     /// <p> The settings object that holds all supported Audit Manager settings. </p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRequestAction {
     /// <p>The domain information for the DNS query.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the targeted port is blocked.</p>
-    #[doc(hidden)]
     pub blocked: bool,
 }
 impl DnsRequestAction {

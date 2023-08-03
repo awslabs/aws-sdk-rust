@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationAppEndpointInfo {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    #[doc(hidden)]
     pub ingress_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfo {

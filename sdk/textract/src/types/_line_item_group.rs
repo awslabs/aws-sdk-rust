@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemGroup {
     /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
-    #[doc(hidden)]
     pub line_item_group_index: ::std::option::Option<i32>,
     /// <p>The breakdown of information on a particular line of a table. </p>
-    #[doc(hidden)]
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>,
 }
 impl LineItemGroup {

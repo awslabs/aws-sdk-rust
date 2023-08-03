@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
-    #[doc(hidden)]
     pub ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
     /// <p>Information about whether an action is taken by default.</p>
-    #[doc(hidden)]
     pub is_default_action: bool,
 }
 impl PossibleRemediationAction {

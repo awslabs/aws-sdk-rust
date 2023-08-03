@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstanceReservationValue {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
-    #[doc(hidden)]
     pub reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    #[doc(hidden)]
     pub reserved_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedInstanceReservationValue {

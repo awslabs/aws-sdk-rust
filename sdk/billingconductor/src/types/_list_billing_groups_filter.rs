@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<::std::string::String>,
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
-    #[doc(hidden)]
     pub auto_associate: ::std::option::Option<bool>,
 }
 impl ListBillingGroupsFilter {

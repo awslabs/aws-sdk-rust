@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    #[doc(hidden)]
     pub progress_update_stream_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

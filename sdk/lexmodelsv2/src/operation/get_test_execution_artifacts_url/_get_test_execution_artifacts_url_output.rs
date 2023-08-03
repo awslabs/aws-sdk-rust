@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestExecutionArtifactsUrlOutput {
     /// <p>The unique identifier of the completed test execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
-    #[doc(hidden)]
     pub download_artifacts_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

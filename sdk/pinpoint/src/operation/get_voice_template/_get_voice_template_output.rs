@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    #[doc(hidden)]
     pub voice_template_response: ::std::option::Option<crate::types::VoiceTemplateResponse>,
     _request_id: Option<String>,
 }

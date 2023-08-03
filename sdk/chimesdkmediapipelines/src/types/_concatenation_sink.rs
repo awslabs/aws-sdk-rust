@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConcatenationSink {
     /// <p>The type of data sink in the configuration object.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConcatenationSinkType>,
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
-    #[doc(hidden)]
     pub s3_bucket_sink_configuration: ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
 }
 impl ConcatenationSink {

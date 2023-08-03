@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageSystemListEntry {
     /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl StorageSystemListEntry {

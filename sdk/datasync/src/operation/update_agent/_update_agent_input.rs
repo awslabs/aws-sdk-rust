@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-    #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to use to configure the agent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgentInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlanPurchaseRecommendationDetailsInput {
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_detail_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSavingsPlanPurchaseRecommendationDetailsInput {

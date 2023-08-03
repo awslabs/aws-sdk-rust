@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the output parameters of the Lambda step.</p>
-    #[doc(hidden)]
     pub output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
 }
 impl LambdaStepMetadata {

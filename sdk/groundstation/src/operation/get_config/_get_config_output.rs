@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a <code>Config</code> </p>
-    #[doc(hidden)]
     pub config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>Data elements in a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

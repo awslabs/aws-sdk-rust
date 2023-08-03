@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLogarithmicScale {
     /// <p>The base setup of a logarithmic axis scale.</p>
-    #[doc(hidden)]
     pub base: ::std::option::Option<f64>,
 }
 impl AxisLogarithmicScale {

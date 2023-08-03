@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLaunchesOutput {
     /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
-    #[doc(hidden)]
     pub launches: ::std::option::Option<::std::vec::Vec<crate::types::Launch>>,
     /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

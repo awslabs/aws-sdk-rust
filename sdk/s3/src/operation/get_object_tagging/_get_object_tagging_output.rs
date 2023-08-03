@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectTaggingOutput {
     /// <p>The versionId of the object for which you got the tagging information.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the tag set.</p>
-    #[doc(hidden)]
     pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

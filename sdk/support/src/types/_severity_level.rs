@@ -6,7 +6,6 @@
 pub struct SeverityLevel {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
     /// <p>The values returned by the API are different from the values that appear in the Amazon Web Services Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
@@ -20,7 +19,6 @@ pub struct SeverityLevel {
     /// </ul>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl SeverityLevel {

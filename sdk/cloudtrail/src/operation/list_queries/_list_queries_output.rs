@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueriesOutput {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    #[doc(hidden)]
     pub queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
     /// <p>A token you can use to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

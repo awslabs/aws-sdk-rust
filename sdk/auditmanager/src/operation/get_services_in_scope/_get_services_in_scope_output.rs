@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServicesInScopeOutput {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    #[doc(hidden)]
     pub service_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the address you request. </p>
-    #[doc(hidden)]
     pub address_type: ::std::option::Option<crate::types::AddressType>,
 }
 impl GetSiteAddressInput {

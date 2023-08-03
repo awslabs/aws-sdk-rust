@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningJobsInput {
     /// <p>A status value with which to filter your results.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningStatus>,
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM principal that requested the signing job.</p>
-    #[doc(hidden)]
     pub requested_by: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
-    #[doc(hidden)]
     pub is_revoked: ::std::option::Option<bool>,
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    #[doc(hidden)]
     pub signature_expires_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    #[doc(hidden)]
     pub signature_expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
-    #[doc(hidden)]
     pub job_invoker: ::std::option::Option<::std::string::String>,
 }
 impl ListSigningJobsInput {

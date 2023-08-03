@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScriptInput {
     /// <p>A list of the nodes in the DAG.</p>
-    #[doc(hidden)]
     pub dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
     /// <p>A list of the edges in the DAG.</p>
-    #[doc(hidden)]
     pub dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
     /// <p>The programming language of the resulting code from the DAG.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::Language>,
 }
 impl CreateScriptInput {

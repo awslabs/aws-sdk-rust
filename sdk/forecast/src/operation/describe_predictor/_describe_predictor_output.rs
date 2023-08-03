@@ -4,65 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePredictorOutput {
     /// <p>The ARN of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm used for model training.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
-    #[doc(hidden)]
     pub auto_ml_algorithm_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
-    #[doc(hidden)]
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
-    #[doc(hidden)]
     pub perform_auto_ml: ::std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    #[doc(hidden)]
     pub auto_ml_override_strategy: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
     /// <p>Whether the predictor is set to perform hyperparameter optimization (HPO).</p>
-    #[doc(hidden)]
     pub perform_hpo: ::std::option::Option<bool>,
     /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
-    #[doc(hidden)]
     pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    #[doc(hidden)]
     pub evaluation_parameters: ::std::option::Option<crate::types::EvaluationParameters>,
     /// <p>The hyperparameter override values for the algorithm.</p>
-    #[doc(hidden)]
     pub hpo_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The featurization configuration.</p>
-    #[doc(hidden)]
     pub featurization_config: ::std::option::Option<crate::types::FeaturizationConfig>,
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
-    #[doc(hidden)]
     pub predictor_execution_details: ::std::option::Option<crate::types::PredictorExecutionDetails>,
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
-    #[doc(hidden)]
     pub is_auto_predictor: ::std::option::Option<bool>,
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
@@ -73,13 +54,10 @@ pub struct DescribePredictorOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the model training task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -89,10 +67,8 @@ pub struct DescribePredictorOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    #[doc(hidden)]
     pub optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
     _request_id: Option<String>,
 }

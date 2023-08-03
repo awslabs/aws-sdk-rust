@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateCodeErrorDetail {
     /// <p>The error payload.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    #[doc(hidden)]
     pub code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
 }
 impl EvaluateCodeErrorDetail {

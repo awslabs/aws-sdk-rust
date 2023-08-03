@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFilter {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchFilter {

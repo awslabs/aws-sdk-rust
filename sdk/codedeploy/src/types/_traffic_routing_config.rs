@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficRoutingConfig {
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TrafficRoutingType>,
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
-    #[doc(hidden)]
     pub time_based_canary: ::std::option::Option<crate::types::TimeBasedCanary>,
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
-    #[doc(hidden)]
     pub time_based_linear: ::std::option::Option<crate::types::TimeBasedLinear>,
 }
 impl TrafficRoutingConfig {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
-    #[doc(hidden)]
     pub replicated: ::std::option::Option<bool>,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
-    #[doc(hidden)]
     pub replicated_externally: ::std::option::Option<bool>,
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    #[doc(hidden)]
     pub replication_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplicationDetails {

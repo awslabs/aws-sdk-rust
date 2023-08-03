@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobProgress {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
-    #[doc(hidden)]
     pub percent_complete: ::std::option::Option<i32>,
 }
 impl JobProgress {

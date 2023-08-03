@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    #[doc(hidden)]
     pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>The type of adjustment to make to a fleet's instance count:</p>
     /// <ul>
@@ -18,16 +15,12 @@ pub struct PutScalingPolicyInput {
     /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
     /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scaling_adjustment_type: ::std::option::Option<crate::types::ScalingAdjustmentType>,
     /// <p>Metric value used to trigger a scaling event.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperatorType>,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
@@ -43,13 +36,10 @@ pub struct PutScalingPolicyInput {
     /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
     /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>An object that contains settings for a target-based scaling policy.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
 }
 impl PutScalingPolicyInput {

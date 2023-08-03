@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following event notification types:</p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct NotificationConfiguration {
     /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
     /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub notification_type: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfiguration {

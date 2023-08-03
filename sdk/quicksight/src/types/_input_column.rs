@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputColumnDataType>,
 }
 impl InputColumn {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVirtualMachineOutput {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    #[doc(hidden)]
     pub virtual_machine: ::std::option::Option<crate::types::VirtualMachineDetails>,
     _request_id: Option<String>,
 }

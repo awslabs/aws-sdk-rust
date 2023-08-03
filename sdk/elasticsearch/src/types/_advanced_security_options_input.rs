@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsInput {
     /// <p>True if advanced security is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>True if the internal user database is enabled.</p>
-    #[doc(hidden)]
     pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
-    #[doc(hidden)]
     pub master_user_options: ::std::option::Option<crate::types::MasterUserOptions>,
     /// <p>Specifies the SAML application configuration for the domain.</p>
-    #[doc(hidden)]
     pub saml_options: ::std::option::Option<crate::types::SamlOptionsInput>,
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
-    #[doc(hidden)]
     pub anonymous_auth_enabled: ::std::option::Option<bool>,
 }
 impl AdvancedSecurityOptionsInput {

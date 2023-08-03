@@ -6,10 +6,8 @@
 pub struct RemovePermissionInput {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {

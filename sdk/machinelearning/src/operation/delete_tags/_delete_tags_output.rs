@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the ML object from which tags were deleted.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     _request_id: Option<String>,
 }

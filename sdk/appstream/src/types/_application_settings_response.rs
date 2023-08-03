@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSettingsResponse {
     /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
-    #[doc(hidden)]
     pub settings_group: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSettingsResponse {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateReadSetSourceItem {
     /// <p>The source's read set ID.</p>
-    #[doc(hidden)]
     pub read_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The source's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
     /// <p>The source's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ActivateReadSetSourceItem {

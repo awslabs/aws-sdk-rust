@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTimelineEventInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCompatibleVersionsInput {
     /// <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCompatibleVersionsInput {

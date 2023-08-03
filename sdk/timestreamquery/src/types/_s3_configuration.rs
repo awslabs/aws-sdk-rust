@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p> Name of the S3 bucket under which error reports will be created.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> Prefix for the error report key. Timestream by default adds the following prefix to the error report path. </p>
-    #[doc(hidden)]
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p> Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default. </p>
-    #[doc(hidden)]
     pub encryption_option: ::std::option::Option<crate::types::S3EncryptionOption>,
 }
 impl S3Configuration {

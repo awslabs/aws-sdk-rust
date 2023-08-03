@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RaidArray {
     /// <p>The array ID.</p>
-    #[doc(hidden)]
     pub raid_array_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The array name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
-    #[doc(hidden)]
     pub raid_level: ::std::option::Option<i32>,
     /// <p>The number of disks in the array.</p>
-    #[doc(hidden)]
     pub number_of_disks: ::std::option::Option<i32>,
     /// <p>The array's size.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The array's Linux device. For example /dev/mdadm0.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The array's mount point.</p>
-    #[doc(hidden)]
     pub mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>When the RAID array was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume type, standard or PIOPS.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
 }
 impl RaidArray {

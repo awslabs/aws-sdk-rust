@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameter {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     /// <p>The time granularity of the date time parameter.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
-    #[doc(hidden)]
     pub default_values: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
 }
 impl DateTimeDatasetParameter {

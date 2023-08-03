@@ -9,13 +9,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    #[doc(hidden)]
     pub log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-    #[doc(hidden)]
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
 }
 impl LoggingConfiguration {

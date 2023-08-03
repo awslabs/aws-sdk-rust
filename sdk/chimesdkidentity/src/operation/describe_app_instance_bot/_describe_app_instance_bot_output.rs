@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceBotOutput {
     /// <p>The detials of the <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub app_instance_bot: ::std::option::Option<crate::types::AppInstanceBot>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }

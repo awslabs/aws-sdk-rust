@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePullRequestOutput {
     /// <p>Information about the newly created pull request.</p>
-    #[doc(hidden)]
     pub pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
 }

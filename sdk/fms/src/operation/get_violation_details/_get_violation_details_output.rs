@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetViolationDetailsOutput {
     /// <p>Violation detail for a resource.</p>
-    #[doc(hidden)]
     pub violation_detail: ::std::option::Option<crate::types::ViolationDetail>,
     _request_id: Option<String>,
 }

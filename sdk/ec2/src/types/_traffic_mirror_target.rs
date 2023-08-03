@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficMirrorTarget {
     /// <p>The ID of the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub traffic_mirror_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The network interface ID that is attached to the target.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer.</p>
-    #[doc(hidden)]
     pub network_load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TrafficMirrorTargetType>,
     /// <p>Information about the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account that owns the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    #[doc(hidden)]
     pub gateway_load_balancer_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl TrafficMirrorTarget {

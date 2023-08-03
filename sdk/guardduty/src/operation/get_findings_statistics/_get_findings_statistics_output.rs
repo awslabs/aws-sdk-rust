@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsOutput {
     /// <p>The finding statistics object.</p>
-    #[doc(hidden)]
     pub finding_statistics: ::std::option::Option<crate::types::FindingStatistics>,
     _request_id: Option<String>,
 }

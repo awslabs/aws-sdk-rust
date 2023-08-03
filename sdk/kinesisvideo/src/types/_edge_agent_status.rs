@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeAgentStatus {
     /// <p>The latest status of a stream’s edge recording job.</p>
-    #[doc(hidden)]
     pub last_recorder_status: ::std::option::Option<crate::types::LastRecorderStatus>,
     /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
-    #[doc(hidden)]
     pub last_uploader_status: ::std::option::Option<crate::types::LastUploaderStatus>,
 }
 impl EdgeAgentStatus {

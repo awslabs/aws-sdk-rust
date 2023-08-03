@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
-    #[doc(hidden)]
     pub proposed_configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     /// <p>The current status of an attempt to update the group configuration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GroupConfigurationStatus>,
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl GroupConfiguration {

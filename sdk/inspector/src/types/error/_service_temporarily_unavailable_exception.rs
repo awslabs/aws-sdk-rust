@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceTemporarilyUnavailableException {
     /// <p>Details of the exception error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>You can wait and then retry your request.</p>
-    #[doc(hidden)]
     pub can_retry: ::std::option::Option<bool>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

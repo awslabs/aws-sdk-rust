@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringScheduleSummary {
     /// <p>The name of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the monitoring schedule was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The name of the endpoint using the monitoring schedule.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
 }
 impl MonitoringScheduleSummary {

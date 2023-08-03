@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServicesOutput {
     /// <p>An array of objects that describe one or more container services.</p>
-    #[doc(hidden)]
     pub container_services: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
     _request_id: Option<String>,
 }

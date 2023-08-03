@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetVisualScopingConfiguration {
     /// <p>The selected sheet that the filter is applied to.</p>
-    #[doc(hidden)]
     pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The scope of the applied entities. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
     /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::FilterVisualScope>,
     /// <p>The selected visuals that the filter is applied to.</p>
-    #[doc(hidden)]
     pub visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SheetVisualScopingConfiguration {

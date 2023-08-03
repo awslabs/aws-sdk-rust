@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationOutput {
     /// <p>The replication that DMS started.</p>
-    #[doc(hidden)]
     pub replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,
 }

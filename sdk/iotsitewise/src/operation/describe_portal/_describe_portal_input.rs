@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortalInput {
     /// <p>The ID of the portal.</p>
-    #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePortalInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCodeRepositoryInput {
     /// <p>The name of the Git repository to delete.</p>
-    #[doc(hidden)]
     pub code_repository_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCodeRepositoryInput {

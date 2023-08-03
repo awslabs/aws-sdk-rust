@@ -6,7 +6,6 @@ pub struct DeleteContactMethodInput {
     /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ContactProtocol>,
 }
 impl DeleteContactMethodInput {

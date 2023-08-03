@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCriteria {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    #[doc(hidden)]
     pub filter_criterion: ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>,
 }
 impl FilterCriteria {

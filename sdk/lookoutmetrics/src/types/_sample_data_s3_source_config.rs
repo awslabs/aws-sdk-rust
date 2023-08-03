@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings containing the list of templated paths.</p>
-    #[doc(hidden)]
     pub templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of strings containing the historical set of data paths.</p>
-    #[doc(hidden)]
     pub historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about a source file's formatting.</p>
-    #[doc(hidden)]
     pub file_format_descriptor: ::std::option::Option<crate::types::FileFormatDescriptor>,
 }
 impl SampleDataS3SourceConfig {

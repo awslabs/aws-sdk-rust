@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
-    #[doc(hidden)]
     pub device_instance: ::std::option::Option<crate::types::DeviceInstance>,
     _request_id: Option<String>,
 }

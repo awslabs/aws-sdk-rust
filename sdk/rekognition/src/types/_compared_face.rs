@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparedFace {
     /// <p>Bounding box of the face.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>An array of facial landmarks.</p>
-    #[doc(hidden)]
     pub landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
-    #[doc(hidden)]
     pub pose: ::std::option::Option<crate::types::Pose>,
     /// <p>Identifies face image brightness and sharpness. </p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::ImageQuality>,
     /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
-    #[doc(hidden)]
     pub emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
     /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
-    #[doc(hidden)]
     pub smile: ::std::option::Option<crate::types::Smile>,
 }
 impl ComparedFace {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptions {
     /// <p>Enables or disables CloudWatch logging.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptions {

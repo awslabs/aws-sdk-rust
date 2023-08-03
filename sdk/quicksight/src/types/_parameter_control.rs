@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterControl {
     /// <p>A control from a date parameter that specifies date and time.</p>
-    #[doc(hidden)]
     pub date_time_picker: ::std::option::Option<crate::types::ParameterDateTimePickerControl>,
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
-    #[doc(hidden)]
     pub list: ::std::option::Option<crate::types::ParameterListControl>,
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
-    #[doc(hidden)]
     pub dropdown: ::std::option::Option<crate::types::ParameterDropDownControl>,
     /// <p>A control to display a text box that is used to enter a single entry.</p>
-    #[doc(hidden)]
     pub text_field: ::std::option::Option<crate::types::ParameterTextFieldControl>,
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
-    #[doc(hidden)]
     pub text_area: ::std::option::Option<crate::types::ParameterTextAreaControl>,
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
-    #[doc(hidden)]
     pub slider: ::std::option::Option<crate::types::ParameterSliderControl>,
 }
 impl ParameterControl {

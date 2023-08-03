@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubnetGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
-    #[doc(hidden)]
     pub deletion_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

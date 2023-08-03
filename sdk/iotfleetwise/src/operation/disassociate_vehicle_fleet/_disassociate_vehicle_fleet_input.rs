@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a fleet. </p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateVehicleFleetInput {

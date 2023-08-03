@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingGroupOutput {
     /// <p>The version of the updated thing group.</p>
-    #[doc(hidden)]
     pub version: i64,
     _request_id: Option<String>,
 }

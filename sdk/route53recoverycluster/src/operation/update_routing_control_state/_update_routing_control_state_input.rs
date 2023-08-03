@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    #[doc(hidden)]
     pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[doc(hidden)]
     pub safety_rules_to_override: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoutingControlStateInput {

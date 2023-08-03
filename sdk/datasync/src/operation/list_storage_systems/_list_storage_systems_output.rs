@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStorageSystemsOutput {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    #[doc(hidden)]
     pub storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

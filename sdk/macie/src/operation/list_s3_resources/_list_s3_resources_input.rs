@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListS3ResourcesInput {

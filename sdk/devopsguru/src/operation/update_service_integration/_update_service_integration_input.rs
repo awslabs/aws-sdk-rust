@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceIntegrationInput {
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
-    #[doc(hidden)]
     pub service_integration: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>,
 }
 impl UpdateServiceIntegrationInput {

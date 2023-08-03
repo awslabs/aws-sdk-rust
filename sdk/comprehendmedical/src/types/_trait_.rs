@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AttributeName>,
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl Trait {

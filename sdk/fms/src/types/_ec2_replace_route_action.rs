@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2ReplaceRouteAction {
     /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of an internet gateway or virtual private gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>Information about the ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2ReplaceRouteAction {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterSelectableValues {
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The column identifier that fetches values from the data set.</p>
-    #[doc(hidden)]
     pub link_to_data_set_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl ParameterSelectableValues {

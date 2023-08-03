@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingEndpointDescription {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomRoutingEndpointDescription {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointConfiguration {
     /// <p>A list of endpoint types of an API (RestApi) or its custom domain name (DomainName). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointType>>,
     /// <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EndpointConfiguration {

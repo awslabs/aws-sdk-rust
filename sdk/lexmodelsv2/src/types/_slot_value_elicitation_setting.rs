@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-    #[doc(hidden)]
     pub default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     /// <p>Specifies whether the slot is required or optional.</p>
-    #[doc(hidden)]
     pub slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-    #[doc(hidden)]
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    #[doc(hidden)]
     pub wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
-    #[doc(hidden)]
     pub slot_capture_setting: ::std::option::Option<crate::types::SlotCaptureSetting>,
 }
 impl SlotValueElicitationSetting {

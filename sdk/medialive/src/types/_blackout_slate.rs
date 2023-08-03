@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlackoutSlate {
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    #[doc(hidden)]
     pub blackout_slate_image: ::std::option::Option<crate::types::InputLocation>,
     /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
-    #[doc(hidden)]
     pub network_end_blackout: ::std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>,
     /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
-    #[doc(hidden)]
     pub network_end_blackout_image: ::std::option::Option<crate::types::InputLocation>,
     /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BlackoutSlateState>,
 }
 impl BlackoutSlate {

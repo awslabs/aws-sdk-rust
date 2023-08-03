@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthMfaConfig {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
-    #[doc(hidden)]
     pub mfa_mode: ::std::option::Option<crate::types::MfaMode>,
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
 }
 impl CreateBackendAuthMfaConfig {

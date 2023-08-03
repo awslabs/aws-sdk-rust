@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the project.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p> Information about the training and test datasets in the project. </p>
-    #[doc(hidden)]
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
 impl ProjectDescription {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithPlacementInput {
     /// <p>The name of the project containing the placement in which to associate the device.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement in which to associate the device.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device template name to associate with the device ID.</p>
-    #[doc(hidden)]
     pub device_template_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDeviceWithPlacementInput {

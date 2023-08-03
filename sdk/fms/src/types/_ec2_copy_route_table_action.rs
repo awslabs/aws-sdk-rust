@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2CopyRouteTableAction {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2CopyRouteTableAction {

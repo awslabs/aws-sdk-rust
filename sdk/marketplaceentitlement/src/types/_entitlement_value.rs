@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitlementValue {
     /// <p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
     /// <p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>
-    #[doc(hidden)]
     pub double_value: ::std::option::Option<f64>,
     /// <p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>
-    #[doc(hidden)]
     pub boolean_value: ::std::option::Option<bool>,
     /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
 }
 impl EntitlementValue {

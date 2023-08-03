@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupCertificateAuthorityOutput {
     /// The ARN of the group certificate authority.
-    #[doc(hidden)]
     pub group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInferenceExperimentInput {
     /// <p>The name of the inference experiment to stop.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
     /// <ul>
@@ -12,20 +11,16 @@ pub struct StopInferenceExperimentInput {
     /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
     /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_variant_actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>>,
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
-    #[doc(hidden)]
     pub desired_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
     /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
     /// <ul>
     /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
     /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
     /// <p>The reason for stopping the experiment.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopInferenceExperimentInput {

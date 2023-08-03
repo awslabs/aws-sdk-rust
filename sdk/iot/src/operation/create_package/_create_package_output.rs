@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePackageOutput {
     /// <p>The name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    #[doc(hidden)]
     pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The package description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

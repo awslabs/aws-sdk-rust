@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricsSource {
     /// <p>The metric source content type.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The hash key used for the metrics source.</p>
-    #[doc(hidden)]
     pub content_digest: ::std::option::Option<::std::string::String>,
     /// <p>The S3 URI for the metrics source.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl MetricsSource {

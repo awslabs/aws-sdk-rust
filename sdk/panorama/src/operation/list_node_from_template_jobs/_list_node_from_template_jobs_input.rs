@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of node from template jobs to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListNodeFromTemplateJobsInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRequestOptions {
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.</p>
-    #[doc(hidden)]
     pub amazon_side_asn: ::std::option::Option<i64>,
     /// <p>Enable or disable automatic acceptance of attachment requests. Disabled by default.</p>
-    #[doc(hidden)]
     pub auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
     /// <p>Enable or disable automatic association with the default association route table. Enabled by default.</p>
-    #[doc(hidden)]
     pub default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     /// <p>Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.</p>
-    #[doc(hidden)]
     pub default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     /// <p>Enable or disable Equal Cost Multipath Protocol support. Enabled by default.</p>
-    #[doc(hidden)]
     pub vpn_ecmp_support: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
     /// <p>Enable or disable DNS support. Enabled by default.</p>
-    #[doc(hidden)]
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <p>Indicates whether multicast is enabled on the transit gateway</p>
-    #[doc(hidden)]
     pub multicast_support: ::std::option::Option<crate::types::MulticastSupportValue>,
     /// <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
-    #[doc(hidden)]
     pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TransitGatewayRequestOptions {

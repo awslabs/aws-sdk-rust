@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct GetQueryStateOutput {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::QueryStateString>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageCampaign {
     /// <p>Campaign id of the corresponding campaign.</p>
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
-    #[doc(hidden)]
     pub daily_cap: ::std::option::Option<i32>,
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
-    #[doc(hidden)]
     pub in_app_message: ::std::option::Option<crate::types::InAppMessage>,
     /// <p>Priority of the in-app message.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>Schedule of the campaign.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InAppCampaignSchedule>,
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
-    #[doc(hidden)]
     pub session_cap: ::std::option::Option<i32>,
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
-    #[doc(hidden)]
     pub total_cap: ::std::option::Option<i32>,
     /// <p>Treatment id of the campaign.</p>
-    #[doc(hidden)]
     pub treatment_id: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageCampaign {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComputeInput {
     /// <p>A unique identifier for the fleet the compute is registered to.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComputeInput {

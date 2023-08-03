@@ -5,10 +5,8 @@
 pub struct CancelQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInput {

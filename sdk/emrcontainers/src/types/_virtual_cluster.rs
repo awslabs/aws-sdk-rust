@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the virtual cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the virtual cluster.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VirtualClusterState>,
     /// <p>The container provider of the virtual cluster.</p>
-    #[doc(hidden)]
     pub container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     /// <p>The date and time when the virtual cluster is created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VirtualCluster {

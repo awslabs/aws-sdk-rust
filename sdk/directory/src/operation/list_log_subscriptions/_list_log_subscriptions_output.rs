@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLogSubscriptionsOutput {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub log_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
     /// <p>The token for the next set of items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

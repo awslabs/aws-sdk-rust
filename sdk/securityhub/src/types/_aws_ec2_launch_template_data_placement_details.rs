@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPlacementDetails {
     /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
-    #[doc(hidden)]
     pub affinity: ::std::option::Option<::std::string::String>,
     /// <p> The Availability Zone for the instance. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p> The name of the placement group for the instance. </p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Dedicated Host for the instance. </p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    #[doc(hidden)]
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The number of the partition the instance should launch in. </p>
-    #[doc(hidden)]
     pub partition_number: i32,
     /// <p> Reserved for future use. </p>
-    #[doc(hidden)]
     pub spread_domain: ::std::option::Option<::std::string::String>,
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataPlacementDetails {

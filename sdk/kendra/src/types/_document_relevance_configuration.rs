@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
-    #[doc(hidden)]
     pub relevance: ::std::option::Option<crate::types::Relevance>,
 }
 impl DocumentRelevanceConfiguration {

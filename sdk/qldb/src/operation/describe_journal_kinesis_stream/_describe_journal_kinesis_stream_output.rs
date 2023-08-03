@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
-    #[doc(hidden)]
     pub stream: ::std::option::Option<crate::types::JournalKinesisStreamDescription>,
     _request_id: Option<String>,
 }

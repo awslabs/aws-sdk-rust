@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    #[doc(hidden)]
     pub scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
 }
 impl Scte {

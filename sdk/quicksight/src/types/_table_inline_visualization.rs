@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableInlineVisualization {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
-    #[doc(hidden)]
     pub data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
 }
 impl TableInlineVisualization {

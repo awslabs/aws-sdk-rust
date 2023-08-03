@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSchedulingPoliciesOutput {
     /// <p>The list of scheduling policies.</p>
-    #[doc(hidden)]
     pub scheduling_policies: ::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyDetail>>,
     _request_id: Option<String>,
 }

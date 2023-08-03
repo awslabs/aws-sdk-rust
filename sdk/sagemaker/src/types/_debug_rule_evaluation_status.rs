@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DebugRuleEvaluationStatus {
     /// <p>The name of the rule configuration.</p>
-    #[doc(hidden)]
     pub rule_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule evaluation job.</p>
-    #[doc(hidden)]
     pub rule_evaluation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status of the rule evaluation.</p>
-    #[doc(hidden)]
     pub rule_evaluation_status: ::std::option::Option<crate::types::RuleEvaluationStatus>,
     /// <p>Details from the rule evaluation.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp when the rule evaluation status was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DebugRuleEvaluationStatus {

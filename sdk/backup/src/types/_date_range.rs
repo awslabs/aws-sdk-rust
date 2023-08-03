@@ -7,11 +7,9 @@
 pub struct DateRange {
     /// <p>This value is the beginning date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    #[doc(hidden)]
     pub from_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    #[doc(hidden)]
     pub to_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateRange {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
-    #[doc(hidden)]
     pub input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl UpdateCallAnalyticsCategoryInput {

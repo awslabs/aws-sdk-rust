@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalRuleTemplate {
     /// <p>The system-generated ID of the approval rule template.</p>
-    #[doc(hidden)]
     pub approval_rule_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the approval rule template.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the approval rule template.</p>
-    #[doc(hidden)]
     pub approval_rule_template_description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the approval rule template.</p>
-    #[doc(hidden)]
     pub approval_rule_template_content: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
-    #[doc(hidden)]
     pub rule_content_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
-    #[doc(hidden)]
     pub last_modified_user: ::std::option::Option<::std::string::String>,
 }
 impl ApprovalRuleTemplate {

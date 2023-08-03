@@ -7,13 +7,10 @@
 pub struct ServiceSyncBlockerSummary {
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
     /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest active blockers for the synced service.</p>
-    #[doc(hidden)]
     pub latest_blockers: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
 }
 impl ServiceSyncBlockerSummary {

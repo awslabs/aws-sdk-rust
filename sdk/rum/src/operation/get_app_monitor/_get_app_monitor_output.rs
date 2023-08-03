@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppMonitorOutput {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
-    #[doc(hidden)]
     pub app_monitor: ::std::option::Option<crate::types::AppMonitor>,
     _request_id: Option<String>,
 }

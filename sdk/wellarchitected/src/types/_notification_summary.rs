@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSummary {
     /// <p>The type of notification.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>Summary of lens upgrade.</p>
-    #[doc(hidden)]
     pub lens_upgrade_summary: ::std::option::Option<crate::types::LensUpgradeSummary>,
 }
 impl NotificationSummary {

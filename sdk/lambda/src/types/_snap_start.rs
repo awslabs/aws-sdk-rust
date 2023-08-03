@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapStart {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
-    #[doc(hidden)]
     pub apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
 }
 impl SnapStart {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotFieldSortOptions {
     /// <p>The field ID for the field sort options.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The sort by field for the field sort options.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::PivotTableSortBy>,
 }
 impl PivotFieldSortOptions {

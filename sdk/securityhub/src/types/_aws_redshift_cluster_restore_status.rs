@@ -6,27 +6,21 @@
 pub struct AwsRedshiftClusterRestoreStatus {
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    #[doc(hidden)]
     pub current_restore_rate_in_mega_bytes_per_second: f64,
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: i64,
     /// <p>The estimate of the time remaining before the restore is complete. Returns 0 for a completed restore.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: i64,
     /// <p>The number of megabytes that were transferred from snapshot storage.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    #[doc(hidden)]
     pub progress_in_mega_bytes: i64,
     /// <p>The size of the set of snapshot data that was used to restore the cluster.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    #[doc(hidden)]
     pub snapshot_size_in_mega_bytes: i64,
     /// <p>The status of the restore action.</p>
     /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterRestoreStatus {

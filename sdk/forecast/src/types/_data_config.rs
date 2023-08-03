@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-    #[doc(hidden)]
     pub attribute_configs: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-    #[doc(hidden)]
     pub additional_datasets: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
 }
 impl DataConfig {

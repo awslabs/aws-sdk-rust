@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBranchInput {
     /// <p>The name of the repository in which you want to create the new branch.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new branch to create.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the commit to point the new branch to.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBranchInput {

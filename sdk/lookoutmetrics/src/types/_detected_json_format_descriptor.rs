@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
-    #[doc(hidden)]
     pub file_compression: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's character set.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedJsonFormatDescriptor {

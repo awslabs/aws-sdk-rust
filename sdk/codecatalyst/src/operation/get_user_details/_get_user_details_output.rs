@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserDetailsOutput {
     /// <p>The system-generated unique ID of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address provided by the user when they signed up.</p>
-    #[doc(hidden)]
     pub primary_email: ::std::option::Option<crate::types::EmailAddress>,
     /// <p></p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

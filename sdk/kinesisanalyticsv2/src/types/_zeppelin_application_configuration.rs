@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinApplicationConfiguration {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub monitoring_configuration: ::std::option::Option<crate::types::ZeppelinMonitoringConfiguration>,
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub catalog_configuration: ::std::option::Option<crate::types::CatalogConfiguration>,
     /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
-    #[doc(hidden)]
     pub deploy_as_application_configuration: ::std::option::Option<crate::types::DeployAsApplicationConfiguration>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    #[doc(hidden)]
     pub custom_artifacts_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
 }
 impl ZeppelinApplicationConfiguration {

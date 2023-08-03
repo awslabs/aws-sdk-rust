@@ -9,16 +9,12 @@ pub struct ReferenceLine {
     /// <li> <p> <code>ENABLE</code> </p> </li>
     /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The data configuration of the reference line.</p>
-    #[doc(hidden)]
     pub data_configuration: ::std::option::Option<crate::types::ReferenceLineDataConfiguration>,
     /// <p>The style configuration of the reference line.</p>
-    #[doc(hidden)]
     pub style_configuration: ::std::option::Option<crate::types::ReferenceLineStyleConfiguration>,
     /// <p>The label configuration of the reference line.</p>
-    #[doc(hidden)]
     pub label_configuration: ::std::option::Option<crate::types::ReferenceLineLabelConfiguration>,
 }
 impl ReferenceLine {

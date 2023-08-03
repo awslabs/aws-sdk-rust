@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
 }
 impl GetFeatureInput {

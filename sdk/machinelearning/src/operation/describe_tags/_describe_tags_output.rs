@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>The ID of the tagged ML object.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the tagged ML object.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     /// <p>A list of tags associated with the ML object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

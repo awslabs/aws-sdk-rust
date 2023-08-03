@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApplicationCredential {
     /// <p>The name of the SAP HANA database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application credentials. </p>
-    #[doc(hidden)]
     pub credential_type: ::std::option::Option<crate::types::CredentialType>,
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationCredential {

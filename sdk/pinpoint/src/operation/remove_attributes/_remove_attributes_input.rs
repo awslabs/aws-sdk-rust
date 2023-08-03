@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
@@ -12,10 +11,8 @@ pub struct RemoveAttributesInput {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    #[doc(hidden)]
     pub update_attributes_request: ::std::option::Option<crate::types::UpdateAttributesRequest>,
 }
 impl RemoveAttributesInput {

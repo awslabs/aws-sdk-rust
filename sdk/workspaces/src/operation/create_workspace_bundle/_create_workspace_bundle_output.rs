@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceBundleOutput {
     /// <p>Describes a WorkSpace bundle.</p>
-    #[doc(hidden)]
     pub workspace_bundle: ::std::option::Option<crate::types::WorkspaceBundle>,
     _request_id: Option<String>,
 }

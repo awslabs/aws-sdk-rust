@@ -8,16 +8,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeTimeRange {
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
-    #[doc(hidden)]
     pub start_percentage: ::std::option::Option<i32>,
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
-    #[doc(hidden)]
     pub end_percentage: ::std::option::Option<i32>,
     /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    #[doc(hidden)]
     pub first: ::std::option::Option<i32>,
     /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    #[doc(hidden)]
     pub last: ::std::option::Option<i32>,
 }
 impl RelativeTimeRange {

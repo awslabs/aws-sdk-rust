@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    #[doc(hidden)]
     pub featured_results_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteFeaturedResultsSetInput {

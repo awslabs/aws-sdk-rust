@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheParameterGroup {
     /// <p>The name of the cache parameter group.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
-    #[doc(hidden)]
     pub cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description for this cache parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
-    #[doc(hidden)]
     pub is_global: bool,
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheParameterGroup {

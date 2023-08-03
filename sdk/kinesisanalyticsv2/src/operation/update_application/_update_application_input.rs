@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>Describes application configuration updates.</p>
-    #[doc(hidden)]
     pub application_configuration_update: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
     /// <p>Describes updates to the service execution role.</p>
-    #[doc(hidden)]
     pub service_execution_role_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes updates to the application's starting parameters.</p>
-    #[doc(hidden)]
     pub run_configuration_update: ::std::option::Option<crate::types::RunConfigurationUpdate>,
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    #[doc(hidden)]
     pub conditional_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {

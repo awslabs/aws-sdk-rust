@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The accelerator port.</p>
-    #[doc(hidden)]
     pub accelerator_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the VPC subnet (the subnet ID).</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
-    #[doc(hidden)]
     pub destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
     /// <p>The protocols supported by the endpoint group.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    #[doc(hidden)]
     pub destination_traffic_state: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl PortMapping {

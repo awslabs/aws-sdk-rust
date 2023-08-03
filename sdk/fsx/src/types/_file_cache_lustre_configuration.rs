@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileCacheLustreConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
-    #[doc(hidden)]
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::FileCacheLustreDeploymentType>,
     /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
-    #[doc(hidden)]
     pub mount_name: ::std::option::Option<::std::string::String>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
-    #[doc(hidden)]
     pub metadata_configuration: ::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
 }
 impl FileCacheLustreConfiguration {

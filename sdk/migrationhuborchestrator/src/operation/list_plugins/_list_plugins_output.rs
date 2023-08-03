@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPluginsOutput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Migration Hub Orchestrator plugins.</p>
-    #[doc(hidden)]
     pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>,
     _request_id: Option<String>,
 }

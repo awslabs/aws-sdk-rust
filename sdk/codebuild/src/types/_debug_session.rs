@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DebugSession {
     /// <p>Specifies if session debugging is enabled for this build.</p>
-    #[doc(hidden)]
     pub session_enabled: ::std::option::Option<bool>,
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
-    #[doc(hidden)]
     pub session_target: ::std::option::Option<::std::string::String>,
 }
 impl DebugSession {

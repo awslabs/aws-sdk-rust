@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubjectInput {

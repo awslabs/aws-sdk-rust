@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferCertificateOutput {
     /// <p>The ARN of the certificate.</p>
-    #[doc(hidden)]
     pub transferred_certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

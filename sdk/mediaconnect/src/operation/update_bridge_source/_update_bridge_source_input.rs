@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// Update the flow source of the bridge.
-    #[doc(hidden)]
     pub flow_source: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
     /// Update the network source of the bridge.
-    #[doc(hidden)]
     pub network_source: ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
     /// The name of the source that you want to update.
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBridgeSourceInput {

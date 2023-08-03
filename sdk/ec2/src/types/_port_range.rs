@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The first port in the range.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<i32>,
     /// <p>The last port in the range.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<i32>,
 }
 impl PortRange {

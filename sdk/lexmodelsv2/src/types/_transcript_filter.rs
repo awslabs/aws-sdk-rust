@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-    #[doc(hidden)]
     pub lex_transcript_filter: ::std::option::Option<crate::types::LexTranscriptFilter>,
 }
 impl TranscriptFilter {

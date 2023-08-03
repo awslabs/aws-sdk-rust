@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
-    #[doc(hidden)]
     pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     /// <p> The model's overall performance scores. </p>
-    #[doc(hidden)]
     pub model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,
 }
 impl AtiTrainingMetricsValue {

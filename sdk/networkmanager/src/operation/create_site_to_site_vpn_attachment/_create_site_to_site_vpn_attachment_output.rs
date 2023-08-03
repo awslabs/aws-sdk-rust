@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSiteToSiteVpnAttachmentOutput {
     /// <p>Details about a site-to-site VPN attachment.</p>
-    #[doc(hidden)]
     pub site_to_site_vpn_attachment: ::std::option::Option<crate::types::SiteToSiteVpnAttachment>,
     _request_id: Option<String>,
 }

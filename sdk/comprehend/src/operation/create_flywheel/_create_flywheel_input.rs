@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlywheelInput {
     /// <p>Name for the flywheel.</p>
-    #[doc(hidden)]
     pub flywheel_name: ::std::option::Option<::std::string::String>,
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    #[doc(hidden)]
     pub active_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    #[doc(hidden)]
     pub task_config: ::std::option::Option<crate::types::TaskConfig>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelType>,
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    #[doc(hidden)]
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Data security configurations.</p>
-    #[doc(hidden)]
     pub data_security_config: ::std::option::Option<crate::types::DataSecurityConfig>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with this flywheel.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFlywheelInput {

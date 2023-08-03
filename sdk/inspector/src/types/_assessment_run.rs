@@ -6,49 +6,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The auto-generated name for the assessment run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    #[doc(hidden)]
     pub assessment_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the assessment run.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AssessmentRunState>,
     /// <p>The duration of the assessment run.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: i32,
     /// <p>The rules packages selected for the assessment run.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    #[doc(hidden)]
     pub user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when the assessment run's state changed.</p>
-    #[doc(hidden)]
     pub state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
-    #[doc(hidden)]
     pub data_collected: ::std::option::Option<bool>,
     /// <p>A list of the assessment run state changes.</p>
-    #[doc(hidden)]
     pub state_changes: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
     /// <p>Provides a total count of generated findings per severity.</p>
-    #[doc(hidden)]
     pub finding_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
 }
 impl AssessmentRun {

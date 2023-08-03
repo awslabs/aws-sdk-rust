@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderInput {
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEvidenceFolderInput {

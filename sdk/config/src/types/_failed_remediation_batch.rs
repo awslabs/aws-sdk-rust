@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedRemediationBatch {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Returns remediation configurations of the failed items.</p>
-    #[doc(hidden)]
     pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
 }
 impl FailedRemediationBatch {

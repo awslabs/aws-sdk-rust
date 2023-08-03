@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableColumn {
     /// <p>The id of the column in the table.</p>
-    #[doc(hidden)]
     pub table_column_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column in the table.</p>
-    #[doc(hidden)]
     pub table_column_name: ::std::option::Option<::std::string::String>,
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
 }
 impl TableColumn {

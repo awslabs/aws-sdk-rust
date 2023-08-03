@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataViewErrorInfo {
     /// <p>The text of the error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
@@ -18,7 +17,6 @@ pub struct DataViewErrorInfo {
     /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
     /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_category: ::std::option::Option<crate::types::ErrorCategory>,
 }
 impl DataViewErrorInfo {

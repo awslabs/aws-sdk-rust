@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UngroupResourcesOutput {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
-    #[doc(hidden)]
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }

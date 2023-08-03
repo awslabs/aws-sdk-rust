@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAuthorizerInput {
     /// <p>The authorizer name.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    #[doc(hidden)]
     pub authorizer_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key used to extract the token from the HTTP headers. </p>
-    #[doc(hidden)]
     pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to verify the token signature.</p>
-    #[doc(hidden)]
     pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the update authorizer request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
-    #[doc(hidden)]
     pub enable_caching_for_http: ::std::option::Option<bool>,
 }
 impl UpdateAuthorizerInput {

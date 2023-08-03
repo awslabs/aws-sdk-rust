@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardInput {
     /// <p>The name of the dashboard to be described.</p>
-    #[doc(hidden)]
     pub dashboard_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDashboardInput {

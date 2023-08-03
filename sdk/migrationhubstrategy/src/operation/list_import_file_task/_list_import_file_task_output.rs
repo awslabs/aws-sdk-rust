@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportFileTaskOutput {
     /// <p> Lists information about the files you import.</p>
-    #[doc(hidden)]
     pub task_infos: ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetControlLayoutConfiguration {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    #[doc(hidden)]
     pub grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
 }
 impl SheetControlLayoutConfiguration {

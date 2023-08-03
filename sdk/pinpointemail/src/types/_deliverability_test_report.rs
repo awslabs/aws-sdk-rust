@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliverabilityTestReport {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
-    #[doc(hidden)]
     pub report_name: ::std::option::Option<::std::string::String>,
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    #[doc(hidden)]
     pub deliverability_test_status: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
 }
 impl DeliverabilityTestReport {

@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartDataLabelOptions {
     /// <p>The visibility option that determines if data labels are displayed.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of the category labels within the data labels.</p>
-    #[doc(hidden)]
     pub category_label_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of the measure labels within the data labels.</p>
-    #[doc(hidden)]
     pub measure_label_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines the positioning of the data label relative to a section of the funnel.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::DataLabelPosition>,
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
-    #[doc(hidden)]
     pub label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The color of the data label text.</p>
-    #[doc(hidden)]
     pub label_color: ::std::option::Option<::std::string::String>,
     /// <p>Determines the style of the metric labels.</p>
-    #[doc(hidden)]
     pub measure_data_label_style: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
 }
 impl FunnelChartDataLabelOptions {

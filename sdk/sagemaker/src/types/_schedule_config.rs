@@ -27,7 +27,6 @@ pub struct ScheduleConfig {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfig {

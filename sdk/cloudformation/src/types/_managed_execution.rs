@@ -9,7 +9,6 @@ pub struct ManagedExecution {
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl ManagedExecution {

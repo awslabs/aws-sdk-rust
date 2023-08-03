@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSettingsOutput {
     /// <p>Limits that are related to concurrency and code storage.</p>
-    #[doc(hidden)]
     pub account_limit: ::std::option::Option<crate::types::AccountLimit>,
     /// <p>The number of functions and amount of storage in use.</p>
-    #[doc(hidden)]
     pub account_usage: ::std::option::Option<crate::types::AccountUsage>,
     _request_id: Option<String>,
 }

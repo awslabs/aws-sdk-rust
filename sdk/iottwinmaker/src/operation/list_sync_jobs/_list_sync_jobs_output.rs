@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSyncJobsOutput {
     /// <p>The listed SyncJob summaries.</p>
-    #[doc(hidden)]
     pub sync_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

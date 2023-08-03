@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptOutListInput {

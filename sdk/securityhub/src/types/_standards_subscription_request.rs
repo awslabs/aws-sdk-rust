@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsSubscriptionRequest {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>A key-value pair of input for the standard.</p>
-    #[doc(hidden)]
     pub standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StandardsSubscriptionRequest {

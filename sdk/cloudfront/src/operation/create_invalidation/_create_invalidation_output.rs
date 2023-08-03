@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInvalidationOutput {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The invalidation's information.</p>
-    #[doc(hidden)]
     pub invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }

@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedElasticsearchInstance {
     /// <p>The customer-specified identifier to track this reservation.</p>
-    #[doc(hidden)]
     pub reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the reservation.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
-    #[doc(hidden)]
     pub elasticsearch_instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     /// <p>The time the reservation started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration, in seconds, for which the Elasticsearch instance is reserved.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f64>,
     /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of Elasticsearch instances that have been reserved.</p>
-    #[doc(hidden)]
     pub elasticsearch_instance_count: i32,
     /// <p>The state of the reserved Elasticsearch instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The payment option as defined in the reserved Elasticsearch instance offering.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedElasticsearchInstance {

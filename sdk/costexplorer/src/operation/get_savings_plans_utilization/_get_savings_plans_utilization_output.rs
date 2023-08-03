@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    #[doc(hidden)]
     pub savings_plans_utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
     _request_id: Option<String>,
 }

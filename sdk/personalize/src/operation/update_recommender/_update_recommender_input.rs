@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    #[doc(hidden)]
     pub recommender_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details of the recommender.</p>
-    #[doc(hidden)]
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
 }
 impl UpdateRecommenderInput {

@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingInstanceDetails {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group for the instance.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
-    #[doc(hidden)]
     pub lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace it.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<::std::string::String>,
     /// <p>The launch configuration used to launch the instance. This value is not available if you attached the instance to the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch template for the instance.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
-    #[doc(hidden)]
     pub protected_from_scale_in: ::std::option::Option<bool>,
     /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
-    #[doc(hidden)]
     pub weighted_capacity: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingInstanceDetails {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStreamProcessorInput {
     /// <p> Name of the stream processor that you want to update. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
-    #[doc(hidden)]
     pub settings_for_update: ::std::option::Option<crate::types::StreamProcessorSettingsForUpdate>,
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    #[doc(hidden)]
     pub regions_of_interest_for_update: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    #[doc(hidden)]
     pub data_sharing_preference_for_update: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
     /// <p> A list of parameters you want to delete from the stream processor. </p>
-    #[doc(hidden)]
     pub parameters_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessorParameterToDelete>>,
 }
 impl UpdateStreamProcessorInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskTemplateDefaults {
     /// <p>Default value for the field.</p>
-    #[doc(hidden)]
     pub default_field_values: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>,
 }
 impl TaskTemplateDefaults {

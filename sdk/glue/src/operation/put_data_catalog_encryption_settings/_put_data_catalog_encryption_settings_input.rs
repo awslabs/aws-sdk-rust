@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The security configuration to set.</p>
-    #[doc(hidden)]
     pub data_catalog_encryption_settings: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>,
 }
 impl PutDataCatalogEncryptionSettingsInput {

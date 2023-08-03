@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitorEvaluationsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    #[doc(hidden)]
     pub predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
     _request_id: Option<String>,
 }

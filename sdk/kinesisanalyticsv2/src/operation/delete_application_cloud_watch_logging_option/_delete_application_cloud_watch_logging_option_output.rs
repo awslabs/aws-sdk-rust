@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResetUserPasswordOutput {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
-    #[doc(hidden)]
     pub temporary_password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

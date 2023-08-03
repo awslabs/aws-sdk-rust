@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDestination {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// The port number for the input.
-    #[doc(hidden)]
     pub port: ::std::option::Option<::std::string::String>,
     /// This represents the endpoint that the customer stream will be pushed to.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// The properties for a VPC type input destination.
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::InputDestinationVpc>,
 }
 impl InputDestination {

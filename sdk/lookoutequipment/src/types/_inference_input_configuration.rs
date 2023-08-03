@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceInputConfiguration {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    #[doc(hidden)]
     pub s3_input_configuration: ::std::option::Option<crate::types::InferenceS3InputConfiguration>,
     /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub input_time_zone_offset: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    #[doc(hidden)]
     pub inference_input_name_configuration: ::std::option::Option<crate::types::InferenceInputNameConfiguration>,
 }
 impl InferenceInputConfiguration {

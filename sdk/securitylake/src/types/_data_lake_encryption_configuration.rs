@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeEncryptionConfiguration {
     /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DataLakeEncryptionConfiguration {

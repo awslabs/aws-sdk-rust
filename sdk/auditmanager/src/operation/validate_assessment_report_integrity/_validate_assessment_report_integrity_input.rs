@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateAssessmentReportIntegrityInput {
     /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
-    #[doc(hidden)]
     pub s3_relative_path: ::std::option::Option<::std::string::String>,
 }
 impl ValidateAssessmentReportIntegrityInput {

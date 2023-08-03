@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DakCertificateMetadata {
     /// <p>The certificate ID for the DAK.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
-    #[doc(hidden)]
     pub max_allowed_signature: ::std::option::Option<i32>,
     /// <p>Whether factory support has been enabled.</p>
-    #[doc(hidden)]
     pub factory_support: ::std::option::Option<bool>,
     /// <p>The advertised product ID (APID) that's used for pre-production and production applications.</p>
-    #[doc(hidden)]
     pub ap_id: ::std::option::Option<::std::string::String>,
     /// <p>The device type ID that's used for prototyping applications.</p>
-    #[doc(hidden)]
     pub device_type_id: ::std::option::Option<::std::string::String>,
 }
 impl DakCertificateMetadata {

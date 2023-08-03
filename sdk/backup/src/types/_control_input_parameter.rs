@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlInputParameter {
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ControlInputParameter {

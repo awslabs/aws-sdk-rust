@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The ID of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Outposts. </p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointInput {

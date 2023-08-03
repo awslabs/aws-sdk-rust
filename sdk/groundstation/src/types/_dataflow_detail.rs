@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataflowDetail {
     /// <p>Dataflow details for the source side.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Dataflow details for the destination side.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>Error message for a dataflow.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl DataflowDetail {

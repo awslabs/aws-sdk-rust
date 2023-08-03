@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesOutput {
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    #[doc(hidden)]
     pub certificates_info: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
     _request_id: Option<String>,
 }

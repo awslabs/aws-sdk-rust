@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionAutomation {
     /// <p>The automation options of the single select question.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>,
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
-    #[doc(hidden)]
     pub default_option_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationFormSingleSelectQuestionAutomation {

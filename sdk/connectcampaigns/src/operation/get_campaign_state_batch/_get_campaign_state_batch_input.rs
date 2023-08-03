@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchInput {
     /// List of CampaignId
-    #[doc(hidden)]
     pub campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetCampaignStateBatchInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrationTaskSummary {
     /// <p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>
-    #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Indication of the percentage completion of the task.</p>
-    #[doc(hidden)]
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>Detail information of what is being done within the overall status state.</p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the task was gathered.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MigrationTaskSummary {

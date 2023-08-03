@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateBudgetFromResourceInput {
     /// <p>The name of the budget you want to disassociate.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateBudgetFromResourceInput {

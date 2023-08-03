@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationFilterConfig {
     /// <p> The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>. </p>
-    #[doc(hidden)]
     pub severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
     /// <p> The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created. </p>
-    #[doc(hidden)]
     pub message_types: ::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>>,
 }
 impl NotificationFilterConfig {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoOutput {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    #[doc(hidden)]
     pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfoError>>,
     _request_id: Option<String>,
 }

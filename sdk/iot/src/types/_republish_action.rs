@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the MQTT topic.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
-    #[doc(hidden)]
     pub qos: ::std::option::Option<i32>,
     /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<crate::types::MqttHeaders>,
 }
 impl RepublishAction {

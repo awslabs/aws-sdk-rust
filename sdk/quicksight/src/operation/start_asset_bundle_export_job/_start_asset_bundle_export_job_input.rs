@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssetBundleExportJobInput {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    #[doc(hidden)]
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
@@ -20,17 +18,13 @@ pub struct StartAssetBundleExportJobInput {
     /// <li> <p> <code>VPCConnection</code> </p> </li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
-    #[doc(hidden)]
     pub include_all_dependencies: ::std::option::Option<bool>,
     /// <p>The export data format.</p>
-    #[doc(hidden)]
     pub export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    #[doc(hidden)]
     pub cloud_formation_override_property_configuration: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
 }
 impl StartAssetBundleExportJobInput {

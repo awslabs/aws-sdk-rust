@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentsForPullRequest {
     /// <p>The system-generated ID of the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the pull request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
-    #[doc(hidden)]
     pub before_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
-    #[doc(hidden)]
     pub after_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
-    #[doc(hidden)]
     pub comments: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
 }
 impl CommentsForPullRequest {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
-    #[doc(hidden)]
     pub artifact_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeArtifactInput {

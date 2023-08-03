@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The user's email address.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
     /// <ul>
@@ -21,32 +18,24 @@ pub struct User {
     /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
     /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The type of identity authentication used by the user.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
-    #[doc(hidden)]
     pub active: bool,
     /// <p>The principal ID of the user.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom permissions profile associated with this user.</p>
-    #[doc(hidden)]
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the external login provider.</p>
-    #[doc(hidden)]
     pub external_login_federation_provider_url: ::std::option::Option<::std::string::String>,
     /// <p>The identity ID for the user in the external login provider.</p>
-    #[doc(hidden)]
     pub external_login_id: ::std::option::Option<::std::string::String>,
 }
 impl User {

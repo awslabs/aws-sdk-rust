@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberSummary {
     /// <p>The identifier of the phone number.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The phone number.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of phone number.</p>
-    #[doc(hidden)]
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     /// <p>The ISO country code.</p>
-    #[doc(hidden)]
     pub phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
 }
 impl PhoneNumberSummary {

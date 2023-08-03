@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The name of the namepsace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the snapshot was created.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The username of the database within a snapshot.</p>
-    #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The status of the snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SnapshotStatus>,
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
-    #[doc(hidden)]
     pub total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The size of the incremental backup in megabytes.</p>
-    #[doc(hidden)]
     pub actual_incremental_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
-    #[doc(hidden)]
     pub backup_progress_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
-    #[doc(hidden)]
     pub current_backup_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
-    #[doc(hidden)]
     pub estimated_seconds_to_completion: ::std::option::Option<i64>,
     /// <p>The amount of time it took to back up data into a snapshot.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The period of time, in days, of how long the snapshot is retained.</p>
-    #[doc(hidden)]
     pub snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The amount of days until the snapshot is deleted.</p>
-    #[doc(hidden)]
     pub snapshot_remaining_days: ::std::option::Option<i32>,
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
-    #[doc(hidden)]
     pub snapshot_retention_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-    #[doc(hidden)]
     pub accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    #[doc(hidden)]
     pub accounts_with_provisioned_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Snapshot {

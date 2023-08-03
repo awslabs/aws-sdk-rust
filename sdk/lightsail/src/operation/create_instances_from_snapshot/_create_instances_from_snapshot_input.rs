@@ -4,43 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstancesFromSnapshotInput {
     /// <p>The names for your new instances.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object containing information about one or more disk mappings.</p>
-    #[doc(hidden)]
     pub attached_disk_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>>,
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The name for your key pair.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    #[doc(hidden)]
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
     /// <p>Constraints:</p>
@@ -48,7 +38,6 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
     /// <p>Constraints:</p>
@@ -57,7 +46,6 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub restore_date: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
     /// <p>Constraints:</p>
@@ -65,7 +53,6 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
 impl CreateInstancesFromSnapshotInput {

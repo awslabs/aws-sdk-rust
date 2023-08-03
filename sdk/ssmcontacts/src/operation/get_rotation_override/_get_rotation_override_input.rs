@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    #[doc(hidden)]
     pub rotation_override_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRotationOverrideInput {

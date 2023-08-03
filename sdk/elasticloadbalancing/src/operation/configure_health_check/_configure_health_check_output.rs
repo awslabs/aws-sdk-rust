@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
 }

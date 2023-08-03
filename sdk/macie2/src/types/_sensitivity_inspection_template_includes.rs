@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitivityInspectionTemplateIncludes {
     /// <p>An array of unique identifiers, one for each allow list to include.</p>
-    #[doc(hidden)]
     pub allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of unique identifiers, one for each custom data identifier to include.</p>
-    #[doc(hidden)]
     pub custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of unique identifiers, one for each managed data identifier to include.</p>
     /// <p>Amazon Macie uses these managed data identifiers in addition to managed data identifiers that are subsequently released and recommended for automated sensitive data discovery. To retrieve a list of valid values for the managed data identifiers that are currently available, use the ListManagedDataIdentifiers operation.</p> <para />
-    #[doc(hidden)]
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SensitivityInspectionTemplateIncludes {

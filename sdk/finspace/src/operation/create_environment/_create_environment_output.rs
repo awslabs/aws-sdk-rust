@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentOutput {
     /// <p>The unique identifier for FinSpace environment that you created.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
-    #[doc(hidden)]
     pub environment_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
-    #[doc(hidden)]
     pub attribute_partition: ::std::option::Option<crate::types::Partition>,
     /// <p> A partition dimension defined by a timestamp attribute. </p>
-    #[doc(hidden)]
     pub timestamp_partition: ::std::option::Option<crate::types::TimestampPartition>,
 }
 impl DatastorePartition {

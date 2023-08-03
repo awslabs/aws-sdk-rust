@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The code for the location.</p>
-    #[doc(hidden)]
     pub location_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for the location.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The available port speeds for the location.</p>
-    #[doc(hidden)]
     pub available_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the service provider for the location.</p>
-    #[doc(hidden)]
     pub available_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
-    #[doc(hidden)]
     pub available_mac_sec_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Location {

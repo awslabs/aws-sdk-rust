@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon ES domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     /// <p>Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.</p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index rotation period</p>
-    #[doc(hidden)]
     pub index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options.</p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
     /// <p>The Amazon ES retry options.</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     /// <p>The Amazon S3 backup mode.</p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
     /// <p>The Amazon S3 destination.</p>
-    #[doc(hidden)]
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    #[doc(hidden)]
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl ElasticsearchDestinationDescription {

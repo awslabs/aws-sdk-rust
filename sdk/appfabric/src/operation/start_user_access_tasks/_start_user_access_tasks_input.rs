@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartUserAccessTasksInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the target user.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
 }
 impl StartUserAccessTasksInput {

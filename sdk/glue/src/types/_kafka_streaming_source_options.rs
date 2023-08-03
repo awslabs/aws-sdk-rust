@@ -5,62 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
-    #[doc(hidden)]
     pub bootstrap_servers: ::std::option::Option<::std::string::String>,
     /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
-    #[doc(hidden)]
     pub security_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    #[doc(hidden)]
     pub assign: ::std::option::Option<::std::string::String>,
     /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    #[doc(hidden)]
     pub subscribe_pattern: ::std::option::Option<::std::string::String>,
     /// <p>An optional classification.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the delimiter character.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
-    #[doc(hidden)]
     pub starting_offsets: ::std::option::Option<::std::string::String>,
     /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
-    #[doc(hidden)]
     pub ending_offsets: ::std::option::Option<::std::string::String>,
     /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
-    #[doc(hidden)]
     pub poll_timeout_ms: ::std::option::Option<i64>,
     /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
-    #[doc(hidden)]
     pub num_retries: ::std::option::Option<i32>,
     /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
-    #[doc(hidden)]
     pub retry_interval_ms: ::std::option::Option<i64>,
     /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
-    #[doc(hidden)]
     pub max_offsets_per_trigger: ::std::option::Option<i64>,
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
-    #[doc(hidden)]
     pub min_partitions: ::std::option::Option<i32>,
     /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
-    #[doc(hidden)]
     pub include_headers: ::std::option::Option<bool>,
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    #[doc(hidden)]
     pub add_record_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    #[doc(hidden)]
     pub emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
-    #[doc(hidden)]
     pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KafkaStreamingSourceOptions {

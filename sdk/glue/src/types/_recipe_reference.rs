@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeReference {
     /// <p>The ARN of the DataBrew recipe.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The RecipeVersion of the DataBrew recipe.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReference {

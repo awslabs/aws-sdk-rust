@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewOffNadirInput {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
-    #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
-    #[doc(hidden)]
     pub upper_bound: ::std::option::Option<f32>,
 }
 impl ViewOffNadirInput {

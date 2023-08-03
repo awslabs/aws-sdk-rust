@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendOutput {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
-    #[doc(hidden)]
     pub amplify_feature_flags: ::std::option::Option<::std::string::String>,
     /// <p>A stringified version of the current configs for your Amplify project.</p>
-    #[doc(hidden)]
     pub amplify_meta_config: ::std::option::Option<::std::string::String>,
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of backend environments in an array.</p>
-    #[doc(hidden)]
     pub backend_environment_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>If the request failed, this is the returned error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

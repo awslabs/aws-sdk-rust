@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcEndpointInput {

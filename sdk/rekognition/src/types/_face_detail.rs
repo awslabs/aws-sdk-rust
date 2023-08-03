@@ -13,55 +13,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
-    #[doc(hidden)]
     pub age_range: ::std::option::Option<crate::types::AgeRange>,
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub smile: ::std::option::Option<crate::types::Smile>,
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub eyeglasses: ::std::option::Option<crate::types::Eyeglasses>,
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub sunglasses: ::std::option::Option<crate::types::Sunglasses>,
     /// <p>The predicted gender of a detected face. </p>
-    #[doc(hidden)]
     pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub beard: ::std::option::Option<crate::types::Beard>,
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub mustache: ::std::option::Option<crate::types::Mustache>,
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub eyes_open: ::std::option::Option<crate::types::EyeOpen>,
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
-    #[doc(hidden)]
     pub mouth_open: ::std::option::Option<crate::types::MouthOpen>,
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-    #[doc(hidden)]
     pub emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-    #[doc(hidden)]
     pub landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
-    #[doc(hidden)]
     pub pose: ::std::option::Option<crate::types::Pose>,
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::ImageQuality>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
-    #[doc(hidden)]
     pub face_occluded: ::std::option::Option<crate::types::FaceOccluded>,
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
-    #[doc(hidden)]
     pub eye_direction: ::std::option::Option<crate::types::EyeDirection>,
 }
 impl FaceDetail {

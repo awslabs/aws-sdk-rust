@@ -11,25 +11,18 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter_variable: ::std::option::Option<crate::types::DataSourceFilterVariable>,
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    #[doc(hidden)]
     pub eq: ::std::option::Option<::std::string::String>,
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    #[doc(hidden)]
     pub gt: ::std::option::Option<::std::string::String>,
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    #[doc(hidden)]
     pub lt: ::std::option::Option<::std::string::String>,
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    #[doc(hidden)]
     pub ge: ::std::option::Option<::std::string::String>,
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    #[doc(hidden)]
     pub le: ::std::option::Option<::std::string::String>,
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    #[doc(hidden)]
     pub ne: ::std::option::Option<::std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -38,7 +31,6 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
@@ -46,13 +38,10 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeDataSourcesInput {

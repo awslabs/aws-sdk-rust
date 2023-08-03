@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
-    #[doc(hidden)]
     pub snapshot_limits: ::std::option::Option<crate::types::SnapshotLimits>,
     _request_id: Option<String>,
 }

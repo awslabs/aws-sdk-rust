@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeOutput {
     /// <p>The type of attribute.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::Attribute>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisOutput {
     /// <p>The name of the what-if analysis.</p>
-    #[doc(hidden)]
     pub what_if_analysis_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    #[doc(hidden)]
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
@@ -24,13 +20,10 @@ pub struct DescribeWhatIfAnalysisOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the what-if analysis was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -40,7 +33,6 @@ pub struct DescribeWhatIfAnalysisOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -49,7 +41,6 @@ pub struct DescribeWhatIfAnalysisOutput {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     _request_id: Option<String>,
 }

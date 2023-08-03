@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    #[doc(hidden)]
     pub step_executions: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

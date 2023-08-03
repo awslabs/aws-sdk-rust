@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileNotificationSummary {
     /// <p>The current profile version.</p>
-    #[doc(hidden)]
     pub current_profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The latest profile version.</p>
-    #[doc(hidden)]
     pub latest_profile_version: ::std::option::Option<::std::string::String>,
     /// <p>Type of notification.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProfileNotificationType>,
     /// <p>The profile ARN.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile name.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    #[doc(hidden)]
     pub workload_name: ::std::option::Option<::std::string::String>,
 }
 impl ProfileNotificationSummary {

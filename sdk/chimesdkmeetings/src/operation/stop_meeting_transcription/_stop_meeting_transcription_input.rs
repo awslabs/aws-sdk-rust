@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
 }
 impl StopMeetingTranscriptionInput {

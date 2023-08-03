@@ -8,10 +8,8 @@ pub struct GetSpotPlacementScoresOutput {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
-    #[doc(hidden)]
     pub spot_placement_scores: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

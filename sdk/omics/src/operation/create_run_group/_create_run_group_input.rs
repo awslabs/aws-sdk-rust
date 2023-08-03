@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRunGroupInput {
     /// <p>A name for the group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of CPUs to use in the group.</p>
-    #[doc(hidden)]
     pub max_cpus: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent runs for the group.</p>
-    #[doc(hidden)]
     pub max_runs: ::std::option::Option<i32>,
     /// <p>A maximum run time for the group in minutes.</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i32>,
     /// <p>Tags for the group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p> The maximum GPUs that can be used by a run group. </p>
-    #[doc(hidden)]
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl CreateRunGroupInput {

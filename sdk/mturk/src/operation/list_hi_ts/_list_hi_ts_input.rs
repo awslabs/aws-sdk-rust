@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHiTsInput {
     /// <p>Pagination token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListHiTsInput {

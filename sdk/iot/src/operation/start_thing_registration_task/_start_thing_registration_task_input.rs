@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartThingRegistrationTaskInput {
     /// <p>The provisioning template.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
-    #[doc(hidden)]
     pub input_file_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    #[doc(hidden)]
     pub input_file_key: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN that grants permission the input file.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartThingRegistrationTaskInput {

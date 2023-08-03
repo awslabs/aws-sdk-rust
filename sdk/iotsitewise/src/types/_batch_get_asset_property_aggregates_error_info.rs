@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub error_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {

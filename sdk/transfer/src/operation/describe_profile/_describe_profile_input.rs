@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProfileInput {
     /// <p>The identifier of the profile that you want described.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProfileInput {

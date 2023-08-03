@@ -5,7 +5,6 @@
 pub struct DeleteAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInput {

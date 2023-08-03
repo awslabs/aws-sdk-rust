@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfsStorageConfiguration {
     /// <p>The file system identifier.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The mount point for the file system.</p>
-    #[doc(hidden)]
     pub mount_point: ::std::option::Option<::std::string::String>,
 }
 impl EfsStorageConfiguration {

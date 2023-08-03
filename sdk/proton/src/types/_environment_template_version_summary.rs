@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentTemplateVersionSummary {
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of an environment template.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The recommended minor version of the environment template.</p>
-    #[doc(hidden)]
     pub recommended_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The status of the version of an environment template.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
     /// <p>The status message of the version of an environment template.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A description of the version of an environment template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the version of an environment template was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the version of an environment template was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentTemplateVersionSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedRemediationExceptionBatch {
     /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    #[doc(hidden)]
     pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
 }
 impl FailedRemediationExceptionBatch {

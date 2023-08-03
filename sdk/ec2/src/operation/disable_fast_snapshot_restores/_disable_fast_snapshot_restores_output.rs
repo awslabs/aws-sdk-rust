@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreSuccessItem>>,
     /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreErrorItem>>,
     _request_id: Option<String>,
 }

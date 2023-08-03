@@ -7,14 +7,11 @@
 pub struct Handshake {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    #[doc(hidden)]
     pub parties: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>,
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -25,13 +22,10 @@ pub struct Handshake {
     /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::HandshakeState>,
     /// <p>The date and time that the handshake request was made.</p>
-    #[doc(hidden)]
     pub requested_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
-    #[doc(hidden)]
     pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
     /// <ul>
@@ -39,10 +33,8 @@ pub struct Handshake {
     /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
     /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionType>,
     /// <p>Additional information that is needed to process the handshake.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
 }
 impl Handshake {

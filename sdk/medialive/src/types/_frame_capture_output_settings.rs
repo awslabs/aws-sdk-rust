@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameCaptureOutputSettings {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
-    #[doc(hidden)]
     pub name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl FrameCaptureOutputSettings {

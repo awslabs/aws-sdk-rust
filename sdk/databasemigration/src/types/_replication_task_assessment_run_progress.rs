@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentRunProgress {
     /// <p>The number of individual assessments that are specified to run.</p>
-    #[doc(hidden)]
     pub individual_assessment_count: i32,
     /// <p>The number of individual assessments that have completed, successfully or not.</p>
-    #[doc(hidden)]
     pub individual_assessment_completed_count: i32,
 }
 impl ReplicationTaskAssessmentRunProgress {

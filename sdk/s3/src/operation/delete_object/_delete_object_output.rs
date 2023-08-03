@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectOutput {
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
-    #[doc(hidden)]
     pub delete_marker: bool,
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

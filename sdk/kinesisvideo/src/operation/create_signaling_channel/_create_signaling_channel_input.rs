@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSignalingChannelInput {
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-    #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    #[doc(hidden)]
     pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSignalingChannelInput {

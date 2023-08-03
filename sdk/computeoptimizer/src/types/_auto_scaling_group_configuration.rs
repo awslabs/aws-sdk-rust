@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupConfiguration {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub desired_capacity: i32,
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub min_size: i32,
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub max_size: i32,
     /// <p>The instance type for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroupConfiguration {

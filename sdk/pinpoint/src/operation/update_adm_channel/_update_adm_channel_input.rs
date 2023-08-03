@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAdmChannelInput {
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    #[doc(hidden)]
     pub adm_channel_request: ::std::option::Option<crate::types::AdmChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAdmChannelInput {

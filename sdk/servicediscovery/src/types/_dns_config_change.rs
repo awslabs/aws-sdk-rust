@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    #[doc(hidden)]
     pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigChange {

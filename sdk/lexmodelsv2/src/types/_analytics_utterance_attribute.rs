@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceAttribute {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>,
 }
 impl AnalyticsUtteranceAttribute {

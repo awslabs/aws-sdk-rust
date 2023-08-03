@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueryExecutionsOutput {
     /// <p>The unique IDs of each query execution as an array of strings.</p>
-    #[doc(hidden)]
     pub query_execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token to be used by the next request if this request is truncated.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

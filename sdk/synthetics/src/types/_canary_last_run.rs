@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryLastRun {
     /// <p>The name of the canary.</p>
-    #[doc(hidden)]
     pub canary_name: ::std::option::Option<::std::string::String>,
     /// <p>The results from this canary's most recent run.</p>
-    #[doc(hidden)]
     pub last_run: ::std::option::Option<crate::types::CanaryRun>,
 }
 impl CanaryLastRun {

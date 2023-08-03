@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowRunPropertiesInput {

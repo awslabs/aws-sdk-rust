@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The termination credentials being updated.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInput {

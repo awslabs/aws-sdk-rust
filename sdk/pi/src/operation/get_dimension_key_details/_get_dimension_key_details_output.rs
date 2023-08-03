@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>>,
     _request_id: Option<String>,
 }

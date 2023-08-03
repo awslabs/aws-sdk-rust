@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
-    #[doc(hidden)]
     pub data_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Dataset.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetExternalDataViewAccessDetailsInput {

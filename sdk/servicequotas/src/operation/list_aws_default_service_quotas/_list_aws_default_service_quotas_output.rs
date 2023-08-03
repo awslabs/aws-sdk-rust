@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quotas.</p>
-    #[doc(hidden)]
     pub quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
     _request_id: Option<String>,
 }

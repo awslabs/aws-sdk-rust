@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p>An object describing the project.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<crate::types::ProjectDescription>,
     _request_id: Option<String>,
 }

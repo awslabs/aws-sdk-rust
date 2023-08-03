@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl Target {

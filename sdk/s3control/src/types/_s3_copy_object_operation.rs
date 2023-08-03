@@ -5,59 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CopyObjectOperation {
     /// <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
-    #[doc(hidden)]
     pub target_resource: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub canned_access_control_list: ::std::option::Option<crate::types::S3CannedAccessControlList>,
     /// <p></p>
-    #[doc(hidden)]
     pub access_control_grants: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,
     /// <p></p>
-    #[doc(hidden)]
     pub metadata_directive: ::std::option::Option<crate::types::S3MetadataDirective>,
     /// <p></p>
-    #[doc(hidden)]
     pub modified_since_constraint: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
-    #[doc(hidden)]
     pub new_object_metadata: ::std::option::Option<crate::types::S3ObjectMetadata>,
     /// <p></p>
-    #[doc(hidden)]
     pub new_object_tagging: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
-    #[doc(hidden)]
     pub redirect_location: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub requester_pays: bool,
     /// <p></p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::S3StorageClass>,
     /// <p></p>
-    #[doc(hidden)]
     pub un_modified_since_constraint: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p></p>
-    #[doc(hidden)]
     pub sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the folder prefix that you want the objects to be copied into. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the <code>TargetKeyPrefix</code> property to <code>Folder1</code>.</p>
-    #[doc(hidden)]
     pub target_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
-    #[doc(hidden)]
     pub object_lock_legal_hold_status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
     /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
-    #[doc(hidden)]
     pub object_lock_mode: ::std::option::Option<crate::types::S3ObjectLockMode>,
     /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
-    #[doc(hidden)]
     pub object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
-    #[doc(hidden)]
     pub bucket_key_enabled: bool,
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::S3ChecksumAlgorithm>,
 }
 impl S3CopyObjectOperation {

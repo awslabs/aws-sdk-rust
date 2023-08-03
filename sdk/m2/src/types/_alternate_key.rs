@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlternateKey {
     /// <p>The name of the alternate key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
-    #[doc(hidden)]
     pub offset: i32,
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
-    #[doc(hidden)]
     pub length: i32,
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
-    #[doc(hidden)]
     pub allow_duplicates: bool,
 }
 impl AlternateKey {

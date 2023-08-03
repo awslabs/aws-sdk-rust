@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ARN that specifies the finding.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The schema version of this data type.</p>
-    #[doc(hidden)]
     pub schema_version: i32,
     /// <p>The data element is set to "Inspector".</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    #[doc(hidden)]
     pub service_attributes: ::std::option::Option<crate::types::InspectorServiceAttributes>,
     /// <p>The type of the host from which the finding is generated.</p>
-    #[doc(hidden)]
     pub asset_type: ::std::option::Option<crate::types::AssetType>,
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    #[doc(hidden)]
     pub asset_attributes: ::std::option::Option<crate::types::AssetAttributes>,
     /// <p>The ID of the finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation for the finding.</p>
-    #[doc(hidden)]
     pub recommendation: ::std::option::Option<::std::string::String>,
     /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>The numeric value of the finding severity.</p>
-    #[doc(hidden)]
     pub numeric_severity: f64,
     /// <p>This data element is currently not used.</p>
-    #[doc(hidden)]
     pub confidence: i32,
     /// <p>This data element is currently not used.</p>
-    #[doc(hidden)]
     pub indicator_of_compromise: ::std::option::Option<bool>,
     /// <p>The system-defined attributes for the finding.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The time when the finding was generated.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Finding {

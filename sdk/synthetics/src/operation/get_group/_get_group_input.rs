@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupInput {
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    #[doc(hidden)]
     pub group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetGroupInput {

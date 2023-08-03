@@ -6,31 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleHookSpecification {
     /// <p>The name of the lifecycle hook.</p>
-    #[doc(hidden)]
     pub lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
     /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
     /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle_transition: ::std::option::Option<::std::string::String>,
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
-    #[doc(hidden)]
     pub notification_metadata: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
-    #[doc(hidden)]
     pub heartbeat_timeout: ::std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
-    #[doc(hidden)]
     pub default_result: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub notification_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleHookSpecification {

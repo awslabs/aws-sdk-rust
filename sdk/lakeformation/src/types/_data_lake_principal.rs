@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
-    #[doc(hidden)]
     pub data_lake_principal_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DataLakePrincipal {

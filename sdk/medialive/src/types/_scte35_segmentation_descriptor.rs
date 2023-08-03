@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35SegmentationDescriptor {
     /// Holds the four SCTE-35 delivery restriction parameters.
-    #[doc(hidden)]
     pub delivery_restrictions: ::std::option::Option<crate::types::Scte35DeliveryRestrictions>,
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
-    #[doc(hidden)]
     pub segment_num: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
-    #[doc(hidden)]
     pub segmentation_cancel_indicator: ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
-    #[doc(hidden)]
     pub segmentation_duration: ::std::option::Option<i64>,
     /// Corresponds to SCTE-35 segmentation_event_id.
-    #[doc(hidden)]
     pub segmentation_event_id: ::std::option::Option<i64>,
     /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
-    #[doc(hidden)]
     pub segmentation_type_id: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
-    #[doc(hidden)]
     pub segmentation_upid: ::std::option::Option<::std::string::String>,
     /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
-    #[doc(hidden)]
     pub segmentation_upid_type: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
-    #[doc(hidden)]
     pub segments_expected: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
-    #[doc(hidden)]
     pub sub_segment_num: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
-    #[doc(hidden)]
     pub sub_segments_expected: ::std::option::Option<i32>,
 }
 impl Scte35SegmentationDescriptor {

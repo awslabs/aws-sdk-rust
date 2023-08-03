@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskStatisticsForAuditCheck {
     /// <p>The total number of findings to which a task is being applied.</p>
-    #[doc(hidden)]
     pub total_findings_count: ::std::option::Option<i64>,
     /// <p>The number of findings for which at least one of the actions failed when applied.</p>
-    #[doc(hidden)]
     pub failed_findings_count: ::std::option::Option<i64>,
     /// <p>The number of findings for which all mitigation actions succeeded when applied.</p>
-    #[doc(hidden)]
     pub succeeded_findings_count: ::std::option::Option<i64>,
     /// <p>The number of findings skipped because of filter conditions provided in the parameters to the command.</p>
-    #[doc(hidden)]
     pub skipped_findings_count: ::std::option::Option<i64>,
     /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
-    #[doc(hidden)]
     pub canceled_findings_count: ::std::option::Option<i64>,
 }
 impl TaskStatisticsForAuditCheck {

@@ -7,11 +7,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subtitles {
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
-    #[doc(hidden)]
     pub formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
-    #[doc(hidden)]
     pub output_start_index: ::std::option::Option<i32>,
 }
 impl Subtitles {

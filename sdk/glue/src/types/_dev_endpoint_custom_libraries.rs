@@ -7,12 +7,10 @@ pub struct DevEndpointCustomLibraries {
     /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub extra_python_libs_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub extra_jars_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl DevEndpointCustomLibraries {

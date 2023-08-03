@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleInput {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
-    #[doc(hidden)]
     pub disassociate_schedule: ::std::option::Option<bool>,
 }
 impl ModifyClusterSnapshotScheduleInput {

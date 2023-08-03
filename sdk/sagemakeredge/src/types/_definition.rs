@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Definition {
     /// <p>The unique model handle.</p>
-    #[doc(hidden)]
     pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The absolute S3 location of the model.</p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The checksum information of the model.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<crate::types::Checksum>,
     /// <p>The desired state of the model.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ModelState>,
 }
 impl Definition {

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    #[doc(hidden)]
     pub compute_environment: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentOrder {

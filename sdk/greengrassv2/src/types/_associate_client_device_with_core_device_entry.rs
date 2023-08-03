@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceEntry {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
-    #[doc(hidden)]
     pub s3_output_url: ::std::option::Option<crate::types::S3OutputUrl>,
 }
 impl InstanceAssociationOutputUrl {

@@ -6,10 +6,8 @@ pub struct CreateConnectionAliasInput {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    #[doc(hidden)]
     pub connection_string: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the connection alias.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateConnectionAliasInput {

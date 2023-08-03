@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConfigurationStatus>,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    #[doc(hidden)]
     pub image_selector_type: ::std::option::Option<crate::types::ImageSelectorType>,
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::ImageGenerationDestinationConfig>,
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
-    #[doc(hidden)]
     pub sampling_interval: ::std::option::Option<i32>,
     /// <p>The accepted image format.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    #[doc(hidden)]
     pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
-    #[doc(hidden)]
     pub width_pixels: ::std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
-    #[doc(hidden)]
     pub height_pixels: ::std::option::Option<i32>,
 }
 impl ImageGenerationConfiguration {

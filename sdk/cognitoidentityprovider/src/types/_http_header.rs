@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpHeader {
     /// <p>The header name.</p>
-    #[doc(hidden)]
     pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The header value.</p>
-    #[doc(hidden)]
     pub header_value: ::std::option::Option<::std::string::String>,
 }
 impl HttpHeader {

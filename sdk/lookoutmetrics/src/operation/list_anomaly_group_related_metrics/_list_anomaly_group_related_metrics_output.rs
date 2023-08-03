@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    #[doc(hidden)]
     pub inter_metric_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

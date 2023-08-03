@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A user-generated string that you use to identify your cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The execute command configuration for the cluster.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     /// <p>The status of the cluster. The following are the possible states that are returned.</p>
     /// <dl>
@@ -46,19 +43,14 @@ pub struct Cluster {
     /// <p>The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your account for a period of time. However, this behavior is subject to change in the future. We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
-    #[doc(hidden)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-    #[doc(hidden)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub pending_tasks_count: i32,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
-    #[doc(hidden)]
     pub active_services_count: i32,
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
@@ -71,7 +63,6 @@ pub struct Cluster {
     /// <li> <p>drainingEC2ServiceCount</p> </li>
     /// <li> <p>drainingFargateServiceCount</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -84,19 +75,14 @@ pub struct Cluster {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
     /// <p>The capacity providers associated with the cluster.</p>
-    #[doc(hidden)]
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no launch type or capacity provider strategy specified, the default capacity provider strategy is used.</p>
-    #[doc(hidden)]
     pub default_capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and associated resources are returned as cluster attachments.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     /// <p>The status of the capacity providers associated with the cluster. The following are the states that are returned.</p>
     /// <dl>
@@ -119,11 +105,9 @@ pub struct Cluster {
     /// <p>The capacity provider updates failed.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attachments_status: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub service_connect_defaults: ::std::option::Option<crate::types::ClusterServiceConnectDefaults>,
 }
 impl Cluster {

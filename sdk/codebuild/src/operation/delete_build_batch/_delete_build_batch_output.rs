@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBuildBatchOutput {
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    #[doc(hidden)]
     pub builds_deleted: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
-    #[doc(hidden)]
     pub builds_not_deleted: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,
     _request_id: Option<String>,
 }

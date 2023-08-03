@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateEbsBlockDevice {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDevice {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbpV11 {
     /// <p>The DevAddr value.</p>
-    #[doc(hidden)]
     pub dev_addr: ::std::option::Option<::std::string::String>,
     /// <p>Session keys for ABP v1.1</p>
-    #[doc(hidden)]
     pub session_keys: ::std::option::Option<crate::types::SessionKeysAbpV11>,
     /// <p>The FCnt init value.</p>
-    #[doc(hidden)]
     pub f_cnt_start: ::std::option::Option<i32>,
 }
 impl AbpV11 {

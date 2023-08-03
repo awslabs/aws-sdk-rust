@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineInput {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
 impl GetDefaultPatchBaselineInput {

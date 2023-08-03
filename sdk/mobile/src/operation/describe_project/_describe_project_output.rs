@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
 }

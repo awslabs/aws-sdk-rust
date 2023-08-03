@@ -8,39 +8,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallAnalyticsJob {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub call_analytics_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    #[doc(hidden)]
     pub call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
-    #[doc(hidden)]
     pub media_format: ::std::option::Option<crate::types::MediaFormat>,
     /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub media: ::std::option::Option<crate::types::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The date and time the specified Call Analytics job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified Call Analytics job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified Call Analytics job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -52,20 +42,15 @@ pub struct CallAnalyticsJob {
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
-    #[doc(hidden)]
     pub identified_language_score: ::std::option::Option<f32>,
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     /// <p>Indicates which speaker is on which channel.</p>
-    #[doc(hidden)]
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl CallAnalyticsJob {

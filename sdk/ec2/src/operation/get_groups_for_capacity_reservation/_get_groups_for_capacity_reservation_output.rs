@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupsForCapacityReservationOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
-    #[doc(hidden)]
     pub capacity_reservation_groups: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
     _request_id: Option<String>,
 }

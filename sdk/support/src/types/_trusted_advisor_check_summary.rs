@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
-    #[doc(hidden)]
     pub has_flagged_resources: bool,
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    #[doc(hidden)]
     pub resources_summary: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    #[doc(hidden)]
     pub category_specific_summary: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
 }
 impl TrustedAdvisorCheckSummary {

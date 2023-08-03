@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the folder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
-    #[doc(hidden)]
     pub folder_type: ::std::option::Option<crate::types::FolderType>,
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    #[doc(hidden)]
     pub parent_folder_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Tags for the folder.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFolderInput {

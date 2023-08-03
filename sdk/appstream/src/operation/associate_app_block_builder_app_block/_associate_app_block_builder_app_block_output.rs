@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAppBlockBuilderAppBlockOutput {
     /// <p>The list of app block builders associated with app blocks.</p>
-    #[doc(hidden)]
     pub app_block_builder_app_block_association: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
     _request_id: Option<String>,
 }

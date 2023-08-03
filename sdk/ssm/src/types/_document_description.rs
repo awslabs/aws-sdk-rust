@@ -5,98 +5,68 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
-    #[doc(hidden)]
     pub sha1: ::std::option::Option<::std::string::String>,
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    #[doc(hidden)]
     pub hash: ::std::option::Option<::std::string::String>,
     /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    #[doc(hidden)]
     pub hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the artifact associated with the document.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services user that created the document.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date when the document was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the SSM document.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    #[doc(hidden)]
     pub status_information: ::std::option::Option<::std::string::String>,
     /// <p>The document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the document. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameters for a document.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::DocumentParameter>>,
     /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
-    #[doc(hidden)]
     pub platform_types: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The type of document.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
     /// <p>The schema version.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The latest version of the document.</p>
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<::std::string::String>,
     /// <p>The default version.</p>
-    #[doc(hidden)]
     pub default_version: ::std::option::Option<::std::string::String>,
     /// <p>The document format, either JSON or YAML.</p>
-    #[doc(hidden)]
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Details about the document attachments, including names, locations, sizes, and so on.</p>
-    #[doc(hidden)]
     pub attachments_information: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentInformation>>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    #[doc(hidden)]
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>The user in your organization who created the document.</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>Details about the review of a document.</p>
-    #[doc(hidden)]
     pub review_information: ::std::option::Option<::std::vec::Vec<crate::types::ReviewInformation>>,
     /// <p>The version of the document currently approved for use in the organization.</p>
-    #[doc(hidden)]
     pub approved_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the document that is currently under review.</p>
-    #[doc(hidden)]
     pub pending_review_version: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the review.</p>
-    #[doc(hidden)]
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The classification of a document to help you identify and categorize its use.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value that identifies a document's category.</p>
-    #[doc(hidden)]
     pub category_enum: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DocumentDescription {

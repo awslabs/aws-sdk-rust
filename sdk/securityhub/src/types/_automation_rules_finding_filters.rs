@@ -5,113 +5,78 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
-    #[doc(hidden)]
     pub product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The product-specific identifier for a finding. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
-    #[doc(hidden)]
     pub generator_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
-    #[doc(hidden)]
     pub criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p> A finding's title. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A finding's description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
-    #[doc(hidden)]
     pub source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
-    #[doc(hidden)]
     pub company_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The severity value of the finding. </p>
-    #[doc(hidden)]
     pub severity_label: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The type of resource that the finding pertains to. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
-    #[doc(hidden)]
     pub resource_partition: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
-    #[doc(hidden)]
     pub resource_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
-    #[doc(hidden)]
     pub resource_details_other: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
-    #[doc(hidden)]
     pub compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
-    #[doc(hidden)]
     pub compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the veracity of a finding. </p>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides information about the status of the investigation into a finding. </p>
-    #[doc(hidden)]
     pub workflow_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the current state of a finding. </p>
-    #[doc(hidden)]
     pub record_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The ARN for the product that generated a related finding. </p>
-    #[doc(hidden)]
     pub related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The product-generated identifier for a related finding. </p>
-    #[doc(hidden)]
     pub related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The text of a user-defined note that's added to a finding. </p>
-    #[doc(hidden)]
     pub note_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
-    #[doc(hidden)]
     pub note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> The principal that created a note. </p>
-    #[doc(hidden)]
     pub note_updated_by: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
-    #[doc(hidden)]
     pub user_defined_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
 }
 impl AutomationRulesFindingFilters {

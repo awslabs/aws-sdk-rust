@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOpenIdTokenOutput {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>An OpenID token, valid for 10 minutes.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

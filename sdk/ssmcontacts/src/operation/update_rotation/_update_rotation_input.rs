@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    #[doc(hidden)]
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the rotation goes into effect.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
 }
 impl UpdateRotationInput {

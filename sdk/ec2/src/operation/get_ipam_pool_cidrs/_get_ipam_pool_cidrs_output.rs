@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamPoolCidrsOutput {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    #[doc(hidden)]
     pub ipam_pool_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     /// <p>The number of devices that matched the device filter selection criteria.</p>
-    #[doc(hidden)]
     pub matched_devices_count: ::std::option::Option<i32>,
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
-    #[doc(hidden)]
     pub max_devices: ::std::option::Option<i32>,
 }
 impl DeviceSelectionResult {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxChangesetOutput {
     /// <p>A unique identifier for the changeset.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of change requests.</p>
-    #[doc(hidden)]
     pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of the changeset creation process.</p>
     /// <ul>
@@ -28,10 +22,8 @@ pub struct CreateKxChangesetOutput {
     /// <li> <p>Failed – Changeset creation has failed.</p> </li>
     /// <li> <p>Complete – Changeset creation has succeeded.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangesetStatus>,
     /// <p>The details of the error that you receive when creating a changeset. It consists of the type of error and the error message.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     _request_id: Option<String>,
 }

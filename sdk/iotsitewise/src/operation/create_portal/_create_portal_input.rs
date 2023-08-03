@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePortalInput {
     /// <p>A friendly name for the portal.</p>
-    #[doc(hidden)]
     pub portal_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the portal.</p>
-    #[doc(hidden)]
     pub portal_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    #[doc(hidden)]
     pub portal_contact_email: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
-    #[doc(hidden)]
     pub portal_logo_image_file: ::std::option::Option<crate::types::ImageFile>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
@@ -31,15 +24,12 @@ pub struct CreatePortalInput {
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code> </p>
-    #[doc(hidden)]
     pub portal_auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p> <important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub notification_sender_email: ::std::option::Option<::std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<crate::types::Alarms>,
 }
 impl CreatePortalInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceDefinitionInput {
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The ID of the resource definition.
-    #[doc(hidden)]
     pub resource_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourceDefinitionInput {

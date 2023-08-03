@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionOutput {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-    #[doc(hidden)]
     pub applied_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

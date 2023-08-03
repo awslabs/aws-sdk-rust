@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    #[doc(hidden)]
     pub min_units: ::std::option::Option<i32>,
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs)</p>
-    #[doc(hidden)]
     pub max_units: ::std::option::Option<i32>,
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    #[doc(hidden)]
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs to configure log publishing.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
 }
 impl UpdatePipelineInput {

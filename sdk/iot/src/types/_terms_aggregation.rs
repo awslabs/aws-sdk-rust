@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
-    #[doc(hidden)]
     pub max_buckets: i32,
 }
 impl TermsAggregation {

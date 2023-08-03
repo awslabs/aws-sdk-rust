@@ -9,10 +9,8 @@ pub struct ListTagsForResourceInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

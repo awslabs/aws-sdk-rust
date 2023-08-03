@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceProfileArtifact {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
@@ -13,10 +12,8 @@ pub struct ResourceProfileArtifact {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub classification_result_status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
-    #[doc(hidden)]
     pub sensitive: ::std::option::Option<bool>,
 }
 impl ResourceProfileArtifact {

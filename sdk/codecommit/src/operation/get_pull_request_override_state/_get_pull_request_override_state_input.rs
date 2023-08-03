@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateInput {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPullRequestOverrideStateInput {

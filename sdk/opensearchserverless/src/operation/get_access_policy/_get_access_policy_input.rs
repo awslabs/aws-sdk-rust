@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPolicyInput {
     /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPolicyInput {

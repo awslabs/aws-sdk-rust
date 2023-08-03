@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MinimumEngineVersionPerAllowedValue {
     /// <p>The allowed value for an option setting.</p>
-    #[doc(hidden)]
     pub allowed_value: ::std::option::Option<::std::string::String>,
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl MinimumEngineVersionPerAllowedValue {

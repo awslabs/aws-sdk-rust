@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist you want to associate with the fraudster.</p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the fraudster to be associated with the watchlist.</p>
-    #[doc(hidden)]
     pub fraudster_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateFraudsterInput {

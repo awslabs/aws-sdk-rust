@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3JobManifestGenerator {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The source bucket used by the ManifestGenerator.</p>
-    #[doc(hidden)]
     pub source_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the location the generated manifest will be written to.</p>
-    #[doc(hidden)]
     pub manifest_output_location: ::std::option::Option<crate::types::S3ManifestOutputLocation>,
     /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::JobManifestGeneratorFilter>,
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
-    #[doc(hidden)]
     pub enable_manifest_output: bool,
 }
 impl S3JobManifestGenerator {

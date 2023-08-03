@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutput {
     /// <p>The unique identifier of the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    #[doc(hidden)]
     pub package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEndpointInput {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    #[doc(hidden)]
     pub device_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method used during the device connection.</p>
-    #[doc(hidden)]
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
 }
 impl GetEndpointInput {

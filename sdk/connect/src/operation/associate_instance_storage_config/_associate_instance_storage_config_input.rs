@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
     /// <p>A valid storage type.</p>
-    #[doc(hidden)]
     pub storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
 }
 impl AssociateInstanceStorageConfigInput {

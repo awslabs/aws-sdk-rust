@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainIspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    #[doc(hidden)]
     pub isp_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
-    #[doc(hidden)]
     pub inbox_raw_count: ::std::option::Option<i64>,
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
-    #[doc(hidden)]
     pub spam_raw_count: ::std::option::Option<i64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
-    #[doc(hidden)]
     pub inbox_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
-    #[doc(hidden)]
     pub spam_percentage: ::std::option::Option<f64>,
 }
 impl DomainIspPlacement {

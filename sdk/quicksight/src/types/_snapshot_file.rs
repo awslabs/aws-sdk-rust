@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotFile {
     /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
-    #[doc(hidden)]
     pub sheet_selections: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
     /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
-    #[doc(hidden)]
     pub format_type: ::std::option::Option<crate::types::SnapshotFileFormatType>,
 }
 impl SnapshotFile {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopesOutput {
     /// <p>The Network Access Scopes.</p>
-    #[doc(hidden)]
     pub network_insights_access_scopes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

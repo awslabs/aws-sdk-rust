@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStreamOutputConfiguration {
     /// The transport parameters that are associated with each outbound media stream.
-    #[doc(hidden)]
     pub destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    #[doc(hidden)]
     pub encoding_name: ::std::option::Option<crate::types::EncodingName>,
     /// Encoding parameters
-    #[doc(hidden)]
     pub encoding_parameters: ::std::option::Option<crate::types::EncodingParameters>,
     /// The name of the media stream.
-    #[doc(hidden)]
     pub media_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl MediaStreamOutputConfiguration {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMatchingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    #[doc(hidden)]
     pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    #[doc(hidden)]
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
-    #[doc(hidden)]
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    #[doc(hidden)]
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

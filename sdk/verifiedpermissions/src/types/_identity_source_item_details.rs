@@ -6,18 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentitySourceItemDetails {
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
-    #[doc(hidden)]
     pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
-    #[doc(hidden)]
     pub user_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p> <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code> </p>
-    #[doc(hidden)]
     pub discovery_url: ::std::option::Option<::std::string::String>,
     /// <p>A string that identifies the type of OIDC service represented by this identity source. </p>
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
-    #[doc(hidden)]
     pub open_id_issuer: ::std::option::Option<crate::types::OpenIdIssuer>,
 }
 impl IdentitySourceItemDetails {

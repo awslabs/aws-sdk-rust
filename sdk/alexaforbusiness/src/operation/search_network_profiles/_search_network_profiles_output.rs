@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchNetworkProfilesOutput {
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
-    #[doc(hidden)]
     pub network_profiles: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of network profiles returned.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

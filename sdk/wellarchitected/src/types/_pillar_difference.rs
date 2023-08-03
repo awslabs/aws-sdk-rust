@@ -6,16 +6,12 @@
 pub struct PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pillar.</p>
-    #[doc(hidden)]
     pub pillar_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of change to the pillar.</p>
-    #[doc(hidden)]
     pub difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
     /// <p>List of question differences.</p>
-    #[doc(hidden)]
     pub question_differences: ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
 }
 impl PillarDifference {

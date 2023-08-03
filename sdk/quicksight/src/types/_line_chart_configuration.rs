@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartConfiguration {
     /// <p>The field well configuration of a line chart.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::LineChartFieldWells>,
     /// <p>The sort configuration of a line chart.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::LineChartSortConfiguration>,
     /// <p>The forecast configuration of a line chart.</p>
-    #[doc(hidden)]
     pub forecast_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ForecastConfiguration>>,
     /// <p>Determines the type of the line chart.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LineChartType>,
     /// <p>The small multiples setup for the visual.</p>
-    #[doc(hidden)]
     pub small_multiples_options: ::std::option::Option<crate::types::SmallMultiplesOptions>,
     /// <p>The options that determine the presentation of the x-axis.</p>
-    #[doc(hidden)]
     pub x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The options that determine the presentation of the x-axis label.</p>
-    #[doc(hidden)]
     pub x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The series axis configuration of a line chart.</p>
-    #[doc(hidden)]
     pub primary_y_axis_display_options: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     /// <p>The options that determine the presentation of the y-axis label.</p>
-    #[doc(hidden)]
     pub primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The series axis configuration of a line chart.</p>
-    #[doc(hidden)]
     pub secondary_y_axis_display_options: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     /// <p>The options that determine the presentation of the secondary y-axis label.</p>
-    #[doc(hidden)]
     pub secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
-    #[doc(hidden)]
     pub default_series_settings: ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
     /// <p>The series item configuration of a line chart.</p>
-    #[doc(hidden)]
     pub series: ::std::option::Option<::std::vec::Vec<crate::types::SeriesItem>>,
     /// <p>The legend configuration of a line chart.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The data label configuration of a line chart.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The reference lines configuration of a line chart.</p>
-    #[doc(hidden)]
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The tooltip configuration of a line chart.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The default configuration of a line chart's contribution analysis.</p>
-    #[doc(hidden)]
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     /// <p>The visual palette configuration of a line chart.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl LineChartConfiguration {

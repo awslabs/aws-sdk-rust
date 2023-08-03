@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
-    #[doc(hidden)]
     pub base_rate_per_minute: ::std::option::Option<i32>,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    #[doc(hidden)]
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-    #[doc(hidden)]
     pub rate_increase_criteria: ::std::option::Option<crate::types::RateIncreaseCriteria>,
 }
 impl ExponentialRolloutRate {

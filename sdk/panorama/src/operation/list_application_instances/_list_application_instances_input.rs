@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Only include instances with a specific status.</p>
-    #[doc(hidden)]
     pub status_filter: ::std::option::Option<crate::types::StatusFilter>,
     /// <p>The maximum number of application instances to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationInstancesInput {

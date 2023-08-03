@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub event_stream: ::std::option::Option<crate::types::EventStream>,
     _request_id: Option<String>,
 }

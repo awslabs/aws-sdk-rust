@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCollectionOutput {
     /// <p>Details about the updated collection.</p>
-    #[doc(hidden)]
     pub update_collection_detail: ::std::option::Option<crate::types::UpdateCollectionDetail>,
     _request_id: Option<String>,
 }

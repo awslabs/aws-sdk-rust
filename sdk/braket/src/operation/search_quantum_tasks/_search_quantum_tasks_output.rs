@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksOutput {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    #[doc(hidden)]
     pub quantum_tasks: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>,
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

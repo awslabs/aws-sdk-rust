@@ -11,7 +11,6 @@ pub struct AppIntegrationsConfiguration {
     /// <li> <p> For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li>
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub app_integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration. </p>
     /// <ul>
@@ -20,7 +19,6 @@ pub struct AppIntegrationsConfiguration {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    #[doc(hidden)]
     pub object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AppIntegrationsConfiguration {

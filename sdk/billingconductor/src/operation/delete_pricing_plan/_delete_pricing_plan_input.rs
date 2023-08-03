@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePricingPlanInput {

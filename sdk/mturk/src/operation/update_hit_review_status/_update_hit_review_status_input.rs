@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHitReviewStatusInput {
     /// <p> The ID of the HIT to update. </p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
     /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
     /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub revert: ::std::option::Option<bool>,
 }
 impl UpdateHitReviewStatusInput {

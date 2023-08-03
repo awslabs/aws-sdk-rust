@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEulaInput {
     /// <p>The EULA ID.</p>
-    #[doc(hidden)]
     pub eula_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEulaInput {

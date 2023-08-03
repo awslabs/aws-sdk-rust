@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    #[doc(hidden)]
     pub proxy_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    #[doc(hidden)]
     pub api_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    #[doc(hidden)]
     pub nlb_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    #[doc(hidden)]
     pub nlb_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of API Gateway endpoint created. </p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayProxySummary {

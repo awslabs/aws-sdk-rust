@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiDistributionConfiguration {
     /// <p>The name of the output AMI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    #[doc(hidden)]
     pub target_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    #[doc(hidden)]
     pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
-    #[doc(hidden)]
     pub launch_permission: ::std::option::Option<crate::types::LaunchPermissionConfiguration>,
 }
 impl AmiDistributionConfiguration {

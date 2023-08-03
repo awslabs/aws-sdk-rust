@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
 }
 impl WorkspaceStatus {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    #[doc(hidden)]
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetConfiguredTableInput {

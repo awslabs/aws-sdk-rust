@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenConfiguration {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
-    #[doc(hidden)]
     pub breakout_code: ::std::option::Option<i32>,
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
-    #[doc(hidden)]
     pub distributor_id: ::std::option::Option<::std::string::String>,
 }
 impl NielsenConfiguration {

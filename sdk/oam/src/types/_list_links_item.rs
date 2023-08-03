@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLinksItem {
     /// <p>The ARN of the link.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The resource types supported by this link.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the sink that this link is attached to.</p>
-    #[doc(hidden)]
     pub sink_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListLinksItem {

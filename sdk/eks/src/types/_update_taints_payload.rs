@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
-    #[doc(hidden)]
     pub add_or_update_taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
     /// <p>Kubernetes taints to remove.</p>
-    #[doc(hidden)]
     pub remove_taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
 }
 impl UpdateTaintsPayload {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityNotExistsException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the non-existent resources.</p>
-    #[doc(hidden)]
     pub entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

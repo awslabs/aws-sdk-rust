@@ -4,65 +4,45 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTransformJobOutput {
     /// <p>The name of the transform job.</p>
-    #[doc(hidden)]
     pub transform_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    #[doc(hidden)]
     pub transform_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the transform job. If the transform job failed, the reason is returned in the <code>FailureReason</code> field.</p>
-    #[doc(hidden)]
     pub transform_job_status: ::std::option::Option<crate::types::TransformJobStatus>,
     /// <p>If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model used in the transform job.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.</p>
-    #[doc(hidden)]
     pub max_concurrent_transforms: ::std::option::Option<i32>,
     /// <p>The timeout and maximum number of retries for processing a transform job invocation.</p>
-    #[doc(hidden)]
     pub model_client_config: ::std::option::Option<crate::types::ModelClientConfig>,
     /// <p>The maximum payload size, in MB, used in the transform job.</p>
-    #[doc(hidden)]
     pub max_payload_in_mb: ::std::option::Option<i32>,
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
     /// <p>To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
-    #[doc(hidden)]
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
-    #[doc(hidden)]
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    #[doc(hidden)]
     pub transform_output: ::std::option::Option<crate::types::TransformOutput>,
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    #[doc(hidden)]
     pub data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
-    #[doc(hidden)]
     pub transform_resources: ::std::option::Option<crate::types::TransformResources>,
     /// <p>A timestamp that shows when the transform Job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <code>TransformEndTime</code>.</p>
-    #[doc(hidden)]
     pub transform_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.</p>
-    #[doc(hidden)]
     pub transform_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
-    #[doc(hidden)]
     pub labeling_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
-    #[doc(hidden)]
     pub data_processing: ::std::option::Option<crate::types::DataProcessing>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -70,7 +50,6 @@ pub struct DescribeTransformJobOutput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     _request_id: Option<String>,
 }

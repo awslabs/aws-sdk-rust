@@ -7,7 +7,6 @@ pub struct CreateTopicInput {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
@@ -32,18 +31,15 @@ pub struct CreateTopicInput {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of tags to add to a new topic.</p> <note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    #[doc(hidden)]
     pub data_protection_policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateTopicInput {

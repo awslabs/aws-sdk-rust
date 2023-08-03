@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationSummary {
     /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
-    #[doc(hidden)]
     pub estimated_roi: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
-    #[doc(hidden)]
     pub estimated_total_cost: ::std::option::Option<::std::string::String>,
     /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
-    #[doc(hidden)]
     pub current_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
-    #[doc(hidden)]
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
-    #[doc(hidden)]
     pub total_recommendation_count: ::std::option::Option<::std::string::String>,
     /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
-    #[doc(hidden)]
     pub daily_commitment_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
-    #[doc(hidden)]
     pub hourly_commitment_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
-    #[doc(hidden)]
     pub estimated_savings_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationSummary {

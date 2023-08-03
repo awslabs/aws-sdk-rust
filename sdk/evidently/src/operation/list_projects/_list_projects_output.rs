@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
-    #[doc(hidden)]
     pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

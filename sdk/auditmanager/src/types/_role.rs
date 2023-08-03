@@ -9,10 +9,8 @@ pub struct Role {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_type: ::std::option::Option<crate::types::RoleType>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Role {

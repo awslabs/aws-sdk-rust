@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HubContentDependency {
     /// <p>The hub content dependency origin path.</p>
-    #[doc(hidden)]
     pub dependency_origin_path: ::std::option::Option<::std::string::String>,
     /// <p>The hub content dependency copy path.</p>
-    #[doc(hidden)]
     pub dependency_copy_path: ::std::option::Option<::std::string::String>,
 }
 impl HubContentDependency {

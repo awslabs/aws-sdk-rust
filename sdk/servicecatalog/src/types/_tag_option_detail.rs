@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagOptionDetail {
     /// <p>The TagOption key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The TagOption value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The TagOption active state.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>The TagOption identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
 }
 impl TagOptionDetail {

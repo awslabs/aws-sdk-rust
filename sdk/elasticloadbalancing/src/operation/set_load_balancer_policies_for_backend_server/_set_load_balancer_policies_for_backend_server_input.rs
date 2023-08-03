@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number associated with the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_port: ::std::option::Option<i32>,
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {

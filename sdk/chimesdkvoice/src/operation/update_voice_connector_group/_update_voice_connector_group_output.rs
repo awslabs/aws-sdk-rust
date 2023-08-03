@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupOutput {
     /// <p>The updated Voice Connector group.</p>
-    #[doc(hidden)]
     pub voice_connector_group: ::std::option::Option<crate::types::VoiceConnectorGroup>,
     _request_id: Option<String>,
 }

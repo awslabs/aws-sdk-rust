@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DurationRange {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
-    #[doc(hidden)]
     pub min_seconds: i32,
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
-    #[doc(hidden)]
     pub max_seconds: i32,
 }
 impl DurationRange {

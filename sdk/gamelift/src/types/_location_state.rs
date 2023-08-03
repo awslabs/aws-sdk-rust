@@ -14,10 +14,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationState {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The life-cycle status of a fleet location. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FleetStatus>,
 }
 impl LocationState {

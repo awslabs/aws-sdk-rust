@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-    #[doc(hidden)]
     pub tag_rules: ::std::option::Option<::std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
     /// <p>A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to it to apply Row-level security (RLS) to the dataset.</p>
-    #[doc(hidden)]
     pub tag_rule_configurations: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl RowLevelPermissionTagConfiguration {

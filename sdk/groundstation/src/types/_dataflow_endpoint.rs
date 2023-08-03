@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataflowEndpoint {
     /// <p>Name of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Socket address of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::SocketAddress>,
     /// <p>Status of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub mtu: ::std::option::Option<i32>,
 }
 impl DataflowEndpoint {

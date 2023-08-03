@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRumMetricDefinitionInput {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    #[doc(hidden)]
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
-    #[doc(hidden)]
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionRequest>,
     /// <p>The ID of the metric definition to update.</p>
-    #[doc(hidden)]
     pub metric_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRumMetricDefinitionInput {

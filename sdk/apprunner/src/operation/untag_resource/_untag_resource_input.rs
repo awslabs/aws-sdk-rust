@@ -5,10 +5,8 @@
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys that you want to remove.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

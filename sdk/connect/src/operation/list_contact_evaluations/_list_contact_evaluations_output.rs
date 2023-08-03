@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactEvaluationsOutput {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    #[doc(hidden)]
     pub evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

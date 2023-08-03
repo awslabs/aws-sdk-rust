@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Point {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-    #[doc(hidden)]
     pub x: f32,
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-    #[doc(hidden)]
     pub y: f32,
 }
 impl Point {

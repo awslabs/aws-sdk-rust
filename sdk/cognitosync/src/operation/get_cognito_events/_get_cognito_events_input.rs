@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCognitoEventsInput {

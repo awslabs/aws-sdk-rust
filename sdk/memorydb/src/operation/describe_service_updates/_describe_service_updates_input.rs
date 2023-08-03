@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesInput {
     /// <p>The unique ID of the service update to describe.</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of cluster names to identify service updates to apply</p>
-    #[doc(hidden)]
     pub cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status(es) of the service updates to filter on</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeServiceUpdatesInput {

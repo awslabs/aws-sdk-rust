@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SageMakerPipelineParameter {

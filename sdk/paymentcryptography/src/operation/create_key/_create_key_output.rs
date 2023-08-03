@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyOutput {
     /// <p>The key material that contains all the key attributes.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }

@@ -5,47 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainDetails {
     /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Additional options for the domain endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions>,
     /// <p>Unique identifier for an Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
     /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
     /// <p>The endpoint is a service URL. </p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>OpenSearch version.</p>
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>Information about an OpenSearch cluster configuration.</p>
-    #[doc(hidden)]
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
     /// <p>Details about the configuration for encryption at rest.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions>,
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>,
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions>,
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions>,
 }
 impl AwsElasticsearchDomainDetails {

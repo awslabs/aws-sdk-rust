@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProgramInput {
     /// <p>The name of the channel associated with this Program.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProgramInput {

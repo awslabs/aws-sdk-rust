@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualMachineDetails {
     /// <p>The host name of the virtual machine.</p>
-    #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual machine.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path of the virtual machine.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    #[doc(hidden)]
     pub last_backup_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    #[doc(hidden)]
     pub vmware_tags: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>,
 }
 impl VirtualMachineDetails {

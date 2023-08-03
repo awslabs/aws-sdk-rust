@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
-    #[doc(hidden)]
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

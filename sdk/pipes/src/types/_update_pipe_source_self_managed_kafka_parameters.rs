@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceSelfManagedKafkaParameters {
     /// <p>The maximum number of records to include in each batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     /// <p>The credentials needed to access the resource.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    #[doc(hidden)]
     pub server_root_ca_certificate: ::std::option::Option<::std::string::String>,
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
 }
 impl UpdatePipeSourceSelfManagedKafkaParameters {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
-    #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    #[doc(hidden)]
     pub function: ::std::option::Option<crate::types::AggregateFunctionName>,
 }
 impl AggregateColumn {

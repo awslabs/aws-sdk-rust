@@ -4,51 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectsV2Output {
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>Metadata about each object returned.</p>
-    #[doc(hidden)]
     pub contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Keys that begin with the indicated prefix.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
-    #[doc(hidden)]
     pub max_keys: i32,
     /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
-    #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
-    #[doc(hidden)]
     pub key_count: i32,
     /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
-    #[doc(hidden)]
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
-    #[doc(hidden)]
     pub start_after: ::std::option::Option<::std::string::String>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

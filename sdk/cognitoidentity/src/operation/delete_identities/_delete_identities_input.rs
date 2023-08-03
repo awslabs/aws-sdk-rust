@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    #[doc(hidden)]
     pub identity_ids_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteIdentitiesInput {

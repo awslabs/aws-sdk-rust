@@ -12,10 +12,8 @@ pub struct NodeOverrides {
     /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub num_nodes: ::std::option::Option<i32>,
     /// <p>The node property overrides for the job.</p>
-    #[doc(hidden)]
     pub node_property_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
 }
 impl NodeOverrides {

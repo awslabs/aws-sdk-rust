@@ -16,10 +16,8 @@ pub struct PriorityConfiguration {
     /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
     /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
-    #[doc(hidden)]
     pub location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PriorityConfiguration {

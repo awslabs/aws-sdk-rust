@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetResourceAccessForBucketInput {
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
@@ -15,7 +13,6 @@ pub struct SetResourceAccessForBucketInput {
     /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
     /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub access: ::std::option::Option<crate::types::ResourceBucketAccess>,
 }
 impl SetResourceAccessForBucketInput {

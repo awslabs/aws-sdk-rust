@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    #[doc(hidden)]
     pub ranges_on_indexed_values: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
-    #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The maximum number of results to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListIndex {

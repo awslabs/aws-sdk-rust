@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepDetail {
     /// <p>The step configuration.</p>
-    #[doc(hidden)]
     pub step_config: ::std::option::Option<crate::types::StepConfig>,
     /// <p>The description of the step status.</p>
-    #[doc(hidden)]
     pub execution_status_detail: ::std::option::Option<crate::types::StepExecutionStatusDetail>,
 }
 impl StepDetail {

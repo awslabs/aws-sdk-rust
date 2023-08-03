@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReverseReplicationOutput {
     /// <p>ARN of created SourceServer.</p>
-    #[doc(hidden)]
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

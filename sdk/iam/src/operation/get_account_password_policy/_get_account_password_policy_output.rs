@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
-    #[doc(hidden)]
     pub password_policy: ::std::option::Option<crate::types::PasswordPolicy>,
     _request_id: Option<String>,
 }

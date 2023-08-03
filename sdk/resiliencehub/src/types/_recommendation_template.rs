@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RecommendationTemplate {
     /// <p>The file location of the template.</p>
-    #[doc(hidden)]
     pub templates_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
-    #[doc(hidden)]
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
@@ -37,7 +33,6 @@ pub struct RecommendationTemplate {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
     /// <p>The format of the recommendation template.</p>
     /// <dl>
@@ -54,31 +49,22 @@ pub struct RecommendationTemplate {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TemplateFormat>,
     /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
-    #[doc(hidden)]
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The message for the recommendation template.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,
     /// <p>The name for the recommendation template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The start time for the action.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates if replacements are needed.</p>
-    #[doc(hidden)]
     pub needs_replacements: ::std::option::Option<bool>,
 }
 impl RecommendationTemplate {

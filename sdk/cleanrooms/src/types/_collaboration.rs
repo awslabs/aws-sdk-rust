@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Collaboration {
     /// <p>The unique ID for the collaboration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the collaboration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name of the collaboration creator.</p>
-    #[doc(hidden)]
     pub creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the collaboration was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the collaboration metadata was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a member in a collaboration.</p>
-    #[doc(hidden)]
     pub member_status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>The unique ID for your membership within the collaboration.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for your membership within the collaboration.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The settings for client-side encryption for cryptographic computing.</p>
-    #[doc(hidden)]
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    #[doc(hidden)]
     pub query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
 }
 impl Collaboration {

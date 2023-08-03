@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of schema version summaries.</p>
-    #[doc(hidden)]
     pub schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
     _request_id: Option<String>,
 }

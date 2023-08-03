@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplayInput {
     /// <p>The name of the replay to start.</p>
-    #[doc(hidden)]
     pub replay_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the replay to start.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the archive to replay events from.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    #[doc(hidden)]
     pub event_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    #[doc(hidden)]
     pub event_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::ReplayDestination>,
 }
 impl StartReplayInput {

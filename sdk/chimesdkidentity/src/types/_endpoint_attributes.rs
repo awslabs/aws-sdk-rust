@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    #[doc(hidden)]
     pub device_token: ::std::option::Option<::std::string::String>,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    #[doc(hidden)]
     pub voip_device_token: ::std::option::Option<::std::string::String>,
 }
 impl EndpointAttributes {

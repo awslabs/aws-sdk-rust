@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    #[doc(hidden)]
     pub asset_property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

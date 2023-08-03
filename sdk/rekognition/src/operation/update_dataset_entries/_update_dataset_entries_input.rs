@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p> The changes that you want to make to the dataset. </p>
-    #[doc(hidden)]
     pub changes: ::std::option::Option<crate::types::DatasetChanges>,
 }
 impl UpdateDatasetEntriesInput {

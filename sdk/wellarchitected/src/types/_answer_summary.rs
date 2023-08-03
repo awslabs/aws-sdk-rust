@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerSummary {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>List of choices available for a question.</p>
-    #[doc(hidden)]
     pub choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    #[doc(hidden)]
     pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
-    #[doc(hidden)]
     pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    #[doc(hidden)]
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
     /// <p>The type of the question.</p>
-    #[doc(hidden)]
     pub question_type: ::std::option::Option<crate::types::QuestionType>,
 }
 impl AnswerSummary {

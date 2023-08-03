@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON pipeline definition.</p>
-    #[doc(hidden)]
     pub pipeline_definition: ::std::option::Option<::std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    #[doc(hidden)]
     pub pipeline_definition_s3_location: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
     /// <p>The description of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
-    #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl UpdatePipelineInput {

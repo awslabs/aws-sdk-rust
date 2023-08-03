@@ -4,24 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstanceMetadataOptionsInput {
     /// <p>The name of the instance for which to update metadata parameters.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
-    #[doc(hidden)]
     pub http_tokens: ::std::option::Option<crate::types::HttpTokens>,
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
     /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
-    #[doc(hidden)]
     pub http_endpoint: ::std::option::Option<crate::types::HttpEndpoint>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
-    #[doc(hidden)]
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
-    #[doc(hidden)]
     pub http_protocol_ipv6: ::std::option::Option<crate::types::HttpProtocolIpv6>,
 }
 impl UpdateInstanceMetadataOptionsInput {

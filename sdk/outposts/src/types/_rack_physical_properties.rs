@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RackPhysicalProperties {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
-    #[doc(hidden)]
     pub power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,
     /// <p>The power option that you can provide for hardware.</p>
-    #[doc(hidden)]
     pub power_phase: ::std::option::Option<crate::types::PowerPhase>,
     /// <p>The power connector for the hardware. </p>
-    #[doc(hidden)]
     pub power_connector: ::std::option::Option<crate::types::PowerConnector>,
     /// <p>The position of the power feed.</p>
-    #[doc(hidden)]
     pub power_feed_drop: ::std::option::Option<crate::types::PowerFeedDrop>,
     /// <p>The uplink speed the rack supports for the connection to the Region. </p>
-    #[doc(hidden)]
     pub uplink_gbps: ::std::option::Option<crate::types::UplinkGbps>,
     /// <p>The number of uplinks each Outpost network device.</p>
-    #[doc(hidden)]
     pub uplink_count: ::std::option::Option<crate::types::UplinkCount>,
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
-    #[doc(hidden)]
     pub fiber_optic_cable_type: ::std::option::Option<crate::types::FiberOpticCableType>,
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
-    #[doc(hidden)]
     pub optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    #[doc(hidden)]
     pub maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl RackPhysicalProperties {

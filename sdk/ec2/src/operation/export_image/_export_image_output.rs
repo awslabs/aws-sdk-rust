@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportImageOutput {
     /// <p>A description of the image being exported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The disk image format for the exported image.</p>
-    #[doc(hidden)]
     pub disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
     /// <p>The ID of the export image task.</p>
-    #[doc(hidden)]
     pub export_image_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The percent complete of the export image task.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>Information about the destination Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_export_location: ::std::option::Option<crate::types::ExportTaskS3Location>,
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message for the export image task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the export image task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

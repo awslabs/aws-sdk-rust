@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContactFlowOutput {
     /// <p>Information about the flow.</p>
-    #[doc(hidden)]
     pub contact_flow: ::std::option::Option<crate::types::ContactFlow>,
     _request_id: Option<String>,
 }

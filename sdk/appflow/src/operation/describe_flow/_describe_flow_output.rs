@@ -4,58 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p> A description of the flow. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    #[doc(hidden)]
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
-    #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
-    #[doc(hidden)]
     pub flow_status_message: ::std::option::Option<::std::string::String>,
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    #[doc(hidden)]
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    #[doc(hidden)]
     pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> Describes the details of the most recent flow run. </p>
-    #[doc(hidden)]
     pub last_run_execution_details: ::std::option::Option<crate::types::ExecutionDetails>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    #[doc(hidden)]
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p> Specifies when the flow was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    #[doc(hidden)]
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    #[doc(hidden)]
     pub last_run_metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
@@ -63,7 +45,6 @@ pub struct DescribeFlowOutput {
     /// <li> <p>Field data types</p> </li>
     /// <li> <p>Partition keys</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

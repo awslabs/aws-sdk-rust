@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
-    #[doc(hidden)]
     pub read_i_os: i64,
     /// <p>The number of write I/O requests that the command made.</p>
-    #[doc(hidden)]
     pub write_i_os: i64,
 }
 impl IoUsage {

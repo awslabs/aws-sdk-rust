@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrContainerImageMetadata {

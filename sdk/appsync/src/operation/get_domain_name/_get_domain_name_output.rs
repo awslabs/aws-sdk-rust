@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainNameOutput {
     /// <p>The configuration for the <code>DomainName</code>.</p>
-    #[doc(hidden)]
     pub domain_name_config: ::std::option::Option<crate::types::DomainNameConfig>,
     _request_id: Option<String>,
 }

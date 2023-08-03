@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchBaselineIdentity {
     /// <p>The ID of the patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The description of the patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_description: ::std::option::Option<::std::string::String>,
     /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
-    #[doc(hidden)]
     pub default_baseline: bool,
 }
 impl PatchBaselineIdentity {

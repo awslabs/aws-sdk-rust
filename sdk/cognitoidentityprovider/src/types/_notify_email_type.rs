@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyEmailType {
     /// <p>The email subject.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The email HTML body.</p>
-    #[doc(hidden)]
     pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The email text body.</p>
-    #[doc(hidden)]
     pub text_body: ::std::option::Option<::std::string::String>,
 }
 impl NotifyEmailType {

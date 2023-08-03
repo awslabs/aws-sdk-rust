@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
 }
 impl PutConfigurationSetReputationOptionsInput {

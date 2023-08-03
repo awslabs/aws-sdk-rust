@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application to describe.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSimulationApplicationInput {

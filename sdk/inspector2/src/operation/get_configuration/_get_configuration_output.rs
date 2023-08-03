@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationOutput {
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
-    #[doc(hidden)]
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfigurationState>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    #[doc(hidden)]
     pub mapped_resource_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

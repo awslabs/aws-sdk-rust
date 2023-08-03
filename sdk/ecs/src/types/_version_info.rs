@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
-    #[doc(hidden)]
     pub agent_hash: ::std::option::Option<::std::string::String>,
     /// <p>The Docker version that's running on the container instance.</p>
-    #[doc(hidden)]
     pub docker_version: ::std::option::Option<::std::string::String>,
 }
 impl VersionInfo {

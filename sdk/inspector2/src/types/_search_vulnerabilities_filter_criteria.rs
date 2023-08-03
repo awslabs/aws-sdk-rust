@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFilterCriteria {
     /// <p>The IDs for specific vulnerabilities.</p>
-    #[doc(hidden)]
     pub vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchVulnerabilitiesFilterCriteria {

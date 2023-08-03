@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiColorPalette {
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
-    #[doc(hidden)]
     pub primary_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
-    #[doc(hidden)]
     pub primary_background: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
-    #[doc(hidden)]
     pub secondary_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
-    #[doc(hidden)]
     pub secondary_background: ::std::option::Option<::std::string::String>,
     /// <p>This color is that applies to selected states and buttons.</p>
-    #[doc(hidden)]
     pub accent: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
-    #[doc(hidden)]
     pub accent_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The color that applies to error messages.</p>
-    #[doc(hidden)]
     pub danger: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
-    #[doc(hidden)]
     pub danger_foreground: ::std::option::Option<::std::string::String>,
     /// <p>This color that applies to warning and informational messages.</p>
-    #[doc(hidden)]
     pub warning: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
-    #[doc(hidden)]
     pub warning_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
-    #[doc(hidden)]
     pub success: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
-    #[doc(hidden)]
     pub success_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
-    #[doc(hidden)]
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
-    #[doc(hidden)]
     pub dimension_foreground: ::std::option::Option<::std::string::String>,
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
-    #[doc(hidden)]
     pub measure: ::std::option::Option<::std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
-    #[doc(hidden)]
     pub measure_foreground: ::std::option::Option<::std::string::String>,
 }
 impl UiColorPalette {

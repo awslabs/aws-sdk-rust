@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsOutput {
     /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
-    #[doc(hidden)]
     pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }

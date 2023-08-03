@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
-    #[doc(hidden)]
     pub block_public_acls: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
-    #[doc(hidden)]
     pub block_public_policy: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
-    #[doc(hidden)]
     pub ignore_public_acls: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
-    #[doc(hidden)]
     pub restrict_public_buckets: ::std::option::Option<bool>,
 }
 impl BlockPublicAccess {

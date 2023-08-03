@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    #[doc(hidden)]
     pub inline_document: ::std::option::Option<::std::string::String>,
 }
 impl CodeSigningCertificateChain {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebuildWorkspacesInput {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    #[doc(hidden)]
     pub rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>,
 }
 impl RebuildWorkspacesInput {

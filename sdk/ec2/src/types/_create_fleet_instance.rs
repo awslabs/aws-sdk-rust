@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetInstance {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     /// <p>The IDs of the instances.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
 }
 impl CreateFleetInstance {

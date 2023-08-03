@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingOutput {
     /// <p>The ID of the pipeline reprocessing activity that was started.</p>
-    #[doc(hidden)]
     pub reprocessing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

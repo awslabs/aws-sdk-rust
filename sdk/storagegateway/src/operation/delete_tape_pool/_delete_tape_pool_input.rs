@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTapePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTapePoolInput {

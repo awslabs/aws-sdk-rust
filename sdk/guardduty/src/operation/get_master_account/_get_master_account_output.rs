@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
-    #[doc(hidden)]
     pub master: ::std::option::Option<crate::types::Master>,
     _request_id: Option<String>,
 }

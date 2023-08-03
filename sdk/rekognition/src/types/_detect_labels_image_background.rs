@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImageBackground {
     /// <p>The quality of the image background as defined by brightness and sharpness.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    #[doc(hidden)]
     pub dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
 }
 impl DetectLabelsImageBackground {

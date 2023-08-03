@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    #[doc(hidden)]
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassV2 {

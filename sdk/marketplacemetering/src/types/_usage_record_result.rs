@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageRecordResult {
     /// <p>The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.</p>
-    #[doc(hidden)]
     pub usage_record: ::std::option::Option<crate::types::UsageRecord>,
     /// <p>The <code>MeteringRecordId</code> is a unique identifier for this metering event.</p>
-    #[doc(hidden)]
     pub metering_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
@@ -21,7 +19,6 @@ pub struct UsageRecordResult {
     /// </ul> </li>
     /// <li> <p> <i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UsageRecordResultStatus>,
 }
 impl UsageRecordResult {

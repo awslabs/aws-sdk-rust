@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAnnouncement {
     /// <p>The ID of the transit gateway route table announcement.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the core network for the transit gateway route table announcement.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the peer transit gateway.</p>
-    #[doc(hidden)]
     pub peer_transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the core network ID for the peer.</p>
-    #[doc(hidden)]
     pub peer_core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the peering attachment.</p>
-    #[doc(hidden)]
     pub peering_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The direction for the route table announcement.</p>
-    #[doc(hidden)]
     pub announcement_direction: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
     /// <p>The ID of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the transit gateway announcement.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState>,
     /// <p>The timestamp when the transit gateway route table announcement was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The key-value pairs associated with the route table announcement.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayRouteTableAnnouncement {

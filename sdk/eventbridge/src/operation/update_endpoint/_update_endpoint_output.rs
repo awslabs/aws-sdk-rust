@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointOutput {
     /// <p>The name of the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration you updated in this request.</p>
-    #[doc(hidden)]
     pub routing_config: ::std::option::Option<crate::types::RoutingConfig>,
     /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
     /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The state of the endpoint you updated in this request.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EndpointState>,
     _request_id: Option<String>,
 }

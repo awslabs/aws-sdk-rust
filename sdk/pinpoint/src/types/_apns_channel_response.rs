@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApnsChannelResponse {
     /// <p>The unique identifier for the application that the APNs channel applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the APNs channel was enabled.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
-    #[doc(hidden)]
     pub default_authentication_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the APNs channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub has_credential: ::std::option::Option<bool>,
     /// <p>Specifies whether the APNs channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
-    #[doc(hidden)]
     pub has_token_key: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the APNs channel. This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the APNs channel is archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>The user who last modified the APNs channel.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the APNs channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The type of messaging or notification platform for the channel. For the APNs channel, this value is APNS.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the APNs channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl ApnsChannelResponse {

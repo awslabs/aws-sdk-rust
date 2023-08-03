@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyVersionOutput {
     /// <p>The policy ARN.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date the policy was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the policy was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The generation ID of the policy version.</p>
-    #[doc(hidden)]
     pub generation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

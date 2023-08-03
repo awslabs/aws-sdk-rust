@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::FunctionStage>,
     /// <p>The date and time when the function was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the function was most recently updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FunctionMetadata {

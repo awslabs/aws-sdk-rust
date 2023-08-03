@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
-    #[doc(hidden)]
     pub availability_zone_count: i32,
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {

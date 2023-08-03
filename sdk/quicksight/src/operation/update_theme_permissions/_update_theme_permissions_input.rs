@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource permissions to be granted for the theme.</p>
-    #[doc(hidden)]
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A list of resource permissions to be revoked from the theme.</p>
-    #[doc(hidden)]
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateThemePermissionsInput {

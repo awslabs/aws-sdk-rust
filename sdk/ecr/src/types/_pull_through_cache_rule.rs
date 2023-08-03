@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullThroughCacheRule {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
-    #[doc(hidden)]
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
-    #[doc(hidden)]
     pub upstream_registry_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the pull through cache was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is associated with.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl PullThroughCacheRule {

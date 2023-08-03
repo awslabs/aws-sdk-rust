@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscribersOutput {
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

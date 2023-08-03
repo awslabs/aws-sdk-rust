@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
-    #[doc(hidden)]
     pub site_base_url: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowParameters {

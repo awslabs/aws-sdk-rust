@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBatchPredictionsOutput {
     /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

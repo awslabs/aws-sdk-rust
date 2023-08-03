@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-    #[doc(hidden)]
     pub resolved_cidr_count: ::std::option::Option<i32>,
 }
 impl IpSetMetadata {

@@ -6,108 +6,74 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DB instance identifier of the DB instance this DB snapshot was created from.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC). Changes for the copy when the snapshot is copied.</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>Specifies the status of this DB snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the database engine was listening on at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VPC ID associated with the DB snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides the master username for the DB snapshot.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>License model information for the restored DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Provides the type of the DB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Provides the option group name for the DB snapshot.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has a value in the case of a cross-account or cross-Region copy.</p>
-    #[doc(hidden)]
     pub source_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type associated with DB snapshot.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
-    #[doc(hidden)]
     pub db_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
-    #[doc(hidden)]
     pub original_snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
     /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
-    #[doc(hidden)]
     pub snapshot_database_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub snapshot_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
-    #[doc(hidden)]
     pub db_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshot {

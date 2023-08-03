@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemPolicyInput {
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFileSystemPolicyInput {

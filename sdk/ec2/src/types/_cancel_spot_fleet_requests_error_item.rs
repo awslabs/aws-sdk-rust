@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsErrorItem {
     /// <p>The error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>,
     /// <p>The ID of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelSpotFleetRequestsErrorItem {

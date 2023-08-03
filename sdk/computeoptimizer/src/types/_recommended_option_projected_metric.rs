@@ -7,15 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
-    #[doc(hidden)]
     pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
-    #[doc(hidden)]
     pub rank: i32,
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    #[doc(hidden)]
     pub projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetric {

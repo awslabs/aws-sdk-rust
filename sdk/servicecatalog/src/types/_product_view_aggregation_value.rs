@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductViewAggregationValue {
     /// <p>The value of the product view aggregation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>An approximate count of the products that match the value.</p>
-    #[doc(hidden)]
     pub approximate_count: i32,
 }
 impl ProductViewAggregationValue {

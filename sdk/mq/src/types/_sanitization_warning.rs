@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SanitizationWarning {
     /// <p>The name of the configuration attribute that has been sanitized.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration element that has been sanitized.</p>
-    #[doc(hidden)]
     pub element_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::SanitizationWarningReason>,
 }
 impl SanitizationWarning {

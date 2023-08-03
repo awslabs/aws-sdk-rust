@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunPipelineActivityInput {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
-    #[doc(hidden)]
     pub pipeline_activity: ::std::option::Option<crate::types::PipelineActivity>,
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    #[doc(hidden)]
     pub payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
 }
 impl RunPipelineActivityInput {

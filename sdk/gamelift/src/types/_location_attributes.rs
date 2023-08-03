@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationAttributes {
     /// <p>A fleet location and its current life-cycle state.</p>
-    #[doc(hidden)]
     pub location_state: ::std::option::Option<crate::types::LocationState>,
     /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
-    #[doc(hidden)]
     pub stopped_actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::LocationUpdateStatus>,
 }
 impl LocationAttributes {

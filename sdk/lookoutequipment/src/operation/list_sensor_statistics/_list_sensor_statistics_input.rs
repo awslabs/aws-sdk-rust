@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsInput {
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    #[doc(hidden)]
     pub ingestion_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSensorStatisticsInput {

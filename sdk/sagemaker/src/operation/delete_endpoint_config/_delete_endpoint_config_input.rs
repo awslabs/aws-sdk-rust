@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEndpointConfigInput {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointConfigInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceStateInput {
     /// <p>The identifier of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkSpace state.</p>
-    #[doc(hidden)]
     pub workspace_state: ::std::option::Option<crate::types::TargetWorkspaceState>,
 }
 impl ModifyWorkspaceStateInput {

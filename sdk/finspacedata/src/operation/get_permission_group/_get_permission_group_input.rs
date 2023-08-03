@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
-    #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPermissionGroupInput {

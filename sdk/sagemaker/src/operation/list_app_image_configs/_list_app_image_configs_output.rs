@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppImageConfigsOutput {
     /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of AppImageConfigs and their properties.</p>
-    #[doc(hidden)]
     pub app_image_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
     _request_id: Option<String>,
 }

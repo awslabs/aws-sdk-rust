@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    #[doc(hidden)]
     pub device_ca_certificate: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDevicePolicyConfigurationInput {

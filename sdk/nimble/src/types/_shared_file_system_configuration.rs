@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SharedFileSystemConfiguration {
     /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a file system.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
-    #[doc(hidden)]
     pub linux_mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The name of the file share.</p>
-    #[doc(hidden)]
     pub share_name: ::std::option::Option<::std::string::String>,
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
-    #[doc(hidden)]
     pub windows_mount_drive: ::std::option::Option<::std::string::String>,
 }
 impl SharedFileSystemConfiguration {

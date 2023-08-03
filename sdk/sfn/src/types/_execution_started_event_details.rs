@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
-    #[doc(hidden)]
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStartedEventDetails {

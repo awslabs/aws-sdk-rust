@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerLogInput {
     /// <p>The name of the container service for which to get a container log.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
@@ -16,7 +14,6 @@ pub struct GetContainerLogInput {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
@@ -25,7 +22,6 @@ pub struct GetContainerLogInput {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
@@ -36,11 +32,9 @@ pub struct GetContainerLogInput {
     /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
     /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerLogInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual router.</p>
-    #[doc(hidden)]
     pub virtual_router_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the virtual router.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::VirtualRouterSpec>,
     /// <p>The associated metadata for the virtual router.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The current status of the virtual router.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualRouterStatus>,
 }
 impl VirtualRouterData {

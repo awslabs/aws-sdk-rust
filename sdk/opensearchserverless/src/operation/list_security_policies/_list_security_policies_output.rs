@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesOutput {
     /// <p>Details about the security policies in your account.</p>
-    #[doc(hidden)]
     pub security_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

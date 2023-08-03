@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    #[doc(hidden)]
     pub domain_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

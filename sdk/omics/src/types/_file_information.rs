@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileInformation {
     /// <p>The file's total parts.</p>
-    #[doc(hidden)]
     pub total_parts: ::std::option::Option<i32>,
     /// <p>The file's part size.</p>
-    #[doc(hidden)]
     pub part_size: ::std::option::Option<i64>,
     /// <p>The file's content length.</p>
-    #[doc(hidden)]
     pub content_length: ::std::option::Option<i64>,
 }
 impl FileInformation {

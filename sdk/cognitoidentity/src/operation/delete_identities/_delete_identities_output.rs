@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentitiesOutput {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    #[doc(hidden)]
     pub unprocessed_identity_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedIdentityId>>,
     _request_id: Option<String>,
 }

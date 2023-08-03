@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-    #[doc(hidden)]
     pub security_hub_configuration: ::std::option::Option<crate::types::SecurityHubConfiguration>,
     _request_id: Option<String>,
 }

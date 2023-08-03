@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunConfigurationDescription {
     /// <p>Describes the restore behavior of a restarting application.</p>
-    #[doc(hidden)]
     pub application_restore_configuration_description: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub flink_run_configuration_description: ::std::option::Option<crate::types::FlinkRunConfiguration>,
 }
 impl RunConfigurationDescription {

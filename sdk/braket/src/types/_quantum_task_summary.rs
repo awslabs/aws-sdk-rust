@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuantumTaskSummary {
     /// <p>The ARN of the task.</p>
-    #[doc(hidden)]
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QuantumTaskStatus>,
     /// <p>The ARN of the device the task ran on.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The shots used for the task.</p>
-    #[doc(hidden)]
     pub shots: ::std::option::Option<i64>,
     /// <p>The S3 bucket where the task result file is stored..</p>
-    #[doc(hidden)]
     pub output_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
-    #[doc(hidden)]
     pub output_s3_directory: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the task was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the task finished.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QuantumTaskSummary {

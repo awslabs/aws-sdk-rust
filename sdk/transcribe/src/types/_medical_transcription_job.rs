@@ -6,39 +6,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalTranscriptionJob {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub medical_transcription_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the specified medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    #[doc(hidden)]
     pub transcription_job_status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
-    #[doc(hidden)]
     pub media_format: ::std::option::Option<crate::types::MediaFormat>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
-    #[doc(hidden)]
     pub media: ::std::option::Option<crate::types::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<crate::types::MedicalTranscript>,
     /// <p>The date and time the specified medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -50,22 +40,16 @@ pub struct MedicalTranscriptionJob {
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::MedicalTranscriptionSetting>,
     /// <p>Indicates whether content identification was enabled for your transcription request.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     /// <p>Describes the medical specialty represented in your media.</p>
-    #[doc(hidden)]
     pub specialty: ::std::option::Option<crate::types::Specialty>,
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MedicalTranscriptionJob {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexStatistics {
     /// <p>The number of question and answer topics in the index.</p>
-    #[doc(hidden)]
     pub faq_statistics: ::std::option::Option<crate::types::FaqStatistics>,
     /// <p>The number of text documents indexed.</p>
-    #[doc(hidden)]
     pub text_document_statistics: ::std::option::Option<crate::types::TextDocumentStatistics>,
 }
 impl IndexStatistics {

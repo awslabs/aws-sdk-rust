@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
     /// <p>The type of collection.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>A description of the collection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Epoch time when the collection was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    #[doc(hidden)]
     pub collection_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    #[doc(hidden)]
     pub dashboard_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetail {

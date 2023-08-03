@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
-    #[doc(hidden)]
     pub dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     /// <p>HLS manifest configuration settings.</p>
-    #[doc(hidden)]
     pub hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL used for playback by content players.</p>
-    #[doc(hidden)]
     pub playback_url: ::std::option::Option<::std::string::String>,
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
-    #[doc(hidden)]
     pub source_group: ::std::option::Option<::std::string::String>,
 }
 impl ResponseOutputItem {

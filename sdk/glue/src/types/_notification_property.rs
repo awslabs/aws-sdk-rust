@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationProperty {
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
-    #[doc(hidden)]
     pub notify_delay_after: ::std::option::Option<i32>,
 }
 impl NotificationProperty {

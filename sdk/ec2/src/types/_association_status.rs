@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationStatus {
     /// <p>The state of the target network association.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::AssociationStatusCode>,
     /// <p>A message about the status of the target network association, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AssociationStatus {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCandidatesForAutoMlJobInput {
     /// <p>List the candidates created for the job by providing the job's name.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>List the candidates for the job and filter by status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::CandidateStatus>,
     /// <p>List the candidates for the job and filter by candidate name.</p>
-    #[doc(hidden)]
     pub candidate_name_equals: ::std::option::Option<::std::string::String>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::AutoMlSortOrder>,
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::CandidateSortBy>,
     /// <p>List the job's candidates up to a specified limit.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCandidatesForAutoMlJobInput {

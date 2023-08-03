@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the node.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the engine is listening on.</p>
-    #[doc(hidden)]
     pub port: i32,
 }
 impl Endpoint {

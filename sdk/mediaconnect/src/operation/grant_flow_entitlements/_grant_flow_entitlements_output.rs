@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     /// The ARN of the flow that these entitlements were granted to.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

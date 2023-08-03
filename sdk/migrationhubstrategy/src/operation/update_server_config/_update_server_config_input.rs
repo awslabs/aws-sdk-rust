@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
-    #[doc(hidden)]
     pub strategy_option: ::std::option::Option<crate::types::StrategyOption>,
 }
 impl UpdateServerConfigInput {

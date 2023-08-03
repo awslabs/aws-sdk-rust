@@ -5,7 +5,6 @@
 pub struct DescribeDbSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    #[doc(hidden)]
     pub db_snapshot_attributes_result: ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
     _request_id: Option<String>,
 }

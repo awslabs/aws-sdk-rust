@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
 }
 impl AddNotificationChannelsInput {

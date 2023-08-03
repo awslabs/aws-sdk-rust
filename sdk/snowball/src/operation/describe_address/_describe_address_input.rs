@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddressInput {
     /// <p>The automatically generated ID for a specific address.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAddressInput {

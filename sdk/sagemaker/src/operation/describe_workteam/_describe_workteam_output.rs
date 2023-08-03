@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkteamOutput {
     /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
-    #[doc(hidden)]
     pub workteam: ::std::option::Option<crate::types::Workteam>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p> Name of the project. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Default region where project resources should be created. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    #[doc(hidden)]
     pub contents: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectInput {

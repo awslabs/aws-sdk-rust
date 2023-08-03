@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesOutput {
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

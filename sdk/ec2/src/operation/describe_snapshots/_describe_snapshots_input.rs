@@ -25,26 +25,19 @@ pub struct DescribeSnapshotsInput {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    #[doc(hidden)]
     pub owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    #[doc(hidden)]
     pub restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    #[doc(hidden)]
     pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {

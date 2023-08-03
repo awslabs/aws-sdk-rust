@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    #[doc(hidden)]
     pub health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthCheckInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingServer {
     /// <p>The Source Server ID of a participating server.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The Recovery Instance ID of a participating server.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch status of a participating server.</p>
-    #[doc(hidden)]
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
 }
 impl ParticipatingServer {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Item {
     /// <p>The ID associated with the item.</p>
-    #[doc(hidden)]
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::string::String>,
 }
 impl Item {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiStage {
     /// <p>API Id of the associated API stage in a usage plan.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>API stage name of the associated API stage in a usage plan.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
-    #[doc(hidden)]
     pub throttle: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ThrottleSettings>>,
 }
 impl ApiStage {

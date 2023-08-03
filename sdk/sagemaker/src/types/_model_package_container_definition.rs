@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
-    #[doc(hidden)]
     pub container_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
     /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
-    #[doc(hidden)]
     pub model_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure with Model Input details.</p>
-    #[doc(hidden)]
     pub model_input: ::std::option::Option<crate::types::ModelInput>,
     /// <p>The machine learning framework of the model package container image.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p>The framework version of the Model Package Container Image.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
-    #[doc(hidden)]
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageContainerDefinition {

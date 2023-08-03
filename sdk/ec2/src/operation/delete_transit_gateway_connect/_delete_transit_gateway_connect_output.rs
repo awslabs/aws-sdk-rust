@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayConnectOutput {
     /// <p>Information about the deleted Connect attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_connect: ::std::option::Option<crate::types::TransitGatewayConnect>,
     _request_id: Option<String>,
 }

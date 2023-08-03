@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPartnerEventsRequestEntry {
     /// <p>The date and time of the event.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event source that is generating the entry.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
 }
 impl PutPartnerEventsRequestEntry {

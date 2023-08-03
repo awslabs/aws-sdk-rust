@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneratedManifestEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
-    #[doc(hidden)]
     pub sses3: ::std::option::Option<crate::types::Sses3Encryption>,
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
-    #[doc(hidden)]
     pub ssekms: ::std::option::Option<crate::types::SsekmsEncryption>,
 }
 impl GeneratedManifestEncryption {

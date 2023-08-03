@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseBlueprint {
     /// <p>The ID for the database blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The database software of the database blueprint (for example, <code>MySQL</code>).</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::RelationalDatabaseEngine>,
     /// <p>The database engine version for the database blueprint (for example, <code>5.7.23</code>).</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine for the database blueprint.</p>
-    #[doc(hidden)]
     pub engine_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine version for the database blueprint.</p>
-    #[doc(hidden)]
     pub engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the engine version is the default for the database blueprint.</p>
-    #[doc(hidden)]
     pub is_engine_default: ::std::option::Option<bool>,
 }
 impl RelationalDatabaseBlueprint {

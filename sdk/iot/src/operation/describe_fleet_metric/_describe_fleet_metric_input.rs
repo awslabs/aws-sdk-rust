@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetMetricInput {
     /// <p>The name of the fleet metric to describe.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetMetricInput {

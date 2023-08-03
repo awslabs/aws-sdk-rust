@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant name.</p>
-    #[doc(hidden)]
     pub grant_name: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations for the grant.</p>
-    #[doc(hidden)]
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     /// <p>Grant status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GrantStatus>,
     /// <p>Grant status reason.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Current version of the grant.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The options specified for the grant.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Options>,
 }
 impl CreateGrantVersionInput {

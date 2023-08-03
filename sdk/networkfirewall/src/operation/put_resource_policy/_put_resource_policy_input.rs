@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
@@ -19,7 +18,6 @@ pub struct PutResourcePolicyInput {
     /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
     /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

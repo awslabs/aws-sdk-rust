@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
-    #[doc(hidden)]
     pub sink_arn: ::std::option::Option<::std::string::String>,
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    #[doc(hidden)]
     pub sink_id: ::std::option::Option<::std::string::String>,
     /// <p>The policy that you specified, in JSON format.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

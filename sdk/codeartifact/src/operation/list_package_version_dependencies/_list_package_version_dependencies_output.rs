@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesOutput {
     /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -12,22 +11,16 @@ pub struct ListPackageVersionDependenciesOutput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that contains the returned package versions dependencies. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> The version of the package that is specified in the request. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> The current revision associated with the package version. </p>
-    #[doc(hidden)]
     pub version_revision: ::std::option::Option<::std::string::String>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
-    #[doc(hidden)]
     pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::PackageDependency>>,
     _request_id: Option<String>,
 }

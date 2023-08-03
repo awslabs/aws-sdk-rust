@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignPrivateIpAddressesOutput {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IP addresses assigned to the network interface.</p>
-    #[doc(hidden)]
     pub assigned_private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AssignedPrivateIpAddress>>,
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
-    #[doc(hidden)]
     pub assigned_ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecification>>,
     _request_id: Option<String>,
 }

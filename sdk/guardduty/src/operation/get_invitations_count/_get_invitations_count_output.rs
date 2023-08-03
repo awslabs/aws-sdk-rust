@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutput {
     /// <p>The number of received invitations.</p>
-    #[doc(hidden)]
     pub invitations_count: i32,
     _request_id: Option<String>,
 }

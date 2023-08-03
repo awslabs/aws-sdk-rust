@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansUtilizationDetail {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    #[doc(hidden)]
     pub utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
     /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    #[doc(hidden)]
     pub savings: ::std::option::Option<crate::types::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    #[doc(hidden)]
     pub amortized_commitment: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationDetail {

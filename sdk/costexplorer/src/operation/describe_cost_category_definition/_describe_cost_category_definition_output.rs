@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionOutput {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
-    #[doc(hidden)]
     pub cost_category: ::std::option::Option<crate::types::CostCategory>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LicenseServiceConfiguration {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
 impl LicenseServiceConfiguration {

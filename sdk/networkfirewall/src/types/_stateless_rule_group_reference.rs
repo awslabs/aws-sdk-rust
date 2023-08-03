@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
-    #[doc(hidden)]
     pub priority: i32,
 }
 impl StatelessRuleGroupReference {

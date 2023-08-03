@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusInput {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    #[doc(hidden)]
     pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConfigurationRecorderStatusInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    #[doc(hidden)]
     pub bot_aliases: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>>,
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

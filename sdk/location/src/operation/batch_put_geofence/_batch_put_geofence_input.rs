@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
 }
 impl BatchPutGeofenceInput {

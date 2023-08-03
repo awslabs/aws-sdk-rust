@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    #[doc(hidden)]
     pub created_rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    #[doc(hidden)]
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableImportFindingsForProductInput {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
-    #[doc(hidden)]
     pub product_subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableImportFindingsForProductInput {

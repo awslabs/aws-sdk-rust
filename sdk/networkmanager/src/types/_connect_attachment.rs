@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectAttachment {
     /// <p>The attachment details.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The ID of the transport attachment.</p>
-    #[doc(hidden)]
     pub transport_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Options for connecting an attachment.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
 }
 impl ConnectAttachment {

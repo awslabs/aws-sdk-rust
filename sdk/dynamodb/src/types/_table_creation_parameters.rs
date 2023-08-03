@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCreationParameters {
     /// <p> The name of the table created as part of the import operation. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p> The attributes of the table created as part of the import operation. </p>
-    #[doc(hidden)]
     pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
-    #[doc(hidden)]
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
-    #[doc(hidden)]
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
 }
 impl TableCreationParameters {

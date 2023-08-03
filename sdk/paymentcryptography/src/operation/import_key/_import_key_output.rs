@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportKeyOutput {
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }

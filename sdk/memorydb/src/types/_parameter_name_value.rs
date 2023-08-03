@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterNameValue {

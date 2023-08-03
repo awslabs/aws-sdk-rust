@@ -14,28 +14,20 @@
 pub struct SecurityGroupRuleRequest {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
-    #[doc(hidden)]
     pub cidr_ipv4: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
-    #[doc(hidden)]
     pub cidr_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group that is referenced in the security group rule.</p>
-    #[doc(hidden)]
     pub referenced_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the security group rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRuleRequest {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p>A list of stack names that are importing the specified exported output value.</p>
-    #[doc(hidden)]
     pub imports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

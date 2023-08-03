@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportClientVpnClientCertificateRevocationListOutput {
     /// <p>Information about the client certificate revocation list.</p>
-    #[doc(hidden)]
     pub certificate_revocation_list: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the client certificate revocation list.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientCertificateRevocationListStatus>,
     _request_id: Option<String>,
 }

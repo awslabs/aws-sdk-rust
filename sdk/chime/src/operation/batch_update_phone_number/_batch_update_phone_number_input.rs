@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberInput {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    #[doc(hidden)]
     pub update_phone_number_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
 }
 impl BatchUpdatePhoneNumberInput {

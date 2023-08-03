@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelResultDetail {
     /// <p>The success or failure of the streaming of the conversation.</p>
-    #[doc(hidden)]
     pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>The speech transcription success or failure details of the conversation.</p>
-    #[doc(hidden)]
     pub speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelResultDetail {

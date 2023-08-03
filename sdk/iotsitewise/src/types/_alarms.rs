@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-    #[doc(hidden)]
     pub alarm_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub notification_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl Alarms {

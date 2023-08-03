@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallRuleGroupDetails {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
-    #[doc(hidden)]
     pub capacity: i32,
     /// <p>A description of the rule group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Details about the rule group.</p>
-    #[doc(hidden)]
     pub rule_group: ::std::option::Option<crate::types::RuleGroupDetails>,
     /// <p>The ARN of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallRuleGroupDetails {

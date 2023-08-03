@@ -5,7 +5,6 @@
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<crate::types::DbClusterParameterGroup>,
     _request_id: Option<String>,
 }

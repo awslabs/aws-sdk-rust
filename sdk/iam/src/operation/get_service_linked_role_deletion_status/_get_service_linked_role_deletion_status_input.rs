@@ -11,7 +11,6 @@ pub struct GetServiceLinkedRoleDeletionStatusInput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    #[doc(hidden)]
     pub deletion_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceLinkedRoleDeletionStatusInput {

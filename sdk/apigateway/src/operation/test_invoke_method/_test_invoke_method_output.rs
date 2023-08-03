@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestInvokeMethodOutput {
     /// <p>The HTTP status code.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The body of the HTTP response.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The headers of the HTTP response.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The headers of the HTTP response as a map from string to list of values.</p>
-    #[doc(hidden)]
     pub multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The API Gateway execution log for the test invoke request.</p>
-    #[doc(hidden)]
     pub log: ::std::option::Option<::std::string::String>,
     /// <p>The execution latency of the test invoke request.</p>
-    #[doc(hidden)]
     pub latency: i64,
     _request_id: Option<String>,
 }

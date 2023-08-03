@@ -6,22 +6,17 @@ pub struct GetEcsServiceRecommendationsInput {
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    #[doc(hidden)]
     pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of Amazon ECS service recommendations to return with a single request. </p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
     /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetEcsServiceRecommendationsInput {

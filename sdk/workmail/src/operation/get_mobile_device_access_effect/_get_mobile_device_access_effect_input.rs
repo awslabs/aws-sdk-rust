@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectInput {
     /// <p>The WorkMail organization to simulate the access effect for.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>Device type the simulated user will report.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>Device model the simulated user will report.</p>
-    #[doc(hidden)]
     pub device_model: ::std::option::Option<::std::string::String>,
     /// <p>Device operating system the simulated user will report.</p>
-    #[doc(hidden)]
     pub device_operating_system: ::std::option::Option<::std::string::String>,
     /// <p>Device user agent the simulated user will report.</p>
-    #[doc(hidden)]
     pub device_user_agent: ::std::option::Option<::std::string::String>,
 }
 impl GetMobileDeviceAccessEffectInput {

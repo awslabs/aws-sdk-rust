@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BinaryColumnStatisticsData {
     /// <p>The size of the longest bit sequence in the column.</p>
-    #[doc(hidden)]
     pub maximum_length: i64,
     /// <p>The average bit sequence length in the column.</p>
-    #[doc(hidden)]
     pub average_length: f64,
     /// <p>The number of null values in the column.</p>
-    #[doc(hidden)]
     pub number_of_nulls: i64,
 }
 impl BinaryColumnStatisticsData {

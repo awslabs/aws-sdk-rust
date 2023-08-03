@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Eac3AtmosSettings {
     /// Specify the average bitrate for this output in bits per second. Valid values: 384k, 448k, 576k, 640k, 768k, 1024k Default value: 448k Note that MediaConvert supports 384k only with channel-based immersive (CBI) 7.1.4 and 5.1.4 inputs. For CBI 9.1.6 and other input types, MediaConvert automatically increases your output bitrate to 448k.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    #[doc(hidden)]
     pub bitstream_mode: ::std::option::Option<crate::types::Eac3AtmosBitstreamMode>,
     /// The coding mode for Dolby Digital Plus JOC (Atmos).
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
-    #[doc(hidden)]
     pub dialogue_intelligence: ::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence>,
     /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    #[doc(hidden)]
     pub downmix_control: ::std::option::Option<crate::types::Eac3AtmosDownmixControl>,
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    #[doc(hidden)]
     pub dynamic_range_compression_line: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    #[doc(hidden)]
     pub dynamic_range_compression_rf: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    #[doc(hidden)]
     pub dynamic_range_control: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
-    #[doc(hidden)]
     pub lo_ro_center_mix_level: ::std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only surround.
-    #[doc(hidden)]
     pub lo_ro_surround_mix_level: ::std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
-    #[doc(hidden)]
     pub lt_rt_center_mix_level: ::std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, the service ignores Left total/Right total surround.
-    #[doc(hidden)]
     pub lt_rt_surround_mix_level: ::std::option::Option<f64>,
     /// Choose how the service meters the loudness of your audio.
-    #[doc(hidden)]
     pub metering_mode: ::std::option::Option<crate::types::Eac3AtmosMeteringMode>,
     /// This value is always 48000. It represents the sample rate in Hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i32>,
     /// Specify the percentage of audio content, from 0% to 100%, that must be speech in order for the encoder to use the measured speech loudness as the overall program loudness. Default value: 15%
-    #[doc(hidden)]
     pub speech_threshold: ::std::option::Option<i32>,
     /// Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo downmix.
-    #[doc(hidden)]
     pub stereo_downmix: ::std::option::Option<crate::types::Eac3AtmosStereoDownmix>,
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
-    #[doc(hidden)]
     pub surround_ex_mode: ::std::option::Option<crate::types::Eac3AtmosSurroundExMode>,
 }
 impl Eac3AtmosSettings {

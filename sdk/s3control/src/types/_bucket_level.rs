@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLevel {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
-    #[doc(hidden)]
     pub activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
     /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
-    #[doc(hidden)]
     pub prefix_level: ::std::option::Option<crate::types::PrefixLevel>,
     /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
-    #[doc(hidden)]
     pub advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
     /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
-    #[doc(hidden)]
     pub advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
     /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
-    #[doc(hidden)]
     pub detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
 }
 impl BucketLevel {

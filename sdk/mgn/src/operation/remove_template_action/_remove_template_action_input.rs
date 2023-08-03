@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTemplateActionInput {
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    #[doc(hidden)]
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action ID to remove.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTemplateActionInput {

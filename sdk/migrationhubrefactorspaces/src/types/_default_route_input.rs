@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultRouteInput {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    #[doc(hidden)]
     pub activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
 impl DefaultRouteInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionStatus {
     /// <p>The run's timestamp.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnomalyDetectionTaskStatus>,
     /// <p>The reason that the run failed, if applicable.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStatus {

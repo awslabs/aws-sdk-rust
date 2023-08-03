@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingAction {
     /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
-    #[doc(hidden)]
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
-    #[doc(hidden)]
     pub simple_scaling_policy_configuration: ::std::option::Option<crate::types::SimpleScalingPolicyConfiguration>,
 }
 impl ScalingAction {

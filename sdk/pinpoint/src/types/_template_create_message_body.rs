@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateCreateMessageBody {
     /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The message that's returned from the API for the request to create the message template.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the request to create the message template.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl TemplateCreateMessageBody {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
-    #[doc(hidden)]
     pub exclude: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
 }
 impl ScanResourceCriteria {

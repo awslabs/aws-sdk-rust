@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsOptionsSpecification {
     /// <p>The DNS records created for the endpoint.</p>
-    #[doc(hidden)]
     pub dns_record_ip_type: ::std::option::Option<crate::types::DnsRecordIpType>,
     /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
-    #[doc(hidden)]
     pub private_dns_only_for_inbound_resolver_endpoint: ::std::option::Option<bool>,
 }
 impl DnsOptionsSpecification {

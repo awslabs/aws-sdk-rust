@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTestSetDiscrepancyReportInput {
     /// <p>The test set Id for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
 }
 impl CreateTestSetDiscrepancyReportInput {

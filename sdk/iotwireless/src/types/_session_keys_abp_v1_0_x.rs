@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
-    #[doc(hidden)]
     pub nwk_s_key: ::std::option::Option<::std::string::String>,
     /// <p>The AppSKey value.</p>
-    #[doc(hidden)]
     pub app_s_key: ::std::option::Option<::std::string::String>,
 }
 impl SessionKeysAbpV10X {

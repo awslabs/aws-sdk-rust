@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartSortConfiguration {
     /// <p>The sort configuration of category fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of categories displayed in a bar chart.</p>
-    #[doc(hidden)]
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of color fields in a bar chart.</p>
-    #[doc(hidden)]
     pub color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of values displayed in a bar chart.</p>
-    #[doc(hidden)]
     pub color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of the small multiples field.</p>
-    #[doc(hidden)]
     pub small_multiples_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
-    #[doc(hidden)]
     pub small_multiples_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl BarChartSortConfiguration {

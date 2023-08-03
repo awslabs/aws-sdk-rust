@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePackageInput {
     /// <p>The name of the target package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The package description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    #[doc(hidden)]
     pub default_version_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    #[doc(hidden)]
     pub unset_default_version: ::std::option::Option<bool>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageInput {

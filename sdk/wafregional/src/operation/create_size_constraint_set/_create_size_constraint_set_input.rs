@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSizeConstraintSetInput {
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSizeConstraintSetInput {

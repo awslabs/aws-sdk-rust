@@ -7,16 +7,12 @@ pub struct S3Location {
     /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of the zip file that contains the build files or script files. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
-    #[doc(hidden)]
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

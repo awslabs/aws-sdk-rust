@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyStructureUpdate {
     /// <p>The update for level one.</p>
-    #[doc(hidden)]
     pub level_one: ::std::option::Option<crate::types::HierarchyLevelUpdate>,
     /// <p>The update for level two.</p>
-    #[doc(hidden)]
     pub level_two: ::std::option::Option<crate::types::HierarchyLevelUpdate>,
     /// <p>The update for level three.</p>
-    #[doc(hidden)]
     pub level_three: ::std::option::Option<crate::types::HierarchyLevelUpdate>,
     /// <p>The update for level four.</p>
-    #[doc(hidden)]
     pub level_four: ::std::option::Option<crate::types::HierarchyLevelUpdate>,
     /// <p>The update for level five.</p>
-    #[doc(hidden)]
     pub level_five: ::std::option::Option<crate::types::HierarchyLevelUpdate>,
 }
 impl HierarchyStructureUpdate {

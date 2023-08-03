@@ -6,10 +6,8 @@
 pub struct DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

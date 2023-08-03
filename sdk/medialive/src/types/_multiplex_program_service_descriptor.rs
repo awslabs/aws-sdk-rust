@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramServiceDescriptor {
     /// Name of the provider.
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// Name of the service.
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramServiceDescriptor {

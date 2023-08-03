@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionEnvironment {
     /// <p>Environment variable key-value pairs.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
 }
 impl AwsLambdaFunctionEnvironment {

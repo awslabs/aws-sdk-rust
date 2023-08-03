@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the membership.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the membership.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the protected query was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The protected query SQL parameters.</p>
-    #[doc(hidden)]
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>The status of the query.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     /// <p>Contains any details needed to write the query results.</p>
-    #[doc(hidden)]
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     /// <p>Statistics about protected query execution.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::ProtectedQueryStatistics>,
     /// <p>The result of the protected query.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ProtectedQueryResult>,
     /// <p>An error thrown by the protected query.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ProtectedQueryError>,
 }
 impl ProtectedQuery {

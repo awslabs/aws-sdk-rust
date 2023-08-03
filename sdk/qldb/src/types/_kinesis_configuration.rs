@@ -5,13 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p>Default: <code>True</code> </p> <important>
     /// <p>Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub aggregation_enabled: ::std::option::Option<bool>,
 }
 impl KinesisConfiguration {

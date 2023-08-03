@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProductOutput {
     /// <p>Summary information about the product view.</p>
-    #[doc(hidden)]
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the specified product.</p>
-    #[doc(hidden)]
     pub provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
     /// <p>Information about the associated budgets.</p>
-    #[doc(hidden)]
     pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
     /// <p>Information about the associated launch paths.</p>
-    #[doc(hidden)]
     pub launch_paths: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPath>>,
     _request_id: Option<String>,
 }

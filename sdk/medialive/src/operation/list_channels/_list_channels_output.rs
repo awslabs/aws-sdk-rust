@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// Placeholder documentation for __listOfChannelSummary
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

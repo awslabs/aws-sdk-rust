@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl TlsValidationContextFileTrust {

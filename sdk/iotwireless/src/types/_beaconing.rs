@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Beaconing {
     /// <p>The data rate for gateways that are sending the beacons.</p>
-    #[doc(hidden)]
     pub data_rate: ::std::option::Option<i32>,
     /// <p>The frequency list for the gateways to send the beacons.</p>
-    #[doc(hidden)]
     pub frequencies: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl Beaconing {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicAccess {
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
-    #[doc(hidden)]
     pub permission_configuration: ::std::option::Option<crate::types::PermissionConfiguration>,
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
-    #[doc(hidden)]
     pub effective_permission: ::std::option::Option<::std::string::String>,
 }
 impl PublicAccess {

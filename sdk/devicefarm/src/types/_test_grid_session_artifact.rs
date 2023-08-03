@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestGridSessionArtifact {
     /// <p>The file name of the artifact.</p>
-    #[doc(hidden)]
     pub filename: ::std::option::Option<::std::string::String>,
     /// <p>The kind of artifact.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestGridSessionArtifactType>,
     /// <p>A semi-stable URL to the content of the object.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionArtifact {

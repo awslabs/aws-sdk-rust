@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bumper {
     /// <p>The URL for the end bumper asset.</p>
-    #[doc(hidden)]
     pub end_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the start bumper asset.</p>
-    #[doc(hidden)]
     pub start_url: ::std::option::Option<::std::string::String>,
 }
 impl Bumper {

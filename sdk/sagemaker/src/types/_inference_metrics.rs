@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceMetrics {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    #[doc(hidden)]
     pub max_invocations: i32,
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
-    #[doc(hidden)]
     pub model_latency: i32,
 }
 impl InferenceMetrics {

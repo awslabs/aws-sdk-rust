@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddStorageSystemInput {
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    #[doc(hidden)]
     pub server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
-    #[doc(hidden)]
     pub system_type: ::std::option::Option<crate::types::DiscoverySystemType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises storage system's management interface. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your on-premises storage system.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
 }
 impl AddStorageSystemInput {

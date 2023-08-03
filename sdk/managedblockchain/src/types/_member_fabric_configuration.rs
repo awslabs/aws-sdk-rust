@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
-    #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    #[doc(hidden)]
     pub admin_password: ::std::option::Option<::std::string::String>,
 }
 impl MemberFabricConfiguration {

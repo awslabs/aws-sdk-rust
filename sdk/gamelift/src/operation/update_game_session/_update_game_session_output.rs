@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
-    #[doc(hidden)]
     pub game_session: ::std::option::Option<crate::types::GameSession>,
     _request_id: Option<String>,
 }

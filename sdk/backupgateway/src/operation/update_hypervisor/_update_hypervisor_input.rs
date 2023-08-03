@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    #[doc(hidden)]
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The updated username for the hypervisor.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The updated password for the hypervisor.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the hypervisor</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateHypervisorInput {

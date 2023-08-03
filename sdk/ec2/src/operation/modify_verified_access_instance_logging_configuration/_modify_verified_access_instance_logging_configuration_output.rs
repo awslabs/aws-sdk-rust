@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
     /// <p>The logging configuration for the Verified Access instance.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     _request_id: Option<String>,
 }

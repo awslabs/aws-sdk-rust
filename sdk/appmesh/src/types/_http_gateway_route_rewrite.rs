@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteRewrite {
     /// <p>The specified beginning characters to rewrite.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite>,
     /// <p>The path to rewrite.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<crate::types::HttpGatewayRoutePathRewrite>,
     /// <p>The host name to rewrite.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }
 impl HttpGatewayRouteRewrite {

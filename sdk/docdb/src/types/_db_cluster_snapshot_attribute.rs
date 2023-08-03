@@ -7,11 +7,9 @@
 pub struct DbClusterSnapshotAttribute {
     /// <p>The name of the manual cluster snapshot attribute.</p>
     /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the manual cluster snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    #[doc(hidden)]
     pub attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbClusterSnapshotAttribute {

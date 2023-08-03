@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
-    #[doc(hidden)]
     pub document_classifier_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
     /// <p>Identifies the next page of results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

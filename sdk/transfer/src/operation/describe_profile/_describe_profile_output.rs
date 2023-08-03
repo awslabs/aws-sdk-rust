@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProfileOutput {
     /// <p>The details of the specified profile, returned as an object.</p>
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::DescribedProfile>,
     _request_id: Option<String>,
 }

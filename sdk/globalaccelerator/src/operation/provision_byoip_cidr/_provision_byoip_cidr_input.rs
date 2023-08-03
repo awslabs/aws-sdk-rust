@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrInput {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
-    #[doc(hidden)]
     pub cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInput {

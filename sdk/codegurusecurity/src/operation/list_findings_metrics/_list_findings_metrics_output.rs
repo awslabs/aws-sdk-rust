@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsMetricsOutput {
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    #[doc(hidden)]
     pub findings_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

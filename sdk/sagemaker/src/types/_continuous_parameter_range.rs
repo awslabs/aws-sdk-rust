@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousParameterRange {
     /// <p>The name of the continuous hyperparameter to tune.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<::std::string::String>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     /// <dl>
@@ -42,7 +39,6 @@ pub struct ContinuousParameterRange {
     /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub scaling_type: ::std::option::Option<crate::types::HyperParameterScalingType>,
 }
 impl ContinuousParameterRange {

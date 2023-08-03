@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    #[doc(hidden)]
     pub source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    #[doc(hidden)]
     pub target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    #[doc(hidden)]
     pub typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
 }
 impl AttachTypedLinkInput {

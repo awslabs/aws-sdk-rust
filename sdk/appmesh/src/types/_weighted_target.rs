@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
-    #[doc(hidden)]
     pub virtual_node: ::std::option::Option<::std::string::String>,
     /// <p>The relative weight of the weighted target.</p>
-    #[doc(hidden)]
     pub weight: i32,
     /// <p>The targeted port of the weighted object.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl WeightedTarget {

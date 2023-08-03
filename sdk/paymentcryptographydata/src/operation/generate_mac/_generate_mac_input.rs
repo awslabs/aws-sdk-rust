@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateMacInput {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The data for which a MAC is under generation.</p>
-    #[doc(hidden)]
     pub message_data: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub generation_attributes: ::std::option::Option<crate::types::MacAttributes>,
     /// <p>The length of a MAC under generation.</p>
-    #[doc(hidden)]
     pub mac_length: ::std::option::Option<i32>,
 }
 impl GenerateMacInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksInput {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    #[doc(hidden)]
     pub task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataRepositoryTasksInput {

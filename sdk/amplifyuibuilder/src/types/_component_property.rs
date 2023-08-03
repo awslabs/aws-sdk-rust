@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentProperty {
     /// <p>The value to assign to the component property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind the component property to data at runtime.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    #[doc(hidden)]
     pub collection_binding_properties: ::std::option::Option<crate::types::ComponentPropertyBindingProperties>,
     /// <p>The default value to assign to the component property.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The data model to use to assign a value to the component property.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind the component property to form data.</p>
-    #[doc(hidden)]
     pub bindings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormBindingElement>>,
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<::std::string::String>,
     /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
-    #[doc(hidden)]
     pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-    #[doc(hidden)]
     pub concat: ::std::option::Option<::std::vec::Vec<crate::types::ComponentProperty>>,
     /// <p>The conditional expression to use to assign a value to the component property.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::ComponentConditionProperty>,
     /// <p>Specifies whether the user configured the property in Amplify Studio after importing it.</p>
-    #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
     /// <p>The component type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The default value assigned to the property when the component is imported into an app.</p>
-    #[doc(hidden)]
     pub imported_value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component that is affected by an event.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component's property that is affected by an event.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
 }
 impl ComponentProperty {

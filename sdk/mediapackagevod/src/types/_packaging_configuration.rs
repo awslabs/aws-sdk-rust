@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackagingConfiguration {
     /// The ARN of the PackagingConfiguration.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// A CMAF packaging configuration.
-    #[doc(hidden)]
     pub cmaf_package: ::std::option::Option<crate::types::CmafPackage>,
     /// The time the PackagingConfiguration was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    #[doc(hidden)]
     pub dash_package: ::std::option::Option<crate::types::DashPackage>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    #[doc(hidden)]
     pub hls_package: ::std::option::Option<crate::types::HlsPackage>,
     /// The ID of the PackagingConfiguration.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    #[doc(hidden)]
     pub mss_package: ::std::option::Option<crate::types::MssPackage>,
     /// The ID of a PackagingGroup.
-    #[doc(hidden)]
     pub packaging_group_id: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PackagingConfiguration {

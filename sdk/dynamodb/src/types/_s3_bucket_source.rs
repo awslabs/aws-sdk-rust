@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketSource {
     /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
-    #[doc(hidden)]
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p> The S3 bucket that is being imported from. </p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSource {

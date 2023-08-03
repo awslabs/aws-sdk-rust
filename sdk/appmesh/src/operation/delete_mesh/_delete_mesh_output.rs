@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
-    #[doc(hidden)]
     pub mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,
 }

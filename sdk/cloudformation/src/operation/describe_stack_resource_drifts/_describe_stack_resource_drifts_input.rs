@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsInput {
     /// <p>The name of the stack for which you want drift information.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct DescribeStackResourceDriftsInput {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     /// <p>A string that identifies the next page of stack resource drift results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeStackResourceDriftsInput {

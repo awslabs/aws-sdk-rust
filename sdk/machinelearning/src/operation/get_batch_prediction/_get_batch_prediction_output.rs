@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchPredictionOutput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
-    #[doc(hidden)]
     pub batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
@@ -36,31 +28,22 @@ pub struct GetBatchPredictionOutput {
     /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub total_record_count: ::std::option::Option<i64>,
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub invalid_record_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

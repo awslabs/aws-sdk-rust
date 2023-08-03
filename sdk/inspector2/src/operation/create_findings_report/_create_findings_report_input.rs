@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFindingsReportInput {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The format to generate the report in.</p>
-    #[doc(hidden)]
     pub report_format: ::std::option::Option<crate::types::ReportFormat>,
     /// <p>The Amazon S3 export destination for the report.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
 }
 impl CreateFindingsReportInput {

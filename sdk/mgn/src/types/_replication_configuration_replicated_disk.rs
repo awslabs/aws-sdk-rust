@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>Replication Configuration replicated disk device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration replicated disk boot disk.</p>
-    #[doc(hidden)]
     pub is_boot_disk: ::std::option::Option<bool>,
     /// <p>Replication Configuration replicated disk staging disk type.</p>
-    #[doc(hidden)]
     pub staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>Replication Configuration replicated disk IOPs.</p>
-    #[doc(hidden)]
     pub iops: i64,
     /// <p>Replication Configuration replicated disk throughput.</p>
-    #[doc(hidden)]
     pub throughput: i64,
 }
 impl ReplicationConfigurationReplicatedDisk {

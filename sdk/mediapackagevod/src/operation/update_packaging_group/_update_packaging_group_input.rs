@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackagingGroupInput {
     /// CDN Authorization credentials
-    #[doc(hidden)]
     pub authorization: ::std::option::Option<crate::types::Authorization>,
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackagingGroupInput {

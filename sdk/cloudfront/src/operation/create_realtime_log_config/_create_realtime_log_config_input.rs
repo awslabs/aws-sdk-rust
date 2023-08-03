@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    #[doc(hidden)]
     pub end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique name to identify this real-time log configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-    #[doc(hidden)]
     pub sampling_rate: ::std::option::Option<i64>,
 }
 impl CreateRealtimeLogConfigInput {

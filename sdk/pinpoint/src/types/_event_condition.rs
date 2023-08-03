@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventCondition {
     /// <p>The dimensions for the event filter to use for the activity.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::EventDimensions>,
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
-    #[doc(hidden)]
     pub message_activity: ::std::option::Option<::std::string::String>,
 }
 impl EventCondition {

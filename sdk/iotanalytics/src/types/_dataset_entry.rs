@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntry {
     /// <p>The name of the dataset item.</p>
-    #[doc(hidden)]
     pub entry_name: ::std::option::Option<::std::string::String>,
     /// <p>The presigned URI of the dataset item.</p>
-    #[doc(hidden)]
     pub data_uri: ::std::option::Option<::std::string::String>,
 }
 impl DatasetEntry {

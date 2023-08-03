@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::TableDataImportJobStatus>,
     /// <p> A message providing more details about the current status of the import job. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p> The metadata about the job that was submitted for import. </p>
-    #[doc(hidden)]
     pub job_metadata: ::std::option::Option<crate::types::TableDataImportJobMetadata>,
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     _request_id: Option<String>,
 }

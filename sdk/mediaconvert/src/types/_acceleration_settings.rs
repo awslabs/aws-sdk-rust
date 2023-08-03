@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccelerationSettings {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AccelerationMode>,
 }
 impl AccelerationSettings {

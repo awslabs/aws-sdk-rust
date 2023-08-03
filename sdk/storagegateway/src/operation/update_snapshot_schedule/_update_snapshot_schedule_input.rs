@@ -11,21 +11,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    #[doc(hidden)]
     pub start_at: ::std::option::Option<i32>,
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
-    #[doc(hidden)]
     pub recurrence_in_hours: ::std::option::Option<i32>,
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateSnapshotScheduleInput {

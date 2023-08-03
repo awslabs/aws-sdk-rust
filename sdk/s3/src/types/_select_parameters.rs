@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
-    #[doc(hidden)]
     pub input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     /// <p>The type of the provided expression (for example, SQL).</p>
-    #[doc(hidden)]
     pub expression_type: ::std::option::Option<crate::types::ExpressionType>,
     /// <p>The expression that is used to query the object.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Describes how the results of the Select job are serialized.</p>
-    #[doc(hidden)]
     pub output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
 }
 impl SelectParameters {

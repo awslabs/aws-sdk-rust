@@ -5,10 +5,8 @@
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys to remove.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

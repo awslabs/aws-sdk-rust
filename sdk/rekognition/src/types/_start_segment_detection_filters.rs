@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
-    #[doc(hidden)]
     pub technical_cue_filter: ::std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
     /// <p>Filters that are specific to shot detections.</p>
-    #[doc(hidden)]
     pub shot_filter: ::std::option::Option<crate::types::StartShotDetectionFilter>,
 }
 impl StartSegmentDetectionFilters {

@@ -12,7 +12,6 @@ pub struct Alias {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of the DNS alias.</p>
     /// <ul>
@@ -22,7 +21,6 @@ pub struct Alias {
     /// <li> <p>DELETING - Amazon FSx is disassociating the DNS alias from the file system and deleting it.</p> </li>
     /// <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::AliasLifecycle>,
 }
 impl Alias {

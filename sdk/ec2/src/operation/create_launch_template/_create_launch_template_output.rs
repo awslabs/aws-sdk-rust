@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    #[doc(hidden)]
     pub warning: ::std::option::Option<crate::types::ValidationWarning>,
     _request_id: Option<String>,
 }

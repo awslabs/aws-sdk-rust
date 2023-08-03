@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    #[doc(hidden)]
     pub wrapping_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The TR-34 wrapped key block to import.</p>
-    #[doc(hidden)]
     pub wrapped_key_block: ::std::option::Option<::std::string::String>,
 }
 impl ImportTr31KeyBlock {

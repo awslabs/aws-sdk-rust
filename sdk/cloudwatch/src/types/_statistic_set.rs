@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatisticSet {
     /// <p>The number of samples used for the statistic set.</p>
-    #[doc(hidden)]
     pub sample_count: ::std::option::Option<f64>,
     /// <p>The sum of values for the sample set.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The minimum value of the sample set.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum value of the sample set.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
 }
 impl StatisticSet {

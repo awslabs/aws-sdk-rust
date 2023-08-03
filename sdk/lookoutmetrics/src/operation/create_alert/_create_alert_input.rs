@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAlertInput {
     /// <p>The name of the alert.</p>
-    #[doc(hidden)]
     pub alert_name: ::std::option::Option<::std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>A description of the alert.</p>
-    #[doc(hidden)]
     pub alert_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Action that will be triggered when there is an alert.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-    #[doc(hidden)]
     pub alert_filters: ::std::option::Option<crate::types::AlertFilters>,
 }
 impl CreateAlertInput {

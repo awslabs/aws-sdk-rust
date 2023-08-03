@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
-    #[doc(hidden)]
     pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

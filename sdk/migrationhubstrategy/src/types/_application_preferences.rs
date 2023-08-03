@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
-    #[doc(hidden)]
     pub management_preference: ::std::option::Option<crate::types::ManagementPreference>,
 }
 impl ApplicationPreferences {

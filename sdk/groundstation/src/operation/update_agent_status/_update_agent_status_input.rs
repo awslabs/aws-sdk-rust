@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusInput {
     /// <p>UUID of agent to update.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>GUID of agent task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Aggregate status for agent.</p>
-    #[doc(hidden)]
     pub aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
     /// <p>List of component statuses for agent.</p>
-    #[doc(hidden)]
     pub component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInput {

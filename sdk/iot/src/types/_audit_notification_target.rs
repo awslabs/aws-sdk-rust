@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditNotificationTarget {
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>True if notifications to the target are enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AuditNotificationTarget {

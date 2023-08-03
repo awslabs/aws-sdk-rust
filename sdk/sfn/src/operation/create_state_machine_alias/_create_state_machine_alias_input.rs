@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateStateMachineAliasInput {
     /// <p>A description for the state machine alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    #[doc(hidden)]
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
 }
 impl CreateStateMachineAliasInput {

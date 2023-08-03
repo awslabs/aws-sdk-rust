@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<crate::types::AssessmentControl>,
     _request_id: Option<String>,
 }

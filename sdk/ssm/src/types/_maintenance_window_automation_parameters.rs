@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowAutomationParameters {
     /// <p>The version of an Automation runbook to use during task execution.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
     /// <p>For information about specifying and updating task parameters, see <code>RegisterTaskWithMaintenanceWindow</code> and <code>UpdateMaintenanceWindowTask</code>.</p> <note>
@@ -13,7 +12,6 @@ pub struct MaintenanceWindowAutomationParameters {
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// <p>For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for these parameters.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl MaintenanceWindowAutomationParameters {

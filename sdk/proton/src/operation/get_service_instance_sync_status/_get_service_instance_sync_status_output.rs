@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceInstanceSyncStatusOutput {
     /// <p>The detailed data of the latest sync with the service instance.</p>
-    #[doc(hidden)]
     pub latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     /// <p>The detailed data of the latest successful sync with the service instance.</p>
-    #[doc(hidden)]
     pub latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     /// <p>The service instance sync desired state that's returned by Proton</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::Revision>,
     _request_id: Option<String>,
 }

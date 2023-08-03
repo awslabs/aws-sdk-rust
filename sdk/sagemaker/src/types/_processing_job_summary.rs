@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingJobSummary {
     /// <p>The name of the processing job.</p>
-    #[doc(hidden)]
     pub processing_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
-    #[doc(hidden)]
     pub processing_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the processing job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the processing job completed.</p>
-    #[doc(hidden)]
     pub processing_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates the last time the processing job was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the processing job.</p>
-    #[doc(hidden)]
     pub processing_job_status: ::std::option::Option<crate::types::ProcessingJobStatus>,
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-    #[doc(hidden)]
     pub exit_message: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingJobSummary {

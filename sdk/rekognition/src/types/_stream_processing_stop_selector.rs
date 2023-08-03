@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
-    #[doc(hidden)]
     pub max_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl StreamProcessingStopSelector {

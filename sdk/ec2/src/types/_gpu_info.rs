@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuInfo {
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    #[doc(hidden)]
     pub gpus: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
-    #[doc(hidden)]
     pub total_gpu_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl GpuInfo {

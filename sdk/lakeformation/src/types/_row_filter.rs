@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowFilter {
     /// <p>A filter expression.</p>
-    #[doc(hidden)]
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>A wildcard for all rows.</p>
-    #[doc(hidden)]
     pub all_rows_wildcard: ::std::option::Option<crate::types::AllRowsWildcard>,
 }
 impl RowFilter {

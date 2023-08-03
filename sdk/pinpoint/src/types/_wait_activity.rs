@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaitActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
-    #[doc(hidden)]
     pub wait_time: ::std::option::Option<crate::types::WaitTime>,
 }
 impl WaitActivity {

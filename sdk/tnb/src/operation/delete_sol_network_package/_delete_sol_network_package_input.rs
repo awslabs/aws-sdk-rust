@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkPackageInput {
     /// <p>ID of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSolNetworkPackageInput {

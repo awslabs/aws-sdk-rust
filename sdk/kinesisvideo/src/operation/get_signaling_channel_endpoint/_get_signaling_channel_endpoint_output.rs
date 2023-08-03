@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointOutput {
     /// <p>A list of endpoints for the specified signaling channel.</p>
-    #[doc(hidden)]
     pub resource_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
     _request_id: Option<String>,
 }

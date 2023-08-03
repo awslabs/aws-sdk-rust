@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductionVariantSummary {
     /// <p>The name of the variant.</p>
-    #[doc(hidden)]
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.</p>
-    #[doc(hidden)]
     pub deployed_images: ::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>>,
     /// <p>The weight associated with the variant.</p>
-    #[doc(hidden)]
     pub current_weight: ::std::option::Option<f32>,
     /// <p>The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
-    #[doc(hidden)]
     pub desired_weight: ::std::option::Option<f32>,
     /// <p>The number of instances associated with the variant.</p>
-    #[doc(hidden)]
     pub current_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
-    #[doc(hidden)]
     pub desired_instance_count: ::std::option::Option<i32>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    #[doc(hidden)]
     pub variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     /// <p>The serverless configuration for the endpoint.</p>
-    #[doc(hidden)]
     pub current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     /// <p>The serverless configuration requested for the endpoint update.</p>
-    #[doc(hidden)]
     pub desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl ProductionVariantSummary {

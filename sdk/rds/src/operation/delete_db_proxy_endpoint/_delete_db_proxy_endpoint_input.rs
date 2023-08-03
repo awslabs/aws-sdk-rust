@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbProxyEndpointInput {
     /// <p>The name of the DB proxy endpoint to delete.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbProxyEndpointInput {

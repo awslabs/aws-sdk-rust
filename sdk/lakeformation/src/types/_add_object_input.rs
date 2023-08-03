@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The size of the Amazon S3 object in bytes.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddObjectInput {

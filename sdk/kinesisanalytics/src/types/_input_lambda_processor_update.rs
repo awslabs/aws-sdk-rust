@@ -7,10 +7,8 @@ pub struct InputLambdaProcessorUpdate {
     /// <p>The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
     /// </note>
-    #[doc(hidden)]
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new IAM role that is used to access the AWS Lambda function.</p>
-    #[doc(hidden)]
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl InputLambdaProcessorUpdate {

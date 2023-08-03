@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceMetadataOutput {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
     _request_id: Option<String>,
 }

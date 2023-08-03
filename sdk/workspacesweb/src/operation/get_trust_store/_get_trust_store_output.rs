@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrustStoreOutput {
     /// <p>The trust store.</p>
-    #[doc(hidden)]
     pub trust_store: ::std::option::Option<crate::types::TrustStore>,
     _request_id: Option<String>,
 }

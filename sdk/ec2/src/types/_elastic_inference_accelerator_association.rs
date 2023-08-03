@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorAssociation {
     /// <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the association. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_association_id: ::std::option::Option<::std::string::String>,
     /// <p> The state of the elastic inference accelerator. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_association_state: ::std::option::Option<::std::string::String>,
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ElasticInferenceAcceleratorAssociation {

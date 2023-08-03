@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    #[doc(hidden)]
     pub bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspaceBundlesInput {

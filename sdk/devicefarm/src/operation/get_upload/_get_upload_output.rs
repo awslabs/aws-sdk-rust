@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUploadOutput {
     /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
-    #[doc(hidden)]
     pub upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }

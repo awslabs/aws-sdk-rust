@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutput {
     /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
-    #[doc(hidden)]
     pub invitations_count: i32,
     _request_id: Option<String>,
 }

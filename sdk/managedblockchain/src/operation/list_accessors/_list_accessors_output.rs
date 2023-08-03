@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessorsOutput {
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    #[doc(hidden)]
     pub accessors: ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>>,
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

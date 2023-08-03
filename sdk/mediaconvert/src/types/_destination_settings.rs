@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationSettings {
     /// Settings associated with S3 destination
-    #[doc(hidden)]
     pub s3_settings: ::std::option::Option<crate::types::S3DestinationSettings>,
 }
 impl DestinationSettings {

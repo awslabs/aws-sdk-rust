@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
-    #[doc(hidden)]
     pub date_range_filter: ::std::option::Option<crate::types::DateRangeFilter>,
 }
 impl LexTranscriptFilter {

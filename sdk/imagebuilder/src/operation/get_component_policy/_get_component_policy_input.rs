@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-    #[doc(hidden)]
     pub component_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentPolicyInput {

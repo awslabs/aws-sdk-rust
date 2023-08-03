@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoundingBox {
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<f32>,
     /// <p>The left coordinate of the bounding box as a ratio of overall document page width.</p>
-    #[doc(hidden)]
     pub left: ::std::option::Option<f32>,
     /// <p>The top coordinate of the bounding box as a ratio of overall document page height.</p>
-    #[doc(hidden)]
     pub top: ::std::option::Option<f32>,
     /// <p>The width of the bounding box as a ratio of the overall document page width.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<f32>,
 }
 impl BoundingBox {

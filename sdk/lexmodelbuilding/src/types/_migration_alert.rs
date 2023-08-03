@@ -9,16 +9,12 @@ pub struct MigrationAlert {
     /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     /// <p>A message that describes why the alert was issued.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the alert.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    #[doc(hidden)]
     pub reference_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MigrationAlert {

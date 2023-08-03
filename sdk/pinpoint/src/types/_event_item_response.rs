@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
 }
 impl EventItemResponse {

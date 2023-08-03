@@ -7,14 +7,11 @@
 pub struct LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateSpecification {

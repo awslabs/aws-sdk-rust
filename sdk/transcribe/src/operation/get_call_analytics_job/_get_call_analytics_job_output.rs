@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
-    #[doc(hidden)]
     pub call_analytics_job: ::std::option::Option<crate::types::CallAnalyticsJob>,
     _request_id: Option<String>,
 }

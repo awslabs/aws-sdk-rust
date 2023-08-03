@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionStatus {
     /// <p>The time stamp of the most recent successful ingestion of events for the channel.</p>
-    #[doc(hidden)]
     pub latest_ingestion_success_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event ID of the most recent successful ingestion of events.</p>
-    #[doc(hidden)]
     pub latest_ingestion_success_event_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the most recent failure to ingest events.</p>
-    #[doc(hidden)]
     pub latest_ingestion_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the most recent attempt to ingest events on the channel.</p>
-    #[doc(hidden)]
     pub latest_ingestion_attempt_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event ID of the most recent attempt to ingest events.</p>
-    #[doc(hidden)]
     pub latest_ingestion_attempt_event_id: ::std::option::Option<::std::string::String>,
 }
 impl IngestionStatus {

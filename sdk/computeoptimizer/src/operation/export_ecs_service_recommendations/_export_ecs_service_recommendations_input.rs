@@ -8,27 +8,21 @@ pub struct ExportEcsServiceRecommendationsInput {
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub fields_to_export: ::std::option::Option<::std::vec::Vec<crate::types::ExportableEcsServiceField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub s3_destination_config: ::std::option::Option<crate::types::S3DestinationConfig>,
     /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
     /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
     /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
-    #[doc(hidden)]
     pub include_member_accounts: ::std::option::Option<bool>,
 }
 impl ExportEcsServiceRecommendationsInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunProperties {
     /// <p>The type of task run.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::TaskType>,
     /// <p>The configuration properties for an importing labels task run.</p>
-    #[doc(hidden)]
     pub import_labels_task_run_properties: ::std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
     /// <p>The configuration properties for an exporting labels task run.</p>
-    #[doc(hidden)]
     pub export_labels_task_run_properties: ::std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
     /// <p>The configuration properties for a labeling set generation task run.</p>
-    #[doc(hidden)]
     pub labeling_set_generation_task_run_properties: ::std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
     /// <p>The configuration properties for a find matches task run.</p>
-    #[doc(hidden)]
     pub find_matches_task_run_properties: ::std::option::Option<crate::types::FindMatchesTaskRunProperties>,
 }
 impl TaskRunProperties {

@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobResponse {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
-    #[doc(hidden)]
     pub completed_pieces: ::std::option::Option<i32>,
     /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the import job was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The resource settings that apply to the import job.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::ImportJobResource>,
     /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
-    #[doc(hidden)]
     pub failed_pieces: ::std::option::Option<i32>,
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifier for the import job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
-    #[doc(hidden)]
     pub total_failures: ::std::option::Option<i32>,
     /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
-    #[doc(hidden)]
     pub total_pieces: ::std::option::Option<i32>,
     /// <p>The total number of endpoint definitions that were processed by the import job.</p>
-    #[doc(hidden)]
     pub total_processed: ::std::option::Option<i32>,
     /// <p>The job type. This value is IMPORT for import jobs.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobResponse {

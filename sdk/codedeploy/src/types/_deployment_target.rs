@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentTarget {
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
-    #[doc(hidden)]
     pub deployment_target_type: ::std::option::Option<crate::types::DeploymentTargetType>,
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
-    #[doc(hidden)]
     pub instance_target: ::std::option::Option<crate::types::InstanceTarget>,
     /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
-    #[doc(hidden)]
     pub lambda_target: ::std::option::Option<crate::types::LambdaTarget>,
     /// <p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>
-    #[doc(hidden)]
     pub ecs_target: ::std::option::Option<crate::types::EcsTarget>,
     /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
-    #[doc(hidden)]
     pub cloud_formation_target: ::std::option::Option<crate::types::CloudFormationTarget>,
 }
 impl DeploymentTarget {

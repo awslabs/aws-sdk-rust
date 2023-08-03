@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[doc(hidden)]
     pub ssl_policy: ::std::option::Option<::std::string::String>,
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>The actions for the default rule.</p>
-    #[doc(hidden)]
     pub default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
@@ -31,7 +25,6 @@ pub struct ModifyListenerInput {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[doc(hidden)]
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyListenerInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    #[doc(hidden)]
     pub action_group: ::std::option::Option<crate::types::ActionGroup>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {

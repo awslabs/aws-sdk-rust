@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationHealthInput {
     /// <p>The ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
-    #[doc(hidden)]
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeOrganizationHealthInput {

@@ -5,14 +5,12 @@
 pub struct AttachCertificateToDistributionInput {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate to attach to a distribution.</p>
     /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachCertificateToDistributionInput {

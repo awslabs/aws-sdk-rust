@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSuiteDefinitionOutput {
     /// <p>Suite definition ID of the updated test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>Updates the suite definition name. This is a required parameter.</p>
-    #[doc(hidden)]
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the updated test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the test suite was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp of when the test suite was updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }

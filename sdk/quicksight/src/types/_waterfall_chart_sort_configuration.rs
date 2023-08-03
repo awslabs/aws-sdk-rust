@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of bar groups that are displayed.</p>
-    #[doc(hidden)]
     pub breakdown_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl WaterfallChartSortConfiguration {

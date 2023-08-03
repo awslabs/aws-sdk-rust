@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetRiskConfigurationInput {
     /// <p>The user pool ID. </p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
     /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The compromised credentials risk configuration.</p>
-    #[doc(hidden)]
     pub compromised_credentials_risk_configuration: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
     /// <p>The account takeover risk configuration.</p>
-    #[doc(hidden)]
     pub account_takeover_risk_configuration: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
     /// <p>The configuration to override the risk decision.</p>
-    #[doc(hidden)]
     pub risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
 }
 impl SetRiskConfigurationInput {

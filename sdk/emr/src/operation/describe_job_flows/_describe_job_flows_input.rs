@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsInput {
     /// <p>Return only job flows created after this date and time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only job flows created before this date and time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    #[doc(hidden)]
     pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Return only job flows whose state is contained in this list.</p>
-    #[doc(hidden)]
     pub job_flow_states: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
 }
 impl DescribeJobFlowsInput {

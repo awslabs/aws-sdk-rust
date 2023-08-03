@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoStopConfig {
     /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
-    #[doc(hidden)]
     pub idle_timeout_minutes: ::std::option::Option<i32>,
 }
 impl AutoStopConfig {

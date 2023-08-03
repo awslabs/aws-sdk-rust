@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAclOutput {
     /// <p>The Access Control List object that has been deleted.</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }

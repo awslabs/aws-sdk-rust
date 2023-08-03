@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
 }

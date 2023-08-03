@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
-    #[doc(hidden)]
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-    #[doc(hidden)]
     pub max_batch_size: ::std::option::Option<i32>,
 }
 impl PollForThirdPartyJobsInput {

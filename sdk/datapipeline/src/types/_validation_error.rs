@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the validation error.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ValidationError {

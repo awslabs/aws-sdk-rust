@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Algorithm {
     /// <p>The name of the algorithm.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    #[doc(hidden)]
     pub algorithm_image: ::std::option::Option<crate::types::AlgorithmImage>,
     /// <p>Specifies the default hyperparameters.</p>
-    #[doc(hidden)]
     pub default_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    #[doc(hidden)]
     pub default_hyper_parameter_ranges: ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-    #[doc(hidden)]
     pub default_resource_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The training input mode.</p>
-    #[doc(hidden)]
     pub training_input_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Algorithm {

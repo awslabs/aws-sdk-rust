@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p>The keys that are included in this group.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The metrics that are included in this group.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
 }
 impl Group {

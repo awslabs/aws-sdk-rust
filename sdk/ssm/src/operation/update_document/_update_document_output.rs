@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
-    #[doc(hidden)]
     pub document_description: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,
 }

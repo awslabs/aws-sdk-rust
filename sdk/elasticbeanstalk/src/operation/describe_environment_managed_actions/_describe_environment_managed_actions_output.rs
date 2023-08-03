@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    #[doc(hidden)]
     pub managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     _request_id: Option<String>,
 }

@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeStateMachineAliasOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine alias.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of the alias.</p>
-    #[doc(hidden)]
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
     /// <p>The date the state machine alias was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the state machine alias was last updated.</p>
     /// <p>For a newly created state machine, this is the same as the creation date.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverInputSchemaOutput {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-    #[doc(hidden)]
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    #[doc(hidden)]
     pub parsed_input_records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    #[doc(hidden)]
     pub processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    #[doc(hidden)]
     pub raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

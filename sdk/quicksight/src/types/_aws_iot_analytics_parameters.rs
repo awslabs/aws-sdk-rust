@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
-    #[doc(hidden)]
     pub data_set_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIotAnalyticsParameters {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Approval {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
-    #[doc(hidden)]
     pub approval_state: ::std::option::Option<crate::types::ApprovalState>,
 }
 impl Approval {

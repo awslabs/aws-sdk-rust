@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTune {
     /// <p>The type of Auto-Tune action.</p>
-    #[doc(hidden)]
     pub auto_tune_type: ::std::option::Option<crate::types::AutoTuneType>,
     /// <p>Details about an Auto-Tune action.</p>
-    #[doc(hidden)]
     pub auto_tune_details: ::std::option::Option<crate::types::AutoTuneDetails>,
 }
 impl AutoTune {

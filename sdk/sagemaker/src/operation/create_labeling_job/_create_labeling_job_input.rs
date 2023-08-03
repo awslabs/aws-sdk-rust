@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLabelingJobInput {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    #[doc(hidden)]
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
     /// <ul>
@@ -21,7 +20,6 @@ pub struct CreateLabelingJobInput {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub label_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
     /// <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>
@@ -30,13 +28,10 @@ pub struct CreateLabelingJobInput {
     /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::LabelingJobInputConfig>,
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::LabelingJobOutputConfig>,
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
     /// <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
@@ -55,19 +50,14 @@ pub struct CreateLabelingJobInput {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub label_category_config_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    #[doc(hidden)]
     pub stopping_conditions: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
     /// <p>Configures the information required to perform automated data labeling.</p>
-    #[doc(hidden)]
     pub labeling_job_algorithms_config: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-    #[doc(hidden)]
     pub human_task_config: ::std::option::Option<crate::types::HumanTaskConfig>,
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLabelingJobInput {

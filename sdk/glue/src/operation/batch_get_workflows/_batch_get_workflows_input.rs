@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetWorkflowsInput {
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-    #[doc(hidden)]
     pub include_graph: ::std::option::Option<bool>,
 }
 impl BatchGetWorkflowsInput {

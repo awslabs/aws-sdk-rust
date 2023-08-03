@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Result {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the account was not processed.</p>
-    #[doc(hidden)]
     pub processing_result: ::std::option::Option<::std::string::String>,
 }
 impl Result {

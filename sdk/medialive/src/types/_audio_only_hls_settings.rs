@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
-    #[doc(hidden)]
     pub audio_group_id: ::std::option::Option<::std::string::String>,
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
-    #[doc(hidden)]
     pub audio_only_image: ::std::option::Option<crate::types::InputLocation>,
     /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
-    #[doc(hidden)]
     pub audio_track_type: ::std::option::Option<crate::types::AudioOnlyHlsTrackType>,
     /// Specifies the segment type.
-    #[doc(hidden)]
     pub segment_type: ::std::option::Option<crate::types::AudioOnlyHlsSegmentType>,
 }
 impl AudioOnlyHlsSettings {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueConfiguration {

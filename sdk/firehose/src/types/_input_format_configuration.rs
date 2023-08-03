@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
-    #[doc(hidden)]
     pub deserializer: ::std::option::Option<crate::types::Deserializer>,
 }
 impl InputFormatConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCoreDefinitionInput {
     /// The ID of the core definition.
-    #[doc(hidden)]
     pub core_definition_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCoreDefinitionInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectionInput {

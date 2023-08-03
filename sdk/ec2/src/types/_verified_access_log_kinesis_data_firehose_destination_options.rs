@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestinationOptions {

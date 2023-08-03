@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>Indication of the percentage completion of the task.</p>
-    #[doc(hidden)]
     pub progress_percent: ::std::option::Option<i32>,
 }
 impl Task {

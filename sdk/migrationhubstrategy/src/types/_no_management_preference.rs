@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
-    #[doc(hidden)]
     pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreference {

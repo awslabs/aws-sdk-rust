@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RescoreResultItem {
     /// <p>The identifier of the document from the search service.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl RescoreResultItem {

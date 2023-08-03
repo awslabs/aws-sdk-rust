@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTransactionInput {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
-    #[doc(hidden)]
     pub transaction_type: ::std::option::Option<crate::types::TransactionType>,
 }
 impl StartTransactionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProfileConfig {
     /// <p> The connector-specific properties of the profile configuration. </p>
-    #[doc(hidden)]
     pub connector_profile_properties: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     /// <p> The connector-specific credentials required by each connector. </p>
-    #[doc(hidden)]
     pub connector_profile_credentials: ::std::option::Option<crate::types::ConnectorProfileCredentials>,
 }
 impl ConnectorProfileConfig {

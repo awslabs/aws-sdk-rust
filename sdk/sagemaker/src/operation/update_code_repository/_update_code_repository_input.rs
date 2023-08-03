@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCodeRepositoryInput {
     /// <p>The name of the Git repository to update.</p>
-    #[doc(hidden)]
     pub code_repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    #[doc(hidden)]
     pub git_config: ::std::option::Option<crate::types::GitConfigForUpdate>,
 }
 impl UpdateCodeRepositoryInput {

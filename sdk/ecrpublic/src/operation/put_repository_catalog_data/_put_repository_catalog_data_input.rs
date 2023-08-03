@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataInput {
     /// <p>The Amazon Web Services account ID that's associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to create or update the catalog data for.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    #[doc(hidden)]
     pub catalog_data: ::std::option::Option<crate::types::RepositoryCatalogDataInput>,
 }
 impl PutRepositoryCatalogDataInput {

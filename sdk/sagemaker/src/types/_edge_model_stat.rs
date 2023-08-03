@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeModelStat {
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The model version.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
-    #[doc(hidden)]
     pub offline_device_count: i64,
     /// <p>The number of devices that have this model version and have a heart beat. </p>
-    #[doc(hidden)]
     pub connected_device_count: i64,
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
-    #[doc(hidden)]
     pub active_device_count: i64,
     /// <p>The number of devices with this model version and are producing sample data.</p>
-    #[doc(hidden)]
     pub sampling_device_count: i64,
 }
 impl EdgeModelStat {

@@ -12,13 +12,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationGroupUpdate {
     /// <p>The parameters required for creating a replica for the table.</p>
-    #[doc(hidden)]
     pub create: ::std::option::Option<crate::types::CreateReplicationGroupMemberAction>,
     /// <p>The parameters required for updating a replica for the table.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::UpdateReplicationGroupMemberAction>,
     /// <p>The parameters required for deleting a replica for the table.</p>
-    #[doc(hidden)]
     pub delete: ::std::option::Option<crate::types::DeleteReplicationGroupMemberAction>,
 }
 impl ReplicationGroupUpdate {

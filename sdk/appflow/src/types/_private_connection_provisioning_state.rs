@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateConnectionProvisioningState {
     /// <p> Specifies the private connection provisioning status. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
     /// <p> Specifies the private connection provisioning failure reason. </p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the private connection provisioning failure cause. </p>
-    #[doc(hidden)]
     pub failure_cause: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
 }
 impl PrivateConnectionProvisioningState {

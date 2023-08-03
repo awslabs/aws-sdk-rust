@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleChannelDataInput {
     /// <p>The name of the channel whose message samples are retrieved.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
-    #[doc(hidden)]
     pub max_messages: ::std::option::Option<i32>,
     /// <p>The start of the time window from which sample messages are retrieved.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time window from which sample messages are retrieved.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SampleChannelDataInput {

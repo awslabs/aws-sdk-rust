@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointSetting {
     /// <p>The name that you want to give the endpoint settings.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EndpointSettingTypeValue>,
     /// <p>Enumerated values to use for this endpoint.</p>
-    #[doc(hidden)]
     pub enum_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that marks this endpoint setting as sensitive.</p>
-    #[doc(hidden)]
     pub sensitive: ::std::option::Option<bool>,
     /// <p>The unit of measure for this endpoint setting.</p>
-    #[doc(hidden)]
     pub units: ::std::option::Option<::std::string::String>,
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
-    #[doc(hidden)]
     pub applicability: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
-    #[doc(hidden)]
     pub int_value_min: ::std::option::Option<i32>,
     /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
-    #[doc(hidden)]
     pub int_value_max: ::std::option::Option<i32>,
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl EndpointSetting {

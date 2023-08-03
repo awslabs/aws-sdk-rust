@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
-    #[doc(hidden)]
     pub cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

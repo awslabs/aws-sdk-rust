@@ -7,28 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationRecorderStatus {
     /// <p>The name of the configuration recorder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the recorder was last started.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the recorder was last stopped.</p>
-    #[doc(hidden)]
     pub last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether or not the recorder is currently recording.</p>
-    #[doc(hidden)]
     pub recording: bool,
     /// <p>The status of the latest recording event processed by the recorder.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<crate::types::RecorderStatus>,
     /// <p>The latest error code from when the recorder last failed.</p>
-    #[doc(hidden)]
     pub last_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The latest error message from when the recorder last failed.</p>
-    #[doc(hidden)]
     pub last_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
-    #[doc(hidden)]
     pub last_status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationRecorderStatus {

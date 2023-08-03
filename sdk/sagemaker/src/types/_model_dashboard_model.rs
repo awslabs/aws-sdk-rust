@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardModel {
     /// <p>A model displayed in the Model Dashboard.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<crate::types::Model>,
     /// <p>The endpoints that host a model.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
-    #[doc(hidden)]
     pub last_batch_transform_job: ::std::option::Option<crate::types::TransformJob>,
     /// <p>The monitoring schedules for a model.</p>
-    #[doc(hidden)]
     pub monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
     /// <p>The model card for a model.</p>
-    #[doc(hidden)]
     pub model_card: ::std::option::Option<crate::types::ModelDashboardModelCard>,
 }
 impl ModelDashboardModel {

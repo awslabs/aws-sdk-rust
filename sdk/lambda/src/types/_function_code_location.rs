@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionCodeLocation {
     /// <p>The service that's hosting the file.</p>
-    #[doc(hidden)]
     pub repository_type: ::std::option::Option<::std::string::String>,
     /// <p>A presigned URL that you can use to download the deployment package.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>URI of a container image in the Amazon ECR registry.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The resolved URI for the image.</p>
-    #[doc(hidden)]
     pub resolved_image_uri: ::std::option::Option<::std::string::String>,
 }
 impl FunctionCodeLocation {

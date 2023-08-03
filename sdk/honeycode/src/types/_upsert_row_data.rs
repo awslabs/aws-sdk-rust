@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsertRowData {
     /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    #[doc(hidden)]
     pub batch_item_id: ::std::option::Option<::std::string::String>,
     /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
     /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    #[doc(hidden)]
     pub cells_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl UpsertRowData {

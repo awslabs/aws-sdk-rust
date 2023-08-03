@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportJobResource {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>
     /// bucket-name
     /// </replaceable>/<replaceable>
     /// folder-name
     /// </replaceable>/.</p>
-    #[doc(hidden)]
     pub s3_url_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
-    #[doc(hidden)]
     pub segment_version: ::std::option::Option<i32>,
 }
 impl ExportJobResource {

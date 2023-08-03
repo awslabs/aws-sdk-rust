@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    #[doc(hidden)]
     pub function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     _request_id: Option<String>,
 }

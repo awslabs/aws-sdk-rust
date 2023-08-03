@@ -11,10 +11,8 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bandwidth {
     /// <p>Upload speed in Mbps.</p>
-    #[doc(hidden)]
     pub upload_speed: ::std::option::Option<i32>,
     /// <p>Download speed in Mbps.</p>
-    #[doc(hidden)]
     pub download_speed: ::std::option::Option<i32>,
 }
 impl Bandwidth {

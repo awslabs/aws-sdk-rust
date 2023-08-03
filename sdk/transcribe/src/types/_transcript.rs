@@ -9,14 +9,12 @@ pub struct Transcript {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    #[doc(hidden)]
     pub transcript_file_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of your redacted transcript. You can use this URI to access or download your transcript.</p>
     /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>RedactedTranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    #[doc(hidden)]
     pub redacted_transcript_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl Transcript {

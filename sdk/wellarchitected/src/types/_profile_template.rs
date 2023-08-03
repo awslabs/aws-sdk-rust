@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileTemplate {
     /// <p>The name of the profile template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Profile template questions.</p>
-    #[doc(hidden)]
     pub template_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProfileTemplate {

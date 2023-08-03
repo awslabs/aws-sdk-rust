@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    #[doc(hidden)]
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    #[doc(hidden)]
     pub metadata_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    #[doc(hidden)]
     pub keys_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOpsMetadataInput {

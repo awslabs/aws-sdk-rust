@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The identifier of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the VPC security group applied to the VPC endpoint ENI for the cluster.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the subnet that the Privatelink VPC endpoint uses to connect to the cluster.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
     /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl VpcConfiguration {

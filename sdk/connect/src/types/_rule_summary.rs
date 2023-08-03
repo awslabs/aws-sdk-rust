@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event source.</p>
-    #[doc(hidden)]
     pub event_source_name: ::std::option::Option<crate::types::EventSourceName>,
     /// <p>The publish status of the rule.</p>
-    #[doc(hidden)]
     pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
     /// <p>A list of ActionTypes associated with a rule. </p>
-    #[doc(hidden)]
     pub action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
     /// <p>The timestamp for when the rule was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the rule was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RuleSummary {

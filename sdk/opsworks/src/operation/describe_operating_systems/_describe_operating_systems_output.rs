@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    #[doc(hidden)]
     pub operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>Defines the type of time for the retention period of an FSx for ONTAP SnapLock volume. Set it to one of the valid types. If you set it to <code>INFINITE</code>, the files are retained forever. If you set it to <code>UNSPECIFIED</code>, the files are retained until you set an explicit retention period. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RetentionPeriodType>,
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid: </p>
     /// <ul>
@@ -17,7 +16,6 @@ pub struct RetentionPeriod {
     /// <li> <p> <code>Months</code>: 0 - 12</p> </li>
     /// <li> <p> <code>Years</code>: 0 - 100</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl RetentionPeriod {

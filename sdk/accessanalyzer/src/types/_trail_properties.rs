@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrailProperties {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    #[doc(hidden)]
     pub cloud_trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
-    #[doc(hidden)]
     pub all_regions: ::std::option::Option<bool>,
 }
 impl TrailProperties {

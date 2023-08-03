@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixLevel {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-    #[doc(hidden)]
     pub storage_metrics: ::std::option::Option<crate::types::PrefixLevelStorageMetrics>,
 }
 impl PrefixLevel {

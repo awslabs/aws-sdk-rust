@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub critical_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub high_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub medium_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub low_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub informational_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
-    #[doc(hidden)]
     pub unspecified_count: i32,
 }
 impl SeveritySummary {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    #[doc(hidden)]
     pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
     _request_id: Option<String>,
 }

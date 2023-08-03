@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the transit gateway route table attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTransitGatewayRouteTableAttachmentInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
-    #[doc(hidden)]
     pub tracks: ::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>>,
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
-    #[doc(hidden)]
     pub dolby_e_decode: ::std::option::Option<crate::types::AudioDolbyEDecode>,
 }
 impl AudioTrackSelection {

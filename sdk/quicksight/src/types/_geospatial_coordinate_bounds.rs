@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialCoordinateBounds {
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
-    #[doc(hidden)]
     pub north: ::std::option::Option<f64>,
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
-    #[doc(hidden)]
     pub south: ::std::option::Option<f64>,
     /// <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
-    #[doc(hidden)]
     pub west: ::std::option::Option<f64>,
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
-    #[doc(hidden)]
     pub east: ::std::option::Option<f64>,
 }
 impl GeospatialCoordinateBounds {

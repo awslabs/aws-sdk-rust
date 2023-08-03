@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenInstancePublicPortsInput {
     /// <p>An object to describe the ports to open for the specified instance.</p>
-    #[doc(hidden)]
     pub port_info: ::std::option::Option<crate::types::PortInfo>,
     /// <p>The name of the instance for which to open ports.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl OpenInstancePublicPortsInput {

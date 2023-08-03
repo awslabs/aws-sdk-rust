@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublicKeyOutput {
     /// <p>The public key.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<crate::types::PublicKey>,
     /// <p>The identifier of the current version of the public key.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

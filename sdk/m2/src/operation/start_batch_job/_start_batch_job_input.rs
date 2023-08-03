@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBatchJobInput {
     /// <p>The unique identifier of the application associated with this batch job.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the batch job.</p>
-    #[doc(hidden)]
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
-    #[doc(hidden)]
     pub job_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartBatchJobInput {

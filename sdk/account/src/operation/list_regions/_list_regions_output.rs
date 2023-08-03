@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRegionsOutput {
     /// <p>If there is more data to be returned, this will be populated. It should be passed into the <code>next-token</code> request parameter of <code>list-regions</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>This is a list of Regions for a given account, or if the filtered parameter was used, a list of Regions that match the filter criteria set in the <code>filter</code> parameter.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     _request_id: Option<String>,
 }

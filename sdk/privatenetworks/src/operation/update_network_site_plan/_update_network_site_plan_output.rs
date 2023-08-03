@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateNetworkSitePlanOutput {
     /// <p>Information about the network site.</p>
-    #[doc(hidden)]
     pub network_site: ::std::option::Option<crate::types::NetworkSite>,
     /// <p> The network site tags. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

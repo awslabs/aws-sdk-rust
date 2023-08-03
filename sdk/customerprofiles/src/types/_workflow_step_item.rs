@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepItem {
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowStep>,
 }
 impl WorkflowStepItem {

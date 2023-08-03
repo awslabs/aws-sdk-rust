@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
-    #[doc(hidden)]
     pub budget_notifications_for_account: ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

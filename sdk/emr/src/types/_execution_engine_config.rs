@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionEngineConfig {
     /// <p>The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ExecutionEngineType>,
     /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub master_instance_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN required for the notebook execution.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionEngineConfig {

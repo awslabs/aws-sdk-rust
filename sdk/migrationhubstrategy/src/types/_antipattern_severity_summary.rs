@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntipatternSeveritySummary {
     /// <p> Contains the severity of anti-patterns. </p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p> Contains the count of anti-patterns. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl AntipatternSeveritySummary {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatus {
     /// <p>The progress of the query, expressed as a percentage.</p>
-    #[doc(hidden)]
     pub progress_percentage: f64,
     /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started. </p>
-    #[doc(hidden)]
     pub cumulative_bytes_scanned: i64,
     /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled. </p>
-    #[doc(hidden)]
     pub cumulative_bytes_metered: i64,
 }
 impl QueryStatus {

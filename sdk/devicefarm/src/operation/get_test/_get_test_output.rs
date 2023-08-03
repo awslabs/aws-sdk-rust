@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestOutput {
     /// <p>A test condition that is evaluated.</p>
-    #[doc(hidden)]
     pub test: ::std::option::Option<crate::types::Test>,
     _request_id: Option<String>,
 }

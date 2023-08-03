@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    #[doc(hidden)]
     pub document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

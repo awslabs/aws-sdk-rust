@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnGateway {
     /// <p>The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or not returned.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpnState>,
     /// <p>The type of VPN connection the virtual private gateway supports.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>Any VPCs attached to the virtual private gateway.</p>
-    #[doc(hidden)]
     pub vpc_attachments: ::std::option::Option<::std::vec::Vec<crate::types::VpcAttachment>>,
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
-    #[doc(hidden)]
     pub amazon_side_asn: ::std::option::Option<i64>,
     /// <p>Any tags assigned to the virtual private gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VpnGateway {

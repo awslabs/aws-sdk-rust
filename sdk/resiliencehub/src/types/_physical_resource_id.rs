@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
@@ -22,13 +21,10 @@ pub struct PhysicalResourceId {
     /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResourceId {

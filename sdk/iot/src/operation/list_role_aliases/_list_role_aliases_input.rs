@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoleAliasesInput {
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>A marker used to get the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
-    #[doc(hidden)]
     pub ascending_order: ::std::option::Option<bool>,
 }
 impl ListRoleAliasesInput {

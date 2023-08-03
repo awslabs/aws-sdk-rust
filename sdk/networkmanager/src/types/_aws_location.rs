@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLocation {
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
-    #[doc(hidden)]
     pub zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
-    #[doc(hidden)]
     pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsLocation {

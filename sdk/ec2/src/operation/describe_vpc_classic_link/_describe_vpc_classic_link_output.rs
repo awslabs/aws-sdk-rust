@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkOutput {
     /// <p>The ClassicLink status of the VPCs.</p>
-    #[doc(hidden)]
     pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,
     _request_id: Option<String>,
 }

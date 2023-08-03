@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueueTagsInput {
     /// <p>The URL of the queue.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
 }
 impl ListQueueTagsInput {

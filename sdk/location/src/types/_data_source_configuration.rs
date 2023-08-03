@@ -18,7 +18,6 @@ pub struct DataSourceConfiguration {
     /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
-    #[doc(hidden)]
     pub intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }
 impl DataSourceConfiguration {

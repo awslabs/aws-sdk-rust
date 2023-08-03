@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastConfiguration {
     /// <p>The forecast properties setup of a forecast in the line chart.</p>
-    #[doc(hidden)]
     pub forecast_properties: ::std::option::Option<crate::types::TimeBasedForecastProperties>,
     /// <p>The forecast scenario of a forecast in the line chart.</p>
-    #[doc(hidden)]
     pub scenario: ::std::option::Option<crate::types::ForecastScenario>,
 }
 impl ForecastConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    #[doc(hidden)]
     pub health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArcAxisConfiguration {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     /// <p>The reserved range of the arc axis.</p>
-    #[doc(hidden)]
     pub reserve_range: i32,
 }
 impl ArcAxisConfiguration {

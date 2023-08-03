@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansUtilization {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
-    #[doc(hidden)]
     pub total_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
-    #[doc(hidden)]
     pub used_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
-    #[doc(hidden)]
     pub unused_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
-    #[doc(hidden)]
     pub utilization_percentage: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansUtilization {

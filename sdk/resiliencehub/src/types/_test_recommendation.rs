@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The reference identifier for the test recommendation.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Application Component.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test recommendation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The intent of the test recommendation.</p>
-    #[doc(hidden)]
     pub intent: ::std::option::Option<::std::string::String>,
     /// <p>The level of risk for this test recommendation.</p>
-    #[doc(hidden)]
     pub risk: ::std::option::Option<crate::types::TestRisk>,
     /// <p>The type of test recommendation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>The description for the test recommendation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendation items.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>The prerequisite of the test recommendation.</p>
-    #[doc(hidden)]
     pub prerequisite: ::std::option::Option<::std::string::String>,
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    #[doc(hidden)]
     pub depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TestRecommendation {

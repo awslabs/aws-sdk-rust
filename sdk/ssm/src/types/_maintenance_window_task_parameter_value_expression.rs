@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MaintenanceWindowTaskParameterValueExpression {

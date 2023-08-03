@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     /// <p>Any validation warnings that were found.</p>
-    #[doc(hidden)]
     pub validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors.</p>
-    #[doc(hidden)]
     pub errored: bool,
     _request_id: Option<String>,
 }

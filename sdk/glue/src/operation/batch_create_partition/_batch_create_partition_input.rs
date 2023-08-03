@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    #[doc(hidden)]
     pub partition_input_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>,
 }
 impl BatchCreatePartitionInput {

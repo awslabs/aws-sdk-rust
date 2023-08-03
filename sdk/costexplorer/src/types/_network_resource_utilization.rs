@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceUtilization {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
-    #[doc(hidden)]
     pub network_in_bytes_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
-    #[doc(hidden)]
     pub network_out_bytes_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The network inbound packets that are measured in packets per second. </p>
-    #[doc(hidden)]
     pub network_packets_in_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The network outbound packets that are measured in packets per second. </p>
-    #[doc(hidden)]
     pub network_packets_out_per_second: ::std::option::Option<::std::string::String>,
 }
 impl NetworkResourceUtilization {

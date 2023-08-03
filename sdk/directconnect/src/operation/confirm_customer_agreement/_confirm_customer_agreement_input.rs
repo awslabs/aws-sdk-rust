@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
-    #[doc(hidden)]
     pub agreement_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {

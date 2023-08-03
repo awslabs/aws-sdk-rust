@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
-    #[doc(hidden)]
     pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub kinesis_streams_input: ::std::option::Option<crate::types::KinesisStreamsInput>,
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_input: ::std::option::Option<crate::types::KinesisFirehoseInput>,
     /// <p>Describes the number of in-application streams to create. </p>
-    #[doc(hidden)]
     pub input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
-    #[doc(hidden)]
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl Input {

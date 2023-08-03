@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateWebsiteAuthorizationProviderOutput {
     /// <p>A unique identifier for the authorization provider.</p>
-    #[doc(hidden)]
     pub authorization_provider_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

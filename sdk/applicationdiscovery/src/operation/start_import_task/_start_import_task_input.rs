@@ -5,15 +5,12 @@
 pub struct StartImportTaskInput {
     /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
     /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
-    #[doc(hidden)]
     pub import_url: ::std::option::Option<::std::string::String>,
 }
 impl StartImportTaskInput {

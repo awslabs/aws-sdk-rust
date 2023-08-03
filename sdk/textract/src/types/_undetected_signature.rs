@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UndetectedSignature {
     /// <p>The page where a signature was expected but not found.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
 }
 impl UndetectedSignature {

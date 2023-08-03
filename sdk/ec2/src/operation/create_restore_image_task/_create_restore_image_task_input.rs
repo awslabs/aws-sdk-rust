@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRestoreImageTaskInput {
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stored AMI object in the bucket.</p>
-    #[doc(hidden)]
     pub object_key: ::std::option::Option<::std::string::String>,
     /// <p>The name for the restored AMI. The name must be unique for AMIs in the Region for this account. If you do not provide a name, the new AMI gets the same name as the original AMI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateRestoreImageTaskInput {

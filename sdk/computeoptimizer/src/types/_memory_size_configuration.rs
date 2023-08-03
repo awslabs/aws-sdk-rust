@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemorySizeConfiguration {
     /// <p> The amount of memory in the container. </p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
     /// <p> The limit of memory reserve for the container. </p>
-    #[doc(hidden)]
     pub memory_reservation: ::std::option::Option<i32>,
 }
 impl MemorySizeConfiguration {

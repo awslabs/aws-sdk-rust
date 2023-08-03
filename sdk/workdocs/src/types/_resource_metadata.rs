@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The original name of the resource before a rename operation.</p>
-    #[doc(hidden)]
     pub original_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the resource.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::UserMetadata>,
     /// <p>The parent ID of the resource before a rename operation.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMetadata {

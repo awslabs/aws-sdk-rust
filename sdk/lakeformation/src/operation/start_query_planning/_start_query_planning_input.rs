@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartQueryPlanningInput {
     /// <p>A structure containing information about the query plan.</p>
-    #[doc(hidden)]
     pub query_planning_context: ::std::option::Option<crate::types::QueryPlanningContext>,
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl StartQueryPlanningInput {

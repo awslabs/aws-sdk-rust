@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawString {
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash value of the revision content.</p>
-    #[doc(hidden)]
     pub sha256: ::std::option::Option<::std::string::String>,
 }
 impl RawString {

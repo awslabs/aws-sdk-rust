@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChangedBlock {
     /// <p>The block index.</p>
-    #[doc(hidden)]
     pub block_index: ::std::option::Option<i32>,
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-    #[doc(hidden)]
     pub first_block_token: ::std::option::Option<::std::string::String>,
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-    #[doc(hidden)]
     pub second_block_token: ::std::option::Option<::std::string::String>,
 }
 impl ChangedBlock {

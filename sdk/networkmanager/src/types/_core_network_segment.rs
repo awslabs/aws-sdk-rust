@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkSegment {
     /// <p>The name of a core network segment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where the edges are located.</p>
-    #[doc(hidden)]
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The shared segments of a core network.</p>
-    #[doc(hidden)]
     pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CoreNetworkSegment {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsResponse {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    #[doc(hidden)]
     pub final_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteFileSystemOpenZfsResponse {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutInvitationConfigurationInput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    #[doc(hidden)]
     pub organization_name: ::std::option::Option<::std::string::String>,
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    #[doc(hidden)]
     pub contact_email: ::std::option::Option<::std::string::String>,
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    #[doc(hidden)]
     pub private_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutInvitationConfigurationInput {

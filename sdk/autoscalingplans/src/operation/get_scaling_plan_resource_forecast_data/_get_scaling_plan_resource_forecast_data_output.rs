@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
-    #[doc(hidden)]
     pub datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
     _request_id: Option<String>,
 }

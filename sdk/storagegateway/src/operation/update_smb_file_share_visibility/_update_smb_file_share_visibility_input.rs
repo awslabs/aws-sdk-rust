@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The shares on this gateway appear when listing shares.</p>
-    #[doc(hidden)]
     pub file_shares_visible: ::std::option::Option<bool>,
 }
 impl UpdateSmbFileShareVisibilityInput {

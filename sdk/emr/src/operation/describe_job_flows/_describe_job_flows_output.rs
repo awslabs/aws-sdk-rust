@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
-    #[doc(hidden)]
     pub job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
 }

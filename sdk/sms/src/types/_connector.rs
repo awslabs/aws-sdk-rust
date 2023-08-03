@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connector {
     /// <p>The ID of the connector.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The connector version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The status of the connector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConnectorStatus>,
     /// <p>The capabilities of the connector.</p>
-    #[doc(hidden)]
     pub capability_list: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>>,
     /// <p>The name of the VM manager.</p>
-    #[doc(hidden)]
     pub vm_manager_name: ::std::option::Option<::std::string::String>,
     /// <p>The VM management product.</p>
-    #[doc(hidden)]
     pub vm_manager_type: ::std::option::Option<crate::types::VmManagerType>,
     /// <p>The ID of the VM manager.</p>
-    #[doc(hidden)]
     pub vm_manager_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the connector.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address of the connector.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The time the connector was associated.</p>
-    #[doc(hidden)]
     pub associated_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Connector {

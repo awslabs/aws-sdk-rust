@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExtensionAssociationInput {
     /// <p>The extension association ID to get.</p>
-    #[doc(hidden)]
     pub extension_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GetExtensionAssociationInput {

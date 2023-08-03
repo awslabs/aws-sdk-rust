@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the target should be removed from.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target definition to remove.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
-    #[doc(hidden)]
     pub safe: ::std::option::Option<bool>,
 }
 impl DeregisterTargetFromMaintenanceWindowInput {

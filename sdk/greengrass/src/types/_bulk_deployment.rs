@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkDeployment {
     /// The ARN of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
     /// The time, in ISO format, when the deployment was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
 }
 impl BulkDeployment {

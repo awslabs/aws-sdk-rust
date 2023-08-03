@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapShapeConditionalFormatting {
     /// <p>The field ID of the filled map shape.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ShapeConditionalFormat>,
 }
 impl FilledMapShapeConditionalFormatting {

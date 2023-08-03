@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    #[doc(hidden)]
     pub s3_content_location_update: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
 }
 impl DeployAsApplicationConfigurationUpdate {

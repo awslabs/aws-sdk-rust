@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricsInput {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-    #[doc(hidden)]
     pub recently_active: ::std::option::Option<crate::types::RecentlyActive>,
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_linked_accounts: ::std::option::Option<bool>,
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    #[doc(hidden)]
     pub owning_account: ::std::option::Option<::std::string::String>,
 }
 impl ListMetricsInput {

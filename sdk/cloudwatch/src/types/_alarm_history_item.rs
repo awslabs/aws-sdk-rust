@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
-    #[doc(hidden)]
     pub alarm_type: ::std::option::Option<crate::types::AlarmType>,
     /// <p>The time stamp for the alarm history item.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of alarm history item.</p>
-    #[doc(hidden)]
     pub history_item_type: ::std::option::Option<crate::types::HistoryItemType>,
     /// <p>A summary of the alarm history, in text format.</p>
-    #[doc(hidden)]
     pub history_summary: ::std::option::Option<::std::string::String>,
     /// <p>Data about the alarm, in JSON format.</p>
-    #[doc(hidden)]
     pub history_data: ::std::option::Option<::std::string::String>,
 }
 impl AlarmHistoryItem {

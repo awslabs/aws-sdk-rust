@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
-    #[doc(hidden)]
     pub connected: bool,
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<i64>,
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
-    #[doc(hidden)]
     pub disconnect_reason: ::std::option::Option<::std::string::String>,
 }
 impl ThingConnectivity {

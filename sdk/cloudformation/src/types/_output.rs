@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// <p>The key associated with the output.</p>
-    #[doc(hidden)]
     pub output_key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the output.</p>
-    #[doc(hidden)]
     pub output_value: ::std::option::Option<::std::string::String>,
     /// <p>User defined description associated with the output.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the export associated with the output.</p>
-    #[doc(hidden)]
     pub export_name: ::std::option::Option<::std::string::String>,
 }
 impl Output {

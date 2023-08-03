@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub transfer_type: ::std::option::Option<::std::string::String>,
 }
 impl ListInputDeviceTransfersInput {

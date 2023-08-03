@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrgEc2DeepInspectionConfigurationInput {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    #[doc(hidden)]
     pub org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOrgEc2DeepInspectionConfigurationInput {

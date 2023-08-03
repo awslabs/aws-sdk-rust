@@ -7,21 +7,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotPrice {
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>A general description of the AMI.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SpotPrice {

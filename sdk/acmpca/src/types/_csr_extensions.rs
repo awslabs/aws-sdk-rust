@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsrExtensions {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
-    #[doc(hidden)]
     pub key_usage: ::std::option::Option<crate::types::KeyUsage>,
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    #[doc(hidden)]
     pub subject_information_access: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
 }
 impl CsrExtensions {

@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The recipients to place on the To: line of the message.</p>
-    #[doc(hidden)]
     pub to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipients to place on the CC: line of the message.</p>
-    #[doc(hidden)]
     pub cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipients to place on the BCC: line of the message.</p>
-    #[doc(hidden)]
     pub bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Destination {

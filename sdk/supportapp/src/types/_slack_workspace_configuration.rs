@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Slack workspace.</p>
-    #[doc(hidden)]
     pub team_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
-    #[doc(hidden)]
     pub allow_organization_member_account: ::std::option::Option<bool>,
 }
 impl SlackWorkspaceConfiguration {

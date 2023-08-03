@@ -32,36 +32,28 @@ pub struct SpotOptions {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowest-price</code> </p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<crate::types::SpotAllocationStrategy>,
     /// <p>The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the capacity rebalance strategy is available.</p>
-    #[doc(hidden)]
     pub maintenance_strategies: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategies>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code> </p>
-    #[doc(hidden)]
     pub instance_interruption_behavior: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>,
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that EC2 Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
-    #[doc(hidden)]
     pub instance_pools_to_use_count: ::std::option::Option<i32>,
     /// <p>Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub single_instance_type: ::std::option::Option<bool>,
     /// <p>Indicates that the fleet launches all Spot Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub single_availability_zone: ::std::option::Option<bool>,
     /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
-    #[doc(hidden)]
     pub min_target_capacity: ::std::option::Option<i32>,
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
 impl SpotOptions {

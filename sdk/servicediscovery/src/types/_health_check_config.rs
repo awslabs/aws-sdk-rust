@@ -62,14 +62,11 @@ pub struct HealthCheckConfig {
     /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HealthCheckType>,
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
-    #[doc(hidden)]
     pub resource_path: ::std::option::Option<::std::string::String>,
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub failure_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheckConfig {

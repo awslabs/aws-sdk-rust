@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesBucketCriteria {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the results.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::SearchResourcesCriteriaBlock>,
     /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::SearchResourcesCriteriaBlock>,
 }
 impl SearchResourcesBucketCriteria {

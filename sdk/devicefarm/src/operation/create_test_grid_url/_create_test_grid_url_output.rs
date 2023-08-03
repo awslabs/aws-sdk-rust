@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateTestGridUrlOutput {
     /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

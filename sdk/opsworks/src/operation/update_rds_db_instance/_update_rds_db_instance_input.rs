@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
-    #[doc(hidden)]
     pub rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The master user name.</p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The database password.</p>
-    #[doc(hidden)]
     pub db_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRdsDbInstanceInput {

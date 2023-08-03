@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
-    #[doc(hidden)]
     pub json_mapping_parameters: ::std::option::Option<crate::types::JsonMappingParameters>,
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
-    #[doc(hidden)]
     pub csv_mapping_parameters: ::std::option::Option<crate::types::CsvMappingParameters>,
 }
 impl MappingParameters {

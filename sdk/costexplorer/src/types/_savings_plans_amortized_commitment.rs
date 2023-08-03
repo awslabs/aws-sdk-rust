@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansAmortizedCommitment {
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
-    #[doc(hidden)]
     pub amortized_recurring_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
-    #[doc(hidden)]
     pub amortized_upfront_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
-    #[doc(hidden)]
     pub total_amortized_commitment: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansAmortizedCommitment {

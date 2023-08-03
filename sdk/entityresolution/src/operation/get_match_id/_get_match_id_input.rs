@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMatchIdInput {
     /// <p>The name of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The record to fetch the Match ID for.</p>
-    #[doc(hidden)]
     pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetMatchIdInput {

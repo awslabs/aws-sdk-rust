@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteNmrObj {
     /// <p>Physical cell ID.</p>
-    #[doc(hidden)]
     pub pci: ::std::option::Option<i32>,
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
-    #[doc(hidden)]
     pub earfcn: ::std::option::Option<i32>,
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    #[doc(hidden)]
     pub eutran_cid: ::std::option::Option<i32>,
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub rsrp: ::std::option::Option<i32>,
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
-    #[doc(hidden)]
     pub rsrq: ::std::option::Option<f32>,
 }
 impl LteNmrObj {

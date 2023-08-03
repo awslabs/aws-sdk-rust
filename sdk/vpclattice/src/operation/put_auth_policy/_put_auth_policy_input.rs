@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutAuthPolicyInput {

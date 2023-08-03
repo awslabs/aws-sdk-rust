@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
-    #[doc(hidden)]
     pub mfa: ::std::option::Option<::std::string::String>,
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    #[doc(hidden)]
     pub versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
 }
 impl PutBucketVersioningInput {

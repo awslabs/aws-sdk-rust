@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
-    #[doc(hidden)]
     pub trust_policy: ::std::option::Option<::std::string::String>,
 }
 impl IamRoleConfiguration {

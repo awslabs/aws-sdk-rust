@@ -10,16 +10,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspection {
     /// <p>Configures inspection of the response status code for success and failure indicators. </p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
     /// <p>Configures inspection of the response header for success and failure indicators. </p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<crate::types::ResponseInspectionHeader>,
     /// <p>Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response body. </p>
-    #[doc(hidden)]
     pub body_contains: ::std::option::Option<crate::types::ResponseInspectionBodyContains>,
     /// <p>Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. </p>
-    #[doc(hidden)]
     pub json: ::std::option::Option<crate::types::ResponseInspectionJson>,
 }
 impl ResponseInspection {

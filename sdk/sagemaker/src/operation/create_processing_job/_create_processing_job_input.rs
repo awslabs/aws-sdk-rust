@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProcessingJobInput {
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    #[doc(hidden)]
     pub processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
-    #[doc(hidden)]
     pub processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub processing_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    #[doc(hidden)]
     pub processing_resources: ::std::option::Option<crate::types::ProcessingResources>,
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::ProcessingStoppingCondition>,
     /// <p>Configures the processing job to run a specified Docker container image.</p>
-    #[doc(hidden)]
     pub app_specification: ::std::option::Option<crate::types::AppSpecification>,
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -39,7 +29,6 @@ pub struct CreateProcessingJobInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
 }
 impl CreateProcessingJobInput {

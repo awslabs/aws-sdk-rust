@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsRequestFilters {
     /// <p>The start date in a date range query.</p>
-    #[doc(hidden)]
     pub from_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The end date in a date range query.</p>
-    #[doc(hidden)]
     pub to_date_time: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecoverySnapshotsRequestFilters {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAutoTuneDetails {
     /// <p>The date and time when the Auto-Tune action is scheduled for the domain.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of Auto-Tune action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ScheduledAutoTuneActionType>,
     /// <p>A description of the Auto-Tune action.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ScheduledAutoTuneSeverityType>,
 }
 impl ScheduledAutoTuneDetails {

@@ -6,19 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackedActionLastAccessed {
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    #[doc(hidden)]
     pub last_accessed_entity: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub last_accessed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    #[doc(hidden)]
     pub last_accessed_region: ::std::option::Option<::std::string::String>,
 }
 impl TrackedActionLastAccessed {

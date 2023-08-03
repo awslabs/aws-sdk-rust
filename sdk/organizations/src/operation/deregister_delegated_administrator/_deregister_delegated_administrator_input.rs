@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterDelegatedAdministratorInput {
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterDelegatedAdministratorInput {

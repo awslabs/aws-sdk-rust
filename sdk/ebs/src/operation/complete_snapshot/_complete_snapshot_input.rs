@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteSnapshotInput {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of blocks that were written to the snapshot.</p>
-    #[doc(hidden)]
     pub changed_blocks_count: ::std::option::Option<i32>,
     /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    #[doc(hidden)]
     pub checksum_aggregation_method: ::std::option::Option<crate::types::ChecksumAggregationMethod>,
 }
 impl CompleteSnapshotInput {

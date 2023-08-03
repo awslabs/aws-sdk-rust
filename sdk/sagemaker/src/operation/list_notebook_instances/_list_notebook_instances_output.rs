@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotebookInstancesOutput {
     /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
-    #[doc(hidden)]
     pub notebook_instances: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
     _request_id: Option<String>,
 }

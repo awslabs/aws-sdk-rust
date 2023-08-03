@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
     _request_id: Option<String>,
 }

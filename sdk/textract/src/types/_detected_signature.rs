@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedSignature {
     /// <p>The page a detected signature was found on.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
 }
 impl DetectedSignature {

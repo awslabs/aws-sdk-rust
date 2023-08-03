@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     /// <p>The origin request policy.</p>
-    #[doc(hidden)]
     pub origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
 }
 impl OriginRequestPolicySummary {

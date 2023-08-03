@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactData {
     /// <p>UUID of a contact.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a mission profile.</p>
-    #[doc(hidden)]
     pub mission_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a satellite.</p>
-    #[doc(hidden)]
     pub satellite_arn: ::std::option::Option<::std::string::String>,
     /// <p>Start time of a contact in UTC.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>End time of a contact in UTC.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    #[doc(hidden)]
     pub pre_pass_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    #[doc(hidden)]
     pub post_pass_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
-    #[doc(hidden)]
     pub ground_station: ::std::option::Option<::std::string::String>,
     /// <p>Status of a contact.</p>
-    #[doc(hidden)]
     pub contact_status: ::std::option::Option<crate::types::ContactStatus>,
     /// <p>Error message of a contact.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Maximum elevation angle of a contact.</p>
-    #[doc(hidden)]
     pub maximum_elevation: ::std::option::Option<crate::types::Elevation>,
     /// <p>Region of a contact.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to a contact.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContactData {

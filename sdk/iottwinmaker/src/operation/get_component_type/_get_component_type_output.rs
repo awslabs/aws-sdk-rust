@@ -4,53 +4,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
-    #[doc(hidden)]
     pub is_singleton: ::std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub property_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>>,
     /// <p>The name of the parent component type that this component type extends.</p>
-    #[doc(hidden)]
     pub extends_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>>,
     /// <p>The date and time when the component type was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the component was last updated.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the component type.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
-    #[doc(hidden)]
     pub is_abstract: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
-    #[doc(hidden)]
     pub is_schema_initialized: ::std::option::Option<bool>,
     /// <p>The current status of the component type.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    #[doc(hidden)]
     pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>>,
     /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>The component type name.</p>
-    #[doc(hidden)]
     pub component_type_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

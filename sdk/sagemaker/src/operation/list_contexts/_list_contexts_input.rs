@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContextsInput {
     /// <p>A filter that returns only contexts with the specified source URI.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only contexts of the specified type.</p>
-    #[doc(hidden)]
     pub context_type: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only contexts created on or after the specified time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only contexts created on or before the specified time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortContextsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListContextsInput {

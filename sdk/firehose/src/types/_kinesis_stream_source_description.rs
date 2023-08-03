@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
-    #[doc(hidden)]
     pub kinesis_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
-    #[doc(hidden)]
     pub delivery_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KinesisStreamSourceDescription {

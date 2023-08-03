@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
-    #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMapInput {
     /// <p>The name of the map resource to be deleted.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMapInput {

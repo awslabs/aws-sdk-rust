@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallDomainsOutput {
     /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain list. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the <code>UpdateFirewallDomains</code> request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

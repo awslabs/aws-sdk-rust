@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryInput {
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
-    #[doc(hidden)]
     pub category_id: ::std::option::Option<i64>,
     /// <p>The tokens used for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of skills returned per paginated calls.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSkillsStoreSkillsByCategoryInput {

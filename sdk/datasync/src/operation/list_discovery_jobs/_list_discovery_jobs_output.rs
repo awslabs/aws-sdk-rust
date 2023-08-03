@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoveryJobsOutput {
     /// <p>The discovery jobs that you've run.</p>
-    #[doc(hidden)]
     pub discovery_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

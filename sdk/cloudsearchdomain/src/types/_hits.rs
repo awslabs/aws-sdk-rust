@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hits {
     /// <p>The total number of documents that match the search request.</p>
-    #[doc(hidden)]
     pub found: i64,
     /// <p>The index of the first matching document.</p>
-    #[doc(hidden)]
     pub start: i64,
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    #[doc(hidden)]
     pub cursor: ::std::option::Option<::std::string::String>,
     /// <p>A document that matches the search request.</p>
-    #[doc(hidden)]
     pub hit: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
 }
 impl Hits {

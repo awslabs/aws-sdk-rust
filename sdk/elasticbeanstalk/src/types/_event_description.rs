@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The date when the event occurred.</p>
-    #[doc(hidden)]
     pub event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The application associated with the event.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The release label for the application version associated with this event.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration associated with this event.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment associated with this event.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The web service request ID for the activity of this event.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of this event.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::EventSeverity>,
 }
 impl EventDescription {

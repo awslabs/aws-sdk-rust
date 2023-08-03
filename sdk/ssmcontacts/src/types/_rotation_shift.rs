@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotationShift {
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    #[doc(hidden)]
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time a shift rotation begins.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a shift rotation ends.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of shift rotation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ShiftType>,
     /// <p>Additional information about an on-call rotation shift.</p>
-    #[doc(hidden)]
     pub shift_details: ::std::option::Option<crate::types::ShiftDetails>,
 }
 impl RotationShift {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentitySourceOutput {
     /// <p>The date and time that the identity source was originally created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that describes the configuration of the identity source.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::IdentitySourceDetails>,
     /// <p>The ID of the identity source.</p>
-    #[doc(hidden)]
     pub identity_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the identity source was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the policy store that contains the identity source.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The data type of principals generated for identities authenticated by this identity source.</p>
-    #[doc(hidden)]
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

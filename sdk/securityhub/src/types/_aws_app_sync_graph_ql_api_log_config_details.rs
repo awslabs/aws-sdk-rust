@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiLogConfigDetails {
     /// <p> The Amazon Resource Name (ARN) of the service role that AppSync assumes to publish to CloudWatch Logs in your account. </p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Set to <code>TRUE</code> to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level. </p>
-    #[doc(hidden)]
     pub exclude_verbose_content: bool,
     /// <p> The field logging level. </p>
-    #[doc(hidden)]
     pub field_log_level: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiLogConfigDetails {

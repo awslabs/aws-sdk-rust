@@ -6,22 +6,16 @@
 pub struct AwsS3ObjectDetails {
     /// <p>Indicates when the object was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
-    #[doc(hidden)]
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3ObjectDetails {

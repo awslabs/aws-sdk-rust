@@ -7,12 +7,10 @@ pub struct ActivityType {
     /// <p>The name of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique within a domain.</p>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique with in a domain.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl ActivityType {

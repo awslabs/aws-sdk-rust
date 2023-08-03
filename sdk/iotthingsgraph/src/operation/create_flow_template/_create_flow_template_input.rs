@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowTemplateInput {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
-    #[doc(hidden)]
     pub compatible_namespace_version: ::std::option::Option<i64>,
 }
 impl CreateFlowTemplateInput {

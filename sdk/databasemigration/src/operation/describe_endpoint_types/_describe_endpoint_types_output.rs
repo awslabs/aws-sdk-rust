@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointTypesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints that are supported.</p>
-    #[doc(hidden)]
     pub supported_endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
     _request_id: Option<String>,
 }

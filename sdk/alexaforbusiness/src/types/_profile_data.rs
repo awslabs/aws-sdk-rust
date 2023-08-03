@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileData {
     /// <p>The ARN of a room profile.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a room profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves if the profile data is default or not.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The address of a room profile.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of a room profile.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The distance unit of a room profile.</p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
     /// <p>The temperature unit of a room profile.</p>
-    #[doc(hidden)]
     pub temperature_unit: ::std::option::Option<crate::types::TemperatureUnit>,
     /// <p>The wake word of a room profile.</p>
-    #[doc(hidden)]
     pub wake_word: ::std::option::Option<crate::types::WakeWord>,
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
 }
 impl ProfileData {

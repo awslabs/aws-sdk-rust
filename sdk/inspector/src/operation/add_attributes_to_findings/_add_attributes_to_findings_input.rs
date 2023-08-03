@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    #[doc(hidden)]
     pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl AddAttributesToFindingsInput {

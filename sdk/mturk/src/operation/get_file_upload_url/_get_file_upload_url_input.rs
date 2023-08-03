@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFileUploadUrlInput {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    #[doc(hidden)]
     pub question_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetFileUploadUrlInput {

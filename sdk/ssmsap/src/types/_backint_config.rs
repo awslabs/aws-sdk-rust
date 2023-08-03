@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackintConfig {
     /// <p>AWS service for your database backup.</p>
-    #[doc(hidden)]
     pub backint_mode: ::std::option::Option<crate::types::BackintMode>,
     /// <p></p>
-    #[doc(hidden)]
     pub ensure_no_backup_in_process: ::std::option::Option<bool>,
 }
 impl BackintConfig {

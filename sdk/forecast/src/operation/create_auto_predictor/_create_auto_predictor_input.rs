@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoPredictorInput {
     /// <p>A unique name for the predictor</p>
-    #[doc(hidden)]
     pub predictor_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
     /// <p>If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.</p>
-    #[doc(hidden)]
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
-    #[doc(hidden)]
     pub forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
@@ -31,23 +27,17 @@ pub struct CreateAutoPredictorInput {
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
-    #[doc(hidden)]
     pub forecast_frequency: ::std::option::Option<::std::string::String>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
-    #[doc(hidden)]
     pub data_config: ::std::option::Option<crate::types::DataConfig>,
     /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
     /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
-    #[doc(hidden)]
     pub reference_predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    #[doc(hidden)]
     pub optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
     /// <p>Create an Explainability resource for the predictor.</p>
-    #[doc(hidden)]
     pub explain_predictor: ::std::option::Option<bool>,
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -59,14 +49,11 @@ pub struct CreateAutoPredictorInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
     /// <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
-    #[doc(hidden)]
     pub monitor_config: ::std::option::Option<crate::types::MonitorConfig>,
     /// <p>The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>.</p>
-    #[doc(hidden)]
     pub time_alignment_boundary: ::std::option::Option<crate::types::TimeAlignmentBoundary>,
 }
 impl CreateAutoPredictorInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    #[doc(hidden)]
     pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ComputationPreference {

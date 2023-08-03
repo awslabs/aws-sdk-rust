@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server error.</p>
-    #[doc(hidden)]
     pub failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     _request_id: Option<String>,
 }

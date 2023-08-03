@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceCustomKnowledgeArticleTypeConfiguration {
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
-    #[doc(hidden)]
     pub document_data_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
-    #[doc(hidden)]
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceCustomKnowledgeArticleTypeConfiguration {

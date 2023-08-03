@@ -9,17 +9,13 @@ pub struct ChangeTagsForResourceInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    #[doc(hidden)]
     pub add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    #[doc(hidden)]
     pub remove_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ChangeTagsForResourceInput {

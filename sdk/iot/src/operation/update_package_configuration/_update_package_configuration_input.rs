@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackageConfigurationInput {
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    #[doc(hidden)]
     pub version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageConfigurationInput {

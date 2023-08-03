@@ -4,39 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentInput {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>A name for the new experiment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    #[doc(hidden)]
     pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    #[doc(hidden)]
     pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
-    #[doc(hidden)]
     pub sampling_rate: ::std::option::Option<i64>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    #[doc(hidden)]
     pub online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExperimentInput {

@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the namespace that was used to create the service.</p>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the service.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub dns_config: ::std::option::Option<crate::types::DnsConfig>,
     /// <p>Describes the systems that can be used to discover the service instances.</p>
     /// <dl>
@@ -48,22 +41,17 @@ pub struct Service {
     /// <p>Reserved.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ServiceType>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
-    #[doc(hidden)]
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    #[doc(hidden)]
     pub health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl Service {

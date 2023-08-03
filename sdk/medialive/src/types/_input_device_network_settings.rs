@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
-    #[doc(hidden)]
     pub dns_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The network gateway IP address.
-    #[doc(hidden)]
     pub gateway: ::std::option::Option<::std::string::String>,
     /// The IP address of the input device.
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
-    #[doc(hidden)]
     pub ip_scheme: ::std::option::Option<crate::types::InputDeviceIpScheme>,
     /// The subnet mask of the input device.
-    #[doc(hidden)]
     pub subnet_mask: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceNetworkSettings {

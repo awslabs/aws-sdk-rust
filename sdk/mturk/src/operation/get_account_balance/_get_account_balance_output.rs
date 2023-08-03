@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountBalanceOutput {
     /// <p>A string representing a currency amount.</p>
-    #[doc(hidden)]
     pub available_balance: ::std::option::Option<::std::string::String>,
     /// <p>A string representing a currency amount.</p>
-    #[doc(hidden)]
     pub on_hold_balance: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

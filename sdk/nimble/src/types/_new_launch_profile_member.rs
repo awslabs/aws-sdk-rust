@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewLaunchProfileMember {
     /// <p>The persona.</p>
-    #[doc(hidden)]
     pub persona: ::std::option::Option<crate::types::LaunchProfilePersona>,
     /// <p>The principal ID.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl NewLaunchProfileMember {

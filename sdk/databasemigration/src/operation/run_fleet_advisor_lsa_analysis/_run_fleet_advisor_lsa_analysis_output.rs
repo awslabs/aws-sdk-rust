@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunFleetAdvisorLsaAnalysisOutput {
     /// <p>The ID of the LSA analysis run.</p>
-    #[doc(hidden)]
     pub lsa_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

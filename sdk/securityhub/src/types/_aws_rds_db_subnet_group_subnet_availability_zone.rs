@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSubnetGroupSubnetAvailabilityZone {
     /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {

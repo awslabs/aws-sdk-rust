@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixConfig {
     /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
-    #[doc(hidden)]
     pub prefix_type: ::std::option::Option<crate::types::PrefixType>,
     /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
-    #[doc(hidden)]
     pub prefix_format: ::std::option::Option<crate::types::PrefixFormat>,
     /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
     /// <dl>
@@ -30,7 +28,6 @@ pub struct PrefixConfig {
     /// </ul>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub path_prefix_hierarchy: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
 }
 impl PrefixConfig {

@@ -7,15 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddOnRequest {
     /// <p>The add-on type.</p>
-    #[doc(hidden)]
     pub add_on_type: ::std::option::Option<crate::types::AddOnType>,
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    #[doc(hidden)]
     pub auto_snapshot_add_on_request: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub stop_instance_on_idle_request: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
 }
 impl AddOnRequest {

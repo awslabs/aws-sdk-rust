@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>An endpoint address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The TTL for the endpoint, in minutes.</p>
-    #[doc(hidden)]
     pub cache_period_in_minutes: i64,
 }
 impl Endpoint {

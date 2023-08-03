@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingRuntimeConfigurationInput {
     /// Configuration for telemetry service.
-    #[doc(hidden)]
     pub telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfigurationUpdate>,
     /// The thing name.
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateThingRuntimeConfigurationInput {

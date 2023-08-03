@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEc2DeepInspectionConfigurationInput {
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
-    #[doc(hidden)]
     pub activate_deep_inspection: ::std::option::Option<bool>,
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    #[doc(hidden)]
     pub package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateEc2DeepInspectionConfigurationInput {

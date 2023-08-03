@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTablePropagation {
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p>The state of the resource.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayPropagationState>,
     /// <p>The ID of the transit gateway route table announcement.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayRouteTablePropagation {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    #[doc(hidden)]
     pub preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
 }
 impl PreloadDataConfig {

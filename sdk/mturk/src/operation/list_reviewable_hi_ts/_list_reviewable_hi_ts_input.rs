@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReviewableHiTsInput {
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
-    #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReviewableHitStatus>,
     /// <p>Pagination Token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Limit the number of results returned. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListReviewableHiTsInput {

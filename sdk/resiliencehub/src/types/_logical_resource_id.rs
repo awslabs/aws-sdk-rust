@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalResourceId {
     /// <p>The identifier of the resource.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-    #[doc(hidden)]
     pub logical_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group that this resource belongs to.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
-    #[doc(hidden)]
     pub terraform_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    #[doc(hidden)]
     pub eks_source_name: ::std::option::Option<::std::string::String>,
 }
 impl LogicalResourceId {

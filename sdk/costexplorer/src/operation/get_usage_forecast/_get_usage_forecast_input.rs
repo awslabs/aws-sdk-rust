@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageForecastInput {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
     /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
@@ -12,11 +11,9 @@ pub struct GetUsageForecastInput {
     /// <li> <p>USAGE_QUANTITY</p> </li>
     /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -44,10 +41,8 @@ pub struct GetUsageForecastInput {
     /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-    #[doc(hidden)]
     pub prediction_interval_level: ::std::option::Option<i32>,
 }
 impl GetUsageForecastInput {

@@ -6,37 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamScope {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scope.</p>
-    #[doc(hidden)]
     pub ipam_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
-    #[doc(hidden)]
     pub ipam_scope_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IPAM.</p>
-    #[doc(hidden)]
     pub ipam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the IPAM scope.</p>
-    #[doc(hidden)]
     pub ipam_region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the scope.</p>
-    #[doc(hidden)]
     pub ipam_scope_type: ::std::option::Option<crate::types::IpamScopeType>,
     /// <p>Defines if the scope is the default scope or not.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The description of the scope.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of pools in the scope.</p>
-    #[doc(hidden)]
     pub pool_count: ::std::option::Option<i32>,
     /// <p>The state of the IPAM scope.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IpamScopeState>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpamScope {

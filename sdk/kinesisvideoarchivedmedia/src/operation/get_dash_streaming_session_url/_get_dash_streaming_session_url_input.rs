@@ -5,11 +5,9 @@
 pub struct GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
@@ -22,31 +20,25 @@ pub struct GetDashStreamingSessionUrlInput {
     /// </ul>
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
-    #[doc(hidden)]
     pub playback_mode: ::std::option::Option<crate::types::DashPlaybackMode>,
     /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
-    #[doc(hidden)]
     pub display_fragment_timestamp: ::std::option::Option<crate::types::DashDisplayFragmentTimestamp>,
     /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
-    #[doc(hidden)]
     pub display_fragment_number: ::std::option::Option<crate::types::DashDisplayFragmentNumber>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
-    #[doc(hidden)]
     pub dash_fragment_selector: ::std::option::Option<crate::types::DashFragmentSelector>,
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
     /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
     /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
     /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
     /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
-    #[doc(hidden)]
     pub max_manifest_fragment_results: ::std::option::Option<i64>,
 }
 impl GetDashStreamingSessionUrlInput {

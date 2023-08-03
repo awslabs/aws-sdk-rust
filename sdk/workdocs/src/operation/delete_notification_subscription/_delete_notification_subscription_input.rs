@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNotificationSubscriptionInput {
     /// <p>The ID of the subscription.</p>
-    #[doc(hidden)]
     pub subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotificationSubscriptionInput {

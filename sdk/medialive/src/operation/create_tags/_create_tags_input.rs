@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for Tags
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTagsInput {

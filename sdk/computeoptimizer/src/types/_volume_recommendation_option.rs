@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     /// <p>The performance risk of the volume recommendation option.</p>
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
-    #[doc(hidden)]
     pub performance_risk: f64,
     /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    #[doc(hidden)]
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    #[doc(hidden)]
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
 }
 impl VolumeRecommendationOption {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaInputAttribute {
     /// <p>A string containing the field name.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute, selected from a list of values.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SchemaAttributeType>,
     /// <p>Instruct Entity Resolution to combine several columns into a unified column with the identical attribute type. For example, when working with columns such as first_name, middle_name, and last_name, assigning them a common <code>GroupName</code> will prompt Entity Resolution to concatenate them into a single value.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>A key that allows grouping of multiple input attributes into a unified matching group. For example, let's consider a scenario where the source table contains various addresses, such as business_address and shipping_address. By assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity Resolution will match records across these fields to create a consolidated matching group. If no <code>MatchKey</code> is specified for a column, it won't be utilized for matching purposes but will still be included in the output table.</p>
-    #[doc(hidden)]
     pub match_key: ::std::option::Option<::std::string::String>,
 }
 impl SchemaInputAttribute {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigning {
     /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
-    #[doc(hidden)]
     pub aws_signer_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the code-signing job.</p>
-    #[doc(hidden)]
     pub start_signing_job_parameter: ::std::option::Option<crate::types::StartSigningJobParameter>,
     /// <p>A custom method for code signing a file.</p>
-    #[doc(hidden)]
     pub custom_code_signing: ::std::option::Option<crate::types::CustomCodeSigning>,
 }
 impl CodeSigning {

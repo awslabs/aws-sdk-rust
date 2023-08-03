@@ -17,10 +17,8 @@ pub struct InstanceState {
     /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
     /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<i32>,
     /// <p>The current state of the instance.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::InstanceStateName>,
 }
 impl InstanceState {

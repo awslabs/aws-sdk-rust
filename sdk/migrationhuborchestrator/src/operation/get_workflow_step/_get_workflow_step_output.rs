@@ -4,67 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepOutput {
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
     pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The owner of the step.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The custom script to run tests on source or target environments.</p>
-    #[doc(hidden)]
     pub workflow_step_automation_configuration: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
     pub step_target: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outputs of the step.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StepStatus>,
     /// <p>The status message of the migration workflow.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The output location of the script.</p>
-    #[doc(hidden)]
     pub script_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the step was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the workflow was last started.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the step ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of servers that have been migrated.</p>
-    #[doc(hidden)]
     pub no_of_srv_completed: ::std::option::Option<i32>,
     /// <p>The number of servers that have failed to migrate.</p>
-    #[doc(hidden)]
     pub no_of_srv_failed: ::std::option::Option<i32>,
     /// <p>The total number of servers that have been migrated.</p>
-    #[doc(hidden)]
     pub total_no_of_srv: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

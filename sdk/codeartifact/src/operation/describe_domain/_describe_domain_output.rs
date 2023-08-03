@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoCodecSettings {
     /// Frame Capture Settings
-    #[doc(hidden)]
     pub frame_capture_settings: ::std::option::Option<crate::types::FrameCaptureSettings>,
     /// H264 Settings
-    #[doc(hidden)]
     pub h264_settings: ::std::option::Option<crate::types::H264Settings>,
     /// H265 Settings
-    #[doc(hidden)]
     pub h265_settings: ::std::option::Option<crate::types::H265Settings>,
     /// Mpeg2 Settings
-    #[doc(hidden)]
     pub mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
 }
 impl VideoCodecSettings {

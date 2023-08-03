@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyNameSuggestion {
     /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
-    #[doc(hidden)]
     pub property_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyNameSuggestion {

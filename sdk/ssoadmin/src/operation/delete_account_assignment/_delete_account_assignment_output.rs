@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountAssignmentOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
-    #[doc(hidden)]
     pub account_assignment_deletion_status: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }

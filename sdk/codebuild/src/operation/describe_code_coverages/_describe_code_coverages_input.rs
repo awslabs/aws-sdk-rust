@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCodeCoveragesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
-    #[doc(hidden)]
     pub report_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>Specifies how the results are sorted. Possible values are:</p>
     /// <dl>
@@ -30,13 +26,10 @@ pub struct DescribeCodeCoveragesInput {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ReportCodeCoverageSortByType>,
     /// <p>The minimum line coverage percentage to report.</p>
-    #[doc(hidden)]
     pub min_line_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The maximum line coverage percentage to report.</p>
-    #[doc(hidden)]
     pub max_line_coverage_percentage: ::std::option::Option<f64>,
 }
 impl DescribeCodeCoveragesInput {

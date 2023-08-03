@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseReplicationFactorInput {
     /// <p>The name of the DAX cluster that will receive additional nodes.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
-    #[doc(hidden)]
     pub new_replication_factor: i32,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IncreaseReplicationFactorInput {

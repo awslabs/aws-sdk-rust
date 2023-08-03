@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGameInput {
     /// <p>The name of the game to delete.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGameInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceServerActionsInput {
     /// <p>Source server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Next token to use when listing source server post migration custom actions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListSourceServerActionsInput {

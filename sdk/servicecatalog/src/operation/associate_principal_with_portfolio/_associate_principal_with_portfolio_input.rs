@@ -8,10 +8,8 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
     /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
@@ -33,10 +31,8 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
     /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
     /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
 impl AssociatePrincipalWithPortfolioInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LayerVersionContentInput {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key of the layer archive.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
-    #[doc(hidden)]
     pub s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    #[doc(hidden)]
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl LayerVersionContentInput {

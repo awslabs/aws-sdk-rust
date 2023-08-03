@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLifecyclePolicyInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON repository policy text to apply to the repository.</p>
-    #[doc(hidden)]
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
 }
 impl PutLifecyclePolicyInput {

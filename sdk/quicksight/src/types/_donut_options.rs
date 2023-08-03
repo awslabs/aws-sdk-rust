@@ -11,10 +11,8 @@ pub struct DonutOptions {
     /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub arc_options: ::std::option::Option<crate::types::ArcOptions>,
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
-    #[doc(hidden)]
     pub donut_center_options: ::std::option::Option<crate::types::DonutCenterOptions>,
 }
 impl DonutOptions {

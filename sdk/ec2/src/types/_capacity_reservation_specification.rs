@@ -10,10 +10,8 @@ pub struct CapacityReservationSpecification {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    #[doc(hidden)]
     pub capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTarget>,
 }
 impl CapacityReservationSpecification {

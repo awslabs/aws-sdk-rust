@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForActivityTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    #[doc(hidden)]
     pub task_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the task.</p>
-    #[doc(hidden)]
     pub activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
-    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The workflow execution that started this activity task.</p>
-    #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of this activity task.</p>
-    #[doc(hidden)]
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

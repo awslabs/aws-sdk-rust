@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    #[doc(hidden)]
     pub assessment: ::std::option::Option<crate::types::Assessment>,
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub user_role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
-    #[doc(hidden)]
     pub current: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     /// <p>When specified, gets the offering status for the next period.</p>
-    #[doc(hidden)]
     pub next_period: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

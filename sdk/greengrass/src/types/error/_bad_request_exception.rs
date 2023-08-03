@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BadRequestException {
     /// Details about the error.
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// A message containing information about the error.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

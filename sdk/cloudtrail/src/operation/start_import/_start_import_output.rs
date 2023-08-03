@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p> The ID of the import. </p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the destination event data store. </p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The source S3 bucket for the import. </p>
-    #[doc(hidden)]
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    #[doc(hidden)]
     pub start_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    #[doc(hidden)]
     pub end_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> The timestamp for the import's creation. </p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp of the import's last update, if applicable. </p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

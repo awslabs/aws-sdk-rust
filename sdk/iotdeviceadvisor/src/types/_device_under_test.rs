@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceUnderTest {
     /// <p>Lists device's thing ARN.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists device's certificate ARN.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists device's role ARN.</p>
-    #[doc(hidden)]
     pub device_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeviceUnderTest {

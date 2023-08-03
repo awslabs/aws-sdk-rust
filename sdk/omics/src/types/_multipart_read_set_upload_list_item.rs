@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipartReadSetUploadListItem {
     /// <p> The sequence store ID used for the multipart upload. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the initiated multipart upload. </p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of file the read set originated from. </p>
-    #[doc(hidden)]
     pub source_file_type: ::std::option::Option<crate::types::FileType>,
     /// <p> The read set source's subject ID. </p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p> The read set source's sample ID. </p>
-    #[doc(hidden)]
     pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p> The source of an uploaded part. </p>
-    #[doc(hidden)]
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p> The source's reference ARN. </p>
-    #[doc(hidden)]
     pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of a read set. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of a read set. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Any tags you wish to add to a read set. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The time stamp for when a direct upload was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MultipartReadSetUploadListItem {

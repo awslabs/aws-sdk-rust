@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p> The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
-    #[doc(hidden)]
     pub cmk_type: ::std::option::Option<crate::types::CmkType>,
     /// <p> The KMS encryption key id/alias used to encrypt the data store contents at rest. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl KmsEncryptionConfig {

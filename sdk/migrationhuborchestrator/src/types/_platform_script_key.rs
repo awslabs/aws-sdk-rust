@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformScriptKey {
     /// <p>The script location for Linux.</p>
-    #[doc(hidden)]
     pub linux: ::std::option::Option<::std::string::String>,
     /// <p>The script location for Windows.</p>
-    #[doc(hidden)]
     pub windows: ::std::option::Option<::std::string::String>,
 }
 impl PlatformScriptKey {

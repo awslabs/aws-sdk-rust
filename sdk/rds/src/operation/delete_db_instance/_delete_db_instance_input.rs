@@ -9,7 +9,6 @@ pub struct DeleteDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.</p> <note>
     /// <p>If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
@@ -17,7 +16,6 @@ pub struct DeleteDbInstanceInput {
     /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
     /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    #[doc(hidden)]
     pub skip_final_snapshot: bool,
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable SkipFinalShapshot, the command results in an error.</p>
@@ -30,10 +28,8 @@ pub struct DeleteDbInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
-    #[doc(hidden)]
     pub delete_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbInstanceInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastUploaderStatus {
     /// <p>A description of an uploader job’s latest status.</p>
-    #[doc(hidden)]
     pub job_status_details: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the uploader job was last executed and media collected to the cloud.</p>
-    #[doc(hidden)]
     pub last_collected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the uploader status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the latest uploader job.</p>
-    #[doc(hidden)]
     pub uploader_status: ::std::option::Option<crate::types::UploaderStatus>,
 }
 impl LastUploaderStatus {

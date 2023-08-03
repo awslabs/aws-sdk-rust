@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTypeFilter {
     /// <p>A list of event type codes.</p>
-    #[doc(hidden)]
     pub event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    #[doc(hidden)]
     pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
 }
 impl EventTypeFilter {

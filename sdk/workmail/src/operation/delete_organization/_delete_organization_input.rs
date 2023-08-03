@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOrganizationInput {
     /// <p>The idempotency token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The organization ID.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
-    #[doc(hidden)]
     pub delete_directory: bool,
 }
 impl DeleteOrganizationInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateAlias {
     /// <p>The display name of the template alias.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the template alias.</p>
-    #[doc(hidden)]
     pub template_version_number: ::std::option::Option<i64>,
 }
 impl TemplateAlias {

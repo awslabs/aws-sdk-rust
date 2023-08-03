@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSchemaExtensionInput {
     /// <p>The identifier of the directory whose schema extension will be canceled.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the schema extension that will be canceled.</p>
-    #[doc(hidden)]
     pub schema_extension_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelSchemaExtensionInput {

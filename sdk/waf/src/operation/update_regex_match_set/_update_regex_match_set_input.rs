@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    #[doc(hidden)]
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRegexMatchSetInput {

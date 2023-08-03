@@ -5,18 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
@@ -40,7 +37,6 @@ pub struct UpdateApiCacheInput {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ApiCacheType>,
 }
 impl UpdateApiCacheInput {

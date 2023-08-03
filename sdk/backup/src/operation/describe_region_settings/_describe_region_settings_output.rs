@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
-    #[doc(hidden)]
     pub resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>Returns whether Backup fully manages the backups for a resource type.</p>
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
-    #[doc(hidden)]
     pub resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     _request_id: Option<String>,
 }

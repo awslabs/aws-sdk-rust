@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskTemplateConstraints {
     /// <p>Lists the fields that are required to be filled by agents.</p>
-    #[doc(hidden)]
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>,
     /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
-    #[doc(hidden)]
     pub read_only_fields: ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,
     /// <p>Lists the fields that are invisible to agents.</p>
-    #[doc(hidden)]
     pub invisible_fields: ::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>>,
 }
 impl TaskTemplateConstraints {

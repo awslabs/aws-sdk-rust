@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefResource {
     /// <p>The name of the experiment or launch.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the experiment or launch.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the experiment or launch.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The day and time that this experiment or launch started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The day and time that this experiment or launch ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_on: ::std::option::Option<::std::string::String>,
 }
 impl RefResource {

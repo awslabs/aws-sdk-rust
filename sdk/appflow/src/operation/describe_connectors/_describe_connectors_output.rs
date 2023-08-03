@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorsOutput {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
-    #[doc(hidden)]
     pub connector_configurations:
         ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
-    #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

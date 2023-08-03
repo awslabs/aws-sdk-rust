@@ -13,7 +13,6 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain only lowercase letters.</p> </li>
     /// <li> <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
@@ -25,7 +24,6 @@ pub struct CreateClusterInput {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code> </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
@@ -34,11 +32,9 @@ pub struct CreateClusterInput {
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     /// <p>Default: <code>multi-node</code> </p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -49,7 +45,6 @@ pub struct CreateClusterInput {
     /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -60,32 +55,26 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain one number.</p> </li>
     /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    #[doc(hidden)]
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p>
     /// <p>Example: <code>us-east-2d</code> </p>
     /// <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a> </p>
@@ -95,94 +84,71 @@ pub struct CreateClusterInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code> </p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
     /// <p>Default: <code>5439</code> </p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p>
     /// <p>The version selected runs on all the nodes in the cluster.</p>
     /// <p>Constraints: Only version 1.0 is currently available.</p>
     /// <p>Example: <code>1.0</code> </p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
     /// <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
     /// <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// <p>If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.</p>
     /// <p>Default: <code>1</code> </p>
     /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
-    #[doc(hidden)]
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the snapshot schedule.</p>
-    #[doc(hidden)]
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
-    #[doc(hidden)]
     pub availability_zone_relocation: ::std::option::Option<bool>,
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    #[doc(hidden)]
     pub aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
-    #[doc(hidden)]
     pub load_sample_data: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInput {

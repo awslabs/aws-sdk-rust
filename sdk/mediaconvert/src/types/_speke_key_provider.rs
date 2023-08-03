@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpekeKeyProvider {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
-    #[doc(hidden)]
     pub system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProvider {

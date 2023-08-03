@@ -5,7 +5,6 @@
 pub struct ExportSnapshotOutput {
     /// <p>The presigned URL for the snapshot data.</p>
     /// <p> This URL will be available for 10 minutes, and can be used to download the snapshot content. If the URL expires, a new one can be requested using the same operation. </p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

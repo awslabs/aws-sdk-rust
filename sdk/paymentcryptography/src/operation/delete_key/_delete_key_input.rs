@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyInput {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
-    #[doc(hidden)]
     pub delete_key_in_days: ::std::option::Option<i32>,
 }
 impl DeleteKeyInput {

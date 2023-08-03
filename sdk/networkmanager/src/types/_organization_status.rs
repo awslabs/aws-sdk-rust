@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationStatus {
     /// <p>The ID of an Amazon Web Services Organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub organization_aws_service_access_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub slr_deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub account_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>>,
 }
 impl OrganizationStatus {

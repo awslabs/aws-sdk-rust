@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptSharedDirectoryOutput {
     /// <p>The shared directory in the directory consumer account.</p>
-    #[doc(hidden)]
     pub shared_directory: ::std::option::Option<crate::types::SharedDirectory>,
     _request_id: Option<String>,
 }

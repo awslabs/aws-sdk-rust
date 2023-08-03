@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceOutput {
     /// The unique ARN of the input device.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The state of the connection between the input device and AWS.
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::InputDeviceConnectionState>,
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    #[doc(hidden)]
     pub device_settings_sync_state: ::std::option::Option<crate::types::DeviceSettingsSyncState>,
     /// The status of software on the input device.
-    #[doc(hidden)]
     pub device_update_status: ::std::option::Option<crate::types::DeviceUpdateStatus>,
     /// Settings that describe an input device that is type HD.
-    #[doc(hidden)]
     pub hd_device_settings: ::std::option::Option<crate::types::InputDeviceHdSettings>,
     /// The unique ID of the input device.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The network MAC address of the input device.
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// A name that you specify for the input device.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The network settings for the input device.
-    #[doc(hidden)]
     pub network_settings: ::std::option::Option<crate::types::InputDeviceNetworkSettings>,
     /// The unique serial number of the input device.
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// The type of the input device.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
-    #[doc(hidden)]
     pub uhd_device_settings: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

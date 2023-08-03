@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>Required. The time, in 24-hour format.</p>
-    #[doc(hidden)]
     pub time_of_day: ::std::option::Option<::std::string::String>,
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
 impl WeeklyStartTime {

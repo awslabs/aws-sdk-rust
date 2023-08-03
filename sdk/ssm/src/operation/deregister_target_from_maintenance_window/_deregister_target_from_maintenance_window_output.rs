@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the target was removed from.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the removed target definition.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

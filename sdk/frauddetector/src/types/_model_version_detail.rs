@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVersionDetail {
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The model version training data source.</p>
-    #[doc(hidden)]
     pub training_data_source: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
-    #[doc(hidden)]
     pub training_data_schema: ::std::option::Option<crate::types::TrainingDataSchema>,
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>The training results.</p>
-    #[doc(hidden)]
     pub training_result: ::std::option::Option<crate::types::TrainingResult>,
     /// <p>The timestamp when the model was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the model was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The training result details. The details include the relative importance of the variables. </p>
-    #[doc(hidden)]
     pub training_result_v2: ::std::option::Option<crate::types::TrainingResultV2>,
 }
 impl ModelVersionDetail {

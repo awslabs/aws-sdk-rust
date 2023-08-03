@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommandInvocation {
     /// <p>The command against which this invocation was requested.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID in which this invocation was requested.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified host name of the managed node.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The document name that was requested for execution.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The Systems Manager document (SSM document) version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The time and date the request was sent to this managed node.</p>
-    #[doc(hidden)]
     pub requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the invocation succeeded, failed, or is pending.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CommandInvocationStatus>,
     /// <p>A detailed status of the command execution for each invocation (each managed node targeted by the command). StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -41,28 +33,20 @@ pub struct CommandInvocation {
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p> Gets the trace output sent by the agent. </p>
-    #[doc(hidden)]
     pub trace_output: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    #[doc(hidden)]
     pub standard_output_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    #[doc(hidden)]
     pub standard_error_url: ::std::option::Option<::std::string::String>,
     /// <p>Plugins processed by the command.</p>
-    #[doc(hidden)]
     pub command_plugins: ::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>>,
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per managed node basis.</p>
-    #[doc(hidden)]
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
 }
 impl CommandInvocation {

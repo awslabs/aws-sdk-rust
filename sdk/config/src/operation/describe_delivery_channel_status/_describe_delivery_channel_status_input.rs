@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelStatusInput {
     /// <p>A list of delivery channel names.</p>
-    #[doc(hidden)]
     pub delivery_channel_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryChannelStatusInput {

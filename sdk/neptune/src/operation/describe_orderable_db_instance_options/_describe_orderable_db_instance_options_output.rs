@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    #[doc(hidden)]
     pub orderable_db_instance_options: ::std::option::Option<::std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

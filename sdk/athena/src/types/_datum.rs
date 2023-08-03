@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Datum {
     /// <p>The value of the datum.</p>
-    #[doc(hidden)]
     pub var_char_value: ::std::option::Option<::std::string::String>,
 }
 impl Datum {

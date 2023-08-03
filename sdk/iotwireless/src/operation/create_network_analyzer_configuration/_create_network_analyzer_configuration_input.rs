@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    #[doc(hidden)]
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub wireless_gateways: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of the new resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateNetworkAnalyzerConfigurationInput {

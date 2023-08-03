@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
-    #[doc(hidden)]
     pub invocation_role: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for a Lambda function to use for the Identity provider.</p>
-    #[doc(hidden)]
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
@@ -23,7 +19,6 @@ pub struct IdentityProviderDetails {
     /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
     /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sftp_authentication_methods: ::std::option::Option<crate::types::SftpAuthenticationMethods>,
 }
 impl IdentityProviderDetails {

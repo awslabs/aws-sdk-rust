@@ -14,7 +14,6 @@ pub struct RecordingGroup {
     /// <p>Specifies whether Config records configuration changes for all supported regional resource types.</p>
     /// <p>If you set this field to <code>true</code>, when Config adds support for a new type of regional resource, Config starts recording resources of that type automatically.</p>
     /// <p>If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the <code>resourceTypes</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to exclude in the <code>resourceTypes</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html">ExclusionByResourceTypes</a>.</p>
-    #[doc(hidden)]
     pub all_supported: bool,
     /// <p>Specifies whether Config records configuration changes for all supported global resources.</p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
@@ -22,7 +21,6 @@ pub struct RecordingGroup {
     /// <p>If you set this field to <code>false</code> but list global resource types in the <code>resourceTypes</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config will still record configuration changes for those specified resource types <i>regardless</i> of if you set the <code>includeGlobalResourceTypes</code> field to false.</p>
     /// <p>If you do not want to record configuration changes to global resource types, make sure to not list them in the <code>resourceTypes</code> field in addition to setting the <code>includeGlobalResourceTypes</code> field to false.</p>
     /// </note>
-    #[doc(hidden)]
     pub include_global_resource_types: bool,
     /// <p>A comma-separated list that specifies which resource types Config records.</p>
     /// <p>Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.</p>
@@ -31,11 +29,9 @@ pub struct RecordingGroup {
     /// <p> <b>Region Availability</b> </p>
     /// <p>Before specifying a resource type for Config to track, check <a href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the recording of that resource type in all Regions supported by Config, even if the specified resource type is not supported in the Amazon Web Services Region where you set up Config.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>
-    #[doc(hidden)]
     pub exclusion_by_resource_types: ::std::option::Option<crate::types::ExclusionByResourceTypes>,
     /// <p>An object that specifies the recording strategy for the configuration recorder.</p>
     /// <ul>
@@ -51,7 +47,6 @@ pub struct RecordingGroup {
     /// <p>For example, even if you set <code>includeGlobalResourceTypes</code> to false, global resource types will still be automatically recorded in this option unless those resource types are specifically listed as exemptions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// </note>
-    #[doc(hidden)]
     pub recording_strategy: ::std::option::Option<crate::types::RecordingStrategy>,
 }
 impl RecordingGroup {

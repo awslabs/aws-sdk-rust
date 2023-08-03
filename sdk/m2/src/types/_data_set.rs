@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSet {
     /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of dataset. The only supported value is VSAM.</p>
-    #[doc(hidden)]
     pub dataset_org: ::std::option::Option<crate::types::DatasetOrgAttributes>,
     /// <p>The relative location of the data set in the database or file system. </p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
     /// <p>The length of a record.</p>
-    #[doc(hidden)]
     pub record_length: ::std::option::Option<crate::types::RecordLength>,
 }
 impl DataSet {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorInput {
     /// <p>The unique identifier for the connector.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectorInput {

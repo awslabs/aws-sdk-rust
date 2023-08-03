@@ -6,16 +6,12 @@
 pub struct BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    #[doc(hidden)]
     pub bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    #[doc(hidden)]
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotRecommendationSummary {

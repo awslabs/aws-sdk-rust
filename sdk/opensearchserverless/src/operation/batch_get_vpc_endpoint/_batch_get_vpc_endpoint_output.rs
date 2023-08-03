@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointOutput {
     /// <p>Details about the specified VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>>,
     /// <p>Error information for a failed request.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>>,
     _request_id: Option<String>,
 }

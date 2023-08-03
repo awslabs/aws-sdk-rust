@@ -8,19 +8,14 @@ pub struct CreateKeyPairOutput {
     /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
-    #[doc(hidden)]
     pub key_material: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the key pair.</p>
-    #[doc(hidden)]
     pub key_pair_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags applied to the key pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

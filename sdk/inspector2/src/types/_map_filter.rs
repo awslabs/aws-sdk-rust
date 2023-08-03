@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::MapComparison>,
     /// <p>The tag key used in the filter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value used in the filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl MapFilter {

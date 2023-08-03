@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexAttachment {
     /// <p>The indexed attribute values.</p>
-    #[doc(hidden)]
     pub indexed_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl IndexAttachment {

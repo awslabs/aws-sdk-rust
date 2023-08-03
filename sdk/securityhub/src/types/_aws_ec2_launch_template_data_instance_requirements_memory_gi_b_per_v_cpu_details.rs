@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    #[doc(hidden)]
     pub max: f64,
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    #[doc(hidden)]
     pub min: f64,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {

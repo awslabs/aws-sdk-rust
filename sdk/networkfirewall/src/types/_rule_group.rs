@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
-    #[doc(hidden)]
     pub rule_variables: ::std::option::Option<crate::types::RuleVariables>,
     /// <p>The list of a rule group's reference sets.</p>
-    #[doc(hidden)]
     pub reference_sets: ::std::option::Option<crate::types::ReferenceSets>,
     /// <p>The stateful rules or stateless rules for the rule group. </p>
-    #[doc(hidden)]
     pub rules_source: ::std::option::Option<crate::types::RulesSource>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
-    #[doc(hidden)]
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
 }
 impl RuleGroup {

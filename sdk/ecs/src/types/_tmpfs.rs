@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
-    #[doc(hidden)]
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Tmpfs {

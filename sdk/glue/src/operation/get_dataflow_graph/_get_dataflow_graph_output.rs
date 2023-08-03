@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataflowGraphOutput {
     /// <p>A list of the nodes in the resulting DAG.</p>
-    #[doc(hidden)]
     pub dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
     /// <p>A list of the edges in the resulting DAG.</p>
-    #[doc(hidden)]
     pub dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
     _request_id: Option<String>,
 }

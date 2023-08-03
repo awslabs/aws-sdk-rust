@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunGroupOutput {
     /// <p>The group's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The group's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The group's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The group's maximum number of CPUs to use.</p>
-    #[doc(hidden)]
     pub max_cpus: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent runs for the group.</p>
-    #[doc(hidden)]
     pub max_runs: ::std::option::Option<i32>,
     /// <p>The group's maximum run time in minutes.</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i32>,
     /// <p>When the group was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The group's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The maximum GPUs that can be used by a run group. </p>
-    #[doc(hidden)]
     pub max_gpus: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

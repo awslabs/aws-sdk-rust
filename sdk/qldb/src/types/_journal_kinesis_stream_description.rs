@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    #[doc(hidden)]
     pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    #[doc(hidden)]
     pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the QLDB journal stream.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    #[doc(hidden)]
     pub kinesis_configuration: ::std::option::Option<crate::types::KinesisConfiguration>,
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    #[doc(hidden)]
     pub error_cause: ::std::option::Option<crate::types::ErrorCause>,
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl JournalKinesisStreamDescription {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVoicesOutput {
     /// <p>A list of voices with their properties.</p>
-    #[doc(hidden)]
     pub voices: ::std::option::Option<::std::vec::Vec<crate::types::Voice>>,
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

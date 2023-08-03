@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of settings.</p>
-    #[doc(hidden)]
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    #[doc(hidden)]
     pub domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
     /// <p>The default settings used to create a space within the Domain.</p>
-    #[doc(hidden)]
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    #[doc(hidden)]
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
 }
 impl UpdateDomainInput {

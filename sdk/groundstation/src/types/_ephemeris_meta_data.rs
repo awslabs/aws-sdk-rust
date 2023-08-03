@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisMetaData {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::EphemerisSource>,
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
-    #[doc(hidden)]
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
-    #[doc(hidden)]
     pub epoch: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisMetaData {

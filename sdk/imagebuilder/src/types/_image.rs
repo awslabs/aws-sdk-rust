@@ -18,13 +18,10 @@ pub struct Image {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageType>,
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -43,49 +40,34 @@ pub struct Image {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
-    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: ::std::option::Option<bool>,
     /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p>The state of the image.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-    #[doc(hidden)]
     pub image_recipe: ::std::option::Option<crate::types::ImageRecipe>,
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-    #[doc(hidden)]
     pub container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
     /// <p>The name of the image pipeline that created this image.</p>
-    #[doc(hidden)]
     pub source_pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    #[doc(hidden)]
     pub source_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    #[doc(hidden)]
     pub infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    #[doc(hidden)]
     pub distribution_configuration: ::std::option::Option<crate::types::DistributionConfiguration>,
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    #[doc(hidden)]
     pub image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     /// <p>The date on which Image Builder created this image.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The output resources that Image Builder produces for this image.</p>
-    #[doc(hidden)]
     pub output_resources: ::std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
@@ -93,16 +75,12 @@ pub struct Image {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    #[doc(hidden)]
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>Contains information about the current state of scans for this image.</p>
-    #[doc(hidden)]
     pub scan_state: ::std::option::Option<crate::types::ImageScanState>,
     /// <p>Contains settings for vulnerability scans.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl Image {

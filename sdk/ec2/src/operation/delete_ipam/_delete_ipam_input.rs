@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM to delete.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
@@ -19,7 +17,6 @@ pub struct DeleteIpamInput {
     /// <li> <p>Deletes all non-default private scopes in the IPAM.</p> </li>
     /// <li> <p>Deletes the default public and private scopes and the IPAM.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cascade: ::std::option::Option<bool>,
 }
 impl DeleteIpamInput {

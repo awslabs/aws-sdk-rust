@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstancePortStatesOutput {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    #[doc(hidden)]
     pub port_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>,
     _request_id: Option<String>,
 }

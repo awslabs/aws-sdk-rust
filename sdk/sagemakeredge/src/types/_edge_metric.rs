@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeMetric {
     /// <p>The dimension of metrics published.</p>
-    #[doc(hidden)]
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>Returns the name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the value of the metric.</p>
-    #[doc(hidden)]
     pub value: f64,
     /// <p>Timestamp of when the metric was requested.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgeMetric {

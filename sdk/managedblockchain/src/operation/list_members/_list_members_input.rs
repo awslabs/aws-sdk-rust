@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>The unique identifier of the network for which to list members.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional name of the member to list.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
-    #[doc(hidden)]
     pub is_owned: ::std::option::Option<bool>,
     /// <p>The maximum number of members to return in the request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMembersInput {

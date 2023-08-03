@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the application was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
-    #[doc(hidden)]
     pub linked_to_git_hub: bool,
     /// <p>The name for a connection to a GitHub account.</p>
-    #[doc(hidden)]
     pub git_hub_account_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl ApplicationInfo {

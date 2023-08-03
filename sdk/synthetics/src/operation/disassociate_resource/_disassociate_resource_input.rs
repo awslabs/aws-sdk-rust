@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResourceInput {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    #[doc(hidden)]
     pub group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateResourceInput {

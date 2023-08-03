@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl DatasetEntityRecognizerEntityList {

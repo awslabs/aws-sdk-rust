@@ -6,16 +6,12 @@ pub struct SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
 }
 impl SearchThingsInput {

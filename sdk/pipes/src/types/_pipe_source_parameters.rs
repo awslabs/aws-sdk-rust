@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeSourceParameters {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    #[doc(hidden)]
     pub kinesis_stream_parameters: ::std::option::Option<crate::types::PipeSourceKinesisStreamParameters>,
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    #[doc(hidden)]
     pub dynamo_db_stream_parameters: ::std::option::Option<crate::types::PipeSourceDynamoDbStreamParameters>,
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    #[doc(hidden)]
     pub sqs_queue_parameters: ::std::option::Option<crate::types::PipeSourceSqsQueueParameters>,
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    #[doc(hidden)]
     pub active_mq_broker_parameters: ::std::option::Option<crate::types::PipeSourceActiveMqBrokerParameters>,
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    #[doc(hidden)]
     pub rabbit_mq_broker_parameters: ::std::option::Option<crate::types::PipeSourceRabbitMqBrokerParameters>,
     /// <p>The parameters for using an MSK stream as a source.</p>
-    #[doc(hidden)]
     pub managed_streaming_kafka_parameters: ::std::option::Option<crate::types::PipeSourceManagedStreamingKafkaParameters>,
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    #[doc(hidden)]
     pub self_managed_kafka_parameters: ::std::option::Option<crate::types::PipeSourceSelfManagedKafkaParameters>,
 }
 impl PipeSourceParameters {

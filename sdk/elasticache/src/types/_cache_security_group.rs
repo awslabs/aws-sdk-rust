@@ -10,19 +10,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheSecurityGroup {
     /// <p>The Amazon account ID of the cache security group owner.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache security group.</p>
-    #[doc(hidden)]
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cache security group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
-    #[doc(hidden)]
     pub ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     /// <p>The ARN of the cache security group,</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroup {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLensOutput {
     /// <p>A lens return object.</p>
-    #[doc(hidden)]
     pub lens: ::std::option::Option<crate::types::Lens>,
     _request_id: Option<String>,
 }

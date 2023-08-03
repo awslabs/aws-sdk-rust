@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreeMapAggregatedFieldWells {
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    #[doc(hidden)]
     pub sizes: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl TreeMapAggregatedFieldWells {

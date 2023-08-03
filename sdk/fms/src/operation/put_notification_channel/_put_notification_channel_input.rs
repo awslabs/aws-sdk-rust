@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutNotificationChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
-    #[doc(hidden)]
     pub sns_role_name: ::std::option::Option<::std::string::String>,
 }
 impl PutNotificationChannelInput {

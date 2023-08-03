@@ -12,10 +12,8 @@ pub struct UploadConfiguration {
     /// /robot-test
     /// </runid>
     /// </simid></code>. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies when to upload the files:</p>
     /// <dl>
@@ -33,7 +31,6 @@ pub struct UploadConfiguration {
     /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub upload_behavior: ::std::option::Option<crate::types::UploadBehavior>,
 }
 impl UploadConfiguration {

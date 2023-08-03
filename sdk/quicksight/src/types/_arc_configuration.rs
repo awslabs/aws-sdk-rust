@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArcConfiguration {
     /// <p>The option that determines the arc angle of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub arc_angle: ::std::option::Option<f64>,
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub arc_thickness: ::std::option::Option<crate::types::ArcThicknessOptions>,
 }
 impl ArcConfiguration {

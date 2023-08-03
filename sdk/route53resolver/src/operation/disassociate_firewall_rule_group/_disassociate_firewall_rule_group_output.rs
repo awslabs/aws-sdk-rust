@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFirewallRuleGroupOutput {
     /// <p>The firewall rule group association that you just removed. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }

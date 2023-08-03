@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    #[doc(hidden)]
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInput {

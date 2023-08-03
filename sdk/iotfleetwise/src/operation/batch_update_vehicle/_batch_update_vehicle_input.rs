@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleInput {
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    #[doc(hidden)]
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
 }
 impl BatchUpdateVehicleInput {

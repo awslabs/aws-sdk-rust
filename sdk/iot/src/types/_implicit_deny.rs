@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImplicitDeny {
     /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
 impl ImplicitDeny {

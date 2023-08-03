@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentLabel {
     /// <p>The name of the label.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
 }
 impl DocumentLabel {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogsLocation {
     /// <p>The name of the CloudWatch Logs group for the build logs.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudWatch Logs stream for the build logs.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL to an individual build log in CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub deep_link: ::std::option::Option<::std::string::String>,
     /// <p> The URL to a build log in an S3 bucket. </p>
-    #[doc(hidden)]
     pub s3_deep_link: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>. </p>
-    #[doc(hidden)]
     pub cloud_watch_logs_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
-    #[doc(hidden)]
     pub s3_logs_arn: ::std::option::Option<::std::string::String>,
     /// <p> Information about CloudWatch Logs for a build project. </p>
-    #[doc(hidden)]
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
     /// <p> Information about S3 logs for a build project. </p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::S3LogsConfig>,
 }
 impl LogsLocation {

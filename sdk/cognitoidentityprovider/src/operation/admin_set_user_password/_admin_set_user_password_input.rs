@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminSetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose password you want to set.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the user.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
-    #[doc(hidden)]
     pub permanent: ::std::option::Option<bool>,
 }
 impl AdminSetUserPasswordInput {

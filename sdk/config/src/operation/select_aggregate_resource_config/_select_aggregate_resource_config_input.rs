@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectAggregateResourceConfigInput {
     /// <p>The SQL query SELECT command. </p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SelectAggregateResourceConfigInput {

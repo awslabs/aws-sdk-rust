@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkProfileOutput {
     /// <p>A list of the available network profiles.</p>
-    #[doc(hidden)]
     pub network_profile: ::std::option::Option<crate::types::NetworkProfile>,
     _request_id: Option<String>,
 }

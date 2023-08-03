@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    #[doc(hidden)]
     pub data_source_type: ::std::option::Option<crate::types::FormDataSourceType>,
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    #[doc(hidden)]
     pub data_type_name: ::std::option::Option<::std::string::String>,
 }
 impl FormDataTypeConfig {

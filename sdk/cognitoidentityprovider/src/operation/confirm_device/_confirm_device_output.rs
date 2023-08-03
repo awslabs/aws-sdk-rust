@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmDeviceOutput {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
-    #[doc(hidden)]
     pub user_confirmation_necessary: bool,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointOutput {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    #[doc(hidden)]
     pub vpc_endpoint_summary: ::std::option::Option<crate::types::VpcEndpointSummary>,
     _request_id: Option<String>,
 }

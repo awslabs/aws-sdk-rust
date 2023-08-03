@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageValidationProfile {
     /// <p>The name of the profile for the model package.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
-    #[doc(hidden)]
     pub transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
 impl ModelPackageValidationProfile {

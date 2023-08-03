@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
-    #[doc(hidden)]
     pub alert_manager_definition: ::std::option::Option<crate::types::AlertManagerDefinitionDescription>,
     _request_id: Option<String>,
 }

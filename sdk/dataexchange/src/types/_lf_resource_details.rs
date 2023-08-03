@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfResourceDetails {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::TableLfTagPolicy>,
 }
 impl LfResourceDetails {

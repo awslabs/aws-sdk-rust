@@ -27,14 +27,11 @@ pub struct ListPlatformBranchesInput {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
     /// <p>The maximum number of platform branch values returned in one call.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPlatformBranchesInput {

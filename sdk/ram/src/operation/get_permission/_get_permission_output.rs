@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionOutput {
     /// <p>An object with details about the permission.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
     _request_id: Option<String>,
 }

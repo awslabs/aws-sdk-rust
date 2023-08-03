@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaVersionOutput {
     /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The schema definition for the schema ID.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

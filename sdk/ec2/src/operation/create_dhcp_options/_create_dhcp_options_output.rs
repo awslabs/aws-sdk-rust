@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDhcpOptionsOutput {
     /// <p>A set of DHCP options.</p>
-    #[doc(hidden)]
     pub dhcp_options: ::std::option::Option<crate::types::DhcpOptions>,
     _request_id: Option<String>,
 }

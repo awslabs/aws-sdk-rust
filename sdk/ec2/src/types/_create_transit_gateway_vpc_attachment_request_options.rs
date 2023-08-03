@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayVpcAttachmentRequestOptions {
     /// <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
-    #[doc(hidden)]
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
-    #[doc(hidden)]
     pub ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
-    #[doc(hidden)]
     pub appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
 }
 impl CreateTransitGatewayVpcAttachmentRequestOptions {

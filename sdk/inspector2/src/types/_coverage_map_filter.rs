@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::CoverageMapComparison>,
     /// <p>The tag key associated with the coverage map filter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value associated with the coverage map filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CoverageMapFilter {

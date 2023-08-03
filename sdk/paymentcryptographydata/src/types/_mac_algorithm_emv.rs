@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MacAlgorithmEmv {
     /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
-    #[doc(hidden)]
     pub major_key_derivation_mode: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    #[doc(hidden)]
     pub primary_account_number: ::std::option::Option<::std::string::String>,
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    #[doc(hidden)]
     pub pan_sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
-    #[doc(hidden)]
     pub session_key_derivation_mode: ::std::option::Option<crate::types::SessionKeyDerivationMode>,
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
-    #[doc(hidden)]
     pub session_key_derivation_value: ::std::option::Option<crate::types::SessionKeyDerivationValue>,
 }
 impl MacAlgorithmEmv {

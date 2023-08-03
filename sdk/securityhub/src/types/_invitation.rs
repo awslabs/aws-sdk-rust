@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the invitation sent to the member account.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the association between the member and administrator accounts.</p>
-    #[doc(hidden)]
     pub member_status: ::std::option::Option<::std::string::String>,
 }
 impl Invitation {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageTemplateType {
     /// <p>The message template for SMS messages.</p>
-    #[doc(hidden)]
     pub sms_message: ::std::option::Option<::std::string::String>,
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    #[doc(hidden)]
     pub email_message: ::std::option::Option<::std::string::String>,
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    #[doc(hidden)]
     pub email_subject: ::std::option::Option<::std::string::String>,
 }
 impl MessageTemplateType {

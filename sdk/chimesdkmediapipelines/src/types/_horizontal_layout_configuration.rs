@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HorizontalLayoutConfiguration {
     /// <p>Sets the automatic ordering of the video tiles.</p>
-    #[doc(hidden)]
     pub tile_order: ::std::option::Option<crate::types::TileOrder>,
     /// <p>Sets the position of horizontal tiles.</p>
-    #[doc(hidden)]
     pub tile_position: ::std::option::Option<crate::types::HorizontalTilePosition>,
     /// <p>The maximum number of video tiles to display.</p>
-    #[doc(hidden)]
     pub tile_count: ::std::option::Option<i32>,
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-    #[doc(hidden)]
     pub tile_aspect_ratio: ::std::option::Option<::std::string::String>,
 }
 impl HorizontalLayoutConfiguration {

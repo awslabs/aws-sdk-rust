@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuspendGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The activity to suspend for this game server group.</p>
-    #[doc(hidden)]
     pub suspend_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
 }
 impl SuspendGameServerGroupInput {

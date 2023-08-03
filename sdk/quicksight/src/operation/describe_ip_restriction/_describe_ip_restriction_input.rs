@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIpRestrictionInput {

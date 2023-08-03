@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::CoverageStringComparison>,
     /// <p>The value to compare strings on.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CoverageStringFilter {

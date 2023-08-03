@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalogConfig {
     /// <p>The name of the Glue table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Glue table catalog.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Glue table database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogConfig {

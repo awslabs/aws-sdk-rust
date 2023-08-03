@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the gateway ID.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes that are in violation.</p>
-    #[doc(hidden)]
     pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>Information about the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {

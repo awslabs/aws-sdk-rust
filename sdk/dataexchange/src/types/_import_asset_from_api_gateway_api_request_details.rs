@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiRequestDetails {
     /// <p>The API description. Markdown supported.</p>
-    #[doc(hidden)]
     pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API Gateway API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API Gateway API key.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The API name.</p>
-    #[doc(hidden)]
     pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
-    #[doc(hidden)]
     pub api_specification_md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>The data set ID.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The protocol type.</p>
-    #[doc(hidden)]
     pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The revision ID.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The API stage.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromApiGatewayApiRequestDetails {

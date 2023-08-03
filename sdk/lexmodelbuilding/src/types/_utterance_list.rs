@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceList {
     /// <p>The version of the bot that processed the list.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    #[doc(hidden)]
     pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>,
 }
 impl UtteranceList {

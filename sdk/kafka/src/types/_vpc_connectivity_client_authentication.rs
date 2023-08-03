@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivityClientAuthentication {
     /// <p>SASL authentication type details for VPC connectivity.</p>
-    #[doc(hidden)]
     pub sasl: ::std::option::Option<crate::types::VpcConnectivitySasl>,
     /// <p>TLS authentication type details for VPC connectivity.</p>
-    #[doc(hidden)]
     pub tls: ::std::option::Option<crate::types::VpcConnectivityTls>,
 }
 impl VpcConnectivityClientAuthentication {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVehicleInput {
     /// <p>The ID of the vehicle to delete. </p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVehicleInput {

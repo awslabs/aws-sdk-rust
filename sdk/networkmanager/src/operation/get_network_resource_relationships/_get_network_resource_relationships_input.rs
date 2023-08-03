@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkResourceRelationshipsInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the registered gateway.</p>
-    #[doc(hidden)]
     pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -41,16 +36,12 @@ pub struct GetNetworkResourceRelationshipsInput {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the gateway.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetNetworkResourceRelationshipsInput {

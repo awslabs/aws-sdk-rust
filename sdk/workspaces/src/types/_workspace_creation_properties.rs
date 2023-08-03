@@ -8,10 +8,8 @@ pub struct WorkspaceCreationProperties {
     /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
     /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
     /// </note>
-    #[doc(hidden)]
     pub enable_work_docs: ::std::option::Option<bool>,
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
-    #[doc(hidden)]
     pub enable_internet_access: ::std::option::Option<bool>,
     /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
     /// <ul>
@@ -19,16 +17,12 @@ pub struct WorkspaceCreationProperties {
     /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub default_ou: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of your custom security group.</p>
-    #[doc(hidden)]
     pub custom_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
-    #[doc(hidden)]
     pub user_enabled_as_local_administrator: ::std::option::Option<bool>,
     /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
-    #[doc(hidden)]
     pub enable_maintenance_mode: ::std::option::Option<bool>,
 }
 impl WorkspaceCreationProperties {

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingRuleUpdate {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the sampling rule.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
-    #[doc(hidden)]
     pub fixed_rate: ::std::option::Option<f64>,
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
-    #[doc(hidden)]
     pub reservoir_size: ::std::option::Option<i32>,
     /// <p>Matches the hostname from a request URL.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<::std::string::String>,
     /// <p>Matches the HTTP method of a request.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>Matches the path from a request URL.</p>
-    #[doc(hidden)]
     pub url_path: ::std::option::Option<::std::string::String>,
     /// <p>Matches attributes derived from the request.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SamplingRuleUpdate {

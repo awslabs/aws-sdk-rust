@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sunglasses {
     /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
-    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl Sunglasses {

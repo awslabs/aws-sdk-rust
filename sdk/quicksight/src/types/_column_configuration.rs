@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnConfiguration {
     /// <p>The column.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The format configuration of a column.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,
     /// <p>The role of the column.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::ColumnRole>,
     /// <p>The color configurations of the column.</p>
-    #[doc(hidden)]
     pub colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
 }
 impl ColumnConfiguration {

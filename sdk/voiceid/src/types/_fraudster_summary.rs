@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FraudsterSummary {
     /// <p>The identifier of the domain that contains the fraudster summary.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the fraudster.</p>
-    #[doc(hidden)]
     pub generated_fraudster_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the fraudster summary was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    #[doc(hidden)]
     pub watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FraudsterSummary {

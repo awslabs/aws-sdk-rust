@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stage {
     /// <p>Settings for logging access in this stage.</p>
-    #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
-    #[doc(hidden)]
     pub api_gateway_managed: ::std::option::Option<bool>,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    #[doc(hidden)]
     pub auto_deploy: ::std::option::Option<bool>,
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
-    #[doc(hidden)]
     pub default_route_settings: ::std::option::Option<crate::types::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
-    #[doc(hidden)]
     pub last_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
-    #[doc(hidden)]
     pub route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    #[doc(hidden)]
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Stage {

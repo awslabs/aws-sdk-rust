@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignHook {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
-    #[doc(hidden)]
     pub lambda_function_name: ::std::option::Option<::std::string::String>,
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
     /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
     /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::Mode>,
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
-    #[doc(hidden)]
     pub web_url: ::std::option::Option<::std::string::String>,
 }
 impl CampaignHook {

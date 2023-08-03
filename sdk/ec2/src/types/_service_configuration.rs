@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceConfiguration {
     /// <p>The type of service.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The service state.</p>
-    #[doc(hidden)]
     pub service_state: ::std::option::Option<crate::types::ServiceState>,
     /// <p>The Availability Zones in which the service is available.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    #[doc(hidden)]
     pub acceptance_required: ::std::option::Option<bool>,
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
-    #[doc(hidden)]
     pub manages_vpc_endpoints: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
-    #[doc(hidden)]
     pub network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    #[doc(hidden)]
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported IP address types.</p>
-    #[doc(hidden)]
     pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
     /// <p>The DNS names for the service.</p>
-    #[doc(hidden)]
     pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The private DNS name for the service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the endpoint service private DNS name configuration.</p>
-    #[doc(hidden)]
     pub private_dns_name_configuration: ::std::option::Option<crate::types::PrivateDnsNameConfiguration>,
     /// <p>The payer responsibility.</p>
-    #[doc(hidden)]
     pub payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     /// <p>The tags assigned to the service.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ServiceConfiguration {

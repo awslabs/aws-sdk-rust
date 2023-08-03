@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountGrouping {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    #[doc(hidden)]
     pub linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
-    #[doc(hidden)]
     pub auto_associate: ::std::option::Option<bool>,
 }
 impl AccountGrouping {

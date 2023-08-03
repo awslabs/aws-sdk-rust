@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInstanceOutput {
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    #[doc(hidden)]
     pub bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     /// The Amazon Resource Name (ARN) of the instance.
-    #[doc(hidden)]
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

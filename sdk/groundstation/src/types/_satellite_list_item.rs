@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SatelliteListItem {
     /// <p>UUID of a satellite.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a satellite.</p>
-    #[doc(hidden)]
     pub satellite_arn: ::std::option::Option<::std::string::String>,
     /// <p>NORAD satellite ID number.</p>
-    #[doc(hidden)]
     pub norad_satellite_id: i32,
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    #[doc(hidden)]
     pub ground_stations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    #[doc(hidden)]
     pub current_ephemeris: ::std::option::Option<crate::types::EphemerisMetaData>,
 }
 impl SatelliteListItem {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
-    #[doc(hidden)]
     pub maximum_per_minute: ::std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
-    #[doc(hidden)]
     pub exponential_rate: ::std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
 }
 impl AwsJobExecutionsRolloutConfig {

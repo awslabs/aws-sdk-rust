@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stop conditions for the experiment.</p>
-    #[doc(hidden)]
     pub stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>>,
     /// <p>The targets for the experiment.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateTargetInput>>,
     /// <p>The actions for the experiment.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateActionInputItem>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for experiment logging.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
 }
 impl UpdateExperimentTemplateInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    #[doc(hidden)]
     pub occurrences: ::std::option::Option<crate::types::Occurrences>,
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl DefaultDetection {

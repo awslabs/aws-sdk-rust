@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkSendDataToDevice {
     /// <p>The sequence number.</p>
-    #[doc(hidden)]
     pub seq: ::std::option::Option<i32>,
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The duration of time in seconds to retry sending the ACK.</p>
-    #[doc(hidden)]
     pub ack_mode_retry_duration_secs: ::std::option::Option<i32>,
 }
 impl SidewalkSendDataToDevice {

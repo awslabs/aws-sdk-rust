@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeListenerOutput {
     /// <p>The description of a listener.</p>
-    #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,
 }

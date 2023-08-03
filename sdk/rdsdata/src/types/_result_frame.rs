@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
-    #[doc(hidden)]
     pub result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
     /// <p>The records in the result set.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl ResultFrame {

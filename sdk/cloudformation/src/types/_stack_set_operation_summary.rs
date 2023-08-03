@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationSummary {
     /// <p>The unique ID of the stack set operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself and <i>all</i> associated stack set instances.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::StackSetOperationAction>,
     /// <p>The overall status of the operation.</p>
     /// <ul>
@@ -19,23 +17,17 @@ pub struct StackSetOperationSummary {
     /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StackSetOperationStatus>,
     /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
-    #[doc(hidden)]
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the operation in details.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the stack set operation.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    #[doc(hidden)]
     pub operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
 }
 impl StackSetOperationSummary {

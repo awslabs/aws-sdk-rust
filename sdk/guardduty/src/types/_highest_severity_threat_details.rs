@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HighestSeverityThreatDetails {
     /// <p>Severity level of the highest severity threat detected.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
-    #[doc(hidden)]
     pub threat_name: ::std::option::Option<::std::string::String>,
     /// <p>Total number of infected files with the highest severity threat detected.</p>
-    #[doc(hidden)]
     pub count: i32,
 }
 impl HighestSeverityThreatDetails {

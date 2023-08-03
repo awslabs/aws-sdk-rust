@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
 }
 impl ParameterConstraints {

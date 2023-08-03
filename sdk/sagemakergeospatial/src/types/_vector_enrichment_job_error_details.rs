@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobErrorDetails {
     /// <p>The type of error generated during the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobErrorDetails {

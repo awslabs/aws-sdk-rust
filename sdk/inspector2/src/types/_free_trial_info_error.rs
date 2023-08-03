@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
     /// <p>The error message returned.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl FreeTrialInfoError {

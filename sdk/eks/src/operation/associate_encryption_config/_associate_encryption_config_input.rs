@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigInput {
     /// <p>The name of the cluster that you are associating with encryption configuration.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration you are using for encryption.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     /// <p>The client request token you are using with the encryption configuration.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEncryptionConfigInput {

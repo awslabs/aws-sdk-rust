@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectAppAuthorizationInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    #[doc(hidden)]
     pub app_authorization_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains OAuth2 authorization information.</p>
     /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
-    #[doc(hidden)]
     pub auth_request: ::std::option::Option<crate::types::AuthRequest>,
 }
 impl ConnectAppAuthorizationInput {

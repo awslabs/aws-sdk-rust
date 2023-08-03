@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageRecycleBinInfo {
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AMI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AMI.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the AMI entered the Recycle Bin.</p>
-    #[doc(hidden)]
     pub recycle_bin_enter_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the AMI is to be permanently deleted from the Recycle Bin.</p>
-    #[doc(hidden)]
     pub recycle_bin_exit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImageRecycleBinInfo {

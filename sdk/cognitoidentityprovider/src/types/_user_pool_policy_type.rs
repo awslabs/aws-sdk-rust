@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolPolicyType {
     /// <p>The password policy.</p>
-    #[doc(hidden)]
     pub password_policy: ::std::option::Option<crate::types::PasswordPolicyType>,
 }
 impl UserPoolPolicyType {

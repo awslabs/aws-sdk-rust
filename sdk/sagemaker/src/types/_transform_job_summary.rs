@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformJobSummary {
     /// <p>The name of the transform job.</p>
-    #[doc(hidden)]
     pub transform_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    #[doc(hidden)]
     pub transform_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the transform Job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.</p>
-    #[doc(hidden)]
     pub transform_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when the transform job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the transform job.</p>
-    #[doc(hidden)]
     pub transform_job_status: ::std::option::Option<crate::types::TransformJobStatus>,
     /// <p>If the transform job failed, the reason it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl TransformJobSummary {

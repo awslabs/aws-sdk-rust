@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppInput {
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of app.</p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppInput {

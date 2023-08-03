@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The action for the default rule.</p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl UpdateListenerInput {

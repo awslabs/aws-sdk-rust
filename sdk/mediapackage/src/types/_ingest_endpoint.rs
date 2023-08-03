@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestEndpoint {
     /// The system generated unique identifier for the IngestEndpoint
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The system generated password for ingest authentication.
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// The ingest URL to which the source stream should be sent.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// The system generated username for ingest authentication.
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl IngestEndpoint {

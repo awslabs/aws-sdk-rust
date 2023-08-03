@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ManifestOutputLocation {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-    #[doc(hidden)]
     pub expected_manifest_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The bucket ARN the generated manifest should be written to.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
-    #[doc(hidden)]
     pub manifest_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-    #[doc(hidden)]
     pub manifest_encryption: ::std::option::Option<crate::types::GeneratedManifestEncryption>,
     /// <p>The format of the generated manifest.</p>
-    #[doc(hidden)]
     pub manifest_format: ::std::option::Option<crate::types::GeneratedManifestFormat>,
 }
 impl S3ManifestOutputLocation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
-    #[doc(hidden)]
     pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisableAlarmActionsInput {

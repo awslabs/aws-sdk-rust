@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema version for the inventory result item/</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The time inventory item data was captured.</p>
-    #[doc(hidden)]
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
-    #[doc(hidden)]
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl InventoryResultItem {

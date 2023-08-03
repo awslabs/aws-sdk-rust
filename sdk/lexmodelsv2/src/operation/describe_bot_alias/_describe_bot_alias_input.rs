@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotAliasInput {
     /// <p>The identifier of the bot alias to describe.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBotAliasInput {

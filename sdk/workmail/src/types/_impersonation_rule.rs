@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpersonationRule {
     /// <p>The identifier of the rule.</p>
-    #[doc(hidden)]
     pub impersonation_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::AccessEffect>,
     /// <p>A list of user IDs that match the rule.</p>
-    #[doc(hidden)]
     pub target_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of user IDs that don't match the rule.</p>
-    #[doc(hidden)]
     pub not_target_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImpersonationRule {

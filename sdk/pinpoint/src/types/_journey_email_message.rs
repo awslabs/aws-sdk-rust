@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
 }
 impl JourneyEmailMessage {

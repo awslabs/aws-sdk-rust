@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSsoAuthentication {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-    #[doc(hidden)]
     pub sso_client_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsoAuthentication {

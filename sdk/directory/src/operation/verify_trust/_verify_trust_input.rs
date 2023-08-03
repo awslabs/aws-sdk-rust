@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyTrustInput {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
-    #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
 }
 impl VerifyTrustInput {

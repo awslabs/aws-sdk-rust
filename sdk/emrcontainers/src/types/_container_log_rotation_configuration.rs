@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerLogRotationConfiguration {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    #[doc(hidden)]
     pub rotation_size: ::std::option::Option<::std::string::String>,
     /// <p>The number of files to keep in container after rotation.</p>
-    #[doc(hidden)]
     pub max_files_to_keep: ::std::option::Option<i32>,
 }
 impl ContainerLogRotationConfiguration {

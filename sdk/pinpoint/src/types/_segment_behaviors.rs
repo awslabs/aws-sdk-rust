@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
-    #[doc(hidden)]
     pub recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
 impl SegmentBehaviors {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
-    #[doc(hidden)]
     pub manifest_window_seconds: i32,
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    #[doc(hidden)]
     pub min_buffer_time_seconds: i32,
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    #[doc(hidden)]
     pub min_update_period_seconds: i32,
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    #[doc(hidden)]
     pub suggested_presentation_delay_seconds: i32,
 }
 impl DashPlaylistSettings {

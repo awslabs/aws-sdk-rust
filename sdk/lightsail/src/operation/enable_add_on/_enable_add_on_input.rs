@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAddOnInput {
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings representing the add-on to enable or modify.</p>
-    #[doc(hidden)]
     pub add_on_request: ::std::option::Option<crate::types::AddOnRequest>,
 }
 impl EnableAddOnInput {

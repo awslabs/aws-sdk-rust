@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DkimAttributes {
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
-    #[doc(hidden)]
     pub signing_enabled: bool,
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
@@ -16,28 +15,22 @@ pub struct DkimAttributes {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DkimStatus>,
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    #[doc(hidden)]
     pub tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    #[doc(hidden)]
     pub next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
-    #[doc(hidden)]
     pub current_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    #[doc(hidden)]
     pub last_key_generation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DkimAttributes {

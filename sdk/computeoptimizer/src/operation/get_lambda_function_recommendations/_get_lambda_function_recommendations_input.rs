@@ -5,22 +5,17 @@
 pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
     /// <p>The token to advance to the next page of function recommendations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetLambdaFunctionRecommendationsInput {

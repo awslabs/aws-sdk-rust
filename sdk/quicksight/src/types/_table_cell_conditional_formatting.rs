@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The text format of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
 }
 impl TableCellConditionalFormatting {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsInput {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    #[doc(hidden)]
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeRemediationConfigurationsInput {

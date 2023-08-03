@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageVersionsInput {
     /// <p>A filter that returns only versions created on or after the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only versions created on or before the specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the image to list the versions of.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ImageVersionSortBy>,
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::ImageVersionSortOrder>,
 }
 impl ListImageVersionsInput {

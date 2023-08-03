@@ -10,7 +10,6 @@ pub struct PromoteReadReplicaInput {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
     /// <p>Default: 1</p>
@@ -19,7 +18,6 @@ pub struct PromoteReadReplicaInput {
     /// <li> <p>Must be a value from 0 to 35.</p> </li>
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -30,7 +28,6 @@ pub struct PromoteReadReplicaInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
 }
 impl PromoteReadReplicaInput {

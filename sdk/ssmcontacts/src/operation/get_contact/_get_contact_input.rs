@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetContactInput {

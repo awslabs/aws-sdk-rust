@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCodegenJobOutput {
     /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
-    #[doc(hidden)]
     pub entity: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,
 }

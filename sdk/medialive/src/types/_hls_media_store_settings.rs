@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsMediaStoreSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-    #[doc(hidden)]
     pub connection_retry_interval: ::std::option::Option<i32>,
     /// Size in seconds of file cache for streaming outputs.
-    #[doc(hidden)]
     pub filecache_duration: ::std::option::Option<i32>,
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
-    #[doc(hidden)]
     pub media_store_storage_class: ::std::option::Option<crate::types::HlsMediaStoreStorageClass>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
-    #[doc(hidden)]
     pub num_retries: ::std::option::Option<i32>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    #[doc(hidden)]
     pub restart_delay: ::std::option::Option<i32>,
 }
 impl HlsMediaStoreSettings {

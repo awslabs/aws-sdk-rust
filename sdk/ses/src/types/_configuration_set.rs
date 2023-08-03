@@ -10,7 +10,6 @@ pub struct ConfigurationSet {
     /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationSet {

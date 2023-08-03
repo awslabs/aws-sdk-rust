@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
-    #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::BlockAction>,
     /// <p>Instructs WAF to allow the web request.</p>
-    #[doc(hidden)]
     pub allow: ::std::option::Option<crate::types::AllowAction>,
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<crate::types::CountAction>,
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
-    #[doc(hidden)]
     pub captcha: ::std::option::Option<crate::types::CaptchaAction>,
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
-    #[doc(hidden)]
     pub challenge: ::std::option::Option<crate::types::ChallengeAction>,
 }
 impl RuleAction {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
-    #[doc(hidden)]
     pub health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHealthCheckInput {

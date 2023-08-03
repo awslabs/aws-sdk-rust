@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerValidationOutput {
     /// <p>Represents a server.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
 }
 impl ServerValidationOutput {

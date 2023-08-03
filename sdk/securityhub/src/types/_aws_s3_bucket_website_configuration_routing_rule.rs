@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRule {
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
-    #[doc(hidden)]
     pub redirect: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRule {

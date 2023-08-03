@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedAccount {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of Amazon Inspector for the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedAccount {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionSummary {
     /// <p>The unique identifier of the test execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the test execution was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the test execution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the test execution.</p>
-    #[doc(hidden)]
     pub test_execution_status: ::std::option::Option<crate::types::TestExecutionStatus>,
     /// <p>The unique identifier of the test set used in the test execution.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test set used in the test execution.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the bot used for the test execution..</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestExecutionTarget>,
     /// <p>Specifies whether the API mode for the test execution is streaming or non-streaming.</p>
-    #[doc(hidden)]
     pub api_mode: ::std::option::Option<crate::types::TestExecutionApiMode>,
     /// <p>Specifies whether the data used for the test execution is written or spoken.</p>
-    #[doc(hidden)]
     pub test_execution_modality: ::std::option::Option<crate::types::TestExecutionModality>,
 }
 impl TestExecutionSummary {

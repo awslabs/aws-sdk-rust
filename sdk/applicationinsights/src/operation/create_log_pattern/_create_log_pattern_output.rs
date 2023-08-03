@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLogPatternOutput {
     /// <p>The successfully created log pattern.</p>
-    #[doc(hidden)]
     pub log_pattern: ::std::option::Option<crate::types::LogPattern>,
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationSummary {
     /// <p>A string that specifies a location name.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl LocationSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

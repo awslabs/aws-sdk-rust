@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanFilePath {
     /// <p>The file path of the infected file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume Arn details of the infected file.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hash value of the infected file.</p>
-    #[doc(hidden)]
     pub hash: ::std::option::Option<::std::string::String>,
     /// <p>File name of the infected file.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl ScanFilePath {

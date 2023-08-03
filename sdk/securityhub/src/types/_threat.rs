@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Threat {
     /// <p>The name of the threat. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the threat. </p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>This total number of items in which the threat has been detected. </p>
-    #[doc(hidden)]
     pub item_count: i32,
     /// <p>Provides information about the file paths that were affected by the threat. </p>
-    #[doc(hidden)]
     pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
 }
 impl Threat {

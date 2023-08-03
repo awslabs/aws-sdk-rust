@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// <p>A list of configuration items that you want to tag.</p>
-    #[doc(hidden)]
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTagsInput {

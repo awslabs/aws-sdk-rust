@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityInput {
     /// <p>The current configuration information for the identity.</p>
-    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CreateCloudFrontOriginAccessIdentityInput {

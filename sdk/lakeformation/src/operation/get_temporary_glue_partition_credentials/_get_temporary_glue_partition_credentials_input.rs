@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemporaryGluePartitionCredentialsInput {
     /// <p>The ARN of the partitions' table.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of partition values identifying a single partition.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<crate::types::PartitionValueList>,
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    #[doc(hidden)]
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    #[doc(hidden)]
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetTemporaryGluePartitionCredentialsInput {

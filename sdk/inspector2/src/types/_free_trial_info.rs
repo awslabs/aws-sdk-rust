@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FreeTrialType>,
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FreeTrialStatus>,
 }
 impl FreeTrialInfo {

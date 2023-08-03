@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetAlarmStateInput {
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the state.</p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<crate::types::StateValue>,
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    #[doc(hidden)]
     pub state_reason_data: ::std::option::Option<::std::string::String>,
 }
 impl SetAlarmStateInput {

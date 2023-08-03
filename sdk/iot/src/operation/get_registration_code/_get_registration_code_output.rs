@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistrationCodeOutput {
     /// <p>The CA certificate registration code.</p>
-    #[doc(hidden)]
     pub registration_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

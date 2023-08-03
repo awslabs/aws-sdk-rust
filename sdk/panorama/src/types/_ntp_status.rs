@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NtpStatus {
     /// <p>The connection's status.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
     /// <p>The IP address of the server.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the server.</p>
-    #[doc(hidden)]
     pub ntp_server_name: ::std::option::Option<::std::string::String>,
 }
 impl NtpStatus {

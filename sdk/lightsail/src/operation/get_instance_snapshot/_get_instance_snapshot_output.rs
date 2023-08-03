@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotOutput {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
-    #[doc(hidden)]
     pub instance_snapshot: ::std::option::Option<crate::types::InstanceSnapshot>,
     _request_id: Option<String>,
 }

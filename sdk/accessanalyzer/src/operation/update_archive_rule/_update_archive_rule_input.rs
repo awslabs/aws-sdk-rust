@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateArchiveRuleInput {
     /// <p>The name of the analyzer to update the archive rules for.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to update.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateArchiveRuleInput {

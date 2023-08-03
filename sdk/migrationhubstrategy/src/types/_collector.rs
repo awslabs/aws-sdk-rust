@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Collector {
     /// <p> The ID of the collector. </p>
-    #[doc(hidden)]
     pub collector_id: ::std::option::Option<::std::string::String>,
     /// <p> IP address of the server that is hosting the collector. </p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p> Hostname of the server that is hosting the collector. </p>
-    #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the health of a collector. </p>
-    #[doc(hidden)]
     pub collector_health: ::std::option::Option<crate::types::CollectorHealth>,
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
-    #[doc(hidden)]
     pub collector_version: ::std::option::Option<::std::string::String>,
     /// <p> Time when the collector registered with the service. </p>
-    #[doc(hidden)]
     pub registered_time_stamp: ::std::option::Option<::std::string::String>,
     /// <p> Time when the collector last pinged the service. </p>
-    #[doc(hidden)]
     pub last_activity_time_stamp: ::std::option::Option<::std::string::String>,
     /// <p>Summary of the collector configuration.</p>
-    #[doc(hidden)]
     pub configuration_summary: ::std::option::Option<crate::types::ConfigurationSummary>,
 }
 impl Collector {

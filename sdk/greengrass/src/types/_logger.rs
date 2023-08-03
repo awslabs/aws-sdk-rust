@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logger {
     /// The component that will be subject to logging.
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::LoggerComponent>,
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The level of the logs.
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LoggerLevel>,
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
-    #[doc(hidden)]
     pub space: ::std::option::Option<i32>,
     /// The type of log output which will be used.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LoggerType>,
 }
 impl Logger {

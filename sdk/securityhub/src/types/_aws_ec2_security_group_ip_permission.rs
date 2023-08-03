@@ -9,27 +9,20 @@ pub struct AwsEc2SecurityGroupIpPermission {
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
     /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
     /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
-    #[doc(hidden)]
     pub from_port: i32,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
-    #[doc(hidden)]
     pub to_port: i32,
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    #[doc(hidden)]
     pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
     /// <p>The IPv4 ranges.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpRange>>,
     /// <p>The IPv6 ranges.</p>
-    #[doc(hidden)]
     pub ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>>,
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    #[doc(hidden)]
     pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>>,
 }
 impl AwsEc2SecurityGroupIpPermission {

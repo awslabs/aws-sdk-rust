@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]
     pub cidr_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The IP address where you want to send the output.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::UpdateEncryption>,
     /// The flow that is associated with the output that you want to update.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    #[doc(hidden)]
     pub max_latency: ::std::option::Option<i32>,
     /// The media streams that are associated with the output, and the parameters for those associations.
-    #[doc(hidden)]
     pub media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    #[doc(hidden)]
     pub min_latency: ::std::option::Option<i32>,
     /// The ARN of the output that you want to update.
-    #[doc(hidden)]
     pub output_arn: ::std::option::Option<::std::string::String>,
     /// The port to use when content is distributed to this output.
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// The protocol to use for the output.
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// The remote ID for the Zixi-pull stream.
-    #[doc(hidden)]
     pub remote_id: ::std::option::Option<::std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_control_port: ::std::option::Option<i32>,
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_ip_address: ::std::option::Option<::std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
-    #[doc(hidden)]
     pub smoothing_latency: ::std::option::Option<i32>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface attachment to use for this output.
-    #[doc(hidden)]
     pub vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
 }
 impl UpdateFlowOutputInput {

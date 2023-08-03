@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutJobFailureResultInput {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The details about the failure of a job.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
 }
 impl PutJobFailureResultInput {

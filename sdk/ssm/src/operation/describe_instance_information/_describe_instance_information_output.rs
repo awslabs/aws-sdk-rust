@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
-    #[doc(hidden)]
     pub instance_information_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

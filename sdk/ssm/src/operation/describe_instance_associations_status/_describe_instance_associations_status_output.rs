@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
-    #[doc(hidden)]
     pub instance_association_status_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

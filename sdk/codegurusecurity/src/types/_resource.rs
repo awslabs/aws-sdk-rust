@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The identifier for the resource.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
-    #[doc(hidden)]
     pub sub_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {

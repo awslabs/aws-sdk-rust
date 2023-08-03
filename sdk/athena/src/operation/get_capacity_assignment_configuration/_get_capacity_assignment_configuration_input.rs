@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCapacityAssignmentConfigurationInput {
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
-    #[doc(hidden)]
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCapacityAssignmentConfigurationInput {

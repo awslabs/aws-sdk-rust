@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRepositoryTask {
     /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
@@ -18,7 +17,6 @@ pub struct DataRepositoryTask {
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
     /// <p>The type of data repository task.</p>
     /// <ul>
@@ -27,44 +25,31 @@ pub struct DataRepositoryTask {
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataRepositoryTaskType>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the system began processing the task.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the system completed processing the task, populated after the task is complete.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The globally unique ID of the file system.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
     /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::DataRepositoryTaskFailureDetails>,
     /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataRepositoryTaskStatus>,
     /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::CompletionReport>,
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
-    #[doc(hidden)]
     pub capacity_to_release: ::std::option::Option<i64>,
     /// <p>The system-generated, unique ID of the cache.</p>
-    #[doc(hidden)]
     pub file_cache_id: ::std::option::Option<::std::string::String>,
 }
 impl DataRepositoryTask {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClassificationJobOutput {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    #[doc(hidden)]
     pub allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    #[doc(hidden)]
     pub custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom description of the job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
-    #[doc(hidden)]
     pub initial_run: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -36,24 +28,19 @@ pub struct DescribeClassificationJobOutput {
     /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - The job runs only once.</p></li>
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    #[doc(hidden)]
     pub last_run_error_status: ::std::option::Option<crate::types::LastRunErrorStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
-    #[doc(hidden)]
     pub last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    #[doc(hidden)]
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
@@ -66,28 +53,20 @@ pub struct DescribeClassificationJobOutput {
     /// <p>If this value is null, the job uses all managed data identifiers.</p>
     /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    #[doc(hidden)]
     pub managed_data_identifier_selector: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    #[doc(hidden)]
     pub s3_job_definition: ::std::option::Option<crate::types::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
-    #[doc(hidden)]
     pub sampling_percentage: ::std::option::Option<i32>,
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
-    #[doc(hidden)]
     pub schedule_frequency: ::std::option::Option<crate::types::JobScheduleFrequency>,
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::Statistics>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    #[doc(hidden)]
     pub user_paused_details: ::std::option::Option<crate::types::UserPausedDetails>,
     _request_id: Option<String>,
 }

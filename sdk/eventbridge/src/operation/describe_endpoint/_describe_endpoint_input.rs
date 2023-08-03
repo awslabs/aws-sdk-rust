@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointInput {
     /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointInput {

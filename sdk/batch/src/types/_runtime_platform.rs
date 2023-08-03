@@ -11,12 +11,10 @@ pub struct RuntimePlatform {
     /// </note> <note>
     /// <p>Fargate Spot is not supported for Windows-based containers on Fargate. A job queue will be blocked if a Fargate Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
-    #[doc(hidden)]
     pub operating_system_family: ::std::option::Option<::std::string::String>,
     /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
-    #[doc(hidden)]
     pub cpu_architecture: ::std::option::Option<::std::string::String>,
 }
 impl RuntimePlatform {

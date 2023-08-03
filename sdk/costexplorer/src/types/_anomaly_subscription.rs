@@ -8,29 +8,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalySubscription {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>Your unique account identifier. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cost anomaly monitors. </p>
-    #[doc(hidden)]
     pub monitor_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subscribers to notify. </p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
     /// <p>(deprecated)</p>
     /// <p>An absolute dollar value that must be exceeded by the anomaly's total impact (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details) for an anomaly notification to be generated.</p>
     /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
     /// <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for anomaly notifications</a>.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>,
     /// <p>The name for the subscription. </p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p>
     /// <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p>
@@ -41,7 +34,6 @@ pub struct AnomalySubscription {
     /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub threshold_expression: ::std::option::Option<crate::types::Expression>,
 }
 impl AnomalySubscription {

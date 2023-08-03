@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureTransformationInput {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    #[doc(hidden)]
     pub feature_transformation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureTransformationInput {

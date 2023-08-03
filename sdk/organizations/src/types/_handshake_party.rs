@@ -6,10 +6,8 @@
 pub struct HandshakeParty {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of party.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HandshakePartyType>,
 }
 impl HandshakeParty {

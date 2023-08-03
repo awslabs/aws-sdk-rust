@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomContentConfiguration {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
-    #[doc(hidden)]
     pub content_url: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::CustomContentType>,
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
-    #[doc(hidden)]
     pub image_scaling: ::std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
 }
 impl CustomContentConfiguration {

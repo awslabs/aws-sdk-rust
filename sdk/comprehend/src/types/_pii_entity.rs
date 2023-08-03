@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PiiEntity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The entity's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PiiEntityType>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
 }
 impl PiiEntity {

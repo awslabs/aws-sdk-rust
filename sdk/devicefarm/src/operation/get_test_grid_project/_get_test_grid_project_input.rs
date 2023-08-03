@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTestGridProjectInput {

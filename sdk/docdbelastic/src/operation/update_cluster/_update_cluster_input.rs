@@ -4,36 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub shard_capacity: ::std::option::Option<i32>,
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub shard_count: ::std::option::Option<i32>,
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
-    #[doc(hidden)]
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterInput {

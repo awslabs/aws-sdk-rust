@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsConfigInput {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQuerySuggestionsConfigInput {

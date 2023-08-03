@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentConditionProperty {
     /// <p>The name of the conditional property.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
     /// <p>The name of a field. Specify this when the property is a data model.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The value of the property to evaluate.</p>
-    #[doc(hidden)]
     pub operand: ::std::option::Option<::std::string::String>,
     /// <p>The value to assign to the property if the condition is met.</p>
-    #[doc(hidden)]
     pub then: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
     /// <p>The value to assign to the property if the condition is not met.</p>
-    #[doc(hidden)]
     pub r#else: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
     /// <p>The type of the property to evaluate.</p>
-    #[doc(hidden)]
     pub operand_type: ::std::option::Option<::std::string::String>,
 }
 impl ComponentConditionProperty {

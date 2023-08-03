@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyRuleMetaData {
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
-    #[doc(hidden)]
     pub meta_data_key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
-    #[doc(hidden)]
     pub meta_data_value: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayPolicyRuleMetaData {

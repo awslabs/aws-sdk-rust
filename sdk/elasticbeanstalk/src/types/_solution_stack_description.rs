@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The permitted file types allowed for a solution stack.</p>
-    #[doc(hidden)]
     pub permitted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SolutionStackDescription {

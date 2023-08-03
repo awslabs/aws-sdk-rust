@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
-    #[doc(hidden)]
     pub public_key_rotation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>JWT Token</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

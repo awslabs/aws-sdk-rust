@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MembershipItem {
     /// <p>The member ID.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The member role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::RoomMembershipRole>,
 }
 impl MembershipItem {

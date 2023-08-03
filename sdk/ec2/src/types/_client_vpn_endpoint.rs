@@ -5,79 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
     /// <p>The date and time the Client VPN endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
-    #[doc(hidden)]
     pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name to be used by clients when connecting to the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
-    #[doc(hidden)]
     pub client_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
-    #[doc(hidden)]
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub split_tunnel: ::std::option::Option<bool>,
     /// <p>The protocol used by the VPN session.</p>
-    #[doc(hidden)]
     pub vpn_protocol: ::std::option::Option<crate::types::VpnProtocol>,
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub transport_protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The port number for the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub vpn_port: ::std::option::Option<i32>,
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
     #[deprecated(
         note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
     )]
-    #[doc(hidden)]
     pub associated_target_networks: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
     /// <p>The ARN of the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub authentication_options: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnAuthentication>>,
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub connection_log_options: ::std::option::Option<crate::types::ConnectionLogResponseOptions>,
     /// <p>Any tags assigned to the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IDs of the security groups for the target network.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the self-service portal.</p>
-    #[doc(hidden)]
     pub self_service_portal_url: ::std::option::Option<::std::string::String>,
     /// <p>The options for managing connection authorization for new client connections.</p>
-    #[doc(hidden)]
     pub client_connect_options: ::std::option::Option<crate::types::ClientConnectResponseOptions>,
     /// <p>The maximum VPN session duration time in hours.</p>
     /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
-    #[doc(hidden)]
     pub session_timeout_hours: ::std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    #[doc(hidden)]
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
 }
 impl ClientVpnEndpoint {

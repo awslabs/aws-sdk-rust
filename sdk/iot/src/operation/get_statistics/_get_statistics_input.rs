@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatisticsInput {
     /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation field name.</p>
-    #[doc(hidden)]
     pub aggregation_field: ::std::option::Option<::std::string::String>,
     /// <p>The version of the query used to search.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
 }
 impl GetStatisticsInput {

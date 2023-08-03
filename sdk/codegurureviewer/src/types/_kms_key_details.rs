@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    #[doc(hidden)]
     pub encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
 }
 impl KmsKeyDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInternetGatewayOutput {
     /// <p>Information about the internet gateway.</p>
-    #[doc(hidden)]
     pub internet_gateway: ::std::option::Option<crate::types::InternetGateway>,
     _request_id: Option<String>,
 }

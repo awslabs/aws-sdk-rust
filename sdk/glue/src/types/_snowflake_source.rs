@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeSource {
     /// <p>The name of the Snowflake data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for the Snowflake data source.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::SnowflakeNodeData>,
     /// <p>Specifies user-defined schemas for your output data.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl SnowflakeSource {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEntityOutput {
     /// <p>The date and time when the entity was last updated.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the entity update.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,
 }

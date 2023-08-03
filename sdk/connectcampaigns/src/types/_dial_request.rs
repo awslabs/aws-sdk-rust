@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DialRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// The phone number of the customer, in E.164 format.
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// Timestamp with no UTC offset or timezone
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DialRequest {

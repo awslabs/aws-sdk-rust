@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterOptionGroupStatus {
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterOptionGroupStatus {

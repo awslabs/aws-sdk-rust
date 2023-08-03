@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The new priority assigned to the specified job.</p>
-    #[doc(hidden)]
     pub priority: i32,
     _request_id: Option<String>,
 }

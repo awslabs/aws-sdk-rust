@@ -8,28 +8,20 @@
 pub struct GreengrassConfiguration {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
-    #[doc(hidden)]
     pub compiler_options: ::std::option::Option<::std::string::String>,
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
-    #[doc(hidden)]
     pub target_device: ::std::option::Option<crate::types::TargetDevice>,
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
-    #[doc(hidden)]
     pub target_platform: ::std::option::Option<crate::types::TargetPlatform>,
     /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
-    #[doc(hidden)]
     pub s3_output_location: ::std::option::Option<crate::types::S3Location>,
     /// <p> A name for the AWS IoT Greengrass component. </p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p> A description for the AWS IoT Greengrass component. </p>
-    #[doc(hidden)]
     pub component_description: ::std::option::Option<::std::string::String>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl GreengrassConfiguration {

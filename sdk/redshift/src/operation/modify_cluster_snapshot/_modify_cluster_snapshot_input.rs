@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotInput {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
-    #[doc(hidden)]
     pub force: bool,
 }
 impl ModifyClusterSnapshotInput {

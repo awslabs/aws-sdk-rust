@@ -5,41 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The periods forward setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub periods_forward: ::std::option::Option<i32>,
     /// <p>The periods backward setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub periods_backward: ::std::option::Option<i32>,
     /// <p>The upper boundary setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub upper_boundary: ::std::option::Option<f64>,
     /// <p>The lower boundary setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub lower_boundary: ::std::option::Option<f64>,
     /// <p>The prediction interval setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub prediction_interval: ::std::option::Option<i32>,
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>AUTOMATIC</code> </p> </li>
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub seasonality: ::std::option::Option<crate::types::ForecastComputationSeasonality>,
     /// <p>The custom seasonality value setup of a forecast computation.</p>
-    #[doc(hidden)]
     pub custom_seasonality_value: ::std::option::Option<i32>,
 }
 impl ForecastComputation {

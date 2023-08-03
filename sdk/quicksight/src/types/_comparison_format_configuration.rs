@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparisonFormatConfiguration {
     /// <p>The number display format.</p>
-    #[doc(hidden)]
     pub number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     /// <p>The percentage display format.</p>
-    #[doc(hidden)]
     pub percentage_display_format_configuration: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl ComparisonFormatConfiguration {

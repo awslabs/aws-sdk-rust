@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
     _request_id: Option<String>,
 }

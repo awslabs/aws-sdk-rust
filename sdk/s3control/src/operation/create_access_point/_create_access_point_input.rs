@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name you want to assign to this access point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -22,18 +20,14 @@ pub struct CreateAccessPointInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPointInput {

@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceSelectionCriteria {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
-    #[doc(hidden)]
     pub sse_kms_encrypted_objects: ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
     /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
-    #[doc(hidden)]
     pub replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,
 }
 impl SourceSelectionCriteria {

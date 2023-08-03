@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    #[doc(hidden)]
     pub domain_deliverability_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

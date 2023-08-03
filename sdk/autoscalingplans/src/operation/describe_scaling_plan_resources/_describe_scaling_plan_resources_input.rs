@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesInput {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScalingPlanResourcesInput {

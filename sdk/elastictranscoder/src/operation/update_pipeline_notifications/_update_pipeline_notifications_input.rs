@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsInput {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -16,7 +15,6 @@ pub struct UpdatePipelineNotificationsInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub notifications: ::std::option::Option<crate::types::Notifications>,
 }
 impl UpdatePipelineNotificationsInput {

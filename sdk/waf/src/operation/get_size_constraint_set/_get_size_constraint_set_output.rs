@@ -9,7 +9,6 @@ pub struct GetSizeConstraintSetOutput {
     /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub size_constraint_set: ::std::option::Option<crate::types::SizeConstraintSet>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCertificateInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The certificate PEM string that needs to be registered.</p>
-    #[doc(hidden)]
     pub certificate_data: ::std::option::Option<::std::string::String>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    #[doc(hidden)]
     pub client_cert_auth_settings: ::std::option::Option<crate::types::ClientCertAuthSettings>,
 }
 impl RegisterCertificateInput {

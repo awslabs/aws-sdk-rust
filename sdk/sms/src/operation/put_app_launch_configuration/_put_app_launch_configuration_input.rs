@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
-    #[doc(hidden)]
     pub auto_launch: ::std::option::Option<bool>,
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    #[doc(hidden)]
     pub server_group_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
 }
 impl PutAppLaunchConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum value in Mbps.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbpsRequest {

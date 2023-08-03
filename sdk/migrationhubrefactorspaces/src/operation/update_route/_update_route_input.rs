@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p> The ID of the environment in which the route is being updated. </p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the application within which the route is being updated. </p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the route to update. </p>
-    #[doc(hidden)]
     pub route_identifier: ::std::option::Option<::std::string::String>,
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
-    #[doc(hidden)]
     pub activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
 impl UpdateRouteInput {

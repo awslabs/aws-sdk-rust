@@ -5,7 +5,6 @@
 pub struct StopProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-    #[doc(hidden)]
     pub project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopProjectVersionInput {

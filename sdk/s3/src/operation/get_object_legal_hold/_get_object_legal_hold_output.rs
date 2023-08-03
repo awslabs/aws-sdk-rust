@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectLegalHoldOutput {
     /// <p>The current legal hold status for the specified object.</p>
-    #[doc(hidden)]
     pub legal_hold: ::std::option::Option<crate::types::ObjectLockLegalHold>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

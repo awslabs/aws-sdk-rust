@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingDetails {
     /// <p>Cluster logging configurations.</p>
-    #[doc(hidden)]
     pub cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }
 impl AwsEksClusterLoggingDetails {

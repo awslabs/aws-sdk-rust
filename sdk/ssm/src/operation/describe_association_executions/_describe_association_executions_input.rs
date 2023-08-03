@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsInput {
     /// <p>The association ID for which you want to view execution history details.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters for the request. You can specify the following filters and values.</p>
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssociationExecutionsInput {

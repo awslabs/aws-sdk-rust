@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlDataSource {
     /// <p>The Amazon S3 location of the input data.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::AutoMls3DataSource>,
 }
 impl AutoMlDataSource {

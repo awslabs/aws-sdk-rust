@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVocabularyOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub vocabulary_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub vocabulary_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VocabularyState>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI on the Snow device.</p>
-    #[doc(hidden)]
     pub snowball_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2AmiResource {

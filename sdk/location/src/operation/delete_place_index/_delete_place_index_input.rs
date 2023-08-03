@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlaceIndexInput {

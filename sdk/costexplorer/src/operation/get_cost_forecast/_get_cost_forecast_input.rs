@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostForecastInput {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
@@ -15,11 +14,9 @@ pub struct GetCostForecastInput {
     /// <li> <p>NET_UNBLENDED_COST</p> </li>
     /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -47,10 +44,8 @@ pub struct GetCostForecastInput {
     /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-    #[doc(hidden)]
     pub prediction_interval_level: ::std::option::Option<i32>,
 }
 impl GetCostForecastInput {

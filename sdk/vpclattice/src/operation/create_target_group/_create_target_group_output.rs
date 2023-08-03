@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTargetGroupOutput {
     /// <p>The ID of the target group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of target group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
     /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     _request_id: Option<String>,
 }

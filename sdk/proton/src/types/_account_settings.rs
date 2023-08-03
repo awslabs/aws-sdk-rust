@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    #[doc(hidden)]
     pub pipeline_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    #[doc(hidden)]
     pub pipeline_provisioning_repository: ::std::option::Option<crate::types::RepositoryBranch>,
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    #[doc(hidden)]
     pub pipeline_codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountSettings {

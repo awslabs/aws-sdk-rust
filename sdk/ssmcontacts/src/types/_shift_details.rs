@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShiftDetails {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    #[doc(hidden)]
     pub overridden_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ShiftDetails {

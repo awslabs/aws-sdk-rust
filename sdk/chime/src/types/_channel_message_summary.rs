@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessageSummary {
     /// <p>The ID of the message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the message.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The type of message.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>The time at which the message summary was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last edited.</p>
-    #[doc(hidden)]
     pub last_edited_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<crate::types::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
-    #[doc(hidden)]
     pub redacted: bool,
 }
 impl ChannelMessageSummary {

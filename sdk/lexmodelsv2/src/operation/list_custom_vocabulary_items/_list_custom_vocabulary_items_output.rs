@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsOutput {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

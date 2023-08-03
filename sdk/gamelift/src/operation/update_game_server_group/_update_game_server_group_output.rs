@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameServerGroupOutput {
     /// <p>An object that describes the game server group resource with updated properties. </p>
-    #[doc(hidden)]
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }

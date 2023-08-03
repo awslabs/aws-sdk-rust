@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotOutput {
     /// <p>The name of the snapshot used to restore the namespace.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>A collection of database objects and users.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,
 }

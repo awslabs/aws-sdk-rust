@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSetDetailsOutput {
     /// <p>The name of the data set.</p>
-    #[doc(hidden)]
     pub data_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    #[doc(hidden)]
     pub data_set_org: ::std::option::Option<crate::types::DatasetDetailOrgAttributes>,
     /// <p>The length of records in the data set.</p>
-    #[doc(hidden)]
     pub record_length: ::std::option::Option<i32>,
     /// <p>The location where the data set is stored.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The size of the block on disk. </p>
-    #[doc(hidden)]
     pub blocksize: ::std::option::Option<i32>,
     /// <p>The timestamp when the data set was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
-    #[doc(hidden)]
     pub last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

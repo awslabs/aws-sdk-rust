@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct TagResourceInput {
     /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
     /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {

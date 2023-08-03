@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    #[doc(hidden)]
     pub eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl CoverageResourceDetails {

@@ -9,13 +9,10 @@ pub struct ChangeRequest {
     /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
     /// <li> <p>DELETE – Deletes files in a database.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Defines the S3 path of the source file that is required to add or update files in a database.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Defines the path within the database directory. </p>
-    #[doc(hidden)]
     pub db_path: ::std::option::Option<::std::string::String>,
 }
 impl ChangeRequest {

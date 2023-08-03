@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterNode {
     /// <p>The role of the node. A node might be a leader node or a compute node.</p>
-    #[doc(hidden)]
     pub node_role: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the node.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address of the node.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterNode {

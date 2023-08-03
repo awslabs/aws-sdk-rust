@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSummary {
     /// <p>Unique stack identifier.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name associated with the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The template description of the template used to create the stack.</p>
-    #[doc(hidden)]
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The time the stack was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
-    #[doc(hidden)]
     pub deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the stack.</p>
-    #[doc(hidden)]
     pub stack_status: ::std::option::Option<crate::types::StackStatus>,
     /// <p>Success/Failure message associated with the stack status.</p>
-    #[doc(hidden)]
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    #[doc(hidden)]
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformationSummary>,
 }
 impl StackSummary {

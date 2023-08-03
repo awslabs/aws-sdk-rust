@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInferenceRecommendationsJobOutput {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job description that you provided when you initiated the job.</p>
-    #[doc(hidden)]
     pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>The job type that you provided when you initiated the job.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::RecommendationJobType>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role you provided when you initiated the job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>A timestamp that shows when the job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job completed.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the job fails, provides information why the job failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::RecommendationJobInputConfig>,
     /// <p>The stopping conditions that you provided when you initiated the job.</p>
-    #[doc(hidden)]
     pub stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
     /// <p>The recommendations made by Inference Recommender.</p>
-    #[doc(hidden)]
     pub inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendation>>,
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_performances: ::std::option::Option<::std::vec::Vec<crate::types::EndpointPerformance>>,
     _request_id: Option<String>,
 }

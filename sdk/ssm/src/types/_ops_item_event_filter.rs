@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemEventFilter {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::OpsItemEventFilterKey>,
     /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::OpsItemEventFilterOperator>,
 }
 impl OpsItemEventFilter {

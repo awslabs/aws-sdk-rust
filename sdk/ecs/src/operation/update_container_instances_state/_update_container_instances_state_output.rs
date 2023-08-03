@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateOutput {
     /// <p>The list of container instances.</p>
-    #[doc(hidden)]
     pub container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

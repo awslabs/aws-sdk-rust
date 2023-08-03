@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The current number of shards.</p>
-    #[doc(hidden)]
     pub current_shard_count: ::std::option::Option<i32>,
     /// <p>The updated number of shards.</p>
-    #[doc(hidden)]
     pub target_shard_count: ::std::option::Option<i32>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

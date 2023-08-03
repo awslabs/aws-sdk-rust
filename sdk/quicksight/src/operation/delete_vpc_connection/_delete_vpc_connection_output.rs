@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The deletion status of the VPC connection.</p>
-    #[doc(hidden)]
     pub deletion_status: ::std::option::Option<crate::types::VpcConnectionResourceStatus>,
     /// <p>The availability status of the VPC connection.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

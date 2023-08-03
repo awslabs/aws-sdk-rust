@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportImageLicenseConfigurationResponse {
     /// <p>The ARN of a license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ImportImageLicenseConfigurationResponse {

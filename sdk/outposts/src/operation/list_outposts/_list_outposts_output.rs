@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOutpostsOutput {
     /// <p>Information about the Outposts.</p>
-    #[doc(hidden)]
     pub outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

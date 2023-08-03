@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteElasticsearchDomainInput {

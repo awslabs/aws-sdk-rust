@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl Spend {

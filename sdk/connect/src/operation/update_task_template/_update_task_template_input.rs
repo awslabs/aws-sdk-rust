@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaskTemplateInput {
     /// <p>A unique identifier for the task template.</p>
-    #[doc(hidden)]
     pub task_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the task template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the task template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    #[doc(hidden)]
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    #[doc(hidden)]
     pub defaults: ::std::option::Option<crate::types::TaskTemplateDefaults>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskTemplateStatus>,
     /// <p>Fields that are part of the template.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
 }
 impl UpdateTaskTemplateInput {

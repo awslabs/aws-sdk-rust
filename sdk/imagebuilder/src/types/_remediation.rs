@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
-    #[doc(hidden)]
     pub recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }
 impl Remediation {

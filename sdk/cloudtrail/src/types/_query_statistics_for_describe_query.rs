@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatisticsForDescribeQuery {
     /// <p>The number of events that matched a query.</p>
-    #[doc(hidden)]
     pub events_matched: ::std::option::Option<i64>,
     /// <p>The number of events that the query scanned in the event data store.</p>
-    #[doc(hidden)]
     pub events_scanned: ::std::option::Option<i64>,
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    #[doc(hidden)]
     pub bytes_scanned: ::std::option::Option<i64>,
     /// <p>The query's run time, in milliseconds.</p>
-    #[doc(hidden)]
     pub execution_time_in_millis: ::std::option::Option<i32>,
     /// <p>The creation time of the query.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueryStatisticsForDescribeQuery {

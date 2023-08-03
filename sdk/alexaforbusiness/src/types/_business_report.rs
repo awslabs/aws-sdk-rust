@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BusinessReportStatus>,
     /// <p>The failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::BusinessReportFailureCode>,
     /// <p>The S3 location of the output reports.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::BusinessReportS3Location>,
     /// <p>The time of report delivery.</p>
-    #[doc(hidden)]
     pub delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The download link where a user can download the report.</p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
 }
 impl BusinessReport {

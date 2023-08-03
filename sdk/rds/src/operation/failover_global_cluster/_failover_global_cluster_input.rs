@@ -8,10 +8,8 @@ pub struct FailoverGlobalClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl FailoverGlobalClusterInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionalBucket {
     /// <p></p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Outposts ID of the regional bucket.</p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionalBucket {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesSummary {
     /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
-    #[doc(hidden)]
     pub utterance: ::std::option::Option<::std::string::String>,
     /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
-    #[doc(hidden)]
     pub hit_count: ::std::option::Option<i32>,
     /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
-    #[doc(hidden)]
     pub missed_count: ::std::option::Option<i32>,
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    #[doc(hidden)]
     pub utterance_first_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    #[doc(hidden)]
     pub utterance_last_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
-    #[doc(hidden)]
     pub contains_data_from_deleted_resources: ::std::option::Option<bool>,
 }
 impl AggregatedUtterancesSummary {

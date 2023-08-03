@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    #[doc(hidden)]
     pub offering_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInput {

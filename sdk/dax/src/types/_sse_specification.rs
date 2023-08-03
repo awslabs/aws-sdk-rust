@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl SseSpecification {

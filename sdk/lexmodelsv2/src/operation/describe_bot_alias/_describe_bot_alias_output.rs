@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotAliasOutput {
     /// <p>The identifier of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the bot alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the bot alias.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale settings that are unique to the alias.</p>
-    #[doc(hidden)]
     pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
-    #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
-    #[doc(hidden)]
     pub bot_alias_history_events: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasHistoryEvent>>,
     /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
-    #[doc(hidden)]
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     /// <p>The identifier of the bot associated with the bot alias.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the alias was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the alias was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the networks to which the bot alias you described belongs.</p>
-    #[doc(hidden)]
     pub parent_bot_networks: ::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>>,
     _request_id: Option<String>,
 }

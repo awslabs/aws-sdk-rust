@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanningConfiguration {
     /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
-    #[doc(hidden)]
     pub image_scanning_enabled: ::std::option::Option<bool>,
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
-    #[doc(hidden)]
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
 impl ImageScanningConfiguration {

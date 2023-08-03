@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmOutput {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
-    #[doc(hidden)]
     pub hsm_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

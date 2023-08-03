@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
-    #[doc(hidden)]
     pub number_of_schemas: ::std::option::Option<i64>,
     /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::ServerShortInfoResponse>,
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
-    #[doc(hidden)]
     pub software_details: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
     /// <p>A list of collectors associated with the database.</p>
-    #[doc(hidden)]
     pub collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
 }
 impl DatabaseResponse {

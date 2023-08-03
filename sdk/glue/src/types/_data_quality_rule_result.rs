@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data quality rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An evaluation message.</p>
-    #[doc(hidden)]
     pub evaluation_message: ::std::option::Option<::std::string::String>,
     /// <p>A pass or fail status for the rule.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
     /// <p>A map of metrics associated with the evaluation of the rule.</p>
-    #[doc(hidden)]
     pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DataQualityRuleResult {

@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    #[doc(hidden)]
     pub access_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    #[doc(hidden)]
     pub access_policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

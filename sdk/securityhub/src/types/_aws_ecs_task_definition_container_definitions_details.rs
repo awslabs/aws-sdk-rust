@@ -5,113 +5,77 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The command that is passed to the container.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU units reserved for the container.</p>
-    #[doc(hidden)]
     pub cpu: i32,
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
-    #[doc(hidden)]
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>>,
     /// <p>Whether to disable networking within the container.</p>
-    #[doc(hidden)]
     pub disable_networking: bool,
     /// <p>A list of DNS search domains that are presented to the container.</p>
-    #[doc(hidden)]
     pub dns_search_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of DNS servers that are presented to the container.</p>
-    #[doc(hidden)]
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A key-value map of labels to add to the container.</p>
-    #[doc(hidden)]
     pub docker_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
-    #[doc(hidden)]
     pub docker_security_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The entry point that is passed to the container.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to pass to a container.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>>,
     /// <p>A list of files containing the environment variables to pass to a container.</p>
-    #[doc(hidden)]
     pub environment_files: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>>,
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
-    #[doc(hidden)]
     pub essential: bool,
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
-    #[doc(hidden)]
     pub extra_hosts: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>>,
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
-    #[doc(hidden)]
     pub firelens_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails>,
     /// <p>The container health check command and associated configuration parameters for the container.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails>,
     /// <p>The hostname to use for the container.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The image used to start the container.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, then containerized applications can be deployed that require <code>stdin</code> or a <code>tty</code> to be allocated.</p>
-    #[doc(hidden)]
     pub interactive: bool,
     /// <p>A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i> </code>. Allows containers to communicate with each other without the need for port mappings.</p>
-    #[doc(hidden)]
     pub links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
-    #[doc(hidden)]
     pub linux_parameters: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails>,
     /// <p>The log configuration specification for the container.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
-    #[doc(hidden)]
     pub memory: i32,
     /// <p>The soft limit (in MiB) of memory to reserve for the container.</p>
-    #[doc(hidden)]
     pub memory_reservation: i32,
     /// <p>The mount points for the data volumes in the container.</p>
-    #[doc(hidden)]
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>>,
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of port mappings for the container.</p>
-    #[doc(hidden)]
     pub port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>>,
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
-    #[doc(hidden)]
     pub privileged: bool,
     /// <p>Whether to allocate a TTY to the container.</p>
-    #[doc(hidden)]
     pub pseudo_terminal: bool,
     /// <p>Whether the container is given read-only access to its root file system.</p>
-    #[doc(hidden)]
     pub readonly_root_filesystem: bool,
     /// <p>The private repository authentication credentials to use.</p>
-    #[doc(hidden)]
     pub repository_credentials: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    #[doc(hidden)]
     pub resource_requirements:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>>,
     /// <p>The secrets to pass to the container.</p>
-    #[doc(hidden)]
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
-    #[doc(hidden)]
     pub start_timeout: i32,
     /// <p>The number of seconds to wait before the container is stopped if it doesn't shut down normally on its own.</p>
-    #[doc(hidden)]
     pub stop_timeout: i32,
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
-    #[doc(hidden)]
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
     /// <p>A list of ulimits to set in the container. </p>
-    #[doc(hidden)]
     pub ulimits: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
@@ -123,13 +87,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
     /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Data volumes to mount from another container.</p>
-    #[doc(hidden)]
     pub volumes_from: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>>,
     /// <p>The working directory in which to run commands inside the container.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDetails {

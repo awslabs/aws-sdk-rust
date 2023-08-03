@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::GroupFilterName>,
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GroupFilter {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
-    #[doc(hidden)]
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub version_number: i64,
 }
 impl SchemaVersionNumber {

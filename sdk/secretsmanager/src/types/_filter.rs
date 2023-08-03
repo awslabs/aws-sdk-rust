@@ -14,11 +14,9 @@ pub struct Filter {
     /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::FilterNameStringType>,
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {

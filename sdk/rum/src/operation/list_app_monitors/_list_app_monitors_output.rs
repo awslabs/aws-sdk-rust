@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppMonitorsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    #[doc(hidden)]
     pub app_monitor_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableVersionOutput {
     /// <p>The requested table version.</p>
-    #[doc(hidden)]
     pub table_version: ::std::option::Option<crate::types::TableVersion>,
     _request_id: Option<String>,
 }

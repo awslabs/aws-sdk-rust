@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TokenIdentifier {
     /// <p>The blockchain network of the token.</p>
-    #[doc(hidden)]
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>This is the token's contract address.</p>
-    #[doc(hidden)]
     pub contract_address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the token.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<::std::string::String>,
 }
 impl TokenIdentifier {

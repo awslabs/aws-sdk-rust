@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceSnapshotInput {
     /// <p>The name for your new snapshot.</p>
-    #[doc(hidden)]
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Lightsail instance on which to base your snapshot.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateInstanceSnapshotInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDetection {
     /// <p>The unique identifier for the custom data identifier.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>The name of the custom data identifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    #[doc(hidden)]
     pub occurrences: ::std::option::Option<crate::types::Occurrences>,
 }
 impl CustomDetection {

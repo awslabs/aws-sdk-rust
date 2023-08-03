@@ -8,16 +8,12 @@ pub struct AthenaError {
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
-    #[doc(hidden)]
     pub error_category: ::std::option::Option<i32>,
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<i32>,
     /// <p>True if the query might succeed if resubmitted.</p>
-    #[doc(hidden)]
     pub retryable: bool,
     /// <p>Contains a short description of the error that occurred.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AthenaError {

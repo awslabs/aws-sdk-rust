@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdMarkerPassthrough {
     /// <p>Enables ad marker passthrough for your configuration.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AdMarkerPassthrough {

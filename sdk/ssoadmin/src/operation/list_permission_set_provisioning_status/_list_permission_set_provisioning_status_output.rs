@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
-    #[doc(hidden)]
     pub permission_sets_provisioning_status: ::std::option::Option<::std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

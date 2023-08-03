@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location path of the attachment reference.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Status of the attachment reference type.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
 }
 impl AttachmentReference {

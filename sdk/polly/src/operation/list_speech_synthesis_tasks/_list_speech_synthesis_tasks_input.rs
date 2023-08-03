@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksInput {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatus>,
 }
 impl ListSpeechSynthesisTasksInput {

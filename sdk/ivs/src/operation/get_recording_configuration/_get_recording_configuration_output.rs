@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     _request_id: Option<String>,
 }

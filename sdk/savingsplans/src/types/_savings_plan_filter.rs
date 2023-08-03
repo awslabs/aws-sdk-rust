@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlanFilter {
     /// <p>The filter name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SavingsPlansFilterName>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SavingsPlanFilter {

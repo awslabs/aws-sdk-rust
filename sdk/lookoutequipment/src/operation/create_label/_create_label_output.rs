@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLabelOutput {
     /// <p> The ID of the label that you have created. </p>
-    #[doc(hidden)]
     pub label_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

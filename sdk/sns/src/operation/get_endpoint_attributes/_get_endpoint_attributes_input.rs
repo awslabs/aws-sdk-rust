@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEndpointAttributesInput {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetEndpointAttributesInput {

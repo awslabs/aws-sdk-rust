@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJourneyStateInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the journey.</p>
-    #[doc(hidden)]
     pub journey_id: ::std::option::Option<::std::string::String>,
     /// <p>Changes the status of a journey.</p>
-    #[doc(hidden)]
     pub journey_state_request: ::std::option::Option<crate::types::JourneyStateRequest>,
 }
 impl UpdateJourneyStateInput {

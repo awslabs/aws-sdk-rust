@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCommitInput {
     /// <p>The name of the repository where you create the commit.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch where you create the commit.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    #[doc(hidden)]
     pub parent_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    #[doc(hidden)]
     pub author_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the person who created the commit.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
-    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>The files to add or update in this commit.</p>
-    #[doc(hidden)]
     pub put_files: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    #[doc(hidden)]
     pub delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
     /// <p>The file modes to update for files in this commit.</p>
-    #[doc(hidden)]
     pub set_file_modes: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
 }
 impl CreateCommitInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<crate::types::Statement>,
     /// <p>The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
@@ -20,13 +17,11 @@ pub struct Rule {
     /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
     /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
-    #[doc(hidden)]
     pub override_action: ::std::option::Option<crate::types::OverrideAction>,
     /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
@@ -38,16 +33,12 @@ pub struct Rule {
     /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
-    #[doc(hidden)]
     pub rule_labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    #[doc(hidden)]
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
-    #[doc(hidden)]
     pub captcha_config: ::std::option::Option<crate::types::CaptchaConfig>,
     /// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the challenge configuration that's defined for the web ACL. </p>
-    #[doc(hidden)]
     pub challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
 }
 impl Rule {

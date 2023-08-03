@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    #[doc(hidden)]
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

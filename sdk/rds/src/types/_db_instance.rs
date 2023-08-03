@@ -6,181 +6,127 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The database engine used for this DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this database.</p>
     /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub db_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    #[doc(hidden)]
     pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The master username for the DB instance.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection endpoint for the DB instance.</p> <note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The date and time when the DB instance was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    #[doc(hidden)]
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>The list of Amazon EC2 VPC security groups that the DB instance belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The list of DB parameter groups applied to this DB instance.</p>
-    #[doc(hidden)]
     pub db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>>,
     /// <p>The name of the Availability Zone where the DB instance is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Information about the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Information about pending changes to the DB instance. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>The latest time to which a database in this DB instance can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The version of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>The identifier of the source DB instance if this DB instance is a read replica.</p>
-    #[doc(hidden)]
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the read replicas associated with this DB instance.</p>
-    #[doc(hidden)]
     pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
-    #[doc(hidden)]
     pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
-    #[doc(hidden)]
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS (I/O operations per second) value for the DB instance.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The list of option group memberships for this DB instance.</p>
-    #[doc(hidden)]
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
     /// <p>If present, specifies the name of the character set that this instance is associated with.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.</p>
-    #[doc(hidden)]
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
-    #[doc(hidden)]
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The status of a read replica. If the DB instance isn't a read replica, the value is blank.</p>
-    #[doc(hidden)]
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>The storage type associated with the DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    #[doc(hidden)]
     pub db_instance_port: i32,
     /// <p>If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a member of.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory Domain membership records associated with the DB instance.</p>
-    #[doc(hidden)]
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     /// <p>Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: bool,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled for the DB instance.</p>
     /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
-    #[doc(hidden)]
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
@@ -190,62 +136,44 @@ pub struct DbInstance {
     /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    #[doc(hidden)]
     pub deletion_protection: bool,
     /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceRole>>,
     /// <p>The listener connection endpoint for SQL Server Always On.</p>
-    #[doc(hidden)]
     pub listener_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
-    #[doc(hidden)]
     pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     /// <p>Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    #[doc(hidden)]
     pub customer_owned_ip_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    #[doc(hidden)]
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the database activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub activity_stream_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_kinesis_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. RDS for Oracle always handles these events asynchronously.</p>
-    #[doc(hidden)]
     pub activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_engine_native_audit_fields_included: ::std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    #[doc(hidden)]
     pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    #[doc(hidden)]
     pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -254,39 +182,29 @@ pub struct DbInstance {
     /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[doc(hidden)]
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy state of the activity stream.</p>
-    #[doc(hidden)]
     pub activity_stream_policy_status: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>,
     /// <p>The storage throughput for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is only valid for RDS Custom DB instances.</p>
-    #[doc(hidden)]
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     /// <p>The details of the DB instance's server certificate.</p>
-    #[doc(hidden)]
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     /// <p>The identifier of the source DB cluster if this DB instance is a read replica.</p>
-    #[doc(hidden)]
     pub read_replica_source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the storage optimization operation as a percentage.</p>
-    #[doc(hidden)]
     pub percent_progress: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {

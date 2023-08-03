@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl ClearQuerySuggestionsInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringExecutionSummary {
     /// <p>The name of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the monitoring job was scheduled.</p>
-    #[doc(hidden)]
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the monitoring job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates the last time the monitoring job was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    #[doc(hidden)]
     pub processing_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint used to run the monitoring job.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the reason a monitoring job failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
 }
 impl MonitoringExecutionSummary {

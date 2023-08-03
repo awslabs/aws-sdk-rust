@@ -4,31 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEphemerisInput {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Ephemeris data.</p>
-    #[doc(hidden)]
     pub ephemeris: ::std::option::Option<crate::types::EphemerisData>,
     /// <p>Tags assigned to an ephemeris.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEphemerisInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl JobCheckpointConfig {

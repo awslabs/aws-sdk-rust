@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }

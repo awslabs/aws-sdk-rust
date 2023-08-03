@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataError {
     /// <p>The unique import ID associated with the error that occurred.</p>
-    #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of error that occurred for a specific import task.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::BatchDeleteImportDataErrorCode>,
     /// <p>The description of the error that occurred for a specific import task.</p>
-    #[doc(hidden)]
     pub error_description: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteImportDataError {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsCdnSettings {
     /// Hls Akamai Settings
-    #[doc(hidden)]
     pub hls_akamai_settings: ::std::option::Option<crate::types::HlsAkamaiSettings>,
     /// Hls Basic Put Settings
-    #[doc(hidden)]
     pub hls_basic_put_settings: ::std::option::Option<crate::types::HlsBasicPutSettings>,
     /// Hls Media Store Settings
-    #[doc(hidden)]
     pub hls_media_store_settings: ::std::option::Option<crate::types::HlsMediaStoreSettings>,
     /// Hls S3 Settings
-    #[doc(hidden)]
     pub hls_s3_settings: ::std::option::Option<crate::types::HlsS3Settings>,
     /// Hls Webdav Settings
-    #[doc(hidden)]
     pub hls_webdav_settings: ::std::option::Option<crate::types::HlsWebdavSettings>,
 }
 impl HlsCdnSettings {

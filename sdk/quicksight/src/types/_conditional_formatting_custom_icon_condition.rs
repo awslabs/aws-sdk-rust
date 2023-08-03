@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingCustomIconCondition {
     /// <p>The expression that determines the condition of the icon set.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Custom icon options for an icon set.</p>
-    #[doc(hidden)]
     pub icon_options: ::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
     /// <p>Determines the color of the icon.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>Determines the icon display configuration.</p>
-    #[doc(hidden)]
     pub display_configuration: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
 }
 impl ConditionalFormattingCustomIconCondition {

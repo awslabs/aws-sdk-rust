@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOtaUpdateOutput {
     /// <p>The OTA update info.</p>
-    #[doc(hidden)]
     pub ota_update_info: ::std::option::Option<crate::types::OtaUpdateInfo>,
     _request_id: Option<String>,
 }

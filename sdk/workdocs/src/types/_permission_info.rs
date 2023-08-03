@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionInfo {
     /// <p>The role of the user.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::RoleType>,
     /// <p>The type of permissions.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RolePermissionType>,
 }
 impl PermissionInfo {

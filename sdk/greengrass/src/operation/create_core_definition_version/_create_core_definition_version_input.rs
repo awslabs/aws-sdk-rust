@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the core definition.
-    #[doc(hidden)]
     pub core_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of cores in the core definition version.
-    #[doc(hidden)]
     pub cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
 }
 impl CreateCoreDefinitionVersionInput {

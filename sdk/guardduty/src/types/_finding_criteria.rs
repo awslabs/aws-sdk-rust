@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingCriteria {
     /// <p>Represents a map of finding properties that match specified conditions and values when querying findings.</p>
-    #[doc(hidden)]
     pub criterion: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Condition>>,
 }
 impl FindingCriteria {

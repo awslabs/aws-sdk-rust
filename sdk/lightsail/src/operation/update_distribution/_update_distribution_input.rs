@@ -5,25 +5,19 @@
 pub struct UpdateDistributionInput {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::InputOrigin>,
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
-    #[doc(hidden)]
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     /// <p>Indicates whether to enable the distribution.</p>
-    #[doc(hidden)]
     pub is_enabled: ::std::option::Option<bool>,
 }
 impl UpdateDistributionInput {

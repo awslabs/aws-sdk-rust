@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateVersionDefinition {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
-    #[doc(hidden)]
     pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
     /// <p>An array of sheet definitions for a template.</p>
-    #[doc(hidden)]
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of calculated field definitions for the template.</p>
-    #[doc(hidden)]
     pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
     /// <p>An array of parameter declarations for a template.</p>
     /// <p> <i>Parameters</i> are named variables that can transfer a value for use by an action or an object.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-    #[doc(hidden)]
     pub parameter_declarations: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>,
     /// <p>Filter definitions for a template.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-    #[doc(hidden)]
     pub filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     /// <p> An array of template-level column configurations. Column configurations are used to set default formatting for a column that's used throughout a template. </p>
-    #[doc(hidden)]
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
-    #[doc(hidden)]
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
 }
 impl TemplateVersionDefinition {

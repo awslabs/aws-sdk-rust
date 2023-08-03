@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to get the resource policy.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetModelPackageGroupPolicyInput {

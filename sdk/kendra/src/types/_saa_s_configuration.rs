@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    #[doc(hidden)]
     pub organization_name: ::std::option::Option<::std::string::String>,
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    #[doc(hidden)]
     pub host_url: ::std::option::Option<::std::string::String>,
 }
 impl SaaSConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthentication {
     /// <p>The ARN of the client certificate. </p>
-    #[doc(hidden)]
     pub client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthentication {

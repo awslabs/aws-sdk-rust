@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvClassifier {
     /// <p>The name of the classifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    #[doc(hidden)]
     pub quote_symbol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
-    #[doc(hidden)]
     pub contains_header: ::std::option::Option<crate::types::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub disable_value_trimming: ::std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
-    #[doc(hidden)]
     pub allow_single_column: ::std::option::Option<bool>,
     /// <p>Enables the custom datatype to be configured.</p>
-    #[doc(hidden)]
     pub custom_datatype_configured: ::std::option::Option<bool>,
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    #[doc(hidden)]
     pub custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CsvClassifier {

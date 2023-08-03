@@ -4,32 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PostTextOutput {
     /// <p>The current user intent that Amazon Lex is aware of.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
     /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
-    #[doc(hidden)]
     pub alternative_intents: ::std::option::Option<::std::vec::Vec<crate::types::PredictedIntent>>,
     /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of key-value pairs representing the session-specific context information.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The sentiment expressed in and utterance.</p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    #[doc(hidden)]
     pub sentiment_response: ::std::option::Option<crate::types::SentimentResponse>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -38,7 +31,6 @@ pub struct PostTextOutput {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message_format: ::std::option::Option<crate::types::MessageFormatType>,
     /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
@@ -49,23 +41,17 @@ pub struct PostTextOutput {
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
     /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dialog_state: ::std::option::Option<crate::types::DialogState>,
     /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
-    #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
-    #[doc(hidden)]
     pub response_card: ::std::option::Option<crate::types::ResponseCard>,
     /// <p>A unique identifier for the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     _request_id: Option<String>,
 }

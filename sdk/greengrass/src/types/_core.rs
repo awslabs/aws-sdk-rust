@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Core {
     /// The ARN of the certificate associated with the core.
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// If true, the core's local shadow is automatically synced with the cloud.
-    #[doc(hidden)]
     pub sync_shadow: ::std::option::Option<bool>,
     /// The ARN of the thing which is the core.
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl Core {

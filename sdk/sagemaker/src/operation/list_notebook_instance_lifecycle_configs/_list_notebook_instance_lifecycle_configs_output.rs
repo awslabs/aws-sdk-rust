@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsOutput {
     /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     _request_id: Option<String>,
 }

@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDetails {
     /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
-    #[doc(hidden)]
     pub deployment_circuit_breaker: ::std::option::Option<crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails>,
     /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the maximum number of tasks in a service that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, and for tasks that use the EC2 launch type, when any container instances are in the <code>DRAINING</code> state. Provided as a percentage of the desired number of tasks. The default value is 200%.</p>
     /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks that use the EC2 launch type, the maximum number of tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
     /// <p>For the Fargate launch type, the maximum percent value is not used.</p>
-    #[doc(hidden)]
     pub maximum_percent: i32,
     /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the minimum number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment, and while any container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. Expressed as a percentage of the desired number of tasks. The default value is 100%.</p>
     /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks that use the EC2 launch type, the minimum number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
     /// <p>For the Fargate launch type, the minimum healthy percent value is not used.</p>
-    #[doc(hidden)]
     pub minimum_healthy_percent: i32,
 }
 impl AwsEcsServiceDeploymentConfigurationDetails {

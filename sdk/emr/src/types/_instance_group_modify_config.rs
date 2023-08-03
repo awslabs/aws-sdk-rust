@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroupModifyConfig {
     /// <p>Unique ID of the instance group to modify.</p>
-    #[doc(hidden)]
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Target size for the instance group.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    #[doc(hidden)]
     pub ec2_instance_ids_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Policy for customizing shrink operations.</p>
-    #[doc(hidden)]
     pub shrink_policy: ::std::option::Option<crate::types::ShrinkPolicy>,
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-    #[doc(hidden)]
     pub reconfiguration_type: ::std::option::Option<crate::types::ReconfigurationType>,
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
 }
 impl InstanceGroupModifyConfig {

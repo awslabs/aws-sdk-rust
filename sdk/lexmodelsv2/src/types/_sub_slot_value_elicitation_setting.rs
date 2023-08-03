@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubSlotValueElicitationSetting {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    #[doc(hidden)]
     pub default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-    #[doc(hidden)]
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    #[doc(hidden)]
     pub wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
 }
 impl SubSlotValueElicitationSetting {

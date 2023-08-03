@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    #[doc(hidden)]
     pub primary_task_set: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServicePrimaryTaskSetInput {

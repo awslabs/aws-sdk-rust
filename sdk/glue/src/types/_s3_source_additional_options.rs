@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    #[doc(hidden)]
     pub bounded_size: ::std::option::Option<i64>,
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    #[doc(hidden)]
     pub bounded_files: ::std::option::Option<i64>,
 }
 impl S3SourceAdditionalOptions {

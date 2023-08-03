@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
-    #[doc(hidden)]
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
-    #[doc(hidden)]
     pub netmask_length: ::std::option::Option<i32>,
 }
 impl ProvisionPublicIpv4PoolCidrInput {

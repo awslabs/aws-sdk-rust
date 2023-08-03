@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppVersionsOutput {
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub app_versions: ::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

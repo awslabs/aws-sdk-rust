@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePrimaryEmailAddressInput {
     /// <p>The organization that contains the user, group, or resource to update.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The user, group, or resource to update.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the email to be updated as primary.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePrimaryEmailAddressInput {

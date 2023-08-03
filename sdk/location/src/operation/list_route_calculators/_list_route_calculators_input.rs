@@ -5,11 +5,9 @@
 pub struct ListRouteCalculatorsInput {
     /// <p>An optional maximum number of results returned in a single call.</p>
     /// <p>Default Value: <code>100</code> </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default Value: <code>null</code> </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRouteCalculatorsInput {

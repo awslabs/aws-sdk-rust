@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameSessionConnectionInfo {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
-    #[doc(hidden)]
     pub game_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -25,13 +23,10 @@ pub struct GameSessionConnectionInfo {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
-    #[doc(hidden)]
     pub matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
 }
 impl GameSessionConnectionInfo {

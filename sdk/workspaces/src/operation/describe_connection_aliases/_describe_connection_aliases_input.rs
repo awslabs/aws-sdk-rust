@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasesInput {
     /// <p>The identifiers of the connection aliases to describe.</p>
-    #[doc(hidden)]
     pub alias_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the directory associated with the connection alias.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of connection aliases to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectionAliasesInput {

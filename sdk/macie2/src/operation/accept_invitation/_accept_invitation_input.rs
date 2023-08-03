@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInvitationInput {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    #[doc(hidden)]
     pub administrator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the invitation to accept.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub master_account: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInvitationInput {

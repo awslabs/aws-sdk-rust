@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInstanceOnIdleRequest {
     /// <p>The value to compare with the duration.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<::std::string::String>,
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<::std::string::String>,
 }
 impl StopInstanceOnIdleRequest {

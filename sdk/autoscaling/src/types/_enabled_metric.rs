@@ -28,10 +28,8 @@ pub struct EnabledMetric {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnabledMetric {

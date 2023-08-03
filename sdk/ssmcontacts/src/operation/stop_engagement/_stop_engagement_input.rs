@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    #[doc(hidden)]
     pub engagement_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason that you're stopping the engagement.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopEngagementInput {

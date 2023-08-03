@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BinCountOptions {
     /// <p>The options that determine the bin count value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl BinCountOptions {

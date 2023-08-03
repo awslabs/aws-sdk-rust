@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub token_url: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
-    #[doc(hidden)]
     pub token_url_custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2Properties {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The fleet name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image used to create the fleet.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the public, private, or shared image.</p>
-    #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -58,7 +52,6 @@ pub struct Fleet {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The fleet type.</p>
     /// <dl>
@@ -75,62 +68,45 @@ pub struct Fleet {
     /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub fleet_type: ::std::option::Option<crate::types::FleetType>,
     /// <p>The capacity status for the fleet.</p>
-    #[doc(hidden)]
     pub compute_capacity_status: ::std::option::Option<crate::types::ComputeCapacityStatus>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
     /// <p>Specify a value between 600 and 360000.</p>
-    #[doc(hidden)]
     pub max_user_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
     /// <p>Specify a value between 60 and 360000.</p>
-    #[doc(hidden)]
     pub disconnect_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The current state for the fleet.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FleetState>,
     /// <p>The VPC configuration for the fleet.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The time the fleet was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fleet errors.</p>
-    #[doc(hidden)]
     pub fleet_errors: ::std::option::Option<::std::vec::Vec<crate::types::FleetError>>,
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
-    #[doc(hidden)]
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-    #[doc(hidden)]
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
-    #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
-    #[doc(hidden)]
     pub stream_view: ::std::option::Option<crate::types::StreamView>,
     /// <p>The platform of the fleet.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The maximum number of concurrent sessions for the fleet.</p>
-    #[doc(hidden)]
     pub max_concurrent_sessions: ::std::option::Option<i32>,
     /// <p>The USB device filter strings associated with the fleet.</p>
-    #[doc(hidden)]
     pub usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    #[doc(hidden)]
     pub session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl Fleet {

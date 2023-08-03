@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossClusterSearchConnectionProperties {
     /// <p>Status of SkipUnavailable param for outbound connection.</p>
-    #[doc(hidden)]
     pub skip_unavailable: ::std::option::Option<crate::types::SkipUnavailableStatus>,
 }
 impl CrossClusterSearchConnectionProperties {

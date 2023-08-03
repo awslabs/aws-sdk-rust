@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    #[doc(hidden)]
     pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
 }
 impl BatchUpdateDetectorInput {

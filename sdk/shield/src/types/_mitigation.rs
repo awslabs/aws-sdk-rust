@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
-    #[doc(hidden)]
     pub mitigation_name: ::std::option::Option<::std::string::String>,
 }
 impl Mitigation {

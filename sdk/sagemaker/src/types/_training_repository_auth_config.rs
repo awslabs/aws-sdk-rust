@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingRepositoryAuthConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
-    #[doc(hidden)]
     pub training_repository_credentials_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrainingRepositoryAuthConfig {

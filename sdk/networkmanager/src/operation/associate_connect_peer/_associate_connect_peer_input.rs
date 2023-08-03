@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateConnectPeerInput {
     /// <p>The ID of your global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateConnectPeerInput {

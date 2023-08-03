@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetCloudWatchLogsParameters {
     /// <p>The name of the log stream.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
 }
 impl PipeTargetCloudWatchLogsParameters {

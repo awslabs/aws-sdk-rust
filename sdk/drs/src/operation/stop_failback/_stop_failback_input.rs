@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFailbackInput {
     /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl StopFailbackInput {

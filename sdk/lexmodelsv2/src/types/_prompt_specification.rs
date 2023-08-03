@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    #[doc(hidden)]
     pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
-    #[doc(hidden)]
     pub max_retries: ::std::option::Option<i32>,
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
-    #[doc(hidden)]
     pub allow_interrupt: ::std::option::Option<bool>,
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    #[doc(hidden)]
     pub message_selection_strategy: ::std::option::Option<crate::types::MessageSelectionStrategy>,
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
-    #[doc(hidden)]
     pub prompt_attempts_specification:
         ::std::option::Option<::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>>,
 }

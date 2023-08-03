@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameSessionQueue {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
-    #[doc(hidden)]
     pub game_session_queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. </p>
-    #[doc(hidden)]
     pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
-    #[doc(hidden)]
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
-    #[doc(hidden)]
     pub priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     /// <p> Information that is added to all events that are related to this game session queue.</p>
-    #[doc(hidden)]
     pub custom_event_data: ::std::option::Option<::std::string::String>,
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    #[doc(hidden)]
     pub notification_target: ::std::option::Option<::std::string::String>,
 }
 impl GameSessionQueue {

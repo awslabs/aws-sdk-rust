@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
-    #[doc(hidden)]
     pub echo_reduction: ::std::option::Option<crate::types::MeetingFeatureStatus>,
 }
 impl AudioFeatures {

@@ -5,94 +5,64 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
-    #[doc(hidden)]
     pub adaptive_quantization: ::std::option::Option<crate::types::H265AdaptiveQuantization>,
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
-    #[doc(hidden)]
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
-    #[doc(hidden)]
     pub alternative_transfer_function: ::std::option::Option<crate::types::H265AlternativeTransferFunction>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// Size of buffer (HRD buffer model) in bits.
-    #[doc(hidden)]
     pub buf_size: ::std::option::Option<i32>,
     /// Includes colorspace metadata in the output.
-    #[doc(hidden)]
     pub color_metadata: ::std::option::Option<crate::types::H265ColorMetadata>,
     /// Color Space settings
-    #[doc(hidden)]
     pub color_space_settings: ::std::option::Option<crate::types::H265ColorSpaceSettings>,
     /// Optional filters that you can apply to an encode.
-    #[doc(hidden)]
     pub filter_settings: ::std::option::Option<crate::types::H265FilterSettings>,
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
-    #[doc(hidden)]
     pub fixed_afd: ::std::option::Option<crate::types::FixedAfd>,
     /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
-    #[doc(hidden)]
     pub flicker_aq: ::std::option::Option<crate::types::H265FlickerAq>,
     /// Framerate denominator.
-    #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
-    #[doc(hidden)]
     pub framerate_numerator: ::std::option::Option<i32>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    #[doc(hidden)]
     pub gop_closed_cadence: ::std::option::Option<i32>,
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
-    #[doc(hidden)]
     pub gop_size: ::std::option::Option<f64>,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
-    #[doc(hidden)]
     pub gop_size_units: ::std::option::Option<crate::types::H265GopSizeUnits>,
     /// H.265 Level.
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::H265Level>,
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    #[doc(hidden)]
     pub look_ahead_rate_control: ::std::option::Option<crate::types::H265LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
-    #[doc(hidden)]
     pub min_i_interval: ::std::option::Option<i32>,
     /// Pixel Aspect Ratio denominator.
-    #[doc(hidden)]
     pub par_denominator: ::std::option::Option<i32>,
     /// Pixel Aspect Ratio numerator.
-    #[doc(hidden)]
     pub par_numerator: ::std::option::Option<i32>,
     /// H.265 Profile.
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::H265Profile>,
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-    #[doc(hidden)]
     pub qvbr_quality_level: ::std::option::Option<i32>,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
-    #[doc(hidden)]
     pub rate_control_mode: ::std::option::Option<crate::types::H265RateControlMode>,
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::H265ScanType>,
     /// Scene change detection.
-    #[doc(hidden)]
     pub scene_change_detect: ::std::option::Option<crate::types::H265SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
-    #[doc(hidden)]
     pub slices: ::std::option::Option<i32>,
     /// H.265 Tier.
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::H265Tier>,
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    #[doc(hidden)]
     pub timecode_insertion: ::std::option::Option<crate::types::H265TimecodeInsertionBehavior>,
     /// Timecode burn-in settings
-    #[doc(hidden)]
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl H265Settings {

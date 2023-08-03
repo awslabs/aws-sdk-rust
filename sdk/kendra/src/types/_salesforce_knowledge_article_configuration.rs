@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceKnowledgeArticleConfiguration {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
-    #[doc(hidden)]
     pub included_states: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
-    #[doc(hidden)]
     pub standard_knowledge_article_type_configuration: ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
-    #[doc(hidden)]
     pub custom_knowledge_article_type_configurations:
         ::std::option::Option<::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
 }

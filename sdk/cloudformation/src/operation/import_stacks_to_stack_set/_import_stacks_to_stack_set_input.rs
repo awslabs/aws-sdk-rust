@@ -4,32 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportStacksToStackSetInput {
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    #[doc(hidden)]
     pub stack_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    #[doc(hidden)]
     pub stack_ids_url: ::std::option::Option<::std::string::String>,
     /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
-    #[doc(hidden)]
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    #[doc(hidden)]
     pub operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     /// <p>A unique, user defined, identifier for the stack set operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
     /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl ImportStacksToStackSetInput {

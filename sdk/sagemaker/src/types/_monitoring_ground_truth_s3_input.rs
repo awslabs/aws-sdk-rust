@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringGroundTruthS3Input {
     /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringGroundTruthS3Input {

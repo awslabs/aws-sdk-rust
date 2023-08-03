@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateDetails {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    #[doc(hidden)]
     pub ca_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date of the DB instance’s server certificate.</p>
-    #[doc(hidden)]
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateDetails {

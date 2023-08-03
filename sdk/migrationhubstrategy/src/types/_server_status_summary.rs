@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerStatusSummary {
     /// <p>The status of the run time.</p>
-    #[doc(hidden)]
     pub run_time_assessment_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ServerStatusSummary {

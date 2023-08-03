@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignCustomMessage {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl CampaignCustomMessage {

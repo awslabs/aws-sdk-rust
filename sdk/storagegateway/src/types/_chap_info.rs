@@ -6,16 +6,12 @@
 pub struct ChapInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
-    #[doc(hidden)]
     pub secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
-    #[doc(hidden)]
     pub initiator_name: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-    #[doc(hidden)]
     pub secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl ChapInfo {

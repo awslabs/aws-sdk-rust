@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateKeyUsage {
     /// <p>The key usage extension name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateKeyUsage {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReviews {
     /// <p>The action to take on a document approval review request.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::DocumentReviewAction>,
     /// <p>A comment entered by a user in your organization about the document review request.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
 }
 impl DocumentReviews {

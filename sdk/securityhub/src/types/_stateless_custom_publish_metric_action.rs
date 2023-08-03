@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessCustomPublishMetricAction {
     /// <p>Defines CloudWatch dimension values to publish.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>>,
 }
 impl StatelessCustomPublishMetricAction {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    #[doc(hidden)]
     pub object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl SetStatusInput {

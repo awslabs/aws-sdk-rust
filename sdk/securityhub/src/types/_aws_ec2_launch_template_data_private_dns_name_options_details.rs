@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_aaaa_record: bool,
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_a_record: bool,
     /// <p> The type of hostname for EC2 instances. </p>
-    #[doc(hidden)]
     pub hostname_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {

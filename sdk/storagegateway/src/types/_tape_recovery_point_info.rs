@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    #[doc(hidden)]
     pub tape_recovery_point_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
-    #[doc(hidden)]
     pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The status of the virtual tapes.</p>
-    #[doc(hidden)]
     pub tape_status: ::std::option::Option<::std::string::String>,
 }
 impl TapeRecoveryPointInfo {

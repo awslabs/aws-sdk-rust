@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchParams {
     /// <p>The country.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The area code.</p>
-    #[doc(hidden)]
     pub area_code: ::std::option::Option<::std::string::String>,
 }
 impl GeoMatchParams {

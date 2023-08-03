@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateShareInvitationOutput {
     /// <p>The updated workload or custom lens share invitation.</p>
-    #[doc(hidden)]
     pub share_invitation: ::std::option::Option<crate::types::ShareInvitation>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BasicCatalogTarget {
     /// <p>The name of your data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
 }
 impl BasicCatalogTarget {

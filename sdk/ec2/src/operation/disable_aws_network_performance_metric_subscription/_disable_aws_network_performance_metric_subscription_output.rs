@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableAwsNetworkPerformanceMetricSubscriptionOutput {
     /// <p>Indicates whether the unsubscribe action was successful.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

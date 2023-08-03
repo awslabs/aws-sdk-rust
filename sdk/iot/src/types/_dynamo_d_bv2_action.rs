@@ -6,12 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
-    #[doc(hidden)]
     pub put_item: ::std::option::Option<crate::types::PutItemInput>,
 }
 impl DynamoDBv2Action {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Creation date of the object.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
@@ -16,22 +14,16 @@ pub struct Object {
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
     /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::ObjectStorageClass>,
     /// <p>The owner of the object</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
 }
 impl Object {

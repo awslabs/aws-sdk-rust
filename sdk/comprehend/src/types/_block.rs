@@ -6,26 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Block {
     /// <p>Unique identifier for the block.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
     /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
     /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The word or line of text extracted from the block.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Page number where the block appears.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>Co-ordinates of the rectangle or polygon that contains the text.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
-    #[doc(hidden)]
     pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>,
 }
 impl Block {

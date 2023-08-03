@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReferenceMetadataOutput {
     /// <p>The reference's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference's reference store ID.</p>
-    #[doc(hidden)]
     pub reference_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's MD5 checksum.</p>
-    #[doc(hidden)]
     pub md5: ::std::option::Option<::std::string::String>,
     /// <p>The reference's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
     /// <p>The reference's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The reference's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the reference was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the reference was updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reference's files.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<crate::types::ReferenceFiles>,
     _request_id: Option<String>,
 }

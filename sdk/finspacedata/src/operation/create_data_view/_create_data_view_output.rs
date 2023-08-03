@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataViewOutput {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the created Dataview.</p>
-    #[doc(hidden)]
     pub data_view_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

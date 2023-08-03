@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunConfiguration {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    #[doc(hidden)]
     pub sql_run_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>>,
     /// <p>Describes the restore behavior of a restarting application.</p>
-    #[doc(hidden)]
     pub application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
 }
 impl RunConfiguration {

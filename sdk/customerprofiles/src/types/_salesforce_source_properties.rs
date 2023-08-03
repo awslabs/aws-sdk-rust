@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
-    #[doc(hidden)]
     pub enable_dynamic_field_update: bool,
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
-    #[doc(hidden)]
     pub include_deleted_records: bool,
 }
 impl SalesforceSourceProperties {

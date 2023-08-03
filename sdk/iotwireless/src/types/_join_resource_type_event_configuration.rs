@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinResourceTypeEventConfiguration {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
 }
 impl JoinResourceTypeEventConfiguration {

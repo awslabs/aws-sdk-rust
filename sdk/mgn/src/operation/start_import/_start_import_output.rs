@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p>Start import response import task.</p>
-    #[doc(hidden)]
     pub import_task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }

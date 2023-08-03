@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Grant {
     /// <p>The grantee.</p>
-    #[doc(hidden)]
     pub grantee: ::std::option::Option<crate::types::Grantee>,
     /// <p>Specifies the permission given to the grantee. </p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::Permission>,
 }
 impl Grant {

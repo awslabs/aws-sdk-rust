@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
@@ -19,13 +16,10 @@ pub struct PutSubscriptionFilterInput {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
-    #[doc(hidden)]
     pub distribution: ::std::option::Option<crate::types::Distribution>,
 }
 impl PutSubscriptionFilterInput {

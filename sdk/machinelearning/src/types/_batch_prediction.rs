@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPrediction {
     /// <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request. </p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    #[doc(hidden)]
     pub batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -37,28 +29,20 @@ pub struct BatchPrediction {
     /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub total_record_count: ::std::option::Option<i64>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub invalid_record_count: ::std::option::Option<i64>,
 }
 impl BatchPrediction {

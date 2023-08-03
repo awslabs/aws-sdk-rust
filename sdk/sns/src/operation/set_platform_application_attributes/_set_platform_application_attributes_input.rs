@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-    #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -40,7 +39,6 @@ pub struct SetPlatformApplicationAttributesInput {
     /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
     /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SetPlatformApplicationAttributesInput {

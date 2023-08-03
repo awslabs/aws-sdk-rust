@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
 }

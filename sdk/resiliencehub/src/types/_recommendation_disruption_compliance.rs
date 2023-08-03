@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
-    #[doc(hidden)]
     pub expected_compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The expected RTO after applying the recommended configuration change.</p>
-    #[doc(hidden)]
     pub expected_rto_in_secs: i32,
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
-    #[doc(hidden)]
     pub expected_rto_description: ::std::option::Option<::std::string::String>,
     /// <p>The expected RPO after applying the recommended configuration change.</p>
-    #[doc(hidden)]
     pub expected_rpo_in_secs: i32,
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
-    #[doc(hidden)]
     pub expected_rpo_description: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationDisruptionCompliance {

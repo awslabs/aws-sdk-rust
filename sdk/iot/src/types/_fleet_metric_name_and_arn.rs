@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetMetricNameAndArn {
     /// <p>The fleet metric name.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The fleet metric ARN.</p>
-    #[doc(hidden)]
     pub metric_arn: ::std::option::Option<::std::string::String>,
 }
 impl FleetMetricNameAndArn {

@@ -12,10 +12,8 @@ pub struct RegistryCredential {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
-    #[doc(hidden)]
     pub credential: ::std::option::Option<::std::string::String>,
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
-    #[doc(hidden)]
     pub credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,
 }
 impl RegistryCredential {

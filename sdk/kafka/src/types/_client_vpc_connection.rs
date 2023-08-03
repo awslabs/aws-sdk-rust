@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpcConnection {
     /// <p>Information about the auth scheme of Vpc Connection.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>Creation time of the Vpc Connection.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>State of the Vpc Connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpcConnectionState>,
     /// <p>The ARN that identifies the Vpc Connection.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Owner of the Vpc Connection.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpcConnection {

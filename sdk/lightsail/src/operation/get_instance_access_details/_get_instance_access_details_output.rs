@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceAccessDetailsOutput {
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
-    #[doc(hidden)]
     pub access_details: ::std::option::Option<crate::types::InstanceAccessDetails>,
     _request_id: Option<String>,
 }

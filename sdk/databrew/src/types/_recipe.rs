@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the recipe was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The last modification date and time of the recipe.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the project that the recipe is associated with.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
-    #[doc(hidden)]
     pub published_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the recipe was published.</p>
-    #[doc(hidden)]
     pub published_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique name for the recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of steps that are defined by the recipe.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
     /// <p>Metadata tags that have been applied to the recipe.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
@@ -46,7 +34,6 @@ pub struct Recipe {
     /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
     /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl Recipe {

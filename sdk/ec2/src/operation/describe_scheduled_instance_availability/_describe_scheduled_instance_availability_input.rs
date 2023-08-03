@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
@@ -13,25 +12,18 @@ pub struct DescribeScheduledInstanceAvailabilityInput {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The time period for the first schedule to start.</p>
-    #[doc(hidden)]
     pub first_slot_start_time_range: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and less than 1,720.</p>
-    #[doc(hidden)]
     pub max_slot_duration_in_hours: ::std::option::Option<i32>,
     /// <p>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
-    #[doc(hidden)]
     pub min_slot_duration_in_hours: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedule recurrence.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>,
 }
 impl DescribeScheduledInstanceAvailabilityInput {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateCommentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent comment.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the root comment in the thread.</p>
-    #[doc(hidden)]
     pub thread_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the comment.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::CommentVisibilityType>,
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
-    #[doc(hidden)]
     pub notify_collaborators: ::std::option::Option<bool>,
 }
 impl CreateCommentInput {

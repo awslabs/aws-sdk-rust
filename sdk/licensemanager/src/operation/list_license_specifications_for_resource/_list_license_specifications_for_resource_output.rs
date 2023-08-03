@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

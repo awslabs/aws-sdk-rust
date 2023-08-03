@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEnableStandardsInput {
     /// <p>The list of standards checks to enable.</p>
-    #[doc(hidden)]
     pub standards_subscription_requests: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>>,
 }
 impl BatchEnableStandardsInput {

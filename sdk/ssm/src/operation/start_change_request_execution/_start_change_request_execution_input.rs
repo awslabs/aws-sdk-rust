@@ -6,46 +6,35 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    #[doc(hidden)]
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-    #[doc(hidden)]
     pub change_request_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub auto_approve: ::std::option::Option<bool>,
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    #[doc(hidden)]
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
-    #[doc(hidden)]
     pub scheduled_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    #[doc(hidden)]
     pub change_details: ::std::option::Option<::std::string::String>,
 }
 impl StartChangeRequestExecutionInput {

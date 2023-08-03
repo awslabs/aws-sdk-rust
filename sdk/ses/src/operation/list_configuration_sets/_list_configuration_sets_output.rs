@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
-    #[doc(hidden)]
     pub configuration_sets: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

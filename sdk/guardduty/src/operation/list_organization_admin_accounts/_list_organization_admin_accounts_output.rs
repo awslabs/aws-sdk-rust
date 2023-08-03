@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
-    #[doc(hidden)]
     pub admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

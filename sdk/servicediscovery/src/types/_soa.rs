@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
 }
 impl Soa {

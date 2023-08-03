@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bridge {
     /// The Amazon Resource Number (ARN) of the bridge.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub bridge_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub bridge_state: ::std::option::Option<crate::types::BridgeState>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub egress_gateway_bridge: ::std::option::Option<crate::types::EgressGatewayBridge>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub ingress_gateway_bridge: ::std::option::Option<crate::types::IngressGatewayBridge>,
     /// The name of the bridge.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The outputs on this bridge.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,
     /// The placement Amazon Resource Number (ARN) of the bridge.
-    #[doc(hidden)]
     pub placement_arn: ::std::option::Option<::std::string::String>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     /// The sources on this bridge.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
 }
 impl Bridge {

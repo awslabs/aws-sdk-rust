@@ -6,13 +6,10 @@ pub struct GetPackageVersionAssetOutput {
     /// <p> The binary file, or asset, that is downloaded.</p>
     pub asset: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p> The name of the asset that is downloaded. </p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package version revision that contains the downloaded asset. </p>
-    #[doc(hidden)]
     pub package_version_revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkDeviceMetadata {
     /// <p>The RSSI value.</p>
-    #[doc(hidden)]
     pub rssi: ::std::option::Option<i32>,
     /// <p>Sidewalk device battery level.</p>
-    #[doc(hidden)]
     pub battery_level: ::std::option::Option<crate::types::BatteryLevel>,
     /// <p>Sidewalk device status notification.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::Event>,
     /// <p>Device state defines the device status of sidewalk device.</p>
-    #[doc(hidden)]
     pub device_state: ::std::option::Option<crate::types::DeviceState>,
 }
 impl SidewalkDeviceMetadata {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
-    #[doc(hidden)]
     pub batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
     _request_id: Option<String>,
 }

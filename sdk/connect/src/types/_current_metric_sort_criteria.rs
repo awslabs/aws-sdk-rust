@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentMetricSortCriteria {
     /// <p>The current metric names.</p>
-    #[doc(hidden)]
     pub sort_by_metric: ::std::option::Option<crate::types::CurrentMetricName>,
     /// <p>The way to sort.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl CurrentMetricSortCriteria {

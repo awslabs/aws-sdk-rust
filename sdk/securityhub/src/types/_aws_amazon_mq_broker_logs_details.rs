@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLogsDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    #[doc(hidden)]
     pub audit: bool,
     /// <p> Activates general logging. </p>
-    #[doc(hidden)]
     pub general: bool,
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
-    #[doc(hidden)]
     pub audit_log_group: ::std::option::Option<::std::string::String>,
     /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
-    #[doc(hidden)]
     pub general_log_group: ::std::option::Option<::std::string::String>,
     /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails>,
 }
 impl AwsAmazonMqBrokerLogsDetails {

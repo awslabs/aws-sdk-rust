@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cpu {
     /// <p>The CPU's frequency.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<::std::string::String>,
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
-    #[doc(hidden)]
     pub clock: ::std::option::Option<f64>,
 }
 impl Cpu {

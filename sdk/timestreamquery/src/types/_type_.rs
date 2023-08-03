@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Type {
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
-    #[doc(hidden)]
     pub scalar_type: ::std::option::Option<crate::types::ScalarType>,
     /// <p>Indicates if the column is an array.</p>
-    #[doc(hidden)]
     pub array_column_info: ::std::option::Option<crate::types::ColumnInfo>,
     /// <p>Indicates if the column is a timeseries data type.</p>
-    #[doc(hidden)]
     pub time_series_measure_value_column_info: ::std::option::Option<crate::types::ColumnInfo>,
     /// <p>Indicates if the column is a row.</p>
-    #[doc(hidden)]
     pub row_column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl Type {

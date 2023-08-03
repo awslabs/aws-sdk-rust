@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
-    #[doc(hidden)]
     pub ebs_encryption_by_default: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

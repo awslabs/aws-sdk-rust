@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
-    #[doc(hidden)]
     pub user_details: ::std::option::Option<crate::types::UserDetails>,
 }
 impl ServiceMetadata {

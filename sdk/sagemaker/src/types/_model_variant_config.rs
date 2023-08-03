@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVariantConfig {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variant.</p>
-    #[doc(hidden)]
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
-    #[doc(hidden)]
     pub infrastructure_config: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
 }
 impl ModelVariantConfig {

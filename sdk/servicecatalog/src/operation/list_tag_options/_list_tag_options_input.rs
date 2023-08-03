@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagOptionsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListTagOptionsFilters>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagOptionsInput {

@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreSummary {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>Where data in a data store is stored.</p>
-    #[doc(hidden)]
     pub datastore_storage: ::std::option::Option<crate::types::DatastoreStorageSummary>,
     /// <p>The status of the data store.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>When the data store was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    #[doc(hidden)]
     pub last_message_arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The file format of the data in the data store.</p>
-    #[doc(hidden)]
     pub file_format_type: ::std::option::Option<crate::types::FileFormatType>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
-    #[doc(hidden)]
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
 impl DatastoreSummary {

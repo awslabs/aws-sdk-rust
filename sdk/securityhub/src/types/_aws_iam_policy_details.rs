@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
-    #[doc(hidden)]
     pub attachment_count: i32,
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the default version of the policy.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
-    #[doc(hidden)]
     pub is_attachable: bool,
     /// <p>The path to the policy.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
-    #[doc(hidden)]
     pub permissions_boundary_usage_count: i32,
     /// <p>The unique identifier of the policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>List of versions of the policy.</p>
-    #[doc(hidden)]
     pub policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyDetails {

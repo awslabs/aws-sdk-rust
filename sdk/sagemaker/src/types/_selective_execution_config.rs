@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectiveExecutionConfig {
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
-    #[doc(hidden)]
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    #[doc(hidden)]
     pub selected_steps: ::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>>,
 }
 impl SelectiveExecutionConfig {

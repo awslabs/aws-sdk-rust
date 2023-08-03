@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
-    #[doc(hidden)]
     pub api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,
 }

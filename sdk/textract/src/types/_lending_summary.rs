@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingSummary {
     /// <p>Contains an array of all DocumentGroup objects.</p>
-    #[doc(hidden)]
     pub document_groups: ::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>>,
     /// <p>UndetectedDocumentTypes.</p>
-    #[doc(hidden)]
     pub undetected_document_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LendingSummary {

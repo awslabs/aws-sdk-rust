@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// The type of encryption that is used on the content ingested from this source.
-    #[doc(hidden)]
     pub decryption: ::std::option::Option<crate::types::Encryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The IP address that the flow will be listening on for incoming content.
-    #[doc(hidden)]
     pub ingest_ip: ::std::option::Option<::std::string::String>,
     /// The port that the flow will be listening on for incoming content.
-    #[doc(hidden)]
     pub ingest_port: ::std::option::Option<i32>,
     /// The media streams that are associated with the source, and the parameters for those associations.
-    #[doc(hidden)]
     pub media_stream_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
     /// The name of the source.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_control_port: ::std::option::Option<i32>,
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    #[doc(hidden)]
     pub sender_ip_address: ::std::option::Option<::std::string::String>,
     /// The ARN of the source.
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// Attributes related to the transport stream that are used in the source.
-    #[doc(hidden)]
     pub transport: ::std::option::Option<crate::types::Transport>,
     /// The name of the VPC interface that is used for this source.
-    #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]
     pub whitelist_cidr: ::std::option::Option<::std::string::String>,
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    #[doc(hidden)]
     pub gateway_bridge_source: ::std::option::Option<crate::types::GatewayBridgeSource>,
 }
 impl Source {

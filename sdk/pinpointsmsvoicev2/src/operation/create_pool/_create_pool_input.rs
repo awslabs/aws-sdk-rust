@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePoolInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourceInput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    #[doc(hidden)]
     pub resource_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDisassociateResourceInput {

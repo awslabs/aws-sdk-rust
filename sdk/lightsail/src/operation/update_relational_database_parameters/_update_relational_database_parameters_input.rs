@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseParametersInput {
     /// <p>The name of your database for which to update parameters.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The database parameters to update.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
 }
 impl UpdateRelationalDatabaseParametersInput {

@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroup {
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<i64>,
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
-    #[doc(hidden)]
     pub retention_in_days: ::std::option::Option<i32>,
     /// <p>The number of metric filters.</p>
-    #[doc(hidden)]
     pub metric_filter_count: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes stored.</p>
-    #[doc(hidden)]
     pub stored_bytes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    #[doc(hidden)]
     pub data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
-    #[doc(hidden)]
     pub inherited_properties: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
 }
 impl LogGroup {

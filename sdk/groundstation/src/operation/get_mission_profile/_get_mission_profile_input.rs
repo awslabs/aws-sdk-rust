@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    #[doc(hidden)]
     pub mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMissionProfileInput {

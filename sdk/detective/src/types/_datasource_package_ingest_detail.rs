@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
-    #[doc(hidden)]
     pub datasource_package_ingest_state: ::std::option::Option<crate::types::DatasourcePackageIngestState>,
     /// <p>The date a data source package was enabled for this account</p>
-    #[doc(hidden)]
     pub last_ingest_state_change:
         ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>,
 }

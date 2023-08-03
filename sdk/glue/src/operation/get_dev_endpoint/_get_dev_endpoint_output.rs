@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEndpointOutput {
     /// <p>A <code>DevEndpoint</code> definition.</p>
-    #[doc(hidden)]
     pub dev_endpoint: ::std::option::Option<crate::types::DevEndpoint>,
     _request_id: Option<String>,
 }

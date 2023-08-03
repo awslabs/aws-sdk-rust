@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::string::String>,
     /// <p>An array of arguments containing arguments and members.</p>
-    #[doc(hidden)]
     pub arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExecuteCommandSessionConfiguration {

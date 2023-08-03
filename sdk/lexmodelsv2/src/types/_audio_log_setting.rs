@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioLogSetting {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::AudioLogDestination>,
 }
 impl AudioLogSetting {

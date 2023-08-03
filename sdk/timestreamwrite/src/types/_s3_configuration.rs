@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>The bucket name of the customer S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object key preview for the customer S3 location.</p>
-    #[doc(hidden)]
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key or Amazon Web Services managed key.</p>
-    #[doc(hidden)]
     pub encryption_option: ::std::option::Option<crate::types::S3EncryptionOption>,
     /// <p>The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {

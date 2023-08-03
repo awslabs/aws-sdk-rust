@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metric {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The function with which the metric is calculated.</p>
-    #[doc(hidden)]
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     /// <p>The namespace for the metric.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl Metric {

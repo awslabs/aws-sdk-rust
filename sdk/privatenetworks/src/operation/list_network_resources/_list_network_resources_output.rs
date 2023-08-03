@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNetworkResourcesOutput {
     /// <p>Information about network resources.</p>
-    #[doc(hidden)]
     pub network_resources: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

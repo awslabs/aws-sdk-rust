@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    #[doc(hidden)]
     pub dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     _request_id: Option<String>,
 }

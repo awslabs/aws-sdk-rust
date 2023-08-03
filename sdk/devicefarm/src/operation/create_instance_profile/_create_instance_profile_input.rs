@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceProfileInput {
     /// <p>The name of your instance profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of your instance profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
-    #[doc(hidden)]
     pub package_cleanup: ::std::option::Option<bool>,
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub reboot_after_use: ::std::option::Option<bool>,
 }
 impl CreateInstanceProfileInput {

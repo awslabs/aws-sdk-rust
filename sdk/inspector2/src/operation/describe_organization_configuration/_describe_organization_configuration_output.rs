@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::AutoEnable>,
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
-    #[doc(hidden)]
     pub max_account_limit_reached: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

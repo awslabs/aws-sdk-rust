@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSecurityProfileBehaviorsOutput {
     /// <p>True if the behaviors were valid.</p>
-    #[doc(hidden)]
     pub valid: bool,
     /// <p>The list of any errors found in the behaviors.</p>
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     _request_id: Option<String>,
 }

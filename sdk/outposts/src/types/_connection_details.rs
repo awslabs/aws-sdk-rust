@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionDetails {
     /// <p> The public key of the client. </p>
-    #[doc(hidden)]
     pub client_public_key: ::std::option::Option<::std::string::String>,
     /// <p> The public key of the server. </p>
-    #[doc(hidden)]
     pub server_public_key: ::std::option::Option<::std::string::String>,
     /// <p> The endpoint for the server. </p>
-    #[doc(hidden)]
     pub server_endpoint: ::std::option::Option<::std::string::String>,
     /// <p> The client tunnel address. </p>
-    #[doc(hidden)]
     pub client_tunnel_address: ::std::option::Option<::std::string::String>,
     /// <p> The server tunnel address. </p>
-    #[doc(hidden)]
     pub server_tunnel_address: ::std::option::Option<::std::string::String>,
     /// <p> The allowed IP addresses. </p>
-    #[doc(hidden)]
     pub allowed_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectionDetails {

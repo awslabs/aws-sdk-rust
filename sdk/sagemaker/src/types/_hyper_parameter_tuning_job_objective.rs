@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobObjective {
     /// <p>Whether to minimize or maximize the objective metric.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     /// <p>The name of the metric to use for the objective metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl HyperParameterTuningJobObjective {

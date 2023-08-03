@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource ARN.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the resource is a federated resource.</p>
-    #[doc(hidden)]
     pub with_federation: ::std::option::Option<bool>,
 }
 impl UpdateResourceInput {

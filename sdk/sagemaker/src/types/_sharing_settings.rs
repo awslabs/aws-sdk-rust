@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharingSettings {
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
-    #[doc(hidden)]
     pub notebook_output_option: ::std::option::Option<crate::types::NotebookOutputOption>,
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SharingSettings {

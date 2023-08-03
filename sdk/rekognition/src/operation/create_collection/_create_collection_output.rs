@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollectionOutput {
     /// <p>HTTP status code indicating the result of the operation.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
-    #[doc(hidden)]
     pub collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

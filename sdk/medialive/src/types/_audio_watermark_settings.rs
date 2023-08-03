@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioWatermarkSettings {
     /// Settings to configure Nielsen Watermarks in the audio encode
-    #[doc(hidden)]
     pub nielsen_watermarks_settings: ::std::option::Option<crate::types::NielsenWatermarksSettings>,
 }
 impl AudioWatermarkSettings {

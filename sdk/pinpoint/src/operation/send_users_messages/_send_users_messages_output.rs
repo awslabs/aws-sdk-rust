@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    #[doc(hidden)]
     pub send_users_message_response: ::std::option::Option<crate::types::SendUsersMessageResponse>,
     _request_id: Option<String>,
 }

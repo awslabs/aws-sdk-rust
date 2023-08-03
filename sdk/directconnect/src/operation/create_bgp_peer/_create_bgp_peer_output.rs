@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
-    #[doc(hidden)]
     pub virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
 }

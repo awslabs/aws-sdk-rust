@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessBufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub interval_in_seconds: ::std::option::Option<i32>,
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5. </p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
-    #[doc(hidden)]
     pub size_in_m_bs: ::std::option::Option<i32>,
 }
 impl AmazonOpenSearchServerlessBufferingHints {

@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterSnapshot {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the identifier for the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Provides the engine mode of the database engine for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>Specifies the status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
@@ -32,57 +25,40 @@ pub struct DbClusterSnapshot {
     /// <li> <p> <code>copying</code> </p> </li>
     /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides the master username for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Provides the license model information for this DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Provides the type of the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
-    #[doc(hidden)]
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {

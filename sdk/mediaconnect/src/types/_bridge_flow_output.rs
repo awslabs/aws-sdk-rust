@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BridgeFlowOutput {
     /// The Amazon Resource Number (ARN) of the cloud flow.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Number (ARN) of the flow source.
-    #[doc(hidden)]
     pub flow_source_arn: ::std::option::Option<::std::string::String>,
     /// The name of the bridge's output.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl BridgeFlowOutput {

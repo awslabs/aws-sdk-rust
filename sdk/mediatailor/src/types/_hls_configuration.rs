@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsConfiguration {
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
-    #[doc(hidden)]
     pub manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl HlsConfiguration {

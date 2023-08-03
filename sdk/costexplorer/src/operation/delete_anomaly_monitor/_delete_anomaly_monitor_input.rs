@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorInput {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalyMonitorInput {

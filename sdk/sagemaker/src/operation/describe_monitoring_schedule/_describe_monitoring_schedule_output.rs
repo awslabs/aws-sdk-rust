@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMonitoringScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of an monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
@@ -19,25 +16,18 @@ pub struct DescribeMonitoringScheduleOutput {
     /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
     /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>A string, up to one KB in size, that contains the reason a monitoring job failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the monitoring job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the monitoring job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p> The name of the endpoint for the monitoring job.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes metadata on the last execution to run, if there was one.</p>
-    #[doc(hidden)]
     pub last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
     _request_id: Option<String>,
 }

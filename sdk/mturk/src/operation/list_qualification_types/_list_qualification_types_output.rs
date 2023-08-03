@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQualificationTypesOutput {
     /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
-    #[doc(hidden)]
     pub num_results: ::std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The list of QualificationType elements returned by the query. </p>
-    #[doc(hidden)]
     pub qualification_types: ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
     _request_id: Option<String>,
 }

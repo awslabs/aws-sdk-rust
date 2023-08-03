@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleConfiguration {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
 }
 impl DataLakeLifecycleConfiguration {

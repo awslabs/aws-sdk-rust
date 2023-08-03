@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectAttachmentInput {
     /// <p>The ID of a core network where you want to create the attachment. </p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the edge is located.</p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment between the two connections.</p>
-    #[doc(hidden)]
     pub transport_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Options for creating an attachment.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
     /// <p>The list of key-value tags associated with the request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectAttachmentInput {

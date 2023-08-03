@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    #[doc(hidden)]
     pub http_error_code_returned_equals: ::std::option::Option<::std::string::String>,
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
-    #[doc(hidden)]
     pub key_prefix_equals: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {

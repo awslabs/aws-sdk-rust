@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    #[doc(hidden)]
     pub associated_client_devices: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

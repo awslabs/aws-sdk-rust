@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorldTemplateBodyOutput {
     /// <p>The world template body.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

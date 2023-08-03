@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ShareDirectoryInput {
     /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    #[doc(hidden)]
     pub share_notes: ::std::option::Option<::std::string::String>,
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
-    #[doc(hidden)]
     pub share_target: ::std::option::Option<crate::types::ShareTarget>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
-    #[doc(hidden)]
     pub share_method: ::std::option::Option<crate::types::ShareMethod>,
 }
 impl ShareDirectoryInput {

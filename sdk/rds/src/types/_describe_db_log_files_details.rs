@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
-    #[doc(hidden)]
     pub log_file_name: ::std::option::Option<::std::string::String>,
     /// <p>A POSIX timestamp when the last log entry was written.</p>
-    #[doc(hidden)]
     pub last_written: i64,
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
-    #[doc(hidden)]
     pub size: i64,
 }
 impl DescribeDbLogFilesDetails {

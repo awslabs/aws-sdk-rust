@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalTable {
     /// <p>The global table name.</p>
-    #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where the global table has replicas.</p>
-    #[doc(hidden)]
     pub replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
 }
 impl GlobalTable {

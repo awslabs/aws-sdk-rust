@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKafkaVersionsOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

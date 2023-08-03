@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningImageFormat {
     /// <p>The supported formats of a code signing image.</p>
-    #[doc(hidden)]
     pub supported_formats: ::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>>,
     /// <p>The default format of a code signing image.</p>
-    #[doc(hidden)]
     pub default_format: ::std::option::Option<crate::types::ImageFormat>,
 }
 impl SigningImageFormat {

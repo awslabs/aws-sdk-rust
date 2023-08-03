@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatusDetails {
     /// <p>The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.</p>
-    #[doc(hidden)]
     pub impaired_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of instance status.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::StatusName>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
 impl InstanceStatusDetails {

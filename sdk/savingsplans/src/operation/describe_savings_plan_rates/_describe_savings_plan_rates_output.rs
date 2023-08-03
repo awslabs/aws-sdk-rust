@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesOutput {
     /// <p>The ID of the Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Savings Plans rates.</p>
-    #[doc(hidden)]
     pub search_results: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

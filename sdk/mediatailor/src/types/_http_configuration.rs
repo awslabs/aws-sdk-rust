@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
-    #[doc(hidden)]
     pub base_url: ::std::option::Option<::std::string::String>,
 }
 impl HttpConfiguration {

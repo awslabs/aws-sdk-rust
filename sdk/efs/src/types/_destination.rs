@@ -9,16 +9,12 @@ pub struct Destination {
     /// <li> <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> </li>
     /// <li> <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-    #[doc(hidden)]
     pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Destination {

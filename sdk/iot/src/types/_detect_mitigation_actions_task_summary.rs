@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskSummary {
     /// <p> The unique identifier of the task. </p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the task. </p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::DetectMitigationActionsTaskStatus>,
     /// <p> The date the task started. </p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date the task ended. </p>
-    #[doc(hidden)]
     pub task_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    #[doc(hidden)]
     pub violation_event_occurrence_range: ::std::option::Option<crate::types::ViolationEventOccurrenceRange>,
     /// <p> Includes only active violations. </p>
-    #[doc(hidden)]
     pub only_active_violations_included: bool,
     /// <p> Includes suppressed alerts. </p>
-    #[doc(hidden)]
     pub suppressed_alerts_included: bool,
     /// <p> The definition of the actions. </p>
-    #[doc(hidden)]
     pub actions_definition: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
     /// <p> The statistics of a mitigation action task. </p>
-    #[doc(hidden)]
     pub task_statistics: ::std::option::Option<crate::types::DetectMitigationActionsTaskStatistics>,
 }
 impl DetectMitigationActionsTaskSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerInstanceHealthStatus {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
-    #[doc(hidden)]
     pub overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
 }
 impl ContainerInstanceHealthStatus {

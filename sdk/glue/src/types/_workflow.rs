@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Workflow {
     /// <p>The name of the workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
-    #[doc(hidden)]
     pub default_run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
-    #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the workflow was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The information about the last execution of the workflow.</p>
-    #[doc(hidden)]
     pub last_run: ::std::option::Option<crate::types::WorkflowRun>,
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
-    #[doc(hidden)]
     pub graph: ::std::option::Option<crate::types::WorkflowGraph>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
-    #[doc(hidden)]
     pub max_concurrent_runs: ::std::option::Option<i32>,
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
-    #[doc(hidden)]
     pub blueprint_details: ::std::option::Option<crate::types::BlueprintDetails>,
 }
 impl Workflow {

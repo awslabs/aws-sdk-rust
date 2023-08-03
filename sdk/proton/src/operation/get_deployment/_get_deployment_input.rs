@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a environment that you want to get the detailed data for.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service associated with the given deployment ID.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a component that you want to get the detailed data for.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentInput {

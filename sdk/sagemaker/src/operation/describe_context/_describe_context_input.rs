@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContextInput {
     /// <p>The name of the context to describe.</p>
-    #[doc(hidden)]
     pub context_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContextInput {

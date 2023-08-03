@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
-    #[doc(hidden)]
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl RegionOfInterest {

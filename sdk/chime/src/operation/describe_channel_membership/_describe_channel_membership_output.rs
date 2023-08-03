@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
-    #[doc(hidden)]
     pub channel_membership: ::std::option::Option<crate::types::ChannelMembership>,
     _request_id: Option<String>,
 }

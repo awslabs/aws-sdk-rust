@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsInput {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetRecommendationReportDetailsInput {

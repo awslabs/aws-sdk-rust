@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServicePower {
     /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
-    #[doc(hidden)]
     pub power_id: ::std::option::Option<::std::string::String>,
     /// <p>The monthly price of the power in USD.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f32>,
     /// <p>The number of vCPUs included in the power.</p>
-    #[doc(hidden)]
     pub cpu_count: ::std::option::Option<f32>,
     /// <p>The amount of RAM (in GB) of the power.</p>
-    #[doc(hidden)]
     pub ram_size_in_gb: ::std::option::Option<f32>,
     /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the power is active and can be specified for container services.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
 }
 impl ContainerServicePower {

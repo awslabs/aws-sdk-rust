@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalOptions {
     /// <p>The visibility configuration for the total cells.</p>
-    #[doc(hidden)]
     pub totals_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The placement (start, end) for the total cells.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::TableTotalsPlacement>,
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    #[doc(hidden)]
     pub scroll_status: ::std::option::Option<crate::types::TableTotalsScrollStatus>,
     /// <p>The custom label string for the total cells.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>Cell styling options for the total cells.</p>
-    #[doc(hidden)]
     pub total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
 }
 impl TotalOptions {

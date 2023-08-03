@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserAccessResultItem {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the tenant.</p>
-    #[doc(hidden)]
     pub tenant_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
@@ -24,28 +20,20 @@ pub struct UserAccessResultItem {
     /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
     /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result_status: ::std::option::Option<crate::types::ResultStatus>,
     /// <p>The email address of the target user.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the user.</p>
-    #[doc(hidden)]
     pub user_full_name: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the user.</p>
-    #[doc(hidden)]
     pub user_first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
-    #[doc(hidden)]
     pub user_last_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user returned by the application.</p>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about an error returned from a user access task.</p>
-    #[doc(hidden)]
     pub task_error: ::std::option::Option<crate::types::TaskError>,
 }
 impl UserAccessResultItem {

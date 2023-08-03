@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelMembershipSummary {

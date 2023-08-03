@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lens_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateLensesInput {

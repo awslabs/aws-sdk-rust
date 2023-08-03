@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    #[doc(hidden)]
     pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct ListLicenseConfigurationsInput {
     /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListLicenseConfigurationsInput {

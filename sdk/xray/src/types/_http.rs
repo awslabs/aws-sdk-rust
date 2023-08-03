@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Http {
     /// <p>The request URL.</p>
-    #[doc(hidden)]
     pub http_url: ::std::option::Option<::std::string::String>,
     /// <p>The response status.</p>
-    #[doc(hidden)]
     pub http_status: ::std::option::Option<i32>,
     /// <p>The request method.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>The request's user agent string.</p>
-    #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the requestor.</p>
-    #[doc(hidden)]
     pub client_ip: ::std::option::Option<::std::string::String>,
 }
 impl Http {

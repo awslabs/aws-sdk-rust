@@ -5,23 +5,17 @@
 pub struct CreateWorkforceInput {
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
-    #[doc(hidden)]
     pub cognito_config: ::std::option::Option<crate::types::CognitoConfig>,
     /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
     /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
-    #[doc(hidden)]
     pub oidc_config: ::std::option::Option<crate::types::OidcConfig>,
     /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-    #[doc(hidden)]
     pub source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,
     /// <p>The name of the private workforce.</p>
-    #[doc(hidden)]
     pub workforce_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    #[doc(hidden)]
     pub workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
 }
 impl CreateWorkforceInput {

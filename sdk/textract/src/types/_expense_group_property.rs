@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseGroupProperty {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ExpenseGroupProperty {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInferenceExperimentOutput {
     /// <p>The ARN of the deleted inference experiment.</p>
-    #[doc(hidden)]
     pub inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

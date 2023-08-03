@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>The name of the column that is created in the in-application input stream or reference table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the data element in the streaming input or the reference data source.</p>
-    #[doc(hidden)]
     pub mapping: ::std::option::Option<::std::string::String>,
     /// <p>The type of column created in the in-application input stream or reference table.</p>
-    #[doc(hidden)]
     pub sql_type: ::std::option::Option<::std::string::String>,
 }
 impl RecordColumn {

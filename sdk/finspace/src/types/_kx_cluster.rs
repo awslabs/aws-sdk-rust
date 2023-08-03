@@ -15,13 +15,10 @@ pub struct KxCluster {
     /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
     /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::KxClusterStatus>,
     /// <p>The error message when a failed state occurs. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
     /// <ul>
@@ -29,35 +26,26 @@ pub struct KxCluster {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<crate::types::KxClusterType>,
     /// <p>A description of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_description: ::std::option::Option<::std::string::String>,
     /// <p>A version of the FinSpace managed kdb to run.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
-    #[doc(hidden)]
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p> The availability zone identifiers for the requested regions. </p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the cluster was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KxCluster {

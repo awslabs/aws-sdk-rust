@@ -9,7 +9,6 @@ pub struct GuardianAttributes {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub optimized_shared_delivery: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl GuardianAttributes {

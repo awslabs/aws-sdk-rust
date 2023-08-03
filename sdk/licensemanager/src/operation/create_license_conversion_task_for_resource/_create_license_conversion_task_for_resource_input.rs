@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub source_license_context: ::std::option::Option<crate::types::LicenseConversionContext>,
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub destination_license_context: ::std::option::Option<crate::types::LicenseConversionContext>,
 }
 impl CreateLicenseConversionTaskForResourceInput {

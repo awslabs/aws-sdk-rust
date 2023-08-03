@@ -6,19 +6,15 @@ pub struct CreateDiskSnapshotInput {
     /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    #[doc(hidden)]
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDiskSnapshotInput {

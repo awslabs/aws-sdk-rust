@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
-    #[doc(hidden)]
     pub batch_mode: ::std::option::Option<bool>,
 }
 impl CloudwatchLogsAction {

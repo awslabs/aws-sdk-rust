@@ -5,14 +5,11 @@
 pub struct GetBucketsInput {
     /// <p>The name of the bucket for which to return information.</p>
     /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
-    #[doc(hidden)]
     pub include_connected_resources: ::std::option::Option<bool>,
 }
 impl GetBucketsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedFinding {
     /// <p>The ARN of the product that generated a related finding.</p>
-    #[doc(hidden)]
     pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The product-generated identifier for a related finding.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedFinding {

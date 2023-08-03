@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportJobInput {
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
-    #[doc(hidden)]
     pub report_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReportJobInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketEncryptionOutput {
     /// <p>Specifies the default server-side-encryption configuration.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

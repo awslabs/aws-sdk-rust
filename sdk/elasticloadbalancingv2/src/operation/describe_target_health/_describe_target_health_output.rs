@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
-    #[doc(hidden)]
     pub target_health_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::TargetHealthDescription>>,
     _request_id: Option<String>,
 }

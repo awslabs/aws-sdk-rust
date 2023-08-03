@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
-    #[doc(hidden)]
     pub hapg_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the high-availability partition group.</p>
-    #[doc(hidden)]
     pub hapg_serial: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub hsms_last_action_failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p></p>
-    #[doc(hidden)]
     pub hsms_pending_deletion: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p></p>
-    #[doc(hidden)]
     pub hsms_pending_registration: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The label for the high-availability partition group.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the high-availability partition group was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
-    #[doc(hidden)]
     pub partition_serial_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the high-availability partition group.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CloudHsmObjectState>,
     _request_id: Option<String>,
 }

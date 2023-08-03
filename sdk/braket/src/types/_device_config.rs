@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<::std::string::String>,
 }
 impl DeviceConfig {

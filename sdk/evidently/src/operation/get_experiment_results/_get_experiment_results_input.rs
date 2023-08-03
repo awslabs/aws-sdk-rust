@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentResultsInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to retrieve the results of.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the experiment started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    #[doc(hidden)]
     pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    #[doc(hidden)]
     pub treatment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
-    #[doc(hidden)]
     pub base_stat: ::std::option::Option<crate::types::ExperimentBaseStat>,
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
@@ -31,13 +24,10 @@ pub struct GetExperimentResultsInput {
     /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
     /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result_stats: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>,
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub report_names: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    #[doc(hidden)]
     pub period: i64,
 }
 impl GetExperimentResultsInput {

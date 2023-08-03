@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesInput {
     /// <p>The unique identifier for the finding.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSensitiveDataOccurrencesInput {

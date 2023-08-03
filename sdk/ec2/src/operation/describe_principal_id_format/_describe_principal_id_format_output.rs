@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePrincipalIdFormatOutput {
     /// <p>Information about the ID format settings for the ARN.</p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

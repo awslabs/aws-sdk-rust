@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonHealth {
     /// <p>An object representing the health issues for an add-on.</p>
-    #[doc(hidden)]
     pub issues: ::std::option::Option<::std::vec::Vec<crate::types::AddonIssue>>,
 }
 impl AddonHealth {

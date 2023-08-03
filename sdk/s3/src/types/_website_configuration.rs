@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
-    #[doc(hidden)]
     pub error_document: ::std::option::Option<crate::types::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
-    #[doc(hidden)]
     pub index_document: ::std::option::Option<crate::types::IndexDocument>,
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
-    #[doc(hidden)]
     pub redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    #[doc(hidden)]
     pub routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
 }
 impl WebsiteConfiguration {

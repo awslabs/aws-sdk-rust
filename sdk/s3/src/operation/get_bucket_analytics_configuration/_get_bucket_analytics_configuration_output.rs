@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfigurationOutput {
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    #[doc(hidden)]
     pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

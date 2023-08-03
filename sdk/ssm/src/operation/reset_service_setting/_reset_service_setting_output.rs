@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    #[doc(hidden)]
     pub service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }

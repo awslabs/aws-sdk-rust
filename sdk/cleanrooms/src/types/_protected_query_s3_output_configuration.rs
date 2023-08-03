@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
-    #[doc(hidden)]
     pub result_format: ::std::option::Option<crate::types::ResultFormat>,
     /// <p>The S3 bucket to unload the protected query results.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to unload the protected query results.</p>
-    #[doc(hidden)]
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryS3OutputConfiguration {

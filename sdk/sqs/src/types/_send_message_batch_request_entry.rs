@@ -8,18 +8,14 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The body of the message.</p>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
-    #[doc(hidden)]
     pub delay_seconds: i32,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
@@ -27,7 +23,6 @@ pub struct SendMessageBatchRequestEntry {
     /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub message_system_attributes: ::std::option::Option<
         ::std::collections::HashMap<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>,
     >,
@@ -50,7 +45,6 @@ pub struct SendMessageBatchRequestEntry {
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
@@ -62,7 +56,6 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
-    #[doc(hidden)]
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageBatchRequestEntry {

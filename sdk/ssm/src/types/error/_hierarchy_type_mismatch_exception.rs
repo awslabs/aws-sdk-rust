@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyTypeMismatchException {
     /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

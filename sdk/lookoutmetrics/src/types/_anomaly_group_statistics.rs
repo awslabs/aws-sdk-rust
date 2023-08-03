@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyGroupStatistics {
     /// <p>The start of the time range that was searched.</p>
-    #[doc(hidden)]
     pub evaluation_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The number of groups found.</p>
-    #[doc(hidden)]
     pub total_count: i32,
     /// <p>Statistics for individual metrics within the group.</p>
-    #[doc(hidden)]
     pub itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
 }
 impl AnomalyGroupStatistics {

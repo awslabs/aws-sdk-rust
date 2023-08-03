@@ -17,7 +17,6 @@ pub struct UpdateServiceSettingInput {
     /// </ul> <note>
     /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
     /// </note>
-    #[doc(hidden)]
     pub setting_id: ::std::option::Option<::std::string::String>,
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
@@ -30,7 +29,6 @@ pub struct UpdateServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub setting_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServiceSettingInput {

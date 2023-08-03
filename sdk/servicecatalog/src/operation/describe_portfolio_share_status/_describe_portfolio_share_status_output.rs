@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusOutput {
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-    #[doc(hidden)]
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-    #[doc(hidden)]
     pub organization_node_value: ::std::option::Option<::std::string::String>,
     /// <p>Status of the portfolio share operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>Information about the portfolio share operation.</p>
-    #[doc(hidden)]
     pub share_details: ::std::option::Option<crate::types::ShareDetails>,
     _request_id: Option<String>,
 }

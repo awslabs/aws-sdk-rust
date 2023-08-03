@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceConfiguration {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
-    #[doc(hidden)]
     pub snowcone_device_configuration: ::std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfiguration {

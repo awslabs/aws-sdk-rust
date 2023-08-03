@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The external IP address of the VPN tunnel.</p>
-    #[doc(hidden)]
     pub vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
-    #[doc(hidden)]
     pub apply_pending_maintenance: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ReplaceVpnTunnelInput {

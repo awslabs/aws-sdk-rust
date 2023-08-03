@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultClientBrandingAttributes {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
-    #[doc(hidden)]
     pub logo_url: ::std::option::Option<::std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct DefaultClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
@@ -23,13 +21,10 @@ pub struct DefaultClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub support_link: ::std::option::Option<::std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    #[doc(hidden)]
     pub forgot_password_link: ::std::option::Option<::std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    #[doc(hidden)]
     pub login_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DefaultClientBrandingAttributes {

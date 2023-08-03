@@ -11,20 +11,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomizedScalingMetricSpecification {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized scaling metric specification.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The unit of the metric. </p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl CustomizedScalingMetricSpecification {

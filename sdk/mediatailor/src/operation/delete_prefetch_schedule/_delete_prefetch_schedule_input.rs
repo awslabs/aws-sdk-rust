@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePrefetchScheduleInput {
     /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    #[doc(hidden)]
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePrefetchScheduleInput {

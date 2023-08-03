@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub application_state_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

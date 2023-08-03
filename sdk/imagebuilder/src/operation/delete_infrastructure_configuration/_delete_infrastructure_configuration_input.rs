@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    #[doc(hidden)]
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInfrastructureConfigurationInput {

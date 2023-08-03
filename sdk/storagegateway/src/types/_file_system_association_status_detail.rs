@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemAssociationStatusDetail {

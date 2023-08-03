@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatsDetectedItemCount {
     /// <p>Total number of infected files.</p>
-    #[doc(hidden)]
     pub files: i32,
 }
 impl ThreatsDetectedItemCount {

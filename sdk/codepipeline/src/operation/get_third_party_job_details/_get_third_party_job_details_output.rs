@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,
 }

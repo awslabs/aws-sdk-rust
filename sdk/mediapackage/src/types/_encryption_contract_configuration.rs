@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
-    #[doc(hidden)]
     pub preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     /// A collection of video encryption presets.
-    #[doc(hidden)]
     pub preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,
 }
 impl EncryptionContractConfiguration {

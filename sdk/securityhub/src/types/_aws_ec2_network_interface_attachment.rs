@@ -6,26 +6,19 @@
 pub struct AwsEc2NetworkInterfaceAttachment {
     /// <p>Indicates when the attachment initiated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the network interface attachment</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p>The device index of the network interface attachment on the instance.</p>
-    #[doc(hidden)]
     pub device_index: i32,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
-    #[doc(hidden)]
     pub instance_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceAttachment {

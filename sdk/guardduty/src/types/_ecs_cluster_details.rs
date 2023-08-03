@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsClusterDetails {
     /// <p>The name of the ECS Cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ECS cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
-    #[doc(hidden)]
     pub active_services_count: i32,
     /// <p>The number of container instances registered into the cluster.</p>
-    #[doc(hidden)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
-    #[doc(hidden)]
     pub running_tasks_count: i32,
     /// <p>The tags of the ECS Cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Contains information about the details of the ECS Task.</p>
-    #[doc(hidden)]
     pub task_details: ::std::option::Option<crate::types::EcsTaskDetails>,
 }
 impl EcsClusterDetails {

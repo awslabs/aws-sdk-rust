@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoInput {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetCelebrityInfoInput {

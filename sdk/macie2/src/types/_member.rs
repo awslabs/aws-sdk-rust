@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    #[doc(hidden)]
     pub administrator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub master_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {

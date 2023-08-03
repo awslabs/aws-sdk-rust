@@ -24,7 +24,6 @@ pub struct AnalyticsPathFilter {
     /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
     /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsCommonFilterName>,
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -41,10 +40,8 @@ pub struct AnalyticsPathFilter {
     /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
     /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalyticsPathFilter {

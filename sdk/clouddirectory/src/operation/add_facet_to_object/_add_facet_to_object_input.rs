@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFacetToObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    #[doc(hidden)]
     pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>A reference to the object you are adding the specified facet to.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl AddFacetToObjectInput {

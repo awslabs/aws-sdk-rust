@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRegexPatternSetsOutput {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    #[doc(hidden)]
     pub regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }

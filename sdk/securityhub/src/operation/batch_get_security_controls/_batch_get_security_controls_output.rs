@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsOutput {
     /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
-    #[doc(hidden)]
     pub security_controls: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
-    #[doc(hidden)]
     pub unprocessed_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
     _request_id: Option<String>,
 }

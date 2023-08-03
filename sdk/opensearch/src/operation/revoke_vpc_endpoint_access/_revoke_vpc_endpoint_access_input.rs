@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessInput {
     /// <p>The name of the OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to revoke access from.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
 }
 impl RevokeVpcEndpointAccessInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogImportStatus {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
-    #[doc(hidden)]
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
-    #[doc(hidden)]
     pub import_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the person who initiated the migration.</p>
-    #[doc(hidden)]
     pub imported_by: ::std::option::Option<::std::string::String>,
 }
 impl CatalogImportStatus {

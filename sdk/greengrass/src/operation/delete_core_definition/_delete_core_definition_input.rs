@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoreDefinitionInput {
     /// The ID of the core definition.
-    #[doc(hidden)]
     pub core_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCoreDefinitionInput {

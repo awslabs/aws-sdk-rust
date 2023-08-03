@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2Defaults {
     /// <p>OAuth 2.0 scopes that the connector supports.</p>
-    #[doc(hidden)]
     pub oauth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Token URLs that can be used for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub token_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Auth code URLs that can be used for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub auth_code_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>OAuth 2.0 grant types supported by the connector.</p>
-    #[doc(hidden)]
     pub oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>>,
     /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub oauth2_custom_properties: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2CustomParameter>>,
 }
 impl OAuth2Defaults {

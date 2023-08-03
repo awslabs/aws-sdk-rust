@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the rules that you have defined. </p>
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
-    #[doc(hidden)]
     pub firewall_rules: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>,
     _request_id: Option<String>,
 }

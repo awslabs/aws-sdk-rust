@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
-    #[doc(hidden)]
     pub sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
 }
 impl GetSamplingTargetsInput {

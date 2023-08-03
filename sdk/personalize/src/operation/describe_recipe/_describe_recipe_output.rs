@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecipeOutput {
     /// <p>An object that describes the recipe.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<crate::types::Recipe>,
     _request_id: Option<String>,
 }

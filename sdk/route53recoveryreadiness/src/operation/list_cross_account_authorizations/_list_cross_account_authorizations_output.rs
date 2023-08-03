@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCrossAccountAuthorizationsOutput {
     /// <p>A list of cross-account authorizations.</p>
-    #[doc(hidden)]
     pub cross_account_authorizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

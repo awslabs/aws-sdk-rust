@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetStats {
     /// <p> The total number of images in the dataset that have labels. </p>
-    #[doc(hidden)]
     pub labeled_entries: ::std::option::Option<i32>,
     /// <p> The total number of images in the dataset. </p>
-    #[doc(hidden)]
     pub total_entries: ::std::option::Option<i32>,
     /// <p> The total number of labels declared in the dataset. </p>
-    #[doc(hidden)]
     pub total_labels: ::std::option::Option<i32>,
     /// <p> The total number of entries that contain at least one error. </p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<i32>,
 }
 impl DatasetStats {

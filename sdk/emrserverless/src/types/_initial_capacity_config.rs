@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitialCapacityConfig {
     /// <p>The number of workers in the initial capacity configuration.</p>
-    #[doc(hidden)]
     pub worker_count: i64,
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    #[doc(hidden)]
     pub worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,
 }
 impl InitialCapacityConfig {

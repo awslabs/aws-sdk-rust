@@ -5,7 +5,6 @@
 pub struct DeleteDistributionInput {
     /// <p>The name of the distribution to delete.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDistributionInput {

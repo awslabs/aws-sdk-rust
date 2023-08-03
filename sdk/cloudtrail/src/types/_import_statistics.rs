@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportStatistics {
     /// <p> The number of S3 prefixes found for the import. </p>
-    #[doc(hidden)]
     pub prefixes_found: ::std::option::Option<i64>,
     /// <p> The number of S3 prefixes that completed import. </p>
-    #[doc(hidden)]
     pub prefixes_completed: ::std::option::Option<i64>,
     /// <p>The number of log files that completed import.</p>
-    #[doc(hidden)]
     pub files_completed: ::std::option::Option<i64>,
     /// <p> The number of trail events imported into the event data store. </p>
-    #[doc(hidden)]
     pub events_completed: ::std::option::Option<i64>,
     /// <p> The number of failed entries. </p>
-    #[doc(hidden)]
     pub failed_entries: ::std::option::Option<i64>,
 }
 impl ImportStatistics {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventAggregate {
     /// <p>The issue type for the associated count.</p>
-    #[doc(hidden)]
     pub aggregate_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of events of the associated issue type.</p>
-    #[doc(hidden)]
     pub count: i32,
 }
 impl EventAggregate {

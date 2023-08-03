@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterPublisherOutput {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

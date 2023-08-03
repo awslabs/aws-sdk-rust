@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTimers {
     /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_active_seconds: ::std::option::Option<i64>,
 }
 impl JobTimers {

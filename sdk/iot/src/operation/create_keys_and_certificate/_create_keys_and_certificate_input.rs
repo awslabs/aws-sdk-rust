@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
-    #[doc(hidden)]
     pub set_as_active: ::std::option::Option<bool>,
 }
 impl CreateKeysAndCertificateInput {

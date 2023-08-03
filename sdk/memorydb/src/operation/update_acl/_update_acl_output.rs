@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAclOutput {
     /// <p>The updated Access Control List</p>
-    #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }

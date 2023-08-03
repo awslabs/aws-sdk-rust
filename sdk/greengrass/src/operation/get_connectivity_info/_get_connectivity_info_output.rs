@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectivityInfoOutput {
     /// Connectivity info list.
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
     /// A message about the connectivity info request.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

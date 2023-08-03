@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateReadSetFilter {
     /// <p>The filter's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
     /// <p>The filter's start date.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filter's end date.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActivateReadSetFilter {

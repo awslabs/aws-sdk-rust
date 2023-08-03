@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The AMI ID used to launch the instance.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID of the resource.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the resource.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID which owns the instance.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the instance.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Region the instance is running in.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in which the last discovery updated the instance details.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subscription being used by the instance.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl Instance {

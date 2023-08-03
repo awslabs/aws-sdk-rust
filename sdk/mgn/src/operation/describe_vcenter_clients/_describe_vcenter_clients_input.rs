@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVcenterClientsInput {
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVcenterClientsInput {

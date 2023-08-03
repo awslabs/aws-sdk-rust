@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDatasetDefinition {
     /// <p>The Redshift cluster Identifier.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Redshift database used in Redshift query execution.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The database user name used in Redshift query execution.</p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query statements to be executed.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
-    #[doc(hidden)]
     pub cluster_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
-    #[doc(hidden)]
     pub output_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a Redshift execution.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The data storage format for Redshift query results.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::RedshiftResultFormat>,
     /// <p>The compression used for Redshift query results.</p>
-    #[doc(hidden)]
     pub output_compression: ::std::option::Option<crate::types::RedshiftResultCompressionType>,
 }
 impl RedshiftDatasetDefinition {

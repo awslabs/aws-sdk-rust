@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatementOutputData {
     /// <p>The code execution output in text format.</p>
-    #[doc(hidden)]
     pub text_plain: ::std::option::Option<::std::string::String>,
 }
 impl StatementOutputData {

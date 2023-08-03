@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct AwsRdsDbClusterAssociatedRole {
     /// <li> <p> <code>INVALID</code> </p> </li>
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbClusterAssociatedRole {

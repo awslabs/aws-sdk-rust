@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarketplaceInformation {
     /// <p>The product ID from the Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub product_url: ::std::option::Option<::std::string::String>,
 }
 impl MarketplaceInformation {

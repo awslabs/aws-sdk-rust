@@ -8,13 +8,10 @@ pub struct MutualTlsAuthentication {
     /// </replaceable>/<replaceable>
     /// key-name
     /// </replaceable>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
-    #[doc(hidden)]
     pub truststore_uri: ::std::option::Option<::std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
-    #[doc(hidden)]
     pub truststore_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    #[doc(hidden)]
     pub truststore_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MutualTlsAuthentication {

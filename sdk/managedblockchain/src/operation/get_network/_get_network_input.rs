@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkInput {
     /// <p>The unique identifier of the network to get information about.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
 }
 impl GetNetworkInput {

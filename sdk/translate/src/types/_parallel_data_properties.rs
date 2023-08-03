@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelDataProperties {
     /// <p>The custom name assigned to the parallel data resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description assigned to the parallel data resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ParallelDataStatus>,
     /// <p>The source language of the translations in the parallel data file.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    #[doc(hidden)]
     pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    #[doc(hidden)]
     pub parallel_data_config: ::std::option::Option<crate::types::ParallelDataConfig>,
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
-    #[doc(hidden)]
     pub imported_data_size: ::std::option::Option<i64>,
     /// <p>The number of records successfully imported from the parallel data input file.</p>
-    #[doc(hidden)]
     pub imported_record_count: ::std::option::Option<i64>,
     /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
-    #[doc(hidden)]
     pub failed_record_count: ::std::option::Option<i64>,
     /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
-    #[doc(hidden)]
     pub skipped_record_count: ::std::option::Option<i64>,
     /// <p>The encryption key used to encrypt this object.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     /// <p>The time at which the parallel data resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the parallel data resource was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    #[doc(hidden)]
     pub latest_update_attempt_status: ::std::option::Option<crate::types::ParallelDataStatus>,
     /// <p>The time that the most recent update was attempted.</p>
-    #[doc(hidden)]
     pub latest_update_attempt_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ParallelDataProperties {

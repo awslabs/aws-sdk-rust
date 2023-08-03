@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceSearchSettings {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
-    #[doc(hidden)]
     pub face_match_threshold: ::std::option::Option<f32>,
 }
 impl FaceSearchSettings {

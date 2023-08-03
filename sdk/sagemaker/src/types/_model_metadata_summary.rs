@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetadataSummary {
     /// <p>The machine learning domain of the model.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning framework of the model.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task of the model.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The framework version of the model.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
 }
 impl ModelMetadataSummary {

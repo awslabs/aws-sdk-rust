@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResolverRuleInput {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
-    #[doc(hidden)]
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateResolverRuleInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    #[doc(hidden)]
     pub gstin: ::std::option::Option<::std::string::String>,
 }
 impl IndTaxDocuments {

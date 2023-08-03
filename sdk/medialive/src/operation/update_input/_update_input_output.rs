@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputOutput {
     /// Placeholder documentation for Input
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,
 }

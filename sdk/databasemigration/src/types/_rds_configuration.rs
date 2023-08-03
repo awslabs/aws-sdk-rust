@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsConfiguration {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
-    #[doc(hidden)]
     pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the number of virtual CPUs (vCPU) on the recommended Amazon RDS DB instance that meets your requirements.</p>
-    #[doc(hidden)]
     pub instance_vcpu: ::std::option::Option<f64>,
     /// <p>Describes the memory on the recommended Amazon RDS DB instance that meets your requirements.</p>
-    #[doc(hidden)]
     pub instance_memory: ::std::option::Option<f64>,
     /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p>
     /// <p>Amazon RDS provides three storage types: General Purpose SSD (also known as gp2 and gp3), Provisioned IOPS SSD (also known as io1), and magnetic (also known as standard).</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the storage size of the recommended Amazon RDS DB instance that meets your requirements.</p>
-    #[doc(hidden)]
     pub storage_size: ::std::option::Option<i32>,
     /// <p>Describes the number of I/O operations completed each second (IOPS) on the recommended Amazon RDS DB instance that meets your requirements.</p>
-    #[doc(hidden)]
     pub storage_iops: ::std::option::Option<i32>,
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
-    #[doc(hidden)]
     pub deployment_option: ::std::option::Option<::std::string::String>,
     /// <p>Describes the recommended target Amazon RDS engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsConfiguration {

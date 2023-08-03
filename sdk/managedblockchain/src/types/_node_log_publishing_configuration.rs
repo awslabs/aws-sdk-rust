@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    #[doc(hidden)]
     pub fabric: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
 }
 impl NodeLogPublishingConfiguration {

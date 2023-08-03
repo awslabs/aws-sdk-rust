@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

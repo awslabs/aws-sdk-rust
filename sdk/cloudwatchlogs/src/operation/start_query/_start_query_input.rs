@@ -6,30 +6,23 @@ pub struct StartQueryInput {
     /// <p>The log group on which to perform the query.</p> <note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
-    #[doc(hidden)]
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<i64>,
     /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<i64>,
     /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl StartQueryInput {

@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the web application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the web application.</p>
-    #[doc(hidden)]
     pub application_url: ::std::option::Option<::std::string::String>,
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
-    #[doc(hidden)]
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
-    #[doc(hidden)]
     pub application_last_update_date: i64,
     /// <p>The current state of the web application.</p>
-    #[doc(hidden)]
     pub application_state: ::std::option::Option<crate::types::ApplicationState>,
 }
 impl ApplicationSummary {

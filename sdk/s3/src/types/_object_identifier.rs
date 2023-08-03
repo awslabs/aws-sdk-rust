@@ -7,10 +7,8 @@ pub struct ObjectIdentifier {
     /// <p>Key name of the object.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>VersionId for the specific version of the object to delete.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl ObjectIdentifier {

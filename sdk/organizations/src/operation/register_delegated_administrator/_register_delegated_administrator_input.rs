@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDelegatedAdministratorInput {
     /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDelegatedAdministratorInput {

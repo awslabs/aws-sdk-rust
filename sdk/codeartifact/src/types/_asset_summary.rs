@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSummary {
     /// <p> The name of the asset. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The size of the asset. </p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
-    #[doc(hidden)]
     pub hashes: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
 }
 impl AssetSummary {

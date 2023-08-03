@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>Timestamp which tells the creation date for the entity.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp which tells the last updated time for the entity.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the latest version for the entity.</p>
-    #[doc(hidden)]
     pub update_version: i32,
     /// <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::OptionState>,
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
-    #[doc(hidden)]
     pub pending_deletion: ::std::option::Option<bool>,
 }
 impl OptionStatus {

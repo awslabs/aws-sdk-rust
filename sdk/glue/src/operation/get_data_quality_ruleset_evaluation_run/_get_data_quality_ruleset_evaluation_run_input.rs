@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetEvaluationRunInput {
     /// <p>The unique run identifier associated with this run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataQualityRulesetEvaluationRunInput {

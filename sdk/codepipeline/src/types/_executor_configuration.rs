@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutorConfiguration {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
-    #[doc(hidden)]
     pub lambda_executor_configuration: ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-    #[doc(hidden)]
     pub job_worker_executor_configuration: ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
 }
 impl ExecutorConfiguration {

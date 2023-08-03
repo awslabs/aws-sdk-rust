@@ -11,25 +11,18 @@ pub struct BehaviorCriteria {
     /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
     /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The value to be compared with the <code>metric</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MetricValue>,
     /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
-    #[doc(hidden)]
     pub consecutive_datapoints_to_alarm: ::std::option::Option<i32>,
     /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
-    #[doc(hidden)]
     pub consecutive_datapoints_to_clear: ::std::option::Option<i32>,
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
-    #[doc(hidden)]
     pub statistical_threshold: ::std::option::Option<crate::types::StatisticalThreshold>,
     /// <p> The configuration of an ML Detect </p>
-    #[doc(hidden)]
     pub ml_detection_config: ::std::option::Option<crate::types::MachineLearningDetectionConfig>,
 }
 impl BehaviorCriteria {

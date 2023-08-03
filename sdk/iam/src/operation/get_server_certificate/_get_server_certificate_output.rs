@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,
 }

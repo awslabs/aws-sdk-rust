@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSopRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    #[doc(hidden)]
     pub sop_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
     _request_id: Option<String>,
 }

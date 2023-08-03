@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ChannelProtocol>,
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    #[doc(hidden)]
     pub resource_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEndpointListItem {

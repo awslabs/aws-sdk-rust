@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
-    #[doc(hidden)]
     pub window_executions: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

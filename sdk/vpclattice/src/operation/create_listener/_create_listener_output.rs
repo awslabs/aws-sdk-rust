@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateListenerOutput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The protocol of the listener.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ListenerProtocol>,
     /// <p>The port number of the listener.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The action for the default rule.</p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::RuleAction>,
     _request_id: Option<String>,
 }

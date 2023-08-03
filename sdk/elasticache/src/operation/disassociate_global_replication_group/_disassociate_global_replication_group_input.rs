@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
-    #[doc(hidden)]
     pub replication_group_region: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateGlobalReplicationGroupInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupResult {
     /// <p>Group result ID.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Group Result Name.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tests under Group Result.</p>
-    #[doc(hidden)]
     pub tests: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
 }
 impl GroupResult {

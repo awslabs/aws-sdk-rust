@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedBridge {
     /// The ARN of the bridge.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub bridge_state: ::std::option::Option<crate::types::BridgeState>,
     /// The type of the bridge.
-    #[doc(hidden)]
     pub bridge_type: ::std::option::Option<::std::string::String>,
     /// The name of the bridge.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The ARN of the gateway associated with the bridge.
-    #[doc(hidden)]
     pub placement_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListedBridge {

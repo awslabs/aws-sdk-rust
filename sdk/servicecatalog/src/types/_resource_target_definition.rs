@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTargetDefinition {
     /// <p>The attribute to be changed.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
-    #[doc(hidden)]
     pub requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
 }
 impl ResourceTargetDefinition {

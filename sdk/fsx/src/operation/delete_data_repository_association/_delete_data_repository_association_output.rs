@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationOutput {
     /// <p>The ID of the data repository association being deleted.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub delete_data_in_file_system: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    #[doc(hidden)]
     pub cache_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSubnetGroup>>,
     _request_id: Option<String>,
 }

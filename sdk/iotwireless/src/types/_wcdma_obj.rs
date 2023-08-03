@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaObj {
     /// <p>Mobile Country Code.</p>
-    #[doc(hidden)]
     pub mcc: ::std::option::Option<i32>,
     /// <p>Mobile Network Code.</p>
-    #[doc(hidden)]
     pub mnc: ::std::option::Option<i32>,
     /// <p>Location Area Code.</p>
-    #[doc(hidden)]
     pub lac: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    #[doc(hidden)]
     pub utran_cid: ::std::option::Option<i32>,
     /// <p>WCDMA local ID information.</p>
-    #[doc(hidden)]
     pub wcdma_local_id: ::std::option::Option<crate::types::WcdmaLocalId>,
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
-    #[doc(hidden)]
     pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    #[doc(hidden)]
     pub path_loss: ::std::option::Option<i32>,
     /// <p>WCDMA object for network measurement reports.</p>
-    #[doc(hidden)]
     pub wcdma_nmr: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>>,
 }
 impl WcdmaObj {

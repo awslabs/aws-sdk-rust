@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddRegionInput {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
 }
 impl AddRegionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataColor {
     /// <p>The color that is applied to the data value.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The data value that the color is applied to.</p>
-    #[doc(hidden)]
     pub data_value: ::std::option::Option<f64>,
 }
 impl DataColor {

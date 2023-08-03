@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Ingestion ID.</p>
-    #[doc(hidden)]
     pub ingestion_id: ::std::option::Option<::std::string::String>,
     /// <p>Ingestion status.</p>
-    #[doc(hidden)]
     pub ingestion_status: ::std::option::Option<crate::types::IngestionStatus>,
     /// <p>Error information for this ingestion.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>Information about rows for a data set SPICE ingestion.</p>
-    #[doc(hidden)]
     pub row_info: ::std::option::Option<crate::types::RowInfo>,
     /// <p>Information about a queued dataset SPICE ingestion.</p>
-    #[doc(hidden)]
     pub queue_info: ::std::option::Option<crate::types::QueueInfo>,
     /// <p>The time that this ingestion started.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this ingestion took, measured in seconds.</p>
-    #[doc(hidden)]
     pub ingestion_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The size of the data ingested, in bytes.</p>
-    #[doc(hidden)]
     pub ingestion_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Event source for this ingestion.</p>
-    #[doc(hidden)]
     pub request_source: ::std::option::Option<crate::types::IngestionRequestSource>,
     /// <p>Type of this ingestion.</p>
-    #[doc(hidden)]
     pub request_type: ::std::option::Option<crate::types::IngestionRequestType>,
 }
 impl Ingestion {

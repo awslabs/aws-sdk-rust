@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource to be updated.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource to be updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The resource's booking options to be updated.</p>
-    #[doc(hidden)]
     pub booking_options: ::std::option::Option<crate::types::BookingOptions>,
 }
 impl UpdateResourceInput {

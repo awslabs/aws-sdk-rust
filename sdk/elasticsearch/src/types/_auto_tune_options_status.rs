@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsStatus {
     /// <p> Specifies Auto-Tune options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p> Specifies Status of the Auto-Tune options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutoTuneStatus>,
 }
 impl AutoTuneOptionsStatus {

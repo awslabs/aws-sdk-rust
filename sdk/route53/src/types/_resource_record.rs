@@ -10,7 +10,6 @@ pub struct ResourceRecord {
     /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
     /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceRecord {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInsightRulesOutput {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The rules returned by the operation.</p>
-    #[doc(hidden)]
     pub insight_rules: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,
     _request_id: Option<String>,
 }

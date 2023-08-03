@@ -14,7 +14,6 @@ pub struct RuleCondition {
     /// <li> <p> <code>query-string</code> </p> </li>
     /// <li> <p> <code>source-ip</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
@@ -32,25 +31,18 @@ pub struct RuleCondition {
     /// <li> <p>* (matches 0 or more characters)</p> </li>
     /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
-    #[doc(hidden)]
     pub host_header_config: ::std::option::Option<crate::types::HostHeaderConditionConfig>,
     /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
-    #[doc(hidden)]
     pub path_pattern_config: ::std::option::Option<crate::types::PathPatternConditionConfig>,
     /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
-    #[doc(hidden)]
     pub http_header_config: ::std::option::Option<crate::types::HttpHeaderConditionConfig>,
     /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
-    #[doc(hidden)]
     pub query_string_config: ::std::option::Option<crate::types::QueryStringConditionConfig>,
     /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
-    #[doc(hidden)]
     pub http_request_method_config: ::std::option::Option<crate::types::HttpRequestMethodConditionConfig>,
     /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
-    #[doc(hidden)]
     pub source_ip_config: ::std::option::Option<crate::types::SourceIpConditionConfig>,
 }
 impl RuleCondition {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
-    #[doc(hidden)]
     pub recommender_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartRecommenderInput {

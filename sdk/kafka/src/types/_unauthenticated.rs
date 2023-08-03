@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl Unauthenticated {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastRecorderStatus {
     /// <p>A description of a recorder job’s latest status.</p>
-    #[doc(hidden)]
     pub job_status_details: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
-    #[doc(hidden)]
     pub last_collected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the recorder status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the latest recorder job.</p>
-    #[doc(hidden)]
     pub recorder_status: ::std::option::Option<crate::types::RecorderStatus>,
 }
 impl LastRecorderStatus {

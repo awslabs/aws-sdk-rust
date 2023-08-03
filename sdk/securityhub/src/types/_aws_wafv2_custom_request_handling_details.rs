@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2CustomRequestHandlingDetails {
     /// <p> The HTTP headers to insert into the request. </p>
-    #[doc(hidden)]
     pub insert_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomRequestHandlingDetails {

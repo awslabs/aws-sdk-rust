@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source repository.</p>
-    #[doc(hidden)]
     pub source_repository_name: ::std::option::Option<::std::string::String>,
 }
 impl GetSourceRepositoryCloneUrlsInput {

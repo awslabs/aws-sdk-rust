@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateActionTypeInput {
     /// <p>The action type definition for the action type to be updated.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
 }
 impl UpdateActionTypeInput {

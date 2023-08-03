@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control panel where the routing control is located.</p>
-    #[doc(hidden)]
     pub control_panel_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-    #[doc(hidden)]
     pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
 }
 impl RoutingControl {

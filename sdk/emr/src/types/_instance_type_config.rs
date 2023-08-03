@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeConfig {
     /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
-    #[doc(hidden)]
     pub weighted_capacity: ::std::option::Option<i32>,
     /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
-    #[doc(hidden)]
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
-    #[doc(hidden)]
     pub bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
-    #[doc(hidden)]
     pub ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The custom AMI ID to use for the instance type.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTypeConfig {

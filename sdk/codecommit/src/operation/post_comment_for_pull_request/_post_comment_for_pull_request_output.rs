@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID of the pull request. </p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
-    #[doc(hidden)]
     pub before_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
-    #[doc(hidden)]
     pub after_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the change where you posted your comment.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The content of the comment you posted.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,
 }

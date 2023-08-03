@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the task executions from the maintenance window execution.</p>
-    #[doc(hidden)]
     pub task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the maintenance window execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the maintenance window started running.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the maintenance window finished running.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

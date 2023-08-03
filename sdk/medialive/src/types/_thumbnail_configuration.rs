@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThumbnailConfiguration {
     /// Whether Thumbnail is enabled.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ThumbnailState>,
 }
 impl ThumbnailConfiguration {

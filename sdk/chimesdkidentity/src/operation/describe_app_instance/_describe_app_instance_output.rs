@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
-    #[doc(hidden)]
     pub app_instance: ::std::option::Option<crate::types::AppInstance>,
     _request_id: Option<String>,
 }

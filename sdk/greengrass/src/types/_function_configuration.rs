@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionConfiguration {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// The environment configuration of the function.
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>,
     /// The execution arguments.
-    #[doc(hidden)]
     pub exec_args: ::std::option::Option<::std::string::String>,
     /// The name of the function executable.
-    #[doc(hidden)]
     pub executable: ::std::option::Option<::std::string::String>,
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
-    #[doc(hidden)]
     pub memory_size: ::std::option::Option<i32>,
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
-    #[doc(hidden)]
     pub pinned: ::std::option::Option<bool>,
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-    #[doc(hidden)]
     pub function_runtime_override: ::std::option::Option<::std::string::String>,
 }
 impl FunctionConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointRegionalResponse {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    #[doc(hidden)]
     pub request_status: ::std::option::Option<::std::string::String>,
 }
 impl MultiRegionAccessPointRegionalResponse {

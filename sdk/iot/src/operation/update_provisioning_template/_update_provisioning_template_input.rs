@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateInput {
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>True to enable the provisioning template, otherwise false.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the default provisioning template version.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<i32>,
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    #[doc(hidden)]
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    #[doc(hidden)]
     pub pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
     /// <p>Removes pre-provisioning hook template.</p>
-    #[doc(hidden)]
     pub remove_pre_provisioning_hook: ::std::option::Option<bool>,
 }
 impl UpdateProvisioningTemplateInput {

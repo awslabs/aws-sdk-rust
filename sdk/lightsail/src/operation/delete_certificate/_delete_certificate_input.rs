@@ -5,7 +5,6 @@
 pub struct DeleteCertificateInput {
     /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCertificateInput {

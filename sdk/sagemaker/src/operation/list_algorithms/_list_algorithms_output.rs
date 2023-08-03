@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

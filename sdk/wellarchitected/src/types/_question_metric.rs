@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuestionMetric {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    #[doc(hidden)]
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    #[doc(hidden)]
     pub best_practices: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>,
 }
 impl QuestionMetric {

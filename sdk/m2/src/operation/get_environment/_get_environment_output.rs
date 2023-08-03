@@ -4,70 +4,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the runtime environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the runtime environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance underlying the runtime environment.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the runtime environment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentLifecycle>,
     /// <p>The target platform for the runtime environment.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The version of the runtime engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp when the runtime environment was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The storage configurations defined for the runtime environment.</p>
-    #[doc(hidden)]
     pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>The tags defined for this runtime environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
-    #[doc(hidden)]
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
-    #[doc(hidden)]
     pub actual_capacity: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the reported status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
-    #[doc(hidden)]
     pub pending_maintenance: ::std::option::Option<crate::types::PendingMaintenance>,
     /// <p>The identifier of a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

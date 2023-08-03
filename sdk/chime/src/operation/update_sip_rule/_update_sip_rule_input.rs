@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSipRuleInput {
     /// <p>The SIP rule ID.</p>
-    #[doc(hidden)]
     pub sip_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the specified SIP rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The new value of the list of target applications.</p>
-    #[doc(hidden)]
     pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInput {

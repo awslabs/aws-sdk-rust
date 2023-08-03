@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_compliance_status: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceSummary {

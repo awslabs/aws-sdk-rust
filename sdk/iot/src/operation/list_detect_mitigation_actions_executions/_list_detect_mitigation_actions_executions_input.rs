@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsExecutionsInput {
     /// <p> The unique identifier of the task. </p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the violation. </p>
-    #[doc(hidden)]
     pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the thing whose mitigation actions are listed. </p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The token for the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsInput {

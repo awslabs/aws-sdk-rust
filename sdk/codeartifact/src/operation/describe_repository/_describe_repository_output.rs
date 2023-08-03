@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRepositoryOutput {
     /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
 }

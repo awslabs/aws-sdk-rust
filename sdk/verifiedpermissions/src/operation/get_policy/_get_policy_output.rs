@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the policy that you want information about.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the policy.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The definition of the requested policy.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::PolicyDefinitionDetail>,
     /// <p>The date and time that the policy was originally created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the policy was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

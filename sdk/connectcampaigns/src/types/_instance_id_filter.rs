@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIdFilter {
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// Operators for Connect instance identifier filter
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
 }
 impl InstanceIdFilter {

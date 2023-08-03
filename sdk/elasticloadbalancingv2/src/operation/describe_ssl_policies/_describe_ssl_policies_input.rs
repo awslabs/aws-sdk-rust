@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSslPoliciesInput {
     /// <p>The names of the policies.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    #[doc(hidden)]
     pub load_balancer_type: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
 }
 impl DescribeSslPoliciesInput {

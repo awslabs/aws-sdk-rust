@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricStatisticsOutput {
     /// <p>A label for the specified metric.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The data points for the specified metric.</p>
-    #[doc(hidden)]
     pub datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
     _request_id: Option<String>,
 }

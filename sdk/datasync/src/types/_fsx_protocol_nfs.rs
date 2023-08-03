@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
 impl FsxProtocolNfs {

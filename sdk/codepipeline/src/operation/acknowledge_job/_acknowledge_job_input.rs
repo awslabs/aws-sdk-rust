@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeJobInput {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
-    #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeJobInput {

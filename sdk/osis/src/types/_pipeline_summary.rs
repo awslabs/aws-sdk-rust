@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p>The current status of the pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>Information about a pipeline's current status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::PipelineStatusReason>,
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    #[doc(hidden)]
     pub min_units: ::std::option::Option<i32>,
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    #[doc(hidden)]
     pub max_units: ::std::option::Option<i32>,
     /// <p>The date and time when the pipeline was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the pipeline was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {

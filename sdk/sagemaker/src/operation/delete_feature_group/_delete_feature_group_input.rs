@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFeatureGroupInput {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureGroupInput {

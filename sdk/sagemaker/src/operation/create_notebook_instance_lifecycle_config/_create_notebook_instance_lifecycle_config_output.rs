@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotebookInstanceLifecycleConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

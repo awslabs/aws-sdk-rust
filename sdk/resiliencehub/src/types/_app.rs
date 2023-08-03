@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct App {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the app was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AppStatusType>,
     /// <p>The current status of compliance for the resiliency policy.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<crate::types::AppComplianceStatusType>,
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    #[doc(hidden)]
     pub last_app_compliance_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current resiliency score for the application.</p>
-    #[doc(hidden)]
     pub resiliency_score: f64,
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    #[doc(hidden)]
     pub last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    #[doc(hidden)]
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
 }
 impl App {

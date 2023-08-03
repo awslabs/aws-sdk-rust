@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
-    #[doc(hidden)]
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of endpoint objects.</p>
-    #[doc(hidden)]
     pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
-    #[doc(hidden)]
     pub traffic_dial_percentage: ::std::option::Option<f32>,
     /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
     /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>
-    #[doc(hidden)]
     pub health_check_port: ::std::option::Option<i32>,
     /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>
-    #[doc(hidden)]
     pub health_check_protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
     /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>
-    #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
-    #[doc(hidden)]
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
-    #[doc(hidden)]
     pub threshold_count: ::std::option::Option<i32>,
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on. </p>
-    #[doc(hidden)]
     pub port_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
 }
 impl EndpointGroup {

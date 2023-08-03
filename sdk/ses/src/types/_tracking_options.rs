@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingOptions {
     /// <p>The custom subdomain that will be used to redirect email recipients to the Amazon SES event tracking domain.</p>
-    #[doc(hidden)]
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl TrackingOptions {

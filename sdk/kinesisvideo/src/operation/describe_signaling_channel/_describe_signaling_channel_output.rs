@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSignalingChannelOutput {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    #[doc(hidden)]
     pub channel_info: ::std::option::Option<crate::types::ChannelInfo>,
     _request_id: Option<String>,
 }

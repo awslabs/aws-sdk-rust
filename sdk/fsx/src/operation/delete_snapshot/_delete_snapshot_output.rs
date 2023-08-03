@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotOutput {
     /// <p>The ID of the deleted snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
     _request_id: Option<String>,
 }

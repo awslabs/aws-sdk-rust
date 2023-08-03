@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CpuOptions {
     /// <p>The number of cores that the CPU can use.</p>
-    #[doc(hidden)]
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per core in the CPU.</p>
-    #[doc(hidden)]
     pub threads_per_core: ::std::option::Option<i32>,
 }
 impl CpuOptions {

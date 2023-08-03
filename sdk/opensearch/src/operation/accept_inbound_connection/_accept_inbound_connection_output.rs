@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInboundConnectionOutput {
     /// <p>Information about the accepted inbound connection.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }

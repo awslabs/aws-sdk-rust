@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketCountByEncryptionType {
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon Web Services managed KMS key or a customer managed KMS key. By default, these buckets encrypt new objects automatically using SSE-KMS encryption.</p>
-    #[doc(hidden)]
     pub kms_managed: ::std::option::Option<i64>,
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.</p>
-    #[doc(hidden)]
     pub s3_managed: ::std::option::Option<i64>,
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
-    #[doc(hidden)]
     pub unencrypted: ::std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
-    #[doc(hidden)]
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountByEncryptionType {

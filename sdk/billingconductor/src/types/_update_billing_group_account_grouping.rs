@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBillingGroupAccountGrouping {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
-    #[doc(hidden)]
     pub auto_associate: ::std::option::Option<bool>,
 }
 impl UpdateBillingGroupAccountGrouping {

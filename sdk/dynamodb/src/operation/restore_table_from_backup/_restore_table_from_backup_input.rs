@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
-    #[doc(hidden)]
     pub target_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-    #[doc(hidden)]
     pub backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The billing mode of the restored table.</p>
-    #[doc(hidden)]
     pub billing_mode_override: ::std::option::Option<crate::types::BillingMode>,
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    #[doc(hidden)]
     pub global_secondary_index_override: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    #[doc(hidden)]
     pub local_secondary_index_override: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The new server-side encryption settings for the restored table.</p>
-    #[doc(hidden)]
     pub sse_specification_override: ::std::option::Option<crate::types::SseSpecification>,
 }
 impl RestoreTableFromBackupInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PacketHeaderStatement {
     /// <p>The source addresses.</p>
-    #[doc(hidden)]
     pub source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination addresses.</p>
-    #[doc(hidden)]
     pub destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source ports.</p>
-    #[doc(hidden)]
     pub source_ports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination ports.</p>
-    #[doc(hidden)]
     pub destination_ports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source prefix lists.</p>
-    #[doc(hidden)]
     pub source_prefix_lists: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination prefix lists.</p>
-    #[doc(hidden)]
     pub destination_prefix_lists: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocols.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
 }
 impl PacketHeaderStatement {

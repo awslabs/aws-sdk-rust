@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation.</p>
-    #[doc(hidden)]
     pub resource_share_invitation_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
-    #[doc(hidden)]
     pub resource_share_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
-    #[doc(hidden)]
     pub sender_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
-    #[doc(hidden)]
     pub receiver_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invitation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the invitation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceShareInvitationStatus>,
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    #[doc(hidden)]
     pub resource_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
-    #[doc(hidden)]
     pub receiver_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceShareInvitation {

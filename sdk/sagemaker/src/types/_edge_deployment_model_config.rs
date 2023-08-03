@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeploymentModelConfig {
     /// <p>The name the device application uses to reference this model.</p>
-    #[doc(hidden)]
     pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The edge packaging job associated with this deployment.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
 impl EdgeDeploymentModelConfig {

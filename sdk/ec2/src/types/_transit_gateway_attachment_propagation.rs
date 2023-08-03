@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachmentPropagation {
     /// <p>The ID of the propagation route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the propagation route table.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayPropagationState>,
 }
 impl TransitGatewayAttachmentPropagation {

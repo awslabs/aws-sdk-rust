@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
-    #[doc(hidden)]
     pub event_integration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

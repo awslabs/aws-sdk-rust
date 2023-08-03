@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The instance types of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet ID of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::Logging>,
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InfrastructureConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the topic.</p>
-    #[doc(hidden)]
     pub topic_status: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfiguration {

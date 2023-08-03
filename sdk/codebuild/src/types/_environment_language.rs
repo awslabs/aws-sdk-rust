@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentLanguage {
     /// <p>The programming language for the Docker images.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::LanguageType>,
     /// <p>The list of Docker images that are related by the specified programming language.</p>
-    #[doc(hidden)]
     pub images: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>>,
 }
 impl EnvironmentLanguage {

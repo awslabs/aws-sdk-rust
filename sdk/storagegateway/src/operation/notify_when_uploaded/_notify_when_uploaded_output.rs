@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyWhenUploadedOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    #[doc(hidden)]
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
-    #[doc(hidden)]
     pub notification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

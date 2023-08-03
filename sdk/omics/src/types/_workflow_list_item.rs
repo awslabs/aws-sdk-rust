@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowListItem {
     /// <p>The workflow's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
     /// <p>The workflow's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The workflow's digest.</p>
-    #[doc(hidden)]
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>When the workflow was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkflowListItem {

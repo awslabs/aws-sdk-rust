@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionLogOptions {
     /// <p>Indicates whether connection logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    #[doc(hidden)]
     pub cloudwatch_log_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    #[doc(hidden)]
     pub cloudwatch_log_stream: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionLogOptions {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct ProjectSourceVersion {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSourceVersion {

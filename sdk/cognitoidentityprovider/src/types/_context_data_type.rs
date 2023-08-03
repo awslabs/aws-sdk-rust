@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextDataType {
     /// <p>The source IP address of your user's device.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Your server endpoint where this API is invoked.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Your server path where this API is invoked.</p>
-    #[doc(hidden)]
     pub server_path: ::std::option::Option<::std::string::String>,
     /// <p>HttpHeaders received on your server in same order.</p>
-    #[doc(hidden)]
     pub http_headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
-    #[doc(hidden)]
     pub encoded_data: ::std::option::Option<::std::string::String>,
 }
 impl ContextDataType {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
-    #[doc(hidden)]
     pub application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeApplicationsInput {

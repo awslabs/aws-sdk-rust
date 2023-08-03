@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GlobalSignOutInput {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl GlobalSignOutInput {

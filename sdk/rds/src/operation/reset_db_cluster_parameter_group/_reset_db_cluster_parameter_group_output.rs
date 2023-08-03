@@ -13,7 +13,6 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchSegmentJobInput {

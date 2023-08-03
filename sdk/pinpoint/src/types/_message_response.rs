@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
-    #[doc(hidden)]
     pub endpoint_result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     /// <p>The identifier for the original request that the message was delivered for.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageResult>>,
 }
 impl MessageResponse {

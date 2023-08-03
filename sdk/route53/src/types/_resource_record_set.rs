@@ -17,7 +17,6 @@ pub struct ResourceRecordSet {
     /// </important> </li>
     /// </ul>
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
@@ -37,11 +36,9 @@ pub struct ResourceRecordSet {
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RrType>,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub set_identifier: ::std::option::Option<::std::string::String>,
     /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
     /// <ul>
@@ -51,7 +48,6 @@ pub struct ResourceRecordSet {
     /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li>
     /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<i64>,
     /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
     /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
@@ -62,7 +58,6 @@ pub struct ResourceRecordSet {
     /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
     /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub region: ::std::option::Option<crate::types::ResourceRecordSetRegion>,
     /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note>
     /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
@@ -73,7 +68,6 @@ pub struct ResourceRecordSet {
     /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
     /// </important>
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
-    #[doc(hidden)]
     pub geo_location: ::std::option::Option<crate::types::GeoLocation>,
     /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
     /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
@@ -90,7 +84,6 @@ pub struct ResourceRecordSet {
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failover: ::std::option::Option<crate::types::ResourceRecordSetFailover>,
     /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
     /// <ul>
@@ -102,7 +95,6 @@ pub struct ResourceRecordSet {
     /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li>
     /// </ul>
     /// <p>You can't create multivalue answer alias records.</p>
-    #[doc(hidden)]
     pub multi_value_answer: ::std::option::Option<bool>,
     /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
     /// <ul>
@@ -111,12 +103,10 @@ pub struct ResourceRecordSet {
     /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li>
     /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
     /// <p>Information about the resource records to act upon.</p> <note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_records: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
     /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
@@ -124,7 +114,6 @@ pub struct ResourceRecordSet {
     /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
     /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub alias_target: ::std::option::Option<crate::types::AliasTarget>,
     /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
     /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
@@ -169,16 +158,13 @@ pub struct ResourceRecordSet {
     /// <li> <p>Associate that health check with the resource record set.</p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub health_check_id: ::std::option::Option<::std::string::String>,
     /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
     /// </important>
-    #[doc(hidden)]
     pub traffic_policy_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-    #[doc(hidden)]
     pub cidr_routing_config: ::std::option::Option<crate::types::CidrRoutingConfig>,
 }
 impl ResourceRecordSet {

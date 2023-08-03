@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiKeyInput {
     /// <p>The ID for the GraphQL API.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API key ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<i64>,
 }
 impl UpdateApiKeyInput {

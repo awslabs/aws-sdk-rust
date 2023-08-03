@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
-    #[doc(hidden)]
     pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInput {

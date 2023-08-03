@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMetricFilterInput {
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the metric filter.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A collection of information that defines how metric data gets emitted.</p>
-    #[doc(hidden)]
     pub metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
 }
 impl PutMetricFilterInput {

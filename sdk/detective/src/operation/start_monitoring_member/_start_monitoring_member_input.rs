@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartMonitoringMemberInput {

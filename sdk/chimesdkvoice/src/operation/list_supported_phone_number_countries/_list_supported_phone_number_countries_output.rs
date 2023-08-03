@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
-    #[doc(hidden)]
     pub phone_number_countries: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
     _request_id: Option<String>,
 }

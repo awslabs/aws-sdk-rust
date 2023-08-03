@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChunkInput {
     /// Storage job id
-    #[doc(hidden)]
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Chunk token
-    #[doc(hidden)]
     pub chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl GetChunkInput {

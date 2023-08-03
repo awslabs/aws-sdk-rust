@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventInfoMap {
     /// <p>The identifier of an Amazon Redshift event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The category of an Amazon Redshift event.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of an Amazon Redshift event.</p>
-    #[doc(hidden)]
     pub event_description: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
 }
 impl EventInfoMap {

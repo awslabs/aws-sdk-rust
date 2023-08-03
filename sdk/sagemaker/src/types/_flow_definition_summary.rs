@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowDefinitionSummary {
     /// <p>The name of the flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the flow definition. Valid values:</p>
-    #[doc(hidden)]
     pub flow_definition_status: ::std::option::Option<crate::types::FlowDefinitionStatus>,
     /// <p>The timestamp when SageMaker created the flow definition.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason why the flow definition creation failed. A failure reason is returned only when the flow definition status is <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl FlowDefinitionSummary {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentSummary {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    #[doc(hidden)]
     pub content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content.</p>
-    #[doc(hidden)]
     pub content_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    #[doc(hidden)]
     pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
-    #[doc(hidden)]
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the content.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the revision of the content.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the content.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The media type of the content.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the content.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContentSummary {

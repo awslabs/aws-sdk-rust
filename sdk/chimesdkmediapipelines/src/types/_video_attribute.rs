@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoAttribute {
     /// <p>Sets the corner radius of all video tiles.</p>
-    #[doc(hidden)]
     pub corner_radius: ::std::option::Option<i32>,
     /// <p>Defines the border color of all video tiles.</p>
-    #[doc(hidden)]
     pub border_color: ::std::option::Option<crate::types::BorderColor>,
     /// <p>Defines the highlight color for the active video tile.</p>
-    #[doc(hidden)]
     pub highlight_color: ::std::option::Option<crate::types::HighlightColor>,
     /// <p>Defines the border thickness for all video tiles.</p>
-    #[doc(hidden)]
     pub border_thickness: ::std::option::Option<i32>,
 }
 impl VideoAttribute {

@@ -7,13 +7,10 @@ pub struct ModifyCacheSubnetGroupInput {
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code> </p>
-    #[doc(hidden)]
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the cache subnet group.</p>
-    #[doc(hidden)]
     pub cache_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyCacheSubnetGroupInput {

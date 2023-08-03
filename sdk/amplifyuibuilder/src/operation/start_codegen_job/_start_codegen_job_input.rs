@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCodegenJobInput {
     /// <p>The unique ID for the Amplify app.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The idempotency token used to ensure that the code generation job request completes only once.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The code generation job resource configuration.</p>
-    #[doc(hidden)]
     pub codegen_job_to_create: ::std::option::Option<crate::types::StartCodegenJobData>,
 }
 impl StartCodegenJobInput {

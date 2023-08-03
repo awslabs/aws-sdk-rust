@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
-    #[doc(hidden)]
     pub network_firewall_policy: ::std::option::Option<crate::types::NetworkFirewallPolicy>,
     /// <p>Defines the policy options for a third-party firewall policy.</p>
-    #[doc(hidden)]
     pub third_party_firewall_policy: ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>,
 }
 impl PolicyOption {

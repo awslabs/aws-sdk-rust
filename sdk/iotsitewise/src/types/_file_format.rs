@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileFormat {
     /// <p>The .csv file format.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::Csv>,
 }
 impl FileFormat {

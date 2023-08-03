@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDetectorOutput {
     /// <p>The unique ID of the created detector.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    #[doc(hidden)]
     pub unprocessed_data_sources: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>,
     _request_id: Option<String>,
 }

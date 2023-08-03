@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeConflictsOutput {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
-    #[doc(hidden)]
     pub mergeable: bool,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the merge base.</p>
-    #[doc(hidden)]
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
-    #[doc(hidden)]
     pub conflict_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ConflictMetadata>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

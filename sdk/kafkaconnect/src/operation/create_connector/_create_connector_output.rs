@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connector.</p>
-    #[doc(hidden)]
     pub connector_state: ::std::option::Option<crate::types::ConnectorState>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetExportJobsOutput {
     /// <p>The list of dataset export jobs.</p>
-    #[doc(hidden)]
     pub dataset_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

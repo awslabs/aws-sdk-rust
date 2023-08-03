@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUpdateRequest {
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl ServiceUpdateRequest {

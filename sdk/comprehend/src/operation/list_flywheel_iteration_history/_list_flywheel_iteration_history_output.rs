@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryOutput {
     /// <p>List of flywheel iteration properties</p>
-    #[doc(hidden)]
     pub flywheel_iteration_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     /// <p>Next token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

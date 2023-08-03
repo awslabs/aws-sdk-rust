@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembersInput {
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
-    #[doc(hidden)]
     pub account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
 }
 impl CreateMembersInput {

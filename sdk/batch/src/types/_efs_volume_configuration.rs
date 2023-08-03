@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.</p>
     /// </important>
-    #[doc(hidden)]
     pub root_directory: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[doc(hidden)]
     pub transit_encryption: ::std::option::Option<crate::types::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    #[doc(hidden)]
     pub transit_encryption_port: ::std::option::Option<i32>,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub authorization_config: ::std::option::Option<crate::types::EfsAuthorizationConfig>,
 }
 impl EfsVolumeConfiguration {

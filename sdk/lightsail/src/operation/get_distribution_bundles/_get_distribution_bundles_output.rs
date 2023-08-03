@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
-    #[doc(hidden)]
     pub bundles: ::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>>,
     _request_id: Option<String>,
 }

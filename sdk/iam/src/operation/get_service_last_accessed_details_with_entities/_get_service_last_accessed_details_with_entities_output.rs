@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>The status of the job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatusType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    #[doc(hidden)]
     pub job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub job_completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub entity_details_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityDetails>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains details about the reason the operation failed.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
     _request_id: Option<String>,
 }

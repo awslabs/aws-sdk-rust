@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Datum {
     /// <p> Indicates if the data point is a scalar value such as integer, string, double, or Boolean. </p>
-    #[doc(hidden)]
     pub scalar_value: ::std::option::Option<::std::string::String>,
     /// <p> Indicates if the data point is a timeseries data type. </p>
-    #[doc(hidden)]
     pub time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
     /// <p> Indicates if the data point is an array. </p>
-    #[doc(hidden)]
     pub array_value: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
     /// <p> Indicates if the data point is a row. </p>
-    #[doc(hidden)]
     pub row_value: ::std::option::Option<crate::types::Row>,
     /// <p> Indicates if the data point is null. </p>
-    #[doc(hidden)]
     pub null_value: ::std::option::Option<bool>,
 }
 impl Datum {

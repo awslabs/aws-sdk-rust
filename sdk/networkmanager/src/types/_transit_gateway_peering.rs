@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPeering {
     /// <p>Describes a transit gateway peer connection.</p>
-    #[doc(hidden)]
     pub peering: ::std::option::Option<crate::types::Peering>,
     /// <p>The ARN of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway peering attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_peering_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayPeering {

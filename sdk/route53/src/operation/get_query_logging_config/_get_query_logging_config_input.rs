@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryLoggingConfigInput {
     /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryLoggingConfigInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

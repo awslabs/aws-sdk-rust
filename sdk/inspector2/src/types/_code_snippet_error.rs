@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSnippetError {
     /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
-    #[doc(hidden)]
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::CodeSnippetErrorCode>,
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl CodeSnippetError {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the configured table.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the Glue table being configured.</p>
-    #[doc(hidden)]
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    #[doc(hidden)]
     pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableInput {

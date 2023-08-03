@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsOutput {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The configurations for a Slack channel.</p>
-    #[doc(hidden)]
     pub slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }

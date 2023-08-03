@@ -10,7 +10,6 @@ pub struct AwsCloudFrontDistributionDefaultCacheBehavior {
     /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionDefaultCacheBehavior {

@@ -6,12 +6,10 @@
 pub struct HandshakeFilter {
     /// <p>Specifies the type of handshake action.</p>
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
     /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub parent_handshake_id: ::std::option::Option<::std::string::String>,
 }
 impl HandshakeFilter {

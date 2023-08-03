@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The event destination object that you want to apply to the specified configuration set.</p>
-    #[doc(hidden)]
     pub event_destination: ::std::option::Option<crate::types::EventDestination>,
 }
 impl UpdateConfigurationSetEventDestinationInput {

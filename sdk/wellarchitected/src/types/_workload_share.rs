@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadShare {
     /// <p>The ID associated with the share.</p>
-    #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub shared_by: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
-    #[doc(hidden)]
     pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a share request.</p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The status of the share request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    #[doc(hidden)]
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadShare {

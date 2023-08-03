@@ -4,39 +4,29 @@
 #[derive(::std::fmt::Debug)]
 pub struct PublishPackageVersionInput {
     /// <p>The name of the domain that contains the repository that contains the package version to publish.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.</p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that the package version will be published to.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
     /// <p>The only supported value is <code>generic</code>.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version to publish.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package version to publish.</p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The content of the asset to publish.</p>
     pub asset_content: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>This value is used as an integrity check to verify that the <code>assetContent</code> has not changed after it was originally sent.</p>
-    #[doc(hidden)]
     pub asset_sha256: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>Valid values: <code>unfinished</code> </p>
-    #[doc(hidden)]
     pub unfinished: ::std::option::Option<bool>,
 }
 impl PublishPackageVersionInput {

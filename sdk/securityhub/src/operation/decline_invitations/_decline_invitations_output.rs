@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeclineInvitationsOutput {
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     _request_id: Option<String>,
 }

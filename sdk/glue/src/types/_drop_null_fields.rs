@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DropNullFields {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
-    #[doc(hidden)]
     pub null_check_box_list: ::std::option::Option<crate::types::NullCheckBoxList>,
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    #[doc(hidden)]
     pub null_text_list: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>,
 }
 impl DropNullFields {

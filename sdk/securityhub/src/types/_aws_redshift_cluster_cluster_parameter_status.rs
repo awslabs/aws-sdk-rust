@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterParameterStatus {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
     /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    #[doc(hidden)]
     pub parameter_apply_error_description: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterParameterStatus {

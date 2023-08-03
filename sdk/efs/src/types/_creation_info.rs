@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    #[doc(hidden)]
     pub owner_uid: ::std::option::Option<i64>,
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    #[doc(hidden)]
     pub owner_gid: ::std::option::Option<i64>,
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::string::String>,
 }
 impl CreationInfo {

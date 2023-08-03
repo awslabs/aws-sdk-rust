@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
-    #[doc(hidden)]
     pub target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
 }
 impl Heterogeneous {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFolderPathOutput {
     /// <p>The path information.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<crate::types::ResourcePath>,
     _request_id: Option<String>,
 }

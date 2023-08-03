@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimDevicesByClaimCodeOutput {
     /// <p>The claim code provided by the device manufacturer.</p>
-    #[doc(hidden)]
     pub claim_code: ::std::option::Option<::std::string::String>,
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

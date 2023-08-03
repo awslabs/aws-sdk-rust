@@ -8,16 +8,12 @@
 pub struct Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The list of variables used in the expression.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
-    #[doc(hidden)]
     pub window: ::std::option::Option<crate::types::MetricWindow>,
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-    #[doc(hidden)]
     pub processing_config: ::std::option::Option<crate::types::MetricProcessingConfig>,
 }
 impl Metric {

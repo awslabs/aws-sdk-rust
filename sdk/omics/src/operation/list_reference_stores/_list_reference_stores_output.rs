@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReferenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of reference stores.</p>
-    #[doc(hidden)]
     pub reference_stores: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
     _request_id: Option<String>,
 }

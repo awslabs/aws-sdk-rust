@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyValueHistory {
     /// <p>An object that uniquely identifies an entity property.</p>
-    #[doc(hidden)]
     pub entity_property_reference: ::std::option::Option<crate::types::EntityPropertyReference>,
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>>,
 }
 impl PropertyValueHistory {

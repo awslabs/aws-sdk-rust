@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyChannelSettings {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
-    #[doc(hidden)]
     pub connect_campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
-    #[doc(hidden)]
     pub connect_campaign_execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl JourneyChannelSettings {

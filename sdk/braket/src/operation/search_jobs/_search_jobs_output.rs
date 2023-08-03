@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchJobsOutput {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

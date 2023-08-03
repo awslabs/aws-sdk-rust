@@ -6,16 +6,12 @@
 pub struct Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
     #[deprecated(note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
-    #[doc(hidden)]
     pub rmse: ::std::option::Option<f64>,
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
-    #[doc(hidden)]
     pub weighted_quantile_losses: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
-    #[doc(hidden)]
     pub error_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>,
     /// <p>The average value of all weighted quantile losses.</p>
-    #[doc(hidden)]
     pub average_weighted_quantile_loss: ::std::option::Option<f64>,
 }
 impl Metrics {

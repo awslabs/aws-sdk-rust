@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamPoolAllocation {
     /// <p>The CIDR for the allocation. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an allocation.</p>
-    #[doc(hidden)]
     pub ipam_pool_allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the pool allocation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::IpamPoolAllocationResourceType>,
     /// <p>The Amazon Web Services Region of the resource.</p>
-    #[doc(hidden)]
     pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the resource.</p>
-    #[doc(hidden)]
     pub resource_owner: ::std::option::Option<::std::string::String>,
 }
 impl IpamPoolAllocation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForgetSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl ForgetSmartHomeAppliancesInput {

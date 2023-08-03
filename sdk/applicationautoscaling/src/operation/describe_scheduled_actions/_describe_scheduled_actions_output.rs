@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
-    #[doc(hidden)]
     pub scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

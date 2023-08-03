@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Revision {
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    #[doc(hidden)]
     pub sha: ::std::option::Option<::std::string::String>,
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    #[doc(hidden)]
     pub directory: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
 }
 impl Revision {

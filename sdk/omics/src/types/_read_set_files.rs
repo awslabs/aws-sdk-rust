@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    #[doc(hidden)]
     pub source1: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The location of the second file in Amazon S3.</p>
-    #[doc(hidden)]
     pub source2: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The files' index.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReadSetFiles {

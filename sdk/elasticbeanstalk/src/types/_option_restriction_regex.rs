@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionRestrictionRegex {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>A unique name representing this regular expression.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
 }
 impl OptionRestrictionRegex {

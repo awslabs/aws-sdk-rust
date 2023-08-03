@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelingJobInput {
     /// <p>The name of the labeling job to return information for.</p>
-    #[doc(hidden)]
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelingJobInput {

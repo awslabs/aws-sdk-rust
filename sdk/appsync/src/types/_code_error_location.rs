@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeErrorLocation {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
-    #[doc(hidden)]
     pub line: i32,
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
-    #[doc(hidden)]
     pub column: i32,
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
-    #[doc(hidden)]
     pub span: i32,
 }
 impl CodeErrorLocation {

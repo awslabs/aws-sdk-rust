@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDisk {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
-    #[doc(hidden)]
     pub internal_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
-    #[doc(hidden)]
     pub bytes: i64,
     /// <p>The EBS Volume ID of this disk.</p>
-    #[doc(hidden)]
     pub ebs_volume_id: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDisk {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalTranscriptEvent {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<crate::types::MedicalTranscript>,
 }
 impl MedicalTranscriptEvent {

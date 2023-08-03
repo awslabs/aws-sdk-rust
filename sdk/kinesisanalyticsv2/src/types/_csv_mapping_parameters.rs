@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvMappingParameters {
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
-    #[doc(hidden)]
     pub record_row_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
-    #[doc(hidden)]
     pub record_column_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl CsvMappingParameters {

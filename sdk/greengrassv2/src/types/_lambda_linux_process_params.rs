@@ -6,10 +6,8 @@
 pub struct LambdaLinuxProcessParams {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
     /// <p>Default: <code>GreengrassContainer</code> </p>
-    #[doc(hidden)]
     pub isolation_mode: ::std::option::Option<crate::types::LambdaIsolationMode>,
     /// <p>The parameters for the container in which the Lambda function runs.</p>
-    #[doc(hidden)]
     pub container_params: ::std::option::Option<crate::types::LambdaContainerParams>,
 }
 impl LambdaLinuxProcessParams {

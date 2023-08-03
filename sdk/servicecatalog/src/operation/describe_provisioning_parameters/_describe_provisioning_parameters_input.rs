@@ -8,25 +8,18 @@ pub struct DescribeProvisioningParametersInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub path_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProvisioningParametersInput {

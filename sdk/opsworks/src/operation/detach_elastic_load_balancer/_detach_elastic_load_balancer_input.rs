@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    #[doc(hidden)]
     pub elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
 }
 impl DetachElasticLoadBalancerInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtractedCharactersListItem {
     /// <p>Page number.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>Number of characters extracted from each page.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ExtractedCharactersListItem {

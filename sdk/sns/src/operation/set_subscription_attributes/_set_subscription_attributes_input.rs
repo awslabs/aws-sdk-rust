@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription to modify.</p>
-    #[doc(hidden)]
     pub subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that this action uses:</p>
@@ -28,10 +27,8 @@ pub struct SetSubscriptionAttributesInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The new value for the attribute in JSON format.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl SetSubscriptionAttributesInput {

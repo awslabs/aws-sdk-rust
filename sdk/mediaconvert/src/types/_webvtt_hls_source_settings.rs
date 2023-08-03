@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebvttHlsSourceSettings {
     /// Optional. Specify alternative group ID
-    #[doc(hidden)]
     pub rendition_group_id: ::std::option::Option<::std::string::String>,
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    #[doc(hidden)]
     pub rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Optional. Specify media name
-    #[doc(hidden)]
     pub rendition_name: ::std::option::Option<::std::string::String>,
 }
 impl WebvttHlsSourceSettings {

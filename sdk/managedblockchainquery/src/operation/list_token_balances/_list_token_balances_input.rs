@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTokenBalancesInput {
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
-    #[doc(hidden)]
     pub owner_filter: ::std::option::Option<crate::types::OwnerFilter>,
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
-    #[doc(hidden)]
     pub token_filter: ::std::option::Option<crate::types::TokenFilter>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of token balances to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListTokenBalancesInput {

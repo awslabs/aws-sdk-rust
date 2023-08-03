@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRefreshProgressDetails {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub live_pool_progress: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
-    #[doc(hidden)]
     pub warm_pool_progress: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
 }
 impl InstanceRefreshProgressDetails {

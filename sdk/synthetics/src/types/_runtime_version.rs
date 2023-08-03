@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the runtime version, created by Amazon.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date that the runtime version was released.</p>
-    #[doc(hidden)]
     pub release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    #[doc(hidden)]
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RuntimeVersion {

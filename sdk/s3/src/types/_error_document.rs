@@ -7,7 +7,6 @@ pub struct ErrorDocument {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDocument {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoggingOptionsInput {
     /// <p>The logging options payload.</p>
-    #[doc(hidden)]
     pub logging_options_payload: ::std::option::Option<crate::types::LoggingOptionsPayload>,
 }
 impl SetLoggingOptionsInput {

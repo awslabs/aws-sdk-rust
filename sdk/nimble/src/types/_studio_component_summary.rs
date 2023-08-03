@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StudioComponentSummary {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name for the studio component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a studio component resource.</p>
-    #[doc(hidden)]
     pub studio_component_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
-    #[doc(hidden)]
     pub subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
     /// <p>The type of the studio component.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StudioComponentType>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    #[doc(hidden)]
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl StudioComponentSummary {

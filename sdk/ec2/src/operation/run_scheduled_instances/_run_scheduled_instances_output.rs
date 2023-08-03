@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunScheduledInstancesOutput {
     /// <p>The IDs of the newly launched instances.</p>
-    #[doc(hidden)]
     pub instance_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

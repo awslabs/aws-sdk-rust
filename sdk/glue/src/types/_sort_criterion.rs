@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriterion {
     /// <p>The name of the field on which to sort.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>An ascending or descending sort.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SortCriterion {

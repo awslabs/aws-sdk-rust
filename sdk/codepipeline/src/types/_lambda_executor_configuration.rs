@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaExecutorConfiguration {

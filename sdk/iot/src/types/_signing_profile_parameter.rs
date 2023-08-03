@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningProfileParameter {
     /// <p>Certificate ARN.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hardware platform of your device.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The location of the code-signing certificate on your device.</p>
-    #[doc(hidden)]
     pub certificate_path_on_device: ::std::option::Option<::std::string::String>,
 }
 impl SigningProfileParameter {

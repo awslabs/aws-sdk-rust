@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveResultItem {
     /// <p>The identifier of the relevant passage result.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the document.</p>
-    #[doc(hidden)]
     pub document_title: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the relevant passage.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the original location of the document.</p>
-    #[doc(hidden)]
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    #[doc(hidden)]
     pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl RetrieveResultItem {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SocketAddress {
     /// <p>The IP address for the socket address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The port for the socket address.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl SocketAddress {

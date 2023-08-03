@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BodySectionContent {
     /// <p>The layout configuration of a body section.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
 }
 impl BodySectionContent {

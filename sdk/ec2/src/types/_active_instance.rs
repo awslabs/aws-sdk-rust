@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveInstance {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Spot Instance request.</p>
-    #[doc(hidden)]
     pub spot_instance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
-    #[doc(hidden)]
     pub instance_health: ::std::option::Option<crate::types::InstanceHealthStatus>,
 }
 impl ActiveInstance {

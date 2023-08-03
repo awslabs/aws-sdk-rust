@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendTestEventNotificationInput {
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::NotificationSpecification>,
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
-    #[doc(hidden)]
     pub test_event_type: ::std::option::Option<crate::types::EventType>,
 }
 impl SendTestEventNotificationInput {

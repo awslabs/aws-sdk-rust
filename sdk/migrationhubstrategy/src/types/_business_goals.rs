@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessGoals {
     /// <p> Business goal to achieve migration at a fast pace. </p>
-    #[doc(hidden)]
     pub speed_of_migration: ::std::option::Option<i32>,
     /// <p> Business goal to reduce the operational overhead on the team by moving into managed services. </p>
-    #[doc(hidden)]
     pub reduce_operational_overhead_with_managed_services: ::std::option::Option<i32>,
     /// <p> Business goal to modernize infrastructure by moving to cloud native technologies. </p>
-    #[doc(hidden)]
     pub modernize_infrastructure_with_cloud_native_technologies: ::std::option::Option<i32>,
     /// <p> Business goal to reduce license costs. </p>
-    #[doc(hidden)]
     pub license_cost_reduction: ::std::option::Option<i32>,
 }
 impl BusinessGoals {

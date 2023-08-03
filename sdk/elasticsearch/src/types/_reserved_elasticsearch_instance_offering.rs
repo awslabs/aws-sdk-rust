@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedElasticsearchInstanceOffering {
     /// <p>The Elasticsearch reserved instance offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
-    #[doc(hidden)]
     pub elasticsearch_instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     /// <p>The duration, in seconds, for which the offering will reserve the Elasticsearch instance.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will pay to purchase the specific reserved Elasticsearch instance offering. </p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f64>,
     /// <p>The rate you are charged for each hour the domain that is using the offering is running.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>Payment option for the reserved Elasticsearch instance offering</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedElasticsearchInstanceOffering {

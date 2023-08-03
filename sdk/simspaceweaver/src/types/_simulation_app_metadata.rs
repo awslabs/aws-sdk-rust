@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationAppMetadata {
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the simulation of the app.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the app.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationAppStatus>,
     /// <p>The desired status of the app.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::SimulationAppTargetStatus>,
 }
 impl SimulationAppMetadata {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedMetricSetConfig {
     /// <p>The dataset's offset.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The dataset's interval.</p>
-    #[doc(hidden)]
     pub metric_set_frequency: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The dataset's data source.</p>
-    #[doc(hidden)]
     pub metric_source: ::std::option::Option<crate::types::DetectedMetricSource>,
 }
 impl DetectedMetricSetConfig {

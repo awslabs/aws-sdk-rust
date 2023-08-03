@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContentOutput {
     /// <p>Information about the updated approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule: ::std::option::Option<crate::types::ApprovalRule>,
     _request_id: Option<String>,
 }

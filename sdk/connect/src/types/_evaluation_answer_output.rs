@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationAnswerOutput {
     /// <p>The value for an answer in a contact evaluation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
-    #[doc(hidden)]
     pub system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerOutput {

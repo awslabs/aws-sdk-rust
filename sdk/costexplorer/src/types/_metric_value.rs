@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>The actual number that represents the metric.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The unit that the metric is given in.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl MetricValue {

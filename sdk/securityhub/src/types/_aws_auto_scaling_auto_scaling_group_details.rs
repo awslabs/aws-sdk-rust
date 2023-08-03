@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The name of the launch configuration.</p>
-    #[doc(hidden)]
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of load balancers associated with the group.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
-    #[doc(hidden)]
     pub health_check_type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
-    #[doc(hidden)]
     pub health_check_grace_period: i32,
     /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    #[doc(hidden)]
     pub mixed_instances_policy: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
     /// <p>The launch template to use.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
-    #[doc(hidden)]
     pub capacity_rebalance: bool,
 }
 impl AwsAutoScalingAutoScalingGroupDetails {

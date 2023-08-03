@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupDefinition {
     /// <p>The string that represents the type of group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GroupDefinitionType>,
     /// <p>The string that represents a key for a specified group.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GroupDefinition {

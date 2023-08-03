@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    #[doc(hidden)]
     pub dashboard_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteDashboardsInput {

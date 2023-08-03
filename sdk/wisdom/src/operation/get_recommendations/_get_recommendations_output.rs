@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The recommendations.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>,
     /// <p>The triggers corresponding to recommendations.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>,
     _request_id: Option<String>,
 }

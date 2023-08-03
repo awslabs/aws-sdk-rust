@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSegmentPatternInput {
     /// <p>The pattern to test.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::std::string::String>,
 }
 impl TestSegmentPatternInput {

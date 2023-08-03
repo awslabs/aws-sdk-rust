@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationDetail {
     /// <p> The Amazon Resource Name (ARN) of a security standard. </p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    #[doc(hidden)]
     pub security_control_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether a control is enabled or disabled in a specified standard. </p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p> The requirement that underlies a control in the compliance framework related to the standard. </p>
-    #[doc(hidden)]
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The time at which the enablement status of the control in the specified standard was last updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The reason for updating the enablement status of a control in a specified standard. </p>
-    #[doc(hidden)]
     pub updated_reason: ::std::option::Option<::std::string::String>,
     /// <p> The title of a control. This field may reference a specific standard. </p>
-    #[doc(hidden)]
     pub standards_control_title: ::std::option::Option<::std::string::String>,
     /// <p> The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard. </p>
-    #[doc(hidden)]
     pub standards_control_description: ::std::option::Option<::std::string::String>,
     /// <p> Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard. </p>
-    #[doc(hidden)]
     pub standards_control_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StandardsControlAssociationDetail {

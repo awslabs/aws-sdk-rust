@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
-    #[doc(hidden)]
     pub execution_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    #[doc(hidden)]
     pub state_machine_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepFunctionsAction {

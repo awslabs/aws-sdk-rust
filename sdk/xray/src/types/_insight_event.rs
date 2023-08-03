@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    #[doc(hidden)]
     pub client_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    #[doc(hidden)]
     pub root_cause_service_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
-    #[doc(hidden)]
     pub top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl InsightEvent {

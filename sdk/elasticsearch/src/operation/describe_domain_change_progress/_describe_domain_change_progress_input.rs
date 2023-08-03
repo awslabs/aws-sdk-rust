@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressInput {
     /// <p>The domain you want to get the progress information about.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
-    #[doc(hidden)]
     pub change_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDomainChangeProgressInput {

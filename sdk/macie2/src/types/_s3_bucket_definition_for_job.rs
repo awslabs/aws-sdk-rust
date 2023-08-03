@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketDefinitionForJob {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An array that lists the names of the buckets.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl S3BucketDefinitionForJob {

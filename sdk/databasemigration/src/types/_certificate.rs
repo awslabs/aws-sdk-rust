@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The date that the certificate was created.</p>
-    #[doc(hidden)]
     pub certificate_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    #[doc(hidden)]
     pub certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_owner: ::std::option::Option<::std::string::String>,
     /// <p>The beginning date that the certificate is valid.</p>
-    #[doc(hidden)]
     pub valid_from_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The final date that the certificate is valid.</p>
-    #[doc(hidden)]
     pub valid_to_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The signing algorithm for the certificate.</p>
-    #[doc(hidden)]
     pub signing_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The key length of the cryptographic algorithm being used.</p>
-    #[doc(hidden)]
     pub key_length: ::std::option::Option<i32>,
 }
 impl Certificate {

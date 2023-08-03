@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTopicPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    #[doc(hidden)]
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    #[doc(hidden)]
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateTopicPermissionsInput {

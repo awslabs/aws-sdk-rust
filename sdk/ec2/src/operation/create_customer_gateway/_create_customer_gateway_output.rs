@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
-    #[doc(hidden)]
     pub customer_gateway: ::std::option::Option<crate::types::CustomerGateway>,
     _request_id: Option<String>,
 }

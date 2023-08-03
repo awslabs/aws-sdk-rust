@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AliasRoutingConfiguration {
     /// <p>The second version, and the percentage of traffic that's routed to it.</p>
-    #[doc(hidden)]
     pub additional_version_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl AliasRoutingConfiguration {

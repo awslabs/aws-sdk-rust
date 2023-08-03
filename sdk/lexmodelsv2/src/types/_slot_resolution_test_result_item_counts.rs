@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotResolutionTestResultItemCounts {
     /// <p>The total number of results.</p>
-    #[doc(hidden)]
     pub total_result_count: ::std::option::Option<i32>,
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
-    #[doc(hidden)]
     pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
-    #[doc(hidden)]
     pub slot_match_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl SlotResolutionTestResultItemCounts {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
-    #[doc(hidden)]
     pub user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     _request_id: Option<String>,
 }

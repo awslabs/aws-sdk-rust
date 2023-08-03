@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackInput {
     /// <p>A cost anomaly ID. </p>
-    #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
 impl ProvideAnomalyFeedbackInput {

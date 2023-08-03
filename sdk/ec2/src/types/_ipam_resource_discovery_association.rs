@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamResourceDiscoveryAssociation {
     /// <p>The Amazon Web Services account ID of the resource discovery owner.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery association ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery association Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM ID.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM ARN.</p>
-    #[doc(hidden)]
     pub ipam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM home Region.</p>
-    #[doc(hidden)]
     pub ipam_region: ::std::option::Option<::std::string::String>,
     /// <p>Defines if the resource discovery is the default. When you create an IPAM, a default resource discovery is created for your IPAM and it's associated with your IPAM.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The resource discovery status.</p>
     /// <ul>
     /// <li> <p> <code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p> </li>
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_discovery_status: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
@@ -47,10 +38,8 @@ pub struct IpamResourceDiscoveryAssociation {
     /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete..</p> </li>
     /// <li> <p> <code>restore-in-progress</code> - Resource discovery is being restored.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpamResourceDiscoveryAssociation {

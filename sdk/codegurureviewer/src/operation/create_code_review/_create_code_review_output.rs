@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCodeReviewOutput {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
-    #[doc(hidden)]
     pub code_review: ::std::option::Option<crate::types::CodeReview>,
     _request_id: Option<String>,
 }

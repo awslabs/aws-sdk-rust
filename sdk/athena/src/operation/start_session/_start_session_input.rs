@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionInput {
     /// <p>The session description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to which the session belongs.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    #[doc(hidden)]
     pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
-    #[doc(hidden)]
     pub notebook_version: ::std::option::Option<::std::string::String>,
     /// <p>The idle timeout in minutes for the session.</p>
-    #[doc(hidden)]
     pub session_idle_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartSessionInput {

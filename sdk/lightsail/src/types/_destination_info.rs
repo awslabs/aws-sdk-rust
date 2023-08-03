@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationInfo {
     /// <p>The ID of the resource created at the destination.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The destination service of the record.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
 }
 impl DestinationInfo {

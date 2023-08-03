@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelCardOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
-    #[doc(hidden)]
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

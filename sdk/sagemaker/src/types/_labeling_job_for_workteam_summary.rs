@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobForWorkteamSummary {
     /// <p>The name of the labeling job that the work team is assigned to.</p>
-    #[doc(hidden)]
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
-    #[doc(hidden)]
     pub job_reference_code: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
-    #[doc(hidden)]
     pub work_requester_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the labeling job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the progress of a labeling job.</p>
-    #[doc(hidden)]
     pub label_counters: ::std::option::Option<crate::types::LabelCountersForWorkteam>,
     /// <p>The configured number of workers per data object.</p>
-    #[doc(hidden)]
     pub number_of_human_workers_per_data_object: ::std::option::Option<i32>,
 }
 impl LabelingJobForWorkteamSummary {

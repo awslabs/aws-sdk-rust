@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagingGroupOutput {
     /// The approximate asset count of the PackagingGroup.
-    #[doc(hidden)]
     pub approximate_asset_count: ::std::option::Option<i32>,
     /// The ARN of the PackagingGroup.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// CDN Authorization credentials
-    #[doc(hidden)]
     pub authorization: ::std::option::Option<crate::types::Authorization>,
     /// The time the PackagingGroup was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// Configure egress access logging.
-    #[doc(hidden)]
     pub egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

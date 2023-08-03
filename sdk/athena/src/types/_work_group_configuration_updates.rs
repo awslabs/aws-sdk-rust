@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    #[doc(hidden)]
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
-    #[doc(hidden)]
     pub result_configuration_updates: ::std::option::Option<crate::types::ResultConfigurationUpdates>,
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
-    #[doc(hidden)]
     pub bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
-    #[doc(hidden)]
     pub remove_bytes_scanned_cutoff_per_query: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub requester_pays_enabled: ::std::option::Option<bool>,
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
-    #[doc(hidden)]
     pub remove_customer_content_encryption_configuration: ::std::option::Option<bool>,
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
-    #[doc(hidden)]
     pub additional_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Contains the ARN of the execution role for the workgroup</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
-    #[doc(hidden)]
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
-    #[doc(hidden)]
     pub enable_minimum_encryption_configuration: ::std::option::Option<bool>,
 }
 impl WorkGroupConfigurationUpdates {

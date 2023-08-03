@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseInput {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the database.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The location of the database (for example, an HDFS path). </p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
-    #[doc(hidden)]
     pub create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
-    #[doc(hidden)]
     pub target_database: ::std::option::Option<crate::types::DatabaseIdentifier>,
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub federated_database: ::std::option::Option<crate::types::FederatedDatabase>,
 }
 impl DatabaseInput {

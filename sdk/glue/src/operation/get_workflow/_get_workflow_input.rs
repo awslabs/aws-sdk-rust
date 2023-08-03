@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowInput {
     /// <p>The name of the workflow to retrieve.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-    #[doc(hidden)]
     pub include_graph: ::std::option::Option<bool>,
 }
 impl GetWorkflowInput {

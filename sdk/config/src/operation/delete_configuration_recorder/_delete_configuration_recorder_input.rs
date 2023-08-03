@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationRecorderInput {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
-    #[doc(hidden)]
     pub configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationRecorderInput {

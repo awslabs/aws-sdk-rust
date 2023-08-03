@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::KeyUsageName>,
 }
 impl KeyUsage {

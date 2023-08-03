@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeOutputPort {
     /// <p>The output port's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The output port's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The output port's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PortType>,
 }
 impl NodeOutputPort {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::OverrideAction>,
 }
 impl StatefulRuleGroupOverride {

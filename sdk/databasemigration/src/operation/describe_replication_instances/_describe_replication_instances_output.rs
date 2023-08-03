@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationInstancesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The replication instances described.</p>
-    #[doc(hidden)]
     pub replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
     _request_id: Option<String>,
 }

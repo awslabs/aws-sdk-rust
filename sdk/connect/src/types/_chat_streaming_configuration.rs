@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChatStreamingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
-    #[doc(hidden)]
     pub streaming_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChatStreamingConfiguration {

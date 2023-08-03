@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Chunk {
     /// Chunk index
-    #[doc(hidden)]
     pub index: i64,
     /// Chunk length
-    #[doc(hidden)]
     pub length: i64,
     /// Chunk checksum
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     /// Chunk token
-    #[doc(hidden)]
     pub chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl Chunk {

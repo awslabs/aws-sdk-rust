@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataOutput {
     /// <p>A Partition object containing the partition metadata.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>A list of column names that the user has been granted access to.</p>
-    #[doc(hidden)]
     pub authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
-    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     _request_id: Option<String>,
 }

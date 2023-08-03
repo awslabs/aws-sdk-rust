@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobInput {
     /// <p>The name of the job definition to update.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
-    #[doc(hidden)]
     pub job_update: ::std::option::Option<crate::types::JobUpdate>,
 }
 impl UpdateJobInput {

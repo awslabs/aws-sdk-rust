@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskDefinitionInput {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
 }
 impl DescribeTaskDefinitionInput {

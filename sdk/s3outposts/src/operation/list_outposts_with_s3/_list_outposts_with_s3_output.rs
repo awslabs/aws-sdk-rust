@@ -9,10 +9,8 @@ pub struct ListOutpostsWithS3Output {
     /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
     /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

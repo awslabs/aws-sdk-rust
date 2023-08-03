@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the volume.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    #[doc(hidden)]
     pub current_configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
@@ -19,25 +16,18 @@ pub struct VolumeRecommendation {
     /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::EbsFinding>,
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    #[doc(hidden)]
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
-    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    #[doc(hidden)]
     pub volume_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
-    #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    #[doc(hidden)]
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VolumeRecommendation {

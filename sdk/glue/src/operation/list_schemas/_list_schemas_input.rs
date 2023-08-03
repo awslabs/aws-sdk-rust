@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemasInput {
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSchemasInput {

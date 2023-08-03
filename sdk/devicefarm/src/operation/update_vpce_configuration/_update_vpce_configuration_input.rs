@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
-    #[doc(hidden)]
     pub vpce_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    #[doc(hidden)]
     pub vpce_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
-    #[doc(hidden)]
     pub service_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    #[doc(hidden)]
     pub vpce_configuration_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVpceConfigurationInput {

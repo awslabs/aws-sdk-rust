@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetAdvisorSchemaObjectResponse {
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
@@ -14,16 +13,12 @@ pub struct FleetAdvisorSchemaObjectResponse {
     /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
     /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub object_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub number_of_objects: ::std::option::Option<i64>,
     /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub code_line_count: ::std::option::Option<i64>,
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub code_size: ::std::option::Option<i64>,
 }
 impl FleetAdvisorSchemaObjectResponse {

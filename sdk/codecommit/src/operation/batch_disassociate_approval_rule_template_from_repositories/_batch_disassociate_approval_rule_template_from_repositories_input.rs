@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {

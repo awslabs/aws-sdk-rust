@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdBreak {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
-    #[doc(hidden)]
     pub offset_millis: i64,
     /// <p>Ad break slate configuration.</p>
-    #[doc(hidden)]
     pub slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
-    #[doc(hidden)]
     pub splice_insert_message: ::std::option::Option<crate::types::SpliceInsertMessage>,
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
-    #[doc(hidden)]
     pub time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    #[doc(hidden)]
     pub ad_break_metadata: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl AdBreak {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::UserType>,
     _request_id: Option<String>,
 }

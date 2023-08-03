@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentPlanOutput {
     /// <p>The ARN of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

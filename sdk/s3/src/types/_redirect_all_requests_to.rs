@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedirectAllRequestsTo {
     /// <p>Name of the host where requests are redirected.</p>
-    #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl RedirectAllRequestsTo {

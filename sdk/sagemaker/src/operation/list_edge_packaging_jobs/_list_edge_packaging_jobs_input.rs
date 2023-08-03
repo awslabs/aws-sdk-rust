@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgePackagingJobsInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to select.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Select jobs where the job was created after specified time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was created before specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was updated after specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was updated before specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Filter for jobs where the model name contains this string.</p>
-    #[doc(hidden)]
     pub model_name_contains: ::std::option::Option<::std::string::String>,
     /// <p>The job status to filter for.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     /// <p>Use to specify what column to sort by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListEdgePackagingJobsSortBy>,
     /// <p>What direction to sort by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListEdgePackagingJobsInput {

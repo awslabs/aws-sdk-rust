@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayInput {
     /// <p>The ID of the resource to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description of the resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    #[doc(hidden)]
     pub join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    #[doc(hidden)]
     pub net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The MaxEIRP value.</p>
-    #[doc(hidden)]
     pub max_eirp: ::std::option::Option<f32>,
 }
 impl UpdateWirelessGatewayInput {

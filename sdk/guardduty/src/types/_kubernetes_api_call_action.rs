@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesApiCallAction {
     /// <p>The Kubernetes API request URI.</p>
-    #[doc(hidden)]
     pub request_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes API request HTTP verb.</p>
-    #[doc(hidden)]
     pub verb: ::std::option::Option<::std::string::String>,
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    #[doc(hidden)]
     pub source_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user agent of the caller of the Kubernetes API.</p>
-    #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the remote IP address of the connection.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
-    #[doc(hidden)]
     pub status_code: i32,
     /// <p>Parameters related to the Kubernetes API call action.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
 }
 impl KubernetesApiCallAction {

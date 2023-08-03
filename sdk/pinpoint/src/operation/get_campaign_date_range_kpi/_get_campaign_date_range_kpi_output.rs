@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
-    #[doc(hidden)]
     pub campaign_date_range_kpi_response: ::std::option::Option<crate::types::CampaignDateRangeKpiResponse>,
     _request_id: Option<String>,
 }

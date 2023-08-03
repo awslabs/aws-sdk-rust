@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInput {
     /// <p>The ID of the meeting associated with the update request.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    #[doc(hidden)]
     pub excluded_attendee_ids: ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>,
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInput {

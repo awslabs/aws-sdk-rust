@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountOutput {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
-    #[doc(hidden)]
     pub dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    #[doc(hidden)]
     pub dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaEndpointSummary {

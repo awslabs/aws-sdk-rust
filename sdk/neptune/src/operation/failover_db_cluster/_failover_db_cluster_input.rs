@@ -8,11 +8,9 @@ pub struct FailoverDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Read Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    #[doc(hidden)]
     pub target_db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl FailoverDbClusterInput {

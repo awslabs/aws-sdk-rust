@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboxPlacementTrackingOption {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
-    #[doc(hidden)]
     pub global: bool,
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    #[doc(hidden)]
     pub tracked_isps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InboxPlacementTrackingOption {

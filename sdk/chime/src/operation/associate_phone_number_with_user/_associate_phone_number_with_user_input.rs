@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociatePhoneNumberWithUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone number, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePhoneNumberWithUserInput {

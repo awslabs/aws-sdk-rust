@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemanticEntityType {
     /// <p>The semantic entity type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic entity sub type name.</p>
-    #[doc(hidden)]
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic entity type parameters.</p>
-    #[doc(hidden)]
     pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SemanticEntityType {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClosedDays {
     /// <p>Rules for the Email channel.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     /// <p>Rules for the SMS channel.</p>
-    #[doc(hidden)]
     pub sms: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     /// <p>Rules for the Push channel.</p>
-    #[doc(hidden)]
     pub push: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     /// <p>Rules for the Voice channel.</p>
-    #[doc(hidden)]
     pub voice: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     /// <p>Rules for the Custom channel.</p>
-    #[doc(hidden)]
     pub custom: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
 }
 impl ClosedDays {

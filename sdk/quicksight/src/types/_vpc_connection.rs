@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnection {
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the VPC connection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    #[doc(hidden)]
     pub dns_resolvers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the VPC connection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcConnectionResourceStatus>,
     /// <p>The availability status of the VPC connection.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
     /// <p>A list of network interfaces.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The ARN of the IAM role associated with the VPC connection.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the VPC connection was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the VPC connection was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcConnection {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    #[doc(hidden)]
     pub ews_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The username used to authenticate the remote EWS server.</p>
-    #[doc(hidden)]
     pub ews_username: ::std::option::Option<::std::string::String>,
     /// <p>The password used to authenticate the remote EWS server.</p>
-    #[doc(hidden)]
     pub ews_password: ::std::option::Option<::std::string::String>,
 }
 impl EwsAvailabilityProvider {

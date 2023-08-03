@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsOutput {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

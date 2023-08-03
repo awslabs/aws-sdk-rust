@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The ID of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service to which the endpoint is associated.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the endpoint.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    #[doc(hidden)]
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The IP address type for the endpoint.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The DNS options for the endpoint.</p>
-    #[doc(hidden)]
     pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
-    #[doc(hidden)]
     pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
-    #[doc(hidden)]
     pub requester_managed: ::std::option::Option<bool>,
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
-    #[doc(hidden)]
     pub dns_entries: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
     /// <p>The date and time that the endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The last error that occurred for endpoint.</p>
-    #[doc(hidden)]
     pub last_error: ::std::option::Option<crate::types::LastError>,
 }
 impl VpcEndpoint {

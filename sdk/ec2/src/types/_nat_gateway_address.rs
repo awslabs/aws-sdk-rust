@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NatGatewayAddress {
     /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub private_ip: ::std::option::Option<::std::string::String>,
     /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines if the IP address is the primary address.</p>
-    #[doc(hidden)]
     pub is_primary: ::std::option::Option<bool>,
     /// <p>The address failure message.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The address status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NatGatewayAddressStatus>,
 }
 impl NatGatewayAddress {

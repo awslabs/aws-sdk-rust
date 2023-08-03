@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildShard {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
-    #[doc(hidden)]
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    #[doc(hidden)]
     pub parent_shards: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    #[doc(hidden)]
     pub hash_key_range: ::std::option::Option<crate::types::HashKeyRange>,
 }
 impl ChildShard {

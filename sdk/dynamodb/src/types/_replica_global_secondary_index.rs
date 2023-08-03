@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
 }
 impl ReplicaGlobalSecondaryIndex {

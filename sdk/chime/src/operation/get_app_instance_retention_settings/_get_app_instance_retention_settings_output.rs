@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
-    #[doc(hidden)]
     pub initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

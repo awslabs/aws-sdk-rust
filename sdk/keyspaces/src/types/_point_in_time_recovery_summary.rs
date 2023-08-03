@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySummary {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub earliest_restorable_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PointInTimeRecoverySummary {

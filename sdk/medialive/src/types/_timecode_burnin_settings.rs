@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimecodeBurninSettings {
     /// Choose a timecode burn-in font size
-    #[doc(hidden)]
     pub font_size: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
     /// Choose a timecode burn-in output position
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
     /// Create a timecode burn-in prefix (optional)
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurninSettings {

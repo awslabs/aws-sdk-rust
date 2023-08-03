@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub index: i32,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BatchWriteExceptionType>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

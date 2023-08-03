@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-    #[doc(hidden)]
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContainerRecipeInput {

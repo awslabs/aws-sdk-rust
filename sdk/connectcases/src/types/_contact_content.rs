@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactContent {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    #[doc(hidden)]
     pub connected_to_system_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContactContent {

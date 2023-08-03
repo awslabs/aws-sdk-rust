@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpaceSettings {
     /// <p>The JupyterServer app settings.</p>
-    #[doc(hidden)]
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
-    #[doc(hidden)]
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl SpaceSettings {

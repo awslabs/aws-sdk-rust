@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationAppPortMapping {
     /// <p>The TCP/UDP port number of the app, declared in the simulation schema. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. The source code for the app should bind to the <code>Declared</code> port.</p>
-    #[doc(hidden)]
     pub declared: ::std::option::Option<i32>,
     /// <p>The TCP/UDP port number of the running app. SimSpace Weaver dynamically assigns this port number when the app starts. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. Clients connect to the app using the app's IP address and the <code>Actual</code> port number.</p>
-    #[doc(hidden)]
     pub actual: ::std::option::Option<i32>,
 }
 impl SimulationAppPortMapping {

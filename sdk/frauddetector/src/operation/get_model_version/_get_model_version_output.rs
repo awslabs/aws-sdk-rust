@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelVersionOutput {
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The training data source.</p>
-    #[doc(hidden)]
     pub training_data_source: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
-    #[doc(hidden)]
     pub training_data_schema: ::std::option::Option<crate::types::TrainingDataSchema>,
     /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
-    #[doc(hidden)]
     pub external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
@@ -37,10 +30,8 @@ pub struct GetModelVersionOutput {
     /// <li> <p> <code>INACTIVE</code> </p> </li>
     /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

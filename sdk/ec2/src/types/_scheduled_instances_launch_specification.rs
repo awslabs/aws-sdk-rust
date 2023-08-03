@@ -6,47 +6,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ScheduledInstancesLaunchSpecification {
     /// <p>The block device mapping entries.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the kernel.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable monitoring for the instances.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::ScheduledInstancesMonitoring>,
     /// <p>The network interfaces.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
     /// <p>The placement information.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::ScheduledInstancesPlacement>,
     /// <p>The ID of the RAM disk.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the subnet in which to launch the instances.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded MIME user data.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesLaunchSpecification {

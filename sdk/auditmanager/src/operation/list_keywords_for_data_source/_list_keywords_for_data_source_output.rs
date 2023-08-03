@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceOutput {
     /// <p> The list of keywords for the event mapping source. </p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

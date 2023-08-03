@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationData {
     /// <p>The identifier of the recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The recommended document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the recommendation.</p>
-    #[doc(hidden)]
     pub relevance_score: f64,
     /// <p>The relevance level of the recommendation.</p>
-    #[doc(hidden)]
     pub relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,
     /// <p>The type of recommendation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl RecommendationData {

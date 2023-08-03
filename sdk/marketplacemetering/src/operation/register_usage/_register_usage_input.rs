@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Public Key Version provided by AWS Marketplace</p>
-    #[doc(hidden)]
     pub public_key_version: ::std::option::Option<i32>,
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
-    #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl RegisterUsageInput {

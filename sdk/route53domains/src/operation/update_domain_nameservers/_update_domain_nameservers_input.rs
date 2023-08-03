@@ -6,14 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDomainNameserversInput {
     /// <p>The name of the domain that you want to change name servers for.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    #[doc(hidden)]
     pub fi_auth_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
-    #[doc(hidden)]
     pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
 }
 impl UpdateDomainNameserversInput {

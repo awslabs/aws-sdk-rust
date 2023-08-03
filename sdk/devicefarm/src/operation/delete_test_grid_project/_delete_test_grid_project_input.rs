@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTestGridProjectInput {
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTestGridProjectInput {

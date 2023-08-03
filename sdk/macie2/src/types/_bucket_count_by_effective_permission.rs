@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketCountByEffectivePermission {
     /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<i64>,
     /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
-    #[doc(hidden)]
     pub publicly_readable: ::std::option::Option<i64>,
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
-    #[doc(hidden)]
     pub publicly_writable: ::std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
-    #[doc(hidden)]
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountByEffectivePermission {

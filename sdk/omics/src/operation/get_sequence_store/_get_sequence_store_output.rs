@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSequenceStoreOutput {
     /// <p>The store's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The store's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The store's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    #[doc(hidden)]
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>When the store was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    #[doc(hidden)]
     pub fallback_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
-    #[doc(hidden)]
     pub directory_limits: ::std::option::Option<crate::types::DirectoryLimits>,
     _request_id: Option<String>,
 }

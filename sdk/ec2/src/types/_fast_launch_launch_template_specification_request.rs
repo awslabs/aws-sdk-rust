@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FastLaunchLaunchTemplateSpecificationRequest {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl FastLaunchLaunchTemplateSpecificationRequest {

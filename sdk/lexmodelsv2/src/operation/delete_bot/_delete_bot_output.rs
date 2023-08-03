@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotOutput {
     /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     _request_id: Option<String>,
 }

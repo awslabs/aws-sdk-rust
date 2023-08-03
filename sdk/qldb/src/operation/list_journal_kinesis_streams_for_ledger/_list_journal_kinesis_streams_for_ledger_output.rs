@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
-    #[doc(hidden)]
     pub streams: ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

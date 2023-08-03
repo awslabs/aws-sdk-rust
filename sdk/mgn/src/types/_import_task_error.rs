@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskError {
     /// <p>Import task error datetime.</p>
-    #[doc(hidden)]
     pub error_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Import task error type.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<crate::types::ImportErrorType>,
     /// <p>Import task error data.</p>
-    #[doc(hidden)]
     pub error_data: ::std::option::Option<crate::types::ImportErrorData>,
 }
 impl ImportTaskError {

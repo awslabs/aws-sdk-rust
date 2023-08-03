@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEulaOutput {
     /// <p>The EULA.</p>
-    #[doc(hidden)]
     pub eula: ::std::option::Option<crate::types::Eula>,
     _request_id: Option<String>,
 }

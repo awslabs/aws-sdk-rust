@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricComparisonComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The field that is used in a metric comparison from value setup.</p>
-    #[doc(hidden)]
     pub from_value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The field that is used in a metric comparison to value setup.</p>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<crate::types::MeasureField>,
 }
 impl MetricComparisonComputation {

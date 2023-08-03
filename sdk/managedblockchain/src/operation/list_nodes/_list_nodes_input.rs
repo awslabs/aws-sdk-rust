@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodesInput {
     /// <p>The unique identifier of the network for which to list nodes.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NodeStatus>,
     /// <p>The maximum number of nodes to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListNodesInput {

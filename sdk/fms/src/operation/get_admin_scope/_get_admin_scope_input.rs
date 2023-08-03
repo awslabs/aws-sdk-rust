@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdminScopeInput {
     /// <p>The administator account that you want to get the details for.</p>
-    #[doc(hidden)]
     pub admin_account: ::std::option::Option<::std::string::String>,
 }
 impl GetAdminScopeInput {

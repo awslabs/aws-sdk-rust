@@ -12,13 +12,10 @@ pub struct RoutingStrategy {
     /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
     /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RoutingStrategyType>,
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The message text to be used with a terminal routing strategy.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl RoutingStrategy {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resilience {
     /// <p>The tier of the component.</p>
-    #[doc(hidden)]
     pub hsr_tier: ::std::option::Option<::std::string::String>,
     /// <p>The replication mode of the component.</p>
-    #[doc(hidden)]
     pub hsr_replication_mode: ::std::option::Option<crate::types::ReplicationMode>,
     /// <p>The operation mode of the component.</p>
-    #[doc(hidden)]
     pub hsr_operation_mode: ::std::option::Option<crate::types::OperationMode>,
     /// <p>The cluster status of the component.</p>
-    #[doc(hidden)]
     pub cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
 }
 impl Resilience {

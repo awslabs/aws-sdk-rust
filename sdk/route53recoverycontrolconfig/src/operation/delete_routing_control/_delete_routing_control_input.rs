@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRoutingControlInput {

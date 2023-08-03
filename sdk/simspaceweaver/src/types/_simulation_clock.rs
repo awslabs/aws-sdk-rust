@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationClock {
     /// <p>The current status of the simulation clock.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClockStatus>,
     /// <p>The desired status of the simulation clock.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::ClockTargetStatus>,
 }
 impl SimulationClock {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutObjectOutput {
     /// <p>The SHA256 digest of the object that is persisted.</p>
-    #[doc(hidden)]
     pub content_sha256: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the object in the container.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     /// <p>The name of the destination queue to consume.</p>
-    #[doc(hidden)]
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual host associated with the source broker.</p>
-    #[doc(hidden)]
     pub virtual_host: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in each batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl PipeSourceRabbitMqBrokerParameters {

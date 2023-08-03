@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Receipt {
     /// <p>The time when the message was delivered to the recipient.</p>
-    #[doc(hidden)]
     pub delivered_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The time when the message was read by the recipient.</p>
-    #[doc(hidden)]
     pub read_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the recipient of the message. </p>
-    #[doc(hidden)]
     pub recipient_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl Receipt {

@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutConfiguration {
     /// <p>A type of layout that can be used on a sheet. In a grid layout, visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size. A grid layout can be configured to behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.</p>
-    #[doc(hidden)]
     pub grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
     /// <p>A free-form is optimized for a fixed width and has more control over the exact placement of layout elements.</p>
-    #[doc(hidden)]
     pub free_form_layout: ::std::option::Option<crate::types::FreeFormLayoutConfiguration>,
     /// <p>A section based layout organizes visuals into multiple sections and has customized header, footer and page break.</p>
-    #[doc(hidden)]
     pub section_based_layout: ::std::option::Option<crate::types::SectionBasedLayoutConfiguration>,
 }
 impl LayoutConfiguration {

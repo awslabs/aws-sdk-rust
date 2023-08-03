@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
-    #[doc(hidden)]
     pub global_tables: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTable>>,
     /// <p>Last evaluated global table name.</p>
-    #[doc(hidden)]
     pub last_evaluated_global_table_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvalidationInput {
     /// <p>The distribution's ID.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetInvalidationInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The payment option.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
     /// <p>The duration, in seconds.</p>
-    #[doc(hidden)]
     pub duration_seconds: i64,
     /// <p>The currency.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub plan_description: ::std::option::Option<::std::string::String>,
 }
 impl ParentSavingsPlanOffering {

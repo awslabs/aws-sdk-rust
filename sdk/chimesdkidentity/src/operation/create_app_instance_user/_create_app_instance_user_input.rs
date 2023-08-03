@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The user's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
-    #[doc(hidden)]
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateAppInstanceUserInput {

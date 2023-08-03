@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
-    #[doc(hidden)]
     pub flat: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
-    #[doc(hidden)]
     pub percentage: ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
 }
 impl UpdateCustomLineItemChargeDetails {

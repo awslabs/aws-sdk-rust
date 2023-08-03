@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseDetection {
     /// <p>The word or line of text recognized by Amazon Textract</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>The confidence in detection, as a percentage</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl ExpenseDetection {

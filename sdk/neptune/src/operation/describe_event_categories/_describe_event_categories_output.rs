@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of EventCategoriesMap data types.</p>
-    #[doc(hidden)]
     pub event_categories_map_list: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
     _request_id: Option<String>,
 }

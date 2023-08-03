@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetResource {
     /// <p>The Network Load Balancer Resource.</p>
-    #[doc(hidden)]
     pub nlb_resource: ::std::option::Option<crate::types::NlbResource>,
     /// <p>The Route 53 resource.</p>
-    #[doc(hidden)]
     pub r53_resource: ::std::option::Option<crate::types::R53ResourceRecord>,
 }
 impl TargetResource {

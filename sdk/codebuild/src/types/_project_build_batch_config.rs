@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectBuildBatchConfig {
     /// <p>Specifies the service role ARN for the batch build project.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
-    #[doc(hidden)]
     pub combine_artifacts: ::std::option::Option<bool>,
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::BatchRestrictions>,
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
-    #[doc(hidden)]
     pub timeout_in_mins: ::std::option::Option<i32>,
     /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise, and your project is configured to report build statuses to the source provider.</p>
     /// <dl>
@@ -31,7 +27,6 @@ pub struct ProjectBuildBatchConfig {
     /// <p>Send a separate status report for each individual build.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub batch_report_mode: ::std::option::Option<crate::types::BatchReportModeType>,
 }
 impl ProjectBuildBatchConfig {

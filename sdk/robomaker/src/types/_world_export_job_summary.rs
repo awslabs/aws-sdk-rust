@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
@@ -46,16 +45,12 @@ pub struct WorldExportJobSummary {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of worlds.</p>
-    #[doc(hidden)]
     pub worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The output location.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl WorldExportJobSummary {

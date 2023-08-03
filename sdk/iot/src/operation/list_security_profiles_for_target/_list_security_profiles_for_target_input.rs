@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesForTargetInput {
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If true, return child groups too.</p>
-    #[doc(hidden)]
     pub recursive: ::std::option::Option<bool>,
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
-    #[doc(hidden)]
     pub security_profile_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListSecurityProfilesForTargetInput {

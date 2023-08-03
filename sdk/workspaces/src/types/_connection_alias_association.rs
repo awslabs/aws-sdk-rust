@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
-    #[doc(hidden)]
     pub associated_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory associated with a connection alias.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
-    #[doc(hidden)]
     pub connection_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionAliasAssociation {

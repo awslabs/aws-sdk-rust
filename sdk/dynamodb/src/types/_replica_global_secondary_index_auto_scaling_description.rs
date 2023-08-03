@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <p>The name of the global secondary index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replica global secondary index:</p>
     /// <ul>
@@ -14,13 +13,10 @@ pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub provisioned_read_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
 }
 impl ReplicaGlobalSecondaryIndexAutoScalingDescription {

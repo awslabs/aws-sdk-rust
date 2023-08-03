@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSyncJobOutput {
     /// <p>The SyncJob response state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SyncJobState>,
     _request_id: Option<String>,
 }

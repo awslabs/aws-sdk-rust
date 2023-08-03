@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryCatalogData {
     /// <p>The short description of the repository.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The URL that contains the logo that's associated with the repository.</p>
-    #[doc(hidden)]
     pub logo_url: ::std::option::Option<::std::string::String>,
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
-    #[doc(hidden)]
     pub about_text: ::std::option::Option<::std::string::String>,
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
-    #[doc(hidden)]
     pub usage_text: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub marketplace_certified: ::std::option::Option<bool>,
 }
 impl RepositoryCatalogData {

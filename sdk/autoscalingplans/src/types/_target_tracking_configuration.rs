@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    #[doc(hidden)]
     pub predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
-    #[doc(hidden)]
     pub customized_scaling_metric_specification: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub disable_scale_in: ::std::option::Option<bool>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends.</p>
-    #[doc(hidden)]
     pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
-    #[doc(hidden)]
     pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
-    #[doc(hidden)]
     pub estimated_instance_warmup: ::std::option::Option<i32>,
 }
 impl TargetTrackingConfiguration {

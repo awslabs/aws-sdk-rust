@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyUsageLimitInput {
     /// <p>The identifier of the usage limit to modify.</p>
-    #[doc(hidden)]
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<i64>,
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    #[doc(hidden)]
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
 }
 impl ModifyUsageLimitInput {

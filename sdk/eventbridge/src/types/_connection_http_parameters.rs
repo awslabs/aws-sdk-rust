@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
-    #[doc(hidden)]
     pub header_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
     /// <p>Contains additional query string parameters for the connection.</p>
-    #[doc(hidden)]
     pub query_string_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
     /// <p>Contains additional body string parameters for the connection.</p>
-    #[doc(hidden)]
     pub body_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionBodyParameter>>,
 }
 impl ConnectionHttpParameters {

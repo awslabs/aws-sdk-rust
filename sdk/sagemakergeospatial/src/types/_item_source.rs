@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemSource {
     /// <p>A unique Id for the source item.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The item Geometry in GeoJson format.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
-    #[doc(hidden)]
     pub assets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>>,
     /// <p>The searchable date and time of the item, in UTC.</p>
-    #[doc(hidden)]
     pub date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This field contains additional properties of the item.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::Properties>,
 }
 impl ItemSource {

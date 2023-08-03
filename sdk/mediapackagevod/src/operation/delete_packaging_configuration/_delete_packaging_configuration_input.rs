@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePackagingConfigurationInput {

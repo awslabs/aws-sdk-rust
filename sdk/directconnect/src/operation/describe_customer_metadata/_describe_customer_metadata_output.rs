@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
-    #[doc(hidden)]
     pub agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct DescribeCustomerMetadataOutput {
     /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
     /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,
     _request_id: Option<String>,
 }

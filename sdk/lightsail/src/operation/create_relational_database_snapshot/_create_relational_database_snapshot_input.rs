@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseSnapshotInput {
     /// <p>The name of the database on which to base your new snapshot.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
@@ -12,11 +11,9 @@ pub struct CreateRelationalDatabaseSnapshotInput {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseSnapshotInput {

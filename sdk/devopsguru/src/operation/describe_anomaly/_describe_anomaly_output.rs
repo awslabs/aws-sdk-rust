@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnomalyOutput {
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
-    #[doc(hidden)]
     pub proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
-    #[doc(hidden)]
     pub reactive_anomaly: ::std::option::Option<crate::types::ReactiveAnomaly>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldOptions {
     /// <p>The selected field options for the pivot table field options.</p>
-    #[doc(hidden)]
     pub selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
     /// <p>The data path options for the pivot table field options.</p>
-    #[doc(hidden)]
     pub data_path_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
     /// <p>The collapse state options for the pivot table field options.</p>
-    #[doc(hidden)]
     pub collapse_state_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>>,
 }
 impl PivotTableFieldOptions {

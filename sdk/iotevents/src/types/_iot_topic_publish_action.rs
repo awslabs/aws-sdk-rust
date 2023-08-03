@@ -10,10 +10,8 @@ pub struct IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    #[doc(hidden)]
     pub mqtt_topic: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotTopicPublishAction {

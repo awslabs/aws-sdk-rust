@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

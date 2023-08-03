@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbSnapshotInput {
     /// <p>The identifier of the DB snapshot to modify.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
@@ -22,11 +21,9 @@ pub struct ModifyDbSnapshotInput {
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbSnapshotInput {

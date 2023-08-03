@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35Descriptor {
     /// SCTE-35 Descriptor Settings.
-    #[doc(hidden)]
     pub scte35_descriptor_settings: ::std::option::Option<crate::types::Scte35DescriptorSettings>,
 }
 impl Scte35Descriptor {

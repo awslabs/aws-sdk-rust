@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmActionDefinition {
     /// <p>The action subType. </p>
-    #[doc(hidden)]
     pub action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
     /// <p>The Region to run the SSM document. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 and RDS instance IDs. </p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SsmActionDefinition {

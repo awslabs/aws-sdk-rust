@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroupField {
     /// <p>The name of a log field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of log events queried that contained the field.</p>
-    #[doc(hidden)]
     pub percent: i32,
 }
 impl LogGroupField {

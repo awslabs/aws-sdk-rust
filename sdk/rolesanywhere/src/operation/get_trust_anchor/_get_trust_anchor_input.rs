@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustAnchorInput {

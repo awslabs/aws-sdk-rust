@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
-    #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The dataset's description.</p>
-    #[doc(hidden)]
     pub metric_set_description: ::std::option::Option<::std::string::String>,
     /// <p>The metric list.</p>
-    #[doc(hidden)]
     pub metric_list: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<i32>,
     /// <p>The timestamp column.</p>
-    #[doc(hidden)]
     pub timestamp_column: ::std::option::Option<crate::types::TimestampColumn>,
     /// <p>The dimension list.</p>
-    #[doc(hidden)]
     pub dimension_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The dataset's interval.</p>
-    #[doc(hidden)]
     pub metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Contains information about source data used to generate metrics.</p>
-    #[doc(hidden)]
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    #[doc(hidden)]
     pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamPoolCidrFailureReason {
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>,
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl IpamPoolCidrFailureReason {

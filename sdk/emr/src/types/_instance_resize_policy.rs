@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    #[doc(hidden)]
     pub instances_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    #[doc(hidden)]
     pub instances_to_protect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
-    #[doc(hidden)]
     pub instance_termination_timeout: ::std::option::Option<i32>,
 }
 impl InstanceResizePolicy {

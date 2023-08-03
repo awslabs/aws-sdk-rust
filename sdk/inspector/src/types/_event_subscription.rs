@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::InspectorEvent>,
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    #[doc(hidden)]
     pub subscribed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventSubscription {

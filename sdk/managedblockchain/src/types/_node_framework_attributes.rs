@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
-    #[doc(hidden)]
     pub ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,
 }
 impl NodeFrameworkAttributes {

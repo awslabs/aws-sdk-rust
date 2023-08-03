@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTopic {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The topic registration status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TopicStatus>,
 }
 impl EventTopic {

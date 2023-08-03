@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupOutput {
     /// <p>Information about the placement group.</p>
-    #[doc(hidden)]
     pub placement_group: ::std::option::Option<crate::types::PlacementGroup>,
     _request_id: Option<String>,
 }

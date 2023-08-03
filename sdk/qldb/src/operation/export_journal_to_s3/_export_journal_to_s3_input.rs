@@ -4,21 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
-    #[doc(hidden)]
     pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
-    #[doc(hidden)]
     pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
-    #[doc(hidden)]
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
@@ -26,12 +22,10 @@ pub struct ExportJournalToS3Input {
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
     /// <p>Default: <code>ION_TEXT</code> </p>
     /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl ExportJournalToS3Input {

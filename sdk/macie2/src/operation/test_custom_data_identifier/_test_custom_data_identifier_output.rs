@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierOutput {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
-    #[doc(hidden)]
     pub match_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

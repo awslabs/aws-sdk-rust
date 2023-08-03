@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataSourceConfiguration {
     /// <p>The name of the bucket that contains the documents.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -17,7 +15,6 @@ pub struct S3DataSourceConfiguration {
     /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
     /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -26,13 +23,10 @@ pub struct S3DataSourceConfiguration {
     /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
     /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
-    #[doc(hidden)]
     pub documents_metadata_configuration: ::std::option::Option<crate::types::DocumentsMetadataConfiguration>,
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
-    #[doc(hidden)]
     pub access_control_list_configuration: ::std::option::Option<crate::types::AccessControlListConfiguration>,
 }
 impl S3DataSourceConfiguration {

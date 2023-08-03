@@ -7,13 +7,10 @@ pub struct Volume {
     /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[doc(hidden)]
     pub host: ::std::option::Option<crate::types::Host>,
     /// <p>The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
-    #[doc(hidden)]
     pub efs_volume_configuration: ::std::option::Option<crate::types::EfsVolumeConfiguration>,
 }
 impl Volume {

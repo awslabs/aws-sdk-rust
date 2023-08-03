@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchUsersInput {
     /// <p>The ID of an existing collection containing the UserID, used with a UserId or FaceId. If a FaceId is provided, UserId isn’t required to be present in the Collection.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>ID for the existing User.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>ID for the existing face.</p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional value that specifies the minimum confidence in the matched UserID to return. Default value of 80.</p>
-    #[doc(hidden)]
     pub user_match_threshold: ::std::option::Option<f32>,
     /// <p>Maximum number of identities to return.</p>
-    #[doc(hidden)]
     pub max_users: ::std::option::Option<i32>,
 }
 impl SearchUsersInput {

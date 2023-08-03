@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-    #[doc(hidden)]
     pub associated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCapacityReservationInput {
     /// <p>The new number of requested data processing units.</p>
-    #[doc(hidden)]
     pub target_dpus: ::std::option::Option<i32>,
     /// <p>The name of the capacity reservation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCapacityReservationInput {

@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobOutput {
     /// <p>A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is always 1.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
     /// <p>If you don't want Elastic Transcoder to create thumbnails, specify "".</p>
@@ -24,18 +22,14 @@ pub struct JobOutput {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    #[doc(hidden)]
     pub thumbnail_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
-    #[doc(hidden)]
     pub thumbnail_encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following values:</p>
     /// <p> <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code> </p>
     /// <p> The value <code>auto</code> generally works only if the file that you're transcoding contains rotation metadata.</p>
-    #[doc(hidden)]
     pub rotate: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>Id</code> object for the preset that you want to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses for transcoding. To use a preset that you created, specify the preset ID that Elastic Transcoder returned in the response when you created the preset. You can also use the Elastic Transcoder system presets, which you can get with <code>ListPresets</code>.</p>
-    #[doc(hidden)]
     pub preset_id: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -43,7 +37,6 @@ pub struct JobOutput {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    #[doc(hidden)]
     pub segment_duration: ::std::option::Option<::std::string::String>,
     /// <p> The status of one output in a job. If you specified only one output for the job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you specified more than one output: </p>
     /// <ul>
@@ -53,39 +46,28 @@ pub struct JobOutput {
     /// <li> <p>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the terminal status for <code>Job:Status</code> is also <code>Error</code>.</p> </li>
     /// </ul>
     /// <p>The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information that further explains <code>Status</code>.</p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>Duration of the output file, in seconds.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
     /// <p>Specifies the width of the output file in pixels.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
     /// <p>Height of the output file, in pixels.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// <p>Frame rate of the output file, in frames per second.</p>
-    #[doc(hidden)]
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>File size of the output file, in bytes.</p>
-    #[doc(hidden)]
     pub file_size: ::std::option::Option<i64>,
     /// <p>Duration of the output file, in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <code>Preset</code> for the current output.</p>
     /// <p>Watermarks are added to the output video in the sequence in which you list them in the job output—the first watermark in the list is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add covers the first one, the third one covers the second, and the fourth one covers the third.</p>
-    #[doc(hidden)]
     pub watermarks: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
     /// <p>The album art to be associated with the output file, if any.</p>
-    #[doc(hidden)]
     pub album_art: ::std::option::Option<crate::types::JobAlbumArt>,
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub composition: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -97,13 +79,10 @@ pub struct JobOutput {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    #[doc(hidden)]
     pub captions: ::std::option::Option<crate::types::Captions>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an unencrypted file to your Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job response.</p>
-    #[doc(hidden)]
     pub applied_color_space_conversion: ::std::option::Option<::std::string::String>,
 }
 impl JobOutput {

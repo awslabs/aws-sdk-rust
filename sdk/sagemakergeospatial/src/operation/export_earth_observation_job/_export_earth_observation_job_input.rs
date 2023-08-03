@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobInput {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object containing information about the output file.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfigInput>,
     /// <p>The source images provided to the Earth Observation job being exported.</p>
-    #[doc(hidden)]
     pub export_source_images: ::std::option::Option<bool>,
 }
 impl ExportEarthObservationJobInput {

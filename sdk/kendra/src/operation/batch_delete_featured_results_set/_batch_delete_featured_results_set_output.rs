@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetOutput {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
     _request_id: Option<String>,
 }

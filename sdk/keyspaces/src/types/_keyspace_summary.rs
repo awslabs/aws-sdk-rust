@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    #[doc(hidden)]
     pub replication_strategy: ::std::option::Option<crate::types::Rs>,
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
-    #[doc(hidden)]
     pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyspaceSummary {

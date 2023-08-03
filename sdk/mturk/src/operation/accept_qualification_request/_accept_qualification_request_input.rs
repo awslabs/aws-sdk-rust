@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    #[doc(hidden)]
     pub qualification_request_id: ::std::option::Option<::std::string::String>,
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
 }
 impl AcceptQualificationRequestInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
-    #[doc(hidden)]
     pub spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerInput {
     /// <p>The ID of the service sync blocker.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the service sync blocker was resolved.</p>
-    #[doc(hidden)]
     pub resolved_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServiceSyncBlockerInput {

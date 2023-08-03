@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverRulePolicyInput {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetResolverRulePolicyInput {

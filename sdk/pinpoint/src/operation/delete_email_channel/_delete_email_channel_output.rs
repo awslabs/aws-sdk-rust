@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    #[doc(hidden)]
     pub email_channel_response: ::std::option::Option<crate::types::EmailChannelResponse>,
     _request_id: Option<String>,
 }

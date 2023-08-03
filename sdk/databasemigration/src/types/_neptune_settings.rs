@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NeptuneSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in these .csv files.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
-    #[doc(hidden)]
     pub s3_bucket_folder: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.</p>
-    #[doc(hidden)]
     pub error_retry_duration: ::std::option::Option<i32>,
     /// <p>The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket, ready to store the next batch of migrated graph data.</p>
-    #[doc(hidden)]
     pub max_file_size: ::std::option::Option<i32>,
     /// <p>The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before raising an error. The default is 5.</p>
-    #[doc(hidden)]
     pub max_retry_count: ::std::option::Option<i32>,
     /// <p>If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub iam_auth_enabled: ::std::option::Option<bool>,
 }
 impl NeptuneSettings {

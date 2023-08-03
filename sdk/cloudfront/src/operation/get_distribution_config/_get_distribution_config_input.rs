@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDistributionConfigInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetDistributionConfigInput {

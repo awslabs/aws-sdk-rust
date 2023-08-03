@@ -9,7 +9,6 @@ pub struct DescribeDetectorModelAnalysisOutput {
     /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
     /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnalysisStatus>,
     _request_id: Option<String>,
 }

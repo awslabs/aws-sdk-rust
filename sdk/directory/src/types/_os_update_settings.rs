@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OsUpdateSettings {
     /// <p> OS version that the directory needs to be updated to. </p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<crate::types::OsVersion>,
 }
 impl OsUpdateSettings {

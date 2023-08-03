@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    #[doc(hidden)]
     pub source_repository: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository into which package versions are copied. </p>
-    #[doc(hidden)]
     pub destination_repository: ::std::option::Option<::std::string::String>,
     /// <p> The format of the package versions to be copied. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -25,26 +20,20 @@ pub struct CopyPackageVersionsInput {
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that contains the versions to be copied. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    #[doc(hidden)]
     pub version_revisions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
-    #[doc(hidden)]
     pub allow_overwrite: ::std::option::Option<bool>,
     /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    #[doc(hidden)]
     pub include_from_upstream: ::std::option::Option<bool>,
 }
 impl CopyPackageVersionsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicePipelineOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     _request_id: Option<String>,
 }

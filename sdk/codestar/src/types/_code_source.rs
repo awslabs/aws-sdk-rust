@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSource {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Location>,
 }
 impl CodeSource {

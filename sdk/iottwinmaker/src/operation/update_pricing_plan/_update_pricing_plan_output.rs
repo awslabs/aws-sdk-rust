@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanOutput {
     /// <p>Update the current pricing plan.</p>
-    #[doc(hidden)]
     pub current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Update the pending pricing plan.</p>
-    #[doc(hidden)]
     pub pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     _request_id: Option<String>,
 }

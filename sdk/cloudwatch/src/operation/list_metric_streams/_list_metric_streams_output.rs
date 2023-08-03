@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricStreamsOutput {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of metric stream information.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>,
     _request_id: Option<String>,
 }

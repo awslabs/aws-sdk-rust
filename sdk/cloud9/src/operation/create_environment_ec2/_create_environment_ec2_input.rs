@@ -5,20 +5,15 @@
 pub struct CreateEnvironmentEc2Input {
     /// <p>The name of the environment to create.</p>
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the environment to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
     /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
@@ -35,23 +30,17 @@ pub struct CreateEnvironmentEc2Input {
     /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
     /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
-    #[doc(hidden)]
     pub automatic_stop_time_minutes: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
-    #[doc(hidden)]
     pub owner_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateEnvironmentEc2Input {

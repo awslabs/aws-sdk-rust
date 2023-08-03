@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsOutput {
     /// <p>The sessionId for which this request was called.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LivenessSessionStatus>,
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
-    #[doc(hidden)]
     pub reference_image: ::std::option::Option<crate::types::AuditImage>,
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
-    #[doc(hidden)]
     pub audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
     _request_id: Option<String>,
 }

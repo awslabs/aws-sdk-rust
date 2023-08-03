@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRulePredicateListDetails {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-    #[doc(hidden)]
     pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
-    #[doc(hidden)]
     pub negated: bool,
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRulePredicateListDetails {

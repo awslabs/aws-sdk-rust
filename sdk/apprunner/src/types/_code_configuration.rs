@@ -9,10 +9,8 @@ pub struct CodeConfiguration {
     /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
     /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub configuration_source: ::std::option::Option<crate::types::ConfigurationSource>,
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
-    #[doc(hidden)]
     pub code_configuration_values: ::std::option::Option<crate::types::CodeConfigurationValues>,
 }
 impl CodeConfiguration {

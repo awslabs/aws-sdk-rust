@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRule {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
-    #[doc(hidden)]
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The description of the rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the rule was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The actions associated with the rule.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Specifies whether the rule is disabled.</p>
-    #[doc(hidden)]
     pub rule_disabled: ::std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    #[doc(hidden)]
     pub aws_iot_sql_version: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform when an error occurs.</p>
-    #[doc(hidden)]
     pub error_action: ::std::option::Option<crate::types::Action>,
 }
 impl TopicRule {

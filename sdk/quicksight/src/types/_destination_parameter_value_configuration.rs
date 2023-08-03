@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationParameterValueConfiguration {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    #[doc(hidden)]
     pub custom_values_configuration: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     /// <p>The configuration that selects all options.</p>
-    #[doc(hidden)]
     pub select_all_value_options: ::std::option::Option<crate::types::SelectAllValueOptions>,
     /// <p>The source parameter name of the destination parameter.</p>
-    #[doc(hidden)]
     pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The source field ID of the destination parameter.</p>
-    #[doc(hidden)]
     pub source_field: ::std::option::Option<::std::string::String>,
     /// <p>A column of a data set.</p>
-    #[doc(hidden)]
     pub source_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DestinationParameterValueConfiguration {

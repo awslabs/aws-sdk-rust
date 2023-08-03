@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesInput {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
@@ -12,16 +11,12 @@ pub struct ListMobileDeviceAccessOverridesInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The mobile device to which the access override applies.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMobileDeviceAccessOverridesInput {

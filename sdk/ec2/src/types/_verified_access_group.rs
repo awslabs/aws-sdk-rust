@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessGroup {
     /// <p>The ID of the Verified Access group.</p>
-    #[doc(hidden)]
     pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number that owns the group.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Verified Access group.</p>
-    #[doc(hidden)]
     pub verified_access_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The deletion time.</p>
-    #[doc(hidden)]
     pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessGroup {

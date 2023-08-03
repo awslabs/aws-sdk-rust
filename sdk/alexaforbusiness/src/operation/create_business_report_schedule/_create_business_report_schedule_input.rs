@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
-    #[doc(hidden)]
     pub schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
-    #[doc(hidden)]
     pub content_range: ::std::option::Option<crate::types::BusinessReportContentRange>,
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::BusinessReportRecurrence>,
     /// <p>The client request token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the business report schedule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBusinessReportScheduleInput {

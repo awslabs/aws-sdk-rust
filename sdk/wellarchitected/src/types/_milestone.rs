@@ -6,17 +6,13 @@
 pub struct Milestone {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    #[doc(hidden)]
     pub milestone_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub recorded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A workload return object.</p>
-    #[doc(hidden)]
     pub workload: ::std::option::Option<crate::types::Workload>,
 }
 impl Milestone {

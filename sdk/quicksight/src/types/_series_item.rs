@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeriesItem {
     /// <p>The field series item configuration of a line chart.</p>
-    #[doc(hidden)]
     pub field_series_item: ::std::option::Option<crate::types::FieldSeriesItem>,
     /// <p>The data field series item configuration of a line chart.</p>
-    #[doc(hidden)]
     pub data_field_series_item: ::std::option::Option<crate::types::DataFieldSeriesItem>,
 }
 impl SeriesItem {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentReactionsInput {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
-    #[doc(hidden)]
     pub reaction_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetCommentReactionsInput {

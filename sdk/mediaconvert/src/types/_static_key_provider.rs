@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticKeyProvider {
     /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
-    #[doc(hidden)]
     pub key_format: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    #[doc(hidden)]
     pub key_format_versions: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
-    #[doc(hidden)]
     pub static_key_value: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. The location of the license server used for protecting content.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl StaticKeyProvider {

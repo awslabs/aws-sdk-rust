@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookDefinition {
     /// <p>The name of the webhook.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    #[doc(hidden)]
     pub target_pipeline: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    #[doc(hidden)]
     pub target_action: ::std::option::Option<::std::string::String>,
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::WebhookFilterRule>>,
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
@@ -22,10 +18,8 @@ pub struct WebhookDefinition {
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::WebhookAuthenticationType>,
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
-    #[doc(hidden)]
     pub authentication_configuration: ::std::option::Option<crate::types::WebhookAuthConfiguration>,
 }
 impl WebhookDefinition {

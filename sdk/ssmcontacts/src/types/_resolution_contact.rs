@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionContact {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of contact for a resolution step.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContactType>,
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
-    #[doc(hidden)]
     pub stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContact {

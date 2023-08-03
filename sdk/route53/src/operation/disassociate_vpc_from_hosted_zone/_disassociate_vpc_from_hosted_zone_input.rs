@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateVpcFromHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     /// <p> <i>Optional:</i> A comment about the disassociation request.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateVpcFromHostedZoneInput {

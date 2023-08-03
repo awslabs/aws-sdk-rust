@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    #[doc(hidden)]
     pub branches: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
 }
 impl RandomSplitActivity {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowStep {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub execution_message: ::std::option::Option<::std::string::String>,
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub records_processed: i64,
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub batch_records_start_time: ::std::option::Option<::std::string::String>,
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub batch_records_end_time: ::std::option::Option<::std::string::String>,
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppflowIntegrationWorkflowStep {

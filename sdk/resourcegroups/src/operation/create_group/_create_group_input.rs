@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     /// <p>The tags to add to the group. A tag is key-value pair string.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl CreateGroupInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
@@ -17,31 +15,22 @@ pub struct MonitoringSchedule {
     /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
     /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The type of the monitoring job definition to schedule.</p>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>If the monitoring schedule failed, the reason it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that the monitoring schedule was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the monitoring schedule was changed.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p>The endpoint that hosts the model being monitored.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Summary of information about the last monitoring job to run.</p>
-    #[doc(hidden)]
     pub last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
     /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MonitoringSchedule {

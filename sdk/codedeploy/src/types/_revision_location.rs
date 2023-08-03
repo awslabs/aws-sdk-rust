@@ -11,19 +11,14 @@ pub struct RevisionLocation {
     /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
     /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub revision_type: ::std::option::Option<crate::types::RevisionLocationType>,
     /// <p>Information about the location of a revision stored in Amazon S3. </p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
-    #[doc(hidden)]
     pub git_hub_location: ::std::option::Option<crate::types::GitHubLocation>,
     /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
-    #[doc(hidden)]
     pub string: ::std::option::Option<crate::types::RawString>,
     /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
-    #[doc(hidden)]
     pub app_spec_content: ::std::option::Option<crate::types::AppSpecContent>,
 }
 impl RevisionLocation {

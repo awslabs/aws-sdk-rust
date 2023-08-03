@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamAccessKeySessionContext {
     /// <p>Attributes of the session that the key was used for.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
     /// <p>Information about the entity that created the session.</p>
-    #[doc(hidden)]
     pub session_issuer: ::std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
 }
 impl AwsIamAccessKeySessionContext {

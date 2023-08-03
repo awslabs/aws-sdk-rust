@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbProxyTargetGroupInput {
     /// <p>The name of the target group to modify.</p>
-    #[doc(hidden)]
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the proxy.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    #[doc(hidden)]
     pub connection_pool_config: ::std::option::Option<crate::types::ConnectionPoolConfiguration>,
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub new_name: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbProxyTargetGroupInput {

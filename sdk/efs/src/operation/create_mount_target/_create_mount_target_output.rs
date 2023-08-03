@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMountTargetOutput {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>System-assigned mount target ID.</p>
-    #[doc(hidden)]
     pub mount_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the mount target's subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle state of the mount target.</p>
-    #[doc(hidden)]
     pub life_cycle_state: ::std::option::Option<crate::types::LifeCycleState>,
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

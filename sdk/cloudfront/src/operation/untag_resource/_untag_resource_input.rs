@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>An ARN of a CloudFront resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<crate::types::TagKeys>,
 }
 impl UntagResourceInput {

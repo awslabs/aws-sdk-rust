@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentDetails {
     /// <p>Current agent version.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>ID of EC2 instance agent is running on.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of EC2 instance agent is running on.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <note>
     /// <p>This field should not be used. Use agentCpuCores instead.</p>
     /// </note>
     /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
-    #[doc(hidden)]
     pub reserved_cpu_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>List of CPU cores reserved for the agent.</p>
-    #[doc(hidden)]
     pub agent_cpu_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>List of versions being used by agent components.</p>
-    #[doc(hidden)]
     pub component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
 }
 impl AgentDetails {

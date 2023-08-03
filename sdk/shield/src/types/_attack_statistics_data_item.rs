@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-    #[doc(hidden)]
     pub attack_volume: ::std::option::Option<crate::types::AttackVolume>,
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
-    #[doc(hidden)]
     pub attack_count: i64,
 }
 impl AttackStatisticsDataItem {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyDifference {
     /// <p>The fully-qualified path to the resource property.</p>
-    #[doc(hidden)]
     pub property_path: ::std::option::Option<::std::string::String>,
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
-    #[doc(hidden)]
     pub expected_value: ::std::option::Option<::std::string::String>,
     /// <p>The actual property value of the resource property.</p>
-    #[doc(hidden)]
     pub actual_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of property difference.</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct PropertyDifference {
     /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
     /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub difference_type: ::std::option::Option<crate::types::DifferenceType>,
 }
 impl PropertyDifference {

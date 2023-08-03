@@ -6,19 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Build {
     /// <p>A unique identifier for the build.</p>
-    #[doc(hidden)]
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
-    #[doc(hidden)]
     pub build_arn: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the build.</p>
     /// <p>Possible build statuses include the following:</p>
@@ -27,19 +23,14 @@ pub struct Build {
     /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
     /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BuildStatus>,
     /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
-    #[doc(hidden)]
     pub size_on_disk: ::std::option::Option<i64>,
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
-    #[doc(hidden)]
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
 }
 impl Build {

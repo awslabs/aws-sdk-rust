@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptDetails {
     /// <p>The S3 object location for the script.</p>
-    #[doc(hidden)]
     pub script_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The run path for the script.</p>
-    #[doc(hidden)]
     pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    #[doc(hidden)]
     pub executable_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The run timeout, in seconds, for the script.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl ScriptDetails {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization alias.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The idempotency token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The email domains to associate with the organization.</p>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
-    #[doc(hidden)]
     pub enable_interoperability: bool,
 }
 impl CreateOrganizationInput {

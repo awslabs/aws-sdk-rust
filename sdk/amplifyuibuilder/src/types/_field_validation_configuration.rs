@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldValidationConfiguration {
     /// <p>The validation to perform on an object type.<code></code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The validation to perform on a string value.</p>
-    #[doc(hidden)]
     pub str_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The validation to perform on a number value.</p>
-    #[doc(hidden)]
     pub num_values: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The validation message to display.</p>
-    #[doc(hidden)]
     pub validation_message: ::std::option::Option<::std::string::String>,
 }
 impl FieldValidationConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAlarmInput {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to associate with the alarm.</p>
     /// <p>You can configure up to two alarms per metric.</p>
@@ -15,26 +14,20 @@ pub struct PutAlarmInput {
     /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    #[doc(hidden)]
     pub monitored_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The value against which the specified statistic is compared.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>
     /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
     /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
     /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
-    #[doc(hidden)]
     pub datapoints_to_alarm: ::std::option::Option<i32>,
     /// <p>Sets how this alarm will handle missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
@@ -45,13 +38,11 @@ pub struct PutAlarmInput {
     /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
-    #[doc(hidden)]
     pub treat_missing_data: ::std::option::Option<crate::types::TreatMissingData>,
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -66,11 +57,9 @@ pub struct PutAlarmInput {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    #[doc(hidden)]
     pub notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
-    #[doc(hidden)]
     pub notification_enabled: ::std::option::Option<bool>,
 }
 impl PutAlarmInput {

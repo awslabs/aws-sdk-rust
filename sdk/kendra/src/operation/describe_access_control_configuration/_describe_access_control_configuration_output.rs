@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessControlConfigurationOutput {
     /// <p>The name for the access control configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the access control configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The error message containing details if there are issues processing the access control configuration.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    #[doc(hidden)]
     pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     _request_id: Option<String>,
 }

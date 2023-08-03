@@ -13,13 +13,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorsListItem {
     /// <p>Page number where the error occurred.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>Error code for the cause of the error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::PageBasedErrorCode>,
     /// <p>Text message explaining the reason for the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorsListItem {

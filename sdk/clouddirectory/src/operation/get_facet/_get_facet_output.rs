@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFacetOutput {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
-    #[doc(hidden)]
     pub facet: ::std::option::Option<crate::types::Facet>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStudioMemberOutput {
     /// <p>The member.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::StudioMembership>,
     _request_id: Option<String>,
 }

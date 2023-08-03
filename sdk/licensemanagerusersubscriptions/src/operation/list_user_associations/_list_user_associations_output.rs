@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
-    #[doc(hidden)]
     pub instance_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
     /// <p>The name of the host to redirect requests to.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRedirectTo {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeResponseType {
     /// <p>The challenge name.</p>
-    #[doc(hidden)]
     pub challenge_name: ::std::option::Option<crate::types::ChallengeName>,
     /// <p>The challenge response.</p>
-    #[doc(hidden)]
     pub challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,
 }
 impl ChallengeResponseType {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The replication task identifier.</p>
     /// <p>Constraints:</p>
@@ -14,20 +13,15 @@ pub struct ModifyReplicationTaskInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
-    #[doc(hidden)]
     pub migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
-    #[doc(hidden)]
     pub table_mappings: ::std::option::Option<::std::string::String>,
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-    #[doc(hidden)]
     pub replication_task_settings: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    #[doc(hidden)]
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -36,15 +30,12 @@ pub struct ModifyReplicationTaskInput {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    #[doc(hidden)]
     pub cdc_stop_position: ::std::option::Option<::std::string::String>,
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub task_data: ::std::option::Option<::std::string::String>,
 }
 impl ModifyReplicationTaskInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_gateway_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {

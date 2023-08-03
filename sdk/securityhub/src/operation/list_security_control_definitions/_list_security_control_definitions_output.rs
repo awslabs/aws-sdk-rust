@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsOutput {
     /// <p> An array of controls that apply to the specified standard. </p>
-    #[doc(hidden)]
     pub security_control_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

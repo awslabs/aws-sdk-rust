@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-    #[doc(hidden)]
     pub value: i64,
 }
 impl ReusableDelegationSetLimit {

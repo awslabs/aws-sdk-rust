@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
     /// <p>A non-empty list of values for the specified filter field.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribePackagesFilter {

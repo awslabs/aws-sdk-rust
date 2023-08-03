@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UndeprecateActivityTypeInput {
     /// <p>The name of the domain of the deprecated activity type.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The activity type to undeprecate.</p>
-    #[doc(hidden)]
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
 }
 impl UndeprecateActivityTypeInput {

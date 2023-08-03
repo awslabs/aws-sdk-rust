@@ -41,22 +41,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    #[doc(hidden)]
     pub or: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-    #[doc(hidden)]
     pub not: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>,
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::DimensionValues>,
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<crate::types::TagValues>,
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
-    #[doc(hidden)]
     pub cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
 }
 impl Expression {

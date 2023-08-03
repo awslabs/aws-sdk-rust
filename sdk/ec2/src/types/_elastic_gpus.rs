@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticGpus {
     /// <p>The ID of the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in the which the Elastic Graphics accelerator resides.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The type of Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_health: ::std::option::Option<crate::types::ElasticGpuHealth>,
     /// <p>The state of the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub elastic_gpu_state: ::std::option::Option<crate::types::ElasticGpuState>,
     /// <p>The ID of the instance to which the Elastic Graphics accelerator is attached.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ElasticGpus {

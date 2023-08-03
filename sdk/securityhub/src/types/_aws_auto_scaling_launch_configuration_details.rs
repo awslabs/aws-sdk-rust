@@ -5,62 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: bool,
     /// <p>Specifies the block devices for the instance.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
-    #[doc(hidden)]
     pub classic_link_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    #[doc(hidden)]
     pub classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
-    #[doc(hidden)]
     pub ebs_optimized: bool,
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2 instances.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of monitoring for instances in the group.</p>
-    #[doc(hidden)]
     pub instance_monitoring: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails>,
     /// <p>The instance type for the instances.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the kernel associated with the AMI.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch configuration.</p>
-    #[doc(hidden)]
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
-    #[doc(hidden)]
     pub placement_tenancy: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
-    #[doc(hidden)]
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded text.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the instances.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions>,
 }
 impl AwsAutoScalingLaunchConfigurationDetails {

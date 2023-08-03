@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamingSessionStream {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session stream.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
-    #[doc(hidden)]
     pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>The current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StreamingSessionStreamState>,
     /// <p>The streaming session stream status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StreamingSessionStreamStatusCode>,
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL to connect to this stream using the DCV client.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl StreamingSessionStream {

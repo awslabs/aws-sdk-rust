@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRun {
     /// <p>The ID of the replication run.</p>
-    #[doc(hidden)]
     pub replication_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the replication run.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplicationRunState>,
     /// <p>The type of replication run.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReplicationRunType>,
     /// <p>Details about the current stage of the replication run.</p>
-    #[doc(hidden)]
     pub stage_details: ::std::option::Option<crate::types::ReplicationRunStageDetails>,
     /// <p>The description of the current status of the replication job.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the next replication run.</p>
-    #[doc(hidden)]
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The completion time of the last replication run.</p>
-    #[doc(hidden)]
     pub completed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the replication run.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -42,7 +32,6 @@ pub struct ReplicationRun {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationRun {

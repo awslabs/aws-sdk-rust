@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    #[doc(hidden)]
     pub base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
-    #[doc(hidden)]
     pub unprocessed_resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }

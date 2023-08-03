@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Contact {
     /// <p>The contact's email address.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    #[doc(hidden)]
     pub topic_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
-    #[doc(hidden)]
     pub topic_default_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
-    #[doc(hidden)]
     pub unsubscribe_all: bool,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Contact {

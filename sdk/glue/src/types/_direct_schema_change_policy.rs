@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
     pub enable_update_catalog: ::std::option::Option<bool>,
     /// <p>The update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
     pub update_behavior: ::std::option::Option<crate::types::UpdateCatalogBehavior>,
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the database that the schema change policy applies to.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
 }
 impl DirectSchemaChangePolicy {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublicKeyInput {
     /// <p>A public key configuration.</p>
-    #[doc(hidden)]
     pub public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     /// <p>The identifier of the public key that you are updating.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePublicKeyInput {

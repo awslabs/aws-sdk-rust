@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
-    #[doc(hidden)]
     pub push_notifications: ::std::option::Option<crate::types::PushNotificationPreferences>,
 }
 impl ChannelMembershipPreferences {

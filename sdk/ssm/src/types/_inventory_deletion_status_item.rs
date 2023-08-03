@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryDeletionStatusItem {
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
-    #[doc(hidden)]
     pub deletion_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inventory data type.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The UTC timestamp when the delete operation started.</p>
-    #[doc(hidden)]
     pub deletion_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<crate::types::InventoryDeletionStatus>,
     /// <p>Information about the status.</p>
-    #[doc(hidden)]
     pub last_status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub deletion_summary: ::std::option::Option<crate::types::InventoryDeletionSummary>,
     /// <p>The UTC timestamp of when the last status report.</p>
-    #[doc(hidden)]
     pub last_status_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InventoryDeletionStatusItem {

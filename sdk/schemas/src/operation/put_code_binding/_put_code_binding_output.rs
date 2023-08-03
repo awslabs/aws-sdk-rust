@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that code bindings were modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The current status of code binding generation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CodeGenerationStatus>,
     _request_id: Option<String>,
 }

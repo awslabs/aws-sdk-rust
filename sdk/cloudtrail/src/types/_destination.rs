@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DestinationType>,
     /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl Destination {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointOutput {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub access_point: ::std::option::Option<crate::types::MultiRegionAccessPointReport>,
     _request_id: Option<String>,
 }

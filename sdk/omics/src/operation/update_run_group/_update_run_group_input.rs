@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRunGroupInput {
     /// <p>The group's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of CPUs to use.</p>
-    #[doc(hidden)]
     pub max_cpus: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent runs for the group.</p>
-    #[doc(hidden)]
     pub max_runs: ::std::option::Option<i32>,
     /// <p>A maximum run time for the group in minutes.</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i32>,
     /// <p> The maximum GPUs that can be used by a run group. </p>
-    #[doc(hidden)]
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl UpdateRunGroupInput {

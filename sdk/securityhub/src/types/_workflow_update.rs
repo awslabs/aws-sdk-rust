@@ -16,7 +16,6 @@ pub struct WorkflowUpdate {
     /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> </li>
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
 impl WorkflowUpdate {

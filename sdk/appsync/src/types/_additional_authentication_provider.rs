@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The OIDC configuration.</p>
-    #[doc(hidden)]
     pub open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
-    #[doc(hidden)]
     pub user_pool_config: ::std::option::Option<crate::types::CognitoUserPoolConfig>,
     /// <p>Configuration for Lambda function authorization.</p>
-    #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
 }
 impl AdditionalAuthenticationProvider {

@@ -6,14 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnlineStoreConfig {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
     /// <p>The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub enable_online_store: bool,
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    #[doc(hidden)]
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
 }
 impl OnlineStoreConfig {

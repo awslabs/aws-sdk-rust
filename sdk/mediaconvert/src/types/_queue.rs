@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Queue {
     /// An identifier for this resource that is unique within all of AWS.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for when you created the queue.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description that you create for each queue.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A name that you create for each queue. Each name must be unique within your account.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// The estimated number of jobs with a PROGRESSING status.
-    #[doc(hidden)]
     pub progressing_jobs_count: ::std::option::Option<i32>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    #[doc(hidden)]
     pub reservation_plan: ::std::option::Option<crate::types::ReservationPlan>,
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// The estimated number of jobs with a SUBMITTED status.
-    #[doc(hidden)]
     pub submitted_jobs_count: ::std::option::Option<i32>,
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl Queue {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    #[doc(hidden)]
     pub tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    #[doc(hidden)]
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    #[doc(hidden)]
     pub reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-    #[doc(hidden)]
     pub sending_options: ::std::option::Option<crate::types::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
-    #[doc(hidden)]
     pub suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
-    #[doc(hidden)]
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the index field. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DocumentAttributeValueType>,
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
-    #[doc(hidden)]
     pub relevance: ::std::option::Option<crate::types::Relevance>,
     /// <p>Provides information about how the field is used during a search.</p>
-    #[doc(hidden)]
     pub search: ::std::option::Option<crate::types::Search>,
 }
 impl DocumentMetadataConfiguration {

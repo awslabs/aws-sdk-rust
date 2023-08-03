@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    #[doc(hidden)]
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,
     _request_id: Option<String>,
 }

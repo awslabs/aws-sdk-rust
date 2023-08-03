@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdFilter {
     /// <p>The name of the attribute to filter on.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SenderIdFilterName>,
     /// <p>An array of values to filter for.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SenderIdFilter {

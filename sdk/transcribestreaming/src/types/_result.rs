@@ -6,30 +6,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Result {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub end_time: f64,
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
-    #[doc(hidden)]
     pub is_partial: bool,
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    #[doc(hidden)]
     pub alternatives: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>,
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The language code that represents the language spoken in your audio stream.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    #[doc(hidden)]
     pub language_identification: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
 }
 impl Result {

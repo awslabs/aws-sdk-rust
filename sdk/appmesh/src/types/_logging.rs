@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
-    #[doc(hidden)]
     pub access_log: ::std::option::Option<crate::types::AccessLog>,
 }
 impl Logging {

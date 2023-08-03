@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureInput {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub callback_token: ::std::option::Option<::std::string::String>,
     /// <p>A message describing why the step failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl SendPipelineExecutionStepFailureInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSchemaMappingInput {
     /// <p>The name of the schema to delete.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSchemaMappingInput {

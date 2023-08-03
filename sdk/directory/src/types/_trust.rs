@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the trust relationship.</p>
-    #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    #[doc(hidden)]
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    #[doc(hidden)]
     pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The trust relationship direction.</p>
-    #[doc(hidden)]
     pub trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     /// <p>The trust relationship state.</p>
-    #[doc(hidden)]
     pub trust_state: ::std::option::Option<crate::types::TrustState>,
     /// <p>The date and time that the trust relationship was created.</p>
-    #[doc(hidden)]
     pub created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the trust relationship was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the TrustState was last updated.</p>
-    #[doc(hidden)]
     pub state_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason for the TrustState.</p>
-    #[doc(hidden)]
     pub trust_state_reason: ::std::option::Option<::std::string::String>,
     /// <p>Current state of selective authentication for the trust.</p>
-    #[doc(hidden)]
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl Trust {

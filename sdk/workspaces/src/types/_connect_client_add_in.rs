@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectClientAddIn {
     /// <p>The client add-in identifier.</p>
-    #[doc(hidden)]
     pub add_in_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the client add in.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint URL of the client add-in.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl ConnectClientAddIn {

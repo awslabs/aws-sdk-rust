@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiAssociation {
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the status of an association.</p>
     /// <ul>
@@ -16,10 +14,8 @@ pub struct ApiAssociation {
     /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
     /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>Details about the last deployment status.</p>
-    #[doc(hidden)]
     pub deployment_detail: ::std::option::Option<::std::string::String>,
 }
 impl ApiAssociation {

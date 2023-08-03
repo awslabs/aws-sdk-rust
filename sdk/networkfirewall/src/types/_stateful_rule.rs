@@ -12,13 +12,10 @@ pub struct StatefulRule {
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
     /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::StatefulAction>,
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<crate::types::Header>,
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    #[doc(hidden)]
     pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
 }
 impl StatefulRule {

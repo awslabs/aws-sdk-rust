@@ -4,63 +4,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignOutput {
     /// <p>The name of the campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the campaign.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a signal catalog. </p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the vehicle or the fleet targeted by the campaign. </p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the campaign. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, and <code>SUSPENDED</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CampaignStatus>,
     /// <p> The time, in milliseconds, to deliver a campaign after it was approved.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires.</p>
-    #[doc(hidden)]
     pub expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> How long (in seconds) to collect raw data after a triggering event initiates the collection. </p>
-    #[doc(hidden)]
     pub post_trigger_collection_duration: ::std::option::Option<i64>,
     /// <p> Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. </p>
-    #[doc(hidden)]
     pub diagnostics_mode: ::std::option::Option<crate::types::DiagnosticsMode>,
     /// <p> Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. </p>
-    #[doc(hidden)]
     pub spooling_mode: ::std::option::Option<crate::types::SpoolingMode>,
     /// <p> Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If <code>OFF</code> is specified, the signals aren't compressed. If it's not specified, <code>SNAPPY</code> is used. </p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<crate::types::Compression>,
     /// <p> A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p> Information about a list of signals to collect data on. </p>
-    #[doc(hidden)]
     pub signals_to_collect: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
     /// <p> Information about the data collection scheme associated with the campaign. </p>
-    #[doc(hidden)]
     pub collection_scheme: ::std::option::Option<crate::types::CollectionScheme>,
     /// <p> A list of vehicle attributes associated with the campaign. </p>
-    #[doc(hidden)]
     pub data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The time the campaign was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the campaign was modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    #[doc(hidden)]
     pub data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
     _request_id: Option<String>,
 }

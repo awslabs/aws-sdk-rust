@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetHierarchyInfo {
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    #[doc(hidden)]
     pub parent_asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the child asset in this asset relationship.</p>
-    #[doc(hidden)]
     pub child_asset_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetHierarchyInfo {

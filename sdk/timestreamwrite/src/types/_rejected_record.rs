@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectedRecord {
     /// <p> The index of the record in the input request for WriteRecords. Indexes begin with 0. </p>
-    #[doc(hidden)]
     pub record_index: i32,
     /// <p> The reason why a record was not successfully inserted into Timestream. Possible causes of failure include: </p>
     /// <ul>
@@ -20,10 +19,8 @@ pub struct RejectedRecord {
     /// <li> <p> Records with dimensions or measures that exceed the Timestream defined limits. </p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access Management</a> in the Timestream Developer Guide. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The existing version of the record. This value is populated in scenarios where an identical record exists with a higher version than the version in the write request.</p>
-    #[doc(hidden)]
     pub existing_version: ::std::option::Option<i64>,
 }
 impl RejectedRecord {

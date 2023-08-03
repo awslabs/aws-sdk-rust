@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The minimum value of the timestamp range.</p>
-    #[doc(hidden)]
     pub begin_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum value of the timestamp range.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRange {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
-    #[doc(hidden)]
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
 }

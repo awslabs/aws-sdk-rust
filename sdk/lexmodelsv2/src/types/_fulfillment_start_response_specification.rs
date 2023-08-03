@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentStartResponseSpecification {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
-    #[doc(hidden)]
     pub delay_in_seconds: ::std::option::Option<i32>,
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    #[doc(hidden)]
     pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
-    #[doc(hidden)]
     pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl FulfillmentStartResponseSpecification {

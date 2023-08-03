@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorInput {
     /// <p>The list of one or more detectors to be deleted.</p>
-    #[doc(hidden)]
     pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>,
 }
 impl BatchDeleteDetectorInput {

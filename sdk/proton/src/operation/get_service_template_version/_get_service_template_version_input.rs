@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceTemplateVersionInput {
     /// <p>The name of the service template a version of which you want to get detailed data for.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceTemplateVersionInput {

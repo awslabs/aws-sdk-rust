@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub snapshot_creation_time: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSnapshotInList {

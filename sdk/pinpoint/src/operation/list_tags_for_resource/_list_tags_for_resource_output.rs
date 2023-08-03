@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-    #[doc(hidden)]
     pub tags_model: ::std::option::Option<crate::types::TagsModel>,
     _request_id: Option<String>,
 }

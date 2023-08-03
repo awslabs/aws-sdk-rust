@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAlertsOutput {
     /// <p>Contains information about an alert.</p>
-    #[doc(hidden)]
     pub alert_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>>,
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub discovered_slot_type_count: ::std::option::Option<i32>,
 }
 impl SlotTypeStatistics {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
-    #[doc(hidden)]
     pub annotation_stores: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

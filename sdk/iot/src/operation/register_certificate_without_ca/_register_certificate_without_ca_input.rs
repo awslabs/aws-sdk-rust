@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCaInput {
     /// <p>The certificate data, in PEM format.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The status of the register certificate request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
 }
 impl RegisterCertificateWithoutCaInput {

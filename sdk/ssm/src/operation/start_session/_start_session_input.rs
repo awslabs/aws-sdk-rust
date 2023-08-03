@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionInput {
     /// <p>The managed node to connect to for the session.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl StartSessionInput {

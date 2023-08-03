@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-    #[doc(hidden)]
     pub replace_contents: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceContentEntry>>,
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-    #[doc(hidden)]
     pub delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
-    #[doc(hidden)]
     pub set_file_modes: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
 }
 impl ConflictResolution {

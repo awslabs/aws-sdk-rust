@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    #[doc(hidden)]
     pub secondary_email: ::std::option::Option<::std::string::String>,
     /// <p>The user's mobile number.</p>
-    #[doc(hidden)]
     pub mobile: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfo {

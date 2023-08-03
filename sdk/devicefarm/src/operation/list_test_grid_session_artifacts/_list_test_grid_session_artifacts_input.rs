@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsInput {
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
-    #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Limit results to a specified type of artifact.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>,
     /// <p>The maximum number of results to be returned by a request.</p>
-    #[doc(hidden)]
     pub max_result: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridSessionArtifactsInput {

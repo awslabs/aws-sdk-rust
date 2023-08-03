@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>Name of the running application to stop.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
 }
 impl StopApplicationInput {

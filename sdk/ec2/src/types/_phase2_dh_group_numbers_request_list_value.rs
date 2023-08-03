@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase2DhGroupNumbersRequestListValue {
     /// <p>The Diffie-Hellmann group number.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl Phase2DhGroupNumbersRequestListValue {

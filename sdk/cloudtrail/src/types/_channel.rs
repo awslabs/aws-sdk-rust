@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Channel {
     /// <p>The Amazon Resource Name (ARN) of a channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Channel {

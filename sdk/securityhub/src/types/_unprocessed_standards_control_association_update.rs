@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedStandardsControlAssociationUpdate {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    #[doc(hidden)]
     pub standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated. </p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedStandardsControlAssociationUpdate {

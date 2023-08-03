@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limit {
     /// <p>The type of protection.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
-    #[doc(hidden)]
     pub max: i64,
 }
 impl Limit {

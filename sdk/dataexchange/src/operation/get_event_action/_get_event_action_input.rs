@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
-    #[doc(hidden)]
     pub event_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEventActionInput {

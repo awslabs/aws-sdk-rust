@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
-    #[doc(hidden)]
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriptionDefinitionInput {

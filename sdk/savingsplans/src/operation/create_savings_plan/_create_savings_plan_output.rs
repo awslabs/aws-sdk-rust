@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSavingsPlanOutput {
     /// <p>The ID of the Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

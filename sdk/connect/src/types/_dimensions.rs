@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
-    #[doc(hidden)]
     pub queue: ::std::option::Option<crate::types::QueueReference>,
     /// <p>The channel used for grouping and filters.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Information about the routing profile assigned to the user.</p>
-    #[doc(hidden)]
     pub routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
 }
 impl Dimensions {

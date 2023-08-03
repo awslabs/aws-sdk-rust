@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicKeyCertificateInput {
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetPublicKeyCertificateInput {

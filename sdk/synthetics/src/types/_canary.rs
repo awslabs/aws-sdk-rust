@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Canary {
     /// <p>The unique ID of this canary.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the canary.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::CanaryCodeOutput>,
     /// <p>The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::CanaryScheduleOutput>,
     /// <p>A structure that contains information about a canary run.</p>
-    #[doc(hidden)]
     pub run_config: ::std::option::Option<crate::types::CanaryRunConfigOutput>,
     /// <p>The number of days to retain data about successful runs of this canary.</p>
-    #[doc(hidden)]
     pub success_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary.</p>
-    #[doc(hidden)]
     pub failure_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>A structure that contains information about the canary's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CanaryStatus>,
     /// <p>A structure that contains information about when the canary was created, modified, and most recently run.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::CanaryTimeline>,
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of this canary. Artifacts include the log file, screenshots, and HAR files.</p>
-    #[doc(hidden)]
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Lambda function that is used as your canary's engine. For more information about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources and Conditions for Lambda Actions</a>.</p>
-    #[doc(hidden)]
     pub engine_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the runtime version to use for the canary. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    #[doc(hidden)]
     pub runtime_version: ::std::option::Option<::std::string::String>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigOutput>,
     /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the visual monitoring comparison.</p>
-    #[doc(hidden)]
     pub visual_reference: ::std::option::Option<crate::types::VisualReferenceOutput>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    #[doc(hidden)]
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
 }
 impl Canary {

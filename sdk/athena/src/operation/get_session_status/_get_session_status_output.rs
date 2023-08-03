@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionStatusOutput {
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the status of the session.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SessionStatus>,
     _request_id: Option<String>,
 }

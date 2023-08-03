@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPointsOutput {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    #[doc(hidden)]
     pub access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -9,19 +9,14 @@ pub struct RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p> <important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest>,
     /// <p>The block device mapping.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
@@ -35,38 +30,29 @@ pub struct RequestLaunchTemplateData {
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p> <important>
     /// <p>If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
     /// </important>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring for the instance.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::LaunchTemplatesMonitoringRequest>,
     /// <p>The placement for the instance.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::LaunchTemplatePlacementRequest>,
     /// <p>The ID of the RAM disk.</p> <important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub ram_disk_id: ::std::option::Option<::std::string::String>,
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<bool>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code> </p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
@@ -80,44 +66,31 @@ pub struct RequestLaunchTemplateData {
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
     /// <p>An elastic GPU to associate with the instance.</p>
-    #[doc(hidden)]
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <p> The elastic inference accelerator for the instance. </p>
-    #[doc(hidden)]
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The market (purchasing) option for the instances.</p>
-    #[doc(hidden)]
     pub instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest>,
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
-    #[doc(hidden)]
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecificationRequest>,
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest>,
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    #[doc(hidden)]
     pub capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>,
     /// <p>The license configurations.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest>,
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
     /// <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any unspecified optional attribute is set to its default.</p>
@@ -131,16 +104,12 @@ pub struct RequestLaunchTemplateData {
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
-    #[doc(hidden)]
     pub private_dns_name_options: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptionsRequest>,
     /// <p>The maintenance options for the instance.</p>
-    #[doc(hidden)]
     pub maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>,
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub disable_api_stop: ::std::option::Option<bool>,
 }
 impl RequestLaunchTemplateData {

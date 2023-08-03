@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Attributes update structure.</p>
-    #[doc(hidden)]
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
 }
 impl BatchUpdateObjectAttributes {

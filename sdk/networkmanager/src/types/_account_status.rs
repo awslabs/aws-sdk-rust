@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountStatus {
     /// <p>The ID of an account within the Amazon Web Services Organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of SLR deployment for the account.</p>
-    #[doc(hidden)]
     pub slr_deployment_status: ::std::option::Option<::std::string::String>,
 }
 impl AccountStatus {

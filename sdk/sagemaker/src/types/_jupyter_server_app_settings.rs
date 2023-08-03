@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JupyterServerAppSettings {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
-    #[doc(hidden)]
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    #[doc(hidden)]
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    #[doc(hidden)]
     pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
 }
 impl JupyterServerAppSettings {

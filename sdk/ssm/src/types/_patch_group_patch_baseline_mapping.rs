@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchGroupPatchBaselineMapping {
     /// <p>The name of the patch group registered with the patch baseline.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>The patch baseline the patch group is registered with.</p>
-    #[doc(hidden)]
     pub baseline_identity: ::std::option::Option<crate::types::PatchBaselineIdentity>,
 }
 impl PatchGroupPatchBaselineMapping {

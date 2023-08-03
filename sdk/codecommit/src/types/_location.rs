@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The position of a change in a compared file, in line number format.</p>
-    #[doc(hidden)]
     pub file_position: ::std::option::Option<i64>,
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-    #[doc(hidden)]
     pub relative_file_version: ::std::option::Option<crate::types::RelativeFileVersionEnum>,
 }
 impl Location {

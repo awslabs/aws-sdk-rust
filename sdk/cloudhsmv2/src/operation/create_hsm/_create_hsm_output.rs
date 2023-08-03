@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHsmOutput {
     /// <p>Information about the HSM that was created.</p>
-    #[doc(hidden)]
     pub hsm: ::std::option::Option<crate::types::Hsm>,
     _request_id: Option<String>,
 }

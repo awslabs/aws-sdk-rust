@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataInput {
     /// <p>The catalog ID where the partition resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>(Required) Specifies the name of a table that contains the partition.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>(Required) A list of partition key values.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure containing Lake Formation audit context information.</p>
-    #[doc(hidden)]
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types. </p>
-    #[doc(hidden)]
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredPartitionMetadataInput {

@@ -12,7 +12,6 @@ pub struct DescribeDbClusterBacktracksInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
@@ -20,7 +19,6 @@ pub struct DescribeDbClusterBacktracksInput {
     /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
-    #[doc(hidden)]
     pub backtrack_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
@@ -33,15 +31,12 @@ pub struct DescribeDbClusterBacktracksInput {
     /// <li> <p> <code>pending</code> </p> </li>
     /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterBacktracks</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterBacktracksInput {

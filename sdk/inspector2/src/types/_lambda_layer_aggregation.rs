@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaLayerAggregation {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    #[doc(hidden)]
     pub function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The resource IDs for the AWS Lambda function layers.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
-    #[doc(hidden)]
     pub layer_arns: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to use for sorting the results.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The finding severity to use for sorting the results.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::LambdaLayerSortBy>,
 }
 impl LambdaLayerAggregation {

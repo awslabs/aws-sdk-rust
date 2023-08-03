@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReverseGeocodingConfig {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    #[doc(hidden)]
     pub y_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    #[doc(hidden)]
     pub x_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl ReverseGeocodingConfig {

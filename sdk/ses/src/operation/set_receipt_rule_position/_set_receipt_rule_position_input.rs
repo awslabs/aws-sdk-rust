@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetReceiptRulePositionInput {
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the receipt rule to reposition.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
-    #[doc(hidden)]
     pub after: ::std::option::Option<::std::string::String>,
 }
 impl SetReceiptRulePositionInput {

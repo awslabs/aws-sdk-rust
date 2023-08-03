@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Indicates the status of the data ingestion job. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl ListDataIngestionJobsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetEnvironmentAccountConnectionInput {

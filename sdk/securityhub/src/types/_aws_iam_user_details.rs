@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamUserDetails {
     /// <p>A list of the managed policies that are attached to the user.</p>
-    #[doc(hidden)]
     pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM groups that the user belongs to.</p>
-    #[doc(hidden)]
     pub group_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The path to the user.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The permissions boundary for the user.</p>
-    #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
     /// <p>The unique identifier for the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of inline policies that are embedded in the user.</p>
-    #[doc(hidden)]
     pub user_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
 }
 impl AwsIamUserDetails {

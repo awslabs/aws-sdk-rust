@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationChannel {
     /// <p> The ID of a notification channel. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl NotificationChannel {

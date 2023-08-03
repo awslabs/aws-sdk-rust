@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The expenses detected by Amazon Textract.</p>
-    #[doc(hidden)]
     pub expense_documents: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
     _request_id: Option<String>,
 }

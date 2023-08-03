@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentDetails {
     /// <p>The name of the application that is associated with the environment.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
-    #[doc(hidden)]
     pub cname: ::std::option::Option<::std::string::String>,
     /// <p>The creation date for this environment.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date when this environment was last modified.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the load balancer. For single-instance environments, the IP address of the instance.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the environment.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Links to other environments in the same group.</p>
-    #[doc(hidden)]
     pub environment_links: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration setting for the environment.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>>,
     /// <p>The ARN of the platform version for the environment.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the solution stack that is deployed with the environment.</p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
@@ -54,13 +41,10 @@ pub struct AwsElasticBeanstalkEnvironmentDetails {
     /// <li> <p> <code>Terminating</code> </p> </li>
     /// <li> <p> <code>Updating</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the environment.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
     /// <p>The application version of the environment.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentDetails {

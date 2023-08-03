@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
-    #[doc(hidden)]
     pub backup_description: ::std::option::Option<crate::types::BackupDescription>,
     _request_id: Option<String>,
 }

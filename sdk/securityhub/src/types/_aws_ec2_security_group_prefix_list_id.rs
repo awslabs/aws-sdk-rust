@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupPrefixListId {
     /// <p>The ID of the prefix.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupPrefixListId {

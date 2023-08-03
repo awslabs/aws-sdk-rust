@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to attach to the specified rule group. </p>
     /// <p>The policy specifications must conform to the following:</p>
@@ -16,7 +15,6 @@ pub struct PutPermissionPolicyInput {
     /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutPermissionPolicyInput {

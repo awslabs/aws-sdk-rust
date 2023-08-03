@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultIntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
-    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The maximum allowable value for the hyperparameter.</p>
-    #[doc(hidden)]
     pub max_value: i32,
     /// <p>Indicates whether the hyperparameter is tunable.</p>
-    #[doc(hidden)]
     pub is_tunable: bool,
 }
 impl DefaultIntegerHyperParameterRange {

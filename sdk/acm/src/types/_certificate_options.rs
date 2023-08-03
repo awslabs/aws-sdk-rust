@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-    #[doc(hidden)]
     pub certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
 }
 impl CertificateOptions {

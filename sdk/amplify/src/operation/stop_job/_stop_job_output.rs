@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopJobOutput {
     /// <p> The summary for the job. </p>
-    #[doc(hidden)]
     pub job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
 }

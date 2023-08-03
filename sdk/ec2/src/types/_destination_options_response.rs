@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationOptionsResponse {
     /// <p>The format for the flow log.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::DestinationFileFormat>,
     /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub hive_compatible_partitions: ::std::option::Option<bool>,
     /// <p>Indicates whether to partition the flow log per hour.</p>
-    #[doc(hidden)]
     pub per_hour_partition: ::std::option::Option<bool>,
 }
 impl DestinationOptionsResponse {

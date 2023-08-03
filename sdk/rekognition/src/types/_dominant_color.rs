@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DominantColor {
     /// <p>The Red RGB value for a dominant color.</p>
-    #[doc(hidden)]
     pub red: ::std::option::Option<i32>,
     /// <p>The Blue RGB value for a dominant color.</p>
-    #[doc(hidden)]
     pub blue: ::std::option::Option<i32>,
     /// <p>The Green RGB value for a dominant color.</p>
-    #[doc(hidden)]
     pub green: ::std::option::Option<i32>,
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
-    #[doc(hidden)]
     pub hex_code: ::std::option::Option<::std::string::String>,
     /// <p>The CSS color name of a dominant color.</p>
-    #[doc(hidden)]
     pub css_color: ::std::option::Option<::std::string::String>,
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    #[doc(hidden)]
     pub simplified_color: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of image pixels that have a given dominant color.</p>
-    #[doc(hidden)]
     pub pixel_percent: ::std::option::Option<f32>,
 }
 impl DominantColor {

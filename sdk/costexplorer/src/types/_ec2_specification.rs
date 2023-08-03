@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }
 impl Ec2Specification {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessControlEffectOutput {
     /// <p>The rule effect.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::AccessControlRuleEffect>,
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
-    #[doc(hidden)]
     pub matched_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

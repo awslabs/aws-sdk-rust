@@ -5,10 +5,8 @@
 pub struct UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     /// <p>You cannot change the name of a canary that has already been created.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::CanaryCodeInput>,
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
@@ -20,37 +18,27 @@ pub struct UpdateCanaryInput {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    #[doc(hidden)]
     pub runtime_version: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::CanaryScheduleInput>,
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    #[doc(hidden)]
     pub run_config: ::std::option::Option<crate::types::CanaryRunConfigInput>,
     /// <p>The number of days to retain data about successful runs of this canary.</p>
-    #[doc(hidden)]
     pub success_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary.</p>
-    #[doc(hidden)]
     pub failure_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
     /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
-    #[doc(hidden)]
     pub visual_reference: ::std::option::Option<crate::types::VisualReferenceInput>,
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    #[doc(hidden)]
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    #[doc(hidden)]
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
 }
 impl UpdateCanaryInput {

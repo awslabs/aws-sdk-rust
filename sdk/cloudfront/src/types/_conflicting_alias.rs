@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictingAlias {
     /// <p>An alias (also called a CNAME).</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with the alias.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ConflictingAlias {

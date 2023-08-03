@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInferenceExperimentInput {
     /// <p>The name for the inference experiment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
     /// <ul>
     /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
     /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     /// <p>A description for the inference experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
-    #[doc(hidden)]
     pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
-    #[doc(hidden)]
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
-    #[doc(hidden)]
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
     /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
     /// <ul>
@@ -43,10 +34,8 @@ pub struct CreateInferenceExperimentInput {
     /// </ul>
     /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
     /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateInferenceExperimentInput {

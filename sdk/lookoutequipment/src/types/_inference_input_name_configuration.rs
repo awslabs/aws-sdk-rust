@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    #[doc(hidden)]
     pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    #[doc(hidden)]
     pub component_timestamp_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl InferenceInputNameConfiguration {

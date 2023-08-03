@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
-    #[doc(hidden)]
     pub configuration_recorders: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     _request_id: Option<String>,
 }

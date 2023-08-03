@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImportJobInput {
     /// <p>The destination for the import job.</p>
-    #[doc(hidden)]
     pub import_destination: ::std::option::Option<crate::types::ImportDestination>,
     /// <p>The data source for the import job.</p>
-    #[doc(hidden)]
     pub import_data_source: ::std::option::Option<crate::types::ImportDataSource>,
 }
 impl CreateImportJobInput {

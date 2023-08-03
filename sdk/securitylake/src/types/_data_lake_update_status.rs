@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeUpdateStatus {
     /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataLakeStatus>,
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
-    #[doc(hidden)]
     pub exception: ::std::option::Option<crate::types::DataLakeUpdateException>,
 }
 impl DataLakeUpdateStatus {

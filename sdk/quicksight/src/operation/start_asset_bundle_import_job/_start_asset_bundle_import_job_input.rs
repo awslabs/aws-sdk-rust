@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssetBundleImportJobInput {
     /// <p>The ID of the Amazon Web Services account to import assets into. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
-    #[doc(hidden)]
     pub asset_bundle_import_source: ::std::option::Option<crate::types::AssetBundleImportSource>,
     /// <p>Optional overrides to be applied to the resource configuration before import.</p>
-    #[doc(hidden)]
     pub override_parameters: ::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters>,
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
     /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight account in an inconsistent state.</p>
-    #[doc(hidden)]
     pub failure_action: ::std::option::Option<crate::types::AssetBundleImportFailureAction>,
 }
 impl StartAssetBundleImportJobInput {

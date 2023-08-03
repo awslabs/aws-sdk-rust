@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchTransformInput {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    #[doc(hidden)]
     pub data_captured_destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The dataset format for your batch transform job.</p>
-    #[doc(hidden)]
     pub dataset_format: ::std::option::Option<crate::types::MonitoringDatasetFormat>,
     /// <p>Path to the filesystem where the batch transform data is available to the container.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
-    #[doc(hidden)]
     pub s3_input_mode: ::std::option::Option<crate::types::ProcessingS3InputMode>,
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
-    #[doc(hidden)]
     pub s3_data_distribution_type: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     /// <p>The attributes of the input data that are the input features.</p>
-    #[doc(hidden)]
     pub features_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The attribute of the input data that represents the ground truth label.</p>
-    #[doc(hidden)]
     pub inference_attribute: ::std::option::Option<::std::string::String>,
     /// <p>In a classification problem, the attribute that represents the class probability.</p>
-    #[doc(hidden)]
     pub probability_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
-    #[doc(hidden)]
     pub probability_threshold_attribute: ::std::option::Option<f64>,
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
-    #[doc(hidden)]
     pub start_time_offset: ::std::option::Option<::std::string::String>,
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
-    #[doc(hidden)]
     pub end_time_offset: ::std::option::Option<::std::string::String>,
 }
 impl BatchTransformInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRestoreJobInput {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    #[doc(hidden)]
     pub restore_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRestoreJobInput {

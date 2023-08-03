@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInfoInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The connectivity information for the core device.</p>
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
 }
 impl UpdateConnectivityInfoInput {

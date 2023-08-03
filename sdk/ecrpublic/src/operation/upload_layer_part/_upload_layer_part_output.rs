@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadLayerPartOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name that's associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID that's associated with the request.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The integer value of the last byte that's received in the request.</p>
-    #[doc(hidden)]
     pub last_byte_received: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

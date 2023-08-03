@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub query_logging_configs: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

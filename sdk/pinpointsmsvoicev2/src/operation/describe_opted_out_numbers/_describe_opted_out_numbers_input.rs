@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    #[doc(hidden)]
     pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeOptedOutNumbersInput {

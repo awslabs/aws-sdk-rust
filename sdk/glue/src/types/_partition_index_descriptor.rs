@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
@@ -18,10 +16,8 @@ pub struct PartitionIndexDescriptor {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_status: ::std::option::Option<crate::types::PartitionIndexStatus>,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-    #[doc(hidden)]
     pub backfill_errors: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
 }
 impl PartitionIndexDescriptor {

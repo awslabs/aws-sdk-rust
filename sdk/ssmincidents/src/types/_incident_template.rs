@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentTemplate {
     /// <p>The title of the incident. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The impact of the incident on your customers and applications. </p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<i32>,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
-    #[doc(hidden)]
     pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    #[doc(hidden)]
     pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    #[doc(hidden)]
     pub incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplate {

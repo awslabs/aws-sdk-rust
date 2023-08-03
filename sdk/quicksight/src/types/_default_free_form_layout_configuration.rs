@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultFreeFormLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
 }
 impl DefaultFreeFormLayoutConfiguration {

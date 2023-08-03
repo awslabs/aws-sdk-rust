@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    #[doc(hidden)]
     pub account_sharing_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

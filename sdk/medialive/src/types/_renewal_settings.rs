@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalSettings {
     /// Automatic renewal status for the reservation
-    #[doc(hidden)]
     pub automatic_renewal: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
     /// Count for the reservation renewal
-    #[doc(hidden)]
     pub renewal_count: ::std::option::Option<i32>,
 }
 impl RenewalSettings {

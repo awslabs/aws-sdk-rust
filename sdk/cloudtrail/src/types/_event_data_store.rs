@@ -5,42 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDataStore {
     /// <p>The ARN of the event data store.</p>
-    #[doc(hidden)]
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
     /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub organization_enabled: ::std::option::Option<bool>,
     /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
     /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventDataStore {

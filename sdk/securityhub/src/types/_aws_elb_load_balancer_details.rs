@@ -5,58 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerDetails {
     /// <p>The list of Availability Zones for the load balancer.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the configuration of the EC2 instances.</p>
-    #[doc(hidden)]
     pub backend_server_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>>,
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    #[doc(hidden)]
     pub canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    #[doc(hidden)]
     pub canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the load balancer was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the health checks that are conducted on the load balancer.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck>,
     /// <p>List of EC2 instances for the load balancer.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>,
     /// <p>The policies that are enabled for the load balancer listeners.</p>
-    #[doc(hidden)]
     pub listener_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
     /// <p>The attributes for a load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_attributes: ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>,
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The policies for a load balancer.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<crate::types::AwsElbLoadBalancerPolicies>,
     /// <p>The type of load balancer. Only provided if the load balancer is in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    #[doc(hidden)]
     pub scheme: ::std::option::Option<::std::string::String>,
     /// <p>The security groups for the load balancer. Only provided if the load balancer is in a VPC.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
-    #[doc(hidden)]
     pub source_security_group: ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
     /// <p>The list of subnet identifiers for the load balancer.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the VPC for the load balancer.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerDetails {

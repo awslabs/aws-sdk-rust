@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStreamingImageOutput {
     /// <p>The streaming image.</p>
-    #[doc(hidden)]
     pub streaming_image: ::std::option::Option<crate::types::StreamingImage>,
     _request_id: Option<String>,
 }

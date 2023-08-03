@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the origin access control.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique name that identifies the origin access control.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    #[doc(hidden)]
     pub signing_protocol: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
@@ -22,10 +18,8 @@ pub struct OriginAccessControlSummary {
     /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     /// <p>The type of origin that this origin access control is for.</p>
-    #[doc(hidden)]
     pub origin_access_control_origin_type: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlSummary {

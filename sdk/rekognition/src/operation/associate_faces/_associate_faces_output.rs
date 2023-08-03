@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFacesOutput {
     /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
-    #[doc(hidden)]
     pub associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    #[doc(hidden)]
     pub unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }

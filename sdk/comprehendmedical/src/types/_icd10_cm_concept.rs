@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl Icd10CmConcept {

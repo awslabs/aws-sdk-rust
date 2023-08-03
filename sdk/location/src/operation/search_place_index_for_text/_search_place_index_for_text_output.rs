@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>,
     _request_id: Option<String>,
 }

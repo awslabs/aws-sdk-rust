@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaActivity {
     /// <p>The name of the lambda activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function that is run on the message.</p>
-    #[doc(hidden)]
     pub lambda_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl LambdaActivity {

@@ -12,10 +12,8 @@ pub struct Change {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Information about the resource record set to create, delete, or update.</p>
-    #[doc(hidden)]
     pub resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,
 }
 impl Change {

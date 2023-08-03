@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limits {
     /// <p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>
-    #[doc(hidden)]
     pub storage_types: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
     /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
-    #[doc(hidden)]
     pub instance_limits: ::std::option::Option<crate::types::InstanceLimits>,
     /// <p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
-    #[doc(hidden)]
     pub additional_limits: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
 }
 impl Limits {

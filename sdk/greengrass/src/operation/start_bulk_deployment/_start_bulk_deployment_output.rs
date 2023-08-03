@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBulkDeploymentOutput {
     /// The ARN of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMetadataFlagBody {
     /// <p>The new information to store.</p>
-    #[doc(hidden)]
     pub new_value: ::std::option::Option<::std::string::String>,
 }
 impl PutMetadataFlagBody {

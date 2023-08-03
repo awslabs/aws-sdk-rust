@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
-    #[doc(hidden)]
     pub instance: ::std::option::Option<crate::types::Instance>,
     /// <p>When the instance summary was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InstanceSummary {

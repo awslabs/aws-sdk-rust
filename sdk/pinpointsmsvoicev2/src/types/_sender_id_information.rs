@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    #[doc(hidden)]
     pub sender_id_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    #[doc(hidden)]
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
     /// <p>The monthly leasing price, in US dollars.</p>
-    #[doc(hidden)]
     pub monthly_leasing_price: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformation {

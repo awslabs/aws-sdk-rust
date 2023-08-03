@@ -4,18 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReportGroupInput {
     /// <p> The ARN of the report group to update. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
     /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateReportGroupInput {

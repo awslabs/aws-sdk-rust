@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyHapgInput {
     /// <p>The ARN of the high-availability partition group to modify.</p>
-    #[doc(hidden)]
     pub hapg_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new label for the high-availability partition group.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    #[doc(hidden)]
     pub partition_serial_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyHapgInput {

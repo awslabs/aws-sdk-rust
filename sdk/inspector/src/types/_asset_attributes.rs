@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetAttributes {
     /// <p>The schema version of this data type.</p>
-    #[doc(hidden)]
     pub schema_version: i32,
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl AssetAttributes {

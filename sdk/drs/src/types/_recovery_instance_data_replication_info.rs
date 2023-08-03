@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
-    #[doc(hidden)]
     pub lag_duration: ::std::option::Option<::std::string::String>,
     /// <p>An estimate of when the data replication will be completed.</p>
-    #[doc(hidden)]
     pub eta_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The disks that should be replicated.</p>
-    #[doc(hidden)]
     pub replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>>,
     /// <p>The state of the data replication.</p>
-    #[doc(hidden)]
     pub data_replication_state: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
     /// <p>Information about whether the data replication has been initiated.</p>
-    #[doc(hidden)]
     pub data_replication_initiation: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     /// <p>Information about Data Replication</p>
-    #[doc(hidden)]
     pub data_replication_error: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
     /// <p>AWS Availability zone into which data is being replicated.</p>
-    #[doc(hidden)]
     pub staging_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfo {

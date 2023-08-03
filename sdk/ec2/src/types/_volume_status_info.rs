@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusInfo {
     /// <p>The details of the volume status.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
     /// <p>The status of the volume.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
 }
 impl VolumeStatusInfo {

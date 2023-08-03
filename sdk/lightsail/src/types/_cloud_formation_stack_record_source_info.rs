@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationStackRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
     /// <p>The name of the record.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationStackRecordSourceInfo {

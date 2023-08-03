@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    #[doc(hidden)]
     pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetails {

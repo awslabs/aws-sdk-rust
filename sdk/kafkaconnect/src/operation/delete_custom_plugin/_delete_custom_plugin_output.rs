@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
-    #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
     _request_id: Option<String>,
 }

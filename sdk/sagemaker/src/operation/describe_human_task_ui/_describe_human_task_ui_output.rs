@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHumanTaskUiOutput {
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
-    #[doc(hidden)]
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the human task user interface (worker task template).</p>
-    #[doc(hidden)]
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
-    #[doc(hidden)]
     pub human_task_ui_status: ::std::option::Option<crate::types::HumanTaskUiStatus>,
     /// <p>The timestamp when the human task user interface was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Container for user interface template information.</p>
-    #[doc(hidden)]
     pub ui_template: ::std::option::Option<crate::types::UiTemplateInfo>,
     _request_id: Option<String>,
 }

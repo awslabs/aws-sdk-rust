@@ -6,11 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<bool>,
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    #[doc(hidden)]
     pub frame_option: ::std::option::Option<crate::types::FrameOptionsList>,
 }
 impl ResponseHeadersPolicyFrameOptions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateAssessmentReportEvidenceInput {
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of evidence identifiers. </p>
-    #[doc(hidden)]
     pub evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDisassociateAssessmentReportEvidenceInput {

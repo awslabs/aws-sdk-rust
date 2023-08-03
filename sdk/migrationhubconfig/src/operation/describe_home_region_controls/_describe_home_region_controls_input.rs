@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsInput {
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the home region you'd like to view.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>The maximum number of filtering results to display per page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHomeRegionControlsInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataRetentionInput {
     /// <p>The name of the stream whose retention period you want to change.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::UpdateDataRetentionOperation>,
     /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
-    #[doc(hidden)]
     pub data_retention_change_in_hours: ::std::option::Option<i32>,
 }
 impl UpdateDataRetentionInput {

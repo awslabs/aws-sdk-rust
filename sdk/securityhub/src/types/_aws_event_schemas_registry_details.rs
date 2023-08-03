@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEventSchemasRegistryDetails {
     /// <p> A description of the registry to be created. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the registry. </p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the schema registry. </p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEventSchemasRegistryDetails {

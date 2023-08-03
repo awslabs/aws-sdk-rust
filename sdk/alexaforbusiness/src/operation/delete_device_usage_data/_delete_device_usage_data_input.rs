@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeviceUsageDataInput {
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of usage data to delete.</p>
-    #[doc(hidden)]
     pub device_usage_type: ::std::option::Option<crate::types::DeviceUsageType>,
 }
 impl DeleteDeviceUsageDataInput {

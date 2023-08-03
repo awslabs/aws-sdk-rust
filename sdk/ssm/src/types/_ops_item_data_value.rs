@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemDataValue {
     /// <p>The value of the OperationalData key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OpsItemDataType>,
 }
 impl OpsItemDataValue {

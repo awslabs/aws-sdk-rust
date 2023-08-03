@@ -11,7 +11,6 @@ pub struct DescribeElasticsearchInstanceTypeLimitsOutput {
     /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub limits_by_role: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     _request_id: Option<String>,
 }

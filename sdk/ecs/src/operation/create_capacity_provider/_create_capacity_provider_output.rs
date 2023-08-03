@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCapacityProviderOutput {
     /// <p>The full description of the new capacity provider.</p>
-    #[doc(hidden)]
     pub capacity_provider: ::std::option::Option<crate::types::CapacityProvider>,
     _request_id: Option<String>,
 }

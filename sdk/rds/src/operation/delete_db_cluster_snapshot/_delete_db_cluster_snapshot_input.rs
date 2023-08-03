@@ -6,7 +6,6 @@
 pub struct DeleteDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbClusterSnapshotInput {

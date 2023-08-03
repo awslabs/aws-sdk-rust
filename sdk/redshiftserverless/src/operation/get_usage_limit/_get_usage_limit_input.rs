@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageLimitInput {
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    #[doc(hidden)]
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUsageLimitInput {

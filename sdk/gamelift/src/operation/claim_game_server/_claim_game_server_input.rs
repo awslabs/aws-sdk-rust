@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, Amazon GameLift FleetIQ searches for an available game server in the specified game server group.</p>
-    #[doc(hidden)]
     pub game_server_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    #[doc(hidden)]
     pub game_server_data: ::std::option::Option<::std::string::String>,
     /// <p>Object that restricts how a claimed game server is chosen.</p>
-    #[doc(hidden)]
     pub filter_option: ::std::option::Option<crate::types::ClaimFilterOption>,
 }
 impl ClaimGameServerInput {

@@ -6,10 +6,8 @@
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    #[doc(hidden)]
     pub trusts: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

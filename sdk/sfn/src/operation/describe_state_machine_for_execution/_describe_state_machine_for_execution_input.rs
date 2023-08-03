@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStateMachineForExecutionInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentOutput {
     /// <p>Function package ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Function package descriptor ID.</p>
-    #[doc(hidden)]
     pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network function product name.</p>
-    #[doc(hidden)]
     pub vnf_product_name: ::std::option::Option<::std::string::String>,
     /// <p>Network function provider.</p>
-    #[doc(hidden)]
     pub vnf_provider: ::std::option::Option<::std::string::String>,
     /// <p>Function package descriptor version.</p>
-    #[doc(hidden)]
     pub vnfd_version: ::std::option::Option<::std::string::String>,
     /// <p>Function package metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>,
     _request_id: Option<String>,
 }

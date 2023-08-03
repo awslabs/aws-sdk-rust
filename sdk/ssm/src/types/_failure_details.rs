@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
-    #[doc(hidden)]
     pub failure_stage: ::std::option::Option<::std::string::String>,
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the Automation step failure.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FailureDetails {

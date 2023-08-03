@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsOutput {
     /// <p>An array of objects that describe recommendation export jobs.</p>
-    #[doc(hidden)]
     pub recommendation_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationExportJob>>,
     /// <p>The token to use to advance to the next page of export jobs.</p>
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

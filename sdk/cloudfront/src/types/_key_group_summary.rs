@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyGroupSummary {
     /// <p>A key group.</p>
-    #[doc(hidden)]
     pub key_group: ::std::option::Option<crate::types::KeyGroup>,
 }
 impl KeyGroupSummary {

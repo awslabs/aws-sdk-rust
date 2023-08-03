@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiConditionalFormattingOption {
     /// <p>The conditional formatting for the primary value of a KPI visual.</p>
-    #[doc(hidden)]
     pub primary_value: ::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting>,
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
-    #[doc(hidden)]
     pub progress_bar: ::std::option::Option<crate::types::KpiProgressBarConditionalFormatting>,
 }
 impl KpiConditionalFormattingOption {

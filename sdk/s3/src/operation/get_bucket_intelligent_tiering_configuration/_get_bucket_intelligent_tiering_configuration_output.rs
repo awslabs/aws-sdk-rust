@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfigurationOutput {
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    #[doc(hidden)]
     pub intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

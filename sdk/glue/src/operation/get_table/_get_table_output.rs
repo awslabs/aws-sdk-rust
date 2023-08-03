@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableOutput {
     /// <p>The <code>Table</code> object that defines the specified table.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionOutput {
     /// <p>The session.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<crate::types::SessionData>,
     _request_id: Option<String>,
 }

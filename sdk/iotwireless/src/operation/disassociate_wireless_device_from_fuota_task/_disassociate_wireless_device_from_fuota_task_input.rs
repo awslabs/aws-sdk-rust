@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device.</p>
-    #[doc(hidden)]
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateWirelessDeviceFromFuotaTaskInput {

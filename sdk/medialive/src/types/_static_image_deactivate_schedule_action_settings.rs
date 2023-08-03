@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticImageDeactivateScheduleActionSettings {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
-    #[doc(hidden)]
     pub fade_out: ::std::option::Option<i32>,
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
-    #[doc(hidden)]
     pub layer: ::std::option::Option<i32>,
 }
 impl StaticImageDeactivateScheduleActionSettings {

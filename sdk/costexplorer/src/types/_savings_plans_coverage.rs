@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansCoverage {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
-    #[doc(hidden)]
     pub coverage: ::std::option::Option<crate::types::SavingsPlansCoverageData>,
     /// <p>The time period of the request. </p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
 }
 impl SavingsPlansCoverage {

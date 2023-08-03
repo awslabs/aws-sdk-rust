@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentConfig {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
-    #[doc(hidden)]
     pub concurrent_deployment_percentage: ::std::option::Option<i32>,
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
-    #[doc(hidden)]
     pub failure_threshold_percentage: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
-    #[doc(hidden)]
     pub robot_deployment_timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The download condition file.</p>
-    #[doc(hidden)]
     pub download_condition_file: ::std::option::Option<crate::types::S3Object>,
 }
 impl DeploymentConfig {

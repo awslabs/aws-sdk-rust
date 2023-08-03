@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the field. Used for determining equality when searching.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::FieldContentType>,
 }
 impl ObjectTypeField {

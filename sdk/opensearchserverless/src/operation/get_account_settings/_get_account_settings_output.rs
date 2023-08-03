@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSettingsOutput {
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    #[doc(hidden)]
     pub account_settings_detail: ::std::option::Option<crate::types::AccountSettingsDetail>,
     _request_id: Option<String>,
 }

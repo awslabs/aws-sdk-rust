@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartnerEventSourceAccountsInput {
     /// <p>The name of the partner event source to display account information about.</p>
-    #[doc(hidden)]
     pub event_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListPartnerEventSourceAccountsInput {

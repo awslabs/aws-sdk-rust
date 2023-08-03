@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeletePartitionOutput {
     /// <p>The errors encountered when trying to delete the requested partitions.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>,
     _request_id: Option<String>,
 }

@@ -10,26 +10,19 @@ pub struct CrossRegionCopyRule {
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_region: ::std::option::Option<::std::string::String>,
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
-    #[doc(hidden)]
     pub cmk_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
-    #[doc(hidden)]
     pub retain_rule: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
-    #[doc(hidden)]
     pub deprecate_rule: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
 }
 impl CrossRegionCopyRule {

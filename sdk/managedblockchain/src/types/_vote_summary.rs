@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
-    #[doc(hidden)]
     pub vote: ::std::option::Option<crate::types::VoteValue>,
     /// <p> The name of the member that cast the vote. </p>
-    #[doc(hidden)]
     pub member_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the member that cast the vote. </p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl VoteSummary {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The rule groups namespace name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRuleGroupsNamespaceInput {

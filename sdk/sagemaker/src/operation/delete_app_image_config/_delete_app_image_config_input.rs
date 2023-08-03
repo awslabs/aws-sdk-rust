@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppImageConfigInput {
     /// <p>The name of the AppImageConfig to delete.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppImageConfigInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
-    #[doc(hidden)]
     pub aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    #[doc(hidden)]
     pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
-    #[doc(hidden)]
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
 }
 impl ResourceDetails {

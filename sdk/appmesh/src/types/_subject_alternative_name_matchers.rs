@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
-    #[doc(hidden)]
     pub exact: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SubjectAlternativeNameMatchers {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Slot {
     /// <p>The current value of the slot.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::Value>,
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    #[doc(hidden)]
     pub shape: ::std::option::Option<crate::types::Shape>,
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     /// <p>The constituent sub slots of a composite slot.</p>
-    #[doc(hidden)]
     pub sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
 }
 impl Slot {

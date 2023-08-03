@@ -5,13 +5,10 @@
 pub struct BatchUpdateFindingsInput {
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    #[doc(hidden)]
     pub finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     /// <p>The updated note.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<crate::types::NoteUpdate>,
     /// <p>Used to update the finding severity.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::SeverityUpdate>,
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
@@ -21,15 +18,12 @@ pub struct BatchUpdateFindingsInput {
     /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
     /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<i32>,
     /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    #[doc(hidden)]
     pub criticality: ::std::option::Option<i32>,
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
@@ -40,17 +34,13 @@ pub struct BatchUpdateFindingsInput {
     /// <li> <p>Unusual Behaviors</p> </li>
     /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
-    #[doc(hidden)]
     pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to update the workflow status of a finding.</p>
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
-    #[doc(hidden)]
     pub workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
     /// <p>A list of findings that are related to the updated findings.</p>
-    #[doc(hidden)]
     pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
 }
 impl BatchUpdateFindingsInput {

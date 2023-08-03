@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientPropertiesOutput {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
-    #[doc(hidden)]
     pub client_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ClientPropertiesResult>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayPolicyTableOutput {
     /// <p>Provides details about the deleted transit gateway policy table.</p>
-    #[doc(hidden)]
     pub transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,
 }

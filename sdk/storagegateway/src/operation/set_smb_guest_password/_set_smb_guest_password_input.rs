@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetSmbGuestPasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password that you want to set for your SMB server.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl SetSmbGuestPasswordInput {

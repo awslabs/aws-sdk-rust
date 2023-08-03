@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuotaPeriod {
     /// <p>The value.</p>
-    #[doc(hidden)]
     pub period_value: ::std::option::Option<i32>,
     /// <p>The time unit.</p>
-    #[doc(hidden)]
     pub period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
 impl QuotaPeriod {

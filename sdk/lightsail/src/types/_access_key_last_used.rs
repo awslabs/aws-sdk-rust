@@ -8,15 +8,12 @@
 pub struct AccessKeyLastUsed {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
-    #[doc(hidden)]
     pub last_used_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl AccessKeyLastUsed {

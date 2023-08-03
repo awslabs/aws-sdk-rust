@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    #[doc(hidden)]
     pub organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    #[doc(hidden)]
     pub organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchPermissionConfiguration {

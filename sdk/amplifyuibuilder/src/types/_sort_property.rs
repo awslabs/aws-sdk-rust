@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortProperty {
     /// <p>The field to perform the sort on.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The direction of the sort, either ascending or descending.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::SortDirection>,
 }
 impl SortProperty {

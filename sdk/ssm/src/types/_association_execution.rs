@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecution {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The association version.</p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
     /// <p>The execution ID for the association.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed status information about the execution.</p>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>The time the execution started.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date of the last execution.</p>
-    #[doc(hidden)]
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
-    #[doc(hidden)]
     pub resource_count_by_status: ::std::option::Option<::std::string::String>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl AssociationExecution {

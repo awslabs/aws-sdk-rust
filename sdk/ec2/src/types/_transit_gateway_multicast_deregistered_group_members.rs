@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDeregisteredGroupMembers {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The network interface IDs of the deregistered members.</p>
-    #[doc(hidden)]
     pub deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    #[doc(hidden)]
     pub group_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayMulticastDeregisteredGroupMembers {

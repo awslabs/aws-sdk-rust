@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLanguageModelOutput {
     /// <p>The language code you selected for your custom language model.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::ClmLanguageCode>,
     /// <p>The Amazon Transcribe standard language model, or base model, you specified when creating your custom language model.</p>
-    #[doc(hidden)]
     pub base_model_name: ::std::option::Option<crate::types::BaseModelName>,
     /// <p>The name of your custom language model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
-    #[doc(hidden)]
     pub model_status: ::std::option::Option<crate::types::ModelStatus>,
     _request_id: Option<String>,
 }

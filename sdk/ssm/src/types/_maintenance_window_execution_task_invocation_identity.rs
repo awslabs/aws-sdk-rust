@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    #[doc(hidden)]
     pub task_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the task invocation.</p>
-    #[doc(hidden)]
     pub invocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The task type.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The parameters that were provided for the invocation when it was run.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task invocation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the invocation started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the invocation finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowExecutionTaskInvocationIdentity {

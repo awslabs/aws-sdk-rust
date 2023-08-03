@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentDetails {
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the attachment.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentDetails {

@@ -12,13 +12,10 @@ pub struct GetDomainSuggestionsInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
-    #[doc(hidden)]
     pub suggestion_count: ::std::option::Option<i32>,
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
-    #[doc(hidden)]
     pub only_available: ::std::option::Option<bool>,
 }
 impl GetDomainSuggestionsInput {

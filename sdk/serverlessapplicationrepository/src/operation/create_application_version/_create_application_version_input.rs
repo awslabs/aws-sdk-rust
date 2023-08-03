@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the new version.</p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    #[doc(hidden)]
     pub source_code_archive_url: ::std::option::Option<::std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    #[doc(hidden)]
     pub source_code_url: ::std::option::Option<::std::string::String>,
     /// <p>The raw packaged AWS SAM template of your application.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
-    #[doc(hidden)]
     pub template_url: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationVersionInput {

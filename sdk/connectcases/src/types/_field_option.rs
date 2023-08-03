@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl FieldOption {

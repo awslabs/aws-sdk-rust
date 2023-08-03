@@ -40,13 +40,11 @@ pub struct MapConfiguration {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub style: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p> <note>
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
-    #[doc(hidden)]
     pub political_view: ::std::option::Option<::std::string::String>,
 }
 impl MapConfiguration {

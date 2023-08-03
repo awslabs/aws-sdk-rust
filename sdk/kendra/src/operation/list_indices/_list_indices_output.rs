@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIndicesOutput {
     /// <p>An array of summary information on the configuration of one or more indexes.</p>
-    #[doc(hidden)]
     pub index_configuration_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::IndexConfigurationSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

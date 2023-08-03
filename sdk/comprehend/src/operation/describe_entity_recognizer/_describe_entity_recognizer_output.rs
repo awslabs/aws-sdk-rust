@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
-    #[doc(hidden)]
     pub entity_recognizer_properties: ::std::option::Option<crate::types::EntityRecognizerProperties>,
     _request_id: Option<String>,
 }

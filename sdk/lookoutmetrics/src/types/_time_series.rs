@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeries {
     /// <p>The ID of the metric.</p>
-    #[doc(hidden)]
     pub time_series_id: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions of the metric.</p>
-    #[doc(hidden)]
     pub dimension_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,
     /// <p>The values for the metric.</p>
-    #[doc(hidden)]
     pub metric_value_list: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl TimeSeries {

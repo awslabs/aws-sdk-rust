@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
-    #[doc(hidden)]
     pub bootstrap_servers: ::std::option::Option<::std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl ApacheKafkaCluster {

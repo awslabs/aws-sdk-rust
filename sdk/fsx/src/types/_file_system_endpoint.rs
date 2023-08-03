@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemEndpoint {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>IP addresses of the file system endpoint.</p>
-    #[doc(hidden)]
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileSystemEndpoint {

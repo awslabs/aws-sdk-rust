@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityInput {
     /// The ID of the certificate authority.
-    #[doc(hidden)]
     pub certificate_authority_id: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGroupCertificateAuthorityInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOutput {
     /// <p>The description of the accelerator.</p>
-    #[doc(hidden)]
     pub accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,
 }

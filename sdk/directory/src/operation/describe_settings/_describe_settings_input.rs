@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the directory settings for which to retrieve information.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DirectoryConfigurationStatus>,
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSettingsInput {

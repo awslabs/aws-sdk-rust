@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetViewOutput {
     /// <p>A structure that contains the details for the requested view.</p>
-    #[doc(hidden)]
     pub view: ::std::option::Option<crate::types::View>,
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

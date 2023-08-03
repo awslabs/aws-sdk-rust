@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSchemaCreationInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The schema definition, in GraphQL schema language format.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl StartSchemaCreationInput {

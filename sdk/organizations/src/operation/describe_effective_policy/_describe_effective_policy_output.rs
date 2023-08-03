@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyOutput {
     /// <p>The contents of the effective policy.</p>
-    #[doc(hidden)]
     pub effective_policy: ::std::option::Option<crate::types::EffectivePolicy>,
     _request_id: Option<String>,
 }

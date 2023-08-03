@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ChangeMessageVisibilityBatchResultEntry {

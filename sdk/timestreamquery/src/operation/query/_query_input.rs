@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryInput {
     /// <p> The query to be run by Timestream. </p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p> Unique, case-sensitive string of up to 64 ASCII characters specified when a <code>Query</code> request is made. Providing a <code>ClientToken</code> makes the call to <code>Query</code> <i>idempotent</i>. This means that running the same query repeatedly will produce the same result. In other words, making multiple identical <code>Query</code> requests has the same effect as making a single request. When using <code>ClientToken</code> in a query, note the following: </p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct QueryInput {
     /// <li> <p>If the invocation contains <code>NextToken</code>, that particular invocation is assumed to be a subsequent invocation of a prior call to the Query API, and a result set is returned.</p> </li>
     /// <li> <p> After 4 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token used to return a set of results. When the <code>Query</code> API is invoked using <code>NextToken</code>, that particular invocation is assumed to be a subsequent invocation of a prior call to <code>Query</code>, and a result set is returned. However, if the <code>Query</code> invocation only contains the <code>ClientToken</code>, that invocation of <code>Query</code> is assumed to be a new query run. </p>
     /// <p>Note the following when using NextToken in a query:</p>
@@ -25,7 +23,6 @@ pub struct QueryInput {
     /// <li> <p>The latest <code>NextToken</code> should be used to paginate until <code>null</code> is returned, at which point a new <code>NextToken</code> should be used.</p> </li>
     /// <li> <p> If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an <code>Invalid pagination token</code> error. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The total number of rows to be returned in the <code>Query</code> output. The initial run of <code>Query</code> with a <code>MaxRows</code> value specified will return the result set of the query in two cases: </p>
     /// <ul>
@@ -34,7 +31,6 @@ pub struct QueryInput {
     /// </ul>
     /// <p>Otherwise, the initial invocation of <code>Query</code> only returns a <code>NextToken</code>, which can then be used in subsequent calls to fetch the result set. To resume pagination, provide the <code>NextToken</code> value in the subsequent command.</p>
     /// <p>If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code> is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.</p>
-    #[doc(hidden)]
     pub max_rows: ::std::option::Option<i32>,
 }
 impl QueryInput {

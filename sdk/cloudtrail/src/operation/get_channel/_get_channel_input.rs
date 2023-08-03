@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelInput {
     /// <p>The ARN or <code>UUID</code> of a channel.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
 }
 impl GetChannelInput {

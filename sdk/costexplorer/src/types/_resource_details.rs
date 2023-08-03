@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
-    #[doc(hidden)]
     pub ec2_resource_details: ::std::option::Option<crate::types::Ec2ResourceDetails>,
 }
 impl ResourceDetails {

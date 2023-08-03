@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
 impl ListInsightsOngoingStatusFilter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStorageSystemInput {

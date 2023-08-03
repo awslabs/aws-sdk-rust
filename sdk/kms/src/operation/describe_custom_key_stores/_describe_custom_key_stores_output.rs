@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresOutput {
     /// <p>Contains metadata about each custom key store.</p>
-    #[doc(hidden)]
     pub custom_key_stores: ::std::option::Option<::std::vec::Vec<crate::types::CustomKeyStoresListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub truncated: bool,
     _request_id: Option<String>,
 }

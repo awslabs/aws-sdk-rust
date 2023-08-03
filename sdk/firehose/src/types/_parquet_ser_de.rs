@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParquetSerDe {
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
-    #[doc(hidden)]
     pub block_size_bytes: ::std::option::Option<i32>,
     /// <p>The Parquet page size. Column chunks are divided into pages. A page is conceptually an indivisible unit (in terms of compression and encoding). The minimum value is 64 KiB and the default is 1 MiB.</p>
-    #[doc(hidden)]
     pub page_size_bytes: ::std::option::Option<i32>,
     /// <p>The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.</p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<crate::types::ParquetCompression>,
     /// <p>Indicates whether to enable dictionary compression.</p>
-    #[doc(hidden)]
     pub enable_dictionary_compression: ::std::option::Option<bool>,
     /// <p>The maximum amount of padding to apply. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 0.</p>
-    #[doc(hidden)]
     pub max_padding_bytes: ::std::option::Option<i32>,
     /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
-    #[doc(hidden)]
     pub writer_version: ::std::option::Option<crate::types::ParquetWriterVersion>,
 }
 impl ParquetSerDe {

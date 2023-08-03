@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastUpdateStatus {
     /// <p>A value that indicates whether the update was made successful.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LastUpdateStatusValue>,
     /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl LastUpdateStatus {

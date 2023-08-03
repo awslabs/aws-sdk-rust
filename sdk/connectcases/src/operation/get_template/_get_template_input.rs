@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of a template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTemplateInput {

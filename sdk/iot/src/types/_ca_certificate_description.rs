@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate ID.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a CA certificate.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The CA certificate data, in PEM format.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the CA certificate.</p>
-    #[doc(hidden)]
     pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>The date the CA certificate was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
-    #[doc(hidden)]
     pub auto_registration_status: ::std::option::Option<crate::types::AutoRegistrationStatus>,
     /// <p>The date the CA certificate was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The customer version of the CA certificate.</p>
-    #[doc(hidden)]
     pub customer_version: ::std::option::Option<i32>,
     /// <p>The generation ID of the CA certificate.</p>
-    #[doc(hidden)]
     pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>When the CA certificate is valid.</p>
-    #[doc(hidden)]
     pub validity: ::std::option::Option<crate::types::CertificateValidity>,
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
-    #[doc(hidden)]
     pub certificate_mode: ::std::option::Option<crate::types::CertificateMode>,
 }
 impl CaCertificateDescription {

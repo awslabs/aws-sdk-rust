@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
-    #[doc(hidden)]
     pub consolidation: ::std::option::Option<crate::types::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
-    #[doc(hidden)]
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
-    #[doc(hidden)]
     pub min_allowed_confidence_score_for_merging: ::std::option::Option<f64>,
 }
 impl AutoMerging {

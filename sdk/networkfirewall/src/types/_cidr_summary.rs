@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
-    #[doc(hidden)]
     pub available_cidr_count: ::std::option::Option<i32>,
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
-    #[doc(hidden)]
     pub utilized_cidr_count: ::std::option::Option<i32>,
     /// <p>The list of the IP set references used by a firewall.</p>
-    #[doc(hidden)]
     pub ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>>,
 }
 impl CidrSummary {

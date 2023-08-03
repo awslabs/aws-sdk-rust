@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub limit: i32,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub limit_type: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

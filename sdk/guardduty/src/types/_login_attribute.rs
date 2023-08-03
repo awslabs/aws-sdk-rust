@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoginAttribute {
     /// <p>Indicates the user name which attempted to log in.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the application name used to attempt log in.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
-    #[doc(hidden)]
     pub failed_login_attempts: i32,
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
-    #[doc(hidden)]
     pub successful_login_attempts: i32,
 }
 impl LoginAttribute {

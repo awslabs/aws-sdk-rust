@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsOutput {
     /// <p>A list of job runs that have occurred for the specified job.</p>
-    #[doc(hidden)]
     pub job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

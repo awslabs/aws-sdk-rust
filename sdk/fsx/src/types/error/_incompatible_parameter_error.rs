@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncompatibleParameterError {
     /// <p>A parameter that is incompatible with the earlier request.</p>
-    #[doc(hidden)]
     pub parameter: ::std::option::Option<::std::string::String>,
     /// <p>A detailed error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

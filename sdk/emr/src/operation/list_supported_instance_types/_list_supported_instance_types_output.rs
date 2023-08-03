@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSupportedInstanceTypesOutput {
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub supported_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

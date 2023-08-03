@@ -32,7 +32,6 @@ pub struct AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – The stage in the intent.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageFilterName>,
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -53,10 +52,8 @@ pub struct AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalyticsIntentStageFilter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEntityOutput {
     /// <p>The current state of the deleted entity.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,
 }

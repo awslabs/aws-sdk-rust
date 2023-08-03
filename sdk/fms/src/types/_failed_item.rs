@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedItem {
     /// <p>The univeral resource indicator (URI) of the resource that failed.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The reason the resource's association could not be updated.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::FailedItemReason>,
 }
 impl FailedItem {

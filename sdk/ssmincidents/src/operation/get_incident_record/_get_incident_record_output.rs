@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIncidentRecordOutput {
     /// <p>Details the structure of the incident record.</p>
-    #[doc(hidden)]
     pub incident_record: ::std::option::Option<crate::types::IncidentRecord>,
     _request_id: Option<String>,
 }

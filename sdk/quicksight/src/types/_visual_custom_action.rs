@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    #[doc(hidden)]
     pub custom_action_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -19,11 +16,9 @@ pub struct VisualCustomAction {
     /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
     /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub trigger: ::std::option::Option<crate::types::VisualCustomActionTrigger>,
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    #[doc(hidden)]
     pub action_operations: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
 }
 impl VisualCustomAction {

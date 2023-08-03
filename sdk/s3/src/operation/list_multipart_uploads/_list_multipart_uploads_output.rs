@@ -4,45 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsOutput {
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key at or after which the listing began.</p>
-    #[doc(hidden)]
     pub key_marker: ::std::option::Option<::std::string::String>,
     /// <p>Upload ID after which listing began.</p>
-    #[doc(hidden)]
     pub upload_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_key_marker: ::std::option::Option<::std::string::String>,
     /// <p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in your request, this element is absent from the response.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_upload_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
-    #[doc(hidden)]
     pub max_uploads: i32,
     /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
-    #[doc(hidden)]
     pub uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartUpload>>,
     /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
-    #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

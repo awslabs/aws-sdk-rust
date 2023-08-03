@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub size_in_mi_b: i32,
 }
 impl MemoryInfo {

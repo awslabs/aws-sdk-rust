@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotAnalyticsAction {
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
-    #[doc(hidden)]
     pub batch_mode: ::std::option::Option<bool>,
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotAnalyticsAction {

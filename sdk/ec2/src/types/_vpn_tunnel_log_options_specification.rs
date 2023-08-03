@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnTunnelLogOptionsSpecification {
     /// <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_options: ::std::option::Option<crate::types::CloudWatchLogOptionsSpecification>,
 }
 impl VpnTunnelLogOptionsSpecification {

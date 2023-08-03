@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResumeWorkflowRunOutput {
     /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
-    #[doc(hidden)]
     pub node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

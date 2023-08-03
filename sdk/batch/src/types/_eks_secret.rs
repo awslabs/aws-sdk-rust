@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksSecret {
     /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub secret_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
-    #[doc(hidden)]
     pub optional: ::std::option::Option<bool>,
 }
 impl EksSecret {

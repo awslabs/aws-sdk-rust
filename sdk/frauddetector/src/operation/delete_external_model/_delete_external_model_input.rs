@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExternalModelInput {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExternalModelInput {

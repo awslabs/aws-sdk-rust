@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolNetworkPackageOutput {
     /// <p>Network package ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor onboarding state.</p>
-    #[doc(hidden)]
     pub nsd_onboarding_state: ::std::option::Option<crate::types::NsdOnboardingState>,
     /// <p>Network service descriptor operational state.</p>
-    #[doc(hidden)]
     pub nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
     /// <p>Network service descriptor usage state.</p>
-    #[doc(hidden)]
     pub nsd_usage_state: ::std::option::Option<crate::types::NsdUsageState>,
     /// <p>Network service descriptor ID.</p>
-    #[doc(hidden)]
     pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor name.</p>
-    #[doc(hidden)]
     pub nsd_name: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor version.</p>
-    #[doc(hidden)]
     pub nsd_version: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    #[doc(hidden)]
     pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Metadata associated with a network package.</p>
     /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkPackageMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

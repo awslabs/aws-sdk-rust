@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl EcsEnvironmentFile {

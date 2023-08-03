@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    #[doc(hidden)]
     pub ref_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the answer option.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The score assigned to the answer option.</p>
-    #[doc(hidden)]
     pub score: i32,
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
-    #[doc(hidden)]
     pub automatic_fail: bool,
 }
 impl EvaluationFormSingleSelectQuestionOption {

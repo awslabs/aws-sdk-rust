@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
-    #[doc(hidden)]
     pub interface_id: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the interface isn't valid. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
 }
 impl InvalidNetworkInterface {

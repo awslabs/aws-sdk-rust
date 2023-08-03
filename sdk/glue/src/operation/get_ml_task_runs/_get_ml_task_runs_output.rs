@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlTaskRunsOutput {
     /// <p>A list of task runs that are associated with the transform.</p>
-    #[doc(hidden)]
     pub task_runs: ::std::option::Option<::std::vec::Vec<crate::types::TaskRun>>,
     /// <p>A pagination token, if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the event notification subscription you want to add a source identifier to.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
@@ -14,7 +13,6 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>
     /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInput {

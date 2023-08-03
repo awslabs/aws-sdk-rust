@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitionState {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The ID of the user who last changed the transition state.</p>
-    #[doc(hidden)]
     pub last_changed_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the transition state was last changed.</p>
-    #[doc(hidden)]
     pub last_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    #[doc(hidden)]
     pub disabled_reason: ::std::option::Option<::std::string::String>,
 }
 impl TransitionState {

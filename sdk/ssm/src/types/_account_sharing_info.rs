@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSharingInfo {
     /// <p>The Amazon Web Services account ID where the current document is shared.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the current document shared with the account.</p>
-    #[doc(hidden)]
     pub shared_document_version: ::std::option::Option<::std::string::String>,
 }
 impl AccountSharingInfo {

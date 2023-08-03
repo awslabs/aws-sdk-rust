@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
-    #[doc(hidden)]
     pub manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
     /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchImportEvidenceToAssessmentControlError {

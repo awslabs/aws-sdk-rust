@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutoBranchCreationConfig {
     /// <p> Describes the current stage for the autocreated branch. </p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p> The framework for the autocreated branch. </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p> Enables auto building for the autocreated branch. </p>
-    #[doc(hidden)]
     pub enable_auto_build: ::std::option::Option<bool>,
     /// <p> The environment variables for the autocreated branch. </p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> Enables basic authorization for the autocreated branch. </p>
-    #[doc(hidden)]
     pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-    #[doc(hidden)]
     pub enable_performance_mode: ::std::option::Option<bool>,
     /// <p> The build specification (build spec) for the autocreated branch. </p>
-    #[doc(hidden)]
     pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p> Enables pull request previews for the autocreated branch. </p>
-    #[doc(hidden)]
     pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
-    #[doc(hidden)]
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoBranchCreationConfig {

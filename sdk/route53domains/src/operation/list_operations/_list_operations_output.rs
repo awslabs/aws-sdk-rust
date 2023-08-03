@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOperationsOutput {
     /// <p>Lists summaries of the operations.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    #[doc(hidden)]
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

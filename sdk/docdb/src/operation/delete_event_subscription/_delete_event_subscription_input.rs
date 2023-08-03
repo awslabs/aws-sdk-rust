@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to delete.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventSubscriptionInput {

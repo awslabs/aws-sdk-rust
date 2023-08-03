@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTargetInput {
     /// <p>The maintenance window ID with which to modify the target.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The target ID to modify.</p>
-    #[doc(hidden)]
     pub window_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The targets to add or replace.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>A name for the update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
-    #[doc(hidden)]
     pub replace: ::std::option::Option<bool>,
 }
 impl UpdateMaintenanceWindowTargetInput {

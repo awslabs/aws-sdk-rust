@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskSucceededEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl TaskSucceededEventDetails {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceDefinition {
     /// <p>An Amazon EC2 instance type designation.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::GameServerGroupInstanceType>,
     /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
-    #[doc(hidden)]
     pub weighted_capacity: ::std::option::Option<::std::string::String>,
 }
 impl InstanceDefinition {

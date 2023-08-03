@@ -7,30 +7,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackResourceDrift {
     /// <p>The ID of the stack.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    #[doc(hidden)]
     pub physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>The type of the resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    #[doc(hidden)]
     pub expected_properties: ::std::option::Option<::std::string::String>,
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    #[doc(hidden)]
     pub actual_properties: ::std::option::Option<::std::string::String>,
     /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
-    #[doc(hidden)]
     pub property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
     /// <ul>
@@ -39,13 +31,10 @@ pub struct StackResourceDrift {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    #[doc(hidden)]
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl StackResourceDrift {

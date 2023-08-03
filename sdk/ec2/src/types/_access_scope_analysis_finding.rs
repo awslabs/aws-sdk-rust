@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessScopeAnalysisFinding {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Network Access Scope.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the finding.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The finding components.</p>
-    #[doc(hidden)]
     pub finding_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
 }
 impl AccessScopeAnalysisFinding {

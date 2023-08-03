@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
-    #[doc(hidden)]
     pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDomainsInput {

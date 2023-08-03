@@ -5,33 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleHook {
     /// <p>The name of the lifecycle hook.</p>
-    #[doc(hidden)]
     pub lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle transition.</p>
     /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
-    #[doc(hidden)]
     pub lifecycle_transition: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
-    #[doc(hidden)]
     pub notification_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
-    #[doc(hidden)]
     pub notification_metadata: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
-    #[doc(hidden)]
     pub heartbeat_timeout: ::std::option::Option<i32>,
     /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
-    #[doc(hidden)]
     pub global_timeout: ::std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
-    #[doc(hidden)]
     pub default_result: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleHook {

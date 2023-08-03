@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEntryPoint {
     /// <p>The name of the repository that a package was originally published to.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the external connection that a package was ingested from.</p>
-    #[doc(hidden)]
     pub external_connection_name: ::std::option::Option<::std::string::String>,
 }
 impl DomainEntryPoint {

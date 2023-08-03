@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OptOutSpeakerInput {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the speaker you want opted-out.</p>
-    #[doc(hidden)]
     pub speaker_id: ::std::option::Option<::std::string::String>,
 }
 impl OptOutSpeakerInput {

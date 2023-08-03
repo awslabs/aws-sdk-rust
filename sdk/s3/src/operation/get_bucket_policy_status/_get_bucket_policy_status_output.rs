@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketPolicyStatusOutput {
     /// <p>The policy status for the specified bucket.</p>
-    #[doc(hidden)]
     pub policy_status: ::std::option::Option<crate::types::PolicyStatus>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

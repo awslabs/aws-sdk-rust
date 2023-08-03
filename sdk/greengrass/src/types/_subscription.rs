@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// The MQTT topic used to route the message.
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl Subscription {

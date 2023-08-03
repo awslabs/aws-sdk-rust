@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoleAliasOutput {
     /// <p>The role alias.</p>
-    #[doc(hidden)]
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The role alias ARN.</p>
-    #[doc(hidden)]
     pub role_alias_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceTopicRuleInput {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule payload.</p>
-    #[doc(hidden)]
     pub topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,
 }
 impl ReplaceTopicRuleInput {

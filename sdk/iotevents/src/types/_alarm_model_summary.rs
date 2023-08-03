@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmModelSummary {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
 }
 impl AlarmModelSummary {

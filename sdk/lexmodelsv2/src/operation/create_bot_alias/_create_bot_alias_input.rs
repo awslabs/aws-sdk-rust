@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotAliasInput {
     /// <p>The alias to create. The name must be unique for the bot.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the alias. Use this description to help identify the alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
-    #[doc(hidden)]
     pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
-    #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    #[doc(hidden)]
     pub sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     /// <p>The unique identifier of the bot that the alias applies to.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBotAliasInput {

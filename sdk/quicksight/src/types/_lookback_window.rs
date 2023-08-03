@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LookbackWindow {
     /// <p>The name of the lookback window column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The lookback window column size.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
-    #[doc(hidden)]
     pub size_unit: ::std::option::Option<crate::types::LookbackWindowSizeUnit>,
 }
 impl LookbackWindow {

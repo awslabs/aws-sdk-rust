@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreeMapSortConfiguration {
     /// <p>The sort configuration of group by fields.</p>
-    #[doc(hidden)]
     pub tree_map_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of groups that are displayed.</p>
-    #[doc(hidden)]
     pub tree_map_group_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl TreeMapSortConfiguration {

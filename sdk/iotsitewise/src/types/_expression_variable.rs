@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The variable that identifies an asset property from which to use values.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::VariableValue>,
 }
 impl ExpressionVariable {

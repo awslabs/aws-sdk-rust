@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    #[doc(hidden)]
     pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }

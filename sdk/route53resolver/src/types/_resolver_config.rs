@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverConfig {
     /// <p>ID for the Resolver configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct ResolverConfig {
     /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
     /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub autodefined_reverse: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
 }
 impl ResolverConfig {

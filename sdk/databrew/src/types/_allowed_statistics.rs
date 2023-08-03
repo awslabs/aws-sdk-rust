@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedStatistics {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AllowedStatistics {

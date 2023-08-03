@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchRetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    #[doc(hidden)]
     pub attempts: i32,
 }
 impl BatchRetryStrategy {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPredictorBacktestExportJobsOutput {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    #[doc(hidden)]
     pub predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

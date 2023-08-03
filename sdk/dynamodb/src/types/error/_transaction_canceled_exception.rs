@@ -89,10 +89,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionCanceledException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A list of cancellation reasons.</p>
-    #[doc(hidden)]
     pub cancellation_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

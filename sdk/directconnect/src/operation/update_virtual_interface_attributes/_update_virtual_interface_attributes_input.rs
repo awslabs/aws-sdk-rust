@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
-    #[doc(hidden)]
     pub mtu: ::std::option::Option<i32>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
-    #[doc(hidden)]
     pub enable_site_link: ::std::option::Option<bool>,
     /// <p>The name of the virtual private interface.</p>
-    #[doc(hidden)]
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVirtualInterfaceAttributesInput {

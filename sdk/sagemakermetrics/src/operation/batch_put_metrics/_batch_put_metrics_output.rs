@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMetricsOutput {
     /// <p>Lists any errors that occur when inserting metric data.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>>,
     _request_id: Option<String>,
 }

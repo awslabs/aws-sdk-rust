@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>A null value and not currently used. Do not include this in your request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
 }
 impl GetRateBasedRuleManagedKeysInput {

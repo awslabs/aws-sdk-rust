@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
-    #[doc(hidden)]
     pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl MeasurementProcessingConfig {

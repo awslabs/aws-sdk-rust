@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsMfaSettingsType {
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
-    #[doc(hidden)]
     pub preferred_mfa: bool,
 }
 impl SmsMfaSettingsType {

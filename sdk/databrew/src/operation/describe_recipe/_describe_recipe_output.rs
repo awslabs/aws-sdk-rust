@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecipeOutput {
     /// <p>The identifier (user name) of the user who created the recipe.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the recipe was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the recipe was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the project associated with this recipe.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
-    #[doc(hidden)]
     pub published_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the recipe was last published.</p>
-    #[doc(hidden)]
     pub published_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the recipe.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recipe version identifier.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

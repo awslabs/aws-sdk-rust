@@ -10,7 +10,6 @@ pub struct GetContextKeysForCustomPolicyInput {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetContextKeysForCustomPolicyInput {

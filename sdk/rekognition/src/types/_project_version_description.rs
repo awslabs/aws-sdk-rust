@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
-    #[doc(hidden)]
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix datetime for the date and time that training started.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartProjectVersion</code>.</p>
-    #[doc(hidden)]
     pub min_inference_units: ::std::option::Option<i32>,
     /// <p>The current status of the model version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     /// <p>A descriptive message for an error or warning that occurred.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
-    #[doc(hidden)]
     pub billable_training_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The Unix date and time that training of the model ended.</p>
-    #[doc(hidden)]
     pub training_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The location where training results are saved.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>Contains information about the training results.</p>
-    #[doc(hidden)]
     pub training_data_result: ::std::option::Option<crate::types::TrainingDataResult>,
     /// <p>Contains information about the testing results.</p>
-    #[doc(hidden)]
     pub testing_data_result: ::std::option::Option<crate::types::TestingDataResult>,
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
-    #[doc(hidden)]
     pub evaluation_result: ::std::option::Option<crate::types::EvaluationResult>,
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-    #[doc(hidden)]
     pub manifest_summary: ::std::option::Option<crate::types::GroundTruthManifest>,
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
-    #[doc(hidden)]
     pub max_inference_units: ::std::option::Option<i32>,
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
-    #[doc(hidden)]
     pub source_project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProjectVersionDescription {

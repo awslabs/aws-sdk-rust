@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyGroupConfigOutput {
     /// <p>The key group configuration.</p>
-    #[doc(hidden)]
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     /// <p>The identifier for this version of the key group.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

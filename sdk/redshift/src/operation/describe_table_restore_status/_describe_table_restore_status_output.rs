@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
-    #[doc(hidden)]
     pub table_restore_status_details: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

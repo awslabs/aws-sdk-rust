@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPlanResource {
     /// <p>The name of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan.</p>
-    #[doc(hidden)]
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The namespace of the AWS service.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -22,7 +19,6 @@ pub struct ScalingPlanResource {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension for the resource.</p>
     /// <ul>
@@ -35,10 +31,8 @@ pub struct ScalingPlanResource {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The scaling policies.</p>
-    #[doc(hidden)]
     pub scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     /// <p>The scaling status of the resource.</p>
     /// <ul>
@@ -46,10 +40,8 @@ pub struct ScalingPlanResource {
     /// <li> <p> <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the scaling configuration could not be applied. Check the status message for more information.</p> </li>
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scaling_status_code: ::std::option::Option<crate::types::ScalingStatusCode>,
     /// <p>A simple message about the current scaling status of the resource.</p>
-    #[doc(hidden)]
     pub scaling_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ScalingPlanResource {

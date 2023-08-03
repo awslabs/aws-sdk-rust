@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionOutput {
     /// <p>Object that describes the newly created player session record.</p>
-    #[doc(hidden)]
     pub player_session: ::std::option::Option<crate::types::PlayerSession>,
     _request_id: Option<String>,
 }

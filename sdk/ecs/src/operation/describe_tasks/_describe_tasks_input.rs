@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>,
 }
 impl DescribeTasksInput {

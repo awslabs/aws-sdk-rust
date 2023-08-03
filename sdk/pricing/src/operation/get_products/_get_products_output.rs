@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
-    #[doc(hidden)]
     pub format_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    #[doc(hidden)]
     pub price_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

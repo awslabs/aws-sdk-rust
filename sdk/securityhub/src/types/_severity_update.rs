@@ -13,10 +13,8 @@ pub struct SeverityUpdate {
     /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
     /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub normalized: i32,
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    #[doc(hidden)]
     pub product: f64,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
@@ -26,7 +24,6 @@ pub struct SeverityUpdate {
     /// <li> <p> <code>HIGH</code> - The issue must be addressed as a priority.</p> </li>
     /// <li> <p> <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
 }
 impl SeverityUpdate {

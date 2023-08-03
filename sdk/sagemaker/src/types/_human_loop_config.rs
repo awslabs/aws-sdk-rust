@@ -5,31 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
-    #[doc(hidden)]
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title for the human worker task.</p>
-    #[doc(hidden)]
     pub task_title: ::std::option::Option<::std::string::String>,
     /// <p>A description for the human worker task.</p>
-    #[doc(hidden)]
     pub task_description: ::std::option::Option<::std::string::String>,
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
-    #[doc(hidden)]
     pub task_count: ::std::option::Option<i32>,
     /// <p>The length of time that a task remains available for review by human workers.</p>
-    #[doc(hidden)]
     pub task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
-    #[doc(hidden)]
     pub task_time_limit_in_seconds: ::std::option::Option<i32>,
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
-    #[doc(hidden)]
     pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
@@ -142,7 +134,6 @@ pub struct HumanLoopConfig {
     /// <li> <p>0.024 </p> </li>
     /// <li> <p>0.012 </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanLoopConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessRulesOutput {
     /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessRule>>,
     _request_id: Option<String>,
 }

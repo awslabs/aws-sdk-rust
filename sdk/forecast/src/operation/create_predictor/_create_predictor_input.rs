@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePredictorInput {
     /// <p>A name for the predictor.</p>
-    #[doc(hidden)]
     pub predictor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
     /// <p class="title"> <b>Supported algorithms:</b> </p>
@@ -16,28 +15,23 @@ pub struct CreatePredictorInput {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
     /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
-    #[doc(hidden)]
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
     /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
     /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
-    #[doc(hidden)]
     pub perform_auto_ml: ::std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    #[doc(hidden)]
     pub auto_ml_override_strategy: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
     /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
     /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
@@ -47,26 +41,19 @@ pub struct CreatePredictorInput {
     /// <li> <p>DeepAR+</p> </li>
     /// <li> <p>CNN-QR</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub perform_hpo: ::std::option::Option<bool>,
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
-    #[doc(hidden)]
     pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    #[doc(hidden)]
     pub evaluation_parameters: ::std::option::Option<crate::types::EvaluationParameters>,
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    #[doc(hidden)]
     pub hpo_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The featurization configuration.</p>
-    #[doc(hidden)]
     pub featurization_config: ::std::option::Option<crate::types::FeaturizationConfig>,
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -79,10 +66,8 @@ pub struct CreatePredictorInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    #[doc(hidden)]
     pub optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
 }
 impl CreatePredictorInput {

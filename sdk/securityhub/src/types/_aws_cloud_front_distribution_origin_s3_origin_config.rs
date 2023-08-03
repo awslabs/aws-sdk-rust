@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginS3OriginConfig {
     /// <p>The CloudFront origin access identity to associate with the origin.</p>
-    #[doc(hidden)]
     pub origin_access_identity: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionOriginS3OriginConfig {

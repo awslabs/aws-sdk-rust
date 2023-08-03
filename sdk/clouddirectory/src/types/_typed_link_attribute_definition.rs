@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FacetAttributeType>,
     /// <p>The default value of the attribute (if configured).</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
-    #[doc(hidden)]
     pub is_immutable: bool,
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    #[doc(hidden)]
     pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
 impl TypedLinkAttributeDefinition {

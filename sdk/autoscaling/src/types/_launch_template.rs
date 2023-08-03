@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplate {
     /// <p>The launch template.</p>
-    #[doc(hidden)]
     pub launch_template_specification: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplate {

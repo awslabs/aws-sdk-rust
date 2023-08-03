@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The name of the Timestream database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The retention duration of the memory store and the magnetic store.</p>
-    #[doc(hidden)]
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    #[doc(hidden)]
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p> The schema of the table. </p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
 impl UpdateTableInput {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateControlInput {
     /// <p> The identifier for the control. </p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the updated control. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The optional description of the control. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The steps that you should follow to determine if the control is met. </p>
-    #[doc(hidden)]
     pub testing_information: ::std::option::Option<::std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
-    #[doc(hidden)]
     pub action_plan_title: ::std::option::Option<::std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    #[doc(hidden)]
     pub action_plan_instructions: ::std::option::Option<::std::string::String>,
     /// <p> The data mapping sources for the control. </p>
-    #[doc(hidden)]
     pub control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
 }
 impl UpdateControlInput {

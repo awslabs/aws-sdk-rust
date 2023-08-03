@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::RxNormTraitName>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl RxNormTrait {

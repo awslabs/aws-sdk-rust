@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsVpcPeeredOutput {
     /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
-    #[doc(hidden)]
     pub is_peered: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

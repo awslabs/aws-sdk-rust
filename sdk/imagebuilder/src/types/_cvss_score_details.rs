@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScoreDetails {
     /// <p>The source for the CVSS score.</p>
-    #[doc(hidden)]
     pub score_source: ::std::option::Option<::std::string::String>,
     /// <p>The source of the finding.</p>
-    #[doc(hidden)]
     pub cvss_source: ::std::option::Option<::std::string::String>,
     /// <p>The CVSS version that generated the score.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The CVSS score.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f64>,
     /// <p>A vector that measures the severity of the vulnerability.</p>
-    #[doc(hidden)]
     pub scoring_vector: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
-    #[doc(hidden)]
     pub adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
 }
 impl CvssScoreDetails {

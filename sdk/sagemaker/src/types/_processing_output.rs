@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingOutput {
     /// <p>The name for the processing job output.</p>
-    #[doc(hidden)]
     pub output_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for processing job outputs in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_output: ::std::option::Option<crate::types::ProcessingS3Output>,
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
-    #[doc(hidden)]
     pub feature_store_output: ::std::option::Option<crate::types::ProcessingFeatureStoreOutput>,
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
-    #[doc(hidden)]
     pub app_managed: bool,
 }
 impl ProcessingOutput {

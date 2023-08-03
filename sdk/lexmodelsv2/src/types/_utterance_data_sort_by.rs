@@ -9,10 +9,8 @@ pub struct UtteranceDataSortBy {
     /// <li> <p> <code>Count</code> – The number of utterances.</p> </li>
     /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl UtteranceDataSortBy {

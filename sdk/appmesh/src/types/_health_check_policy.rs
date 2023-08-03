@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
-    #[doc(hidden)]
     pub timeout_millis: ::std::option::Option<i64>,
     /// <p>The time period in milliseconds between each health check execution.</p>
-    #[doc(hidden)]
     pub interval_millis: ::std::option::Option<i64>,
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::PortProtocol>,
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
-    #[doc(hidden)]
     pub healthy_threshold: i32,
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
-    #[doc(hidden)]
     pub unhealthy_threshold: i32,
 }
 impl HealthCheckPolicy {

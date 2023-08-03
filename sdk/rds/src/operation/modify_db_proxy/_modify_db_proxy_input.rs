@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbProxyInput {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub new_db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    #[doc(hidden)]
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
-    #[doc(hidden)]
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
-    #[doc(hidden)]
     pub idle_client_timeout: ::std::option::Option<i32>,
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    #[doc(hidden)]
     pub debug_logging: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyDbProxyInput {

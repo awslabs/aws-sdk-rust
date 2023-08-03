@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionObjects {
     /// <p>A list of partition values.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of table objects</p>
-    #[doc(hidden)]
     pub objects: ::std::option::Option<::std::vec::Vec<crate::types::TableObject>>,
 }
 impl PartitionObjects {

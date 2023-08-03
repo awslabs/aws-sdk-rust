@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCodeReviewInput {
     /// <p>The name of the code review. The name of each code review in your Amazon Web Services account must be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
-    #[doc(hidden)]
     pub repository_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a> object. You can create a code review only of type <code>RepositoryAnalysis</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CodeReviewType>,
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCodeReviewInput {

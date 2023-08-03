@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The configuration of info icon label options.</p>
-    #[doc(hidden)]
     pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl SliderControlDisplayOptions {

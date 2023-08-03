@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpProperties {
     /// <p>The name of an HTTP namespace.</p>
-    #[doc(hidden)]
     pub http_name: ::std::option::Option<::std::string::String>,
 }
 impl HttpProperties {

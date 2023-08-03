@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationResult {
     /// <p>The type of content that the finding applies to.</p>
-    #[doc(hidden)]
     pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the affected data.</p>
-    #[doc(hidden)]
     pub size_classified: i64,
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
-    #[doc(hidden)]
     pub additional_occurrences: bool,
     /// <p>The current status of the sensitive data detection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClassificationStatus>,
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    #[doc(hidden)]
     pub sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    #[doc(hidden)]
     pub custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
 impl ClassificationResult {

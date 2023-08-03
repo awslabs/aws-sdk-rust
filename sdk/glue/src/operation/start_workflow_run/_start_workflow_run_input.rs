@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workflow run properties for the new workflow run.</p>
-    #[doc(hidden)]
     pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartWorkflowRunInput {

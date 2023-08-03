@@ -6,17 +6,14 @@
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
     /// <p>If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch template.</p>
     /// <p>If the value is <code>$Default</code>, Amazon EC2 uses the default version of the launch template.</p>
     /// <p>Default: The default version of the launch template.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateSpecification {

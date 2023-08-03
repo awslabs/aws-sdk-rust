@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The tag key.</p>
-    #[doc(hidden)]
     pub resource_tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value.</p>
-    #[doc(hidden)]
     pub resource_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceTag {

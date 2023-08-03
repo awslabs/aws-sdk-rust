@@ -9,7 +9,6 @@ pub struct DescribeDbSnapshotsInput {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -17,7 +16,6 @@ pub struct DescribeDbSnapshotsInput {
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -29,7 +27,6 @@ pub struct DescribeDbSnapshotsInput {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
@@ -40,28 +37,22 @@ pub struct DescribeDbSnapshotsInput {
     /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub include_shared: bool,
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub include_public: bool,
     /// <p>A specific DB resource ID to describe.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbSnapshotsInput {

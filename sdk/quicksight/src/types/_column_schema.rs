@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnSchema {
     /// <p>The name of the column schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column schema.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The geographic role of the column schema.</p>
-    #[doc(hidden)]
     pub geographic_role: ::std::option::Option<::std::string::String>,
 }
 impl ColumnSchema {

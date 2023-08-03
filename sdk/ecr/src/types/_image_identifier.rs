@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The tag used for the image.</p>
-    #[doc(hidden)]
     pub image_tag: ::std::option::Option<::std::string::String>,
 }
 impl ImageIdentifier {

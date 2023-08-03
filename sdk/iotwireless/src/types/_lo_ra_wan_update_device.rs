@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
-    #[doc(hidden)]
     pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service profile.</p>
-    #[doc(hidden)]
     pub service_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>ABP device object for update APIs for v1.1</p>
-    #[doc(hidden)]
     pub abp_v1_1: ::std::option::Option<crate::types::UpdateAbpV11>,
     /// <p>ABP device object for update APIs for v1.0.x</p>
-    #[doc(hidden)]
     pub abp_v1_0_x: ::std::option::Option<crate::types::UpdateAbpV10X>,
     /// <p>FPorts object for the positioning information of the device.</p>
-    #[doc(hidden)]
     pub f_ports: ::std::option::Option<crate::types::UpdateFPorts>,
 }
 impl LoRaWanUpdateDevice {

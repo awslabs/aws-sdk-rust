@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventsBatch {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::PublicEndpoint>,
     /// <p>A set of properties that are associated with the event.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Event>>,
 }
 impl EventsBatch {

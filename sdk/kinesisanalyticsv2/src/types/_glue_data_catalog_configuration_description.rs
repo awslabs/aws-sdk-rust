@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    #[doc(hidden)]
     pub database_arn: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationDescription {

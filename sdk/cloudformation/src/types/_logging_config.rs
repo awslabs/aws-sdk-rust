@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>The Amazon Resource Name (ARN) of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfig {

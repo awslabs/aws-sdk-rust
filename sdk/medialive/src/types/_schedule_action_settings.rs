@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleActionSettings {
     /// Action to insert HLS ID3 segment tagging
-    #[doc(hidden)]
     pub hls_id3_segment_tagging_settings: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
     /// Action to insert HLS metadata
-    #[doc(hidden)]
     pub hls_timed_metadata_settings: ::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings>,
     /// Action to prepare an input for a future immediate input switch
-    #[doc(hidden)]
     pub input_prepare_settings: ::std::option::Option<crate::types::InputPrepareScheduleActionSettings>,
     /// Action to switch the input
-    #[doc(hidden)]
     pub input_switch_settings: ::std::option::Option<crate::types::InputSwitchScheduleActionSettings>,
     /// Action to activate a motion graphics image overlay
-    #[doc(hidden)]
     pub motion_graphics_image_activate_settings: ::std::option::Option<crate::types::MotionGraphicsActivateScheduleActionSettings>,
     /// Action to deactivate a motion graphics image overlay
-    #[doc(hidden)]
     pub motion_graphics_image_deactivate_settings: ::std::option::Option<crate::types::MotionGraphicsDeactivateScheduleActionSettings>,
     /// Action to pause or unpause one or both channel pipelines
-    #[doc(hidden)]
     pub pause_state_settings: ::std::option::Option<crate::types::PauseStateScheduleActionSettings>,
     /// Action to specify scte35 input
-    #[doc(hidden)]
     pub scte35_input_settings: ::std::option::Option<crate::types::Scte35InputScheduleActionSettings>,
     /// Action to insert SCTE-35 return_to_network message
-    #[doc(hidden)]
     pub scte35_return_to_network_settings: ::std::option::Option<crate::types::Scte35ReturnToNetworkScheduleActionSettings>,
     /// Action to insert SCTE-35 splice_insert message
-    #[doc(hidden)]
     pub scte35_splice_insert_settings: ::std::option::Option<crate::types::Scte35SpliceInsertScheduleActionSettings>,
     /// Action to insert SCTE-35 time_signal message
-    #[doc(hidden)]
     pub scte35_time_signal_settings: ::std::option::Option<crate::types::Scte35TimeSignalScheduleActionSettings>,
     /// Action to activate a static image overlay
-    #[doc(hidden)]
     pub static_image_activate_settings: ::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings>,
     /// Action to deactivate a static image overlay
-    #[doc(hidden)]
     pub static_image_deactivate_settings: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
 }
 impl ScheduleActionSettings {

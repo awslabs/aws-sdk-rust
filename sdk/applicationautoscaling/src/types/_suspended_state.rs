@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuspendedState {
     /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
-    #[doc(hidden)]
     pub dynamic_scaling_in_suspended: ::std::option::Option<bool>,
     /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
-    #[doc(hidden)]
     pub dynamic_scaling_out_suspended: ::std::option::Option<bool>,
     /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
-    #[doc(hidden)]
     pub scheduled_scaling_suspended: ::std::option::Option<bool>,
 }
 impl SuspendedState {

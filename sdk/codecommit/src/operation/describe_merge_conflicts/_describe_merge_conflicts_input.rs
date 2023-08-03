@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMergeConflictsInput {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    #[doc(hidden)]
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
     /// <p>The maximum number of merge hunks to include in the output.</p>
-    #[doc(hidden)]
     pub max_merge_hunks: ::std::option::Option<i32>,
     /// <p>The path of the target files used to describe the conflicts. </p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    #[doc(hidden)]
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    #[doc(hidden)]
     pub conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMergeConflictsInput {

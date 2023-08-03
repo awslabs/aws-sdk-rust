@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleActionStartSettings {
     /// Option for specifying the start time for an action.
-    #[doc(hidden)]
     pub fixed_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
     /// Option for specifying an action as relative to another action.
-    #[doc(hidden)]
     pub follow_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,
     /// Option for specifying an action that should be applied immediately.
-    #[doc(hidden)]
     pub immediate_mode_schedule_action_start_settings: ::std::option::Option<crate::types::ImmediateModeScheduleActionStartSettings>,
 }
 impl ScheduleActionStartSettings {

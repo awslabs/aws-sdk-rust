@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
-    #[doc(hidden)]
     pub default_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
-    #[doc(hidden)]
     pub device_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>>,
 }
 impl PlacementTemplate {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinueDeploymentInput {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    #[doc(hidden)]
     pub deployment_wait_type: ::std::option::Option<crate::types::DeploymentWaitType>,
 }
 impl ContinueDeploymentInput {

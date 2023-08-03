@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
-    #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateUserFromPermissionGroupInput {

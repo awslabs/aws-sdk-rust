@@ -13,10 +13,8 @@ pub struct PackageVersionError {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::PackageVersionErrorCode>,
     /// <p> The error message associated with the error. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl PackageVersionError {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    #[doc(hidden)]
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
-    #[doc(hidden)]
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    #[doc(hidden)]
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RequestPhoneNumberInput {

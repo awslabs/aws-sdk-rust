@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTable {
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
-    #[doc(hidden)]
     pub propagating_vgws: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes in the route table.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>Any tags assigned to the route table.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RouteTable {

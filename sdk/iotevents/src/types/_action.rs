@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>Sets a variable to a specified value.</p>
-    #[doc(hidden)]
     pub set_variable: ::std::option::Option<crate::types::SetVariableAction>,
     /// <p>Sends an Amazon SNS message.</p>
-    #[doc(hidden)]
     pub sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,
     /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
-    #[doc(hidden)]
     pub iot_topic_publish: ::std::option::Option<crate::types::IotTopicPublishAction>,
     /// <p>Information needed to set the timer.</p>
-    #[doc(hidden)]
     pub set_timer: ::std::option::Option<crate::types::SetTimerAction>,
     /// <p>Information needed to clear the timer.</p>
-    #[doc(hidden)]
     pub clear_timer: ::std::option::Option<crate::types::ClearTimerAction>,
     /// <p>Information needed to reset the timer.</p>
-    #[doc(hidden)]
     pub reset_timer: ::std::option::Option<crate::types::ResetTimerAction>,
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the event that triggered the action.</p>
-    #[doc(hidden)]
     pub iot_events: ::std::option::Option<crate::types::IotEventsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub sqs: ::std::option::Option<crate::types::SqsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub firehose: ::std::option::Option<crate::types::FirehoseAction>,
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
-    #[doc(hidden)]
     pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
 impl Action {

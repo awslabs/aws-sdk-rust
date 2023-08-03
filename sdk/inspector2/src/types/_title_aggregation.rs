@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
-    #[doc(hidden)]
     pub titles: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The vulnerability IDs of the findings.</p>
-    #[doc(hidden)]
     pub vulnerability_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The resource type to aggregate on.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::TitleSortBy>,
     /// <p>The type of finding to aggregate on.</p>
-    #[doc(hidden)]
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
 }
 impl TitleAggregation {

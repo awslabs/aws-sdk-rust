@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NegativeFormat {
     /// <p>The prefix for a negative format.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The suffix for a negative format.</p>
-    #[doc(hidden)]
     pub suffix: ::std::option::Option<::std::string::String>,
 }
 impl NegativeFormat {

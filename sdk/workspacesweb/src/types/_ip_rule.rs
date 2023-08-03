@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpRule {
     /// <p>The IP range of the IP rule.</p>
-    #[doc(hidden)]
     pub ip_range: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl IpRule {

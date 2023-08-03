@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityAppSpecification {
     /// <p>The container image that the data quality monitoring job runs.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
-    #[doc(hidden)]
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
-    #[doc(hidden)]
     pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
-    #[doc(hidden)]
     pub record_preprocessor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
-    #[doc(hidden)]
     pub post_analytics_processor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataQualityAppSpecification {

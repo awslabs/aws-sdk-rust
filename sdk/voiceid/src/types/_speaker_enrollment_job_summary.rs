@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SpeakerEnrollmentJobSummary {
     /// <p>The client-provided name for the speaker enrollment job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the speaker enrollment job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>,
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of when of the speaker enrollment job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the speaker enrollment job ended.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
     /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
-    #[doc(hidden)]
     pub job_progress: ::std::option::Option<crate::types::JobProgress>,
 }
 impl SpeakerEnrollmentJobSummary {

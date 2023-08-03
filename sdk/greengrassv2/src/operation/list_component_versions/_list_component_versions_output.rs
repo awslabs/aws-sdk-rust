@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentVersionsOutput {
     /// <p>A list of versions that exist for the component.</p>
-    #[doc(hidden)]
     pub component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

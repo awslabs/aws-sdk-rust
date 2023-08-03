@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsFilter {
     /// <p>A list of custom line items to retrieve information.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    #[doc(hidden)]
     pub billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of custom line item ARNs to retrieve information.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCustomLineItemsFilter {

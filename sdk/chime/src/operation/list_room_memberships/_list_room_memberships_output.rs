@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoomMembershipsOutput {
     /// <p>The room membership details.</p>
-    #[doc(hidden)]
     pub room_memberships: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

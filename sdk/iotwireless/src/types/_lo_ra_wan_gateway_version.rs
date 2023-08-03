@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The model number of the wireless gateway.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The basic station version of the wireless gateway.</p>
-    #[doc(hidden)]
     pub station: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanGatewayVersion {

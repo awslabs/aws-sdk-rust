@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltinSlotTypeMetadata {
     /// <p>A unique identifier for the built-in slot type. To find the signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>A list of target locales for the slot. </p>
-    #[doc(hidden)]
     pub supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
 }
 impl BuiltinSlotTypeMetadata {

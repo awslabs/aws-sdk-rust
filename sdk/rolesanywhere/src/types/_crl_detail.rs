@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub crl_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub crl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate revocation list (CRL).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    #[doc(hidden)]
     pub crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    #[doc(hidden)]
     pub trust_anchor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CrlDetail {

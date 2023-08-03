@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntipatternReportResult {
     /// <p>The analyzer name.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<crate::types::AnalyzerNameUnion>,
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
-    #[doc(hidden)]
     pub anti_pattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The status of the anti-pattern report generation.</p>
-    #[doc(hidden)]
     pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p>The status message for the anti-pattern.</p>
-    #[doc(hidden)]
     pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AntipatternReportResult {

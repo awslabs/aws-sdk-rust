@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
-    #[doc(hidden)]
     pub phone_number_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone number that was updated.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NumberStatus>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>Specifies if the number could be used for text messages, voice or both.</p>
-    #[doc(hidden)]
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of number that was requested.</p>
-    #[doc(hidden)]
     pub number_type: ::std::option::Option<crate::types::NumberType>,
     /// <p>The monthly leasing price of the phone number, in US dollars.</p>
-    #[doc(hidden)]
     pub monthly_leasing_price: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is true if self managed opt-out are enabled.</p>
-    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the phone number.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true the phone number can't be deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

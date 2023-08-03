@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutClassificationExportConfigurationInput {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
 }
 impl PutClassificationExportConfigurationInput {

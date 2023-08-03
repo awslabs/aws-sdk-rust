@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppImageConfigInput {
     /// <p>The name of the AppImageConfig to update.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The new KernelGateway app to run on the image.</p>
-    #[doc(hidden)]
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
 }
 impl UpdateAppImageConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowInput {

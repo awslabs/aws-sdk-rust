@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    #[doc(hidden)]
     pub send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }

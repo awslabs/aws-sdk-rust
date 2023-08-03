@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
@@ -19,52 +18,38 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
-    #[doc(hidden)]
     pub include_marketplace: ::std::option::Option<bool>,
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 94608000 (3 years)</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i64>,
     /// <p>The maximum number of instances to filter when searching for offerings.</p>
     /// <p>Default: 20</p>
-    #[doc(hidden)]
     pub max_instance_count: ::std::option::Option<i32>,
     /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 2592000 (1 month)</p>
-    #[doc(hidden)]
     pub min_duration: ::std::option::Option<i64>,
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>One or more Reserved Instances offering IDs.</p>
-    #[doc(hidden)]
     pub reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
     /// <p>Default: <code>default</code> </p>
-    #[doc(hidden)]
     pub instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
     /// <p>Default: 100</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
 }
 impl DescribeReservedInstancesOfferingsInput {

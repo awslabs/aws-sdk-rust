@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContentModerationRequestMetadata {
     /// <p>The sorting method chosen for a GetContentModeration request.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ContentModerationSortBy>,
     /// <p>The aggregation method chosen for a GetContentModeration request.</p>
-    #[doc(hidden)]
     pub aggregate_by: ::std::option::Option<crate::types::ContentModerationAggregateBy>,
 }
 impl GetContentModerationRequestMetadata {

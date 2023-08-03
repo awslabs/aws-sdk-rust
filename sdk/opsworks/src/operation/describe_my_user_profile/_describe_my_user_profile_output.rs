@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    #[doc(hidden)]
     pub user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,
 }

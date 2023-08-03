@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVariantStoresFilter {
     /// <p>A status to filter on.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StoreStatus>,
 }
 impl ListVariantStoresFilter {

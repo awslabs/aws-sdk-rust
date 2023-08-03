@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the experiment template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets for the experiment.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateTarget>>,
     /// <p>The actions for the experiment.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateAction>>,
     /// <p>The stop conditions for the experiment.</p>
-    #[doc(hidden)]
     pub stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateStopCondition>>,
     /// <p>The time the experiment template was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the experiment template was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the experiment template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::ExperimentTemplateLogConfiguration>,
 }
 impl ExperimentTemplate {

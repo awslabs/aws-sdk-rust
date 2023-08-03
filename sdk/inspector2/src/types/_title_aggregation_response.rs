@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The vulnerability ID of the finding.</p>
-    #[doc(hidden)]
     pub vulnerability_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl TitleAggregationResponse {

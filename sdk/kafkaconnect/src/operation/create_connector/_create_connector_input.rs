@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateConnectorInput {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<crate::types::Capacity>,
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
-    #[doc(hidden)]
     pub connector_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A summary description of the connector.</p>
-    #[doc(hidden)]
     pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
-    #[doc(hidden)]
     pub kafka_cluster: ::std::option::Option<crate::types::KafkaCluster>,
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub kafka_cluster_client_authentication: ::std::option::Option<crate::types::KafkaClusterClientAuthentication>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    #[doc(hidden)]
     pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about log delivery.</p>
-    #[doc(hidden)]
     pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
     /// <p>Specifies which plugins to use for the connector.</p>
-    #[doc(hidden)]
     pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-    #[doc(hidden)]
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which worker configuration to use with the connector.</p>
-    #[doc(hidden)]
     pub worker_configuration: ::std::option::Option<crate::types::WorkerConfiguration>,
 }
 impl CreateConnectorInput {

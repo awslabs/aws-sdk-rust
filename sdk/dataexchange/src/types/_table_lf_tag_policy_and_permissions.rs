@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     /// <p>The permissions granted to subscribers on table resources.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
 }
 impl TableLfTagPolicyAndPermissions {

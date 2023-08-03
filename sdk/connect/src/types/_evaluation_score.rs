@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationScore {
     /// <p>The score percentage for an item in a contact evaluation.</p>
-    #[doc(hidden)]
     pub percentage: f64,
     /// <p>The flag to mark the item as not applicable for scoring.</p>
-    #[doc(hidden)]
     pub not_applicable: bool,
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
-    #[doc(hidden)]
     pub automatic_fail: bool,
 }
 impl EvaluationScore {

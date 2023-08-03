@@ -7,10 +7,8 @@ pub struct IdeConfiguration {
     /// <p>A link to the IDE runtime image. </p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl IdeConfiguration {

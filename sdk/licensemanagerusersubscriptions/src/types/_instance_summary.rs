@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of an EC2 instance resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A list of provided user-based subscription products.</p>
-    #[doc(hidden)]
     pub products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date of the last status check.</p>
-    #[doc(hidden)]
     pub last_status_check_date: ::std::option::Option<::std::string::String>,
     /// <p>The status message for an EC2 instance.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummary {

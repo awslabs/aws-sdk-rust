@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathComponent {
     /// <p>The sequence number.</p>
-    #[doc(hidden)]
     pub sequence_number: ::std::option::Option<i32>,
     /// <p>The network ACL rule.</p>
-    #[doc(hidden)]
     pub acl_rule: ::std::option::Option<crate::types::AnalysisAclRule>,
     /// <p>The resource to which the path component is attached.</p>
-    #[doc(hidden)]
     pub attached_to: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The component.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The destination VPC.</p>
-    #[doc(hidden)]
     pub destination_vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The outbound header.</p>
-    #[doc(hidden)]
     pub outbound_header: ::std::option::Option<crate::types::AnalysisPacketHeader>,
     /// <p>The inbound header.</p>
-    #[doc(hidden)]
     pub inbound_header: ::std::option::Option<crate::types::AnalysisPacketHeader>,
     /// <p>The route table route.</p>
-    #[doc(hidden)]
     pub route_table_route: ::std::option::Option<crate::types::AnalysisRouteTableRoute>,
     /// <p>The security group rule.</p>
-    #[doc(hidden)]
     pub security_group_rule: ::std::option::Option<crate::types::AnalysisSecurityGroupRule>,
     /// <p>The source VPC.</p>
-    #[doc(hidden)]
     pub source_vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The subnet.</p>
-    #[doc(hidden)]
     pub subnet: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The component VPC.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The additional details.</p>
-    #[doc(hidden)]
     pub additional_details: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDetail>>,
     /// <p>The transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The route in a transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
     /// <p>The explanation codes.</p>
-    #[doc(hidden)]
     pub explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
     /// <p>The load balancer listener.</p>
-    #[doc(hidden)]
     pub elastic_load_balancer_listener: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Network Firewall stateless rule.</p>
-    #[doc(hidden)]
     pub firewall_stateless_rule: ::std::option::Option<crate::types::FirewallStatelessRule>,
     /// <p>The Network Firewall stateful rule.</p>
-    #[doc(hidden)]
     pub firewall_stateful_rule: ::std::option::Option<crate::types::FirewallStatefulRule>,
     /// <p>The name of the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl PathComponent {

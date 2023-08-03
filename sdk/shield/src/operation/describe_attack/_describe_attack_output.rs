@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttackOutput {
     /// <p>The attack that you requested. </p>
-    #[doc(hidden)]
     pub attack: ::std::option::Option<crate::types::AttackDetail>,
     _request_id: Option<String>,
 }

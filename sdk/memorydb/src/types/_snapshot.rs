@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The name of the snapshot</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
-    #[doc(hidden)]
     pub cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
 impl Snapshot {

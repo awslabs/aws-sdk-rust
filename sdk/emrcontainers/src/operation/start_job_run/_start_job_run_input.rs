@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The name of the job run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the job run request. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release version to use for the job run.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The job driver for the job run.</p>
-    #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The tags assigned to job runs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job template ID to be used to start the job run.</p>
-    #[doc(hidden)]
     pub job_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The values of job template parameters to start a job run.</p>
-    #[doc(hidden)]
     pub job_template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The retry policy configuration for the job run.</p>
-    #[doc(hidden)]
     pub retry_policy_configuration: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
 }
 impl StartJobRunInput {

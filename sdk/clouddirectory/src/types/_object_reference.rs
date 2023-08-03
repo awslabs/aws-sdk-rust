@@ -10,7 +10,6 @@ pub struct ObjectReference {
     /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub selector: ::std::option::Option<::std::string::String>,
 }
 impl ObjectReference {

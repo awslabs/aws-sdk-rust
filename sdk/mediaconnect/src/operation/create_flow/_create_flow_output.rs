@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
-    #[doc(hidden)]
     pub flow: ::std::option::Option<crate::types::Flow>,
     _request_id: Option<String>,
 }

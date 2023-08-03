@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsInput {
     /// <p>The start of the time frame for which to aggregate statistics.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which to aggregate statistics.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    #[doc(hidden)]
     pub entity_selector_expression: ::std::option::Option<::std::string::String>,
     /// <p>Aggregation period in seconds.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
-    #[doc(hidden)]
     pub forecast_statistics: ::std::option::Option<bool>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTimeSeriesServiceStatisticsInput {

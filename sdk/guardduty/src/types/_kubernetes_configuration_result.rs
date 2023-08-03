@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesConfigurationResult {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult>,
 }
 impl KubernetesConfigurationResult {

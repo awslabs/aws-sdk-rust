@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummaryOutput {
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
-    #[doc(hidden)]
     pub group_by_key: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    #[doc(hidden)]
     pub aggregate_compliance_counts: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizerDescription {
     /// <p>The authorizer name.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer ARN.</p>
-    #[doc(hidden)]
     pub authorizer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer's Lambda function ARN.</p>
-    #[doc(hidden)]
     pub authorizer_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    #[doc(hidden)]
     pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
-    #[doc(hidden)]
     pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the authorizer.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
-    #[doc(hidden)]
     pub signing_disabled: ::std::option::Option<bool>,
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
-    #[doc(hidden)]
     pub enable_caching_for_http: ::std::option::Option<bool>,
 }
 impl AuthorizerDescription {

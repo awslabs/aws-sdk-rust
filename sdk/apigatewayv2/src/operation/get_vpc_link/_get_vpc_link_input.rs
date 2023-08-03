@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVpcLinkInput {

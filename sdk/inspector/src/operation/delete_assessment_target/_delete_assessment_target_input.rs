@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    #[doc(hidden)]
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentTargetInput {

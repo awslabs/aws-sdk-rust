@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
-    #[doc(hidden)]
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    #[doc(hidden)]
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
-    #[doc(hidden)]
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
 }
 impl ZendeskDestinationProperties {

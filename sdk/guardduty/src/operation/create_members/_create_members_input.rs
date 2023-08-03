@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    #[doc(hidden)]
     pub account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
 }
 impl CreateMembersInput {

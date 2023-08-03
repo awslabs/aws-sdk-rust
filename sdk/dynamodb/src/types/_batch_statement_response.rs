@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStatementResponse {
     /// <p> The error associated with a failed PartiQL batch statement. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchStatementError>,
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
 }
 impl BatchStatementResponse {

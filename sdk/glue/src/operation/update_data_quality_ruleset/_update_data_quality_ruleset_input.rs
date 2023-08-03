@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataQualityRulesetInput {
     /// <p>The name of the data quality ruleset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the ruleset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    #[doc(hidden)]
     pub ruleset: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDataQualityRulesetInput {

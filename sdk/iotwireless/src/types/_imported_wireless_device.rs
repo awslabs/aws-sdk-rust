@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportedWirelessDevice {
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
 }
 impl ImportedWirelessDevice {

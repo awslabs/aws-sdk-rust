@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationConfiguration {
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsDestinationConfiguration {

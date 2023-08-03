@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SingularConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
 }
 impl SingularConnectorProfileCredentials {

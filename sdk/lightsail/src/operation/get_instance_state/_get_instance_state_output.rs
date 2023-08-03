@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceStateOutput {
     /// <p>The state of the instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceState>,
     _request_id: Option<String>,
 }

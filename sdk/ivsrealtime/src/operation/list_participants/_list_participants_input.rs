@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListParticipantsInput {
     /// <p>Stage ARN.</p>
-    #[doc(hidden)]
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the stage.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    #[doc(hidden)]
     pub filter_by_user_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
-    #[doc(hidden)]
     pub filter_by_published: ::std::option::Option<bool>,
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
-    #[doc(hidden)]
     pub filter_by_state: ::std::option::Option<crate::types::ParticipantState>,
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListParticipantsInput {

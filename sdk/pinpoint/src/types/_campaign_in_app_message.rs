@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignInAppMessage {
     /// <p>The message body of the notification, the email body or the text message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>In-app message content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to client.</p>
-    #[doc(hidden)]
     pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>In-app message layout.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::Layout>,
 }
 impl CampaignInAppMessage {

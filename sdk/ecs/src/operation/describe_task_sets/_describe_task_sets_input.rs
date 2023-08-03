@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskSetsInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    #[doc(hidden)]
     pub task_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>>,
 }
 impl DescribeTaskSetsInput {

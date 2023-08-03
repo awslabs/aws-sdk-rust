@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceInputSpecification {
     /// <p>A text input transcription of the utterance. It is only applicable for test-sets containing text data.</p>
-    #[doc(hidden)]
     pub text_input: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the audio input for an utterance.</p>
-    #[doc(hidden)]
     pub audio_input: ::std::option::Option<crate::types::UtteranceAudioInputSpecification>,
 }
 impl UtteranceInputSpecification {

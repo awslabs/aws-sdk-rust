@@ -11,10 +11,8 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <li> <p> <code>SUCCESS</code> </p> </li>
     /// <li> <p> <code>START</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dependent container.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {

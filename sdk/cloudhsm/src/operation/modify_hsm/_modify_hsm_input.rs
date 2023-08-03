@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyHsmInput {
     /// <p>The ARN of the HSM to modify.</p>
-    #[doc(hidden)]
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
-    #[doc(hidden)]
     pub eni_ip: ::std::option::Option<::std::string::String>,
     /// <p>The new IAM role ARN.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new external ID.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
-    #[doc(hidden)]
     pub syslog_ip: ::std::option::Option<::std::string::String>,
 }
 impl ModifyHsmInput {

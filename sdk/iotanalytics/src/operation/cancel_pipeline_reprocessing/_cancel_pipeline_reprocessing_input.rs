@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelPipelineReprocessingInput {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
-    #[doc(hidden)]
     pub reprocessing_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelPipelineReprocessingInput {

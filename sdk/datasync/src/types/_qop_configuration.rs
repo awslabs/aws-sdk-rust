@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QopConfiguration {
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
-    #[doc(hidden)]
     pub rpc_protection: ::std::option::Option<crate::types::HdfsRpcProtection>,
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-    #[doc(hidden)]
     pub data_transfer_protection: ::std::option::Option<crate::types::HdfsDataTransferProtection>,
 }
 impl QopConfiguration {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionAuthRequestParameters {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
-    #[doc(hidden)]
     pub basic_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
-    #[doc(hidden)]
     pub o_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
-    #[doc(hidden)]
     pub api_key_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl UpdateConnectionAuthRequestParameters {

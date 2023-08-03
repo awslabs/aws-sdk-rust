@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    #[doc(hidden)]
     pub capability_namespace: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayCapabilityConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
-    #[doc(hidden)]
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl InputConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeGroupUpdateStatus {
     /// <p>The ID of the node group</p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update on the node group member</p>
-    #[doc(hidden)]
     pub node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
 }
 impl NodeGroupUpdateStatus {

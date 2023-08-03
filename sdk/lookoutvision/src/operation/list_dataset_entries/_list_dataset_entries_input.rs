@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetEntriesInput {
     /// <p>The name of the project that contains the dataset that you want to list.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
-    #[doc(hidden)]
     pub labeled: ::std::option::Option<bool>,
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    #[doc(hidden)]
     pub anomaly_class: ::std::option::Option<::std::string::String>,
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    #[doc(hidden)]
     pub before_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    #[doc(hidden)]
     pub after_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    #[doc(hidden)]
     pub source_ref_contains: ::std::option::Option<::std::string::String>,
 }
 impl ListDatasetEntriesInput {

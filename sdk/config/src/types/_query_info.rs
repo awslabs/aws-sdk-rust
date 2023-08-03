@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
-    #[doc(hidden)]
     pub select_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldInfo>>,
 }
 impl QueryInfo {

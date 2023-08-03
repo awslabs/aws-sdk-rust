@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceCloudProperties {
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
-    #[doc(hidden)]
     pub origin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>AWS Region for an EC2-originated Source Server.</p>
-    #[doc(hidden)]
     pub origin_region: ::std::option::Option<::std::string::String>,
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
-    #[doc(hidden)]
     pub origin_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl SourceCloudProperties {

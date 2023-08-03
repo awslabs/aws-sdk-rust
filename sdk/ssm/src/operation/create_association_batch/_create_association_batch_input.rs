@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
 }
 impl CreateAssociationBatchInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DomainSummary {
     /// <p>The identifier of the domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The client-provided name for the domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the domain.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the domain.</p>
-    #[doc(hidden)]
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp of when the domain was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    #[doc(hidden)]
     pub server_side_encryption_update_details: ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
     /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
-    #[doc(hidden)]
     pub watchlist_details: ::std::option::Option<crate::types::WatchlistDetails>,
 }
 impl DomainSummary {

@@ -5,75 +5,52 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>Write to a DynamoDB table.</p>
-    #[doc(hidden)]
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    #[doc(hidden)]
     pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Invoke a Lambda function.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Publish to an Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub sns: ::std::option::Option<crate::types::SnsAction>,
     /// <p>Publish to an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub sqs: ::std::option::Option<crate::types::SqsAction>,
     /// <p>Write data to an Amazon Kinesis stream.</p>
-    #[doc(hidden)]
     pub kinesis: ::std::option::Option<crate::types::KinesisAction>,
     /// <p>Publish to another MQTT topic.</p>
-    #[doc(hidden)]
     pub republish: ::std::option::Option<crate::types::RepublishAction>,
     /// <p>Write to an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Action>,
     /// <p>Write to an Amazon Kinesis Firehose stream.</p>
-    #[doc(hidden)]
     pub firehose: ::std::option::Option<crate::types::FirehoseAction>,
     /// <p>Capture a CloudWatch metric.</p>
-    #[doc(hidden)]
     pub cloudwatch_metric: ::std::option::Option<crate::types::CloudwatchMetricAction>,
     /// <p>Change the state of a CloudWatch alarm.</p>
-    #[doc(hidden)]
     pub cloudwatch_alarm: ::std::option::Option<crate::types::CloudwatchAlarmAction>,
     /// <p>Send data to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloudwatch_logs: ::std::option::Option<crate::types::CloudwatchLogsAction>,
     /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub elasticsearch: ::std::option::Option<crate::types::ElasticsearchAction>,
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceAction>,
     /// <p>Sends message data to an IoT Analytics channel.</p>
-    #[doc(hidden)]
     pub iot_analytics: ::std::option::Option<crate::types::IotAnalyticsAction>,
     /// <p>Sends an input to an IoT Events detector.</p>
-    #[doc(hidden)]
     pub iot_events: ::std::option::Option<crate::types::IotEventsAction>,
     /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
-    #[doc(hidden)]
     pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
     /// <p>Starts execution of a Step Functions state machine.</p>
-    #[doc(hidden)]
     pub step_functions: ::std::option::Option<crate::types::StepFunctionsAction>,
     /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
-    #[doc(hidden)]
     pub timestream: ::std::option::Option<crate::types::TimestreamAction>,
     /// <p>Send data to an HTTPS endpoint.</p>
-    #[doc(hidden)]
     pub http: ::std::option::Option<crate::types::HttpAction>,
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub kafka: ::std::option::Option<crate::types::KafkaAction>,
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub open_search: ::std::option::Option<crate::types::OpenSearchAction>,
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::LocationAction>,
 }
 impl Action {

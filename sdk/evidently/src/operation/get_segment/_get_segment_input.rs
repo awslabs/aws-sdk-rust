@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
 }
 impl GetSegmentInput {

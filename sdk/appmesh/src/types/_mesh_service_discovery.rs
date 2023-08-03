@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
-    #[doc(hidden)]
     pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl MeshServiceDiscovery {

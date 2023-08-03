@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::Provider>,
 }
 impl EncryptionConfig {

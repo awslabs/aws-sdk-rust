@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RobotDeployment {
     /// <p>The robot deployment Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
-    #[doc(hidden)]
     pub deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-    #[doc(hidden)]
     pub deployment_finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the robot deployment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RobotStatus>,
     /// <p>Information about how the deployment is progressing.</p>
-    #[doc(hidden)]
     pub progress_detail: ::std::option::Option<crate::types::ProgressDetail>,
     /// <p>A short description of the reason why the robot deployment failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The robot deployment failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
 }
 impl RobotDeployment {

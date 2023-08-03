@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumeOutput {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
-    #[doc(hidden)]
     pub volume: ::std::option::Option<crate::types::Volume>,
     _request_id: Option<String>,
 }

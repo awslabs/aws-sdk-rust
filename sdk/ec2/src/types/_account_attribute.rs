@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the account attribute.</p>
-    #[doc(hidden)]
     pub attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
 }
 impl AccountAttribute {

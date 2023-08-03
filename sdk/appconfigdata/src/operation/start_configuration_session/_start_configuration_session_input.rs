@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigurationSessionInput {
     /// <p>The application ID or the application name.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID or the environment name.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    #[doc(hidden)]
     pub configuration_profile_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
-    #[doc(hidden)]
     pub required_minimum_poll_interval_in_seconds: ::std::option::Option<i32>,
 }
 impl StartConfigurationSessionInput {

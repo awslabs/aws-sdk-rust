@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableFromSnapshotInput {
     /// <p>The namespace of the snapshot to restore from.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to restore the table to.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot to restore the table from.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source database that contains the table being restored.</p>
-    #[doc(hidden)]
     pub source_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source schema that contains the table being restored.</p>
-    #[doc(hidden)]
     pub source_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table being restored.</p>
-    #[doc(hidden)]
     pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to restore the table to.</p>
-    #[doc(hidden)]
     pub target_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema to restore the table to.</p>
-    #[doc(hidden)]
     pub target_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to create from the restore operation.</p>
-    #[doc(hidden)]
     pub new_table_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
-    #[doc(hidden)]
     pub activate_case_sensitive_identifier: ::std::option::Option<bool>,
 }
 impl RestoreTableFromSnapshotInput {

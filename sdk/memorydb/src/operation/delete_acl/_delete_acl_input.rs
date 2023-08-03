@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAclInput {
     /// <p>The name of the Access Control List to delete</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAclInput {

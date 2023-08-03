@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapFieldWells {
     /// <p>The aggregated field well for a geospatial map.</p>
-    #[doc(hidden)]
     pub geospatial_map_aggregated_field_wells: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
 impl GeospatialMapFieldWells {

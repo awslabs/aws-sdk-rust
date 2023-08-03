@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-    #[doc(hidden)]
     pub default_list: ::std::option::Option<bool>,
 }
 impl GetProtocolsListInput {

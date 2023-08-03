@@ -5,110 +5,79 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The user supplied description of the replication group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Global datastore and role of this replication group in the Global datastore.</p>
-    #[doc(hidden)]
     pub global_replication_group_info: ::std::option::Option<crate::types::GlobalReplicationGroupInfo>,
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::ReplicationGroupPendingModifiedValues>,
     /// <p>The names of all the cache clusters that are part of this replication group.</p>
-    #[doc(hidden)]
     pub member_clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each node group (shard).</p>
-    #[doc(hidden)]
     pub node_groups: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroup>>,
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group.</p>
-    #[doc(hidden)]
     pub snapshotting_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
-    #[doc(hidden)]
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<crate::types::MultiAzStatus>,
     /// <p>The configuration endpoint for this replication group. Use the configuration endpoint to connect to this replication group.</p>
-    #[doc(hidden)]
     pub configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
     /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub cluster_enabled: ::std::option::Option<bool>,
     /// <p>The name of the compute and memory capacity node type for each node in the replication group.</p>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    #[doc(hidden)]
     pub auth_token_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The outpost ARNs of the replication group's member clusters.</p>
-    #[doc(hidden)]
     pub member_clusters_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user group associated to the replication group.</p>
-    #[doc(hidden)]
     pub user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returns the destination, format and type of the logs. </p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
-    #[doc(hidden)]
     pub replication_group_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
     /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    #[doc(hidden)]
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
-    #[doc(hidden)]
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroup {

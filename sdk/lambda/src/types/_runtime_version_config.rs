@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeVersionConfig {
     /// <p>The ARN of the runtime version you want the function to use.</p>
-    #[doc(hidden)]
     pub runtime_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::RuntimeVersionError>,
 }
 impl RuntimeVersionConfig {

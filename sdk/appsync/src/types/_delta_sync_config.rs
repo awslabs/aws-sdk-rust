@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeltaSyncConfig {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
-    #[doc(hidden)]
     pub base_table_ttl: i64,
     /// <p>The Delta Sync table name.</p>
-    #[doc(hidden)]
     pub delta_sync_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
-    #[doc(hidden)]
     pub delta_sync_table_ttl: i64,
 }
 impl DeltaSyncConfig {

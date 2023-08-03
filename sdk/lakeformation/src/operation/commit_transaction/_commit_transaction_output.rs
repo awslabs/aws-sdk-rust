@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitTransactionOutput {
     /// <p>The status of the transaction.</p>
-    #[doc(hidden)]
     pub transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterOutput {
     /// <p>The cluster object that has been deleted</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }

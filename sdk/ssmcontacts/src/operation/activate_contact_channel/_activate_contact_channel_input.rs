@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    #[doc(hidden)]
     pub activation_code: ::std::option::Option<::std::string::String>,
 }
 impl ActivateContactChannelInput {

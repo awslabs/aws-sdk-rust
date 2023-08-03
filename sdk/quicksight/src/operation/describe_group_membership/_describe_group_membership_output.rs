@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipOutput {
     /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
-    #[doc(hidden)]
     pub group_member: ::std::option::Option<crate::types::GroupMember>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

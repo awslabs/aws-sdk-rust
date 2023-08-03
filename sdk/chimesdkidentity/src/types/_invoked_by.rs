@@ -11,14 +11,12 @@ pub struct InvokedBy {
     /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
     /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub standard_messages: ::std::option::Option<crate::types::StandardMessages>,
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
     /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
     /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub targeted_messages: ::std::option::Option<crate::types::TargetedMessages>,
 }
 impl InvokedBy {

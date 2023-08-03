@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataLakeExceptionSubscriptionInput {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    #[doc(hidden)]
     pub subscription_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    #[doc(hidden)]
     pub notification_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The expiration period and time-to-live (TTL).</p>
-    #[doc(hidden)]
     pub exception_time_to_live: ::std::option::Option<i64>,
 }
 impl CreateDataLakeExceptionSubscriptionInput {

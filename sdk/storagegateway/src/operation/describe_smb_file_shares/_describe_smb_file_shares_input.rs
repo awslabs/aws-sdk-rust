@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    #[doc(hidden)]
     pub file_share_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSmbFileSharesInput {

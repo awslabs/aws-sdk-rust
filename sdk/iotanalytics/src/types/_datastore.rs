@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Datastore {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<crate::types::DatastoreStorage>,
     /// <p>The ARN of the data store.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a data store:</p>
     /// <dl>
@@ -34,29 +31,22 @@ pub struct Datastore {
     /// <p>The data store is being deleted.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>When the data store was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    #[doc(hidden)]
     pub last_message_arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    #[doc(hidden)]
     pub file_format_configuration: ::std::option::Option<crate::types::FileFormatConfiguration>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
-    #[doc(hidden)]
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
 impl Datastore {

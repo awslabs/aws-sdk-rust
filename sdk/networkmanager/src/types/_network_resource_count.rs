@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceCount {
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource count.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl NetworkResourceCount {

@@ -14,17 +14,13 @@ pub struct DescribePlacementGroupsInput {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    #[doc(hidden)]
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the placement groups.</p>
-    #[doc(hidden)]
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribePlacementGroupsInput {

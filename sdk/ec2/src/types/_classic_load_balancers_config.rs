@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
-    #[doc(hidden)]
     pub classic_load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
 }
 impl ClassicLoadBalancersConfig {

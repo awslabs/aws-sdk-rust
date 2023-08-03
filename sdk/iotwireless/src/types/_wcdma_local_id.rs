@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaLocalId {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    #[doc(hidden)]
     pub uarfcndl: ::std::option::Option<i32>,
     /// <p>Primary Scrambling Code.</p>
-    #[doc(hidden)]
     pub psc: ::std::option::Option<i32>,
 }
 impl WcdmaLocalId {

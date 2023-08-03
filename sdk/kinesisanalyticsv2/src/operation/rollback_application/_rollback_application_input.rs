@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackApplicationInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
 }
 impl RollbackApplicationInput {

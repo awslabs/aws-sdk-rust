@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorOutput {
     /// <p>The Amazon Chime Voice Connector details.</p>
-    #[doc(hidden)]
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
 }

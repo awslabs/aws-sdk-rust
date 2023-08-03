@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfigurationOutput {
     /// <p>The updated streaming settings.</p>
-    #[doc(hidden)]
     pub streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
     _request_id: Option<String>,
 }

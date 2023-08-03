@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
-    #[doc(hidden)]
     pub waiting_on_ingestion: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
-    #[doc(hidden)]
     pub queued_ingestion: ::std::option::Option<::std::string::String>,
 }
 impl QueueInfo {

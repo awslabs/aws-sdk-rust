@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>,
 }
 impl BatchPutPropertyValuesInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnectionDetail {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    #[doc(hidden)]
     pub connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
     /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct SourceConnectionDetail {
     /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
     /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_sync: ::std::option::Option<crate::types::LastSync>,
 }
 impl SourceConnectionDetail {

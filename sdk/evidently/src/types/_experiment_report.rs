@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentReport {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variation that this report pertains to.</p>
-    #[doc(hidden)]
     pub treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis used for this report.</p>
-    #[doc(hidden)]
     pub report_name: ::std::option::Option<crate::types::ExperimentReportName>,
     /// <p>The content of the report.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentReport {

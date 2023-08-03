@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-    #[doc(hidden)]
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
 }
 impl DataDestination {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource's ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource's type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID for the error.</p>
-    #[doc(hidden)]
     pub error_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
-    #[doc(hidden)]
     pub error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

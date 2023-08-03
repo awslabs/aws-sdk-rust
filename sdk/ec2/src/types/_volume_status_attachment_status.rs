@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusAttachmentStatus {
     /// <p>The maximum IOPS supported by the attached instance.</p>
-    #[doc(hidden)]
     pub io_performance: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attached instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusAttachmentStatus {

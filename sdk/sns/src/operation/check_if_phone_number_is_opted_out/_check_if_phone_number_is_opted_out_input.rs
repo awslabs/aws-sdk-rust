@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl CheckIfPhoneNumberIsOptedOutInput {

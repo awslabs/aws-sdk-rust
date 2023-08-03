@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricStat {
     /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
     /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
@@ -14,14 +13,11 @@ pub struct MetricStat {
     /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
     /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
-    #[doc(hidden)]
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::StandardUnit>,
 }
 impl MetricStat {

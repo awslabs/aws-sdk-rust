@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PauseStateScheduleActionSettings {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    #[doc(hidden)]
     pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
 }
 impl PauseStateScheduleActionSettings {

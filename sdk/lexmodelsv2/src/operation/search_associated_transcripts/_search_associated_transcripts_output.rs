@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsOutput {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    #[doc(hidden)]
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_index: ::std::option::Option<i32>,
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    #[doc(hidden)]
     pub associated_transcripts: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
     /// <p>The total number of transcripts returned by the search.</p>
-    #[doc(hidden)]
     pub total_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

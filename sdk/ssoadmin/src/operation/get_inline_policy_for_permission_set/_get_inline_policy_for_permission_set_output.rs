@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInlinePolicyForPermissionSetOutput {
     /// <p>The inline policy that is attached to the permission set.</p>
-    #[doc(hidden)]
     pub inline_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

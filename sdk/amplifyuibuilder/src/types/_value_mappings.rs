@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueMappings {
     /// <p>The value and display value pairs.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
     /// <p>The information to bind fields to data at runtime.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>>,
 }
 impl ValueMappings {

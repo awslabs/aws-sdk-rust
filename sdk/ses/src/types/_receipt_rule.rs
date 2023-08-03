@@ -12,22 +12,16 @@ pub struct ReceiptRule {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
-    #[doc(hidden)]
     pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
-    #[doc(hidden)]
     pub recipients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>,
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub scan_enabled: bool,
 }
 impl ReceiptRule {

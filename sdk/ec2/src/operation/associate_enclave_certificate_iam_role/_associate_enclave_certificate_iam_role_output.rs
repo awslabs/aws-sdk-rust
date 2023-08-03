@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
-    #[doc(hidden)]
     pub certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
-    #[doc(hidden)]
     pub certificate_s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
-    #[doc(hidden)]
     pub encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

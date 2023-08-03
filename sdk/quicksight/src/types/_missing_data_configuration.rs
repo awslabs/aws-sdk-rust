@@ -10,7 +10,6 @@ pub struct MissingDataConfiguration {
     /// <li> <p> <code>SHOW_AS_ZERO</code>: Show missing values as the value <code>0</code>.</p> </li>
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub treatment_option: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
 }
 impl MissingDataConfiguration {

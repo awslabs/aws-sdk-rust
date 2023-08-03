@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// A list of availability zones for the multiplex.
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the multiplex output destinations.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Configuration for a multiplex event.
-    #[doc(hidden)]
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// The name of the multiplex.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The number of currently healthy pipelines.
-    #[doc(hidden)]
     pub pipelines_running_count: ::std::option::Option<i32>,
     /// The number of programs in the multiplex.
-    #[doc(hidden)]
     pub program_count: ::std::option::Option<i32>,
     /// The current state of the multiplex.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::MultiplexState>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

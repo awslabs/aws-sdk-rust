@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericalMeasureField {
     /// <p>The custom field ID.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that is used in the <code>NumericalMeasureField</code>.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The aggregation function of the measure field.</p>
-    #[doc(hidden)]
     pub aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
     /// <p>The format configuration of the field.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::NumberFormatConfiguration>,
 }
 impl NumericalMeasureField {

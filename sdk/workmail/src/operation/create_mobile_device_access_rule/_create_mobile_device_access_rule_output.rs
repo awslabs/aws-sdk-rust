@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMobileDeviceAccessRuleOutput {
     /// <p>The identifier for the newly created mobile device access rule.</p>
-    #[doc(hidden)]
     pub mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

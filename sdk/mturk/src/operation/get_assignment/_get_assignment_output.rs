@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssignmentOutput {
     /// <p> The assignment. The response includes one Assignment element. </p>
-    #[doc(hidden)]
     pub assignment: ::std::option::Option<crate::types::Assignment>,
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
-    #[doc(hidden)]
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }

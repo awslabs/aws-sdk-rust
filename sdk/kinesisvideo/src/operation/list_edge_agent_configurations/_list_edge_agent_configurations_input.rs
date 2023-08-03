@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsInput {
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    #[doc(hidden)]
     pub hub_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEdgeAgentConfigurationsInput {

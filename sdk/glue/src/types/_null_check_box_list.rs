@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NullCheckBoxList {
     /// <p>Specifies that an empty string is considered as a null value.</p>
-    #[doc(hidden)]
     pub is_empty: ::std::option::Option<bool>,
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
-    #[doc(hidden)]
     pub is_null_string: ::std::option::Option<bool>,
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
-    #[doc(hidden)]
     pub is_neg_one: ::std::option::Option<bool>,
 }
 impl NullCheckBoxList {

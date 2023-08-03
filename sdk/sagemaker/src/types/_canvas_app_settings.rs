@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanvasAppSettings {
     /// <p>Time series forecast settings for the Canvas application.</p>
-    #[doc(hidden)]
     pub time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
-    #[doc(hidden)]
     pub model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
-    #[doc(hidden)]
     pub workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
 }
 impl CanvasAppSettings {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
-    #[doc(hidden)]
     pub license_operation_failure_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

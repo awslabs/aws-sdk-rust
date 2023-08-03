@@ -6,14 +6,11 @@ pub struct GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to advance to the next page of recommendation summaries.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetRecommendationSummariesInput {

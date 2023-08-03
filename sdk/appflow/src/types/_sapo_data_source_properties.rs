@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
-    #[doc(hidden)]
     pub object_path: ::std::option::Option<::std::string::String>,
 }
 impl SapoDataSourceProperties {

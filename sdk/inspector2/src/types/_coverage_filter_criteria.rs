@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageFilterCriteria {
     /// <p>The scan status code to filter on.</p>
-    #[doc(hidden)]
     pub scan_status_code: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The scan status reason to filter on.</p>
-    #[doc(hidden)]
     pub scan_status_reason: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon ECR repository name to filter on.</p>
-    #[doc(hidden)]
     pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon ECR image tags to filter on.</p>
-    #[doc(hidden)]
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon EC2 instance tags to filter on.</p>
-    #[doc(hidden)]
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
-    #[doc(hidden)]
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
-    #[doc(hidden)]
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
-    #[doc(hidden)]
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
-    #[doc(hidden)]
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteria {

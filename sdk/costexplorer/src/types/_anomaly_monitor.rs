@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyMonitor {
     /// <p>The Amazon Resource Name (ARN) value. </p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitor. </p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the monitor was created. </p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The date when the monitor was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::std::string::String>,
     /// <p>The date when the monitor last evaluated for anomalies. </p>
-    #[doc(hidden)]
     pub last_evaluated_date: ::std::option::Option<::std::string::String>,
     /// <p>The possible type values. </p>
-    #[doc(hidden)]
     pub monitor_type: ::std::option::Option<crate::types::MonitorType>,
     /// <p>The dimensions to evaluate. </p>
-    #[doc(hidden)]
     pub monitor_dimension: ::std::option::Option<crate::types::MonitorDimension>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -62,10 +55,8 @@ pub struct AnomalyMonitor {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub monitor_specification: ::std::option::Option<crate::types::Expression>,
     /// <p>The value for evaluated dimensions. </p>
-    #[doc(hidden)]
     pub dimensional_value_count: i32,
 }
 impl AnomalyMonitor {

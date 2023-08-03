@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContextsOutput {
     /// <p>A list of contexts and their properties.</p>
-    #[doc(hidden)]
     pub context_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>>,
     /// <p>A token for getting the next set of contexts, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

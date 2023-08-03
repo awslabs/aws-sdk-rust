@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistrationOutput {
     /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
 impl RegistrationOutput {

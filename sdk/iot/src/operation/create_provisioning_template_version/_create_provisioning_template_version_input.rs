@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateVersionInput {
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>Sets a fleet provision template version as the default version.</p>
-    #[doc(hidden)]
     pub set_as_default: ::std::option::Option<bool>,
 }
 impl CreateProvisioningTemplateVersionInput {

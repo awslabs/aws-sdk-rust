@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionField {
     /// <p>The dimension type field with numerical type columns.</p>
-    #[doc(hidden)]
     pub numerical_dimension_field: ::std::option::Option<crate::types::NumericalDimensionField>,
     /// <p>The dimension type field with categorical type columns.</p>
-    #[doc(hidden)]
     pub categorical_dimension_field: ::std::option::Option<crate::types::CategoricalDimensionField>,
     /// <p>The dimension type field with date type columns.</p>
-    #[doc(hidden)]
     pub date_dimension_field: ::std::option::Option<crate::types::DateDimensionField>,
 }
 impl DimensionField {

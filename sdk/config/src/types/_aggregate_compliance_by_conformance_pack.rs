@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateComplianceByConformancePack {
     /// <p>The name of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance status of the conformance pack.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<crate::types::AggregateConformancePackCompliance>,
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl AggregateComplianceByConformancePack {

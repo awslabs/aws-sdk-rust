@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExportOutput {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content-disposition header value in the HTTP response.</p>
-    #[doc(hidden)]
     pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p>The binary blob response to GetExport, which contains the export.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

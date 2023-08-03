@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartOrganizationServiceAccessUpdateInput {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
 }
 impl StartOrganizationServiceAccessUpdateInput {

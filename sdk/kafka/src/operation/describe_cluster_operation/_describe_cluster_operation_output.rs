@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
-    #[doc(hidden)]
     pub cluster_operation_info: ::std::option::Option<crate::types::ClusterOperationInfo>,
     _request_id: Option<String>,
 }

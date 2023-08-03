@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOtaUpdateInput {
     /// <p>The ID of the OTA update to delete.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
-    #[doc(hidden)]
     pub delete_stream: ::std::option::Option<bool>,
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
-    #[doc(hidden)]
     pub force_delete_aws_job: ::std::option::Option<bool>,
 }
 impl DeleteOtaUpdateInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateParameter {
     /// <p>The name associated with the parameter.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value associated with the parameter.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
-    #[doc(hidden)]
     pub no_echo: ::std::option::Option<bool>,
     /// <p>User defined description associated with the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl TemplateParameter {

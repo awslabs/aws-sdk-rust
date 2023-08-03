@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomValuesConfiguration {
     /// <p>Includes the null value in custom action parameter values.</p>
-    #[doc(hidden)]
     pub include_null_value: ::std::option::Option<bool>,
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    #[doc(hidden)]
     pub custom_values: ::std::option::Option<crate::types::CustomParameterValues>,
 }
 impl CustomValuesConfiguration {

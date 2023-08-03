@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchSummary {
     /// <p>The identifier of the compliance standard that was used to determine the patch compliance status.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of patches from the compliance standard that were installed successfully.</p>
-    #[doc(hidden)]
     pub installed_count: i32,
     /// <p>The number of patches that are part of the compliance standard but are not installed. The count includes patches that failed to install.</p>
-    #[doc(hidden)]
     pub missing_count: i32,
     /// <p>The number of patches from the compliance standard that failed to install.</p>
-    #[doc(hidden)]
     pub failed_count: i32,
     /// <p>The number of installed patches that are not part of the compliance standard.</p>
-    #[doc(hidden)]
     pub installed_other_count: i32,
     /// <p>The number of patches that are installed but are also on a list of patches that the customer rejected.</p>
-    #[doc(hidden)]
     pub installed_rejected_count: i32,
     /// <p>The number of patches that were applied, but that require the instance to be rebooted in order to be marked as installed.</p>
-    #[doc(hidden)]
     pub installed_pending_reboot: i32,
     /// <p>Indicates when the operation started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub operation_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the operation completed.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub operation_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The reboot option specified for the instance.</p>
-    #[doc(hidden)]
     pub reboot_option: ::std::option::Option<::std::string::String>,
     /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
 }
 impl PatchSummary {

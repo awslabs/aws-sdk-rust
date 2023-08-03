@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
-    #[doc(hidden)]
     pub incident_record_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

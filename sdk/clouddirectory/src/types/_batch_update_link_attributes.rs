@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
-    #[doc(hidden)]
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>,
 }
 impl BatchUpdateLinkAttributes {

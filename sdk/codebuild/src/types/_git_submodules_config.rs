@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitSubmodulesConfig {
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
-    #[doc(hidden)]
     pub fetch_submodules: ::std::option::Option<bool>,
 }
 impl GitSubmodulesConfig {

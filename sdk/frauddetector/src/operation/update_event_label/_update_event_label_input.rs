@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventLabelInput {
     /// <p>The ID of the event associated with the label to update.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type of the event associated with the label to update.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The new label to assign to the event.</p>
-    #[doc(hidden)]
     pub assigned_label: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
-    #[doc(hidden)]
     pub label_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEventLabelInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWatchlistOutput {
     /// <p>Details about the updated watchlist.</p>
-    #[doc(hidden)]
     pub watchlist: ::std::option::Option<crate::types::Watchlist>,
     _request_id: Option<String>,
 }

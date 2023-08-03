@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    #[doc(hidden)]
     pub supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfig {

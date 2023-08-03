@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamConfig {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    #[doc(hidden)]
     pub signing_region: ::std::option::Option<::std::string::String>,
     /// <p>The signing service name for IAM authorization.</p>
-    #[doc(hidden)]
     pub signing_service_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamConfig {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// A description of the entitlement.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// The ARN of the entitlement.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// An indication of whether the entitlement is enabled.
-    #[doc(hidden)]
     pub entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
     /// The name of the entitlement.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Entitlement {

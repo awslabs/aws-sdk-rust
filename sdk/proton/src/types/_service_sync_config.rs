@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSyncConfig {
     /// <p>The name of the service that the service instance is added to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The file path to the service sync configuration file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSyncConfig {

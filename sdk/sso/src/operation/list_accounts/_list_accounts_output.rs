@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountsOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    #[doc(hidden)]
     pub account_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>>,
     _request_id: Option<String>,
 }

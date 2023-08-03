@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowDefinitionInput {
     /// <p>The name of your flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    #[doc(hidden)]
     pub human_loop_request_source: ::std::option::Option<crate::types::HumanLoopRequestSource>,
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    #[doc(hidden)]
     pub human_loop_activation_config: ::std::option::Option<crate::types::HumanLoopActivationConfig>,
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-    #[doc(hidden)]
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     /// <p>An object containing information about where the human review results will be uploaded.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::FlowDefinitionOutputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFlowDefinitionInput {

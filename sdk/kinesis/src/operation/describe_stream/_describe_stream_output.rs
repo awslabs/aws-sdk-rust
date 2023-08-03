@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
-    #[doc(hidden)]
     pub stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
 }

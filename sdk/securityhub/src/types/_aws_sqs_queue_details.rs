@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSqsQueueDetails {
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
-    #[doc(hidden)]
     pub kms_data_key_reuse_period_seconds: i32,
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new queue.</p>
-    #[doc(hidden)]
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
-    #[doc(hidden)]
     pub dead_letter_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsSqsQueueDetails {

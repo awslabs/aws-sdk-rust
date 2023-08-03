@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The route request parameter key.</p>
-    #[doc(hidden)]
     pub request_parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The route ID.</p>
-    #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteRequestParameterInput {

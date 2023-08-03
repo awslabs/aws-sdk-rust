@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorConfigResponse {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
-    #[doc(hidden)]
     pub activation_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique code associated with the cluster for registration purposes.</p>
-    #[doc(hidden)]
     pub activation_code: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
-    #[doc(hidden)]
     pub activation_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cluster's cloud service provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorConfigResponse {

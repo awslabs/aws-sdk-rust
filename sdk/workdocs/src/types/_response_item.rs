@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResponseItem {
     /// <p>The type of item being returned.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResponseItemType>,
     /// <p>The webUrl of the item being returned.</p>
-    #[doc(hidden)]
     pub web_url: ::std::option::Option<::std::string::String>,
     /// <p>The document that matches the query.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The folder that matches the query.</p>
-    #[doc(hidden)]
     pub folder_metadata: ::std::option::Option<crate::types::FolderMetadata>,
     /// <p>The comment that matches the query.</p>
-    #[doc(hidden)]
     pub comment_metadata: ::std::option::Option<crate::types::CommentMetadata>,
     /// <p>The document version that matches the metadata.</p>
-    #[doc(hidden)]
     pub document_version_metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
 }
 impl ResponseItem {

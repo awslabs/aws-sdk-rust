@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutgoingCertificate {
     /// <p>The certificate ARN.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate ID.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
-    #[doc(hidden)]
     pub transferred_to: ::std::option::Option<::std::string::String>,
     /// <p>The date the transfer was initiated.</p>
-    #[doc(hidden)]
     pub transfer_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The transfer message.</p>
-    #[doc(hidden)]
     pub transfer_message: ::std::option::Option<::std::string::String>,
     /// <p>The certificate creation date.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OutgoingCertificate {

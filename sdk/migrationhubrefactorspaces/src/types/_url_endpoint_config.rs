@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The health check URL of the URL endpoint type. </p>
-    #[doc(hidden)]
     pub health_url: ::std::option::Option<::std::string::String>,
 }
 impl UrlEndpointConfig {

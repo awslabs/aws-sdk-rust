@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectSentimentItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>The sentiment detected in the document.</p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::SentimentType>,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection.</p>
-    #[doc(hidden)]
     pub sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
 }
 impl BatchDetectSentimentItemResult {

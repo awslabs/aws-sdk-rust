@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfig {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
 }
 impl InstanceConfig {

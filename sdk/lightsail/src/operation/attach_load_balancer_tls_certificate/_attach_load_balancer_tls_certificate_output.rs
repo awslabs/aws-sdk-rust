@@ -5,7 +5,6 @@
 pub struct AttachLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,
 }

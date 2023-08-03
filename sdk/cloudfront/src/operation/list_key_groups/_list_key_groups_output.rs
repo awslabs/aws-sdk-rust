@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeyGroupsOutput {
     /// <p>A list of key groups.</p>
-    #[doc(hidden)]
     pub key_group_list: ::std::option::Option<crate::types::KeyGroupList>,
     _request_id: Option<String>,
 }

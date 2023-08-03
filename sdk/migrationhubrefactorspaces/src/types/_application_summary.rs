@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The name of the application. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the application creator. </p>
-    #[doc(hidden)]
     pub created_by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application. </p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
-    #[doc(hidden)]
     pub proxy_type: ::std::option::Option<crate::types::ProxyType>,
     /// <p>The endpoint URL of the Amazon API Gateway proxy. </p>
-    #[doc(hidden)]
     pub api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxySummary>,
     /// <p>The current state of the application. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ApplicationState>,
     /// <p>The tags assigned to the application. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the application is created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {

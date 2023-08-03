@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    #[doc(hidden)]
     pub application_date_range_kpi_response: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     _request_id: Option<String>,
 }

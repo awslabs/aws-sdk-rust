@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    #[doc(hidden)]
     pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetail {

@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationJob {
     /// <p>The ID of the replication job.</p>
-    #[doc(hidden)]
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the server.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of server.</p>
-    #[doc(hidden)]
     pub server_type: ::std::option::Option<crate::types::ServerType>,
     /// <p>Information about the VM server.</p>
-    #[doc(hidden)]
     pub vm_server: ::std::option::Option<crate::types::VmServer>,
     /// <p>The seed replication time.</p>
-    #[doc(hidden)]
     pub seed_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time between consecutive replication runs, in hours.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
-    #[doc(hidden)]
     pub run_once: ::std::option::Option<bool>,
     /// <p>The start time of the next replication run.</p>
-    #[doc(hidden)]
     pub next_replication_run_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-    #[doc(hidden)]
     pub latest_ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the replication job.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplicationJobState>,
     /// <p>The description of the current status of the replication job.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replication job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
-    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: ::std::option::Option<i32>,
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
     /// <ul>
@@ -60,10 +44,8 @@ pub struct ReplicationJob {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the replication runs.</p>
-    #[doc(hidden)]
     pub replication_run_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
 }
 impl ReplicationJob {

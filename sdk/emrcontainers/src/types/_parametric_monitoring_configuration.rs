@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParametricMonitoringConfiguration {
     /// <p> Monitoring configurations for the persistent application UI.</p>
-    #[doc(hidden)]
     pub persistent_app_ui: ::std::option::Option<::std::string::String>,
     /// <p> Monitoring configurations for CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    #[doc(hidden)]
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
 }
 impl ParametricMonitoringConfiguration {

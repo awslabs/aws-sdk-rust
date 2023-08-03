@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateDirectoryInput {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
-    #[doc(hidden)]
     pub short_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
@@ -24,19 +22,14 @@ pub struct CreateDirectoryInput {
     /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A description for the directory.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the directory.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::DirectorySize>,
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDirectoryInput {

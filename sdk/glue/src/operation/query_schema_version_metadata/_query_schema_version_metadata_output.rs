@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataOutput {
     /// <p>A map of a metadata key and associated values.</p>
-    #[doc(hidden)]
     pub metadata_info_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>>,
     /// <p>The unique version ID of the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

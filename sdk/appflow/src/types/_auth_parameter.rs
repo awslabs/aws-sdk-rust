@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthParameter {
     /// <p>The authentication key required to authenticate with the connector.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this authentication parameter is required.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>Label used for authentication parameter.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the authentication parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
-    #[doc(hidden)]
     pub is_sensitive_field: bool,
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    #[doc(hidden)]
     pub connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthParameter {

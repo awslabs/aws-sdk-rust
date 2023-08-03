@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsMfaConfigType {
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
-    #[doc(hidden)]
     pub sms_authentication_message: ::std::option::Option<::std::string::String>,
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub sms_configuration: ::std::option::Option<crate::types::SmsConfigurationType>,
 }
 impl SmsMfaConfigType {

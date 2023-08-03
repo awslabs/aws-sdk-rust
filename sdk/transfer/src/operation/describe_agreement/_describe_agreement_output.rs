@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgreementOutput {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
-    #[doc(hidden)]
     pub agreement: ::std::option::Option<crate::types::DescribedAgreement>,
     _request_id: Option<String>,
 }

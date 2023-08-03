@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseHardware {
     /// <p>The number of vCPUs for the database.</p>
-    #[doc(hidden)]
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The size of the disk for the database.</p>
-    #[doc(hidden)]
     pub disk_size_in_gb: ::std::option::Option<i32>,
     /// <p>The amount of RAM in GB for the database.</p>
-    #[doc(hidden)]
     pub ram_size_in_gb: ::std::option::Option<f32>,
 }
 impl RelationalDatabaseHardware {

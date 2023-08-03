@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
-    #[doc(hidden)]
     pub mfa_delete: ::std::option::Option<crate::types::MfaDelete>,
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BucketVersioningStatus>,
 }
 impl VersioningConfiguration {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::SelfManagedKafkaStartPosition>,
     /// <p>An array of server URLs.</p>
-    #[doc(hidden)]
     pub additional_bootstrap_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of records to include in each batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     /// <p>The name of the destination queue to consume.</p>
-    #[doc(hidden)]
     pub consumer_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials needed to access the resource.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    #[doc(hidden)]
     pub server_root_ca_certificate: ::std::option::Option<::std::string::String>,
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
 }
 impl PipeSourceSelfManagedKafkaParameters {

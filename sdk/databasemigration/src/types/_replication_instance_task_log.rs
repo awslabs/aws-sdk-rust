@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationInstanceTaskLog {
     /// <p>The name of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the replication task log.</p>
-    #[doc(hidden)]
     pub replication_instance_task_log_size: i64,
 }
 impl ReplicationInstanceTaskLog {

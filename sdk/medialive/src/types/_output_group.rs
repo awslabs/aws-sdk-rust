@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroup {
     /// Custom output group name optionally defined by the user.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Settings associated with the output group.
-    #[doc(hidden)]
     pub output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
     /// Placeholder documentation for __listOfOutput
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
 }
 impl OutputGroup {

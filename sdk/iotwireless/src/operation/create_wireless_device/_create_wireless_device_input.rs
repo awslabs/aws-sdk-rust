@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The name of the new resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the new resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination to assign to the new wireless device.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The device configuration information to use to create the wireless device.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
 }
 impl CreateWirelessDeviceInput {

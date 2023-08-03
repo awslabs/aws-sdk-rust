@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
-    #[doc(hidden)]
     pub facet: ::std::option::Option<crate::types::TypedLinkFacet>,
 }
 impl CreateTypedLinkFacetInput {

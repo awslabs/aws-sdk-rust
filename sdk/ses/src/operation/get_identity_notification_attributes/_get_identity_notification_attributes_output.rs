@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
-    #[doc(hidden)]
     pub notification_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,
     _request_id: Option<String>,

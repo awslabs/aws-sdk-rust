@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLongTermPricingOutput {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    #[doc(hidden)]
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
-    #[doc(hidden)]
     pub points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
 }
 impl CategoryDetails {

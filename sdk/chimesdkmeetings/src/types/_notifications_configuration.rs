@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotificationsConfiguration {
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SNS topic.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SQS queue.</p>
-    #[doc(hidden)]
     pub sqs_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotificationsConfiguration {

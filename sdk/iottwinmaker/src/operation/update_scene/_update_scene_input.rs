@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene.</p>
-    #[doc(hidden)]
     pub scene_id: ::std::option::Option<::std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    #[doc(hidden)]
     pub content_location: ::std::option::Option<::std::string::String>,
     /// <p>The description of this scene.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The scene metadata.</p>
-    #[doc(hidden)]
     pub scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSceneInput {

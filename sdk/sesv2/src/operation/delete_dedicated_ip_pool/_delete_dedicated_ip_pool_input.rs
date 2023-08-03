@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDedicatedIpPoolInput {

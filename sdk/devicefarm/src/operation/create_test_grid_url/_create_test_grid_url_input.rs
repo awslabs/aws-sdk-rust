@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTestGridUrlInput {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lifetime, in seconds, of the URL.</p>
-    #[doc(hidden)]
     pub expires_in_seconds: ::std::option::Option<i32>,
 }
 impl CreateTestGridUrlInput {

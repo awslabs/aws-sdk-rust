@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamJournalToKinesisOutput {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOpenIdConnectProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOpenIdConnectProviderInput {

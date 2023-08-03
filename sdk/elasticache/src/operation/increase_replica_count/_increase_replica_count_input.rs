@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseReplicaCountInput {
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
-    #[doc(hidden)]
     pub new_replica_count: ::std::option::Option<i32>,
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    #[doc(hidden)]
     pub replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl IncreaseReplicaCountInput {

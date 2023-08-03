@@ -5,68 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamingSourceOptions {
     /// <p>The URL of the Kinesis endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional classification.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the delimiter character.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
-    #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::StartingPosition>,
     /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
-    #[doc(hidden)]
     pub max_fetch_time_in_ms: ::std::option::Option<i64>,
     /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
-    #[doc(hidden)]
     pub max_fetch_records_per_shard: ::std::option::Option<i64>,
     /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
-    #[doc(hidden)]
     pub max_record_per_read: ::std::option::Option<i64>,
     /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
-    #[doc(hidden)]
     pub add_idle_time_between_reads: ::std::option::Option<bool>,
     /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
-    #[doc(hidden)]
     pub idle_time_between_reads_in_ms: ::std::option::Option<i64>,
     /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
-    #[doc(hidden)]
     pub describe_shard_interval: ::std::option::Option<i64>,
     /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
-    #[doc(hidden)]
     pub num_retries: ::std::option::Option<i32>,
     /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
-    #[doc(hidden)]
     pub retry_interval_ms: ::std::option::Option<i64>,
     /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
-    #[doc(hidden)]
     pub max_retry_interval_ms: ::std::option::Option<i64>,
     /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
-    #[doc(hidden)]
     pub avoid_empty_batches: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
-    #[doc(hidden)]
     pub role_session_name: ::std::option::Option<::std::string::String>,
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    #[doc(hidden)]
     pub add_record_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    #[doc(hidden)]
     pub emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
-    #[doc(hidden)]
     pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KinesisStreamingSourceOptions {

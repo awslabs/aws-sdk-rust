@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceExportDetails {
     /// <p>The ID of the resource being exported.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The target virtualization environment.</p>
-    #[doc(hidden)]
     pub target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
 }
 impl InstanceExportDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSigningJobOutput {
     /// <p>The ID of your signing job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the signing job owner.</p>
-    #[doc(hidden)]
     pub job_owner: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

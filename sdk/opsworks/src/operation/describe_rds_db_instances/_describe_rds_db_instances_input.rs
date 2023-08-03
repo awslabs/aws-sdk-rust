@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesInput {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    #[doc(hidden)]
     pub rds_db_instance_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeRdsDbInstancesInput {

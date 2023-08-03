@@ -18,7 +18,6 @@ pub struct RecordingStrategy {
     /// <p>For example, even if you set <code>includeGlobalResourceTypes</code> to false, global resource types will still be automatically recorded in this option unless those resource types are specifically listed as exemptions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// </note>
-    #[doc(hidden)]
     pub use_only: ::std::option::Option<crate::types::RecordingStrategyType>,
 }
 impl RecordingStrategy {

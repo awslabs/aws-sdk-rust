@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
-    #[doc(hidden)]
     pub volume_size_in_bytes: i64,
     /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
-    #[doc(hidden)]
     pub volume_usage_in_bytes: i64,
     /// <p>The time the recovery point was taken.</p>
-    #[doc(hidden)]
     pub volume_recovery_point_time: ::std::option::Option<::std::string::String>,
 }
 impl VolumeRecoveryPointInfo {

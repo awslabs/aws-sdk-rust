@@ -9,7 +9,6 @@ pub struct IncludedProperty {
     /// <ul>
     /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl IncludedProperty {

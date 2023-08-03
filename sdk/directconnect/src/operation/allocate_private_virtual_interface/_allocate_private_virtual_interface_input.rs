@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>Information about the private virtual interface.</p>
-    #[doc(hidden)]
     pub new_private_virtual_interface_allocation: ::std::option::Option<crate::types::NewPrivateVirtualInterfaceAllocation>,
 }
 impl AllocatePrivateVirtualInterfaceInput {

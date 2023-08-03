@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    #[doc(hidden)]
     pub stage_description: ::std::option::Option<::std::string::String>,
     /// <p>The description for the Deployment resource to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
-    #[doc(hidden)]
     pub cache_cluster_enabled: ::std::option::Option<bool>,
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
-    #[doc(hidden)]
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    #[doc(hidden)]
     pub canary_settings: ::std::option::Option<crate::types::DeploymentCanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
-    #[doc(hidden)]
     pub tracing_enabled: ::std::option::Option<bool>,
 }
 impl CreateDeploymentInput {

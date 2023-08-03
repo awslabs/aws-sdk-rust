@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
-    #[doc(hidden)]
     pub monthly_limit: ::std::option::Option<i64>,
 }
 impl SetTextMessageSpendLimitOverrideInput {

@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub user_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito user pool client.</p>
-    #[doc(hidden)]
     pub user_pool_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub user_pool_domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    #[doc(hidden)]
     pub session_cookie_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
-    #[doc(hidden)]
     pub session_timeout: ::std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
-    #[doc(hidden)]
     pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
@@ -32,7 +25,6 @@ pub struct AuthenticateCognitoActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
 impl AuthenticateCognitoActionConfig {

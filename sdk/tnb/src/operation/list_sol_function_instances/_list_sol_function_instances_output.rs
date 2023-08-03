@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstancesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Network function instances.</p>
-    #[doc(hidden)]
     pub function_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
     _request_id: Option<String>,
 }

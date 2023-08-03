@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The category of the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorCheckDescription {

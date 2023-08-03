@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the signal catalog.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSignalCatalogInput {

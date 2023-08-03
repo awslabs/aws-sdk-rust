@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>Name of the profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The profile description.</p>
-    #[doc(hidden)]
     pub profile_description: ::std::option::Option<::std::string::String>,
     /// <p>The profile questions.</p>
-    #[doc(hidden)]
     pub profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the profile.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProfileInput {

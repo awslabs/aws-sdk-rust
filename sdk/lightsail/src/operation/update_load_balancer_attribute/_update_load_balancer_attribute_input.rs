@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoadBalancerAttributeInput {
     /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute you want to update.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<crate::types::LoadBalancerAttributeName>,
     /// <p>The value that you want to specify for the attribute name.</p>
     /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
@@ -18,7 +16,6 @@ pub struct UpdateLoadBalancerAttributeInput {
     /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.</p> </li>
     /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p> <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLoadBalancerAttributeInput {

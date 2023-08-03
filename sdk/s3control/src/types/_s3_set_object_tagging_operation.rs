@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectTaggingOperation {
     /// <p></p>
-    #[doc(hidden)]
     pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
 impl S3SetObjectTaggingOperation {

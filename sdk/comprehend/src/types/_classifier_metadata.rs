@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifierMetadata {
     /// <p>The number of labels in the input data. </p>
-    #[doc(hidden)]
     pub number_of_labels: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
-    #[doc(hidden)]
     pub number_of_trained_documents: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
-    #[doc(hidden)]
     pub number_of_test_documents: ::std::option::Option<i32>,
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
-    #[doc(hidden)]
     pub evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
 impl ClassifierMetadata {

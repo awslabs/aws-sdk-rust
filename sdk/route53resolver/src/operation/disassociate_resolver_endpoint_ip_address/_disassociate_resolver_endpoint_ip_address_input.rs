@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<crate::types::IpAddressUpdate>,
 }
 impl DisassociateResolverEndpointIpAddressInput {

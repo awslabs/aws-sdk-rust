@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<bool>,
     /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
-    #[doc(hidden)]
     pub deleted: ::std::option::Option<bool>,
     /// <p>The service endpoint for updating documents in a search domain.</p>
-    #[doc(hidden)]
     pub doc_service: ::std::option::Option<crate::types::ServiceEndpoint>,
     /// <p>The service endpoint for requesting search results from a search domain.</p>
-    #[doc(hidden)]
     pub search_service: ::std::option::Option<crate::types::ServiceEndpoint>,
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
-    #[doc(hidden)]
     pub requires_index_documents: ::std::option::Option<bool>,
     /// <p>True if processing is being done to activate the current domain configuration.</p>
-    #[doc(hidden)]
     pub processing: ::std::option::Option<bool>,
     /// <p>The instance type that is being used to process search requests.</p>
-    #[doc(hidden)]
     pub search_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of partitions across which the search index is spread.</p>
-    #[doc(hidden)]
     pub search_partition_count: i32,
     /// <p>The number of search instances that are available to process search requests.</p>
-    #[doc(hidden)]
     pub search_instance_count: i32,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::Limits>,
 }
 impl DomainStatus {

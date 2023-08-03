@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
-    #[doc(hidden)]
     pub job_schedule: ::std::option::Option<crate::types::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
-    #[doc(hidden)]
     pub auto_merging: ::std::option::Option<crate::types::AutoMerging>,
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
-    #[doc(hidden)]
     pub exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
 impl MatchingResponse {

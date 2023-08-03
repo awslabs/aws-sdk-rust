@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
-    #[doc(hidden)]
     pub on_demand_cost: ::std::option::Option<::std::string::String>,
 }
 impl CoverageCost {

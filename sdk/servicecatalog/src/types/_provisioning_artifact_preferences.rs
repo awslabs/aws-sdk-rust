@@ -7,11 +7,9 @@
 pub struct ProvisioningArtifactPreferences {
     /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    #[doc(hidden)]
     pub stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    #[doc(hidden)]
     pub stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProvisioningArtifactPreferences {

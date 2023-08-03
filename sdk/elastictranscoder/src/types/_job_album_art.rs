@@ -11,10 +11,8 @@ pub struct JobAlbumArt {
     /// <li> <p> <code>Append:</code> The specified album art is placed after any existing album art.</p> </li>
     /// <li> <p> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder uses that artwork for the output. If the original input does not contain artwork, Elastic Transcoder uses the specified album art file.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
-    #[doc(hidden)]
     pub artwork: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
 }
 impl JobAlbumArt {

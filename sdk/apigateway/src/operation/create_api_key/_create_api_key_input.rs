@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the ApiKey.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-    #[doc(hidden)]
     pub generate_distinct_id: bool,
     /// <p>Specifies a value of the API key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    #[doc(hidden)]
     pub stage_keys: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    #[doc(hidden)]
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionParameter {
     /// <p>The parameter description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
 }
 impl ActionParameter {

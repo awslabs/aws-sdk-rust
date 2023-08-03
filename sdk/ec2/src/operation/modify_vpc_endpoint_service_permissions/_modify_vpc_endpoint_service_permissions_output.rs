@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Information about the added principals.</p>
-    #[doc(hidden)]
     pub added_principals: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

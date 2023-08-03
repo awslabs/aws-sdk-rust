@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Artifact {
     /// <p>The artifact's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
@@ -42,13 +40,10 @@ pub struct Artifact {
     /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ArtifactType>,
     /// <p>The artifact's file extension.</p>
-    #[doc(hidden)]
     pub extension: ::std::option::Option<::std::string::String>,
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl Artifact {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteOutput {
     /// <p>Information about a site.</p>
-    #[doc(hidden)]
     pub site: ::std::option::Option<crate::types::Site>,
     _request_id: Option<String>,
 }

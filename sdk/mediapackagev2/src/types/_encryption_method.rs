@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionMethod {
     /// <p>The encryption method to use.</p>
-    #[doc(hidden)]
     pub ts_encryption_method: ::std::option::Option<crate::types::TsEncryptionMethod>,
     /// <p>The encryption method to use.</p>
-    #[doc(hidden)]
     pub cmaf_encryption_method: ::std::option::Option<crate::types::CmafEncryptionMethod>,
 }
 impl EncryptionMethod {

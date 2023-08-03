@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    #[doc(hidden)]
     pub error_output_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The buffering option.</p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
-    #[doc(hidden)]
     pub compression_format: ::std::option::Option<crate::types::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::S3BackupMode>,
     /// <p>The Amazon S3 destination for backup.</p>
-    #[doc(hidden)]
     pub s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    #[doc(hidden)]
     pub data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
-    #[doc(hidden)]
     pub dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
 }
 impl ExtendedS3DestinationUpdate {

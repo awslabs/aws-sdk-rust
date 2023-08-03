@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    #[doc(hidden)]
     pub fraud_detection_action: ::std::option::Option<crate::types::FraudDetectionAction>,
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
-    #[doc(hidden)]
     pub risk_threshold: ::std::option::Option<i32>,
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    #[doc(hidden)]
     pub watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnrollmentJobFraudDetectionConfig {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
-    #[doc(hidden)]
     pub update_results: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
     _request_id: Option<String>,
 }

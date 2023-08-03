@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     /// <p>Defines the endpoint configuration parameters.</p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     /// <p>Defines the model configuration.</p>
-    #[doc(hidden)]
     pub model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the benchmark completed.</p>
-    #[doc(hidden)]
     pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the benchmark started.</p>
-    #[doc(hidden)]
     pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InferenceRecommendation {

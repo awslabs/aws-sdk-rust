@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Instance groups to change.</p>
-    #[doc(hidden)]
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
 }
 impl ModifyInstanceGroupsInput {

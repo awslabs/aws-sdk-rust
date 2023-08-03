@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    #[doc(hidden)]
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cancellation request.</p>
-    #[doc(hidden)]
     pub cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
     _request_id: Option<String>,
 }

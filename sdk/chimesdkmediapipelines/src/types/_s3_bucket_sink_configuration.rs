@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSinkConfiguration {

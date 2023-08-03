@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageVersionOutput {
     /// <p>The account ID of the version's owner.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The version's ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the package.</p>
-    #[doc(hidden)]
     pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version's name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The version's version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The version's patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether the version is the latest available.</p>
-    #[doc(hidden)]
     pub is_latest_patch: bool,
     /// <p>The version's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>The version's status description.</p>
-    #[doc(hidden)]
     pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>The version's registered time.</p>
-    #[doc(hidden)]
     pub registered_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNotebookExecutionInput {
     /// <p>The unique identifier of the Amazon EMR Notebook to use for notebook execution.</p>
-    #[doc(hidden)]
     pub editor_id: ::std::option::Option<::std::string::String>,
     /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
     /// <p>An optional name for the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_name: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
-    #[doc(hidden)]
     pub notebook_params: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-    #[doc(hidden)]
     pub execution_engine: ::std::option::Option<crate::types::ExecutionEngineConfig>,
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the notebook execution.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_instance_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon S3 location for the notebook execution input.</p>
-    #[doc(hidden)]
     pub notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationFromInput>,
     /// <p>The Amazon S3 location for the notebook execution output.</p>
-    #[doc(hidden)]
     pub output_notebook_s3_location: ::std::option::Option<crate::types::OutputNotebookS3LocationFromInput>,
     /// <p>The output format for the notebook execution.</p>
-    #[doc(hidden)]
     pub output_notebook_format: ::std::option::Option<crate::types::OutputNotebookFormat>,
     /// <p>The environment variables associated with the notebook execution.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartNotebookExecutionInput {

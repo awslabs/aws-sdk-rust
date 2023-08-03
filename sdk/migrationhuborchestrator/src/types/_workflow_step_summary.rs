@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepSummary {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
     pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The owner of the step.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StepStatus>,
     /// <p>The status message of the migration workflow.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The number of servers that have been migrated.</p>
-    #[doc(hidden)]
     pub no_of_srv_completed: ::std::option::Option<i32>,
     /// <p>The number of servers that have failed to migrate.</p>
-    #[doc(hidden)]
     pub no_of_srv_failed: ::std::option::Option<i32>,
     /// <p>The total number of servers that have been migrated.</p>
-    #[doc(hidden)]
     pub total_no_of_srv: ::std::option::Option<i32>,
     /// <p>The description of the step.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The location of the script.</p>
-    #[doc(hidden)]
     pub script_location: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowStepSummary {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
 }
 impl DataLakeConfiguration {

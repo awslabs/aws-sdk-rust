@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    #[doc(hidden)]
     pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

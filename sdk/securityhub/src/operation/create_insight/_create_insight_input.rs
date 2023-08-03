@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInsightInput {
     /// <p>The name of the custom insight to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    #[doc(hidden)]
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
 }
 impl CreateInsightInput {

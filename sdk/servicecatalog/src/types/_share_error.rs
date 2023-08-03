@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareError {
     /// <p>List of accounts impacted by the error.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Error type that happened when processing the operation.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
 }
 impl ShareError {

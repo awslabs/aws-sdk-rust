@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceBotsOutput {
     /// <p>The ARN of the AppInstance.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub app_instance_bots: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

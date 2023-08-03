@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalNodeGroup {
     /// <p>The name of the global node group</p>
-    #[doc(hidden)]
     pub global_node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The keyspace for this node group</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
 }
 impl GlobalNodeGroup {

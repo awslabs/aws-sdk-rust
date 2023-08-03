@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider name.</p>
-    #[doc(hidden)]
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider type.</p>
-    #[doc(hidden)]
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
@@ -54,7 +51,6 @@ pub struct IdentityProvider {
     /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub identity_provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IdentityProvider {

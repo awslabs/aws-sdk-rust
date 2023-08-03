@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressUpdate {
     /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
-    #[doc(hidden)]
     pub ip_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The new IPv4 address.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p> The new IPv6 address. </p>
-    #[doc(hidden)]
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressUpdate {

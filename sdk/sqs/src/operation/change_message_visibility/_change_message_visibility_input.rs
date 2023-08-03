@@ -5,13 +5,10 @@
 pub struct ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
-    #[doc(hidden)]
     pub visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityInput {

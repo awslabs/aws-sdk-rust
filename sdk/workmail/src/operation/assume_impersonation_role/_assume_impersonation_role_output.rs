@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssumeImpersonationRoleOutput {
     /// <p>The authentication token for the impersonation role.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token's validity, in seconds.</p>
-    #[doc(hidden)]
     pub expires_in: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

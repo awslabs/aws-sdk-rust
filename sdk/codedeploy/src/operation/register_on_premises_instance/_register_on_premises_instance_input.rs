@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to register.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    #[doc(hidden)]
     pub iam_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterOnPremisesInstanceInput {

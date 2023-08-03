@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesOutput {
     /// <p>A list of all shared directories in your account.</p>
-    #[doc(hidden)]
     pub shared_directories: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

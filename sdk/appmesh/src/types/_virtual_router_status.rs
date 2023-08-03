@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
 }
 impl VirtualRouterStatus {

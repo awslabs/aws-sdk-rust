@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be deleted.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApiKeyInput {

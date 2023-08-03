@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub traffic_mirror_session: ::std::option::Option<crate::types::TrafficMirrorSession>,
     _request_id: Option<String>,
 }

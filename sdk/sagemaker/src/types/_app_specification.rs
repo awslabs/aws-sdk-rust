@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSpecification {
     /// <p>The container image to be run by the processing job.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The entrypoint for a container used to run a processing job.</p>
-    #[doc(hidden)]
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments for a container used to run a processing job.</p>
-    #[doc(hidden)]
     pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AppSpecification {

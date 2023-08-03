@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigInput {
     /// <p>The ARN of the client.</p>
-    #[doc(hidden)]
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client version.</p>
-    #[doc(hidden)]
     pub client_version: ::std::option::Option<crate::types::ClientVersion>,
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    #[doc(hidden)]
     pub hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetConfigInput {

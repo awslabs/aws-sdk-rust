@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that the gateway is joined to.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
     /// <ul>
@@ -19,11 +17,9 @@ pub struct DescribeSmbSettingsOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
     /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub smb_guest_password_set: ::std::option::Option<bool>,
     /// <p>The type of security strategy that was specified for file gateway.</p>
     /// <ul>
@@ -31,13 +27,10 @@ pub struct DescribeSmbSettingsOutput {
     /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
     /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub smb_security_strategy: ::std::option::Option<crate::types::SmbSecurityStrategy>,
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
-    #[doc(hidden)]
     pub file_shares_visible: ::std::option::Option<bool>,
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
-    #[doc(hidden)]
     pub smb_local_groups: ::std::option::Option<crate::types::SmbLocalGroups>,
     _request_id: Option<String>,
 }

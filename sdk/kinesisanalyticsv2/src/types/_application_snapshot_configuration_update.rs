@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
-    #[doc(hidden)]
     pub snapshots_enabled_update: ::std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfigurationUpdate {

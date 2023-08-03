@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetAction {
     /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
-    #[doc(hidden)]
     pub query_action: ::std::option::Option<crate::types::SqlQueryDatasetAction>,
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
-    #[doc(hidden)]
     pub container_action: ::std::option::Option<crate::types::ContainerDatasetAction>,
 }
 impl DatasetAction {

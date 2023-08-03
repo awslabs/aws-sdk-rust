@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub invert: ::std::option::Option<bool>,
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::HeaderMatchMethod>,
 }
 impl HttpRouteHeader {

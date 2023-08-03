@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Account {
     /// <p>The AWS account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub account_type: ::std::option::Option<crate::types::AccountType>,
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The default license for the Amazon Chime account.</p>
-    #[doc(hidden)]
     pub default_license: ::std::option::Option<crate::types::License>,
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    #[doc(hidden)]
     pub supported_licenses: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
     /// <p>The status of the account.</p>
-    #[doc(hidden)]
     pub account_status: ::std::option::Option<crate::types::AccountStatus>,
     /// <p>The sign-in delegate groups associated with the account.</p>
-    #[doc(hidden)]
     pub signin_delegate_groups: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl Account {

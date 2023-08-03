@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppBlockBuildersOutput {
     /// <p>The list that describes one or more app block builders.</p>
-    #[doc(hidden)]
     pub app_block_builders: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilder>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
-    #[doc(hidden)]
     pub egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,
     /// The ID of the channel to log subscription.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Configure ingress access logging.
-    #[doc(hidden)]
     pub ingress_access_logs: ::std::option::Option<crate::types::IngressAccessLogs>,
 }
 impl ConfigureLogsInput {

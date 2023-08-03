@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMlTransformInput {
     /// <p>A unique identifier that was generated when the transform was created.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique name that you gave the transform when you created it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the transform. The default is an empty string.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::TransformParameters>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -31,16 +24,12 @@ pub struct UpdateMlTransformInput {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-    #[doc(hidden)]
     pub max_retries: ::std::option::Option<i32>,
 }
 impl UpdateMlTransformInput {

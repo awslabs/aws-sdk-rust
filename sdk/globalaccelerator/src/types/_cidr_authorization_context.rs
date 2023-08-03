@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
 }
 impl CidrAuthorizationContext {

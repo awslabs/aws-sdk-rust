@@ -13,25 +13,18 @@ pub struct JourneyRunExecutionActivityMetricsResponse {
     /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub activity_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the activity that the metric applies to.</p>
-    #[doc(hidden)]
     pub journey_activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    #[doc(hidden)]
     pub journey_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity for this journey run and updated the data for the metric.</p>
-    #[doc(hidden)]
     pub last_evaluated_time: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier for the journey run that the metric applies to.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl JourneyRunExecutionActivityMetricsResponse {

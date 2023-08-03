@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupVersionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ARN of the connector definition version for this group.
-    #[doc(hidden)]
     pub connector_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the core definition version for this group.
-    #[doc(hidden)]
     pub core_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the device definition version for this group.
-    #[doc(hidden)]
     pub device_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the function definition version for this group.
-    #[doc(hidden)]
     pub function_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the logger definition version for this group.
-    #[doc(hidden)]
     pub logger_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the resource definition version for this group.
-    #[doc(hidden)]
     pub resource_definition_version_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the subscription definition version for this group.
-    #[doc(hidden)]
     pub subscription_definition_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupVersionInput {

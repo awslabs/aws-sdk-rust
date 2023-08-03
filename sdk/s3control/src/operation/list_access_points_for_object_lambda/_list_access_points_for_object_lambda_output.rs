@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
-    #[doc(hidden)]
     pub object_lambda_access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportFilter {
     /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Supported condition: <code>EQUALS</code> </p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
 }
 impl ExportFilter {

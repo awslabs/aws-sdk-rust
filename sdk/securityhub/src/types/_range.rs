@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    #[doc(hidden)]
     pub start: i64,
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    #[doc(hidden)]
     pub end: i64,
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
-    #[doc(hidden)]
     pub start_column: i64,
 }
 impl Range {

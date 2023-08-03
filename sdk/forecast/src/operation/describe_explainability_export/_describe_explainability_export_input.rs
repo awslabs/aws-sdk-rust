@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExplainabilityExportInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    #[doc(hidden)]
     pub explainability_export_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExplainabilityExportInput {

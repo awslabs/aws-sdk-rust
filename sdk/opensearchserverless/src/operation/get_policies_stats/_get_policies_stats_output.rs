@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPoliciesStatsOutput {
     /// <p>Information about the data access policies in your account.</p>
-    #[doc(hidden)]
     pub access_policy_stats: ::std::option::Option<crate::types::AccessPolicyStats>,
     /// <p>Information about the security policies in your account.</p>
-    #[doc(hidden)]
     pub security_policy_stats: ::std::option::Option<crate::types::SecurityPolicyStats>,
     /// <p>Information about the security configurations in your account.</p>
-    #[doc(hidden)]
     pub security_config_stats: ::std::option::Option<crate::types::SecurityConfigStats>,
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
-    #[doc(hidden)]
     pub total_policy_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

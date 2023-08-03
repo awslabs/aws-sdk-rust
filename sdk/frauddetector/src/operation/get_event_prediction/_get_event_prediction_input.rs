@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEventPredictionInput {
     /// <p>The detector ID.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID.</p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID used to identify the event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    #[doc(hidden)]
     pub event_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
     /// <p>You must provide at least one eventVariable</p>
@@ -29,10 +23,8 @@ pub struct GetEventPredictionInput {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p> <b>For imported SageMaker models:</b> </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    #[doc(hidden)]
     pub external_model_endpoint_data_blobs:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>>,
 }

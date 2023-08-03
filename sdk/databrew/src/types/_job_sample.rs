@@ -9,11 +9,9 @@ pub struct JobSample {
     /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
     /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::SampleMode>,
     /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
 }
 impl JobSample {

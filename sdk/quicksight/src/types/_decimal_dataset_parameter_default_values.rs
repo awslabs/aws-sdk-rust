@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given decimal parameter.</p>
-    #[doc(hidden)]
     pub static_values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DecimalDatasetParameterDefaultValues {

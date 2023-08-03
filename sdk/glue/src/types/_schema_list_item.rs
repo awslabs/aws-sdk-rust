@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaListItem {
     /// <p>the name of the registry where the schema resides.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description for the schema.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the schema.</p>
-    #[doc(hidden)]
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The date and time that a schema was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a schema was updated.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaListItem {

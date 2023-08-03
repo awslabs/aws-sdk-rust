@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabricksParameters {
     /// <p>The host name of the Databricks data source.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port for the Databricks data source.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The HTTP path of the Databricks data source.</p>
-    #[doc(hidden)]
     pub sql_endpoint_path: ::std::option::Option<::std::string::String>,
 }
 impl DatabricksParameters {

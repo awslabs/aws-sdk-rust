@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the scaling policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of scaling policy.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
-    #[doc(hidden)]
     pub target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
 }
 impl ScalingPolicy {

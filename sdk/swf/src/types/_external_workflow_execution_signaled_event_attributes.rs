@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionSignaledEventAttributes {
     /// <p>The external workflow execution that the signal was delivered to.</p>
-    #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ExternalWorkflowExecutionSignaledEventAttributes {

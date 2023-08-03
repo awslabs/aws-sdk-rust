@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookInput {
     /// <p>The ARN of the contact to disassociate from an address book.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    #[doc(hidden)]
     pub address_book_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateContactFromAddressBookInput {

@@ -5,66 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The allocated storage size for the DB instance specified in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The master credentials for the DB instance.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The port for the DB instance.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The number of days for which automated backups are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The license model for the DB instance.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS value for the DB instance.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The database identifier for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The storage type of the DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the CA certificate for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The DB subnet group for the DB instance.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
-    #[doc(hidden)]
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    #[doc(hidden)]
     pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    #[doc(hidden)]
     pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The storage throughput of the DB instance.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The database engine of the DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {

@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// CDN Authorization credentials
-    #[doc(hidden)]
     pub authorization: ::std::option::Option<crate::types::Authorization>,
     /// The ID of the Channel the OriginEndpoint is associated with.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
-    #[doc(hidden)]
     pub cmaf_package: ::std::option::Option<crate::types::CmafPackage>,
     /// The date and time the OriginEndpoint was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    #[doc(hidden)]
     pub dash_package: ::std::option::Option<crate::types::DashPackage>,
     /// A short text description of the OriginEndpoint.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    #[doc(hidden)]
     pub hls_package: ::std::option::Option<crate::types::HlsPackage>,
     /// The ID of the OriginEndpoint.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A short string appended to the end of the OriginEndpoint URL.
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    #[doc(hidden)]
     pub mss_package: ::std::option::Option<crate::types::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    #[doc(hidden)]
     pub origination: ::std::option::Option<crate::types::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
-    #[doc(hidden)]
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
-    #[doc(hidden)]
     pub time_delay_seconds: ::std::option::Option<i32>,
     /// The URL of the packaged OriginEndpoint for consumption.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    #[doc(hidden)]
     pub whitelist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

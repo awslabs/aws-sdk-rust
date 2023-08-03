@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl GetGrantInput {

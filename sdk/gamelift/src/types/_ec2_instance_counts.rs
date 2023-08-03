@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceCounts {
     /// <p>Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. </p>
-    #[doc(hidden)]
     pub desired: ::std::option::Option<i32>,
     /// <p>The minimum instance count value allowed.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<i32>,
     /// <p>The maximum instance count value allowed.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<i32>,
     /// <p>Number of instances that are starting but not yet active.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<i32>,
     /// <p>Actual number of instances that are ready to host game sessions.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<i32>,
     /// <p>Number of active instances that are not currently hosting a game session.</p>
-    #[doc(hidden)]
     pub idle: ::std::option::Option<i32>,
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
-    #[doc(hidden)]
     pub terminating: ::std::option::Option<i32>,
 }
 impl Ec2InstanceCounts {

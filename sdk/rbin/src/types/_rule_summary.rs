@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The retention rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct RuleSummary {
     /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lock_state: ::std::option::Option<crate::types::LockState>,
 }
 impl RuleSummary {

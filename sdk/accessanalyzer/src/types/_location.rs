@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
     /// <p>A span in a policy.</p>
-    #[doc(hidden)]
     pub span: ::std::option::Option<crate::types::Span>,
 }
 impl Location {

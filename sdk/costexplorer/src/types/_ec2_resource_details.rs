@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2ResourceDetails {
     /// <p>The hourly public On-Demand rate for the instance type.</p>
-    #[doc(hidden)]
     pub hourly_on_demand_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services instance.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the instance.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The SKU of the product.</p>
-    #[doc(hidden)]
     pub sku: ::std::option::Option<::std::string::String>,
     /// <p>The memory capacity of the Amazon Web Services instance.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The network performance capacity of the Amazon Web Services instance.</p>
-    #[doc(hidden)]
     pub network_performance: ::std::option::Option<::std::string::String>,
     /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<::std::string::String>,
     /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
-    #[doc(hidden)]
     pub vcpu: ::std::option::Option<::std::string::String>,
 }
 impl Ec2ResourceDetails {

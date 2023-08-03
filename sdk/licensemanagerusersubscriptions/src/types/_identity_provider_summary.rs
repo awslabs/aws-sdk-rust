@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>The status of an identity provider.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The failure message associated with an identity provider.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummary {

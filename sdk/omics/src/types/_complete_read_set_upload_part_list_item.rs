@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteReadSetUploadPartListItem {
     /// <p> A number identifying the part in a read set upload. </p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p> The source file of the part being uploaded. </p>
-    #[doc(hidden)]
     pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
 }
 impl CompleteReadSetUploadPartListItem {

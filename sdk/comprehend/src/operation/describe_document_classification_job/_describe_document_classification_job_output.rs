@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    #[doc(hidden)]
     pub document_classification_job_properties: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
     _request_id: Option<String>,
 }

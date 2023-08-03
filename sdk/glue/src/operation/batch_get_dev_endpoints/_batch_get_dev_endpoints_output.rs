@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    #[doc(hidden)]
     pub dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    #[doc(hidden)]
     pub dev_endpoints_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

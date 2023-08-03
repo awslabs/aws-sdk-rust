@@ -6,17 +6,13 @@
 pub struct CreateThingInput {
     /// <p>The name of the thing to create.</p>
     /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type associated with the new thing.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
-    #[doc(hidden)]
     pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
     /// <p>The name of the billing group the thing will be added to.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateThingInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostLaunchActionsStatus {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
-    #[doc(hidden)]
     pub ssm_agent_discovery_datetime: ::std::option::Option<::std::string::String>,
     /// <p>List of Post Launch Action status.</p>
-    #[doc(hidden)]
     pub post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>,
 }
 impl PostLaunchActionsStatus {

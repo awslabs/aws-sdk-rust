@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-    #[doc(hidden)]
     pub automation_execution_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

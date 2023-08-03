@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackInstanceSummary {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
-    #[doc(hidden)]
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack instance.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
@@ -26,16 +22,12 @@ pub struct StackInstanceSummary {
     /// </ul> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StackInstanceStatus>,
     /// <p>The explanation for the specific status code assigned to this stack instance.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The detailed status of the stack instance.</p>
-    #[doc(hidden)]
     pub stack_instance_status: ::std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    #[doc(hidden)]
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
@@ -44,13 +36,10 @@ pub struct StackInstanceSummary {
     /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
-    #[doc(hidden)]
     pub last_drift_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
-    #[doc(hidden)]
     pub last_operation_id: ::std::option::Option<::std::string::String>,
 }
 impl StackInstanceSummary {

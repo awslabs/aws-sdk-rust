@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfigType {
     /// <p>A pre-registration Lambda trigger.</p>
-    #[doc(hidden)]
     pub pre_sign_up: ::std::option::Option<::std::string::String>,
     /// <p>A custom Message Lambda trigger.</p>
-    #[doc(hidden)]
     pub custom_message: ::std::option::Option<::std::string::String>,
     /// <p>A post-confirmation Lambda trigger.</p>
-    #[doc(hidden)]
     pub post_confirmation: ::std::option::Option<::std::string::String>,
     /// <p>A pre-authentication Lambda trigger.</p>
-    #[doc(hidden)]
     pub pre_authentication: ::std::option::Option<::std::string::String>,
     /// <p>A post-authentication Lambda trigger.</p>
-    #[doc(hidden)]
     pub post_authentication: ::std::option::Option<::std::string::String>,
     /// <p>Defines the authentication challenge.</p>
-    #[doc(hidden)]
     pub define_auth_challenge: ::std::option::Option<::std::string::String>,
     /// <p>Creates an authentication challenge.</p>
-    #[doc(hidden)]
     pub create_auth_challenge: ::std::option::Option<::std::string::String>,
     /// <p>Verifies the authentication challenge response.</p>
-    #[doc(hidden)]
     pub verify_auth_challenge_response: ::std::option::Option<::std::string::String>,
     /// <p>A Lambda trigger that is invoked before token generation.</p>
-    #[doc(hidden)]
     pub pre_token_generation: ::std::option::Option<::std::string::String>,
     /// <p>The user migration Lambda config type.</p>
-    #[doc(hidden)]
     pub user_migration: ::std::option::Option<::std::string::String>,
     /// <p>A custom SMS sender Lambda trigger.</p>
-    #[doc(hidden)]
     pub custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     /// <p>A custom email sender Lambda trigger.</p>
-    #[doc(hidden)]
     pub custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConfigType {

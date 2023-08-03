@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsVolumeScanDetails {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
-    #[doc(hidden)]
     pub scan_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the start date and time of the malware scan.</p>
-    #[doc(hidden)]
     pub scan_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the completion date and time of the malware scan.</p>
-    #[doc(hidden)]
     pub scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
-    #[doc(hidden)]
     pub trigger_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains a complete view providing malware scan result details.</p>
-    #[doc(hidden)]
     pub scan_detections: ::std::option::Option<crate::types::ScanDetections>,
     /// <p>Specifies the scan type that invoked the malware scan.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl EbsVolumeScanDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
-    #[doc(hidden)]
     pub record_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl JsonOutput {

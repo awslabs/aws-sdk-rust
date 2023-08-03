@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
-    #[doc(hidden)]
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     _request_id: Option<String>,
 }

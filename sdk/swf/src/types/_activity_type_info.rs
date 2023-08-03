@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
-    #[doc(hidden)]
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The current status of the activity type.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
-    #[doc(hidden)]
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActivityTypeInfo {

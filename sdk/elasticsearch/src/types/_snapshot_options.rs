@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotOptions {
     /// <p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>
-    #[doc(hidden)]
     pub automated_snapshot_start_hour: ::std::option::Option<i32>,
 }
 impl SnapshotOptions {

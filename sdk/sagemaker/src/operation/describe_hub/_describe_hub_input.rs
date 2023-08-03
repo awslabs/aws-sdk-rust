@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHubInput {
     /// <p>The name of the hub to describe.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHubInput {

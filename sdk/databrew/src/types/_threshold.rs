@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Threshold {
     /// <p>The value of a threshold.</p>
-    #[doc(hidden)]
     pub value: f64,
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThresholdType>,
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::ThresholdUnit>,
 }
 impl Threshold {

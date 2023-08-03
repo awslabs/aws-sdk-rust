@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptions {
     /// <p>Specifies whether EBS-based storage is enabled.</p>
-    #[doc(hidden)]
     pub ebs_enabled: ::std::option::Option<bool>,
     /// <p> Specifies the volume type for EBS-based storage.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p> Integer to specify the size of an EBS volume.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl EbsOptions {

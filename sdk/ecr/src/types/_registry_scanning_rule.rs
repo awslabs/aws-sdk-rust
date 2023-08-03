@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
-    #[doc(hidden)]
     pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
-    #[doc(hidden)]
     pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RegistryScanningRule {

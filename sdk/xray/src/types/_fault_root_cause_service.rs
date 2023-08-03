@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaultRootCauseService {
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of associated service names.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type associated to the service.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID associated to the service.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
-    #[doc(hidden)]
     pub entity_path: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
-    #[doc(hidden)]
     pub inferred: ::std::option::Option<bool>,
 }
 impl FaultRootCauseService {

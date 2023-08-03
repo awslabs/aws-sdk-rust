@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>,
 }
 impl DescribeServicesInput {

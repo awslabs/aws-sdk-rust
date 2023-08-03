@@ -16,7 +16,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawMessageContent {
     /// <p>The S3 reference of an email message.</p>
-    #[doc(hidden)]
     pub s3_reference: ::std::option::Option<crate::types::S3Reference>,
 }
 impl RawMessageContent {

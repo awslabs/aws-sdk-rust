@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationInput {
     /// <p>The violation ID.</p>
-    #[doc(hidden)]
     pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p>The verification state of the violation.</p>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    #[doc(hidden)]
     pub verification_state_description: ::std::option::Option<::std::string::String>,
 }
 impl PutVerificationStateOnViolationInput {

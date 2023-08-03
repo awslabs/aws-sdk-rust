@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
-    #[doc(hidden)]
     pub log_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

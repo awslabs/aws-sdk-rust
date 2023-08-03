@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The name of the type of capacity, such as memory.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measure for the type of capacity.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The total capacity on the device.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i64>,
     /// <p>The amount of capacity used on the device.</p>
-    #[doc(hidden)]
     pub used: ::std::option::Option<i64>,
     /// <p>The amount of capacity available for use on the device.</p>
-    #[doc(hidden)]
     pub available: ::std::option::Option<i64>,
 }
 impl Capacity {

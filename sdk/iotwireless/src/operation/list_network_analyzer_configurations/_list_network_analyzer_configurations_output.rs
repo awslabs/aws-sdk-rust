@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of network analyzer configurations.</p>
-    #[doc(hidden)]
     pub network_analyzer_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,
     _request_id: Option<String>,
 }

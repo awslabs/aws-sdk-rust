@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityLabel {
     /// <p>The name of the label.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::PiiEntityType>,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl EntityLabel {

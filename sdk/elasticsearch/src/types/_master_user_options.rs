@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MasterUserOptions {
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    #[doc(hidden)]
     pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    #[doc(hidden)]
     pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserOptions {

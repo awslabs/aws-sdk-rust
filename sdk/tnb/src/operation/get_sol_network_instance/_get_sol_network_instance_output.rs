@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolNetworkInstanceOutput {
     /// <p>Network instance ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network instance ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Network instance name.</p>
-    #[doc(hidden)]
     pub ns_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Network instance description.</p>
-    #[doc(hidden)]
     pub ns_instance_description: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor ID.</p>
-    #[doc(hidden)]
     pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor info ID.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>Network instance state.</p>
-    #[doc(hidden)]
     pub ns_state: ::std::option::Option<crate::types::NsState>,
     /// <p>Lifecycle management operation details on the network instance.</p>
     /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
-    #[doc(hidden)]
     pub lcm_op_info: ::std::option::Option<crate::types::LcmOperationInfo>,
     /// <p>The metadata of a network instance.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkInstanceMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

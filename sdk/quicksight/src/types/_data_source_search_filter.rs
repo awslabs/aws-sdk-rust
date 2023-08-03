@@ -7,7 +7,6 @@ pub struct DataSourceSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose data sources you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the data sources you are searching for. For example, <code>"Name":"DATASOURCE_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASOURCE_NAME</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -17,10 +16,8 @@ pub struct DataSourceSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DataSourceFilterAttribute>,
     /// <p>The value of the named item, for example <code>DIRECT_QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSearchFilter {

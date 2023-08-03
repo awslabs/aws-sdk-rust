@@ -5,7 +5,6 @@
 pub struct DeleteGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
-    #[doc(hidden)]
     pub global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
 }

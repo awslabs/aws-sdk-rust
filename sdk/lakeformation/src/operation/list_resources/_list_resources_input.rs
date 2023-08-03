@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    #[doc(hidden)]
     pub filter_condition_list: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     /// <p>The maximum number of resource results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResourcesInput {

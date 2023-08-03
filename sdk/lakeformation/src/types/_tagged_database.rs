@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaggedDatabase {
     /// <p>A database that has LF-tags attached to it.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::DatabaseResource>,
     /// <p>A list of LF-tags attached to the database.</p>
-    #[doc(hidden)]
     pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
 }
 impl TaggedDatabase {

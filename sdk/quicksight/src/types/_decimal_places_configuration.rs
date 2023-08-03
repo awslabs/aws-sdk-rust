@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalPlacesConfiguration {
     /// <p>The values of the decimal places.</p>
-    #[doc(hidden)]
     pub decimal_places: ::std::option::Option<i64>,
 }
 impl DecimalPlacesConfiguration {

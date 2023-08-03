@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotLocaleOutput {
     /// <p>The identifier of the bot associated with the locale.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the locale.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the described locale.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the locale.</p>
-    #[doc(hidden)]
     pub locale_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the locale.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
-    #[doc(hidden)]
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>The number of intents defined for the locale.</p>
-    #[doc(hidden)]
     pub intents_count: ::std::option::Option<i32>,
     /// <p>The number of slot types defined for the locale.</p>
-    #[doc(hidden)]
     pub slot_types_count: ::std::option::Option<i32>,
     /// <p>The status of the bot. If the status is <code>Failed</code>, the reasons for the failure are listed in the <code>failureReasons</code> field.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that the locale was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the locale was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the locale was last submitted for building.</p>
-    #[doc(hidden)]
     pub last_build_submitted_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    #[doc(hidden)]
     pub bot_locale_history_events: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    #[doc(hidden)]
     pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -7,27 +7,20 @@ pub struct EcsServiceRecommendation {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The configuration of the current Amazon ECS service. </p>
-    #[doc(hidden)]
     pub current_service_configuration: ::std::option::Option<crate::types::ServiceConfiguration>,
     /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
-    #[doc(hidden)]
     pub lookback_period_in_days: f64,
     /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::EcsServiceLaunchType>,
     /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
-    #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The finding classification of an Amazon ECS service. </p>
     /// <p>Findings for Amazon ECS services include:</p>
@@ -36,7 +29,6 @@ pub struct EcsServiceRecommendation {
     /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>,
     /// <p> The reason for the finding classification of an Amazon ECS service. </p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
@@ -46,16 +38,12 @@ pub struct EcsServiceRecommendation {
     /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
     /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub service_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
-    #[doc(hidden)]
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendation {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProtectedQueryInput {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a protected query instance.</p>
-    #[doc(hidden)]
     pub protected_query_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetProtectedQueryInput {

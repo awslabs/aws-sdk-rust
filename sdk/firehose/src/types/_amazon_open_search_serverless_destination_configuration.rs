@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    #[doc(hidden)]
     pub collection_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.</p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>Describes a data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl AmazonOpenSearchServerlessDestinationConfiguration {

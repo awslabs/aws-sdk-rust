@@ -5,46 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tape {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The barcode that identifies a specific virtual tape.</p>
-    #[doc(hidden)]
     pub tape_barcode: ::std::option::Option<::std::string::String>,
     /// <p>The date the virtual tape was created.</p>
-    #[doc(hidden)]
     pub tape_created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
-    #[doc(hidden)]
     pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The current state of the virtual tape.</p>
-    #[doc(hidden)]
     pub tape_status: ::std::option::Option<::std::string::String>,
     /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
-    #[doc(hidden)]
     pub vtl_device: ::std::option::Option<::std::string::String>,
     /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
     /// <p>Range: 0 (not started) to 100 (complete).</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<f64>,
     /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
-    #[doc(hidden)]
     pub tape_used_in_bytes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub worm: bool,
     /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-    #[doc(hidden)]
     pub retention_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the tape enters a custom tape pool.</p>
-    #[doc(hidden)]
     pub pool_entry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Tape {

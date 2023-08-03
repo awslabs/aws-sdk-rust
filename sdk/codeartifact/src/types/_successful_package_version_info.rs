@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p> The status of a package version. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl SuccessfulPackageVersionInfo {

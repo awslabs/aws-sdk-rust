@@ -7,10 +7,8 @@
 pub struct UpdateSolNetworkModify {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    #[doc(hidden)]
     pub vnf_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
-    #[doc(hidden)]
     pub vnf_configurable_properties: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UpdateSolNetworkModify {

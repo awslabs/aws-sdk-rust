@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    #[doc(hidden)]
     pub target_address: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::TargetStatus>,
 }
 impl TargetSummary {

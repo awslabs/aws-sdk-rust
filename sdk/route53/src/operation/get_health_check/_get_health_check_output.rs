@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
 }

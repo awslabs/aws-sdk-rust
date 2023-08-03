@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartConfiguration {
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::GaugeChartFieldWells>,
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub gauge_chart_options: ::std::option::Option<crate::types::GaugeChartOptions>,
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub tooltip_options: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl GaugeChartConfiguration {

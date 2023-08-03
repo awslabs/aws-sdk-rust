@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
-    #[doc(hidden)]
     pub artifact_id: ::std::option::Option<::std::string::String>,
     /// <p> The presigned URL for the artifact. </p>
-    #[doc(hidden)]
     pub artifact_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

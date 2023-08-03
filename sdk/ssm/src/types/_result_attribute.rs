@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
 }
 impl ResultAttribute {

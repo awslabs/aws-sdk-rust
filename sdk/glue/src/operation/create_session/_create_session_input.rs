@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSessionInput {
     /// <p>The ID of the session request. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the session. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Role ARN </p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::SessionCommand>,
     /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
-    #[doc(hidden)]
     pub idle_timeout: ::std::option::Option<i32>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    #[doc(hidden)]
     pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of connections to use for the session. </p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<f64>,
     /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, or G.8X for Spark jobs. Accepts the value Z.2X for Ray notebooks.</p>
     /// <ul>
@@ -42,19 +32,14 @@ pub struct CreateSessionInput {
     /// <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the <code>G.4X</code> worker type.</p> </li>
     /// <li> <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The origin of the request. </p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl CreateSessionInput {

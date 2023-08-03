@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClientVpnEndpointOutput {
     /// <p>The current state of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
     _request_id: Option<String>,
 }

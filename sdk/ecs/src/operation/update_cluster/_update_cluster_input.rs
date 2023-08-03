@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterInput {
     /// <p>The name of the cluster to modify the settings for.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The cluster settings for your cluster.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
     /// <p>The execute command configuration for the cluster.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub service_connect_defaults: ::std::option::Option<crate::types::ClusterServiceConnectDefaultsRequest>,
 }
 impl UpdateClusterInput {

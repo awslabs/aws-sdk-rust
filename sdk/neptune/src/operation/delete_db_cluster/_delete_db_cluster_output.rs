@@ -5,7 +5,6 @@
 pub struct DeleteDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
-    #[doc(hidden)]
     pub db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
 }

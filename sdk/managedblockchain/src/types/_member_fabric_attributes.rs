@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
-    #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    #[doc(hidden)]
     pub ca_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl MemberFabricAttributes {

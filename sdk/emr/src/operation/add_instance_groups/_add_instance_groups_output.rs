@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddInstanceGroupsOutput {
     /// <p>The job flow ID in which the instance groups are added.</p>
-    #[doc(hidden)]
     pub job_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    #[doc(hidden)]
     pub instance_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

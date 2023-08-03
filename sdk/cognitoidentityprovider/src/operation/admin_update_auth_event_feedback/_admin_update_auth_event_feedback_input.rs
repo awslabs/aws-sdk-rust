@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUpdateAuthEventFeedbackInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user pool username.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The authentication event ID.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication event feedback value.</p>
-    #[doc(hidden)]
     pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
 }
 impl AdminUpdateAuthEventFeedbackInput {

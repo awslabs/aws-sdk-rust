@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of replication.</p>
-    #[doc(hidden)]
     pub destination_status: ::std::option::Option<crate::types::DestinationStatus>,
     /// <p>The human-readable string that corresponds to the replica status.</p>
-    #[doc(hidden)]
     pub destination_status_description: ::std::option::Option<::std::string::String>,
 }
 impl KinesisDataStreamDestination {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfile {
     /// <p>The ID for a field-level encryption profile configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The last time the field-level encryption profile was updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
-    #[doc(hidden)]
     pub field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
 }
 impl FieldLevelEncryptionProfile {

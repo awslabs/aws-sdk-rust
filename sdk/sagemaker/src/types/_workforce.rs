@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Workforce {
     /// <p>The name of the private workforce.</p>
-    #[doc(hidden)]
     pub workforce_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
-    #[doc(hidden)]
     pub workforce_arn: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
-    #[doc(hidden)]
     pub source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,
     /// <p>The subdomain for your OIDC Identity Provider.</p>
-    #[doc(hidden)]
     pub sub_domain: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
-    #[doc(hidden)]
     pub cognito_config: ::std::option::Option<crate::types::CognitoConfig>,
     /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
-    #[doc(hidden)]
     pub oidc_config: ::std::option::Option<crate::types::OidcConfigForResponse>,
     /// <p>The date that the workforce is created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration of a VPC workforce.</p>
-    #[doc(hidden)]
     pub workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigResponse>,
     /// <p>The status of your workforce.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkforceStatus>,
     /// <p>The reason your workforce failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl Workforce {

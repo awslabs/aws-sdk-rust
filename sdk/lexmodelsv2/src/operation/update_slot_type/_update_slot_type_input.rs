@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSlotTypeInput {
     /// <p>The unique identifier of the slot type to update.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description of the slot type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
-    #[doc(hidden)]
     pub slot_type_values: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    #[doc(hidden)]
     pub value_selection_setting: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
     /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
-    #[doc(hidden)]
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot that contains the slot type.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    #[doc(hidden)]
     pub external_source_setting: ::std::option::Option<crate::types::ExternalSourceSetting>,
     /// <p>Specifications for a composite slot type.</p>
-    #[doc(hidden)]
     pub composite_slot_type_setting: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
 }
 impl UpdateSlotTypeInput {

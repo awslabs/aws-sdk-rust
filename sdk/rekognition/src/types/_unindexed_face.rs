@@ -13,10 +13,8 @@ pub struct UnindexedFace {
     /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-    #[doc(hidden)]
     pub face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl UnindexedFace {

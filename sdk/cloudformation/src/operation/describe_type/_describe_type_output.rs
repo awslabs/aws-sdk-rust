@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The kind of extension.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub is_default_version: ::std::option::Option<bool>,
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
@@ -30,18 +25,14 @@ pub struct DescribeTypeOutput {
     /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
     /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub type_tests_status: ::std::option::Option<crate::types::TypeTestsStatus>,
     /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-    #[doc(hidden)]
     pub type_tests_status_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the extension.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The schema that defines the extension.</p>
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
@@ -55,7 +46,6 @@ pub struct DescribeTypeOutput {
     /// <li> <p>delete</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
@@ -64,17 +54,13 @@ pub struct DescribeTypeOutput {
     /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub deprecated_status: ::std::option::Option<crate::types::DeprecatedStatus>,
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    #[doc(hidden)]
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    #[doc(hidden)]
     pub required_activated_types: ::std::option::Option<::std::vec::Vec<crate::types::RequiredActivatedType>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
@@ -82,53 +68,40 @@ pub struct DescribeTypeOutput {
     /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
     /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The URL of the source code for the extension.</p>
-    #[doc(hidden)]
     pub source_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
-    #[doc(hidden)]
     pub documentation_url: ::std::option::Option<::std::string::String>,
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
     /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the specified private extension version was registered or activated in your account.</p>
-    #[doc(hidden)]
     pub time_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub configuration_schema: ::std::option::Option<::std::string::String>,
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub original_type_name: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
-    #[doc(hidden)]
     pub original_type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a public third-party extension.</p>
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub public_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub latest_public_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub is_activated: ::std::option::Option<bool>,
     /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub auto_update: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

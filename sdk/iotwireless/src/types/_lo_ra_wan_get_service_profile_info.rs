@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
-    #[doc(hidden)]
     pub ul_rate: ::std::option::Option<i32>,
     /// <p>The ULBucketSize value.</p>
-    #[doc(hidden)]
     pub ul_bucket_size: ::std::option::Option<i32>,
     /// <p>The ULRatePolicy value.</p>
-    #[doc(hidden)]
     pub ul_rate_policy: ::std::option::Option<::std::string::String>,
     /// <p>The DLRate value.</p>
-    #[doc(hidden)]
     pub dl_rate: ::std::option::Option<i32>,
     /// <p>The DLBucketSize value.</p>
-    #[doc(hidden)]
     pub dl_bucket_size: ::std::option::Option<i32>,
     /// <p>The DLRatePolicy value.</p>
-    #[doc(hidden)]
     pub dl_rate_policy: ::std::option::Option<::std::string::String>,
     /// <p>The AddGWMetaData value.</p>
-    #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DevStatusReqFreq value.</p>
-    #[doc(hidden)]
     pub dev_status_req_freq: ::std::option::Option<i32>,
     /// <p>The ReportDevStatusBattery value.</p>
-    #[doc(hidden)]
     pub report_dev_status_battery: bool,
     /// <p>The ReportDevStatusMargin value.</p>
-    #[doc(hidden)]
     pub report_dev_status_margin: bool,
     /// <p>The DRMin value.</p>
-    #[doc(hidden)]
     pub dr_min: i32,
     /// <p>The DRMax value.</p>
-    #[doc(hidden)]
     pub dr_max: i32,
     /// <p>The ChannelMask value.</p>
-    #[doc(hidden)]
     pub channel_mask: ::std::option::Option<::std::string::String>,
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
-    #[doc(hidden)]
     pub pr_allowed: bool,
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
-    #[doc(hidden)]
     pub hr_allowed: bool,
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
-    #[doc(hidden)]
     pub ra_allowed: bool,
     /// <p>The NwkGeoLoc value.</p>
-    #[doc(hidden)]
     pub nwk_geo_loc: bool,
     /// <p>The TargetPER value.</p>
-    #[doc(hidden)]
     pub target_per: i32,
     /// <p>The MinGwDiversity value.</p>
-    #[doc(hidden)]
     pub min_gw_diversity: ::std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfo {

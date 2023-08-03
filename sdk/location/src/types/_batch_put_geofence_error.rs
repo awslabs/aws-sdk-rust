@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGeofenceError {
     /// <p>The geofence associated with the error message.</p>
-    #[doc(hidden)]
     pub geofence_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains details associated to the batch error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchPutGeofenceError {

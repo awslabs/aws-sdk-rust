@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSchedule {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
-    #[doc(hidden)]
     pub day_of_the_week: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>,
     /// <p>The time when the Identity Resolution Job should run every week.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl JobSchedule {

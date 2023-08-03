@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
-    #[doc(hidden)]
     pub wireless_connection: ::std::option::Option<crate::types::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {

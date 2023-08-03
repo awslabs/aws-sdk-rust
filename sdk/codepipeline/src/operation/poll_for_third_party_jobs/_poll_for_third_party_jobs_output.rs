@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
 }

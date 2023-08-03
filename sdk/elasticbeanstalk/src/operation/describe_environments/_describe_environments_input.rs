@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    #[doc(hidden)]
     pub environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    #[doc(hidden)]
     pub environment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to include deleted environments:</p>
     /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
     /// <p> <code>false</code>: Do not include deleted environments.</p>
-    #[doc(hidden)]
     pub include_deleted: ::std::option::Option<bool>,
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
-    #[doc(hidden)]
     pub included_deleted_back_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEnvironmentsInput {

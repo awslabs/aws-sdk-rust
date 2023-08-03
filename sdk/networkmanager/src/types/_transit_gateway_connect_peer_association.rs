@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectPeerAssociation {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    #[doc(hidden)]
     pub transit_gateway_connect_peer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociationState>,
 }
 impl TransitGatewayConnectPeerAssociation {

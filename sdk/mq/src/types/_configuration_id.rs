@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the configuration.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i32>,
 }
 impl ConfigurationId {

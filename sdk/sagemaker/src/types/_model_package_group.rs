@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageGroup {
     /// <p>The name of the model group.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    #[doc(hidden)]
     pub model_package_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description for the model group.</p>
-    #[doc(hidden)]
     pub model_package_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The time that the model group was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
@@ -28,10 +23,8 @@ pub struct ModelPackageGroup {
     /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ModelPackageGroup {

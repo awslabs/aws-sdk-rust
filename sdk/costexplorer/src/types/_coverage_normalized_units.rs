@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageNormalizedUnits {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
-    #[doc(hidden)]
     pub on_demand_normalized_units: ::std::option::Option<::std::string::String>,
     /// <p>The number of normalized units that a reservation covers.</p>
-    #[doc(hidden)]
     pub reserved_normalized_units: ::std::option::Option<::std::string::String>,
     /// <p>The total number of normalized units that you used.</p>
-    #[doc(hidden)]
     pub total_running_normalized_units: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
-    #[doc(hidden)]
     pub coverage_normalized_units_percentage: ::std::option::Option<::std::string::String>,
 }
 impl CoverageNormalizedUnits {

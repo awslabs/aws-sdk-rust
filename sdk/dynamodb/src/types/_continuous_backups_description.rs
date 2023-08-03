@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousBackupsDescription {
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
-    #[doc(hidden)]
     pub continuous_backups_status: ::std::option::Option<crate::types::ContinuousBackupsStatus>,
     /// <p>The description of the point in time recovery settings applied to the table.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery_description: ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
 }
 impl ContinuousBackupsDescription {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct BucketServerSideEncryption {
     /// <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li>
     /// <li><p>NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl BucketServerSideEncryption {

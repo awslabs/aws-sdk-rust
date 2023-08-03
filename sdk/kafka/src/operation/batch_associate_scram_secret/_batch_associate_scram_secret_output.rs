@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of errors when associating secrets to cluster.</p>
-    #[doc(hidden)]
     pub unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }

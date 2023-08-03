@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }

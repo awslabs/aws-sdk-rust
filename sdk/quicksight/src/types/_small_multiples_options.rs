@@ -6,20 +6,15 @@
 pub struct SmallMultiplesOptions {
     /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
     /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
-    #[doc(hidden)]
     pub max_visible_rows: ::std::option::Option<i64>,
     /// <p>Sets the maximum number of visible columns to display in the grid of small multiples panels.</p>
     /// <p>The default is <code>Auto</code>, which automatically adjusts the columns in the grid to fit the overall layout and size of the given chart.</p>
-    #[doc(hidden)]
     pub max_visible_columns: ::std::option::Option<i64>,
     /// <p>Configures the display options for each small multiples panel.</p>
-    #[doc(hidden)]
     pub panel_configuration: ::std::option::Option<crate::types::PanelConfiguration>,
     /// <p>The properties of a small multiples X axis.</p>
-    #[doc(hidden)]
     pub x_axis: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>,
     /// <p>The properties of a small multiples Y axis.</p>
-    #[doc(hidden)]
     pub y_axis: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>,
 }
 impl SmallMultiplesOptions {

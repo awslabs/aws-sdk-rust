@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVoiceMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit, in US dollars.</p>
-    #[doc(hidden)]
     pub monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

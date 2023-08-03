@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the LAG with which to associate the connection.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateConnectionWithLagInput {

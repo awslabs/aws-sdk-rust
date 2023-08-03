@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p>The ID of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

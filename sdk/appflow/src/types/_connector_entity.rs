@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorEntity {
     /// <p> The name of the connector entity. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The label applied to the connector entity. </p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
-    #[doc(hidden)]
     pub has_nested_entities: bool,
 }
 impl ConnectorEntity {

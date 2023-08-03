@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCarrierGatewayOutput {
     /// <p>Information about the carrier gateway.</p>
-    #[doc(hidden)]
     pub carrier_gateway: ::std::option::Option<crate::types::CarrierGateway>,
     _request_id: Option<String>,
 }

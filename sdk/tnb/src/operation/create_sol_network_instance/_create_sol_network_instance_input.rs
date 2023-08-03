@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSolNetworkInstanceInput {
     /// <p>ID for network service descriptor.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>Network instance name.</p>
-    #[doc(hidden)]
     pub ns_name: ::std::option::Option<::std::string::String>,
     /// <p>Network instance description.</p>
-    #[doc(hidden)]
     pub ns_description: ::std::option::Option<::std::string::String>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSolNetworkInstanceInput {

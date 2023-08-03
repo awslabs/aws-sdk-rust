@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudiosOutput {
     /// <p>The list of Studio summary objects.</p>
-    #[doc(hidden)]
     pub studios: ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
-    #[doc(hidden)]
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

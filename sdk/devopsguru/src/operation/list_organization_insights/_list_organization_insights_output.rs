@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

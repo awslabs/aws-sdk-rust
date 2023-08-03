@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The user who established the terminated client connections.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the client connections.</p>
-    #[doc(hidden)]
     pub connection_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
     _request_id: Option<String>,
 }

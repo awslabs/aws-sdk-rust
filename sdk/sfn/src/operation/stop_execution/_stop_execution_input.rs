@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StopExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error code of the failure.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
 }
 impl StopExecutionInput {

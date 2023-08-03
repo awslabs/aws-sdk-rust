@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {

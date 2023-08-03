@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
-    #[doc(hidden)]
     pub device_status_details: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
     /// <p>The latest available information about the connection status of a device. </p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    #[doc(hidden)]
     pub connection_status_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceStatusInfo {

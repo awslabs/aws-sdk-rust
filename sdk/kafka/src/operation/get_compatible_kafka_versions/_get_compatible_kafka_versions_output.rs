@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsOutput {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    #[doc(hidden)]
     pub compatible_kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>>,
     _request_id: Option<String>,
 }

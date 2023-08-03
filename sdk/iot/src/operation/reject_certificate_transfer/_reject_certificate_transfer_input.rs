@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the certificate transfer was rejected.</p>
-    #[doc(hidden)]
     pub reject_reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectCertificateTransferInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    #[doc(hidden)]
     pub deliverability_test_reports: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

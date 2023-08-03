@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsInput {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of each page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    #[doc(hidden)]
     pub shared_aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagePermissionsInput {

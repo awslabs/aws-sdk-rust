@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallAction {
     /// <p>The Amazon Web Services API name.</p>
-    #[doc(hidden)]
     pub api: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services API caller type.</p>
-    #[doc(hidden)]
     pub caller_type: ::std::option::Option<::std::string::String>,
     /// <p>The domain information for the Amazon Web Services API call.</p>
-    #[doc(hidden)]
     pub domain_details: ::std::option::Option<crate::types::DomainDetails>,
     /// <p>The error code of the failed Amazon Web Services API action.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The agent through which the API request was made.</p>
-    #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>The Amazon Web Services service name whose API was invoked.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
-    #[doc(hidden)]
     pub remote_account_details: ::std::option::Option<crate::types::RemoteAccountDetails>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
-    #[doc(hidden)]
     pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AwsApiCallAction {

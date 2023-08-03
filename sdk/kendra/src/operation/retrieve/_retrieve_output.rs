@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveOutput {
     /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    #[doc(hidden)]
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
     _request_id: Option<String>,
 }

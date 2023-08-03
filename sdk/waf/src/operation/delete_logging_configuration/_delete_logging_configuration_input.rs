@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {

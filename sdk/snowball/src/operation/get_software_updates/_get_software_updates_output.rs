@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSoftwareUpdatesOutput {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
-    #[doc(hidden)]
     pub updates_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostKeysOutput {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the server identifier that contains the listed host keys.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    #[doc(hidden)]
     pub host_keys: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>,
     _request_id: Option<String>,
 }

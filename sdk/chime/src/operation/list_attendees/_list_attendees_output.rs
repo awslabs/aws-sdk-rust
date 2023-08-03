@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttendeesOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
-    #[doc(hidden)]
     pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

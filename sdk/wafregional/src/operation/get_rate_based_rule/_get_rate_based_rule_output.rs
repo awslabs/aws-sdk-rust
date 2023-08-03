@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleOutput {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::RateBasedRule>,
     _request_id: Option<String>,
 }

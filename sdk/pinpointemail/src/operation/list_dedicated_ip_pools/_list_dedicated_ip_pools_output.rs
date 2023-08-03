@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
     pub dedicated_ip_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

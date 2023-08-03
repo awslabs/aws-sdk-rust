@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSessionAnalyticsDataOutput {
     /// <p>The unique identifier of the bot that the sessions belong to.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each of which contains information about a session with the bot.</p>
-    #[doc(hidden)]
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>>,
     _request_id: Option<String>,
 }

@@ -5,94 +5,64 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>The architecture of the image.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>The date and time the image was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the AMI.</p>
-    #[doc(hidden)]
     pub image_location: ::std::option::Option<::std::string::String>,
     /// <p>The type of image.</p>
-    #[doc(hidden)]
     pub image_type: ::std::option::Option<crate::types::ImageTypeValues>,
     /// <p>Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.</p>
-    #[doc(hidden)]
     pub public: ::std::option::Option<bool>,
     /// <p>The kernel associated with the image, if any. Only applicable for machine images.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the image.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>The platform details associated with the billing code of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_details: ::std::option::Option<::std::string::String>,
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price List API</a>. You can view these fields on the <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a> command in the CLI.</p>
-    #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>Any product codes associated with the AMI.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and can be used to launch an instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>Any block device mapping entries.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>The description of the AMI that was provided during image creation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
-    #[doc(hidden)]
     pub ena_support: ::std::option::Option<bool>,
     /// <p>The hypervisor type of the image.</p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
     /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
-    #[doc(hidden)]
     pub image_owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AMI that was provided during image creation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    #[doc(hidden)]
     pub root_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
-    #[doc(hidden)]
     pub root_device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    #[doc(hidden)]
     pub sriov_net_support: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the state change.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<crate::types::StateReason>,
     /// <p>Any tags assigned to the image.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The type of virtualization of the AMI.</p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     /// <p>The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub tpm_support: ::std::option::Option<crate::types::TpmSupportValues>,
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
-    #[doc(hidden)]
     pub deprecation_time: ::std::option::Option<::std::string::String>,
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
 }
 impl Image {

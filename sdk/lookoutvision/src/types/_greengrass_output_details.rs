@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GreengrassOutputDetails {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
-    #[doc(hidden)]
     pub component_version_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the component. </p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the component. </p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassOutputDetails {

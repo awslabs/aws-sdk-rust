@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
-    #[doc(hidden)]
     pub plan: ::std::option::Option<crate::types::Plan>,
 }
 impl UpdateContactInput {

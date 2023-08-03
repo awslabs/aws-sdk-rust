@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMapStyleDescriptorOutput {
     /// <p>Contains the body of the style descriptor.</p>
-    #[doc(hidden)]
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP Cache-Control directive for the value.</p>
-    #[doc(hidden)]
     pub cache_control: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

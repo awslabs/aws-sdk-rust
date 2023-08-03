@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceDetails {
     /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub ec2_instance_details: ::std::option::Option<crate::types::Ec2InstanceDetails>,
     /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub rds_instance_details: ::std::option::Option<crate::types::RdsInstanceDetails>,
     /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub redshift_instance_details: ::std::option::Option<crate::types::RedshiftInstanceDetails>,
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub elasti_cache_instance_details: ::std::option::Option<crate::types::ElastiCacheInstanceDetails>,
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub es_instance_details: ::std::option::Option<crate::types::EsInstanceDetails>,
 }
 impl InstanceDetails {

@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
-    #[doc(hidden)]
     pub cost_per_hour: f32,
     /// <p>Defines the cost per inference for the instance .</p>
-    #[doc(hidden)]
     pub cost_per_inference: f32,
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    #[doc(hidden)]
     pub max_invocations: i32,
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
-    #[doc(hidden)]
     pub model_latency: i32,
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    #[doc(hidden)]
     pub cpu_utilization: ::std::option::Option<f32>,
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    #[doc(hidden)]
     pub memory_utilization: ::std::option::Option<f32>,
     /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    #[doc(hidden)]
     pub model_setup_time: ::std::option::Option<i32>,
 }
 impl RecommendationMetrics {

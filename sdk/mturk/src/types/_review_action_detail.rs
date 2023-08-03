@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReviewActionDetail {
     /// <p>The unique identifier for the action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p> The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary. </p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p> The specific HITId or AssignmentID targeted by the action.</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of object in TargetId.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReviewActionStatus>,
     /// <p> The date when the action was completed.</p>
-    #[doc(hidden)]
     pub complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> A description of the outcome of the review.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     /// <p> Present only when the Results have a FAILED Status.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl ReviewActionDetail {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalSizeConfig {
     /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
-    #[doc(hidden)]
     pub max_local_media_size_in_mb: ::std::option::Option<i32>,
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-    #[doc(hidden)]
     pub strategy_on_full_size: ::std::option::Option<crate::types::StrategyOnFullSize>,
 }
 impl LocalSizeConfig {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DependentEntity {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    #[doc(hidden)]
     pub relation_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    #[doc(hidden)]
     pub dependent_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DependentEntity {

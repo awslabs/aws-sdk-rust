@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionDetails {
     /// <p> Describes the details of the most recent flow run. </p>
-    #[doc(hidden)]
     pub most_recent_execution_message: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the time of the most recent flow run. </p>
-    #[doc(hidden)]
     pub most_recent_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the status of the most recent flow run. </p>
-    #[doc(hidden)]
     pub most_recent_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
 impl ExecutionDetails {

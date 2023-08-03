@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
-    #[doc(hidden)]
     pub attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
-    #[doc(hidden)]
     pub attribute_update_value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl LinkAttributeAction {

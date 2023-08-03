@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationOutput {
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    #[doc(hidden)]
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub wireless_gateways: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of the new resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the new resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

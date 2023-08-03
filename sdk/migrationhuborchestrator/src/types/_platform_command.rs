@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformCommand {
     /// <p>Command for Linux.</p>
-    #[doc(hidden)]
     pub linux: ::std::option::Option<::std::string::String>,
     /// <p>Command for Windows.</p>
-    #[doc(hidden)]
     pub windows: ::std::option::Option<::std::string::String>,
 }
 impl PlatformCommand {

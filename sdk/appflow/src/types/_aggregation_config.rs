@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
-    #[doc(hidden)]
     pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
-    #[doc(hidden)]
     pub target_file_size: ::std::option::Option<i64>,
 }
 impl AggregationConfig {

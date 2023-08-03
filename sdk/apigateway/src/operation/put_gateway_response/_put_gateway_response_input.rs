@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The response type of the associated GatewayResponse</p>
-    #[doc(hidden)]
     pub response_type: ::std::option::Option<crate::types::GatewayResponseType>,
     /// <p>The HTTP status code of the GatewayResponse.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    #[doc(hidden)]
     pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    #[doc(hidden)]
     pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutGatewayResponseInput {

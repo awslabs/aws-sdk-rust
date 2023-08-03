@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationCallInput {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
-    #[doc(hidden)]
     pub from_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The phone number that the service should call.</p>
-    #[doc(hidden)]
     pub to_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SIP media application.</p>
-    #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The SIP headers added to an outbound call leg.</p>
-    #[doc(hidden)]
     pub sip_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
-    #[doc(hidden)]
     pub arguments_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInput {

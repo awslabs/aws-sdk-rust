@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub meeting_host_id: ::std::option::Option<::std::string::String>,
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    #[doc(hidden)]
     pub external_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    #[doc(hidden)]
     pub media_region: ::std::option::Option<::std::string::String>,
     /// <p>The media placement for the meeting.</p>
-    #[doc(hidden)]
     pub media_placement: ::std::option::Option<crate::types::MediaPlacement>,
     /// <p>The features available to a meeting, such as echo reduction.</p>
-    #[doc(hidden)]
     pub meeting_features: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
-    #[doc(hidden)]
     pub primary_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Array of strings.</p>
-    #[doc(hidden)]
     pub tenant_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the meeting.</p>
-    #[doc(hidden)]
     pub meeting_arn: ::std::option::Option<::std::string::String>,
 }
 impl Meeting {

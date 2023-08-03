@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CastColumnTypeOperation {
     /// <p>Column name.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>New column data type.</p>
-    #[doc(hidden)]
     pub new_column_type: ::std::option::Option<crate::types::ColumnDataType>,
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl CastColumnTypeOperation {

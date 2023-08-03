@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
-    #[doc(hidden)]
     pub template_versions_response: ::std::option::Option<crate::types::TemplateVersionsResponse>,
     _request_id: Option<String>,
 }

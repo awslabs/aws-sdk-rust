@@ -5,42 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionVersion {
     /// <p>The name of the solution version.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the solution version.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the solution.</p>
-    #[doc(hidden)]
     pub solution_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub perform_hpo: bool,
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
-    #[doc(hidden)]
     pub perform_auto_ml: bool,
     /// <p>The ARN of the recipe used in the solution.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the configuration properties for the solution.</p>
-    #[doc(hidden)]
     pub solution_config: ::std::option::Option<crate::types::SolutionConfig>,
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
-    #[doc(hidden)]
     pub training_hours: ::std::option::Option<f64>,
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
-    #[doc(hidden)]
     pub training_mode: ::std::option::Option<crate::types::TrainingMode>,
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
-    #[doc(hidden)]
     pub tuned_hpo_params: ::std::option::Option<crate::types::TunedHpoParams>,
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
@@ -52,16 +40,12 @@ pub struct SolutionVersion {
     /// <li> <p>CREATE STOPPING</p> </li>
     /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If training a solution version fails, the reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SolutionVersion {

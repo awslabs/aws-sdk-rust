@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    #[doc(hidden)]
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
-    #[doc(hidden)]
     pub user_volume_encryption_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
-    #[doc(hidden)]
     pub root_volume_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The WorkSpace properties.</p>
-    #[doc(hidden)]
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl WorkspaceRequest {

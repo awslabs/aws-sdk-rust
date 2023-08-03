@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookInstanceSummary {
     /// <p>The name of the notebook instance that you want a summary for.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
-    #[doc(hidden)]
     pub notebook_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notebook instance.</p>
-    #[doc(hidden)]
     pub notebook_instance_status: ::std::option::Option<crate::types::NotebookInstanceStatus>,
     /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The type of ML compute instance that the notebook instance is running on.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>A timestamp that shows when the notebook instance was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the notebook instance was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    #[doc(hidden)]
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    #[doc(hidden)]
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotebookInstanceSummary {

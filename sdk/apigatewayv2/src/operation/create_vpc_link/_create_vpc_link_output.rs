@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subnet IDs to include in the VPC link.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags for the VPC link.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_status: ::std::option::Option<crate::types::VpcLinkStatus>,
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The version of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_version: ::std::option::Option<crate::types::VpcLinkVersion>,
     _request_id: Option<String>,
 }

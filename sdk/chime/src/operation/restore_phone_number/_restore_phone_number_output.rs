@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestorePhoneNumberOutput {
     /// <p>The phone number details.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<crate::types::PhoneNumber>,
     _request_id: Option<String>,
 }

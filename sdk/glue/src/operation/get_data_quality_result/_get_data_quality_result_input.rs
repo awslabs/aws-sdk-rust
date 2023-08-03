@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityResultInput {
     /// <p>A unique result ID for the data quality result.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataQualityResultInput {

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration associated with the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    #[doc(hidden)]
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
-    #[doc(hidden)]
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfigSummary>,
     /// <p>The status of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>If the endpoint failed, the reason it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that the endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the endpoint was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    #[doc(hidden)]
     pub monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>>,
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    #[doc(hidden)]
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
 }
 impl Endpoint {

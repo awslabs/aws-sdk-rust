@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     _request_id: Option<String>,
 }

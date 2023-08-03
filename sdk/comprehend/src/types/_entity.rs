@@ -6,25 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EntityType>,
     /// <p>The text of the entity.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
-    #[doc(hidden)]
     pub block_references: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
 }
 impl Entity {

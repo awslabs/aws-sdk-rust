@@ -6,29 +6,23 @@ pub struct CreateStreamInput {
     /// <p>The name of the device that is writing to the stream. </p> <note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the stream that you are creating.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
     /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
     /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
-    #[doc(hidden)]
     pub media_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
     /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
-    #[doc(hidden)]
     pub data_retention_in_hours: ::std::option::Option<i32>,
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamInput {

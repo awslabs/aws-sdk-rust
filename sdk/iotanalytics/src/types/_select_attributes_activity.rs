@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the attributes to select from the message.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl SelectAttributesActivity {

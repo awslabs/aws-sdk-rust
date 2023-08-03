@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    #[doc(hidden)]
     pub mfa_authenticated: ::std::option::Option<bool>,
 }
 impl SessionContextAttributes {

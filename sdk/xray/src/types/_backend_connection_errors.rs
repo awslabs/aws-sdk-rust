@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendConnectionErrors {
     /// <p></p>
-    #[doc(hidden)]
     pub timeout_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub connection_refused_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub http_code4_xx_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub http_code5_xx_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub unknown_host_count: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub other_count: ::std::option::Option<i32>,
 }
 impl BackendConnectionErrors {
